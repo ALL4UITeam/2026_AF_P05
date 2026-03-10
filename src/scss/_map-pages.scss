@@ -1,0 +1,395 @@
+// ============================================================
+// ============================================================
+
+.vibe-container {
+  // ---- 좌측 플로팅 패널 (검색 폼, 라디오/체크박스, 결과 리스트) ----
+  // 우측 툴바 래퍼 (그리기 옵션창 + 툴바)
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 744px;
+	position: relative;
+	overflow: hidden;
+  // 좌측 사이드바: VWorld 스타일 고정 폭, 회색 배경
+  .map-search-sidebar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		z-index: 2;
+    width: 300px;
+    flex-shrink: 0;
+    background: #f0f0f0;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+		transition: transform 0.2s ease;
+		transform: translateX(0%);
+		will-change: transform;
+		&.is-closed {
+			transform: translateX(-100%);
+			.map-search-sidebar__open{
+				opacity: 1;
+				visibility: visible;
+				transition: all 0.2s 0.2s ease;
+			}
+		}
+  }
+
+	.map-search-sidebar__open{
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%) translateX(100%);
+		z-index: 10;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background: #fff;
+		opacity: 0;
+		visibility: hidden;
+	}
+	
+
+	.map-search-sidebar__inner{
+		height: 100%;
+		position: relative;
+		overflow-y: auto;
+	}
+
+  .map-search-sidebar__close {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .map-search-sidebar__close:hover {
+    background: #e8e8e8;
+    border-radius: 50%;
+  }
+
+  .map-search-sidebar__close:focus {
+    outline: none;
+  }
+
+  .map-search-sidebar__close:focus-visible {
+    outline: 2px solid #000;
+  }
+
+  .map-search-sidebar__close:focus-visible {
+    outline: none;
+  }
+
+  .map-search-sidebar__header {
+    padding: 16px 18px;
+    background: #e8e8e8;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .map-search-sidebar__header h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  .map-search-sidebar__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+  }
+
+
+	.map-search-breadcrumb{
+		font-size: 13px;
+		color: #555;
+		margin: 0;
+		padding: 0;
+		line-height: 1.4;
+		position: absolute;
+		top: 20px;
+		right: 75px;
+		z-index: 10;
+		text-align: right;
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+		border: 1px solid #eee;
+		padding: 8px 10px;
+	}
+
+	// 우측 수직 플로팅 툴바: 백색 슬림 바, border-radius 8px, box-shadow 0 4px 15px, 구분선 1px solid #f0f0f0
+  .map-toolbar-wrap {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+		flex-direction: column;
+    gap: 0;
+  }
+  .map-toolbar {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eee;
+    overflow: hidden;
+  }
+
+	.map-toolbar__btn[data-tool="theme"] {
+		border-radius: 8px;
+		margin-bottom: .5rem;
+	}
+
+  .map-toolbar__btn {
+    width: 40px;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    border: none;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s, color 0.2s;
+    
+    overflow: visible;
+  }
+
+  .map-toolbar__btn:last-child {
+    border-bottom: none;
+  }
+
+  .map-toolbar__btn:hover {
+    background: var(--map-ui-blue-bg);
+    color: var(--map-ui-blue);
+  }
+
+  // 활성화 상태: 주제도·정보보기 — 둥근 연한 배경 (스크린샷과 동일)
+  .map-toolbar__btn.is-active {
+    background: #e8eef5;
+    color: #1a1a1a;
+    border-radius: 6px;
+  }
+
+  .map-toolbar__btn.is-active[data-tool="draw"] {
+    background: var(--map-ui-blue);
+    color: #fff;
+    border-radius: 6px;
+  }
+
+  // 툴바: 아이콘만 표시 (스크린샷과 동일, 텍스트 레이블 비표시)
+  .map-toolbar__label {
+    font-size: 12px;
+
+  }
+
+  .map-toolbar__btn::before {
+    color: inherit;
+		display: inline-block;
+		vertical-align: top;
+		width: 20px;
+		height: 20px;
+		content: "";
+  }
+
+
+	
+  // 그리기 옵션창: 툴바 그리기 버튼 왼쪽 플로팅, 페이드인
+  .map-draw-options {
+    position: absolute;
+    right: 100%;
+    margin-right: 8px;
+    top: 0;
+    width: 160px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eee;
+    padding: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .map-draw-options.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .map-draw-options__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+  }
+
+  .map-draw-options__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .map-draw-options__btn {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--map-ui-blue);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .map-draw-options__btn:hover {
+    background: var(--map-ui-blue-hover);
+  }
+
+  .map-draw-options__hint {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+
+  // 줌 컨트롤: 백색 배경, 둥근 모서리, 그림자, +/− 버튼, 파란 채움 슬라이더·눈금·가로 핸들
+  .map-search-zoom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eee;
+    padding: 8px 10px 10px;
+  }
+
+  .map-search-zoom__plus,
+  .map-search-zoom__minus {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .map-search-zoom__minus {
+    border-bottom: none;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .map-search-zoom__plus:hover,
+  .map-search-zoom__minus:hover {
+    background: var(--map-ui-blue-bg);
+    color: var(--map-ui-blue);
+  }
+
+  .map-search-zoom__track {
+    width: 12px;
+    flex: 1;
+    min-height: 80px;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    // 눈금: 좌우 작은 수평선
+    background-image:
+      linear-gradient(#e0e0e0 1px, transparent 1px),
+      linear-gradient(#e0e0e0 1px, transparent 1px);
+    background-size: 3px 8px;
+    background-position:
+      0 0,
+      10px 0;
+    background-repeat: repeat-y;
+  }
+
+  .map-search-zoom__fill {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30%;
+    background: var(--map-ui-blue);
+    border-radius: 0 0 4px 4px;
+    pointer-events: none;
+  }
+
+  .map-search-zoom__handle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: #888;
+    border-radius: 2px;
+    top: 30%;
+    margin-top: -2px;
+    cursor: grab;
+    z-index: 1;
+  }
+
+  .map-search-zoom__handle:hover {
+    background: #555;
+  }
+
+  // 스케일바: VWorld 스타일 지도 하단 좌측
+  .map-scale-bar {
+    position: absolute;
+    bottom: 20px;
+		right: 75px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    font-size: 11px;
+    color: #333;
+  }
+
+  .map-scale-bar__line {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+
+  .map-scale-bar__labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 10px;
+    color: #555;
+  }
+}

@@ -1,0 +1,14 @@
+# 프로젝트 규칙
+- Vite 기반의 순수 HTML/JS/SCSS 프로젝트. (No React, No Vue, No Tailwind)
+- 기존 자산(/css, /font, /images, /js)은 `public/`에 보관하며, 수정하지 않고 그대로 배포.
+- 제공된 HTML 구조를 `src/partials/layout.html`로 사용하여 공통 레이아웃 구성.
+- 각 페이지의 내용은 `<div class="content">` 내부에 삽입함.
+
+# 스타일링 및 명명 규칙
+- 새로운 스타일은 SCSS로 작성하며 `src/scss/`에 저장.
+- 클래스 충돌 방지를 위해 모든 신규 스타일은 `.vibe-container`로 래핑하여 스코프를 지정함.
+- 파일 위치를 항상 명시하고 간결하게 설명할 것.
+
+# 페이지 구성
+- 페이지별 독립적인 HTML 파일 생성 (map-leaf.html, map-tool.html).
+- `vite-plugin-handlebars`를 사용하여 공통 레이아웃 시스템 구현.

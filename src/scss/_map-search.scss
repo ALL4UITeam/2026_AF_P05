@@ -1,0 +1,100 @@
+// ============================================================
+// 위치 검색 페이지 전용 (map-search.html) — VWorld dtkmap 스타일
+// 좌측 고정 사이드바(300px) + 우측 지도 영역
+// ============================================================
+
+.sidebar__search .map-ui-form-group {
+	margin-bottom: 12px;
+}
+
+.sidebar__search-row {
+	display: flex;
+	align-items: stretch;
+	margin-top: 12px;
+}
+
+.sidebar__search-row .map-ui-input {
+	flex: 1;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: none;
+}
+
+.sidebar__search-btn {
+	width: 42px;
+	min-width: 42px;
+	height: 40px;
+	border: none;
+	background: var(--map-ui-blue);
+	color: #fff;
+	border-radius: 0 var(--map-ui-radius) var(--map-ui-radius) 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s;
+}
+
+.sidebar__search-btn:hover {
+	background: var(--map-ui-blue-hover);
+}
+
+.sidebar__search-btn svg {
+	width: 18px;
+	height: 18px;
+}
+
+.sidebar__results {
+	margin-top: 20px;
+	border-top: 1px solid #ddd;
+	padding-top: 14px;
+}
+
+.sidebar__title {
+	font-size: 13px;
+	font-weight: 700;
+	color: #333;
+	margin: 0 0 10px 0;
+}
+
+.sidebar__result-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 180px;
+	overflow-y: auto;
+}
+
+.sidebar__result-item {
+	font-size: 13px;
+	color: #555;
+	padding: 8px 10px;
+	border-radius: 4px;
+	margin-bottom: 4px;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.sidebar__result-item:hover {
+	background: #eaf0f9;
+	border-color: var(--map-ui-blue);
+}
+
+// #3d hash 예시: URL #3d 일 때만 보이는 배지 (hashVisibility 샘플)
+.map-area .hash-sample-badge {
+	position: absolute;
+	top: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 20;
+	padding: 6px 14px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #fff;
+	background: var(--map-ui-blue);
+	border-radius: 20px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	pointer-events: none;
+}
