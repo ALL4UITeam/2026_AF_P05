@@ -1,7 +1,74 @@
 // ============================================================
 // 위치 검색 페이지 전용 (map-search.html) — VWorld dtkmap 스타일
-// 좌측 고정 사이드바(300px) + 우측 지도 영역
+// 좌측 메뉴 패널(240px) + 사이드바(300px) + 우측 지도 영역
 // ============================================================
+
+// 좌측 고정 메뉴 패널: 토지검색 / 건물 검색 / 공유재산 검색
+$map-menu-panel-width: 240px;
+
+.map-search-page {
+	.map-menu-panel {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: $map-menu-panel-width;
+		height: 100%;
+		z-index: 4;
+		background: #e8e8e8;
+		border-right: 1px solid #ddd;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+		box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
+	}
+	.map-menu-panel__inner {
+		padding: 20px 16px;
+		overflow-y: auto;
+		height: 100%;
+	}
+	.map-menu-panel__section {
+		margin-bottom: 20px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.map-menu-panel__title {
+		font-size: 14px;
+		font-weight: 700;
+		color: #1a1a1a;
+		margin: 0 0 10px 0;
+		padding: 0;
+	}
+	.map-menu-panel__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.map-menu-panel__list li {
+		margin-bottom: 4px;
+	}
+	.map-menu-panel__link {
+		display: block;
+		padding: 6px 0 6px 14px;
+		font-size: 13px;
+		font-weight: 400;
+		color: #333;
+		text-decoration: none;
+		border-radius: 4px;
+		transition: background 0.2s, color 0.2s;
+	}
+	.map-menu-panel__link:hover {
+		background: rgba(255, 255, 255, 0.5);
+		color: #1a1a1a;
+	}
+	// 메뉴 패널이 있으므로 사이드바는 그 오른쪽에, 지도는 margin-left
+	.map-search-sidebar {
+		//left: $map-menu-panel-width;
+		left: 0;
+	}
+	.map-area {
+		margin-left: $map-menu-panel-width;
+	}
+}
 
 .sidebar__search .map-ui-form-group {
 	margin-bottom: 12px;
@@ -80,6 +147,460 @@
 .sidebar__result-item:hover {
 	background: #eaf0f9;
 	border-color: var(--map-ui-blue);
+}
+
+// 배경지도 선택: 툴바 버튼으로 열기. 2D/3D 탭 + 탭별 옵션 목록 (map-roadview와 동일한 BEM 구조)
+.map-basemap {
+	position: absolute;
+	bottom: 52px;
+	left: 20px;
+	z-index: 15;
+	background: rgba(255, 255, 255, 0.96);
+	border-radius: var(--map-ui-radius);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+	border: 1px solid #eee;
+	padding: 10px 12px;
+	min-width: 160px;
+	transition: opacity 0.2s ease;
+}
+// 툴바에서 열 때만 표시 (data-tool-type 있으면 토글 패널)
+.map-basemap[data-tool-type="basemap"] {
+	opacity: 0;
+	pointer-events: none;
+}
+.map-basemap[data-tool-type="basemap"].is-open {
+	opacity: 1;
+	pointer-events: auto;
+}
+.map-basemap__tabs {
+	display: flex;
+	gap: 4px;
+	margin-bottom: 10px;
+}
+.map-basemap__tab {
+	padding: 6px 14px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #555;
+	background: #f0f0f0;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+.map-basemap__tab:hover {
+	background: #e5e5e5;
+	color: #333;
+}
+.map-basemap__tab.is-active {
+	background: #fff;
+	color: var(--map-ui-blue);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	border-color: #ddd;
+}
+.map-basemap__panels { margin-bottom: 10px; }
+.map-basemap__panel {
+	display: block;
+}
+.map-basemap__panel--hidden {
+	display: none;
+}
+.map-basemap__panel--hidden[aria-hidden="true"] {
+	display: none;
+}
+.map-basemap__options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 12px;
+}
+.map-basemap__option {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	color: #333;
+	cursor: pointer;
+}
+.map-basemap__option input[type="radio"] {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	accent-color: var(--map-ui-blue);
+	cursor: pointer;
+}
+.map-basemap__label { font-weight: 400; }
+.map-basemap__vector {
+	display: flex;
+	gap: 12px;
+	padding-top: 10px;
+	border-top: 1px solid #eee;
+}
+
+// 실내지도 사이드바: 다중반경 영향권 분석
+.map-indoor-sidebar .map-search-sidebar__body { padding: 14px 16px; }
+.map-indoor-sidebar__subtitle {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	font-weight: 700;
+	color: #333;
+	margin: 0 0 6px 0;
+}
+.map-indoor-sidebar__info {
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	border: none;
+	background: #e0e0e0;
+	color: #555;
+	border-radius: 50%;
+	font-size: 11px;
+	line-height: 1;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.map-indoor-sidebar__desc {
+	font-size: 12px;
+	color: #666;
+	margin: 0 0 12px 0;
+	line-height: 1.4;
+}
+.map-indoor-sidebar__tabs { margin-bottom: 14px; }
+.map-indoor-sidebar__location { margin-bottom: 12px; }
+.map-indoor-sidebar__location-wrap {
+	display: flex;
+	align-items: stretch;
+	gap: 0;
+	border: 1px solid #eee;
+	border-radius: var(--map-ui-radius);
+	overflow: hidden;
+	background: #fff;
+}
+.map-indoor-sidebar__pin-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 10px;
+	background: #f5f5f5;
+	color: #666;
+}
+.map-indoor-sidebar__pin { flex-shrink: 0; }
+.map-indoor-sidebar__location-wrap .map-ui-input {
+	border: none;
+	flex: 1;
+	min-width: 0;
+}
+.map-indoor-sidebar__hint {
+	font-size: 11px;
+	color: #888;
+	margin: 6px 0 0 0;
+}
+.map-indoor-sidebar__list-wrap {
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
+	margin-bottom: 12px;
+}
+.map-indoor-sidebar__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.map-indoor-sidebar__item {
+	margin-bottom: 4px;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	transition: background 0.2s, border-color 0.2s;
+}
+.map-indoor-sidebar__item--selected,
+.map-indoor-sidebar__item:hover {
+	background: var(--map-ui-blue-bg);
+	border-color: #ddd;
+}
+.map-indoor-sidebar__radio {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	pointer-events: none;
+}
+.map-indoor-sidebar__item-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px 8px;
+	padding: 8px 10px;
+	cursor: pointer;
+	font-size: 13px;
+}
+.map-indoor-sidebar__icon {
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px;
+	color: #666;
+	background: #eee;
+	border-radius: 4px;
+}
+.map-indoor-sidebar__icon--building { background: #e3f2fd; color: #1565c0; }
+.map-indoor-sidebar__icon--station { background: #f3e5f5; color: #7b1fa2; }
+.map-indoor-sidebar__icon--sport { background: #e8f5e9; color: #2e7d32; }
+.map-indoor-sidebar__name { font-weight: 600; color: #1a1a1a; width: 100%; }
+.map-indoor-sidebar__category { font-size: 12px; color: #666; width: 100%; }
+.map-indoor-sidebar__tag {
+	font-size: 11px;
+	padding: 2px 6px;
+	background: #f5f5f5;
+	color: #555;
+	border-radius: 4px;
+}
+.map-indoor-sidebar__paging {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #eee;
+}
+.map-paging__prev,
+.map-paging__next {
+	padding: 6px 12px;
+	font-size: 12px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.map-paging__current { font-size: 13px; color: #555; }
+
+// 주제도 사이드바: 탭(검색어로/분류별), 상단·총건수 고정, 목록만 스크롤
+.map-theme-sidebar .map-search-sidebar__header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+// 지도 우측 하단 원형 버튼 그룹 (정보, 새로고침, 되돌리기, 내위치, 나가기)
+.map-floating-controls {
+	position: absolute;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 15;
+	display: flex;
+	gap: 8px;
+}
+.map-floating-controls__btn {
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	color: #444;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s, box-shadow 0.2s;
+}
+.map-floating-controls__btn:hover {
+	background: #f5f5f5;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+.map-floating-controls__btn:focus-visible {
+	outline: 2px solid var(--map-ui-blue);
+	outline-offset: 2px;
+}
+.map-floating-controls__btn svg { flex-shrink: 0; }
+
+// 보행자모드 종료: 하단 50px, 좌우 가운데
+.map-walkout {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 15;
+}
+.map-walkout__btn {
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	background: var(--map-ui-blue);
+	border: none;
+	border-radius: var(--map-ui-radius);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	transition: background 0.2s, box-shadow 0.2s;
+}
+.map-walkout__btn:hover {
+	background: var(--map-ui-blue-hover);
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+.map-walkout__btn:focus-visible {
+	outline: 2px solid var(--map-ui-blue);
+	outline-offset: 2px;
+}
+
+// 건물 정보 플로팅 패널 (실내지도 등에서 건물 선택 시)
+.map-building-info {
+	position: absolute;
+	top: 20px;
+	right: 70px;
+	z-index: 15;
+	width: 280px;
+	background: rgba(255, 255, 255, 0.98);
+	border-radius: var(--map-ui-radius);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	border: 1px solid #eee;
+	overflow: hidden;
+}
+.map-building-info__header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 14px;
+	border-bottom: 1px solid #eee;
+}
+.map-building-info__menu,
+.map-building-info__close,
+.map-building-info__toggle {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: #555;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	transition: background 0.2s, color 0.2s;
+}
+.map-building-info__menu:hover,
+.map-building-info__close:hover,
+.map-building-info__toggle:hover {
+	background: #f0f0f0;
+	color: #333;
+}
+.map-building-info__title {
+	flex: 1;
+	min-width: 0;
+	font-size: 15px;
+	font-weight: 700;
+	color: #1a1a1a;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.map-building-info__body { padding: 12px 14px; }
+.map-building-info__category {
+	font-size: 12px;
+	color: #666;
+	margin: 0 0 10px 0;
+}
+.map-building-info__address {
+	margin: 0 0 12px 0;
+}
+.map-building-info__address-row {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+	margin-bottom: 6px;
+	&:last-child { margin-bottom: 0; }
+}
+.map-building-info__address-label {
+	flex-shrink: 0;
+	font-size: 11px;
+	font-weight: 600;
+	color: #666;
+	background: #eee;
+	padding: 3px 8px;
+	border-radius: 4px;
+	margin: 0;
+}
+.map-building-info__address-value {
+	font-size: 13px;
+	color: #333;
+	margin: 0;
+}
+.map-building-info__floors {
+	display: flex;
+	gap: 6px;
+	margin-bottom: 12px;
+}
+.map-building-info__floor {
+	padding: 8px 14px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #555;
+	background: #f5f5f5;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.map-building-info__floor:hover {
+	background: #eee;
+	border-color: #ccc;
+}
+.map-building-info__floor.is-active {
+	background: var(--map-ui-blue);
+	border-color: var(--map-ui-blue);
+	color: #fff;
+}
+.map-building-info__links {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.map-building-info__link {
+	font-size: 13px;
+	color: var(--map-ui-blue);
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+.map-building-info__link--anchor {
+	text-decoration: underline;
+}
+.map-building-info__link--anchor:hover {
+	text-decoration: none;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	border: 0;
 }
 
 // #3d hash 예시: URL #3d 일 때만 보이는 배지 (hashVisibility 샘플)

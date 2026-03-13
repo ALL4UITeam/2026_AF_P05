@@ -207,43 +207,57 @@
 
 
 	
-  // 그리기 옵션창: 툴바 그리기 버튼 왼쪽 플로팅, 페이드인
-  .map-draw-options {
+  // 옵션창 공통: .map-options (header / body), id는 유니크
+  .map-options {
     position: absolute;
     right: 100%;
     margin-right: 8px;
-    top: 0;
+    top: 20px;
     width: 160px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     border: 1px solid #eee;
-    padding: 16px;
+    padding: 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
   }
 
-  .map-draw-options.is-open {
+  .map-options.is-open {
     opacity: 1;
     pointer-events: auto;
+    z-index: 10;
+    right: 70px;
   }
 
-  .map-draw-options__title {
+  .map-options__header {
+    padding: 16px 16px 0;
+    flex-shrink: 0;
+  }
+
+  .map-options__title {
     font-size: 14px;
     font-weight: 700;
     color: #1a1a1a;
-    margin: 0 0 12px 0;
+    margin: 0;
   }
 
-  .map-draw-options__buttons {
+  .map-options__body {
+    padding: 12px 16px 16px;
+    flex: 1;
+  }
+
+  .map-options__buttons {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 12px;
   }
 
-  .map-draw-options__btn {
+  .map-options__btn {
     width: 100%;
     padding: 10px 14px;
     font-size: 13px;
@@ -256,17 +270,87 @@
     transition: background 0.2s;
   }
 
-  .map-draw-options__btn:hover {
+  .map-options__btn:hover {
     background: var(--map-ui-blue-hover);
   }
 
-  .map-draw-options__hint {
+  .map-options__hint {
     font-size: 12px;
     color: #888;
     margin: 0;
     line-height: 1.4;
   }
 
+  // 로드뷰
+  .map-roadview {
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    width: 562px;
+    height: 375px;
+    overflow: hidden;
+    z-index: 100;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px 0px;
+    right: 70px;
+    top: 20px;
+  }
+
+  .map-roadview.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .map-roadview__view {
+    position: absolute;
+    inset: 0;
+  }
+
+  .map-roadview__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+  }
+
+  .map-roadview__controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+  }
+
+  .map-roadview__btn {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .map-roadview__btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .map-roadview__btn svg {
+    width: 20px;
+    height: 20px;
+  }
 
   // 줌 컨트롤: 백색 배경, 둥근 모서리, 그림자, +/− 버튼, 파란 채움 슬라이더·눈금·가로 핸들
   .map-search-zoom {
