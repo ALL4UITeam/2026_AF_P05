@@ -21,14 +21,18 @@
 //
 // ============================================================
 
-.vibe-container {
+:root {
 	--map-ui-blue: #2A61BA;
 	--map-ui-blue-hover: #224e95;
 	--map-ui-blue-bg: #eaf0f9;
 	--map-ui-radius: 8px;
 	--map-ui-border: 1px solid #eee;
-	font-family: 'Pretendard', -apple-system, sans-serif;
+	--map-title-font: 'S-Core Dream';
+}
 
+.vibe-container {
+	
+	
 	width: 100%;
 	height: 100%;
 	min-height: 60vh;
@@ -98,7 +102,7 @@
 		font-family: inherit;
 		color: #1a1a1a;
 		background: #fff;
-		border: 1px solid #eee;
+		border: 1px solid #e3e4e6;
 		border-radius: var(--map-ui-radius);
 		outline: none;
 		transition: border-color 0.2s, box-shadow 0.2s;
@@ -113,13 +117,18 @@
 		}
 	}
 
+	.map-ui-input.input-search{
+		padding: 11px 12px 11px 35px;
+    background: url('/images/svg/ico_search_16_01.svg') 12px 9px no-repeat;
+	}
+
 	.map-ui-select {
 		cursor: pointer;
 		appearance: none;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+		background-image: url('/images/map/select-arrow.png');
 		background-repeat: no-repeat;
 		background-position: right 12px center;
-		padding-right: 32px;
+		padding-right: 24px;
 	}
 
 	.map-ui-textarea {
@@ -143,12 +152,12 @@
 	// 하단 저작권
 	.map-disclaimer {
 		position: absolute;
-		bottom: 10px;
+		bottom: 20px;
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 10;
-		padding: 8px 20px;
-		font-size: 12px;
+		padding: 11px 20px;
+		font-size: 14px;
 		color: #fff;
 		text-shadow: 0 0 2px #000, 0 1px 3px rgba(0, 0, 0, 0.8);
 		background: rgba(0, 0, 0, 0.35);

@@ -3,98 +3,45 @@
 // 좌측 메뉴 패널(240px) + 사이드바(300px) + 우측 지도 영역
 // ============================================================
 
+// 위치검색
+#locationSearchPanel{
+	.map-search-sidebar__header h2{
+		background: url('/images/map/location-title-icon.png') no-repeat left center;
+		padding-left: 26px;
+		min-height: 20px;
+		line-height: 20px;
+	}
+}
 // 좌측 고정 메뉴 패널: 토지검색 / 건물 검색 / 공유재산 검색
 $map-menu-panel-width: 240px;
 
-.map-search-page {
-	.map-menu-panel {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: $map-menu-panel-width;
-		height: 100%;
-		z-index: 4;
-		background: #e8e8e8;
-		border-right: 1px solid #ddd;
-		border-top-right-radius: 10px;
-		border-bottom-right-radius: 10px;
-		box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
+.sidebar__search-location{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: space-between;
+	.map-ui-form-group{
+		width: 100%;
 	}
-	.map-menu-panel__inner {
-		padding: 20px 16px;
-		overflow-y: auto;
-		height: 100%;
-	}
-	.map-menu-panel__section {
-		margin-bottom: 20px;
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-	.map-menu-panel__title {
-		font-size: 14px;
-		font-weight: 700;
-		color: #1a1a1a;
-		margin: 0 0 10px 0;
-		padding: 0;
-	}
-	.map-menu-panel__list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	.map-menu-panel__list li {
-		margin-bottom: 4px;
-	}
-	.map-menu-panel__link {
-		display: block;
-		padding: 6px 0 6px 14px;
-		font-size: 13px;
-		font-weight: 400;
-		color: #333;
-		text-decoration: none;
-		border-radius: 4px;
-		transition: background 0.2s, color 0.2s;
-	}
-	.map-menu-panel__link:hover {
-		background: rgba(255, 255, 255, 0.5);
-		color: #1a1a1a;
-	}
-	// 메뉴 패널이 있으므로 사이드바는 그 오른쪽에, 지도는 margin-left
-	.map-search-sidebar {
-		//left: $map-menu-panel-width;
-		left: 0;
-	}
-	.map-area {
-		margin-left: $map-menu-panel-width;
-	}
-}
-
-.sidebar__search .map-ui-form-group {
-	margin-bottom: 12px;
 }
 
 .sidebar__search-row {
 	display: flex;
 	align-items: stretch;
-	margin-top: 12px;
+	gap: 10px;
 }
 
 .sidebar__search-row .map-ui-input {
 	flex: 1;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-	border-right: none;
 }
 
 .sidebar__search-btn {
-	width: 42px;
 	min-width: 42px;
-	height: 40px;
+	height: 36px;
 	border: none;
-	background: var(--map-ui-blue);
+	background: #6c63ff;
 	color: #fff;
-	border-radius: 0 var(--map-ui-radius) var(--map-ui-radius) 0;
+	border-radius: var(--map-ui-radius);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -109,12 +56,6 @@ $map-menu-panel-width: 240px;
 .sidebar__search-btn svg {
 	width: 18px;
 	height: 18px;
-}
-
-.sidebar__results {
-	margin-top: 20px;
-	border-top: 1px solid #ddd;
-	padding-top: 14px;
 }
 
 .sidebar__title {
@@ -147,93 +88,6 @@ $map-menu-panel-width: 240px;
 .sidebar__result-item:hover {
 	background: #eaf0f9;
 	border-color: var(--map-ui-blue);
-}
-
-// 배경지도 선택: 툴바 버튼으로 열기. 2D/3D 탭 + 탭별 옵션 목록 (map-roadview와 동일한 BEM 구조)
-.map-basemap {
-	position: absolute;
-	bottom: 52px;
-	left: 20px;
-	z-index: 15;
-	background: rgba(255, 255, 255, 0.96);
-	border-radius: var(--map-ui-radius);
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-	border: 1px solid #eee;
-	padding: 10px 12px;
-	min-width: 160px;
-	transition: opacity 0.2s ease;
-}
-// 툴바에서 열 때만 표시 (data-tool-type 있으면 토글 패널)
-.map-basemap[data-tool-type="basemap"] {
-	opacity: 0;
-	pointer-events: none;
-}
-.map-basemap[data-tool-type="basemap"].is-open {
-	opacity: 1;
-	pointer-events: auto;
-}
-.map-basemap__tabs {
-	display: flex;
-	gap: 4px;
-	margin-bottom: 10px;
-}
-.map-basemap__tab {
-	padding: 6px 14px;
-	font-size: 13px;
-	font-weight: 600;
-	color: #555;
-	background: #f0f0f0;
-	border: 1px solid transparent;
-	border-radius: 6px;
-	cursor: pointer;
-	transition: background 0.2s, color 0.2s;
-}
-.map-basemap__tab:hover {
-	background: #e5e5e5;
-	color: #333;
-}
-.map-basemap__tab.is-active {
-	background: #fff;
-	color: var(--map-ui-blue);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-	border-color: #ddd;
-}
-.map-basemap__panels { margin-bottom: 10px; }
-.map-basemap__panel {
-	display: block;
-}
-.map-basemap__panel--hidden {
-	display: none;
-}
-.map-basemap__panel--hidden[aria-hidden="true"] {
-	display: none;
-}
-.map-basemap__options {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px 12px;
-}
-.map-basemap__option {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	font-size: 13px;
-	color: #333;
-	cursor: pointer;
-}
-.map-basemap__option input[type="radio"] {
-	width: 16px;
-	height: 16px;
-	margin: 0;
-	accent-color: var(--map-ui-blue);
-	cursor: pointer;
-}
-.map-basemap__label { font-weight: 400; }
-.map-basemap__vector {
-	display: flex;
-	gap: 12px;
-	padding-top: 10px;
-	border-top: 1px solid #eee;
 }
 
 // 실내지도 사이드바: 다중반경 영향권 분석
@@ -381,11 +235,6 @@ $map-menu-panel-width: 240px;
 .map-paging__current { font-size: 13px; color: #555; }
 
 // 주제도 사이드바: 탭(검색어로/분류별), 상단·총건수 고정, 목록만 스크롤
-.map-theme-sidebar .map-search-sidebar__header {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-}
 
 .sr-only {
 	position: absolute;
@@ -407,6 +256,13 @@ $map-menu-panel-width: 240px;
 	z-index: 15;
 	display: flex;
 	gap: 8px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 .map-floating-controls__btn {
 	width: 40px;
@@ -440,6 +296,13 @@ $map-menu-panel-width: 240px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 15;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 .map-walkout__btn {
 	padding: 10px 20px;
@@ -474,6 +337,14 @@ $map-menu-panel-width: 240px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 	border: 1px solid #eee;
 	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
+	
 }
 .map-building-info__header {
 	display: flex;

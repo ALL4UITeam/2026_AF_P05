@@ -13,18 +13,20 @@
 		<div id="map-container"></div>
 		<!-- #3d 예시: URL에 #3d 있을 때만 보임 (data-hash-key 사용) -->
 		<div data-hash-key="3d" class="hash-sample-badge" aria-hidden="true">3D 모드</div>
-		<div class="map-search-breadcrumb">경기도 &gt; 안양시 동안구 &gt; 관양동</div>
-		<!-- {{> map-toolbar}}
+		<div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+		{{> map-toolbar}}
 		{{> map-search-zoom}}
-		{{> map-floating-controls}} -->
+		{{> map-floating-controls}}
 		{{> map-building-info}}
 		{{> map-options}}
+		<!--
+		스케일 바
 		<div class="map-scale-bar">
 			<span class="map-scale-bar__line"></span>
 			<span class="map-scale-bar__labels">
 				<span>0</span><span>100m</span><span>200m</span>
 			</span>
-		</div>
+		</div> -->
 
 		<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
 	</div>

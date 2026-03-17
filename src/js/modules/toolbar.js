@@ -15,15 +15,7 @@ export function init() {
 		btn.addEventListener('click', function () {
 			const tool = this.getAttribute('data-tool');
 			if (!tool) return;
-			// 주제도: 사이드바(themePanel) 열기/닫기
-			if (tool === 'theme') {
-				const themePanel = document.getElementById('themePanel');
-				if (themePanel) {
-					themePanel.classList.toggle('is-closed');
-					this.classList.toggle('is-active', !themePanel.classList.contains('is-closed'));
-				}
-				return;
-			}
+			
 			const panel = document.querySelector(`.map-options[data-tool-type="${tool}"], .map-roadview[data-tool-type="${tool}"], .map-basemap[data-tool-type="${tool}"]`);
 			if (!panel) {
 				this.classList.toggle('is-active');
@@ -35,16 +27,37 @@ export function init() {
 		});
 	});
 
-	// 옵션창/로드뷰 닫기 버튼 → 해당 패널 닫고, data-tool 로 연동된 툴바 버튼 is-active 제거
-	document.addEventListener('click', (e) => {
-		const closeBtn = e.target.closest('.map-options__close-btn');
-		if (!closeBtn) return;
-		const panel = closeBtn.closest('.map-options') || closeBtn.closest('.map-roadview') || closeBtn.closest('.map-basemap');
+	// 옵션창/로드뷰 닫기 → 해당 패널 닫고 툴바 버튼 is-active 제거
+	// (.map-options__close div가 20x20 아이콘으로 클릭을 받기 때문에 div/버튼 둘 다 처리)
+	function closePanel(closeEl) {
+		const tool = closeEl.getAttribute('data-tool-type');
+		let panel = closeEl.closest('.map-options') || closeEl.closest('.map-roadview') || closeEl.closest('.map-basemap');
+		if (!panel && tool) {
+			panel = document.querySelector(`.map-options[data-tool-type="${tool}"], .map-roadview[data-tool-type="${tool}"], .map-basemap[data-tool-type="${tool}"]`);
+		}
 		if (!panel) return;
-		const tool = panel.getAttribute('data-tool-type');
 		panel.classList.remove('is-open');
 		panel.setAttribute('aria-hidden', 'true');
-		const triggerBtn = tool ? getTriggerButton(tool) : null;
+		const t = tool || panel.getAttribute('data-tool-type');
+		const triggerBtn = t ? getTriggerButton(t) : null;
 		if (triggerBtn) triggerBtn.classList.remove('is-active');
+	}
+
+	function onCloseClick(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		const target = e.currentTarget;
+		closePanel(target);
+	}
+
+	document.querySelectorAll('.map-options__close-btn, .map-options__close').forEach((el) => {
+		el.addEventListener('click', onCloseClick);
+	});
+
+	document.addEventListener('click', (e) => {
+		const closeEl = e.target.closest('.map-options__close-btn, .map-options__close');
+		if (!closeEl) return;
+		e.preventDefault();
+		closePanel(closeEl);
 	});
 }
