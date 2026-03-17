@@ -20,7 +20,12 @@ src
 vite.config.js
 package.json
 package-lock.json
-*.html
+
+# 루트 html 제외, dist 안 html은 허용
+/*.html
+!dist/**/*.html
+
+
 
 # Editor directories and files
 .vscode/*
