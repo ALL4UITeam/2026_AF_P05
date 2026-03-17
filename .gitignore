@@ -7,10 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
-dist
+
+# Build artifacts (dist-ssr 등 제외)
 dist-ssr
 *.local
+
+# Source (빌드 전 소스는 제외)
+public
+src
+vite.config.js
+package.json
+package-lock.json
+*.html
 
 # Editor directories and files
 .vscode/*
