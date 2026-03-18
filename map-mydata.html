@@ -1,0 +1,22 @@
+{{#> layout}}
+
+<div class="vibe-container map-mydata-page">
+	
+	{{> map-mydata-menu}}
+	{{> map-mydata-user}}
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+
+    <div class="map-floating-search">
+      <div class="map-floating-search__input">
+        <input type="text" class="map-floating-search__input-field" placeholder="검색어를 입력하세요.">
+        <button type="button" class="map-floating-search__btn">
+          <span class="sr-only">검색</span>
+        </button>
+      </div>
+    </div>
+		<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
+	</div>
+</div>
+{{/layout}}

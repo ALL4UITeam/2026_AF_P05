@@ -1,0 +1,156 @@
+<aside class="map-search-sidebar is-open" id="userPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header">
+      <h2>사용자 데이터</h2>
+      <button title="닫기" class="map-search-sidebar__close" data-target="userPanel">
+        닫기
+      </button>
+    </header>
+
+    <div class="map-search-sidebar__body">
+      <div class="mydata-panel">
+        <button type="button" class="mydata-panel__primary" data-mydata-open>
+          <span class="mydata-panel__primary-plus">+</span>
+          사용자 데이터 등록
+        </button>
+
+        <div class="mydata-panel__search">
+          <div class="mydata-panel__search-input">
+            <span class="mydata-panel__search-icon" aria-hidden="true"></span>
+            <input type="text" placeholder="레이어명 검색" aria-label="레이어명 검색">
+          </div>
+          <button type="button" class="mydata-panel__search-btn">검색</button>
+        </div>
+
+        <div class="mydata-panel__section">
+          <div class="mydata-panel__section-title">
+            등록된 레이어 <span class="mydata-panel__count">(4)</span>
+          </div>
+
+          <ul class="mydata-layer-list" data-mydata-layers>
+            <li class="mydata-layer is-checked" data-layer>
+              <div class="mydata-layer__row">
+                <label class="mydata-layer__check">
+                  <input type="checkbox" checked data-layer-check>
+                  <span class="mydata-layer__check-ui" aria-hidden="true"></span>
+                </label>
+                <div class="mydata-layer__name" title="사업지구_경계.shp">사업지구_경계.shp</div>
+                <div class="mydata-layer__actions">
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--share" aria-label="공유"></button>
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--setting" aria-label="설정"></button>
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--delete" aria-label="삭제" data-layer-delete></button>
+                </div>
+              </div>
+              <div class="mydata-layer__controls">
+                <div class="mydata-layer__opacity">
+                  <span class="mydata-layer__opacity-label">투명도</span>
+                  <input type="range" min="0" max="100" value="60" class="mydata-layer__range" data-layer-opacity>
+                </div>
+                <div class="mydata-layer__mini">
+                  <button type="button" class="mydata-layer__mini-btn mydata-layer__mini-btn--order" aria-label="순서">1</button>
+                  <button type="button" class="mydata-layer__mini-btn mydata-layer__mini-btn--user" aria-label="사용자">2</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="mydata-layer is-checked" data-layer>
+              <div class="mydata-layer__row">
+                <label class="mydata-layer__check">
+                  <input type="checkbox" checked data-layer-check>
+                  <span class="mydata-layer__check-ui" aria-hidden="true"></span>
+                </label>
+                <div class="mydata-layer__name" title="CCTV설치위치.csv">CCTV설치위치.csv</div>
+                <div class="mydata-layer__actions">
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--share" aria-label="공유"></button>
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--setting" aria-label="설정"></button>
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--delete" aria-label="삭제" data-layer-delete></button>
+                </div>
+              </div>
+              <div class="mydata-layer__controls">
+                <div class="mydata-layer__opacity">
+                  <span class="mydata-layer__opacity-label">투명도</span>
+                  <input type="range" min="0" max="100" value="45" class="mydata-layer__range" data-layer-opacity>
+                </div>
+                <div class="mydata-layer__mini">
+                  <button type="button" class="mydata-layer__mini-btn mydata-layer__mini-btn--user" aria-label="사용자"></button>
+                </div>
+              </div>
+            </li>
+
+            <li class="mydata-layer" data-layer>
+              <div class="mydata-layer__row">
+                <label class="mydata-layer__check">
+                  <input type="checkbox" data-layer-check>
+                  <span class="mydata-layer__check-ui" aria-hidden="true"></span>
+                </label>
+                <div class="mydata-layer__name" title="드론영상_2025.tif">드론영상_2025.tif</div>
+                <div class="mydata-layer__actions">
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--share" aria-label="공유"></button>
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--setting" aria-label="설정"></button>
+                  <button type="button" class="mydata-layer__icon mydata-layer__icon--delete" aria-label="삭제" data-layer-delete></button>
+                </div>
+              </div>
+              <div class="mydata-layer__controls">
+                <div class="mydata-layer__opacity">
+                  <span class="mydata-layer__opacity-label">투명도</span>
+                  <input type="range" min="0" max="100" value="30" class="mydata-layer__range" data-layer-opacity disabled>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mydata-panel__footer">
+          <button type="button" class="mydata-panel__btn">레이어 다운로드</button>
+          <button type="button" class="mydata-panel__btn mydata-panel__btn--primary">사용자 주제도 저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- 사용자데이터 등록 모달 -->
+<div class="mydata-modal" aria-hidden="true" data-mydata-modal>
+  <div class="mydata-modal__backdrop" data-mydata-close></div>
+  <div class="mydata-modal__dialog" role="dialog" aria-modal="true" aria-label="사용자데이터 등록">
+    <header class="mydata-modal__header">
+      <h3 class="mydata-modal__title">사용자데이터 등록</h3>
+      <button type="button" class="mydata-modal__close" aria-label="닫기" data-mydata-close></button>
+    </header>
+    <div class="mydata-modal__tabs" role="tablist">
+      <button type="button" class="mydata-modal__tab is-active" data-mydata-tab="shp" role="tab" aria-selected="true">공간데이터(shp) 등록</button>
+      <button type="button" class="mydata-modal__tab" data-mydata-tab="share" role="tab" aria-selected="false">사용자 공유</button>
+    </div>
+    <div class="mydata-modal__body">
+      <div class="mydata-form">
+        <div class="mydata-form__row">
+          <label class="mydata-form__label">레이어명</label>
+          <input type="text" class="mydata-form__input" placeholder="등록할 공간 데이터명을 입력해주세요.">
+        </div>
+        <div class="mydata-form__row">
+          <label class="mydata-form__label">설명</label>
+          <textarea class="mydata-form__textarea" placeholder="데이터에 대한 간략한 설명을 입력해주세요."></textarea>
+        </div>
+        <div class="mydata-form__row">
+          <label class="mydata-form__label">첨부파일</label>
+          <div class="mydata-form__file">
+            <label class="mydata-form__file-btn">
+              파일선택
+              <input type="file" hidden data-mydata-file>
+            </label>
+            <div class="mydata-form__file-name" data-mydata-file-name>선택된 파일 없음</div>
+          </div>
+        </div>
+        <ul class="mydata-form__help">
+          <li>동일한 파일명으로 shp, dbf, shx, prj 파일 첨부 필요합니다.</li>
+          <li>zip 파일 첨부 가능 (단, zip 파일 내 동일한 파일명으로 파일이 있어야 함)</li>
+          <li>첨부파일 1개당 최대 용량 500MB 입니다.</li>
+        </ul>
+      </div>
+    </div>
+    <footer class="mydata-modal__footer">
+      <button type="button" class="mydata-modal__btn" data-mydata-close>취소</button>
+      <button type="button" class="mydata-modal__btn mydata-modal__btn--primary">적용</button>
+    </footer>
+  </div>
+</div>

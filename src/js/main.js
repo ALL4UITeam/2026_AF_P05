@@ -2,9 +2,9 @@ import '../scss/main.scss';
 import { init as initBasemapTabs } from './modules/basemapTabs.js';
 import { init as initBottomSheet } from './modules/bottomSheet.js';
 import { init as initDrawOptions } from './modules/drawOptions.js';
-import { init as initHashVisibility } from './modules/hashVisibility.js';
 import { init as initMapSearch } from './modules/mapSearch.js';
 import { init as initModal } from './modules/modal.js';
+import { init as initMydata } from './modules/mydata.js';
 import { init as initPanel } from './modules/sidebar.js';
 import { init as initToolbar } from './modules/toolbar.js';
 import { init as initTree } from './modules/tree.js';
@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	run(initTree, 'tree');
 	run(initZoom, 'zoom');
 	run(initMapSearch, 'mapSearch');
-	// data-hash-key 가진 요소는 #키=1 일치할 때만 보임 (추가 설정 없음)
-	run(() => initHashVisibility(), 'hashVisibility');
+	run(initMydata, 'mydata');
+	
 });
