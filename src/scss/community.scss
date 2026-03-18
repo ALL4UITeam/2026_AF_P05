@@ -727,6 +727,30 @@ body:has(.top-menu > a.system.active) {
   background-color: #4b5563;
 }
 
+.board-actions{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-edit{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 36px;
+  border: 1px solid var(--page-color);
+  border-radius: 6px;
+  color: var(--page-color);
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-edit:hover{
+  background-color: #f8fafc;
+}
+
 .board-nav {
   display: inline-flex;
   align-items: center;
