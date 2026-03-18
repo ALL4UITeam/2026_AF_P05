@@ -225,21 +225,35 @@
 .mydata-layer__range{ width: 100%; accent-color: #5a4aff; }
 .mydata-layer__range:disabled{ opacity: .4; }
 
-.mydata-layer__mini{ display: inline-flex; gap: 6px; }
-.mydata-layer__mini-btn{
-  width: 24px;
+.mydata-layer__badges{ display: inline-flex; gap: 6px; flex-shrink: 0; }
+.mydata-layer__badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
   height: 22px;
+  padding: 0 6px 0 3px;
   border-radius: 4px;
-  border: 1px solid #e5e7eb;
-  background: #fff;
-  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  .badge-icon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
-.mydata-layer__mini-btn:hover{ border-color: #cfd4dc; }
-.mydata-layer__mini-btn--order{
-  background: url('/images/svg/ico_more_01.svg') no-repeat 50% 50% / 14px 14px;
+.mydata-layer__badge--layer{
+  background: #f0edff;
+  color: #5a4aff;
+  .badge-icon{ background-image: url('/images/svg/ico_more_01.svg'); }
 }
-.mydata-layer__mini-btn--user{
-  background: url('/images/svg/ico_usearea_01.svg') no-repeat 50% 50% / 14px 14px;
+.mydata-layer__badge--user{
+  background: #eaf5fe;
+  color: #3b82f6;
+  .badge-icon{ background-image: url('/images/svg/ico_usearea_01.svg'); }
 }
 
 .mydata-panel__footer{
@@ -422,4 +436,231 @@
 .mydata-modal__btn--primary:hover{
   background: #4b3fff;
   border-color: #4b3fff;
+}
+// ===== 데이터 공유 설정 모달 =====
+.mydata-share-modal{
+  width: 520px;
+}
+.mydata-share-modal__header{
+  background: #424a5d;
+  color: #fff;
+  h3{ margin: 0; font-size: 16px; font-weight: 700; }
+  .map-ui-modal__close{
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(255,255,255,.16);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{ background: rgba(255,255,255,.24); }
+  }
+}
+.mydata-share-modal__info{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+}
+.mydata-share-modal__filename{
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+.mydata-share-modal__type{
+  font-size: 11px;
+  font-weight: 700;
+  color: #5a4aff;
+  background: #f0edff;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.mydata-share-modal__tabs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 14px 20px 0;
+}
+.mydata-share-modal__tab{
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  color: #6b7280;
+  &.is-active{
+    border-color: #5a4aff;
+    color: #5a4aff;
+    background: #f4f3ff;
+  }
+}
+.mydata-share-modal__body{
+  padding: 16px 20px;
+  min-height: 260px;
+}
+.mydata-share-modal__footer{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+// 공유 패널 공통 검색
+.mydata-share-search{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.mydata-share-search__input{
+  flex: 1;
+  position: relative;
+  input{
+    width: 100%;
+    height: 36px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0 12px 0 32px;
+    font-size: 13px;
+  }
+}
+.mydata-share-search__icon{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: url('/images/map/ico_search_16_01.png') no-repeat center / 16px 16px;
+  pointer-events: none;
+}
+.mydata-share-search__btn{
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid #5a4aff;
+  background: #5a4aff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  &:hover{ background: #4b3fff; }
+}
+
+// 부서 공유
+.mydata-share-dept__title{
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 10px;
+}
+.mydata-share-dept__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  li{ margin-bottom: 4px; }
+}
+.mydata-share-dept__check{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #374151;
+  padding: 6px 4px;
+  border-radius: 4px;
+  &:hover{ background: #f3f4f6; }
+  input{ display: none; }
+}
+.mydata-share-dept__check-ui{
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  flex-shrink: 0;
+  &::after{
+    content: '';
+    position: absolute;
+    display: none;
+    top: 3px;
+    left: 6px;
+    width: 5px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+.mydata-share-dept__check input:checked + .mydata-share-dept__check-ui{
+  background: #5a4aff;
+  border-color: #5a4aff;
+  &::after{ display: block; }
+}
+
+// 사용자 공유
+.mydata-share-users__head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.mydata-share-users__title{
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+.mydata-share-users__add{
+  font-size: 12px;
+  color: #5a4aff;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+  &:hover{ color: #4b3fff; }
+}
+.mydata-share-users__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.mydata-share-users__item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f3f4f6;
+  &:last-child{ border-bottom: 0; }
+}
+.mydata-share-users__name{
+  font-size: 13px;
+  color: #374151;
+}
+.mydata-share-users__remove{
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #9ca3af;
+  &:hover{ background: #fee2e2; color: #ef4444; border-color: #fca5a5; }
 }
