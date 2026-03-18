@@ -1,0 +1,120 @@
+<!-- 실내지도: 다중반경 영향권 분석 패널 -->
+<aside class="map-search-sidebar map-indoor-sidebar" id="indoorPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header">
+      <h2>실내지도</h2>
+      <button type="button" title="닫기" class="map-search-sidebar__close" data-target="indoorPanel">닫기</button>
+    </header>
+    <div class="map-search-sidebar__body">
+      <p class="map-indoor-sidebar__subtitle">
+        다중 반경(multi-Ring)영향권 분석 ①
+        <button type="button" class="map-indoor-sidebar__info" aria-label="설명 보기">ℹ</button>
+      </p>
+      <p class="map-indoor-sidebar__desc">① 해당지역의 생활 편의시설 접근근성진단.</p>
+      <div class="map-ui-tabs map-indoor-sidebar__tabs" role="tablist">
+        <button type="button" class="map-ui-tabs__item is-active" role="tab" aria-selected="true">1. 기준점 설정</button>
+        <button type="button" class="map-ui-tabs__item" role="tab" aria-selected="false">사용법 및 산출방식</button>
+      </div>
+      <div class="map-ui-form-group map-indoor-sidebar__location">
+        <label for="indoorLocationInput" class="map-indoor-sidebar__location-wrap">
+          <span class="map-indoor-sidebar__pin-wrap" aria-hidden="true">
+            <svg class="map-indoor-sidebar__pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <input type="text" id="indoorLocationInput" class="map-ui-input" value="경상북도 포항시 남구 시청로 1" placeholder="주소 입력" aria-label="기준점 주소">
+        </label>
+        <p class="map-indoor-sidebar__hint">*지도 클릭으로 위치 수정 가능</p>
+      </div>
+      <div class="map-indoor-sidebar__list-wrap">
+        <ul class="map-indoor-sidebar__list" role="list">
+          <li class="map-indoor-sidebar__item map-indoor-sidebar__item--selected">
+            <input type="radio" name="indoorPlace" id="indoorPlace1" value="419" checked class="map-indoor-sidebar__radio" aria-label="4.19기념관 선택">
+            <label for="indoorPlace1" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--building" aria-hidden="true">건물</span>
+              <span class="map-indoor-sidebar__name">4.19기념관</span>
+              <span class="map-indoor-sidebar__category">건물 &gt; 공공문화시설</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace2" value="gangnam" class="map-indoor-sidebar__radio" aria-label="강남역 선택">
+            <label for="indoorPlace2" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--station" aria-hidden="true">역</span>
+              <span class="map-indoor-sidebar__name">강남역</span>
+              <span class="map-indoor-sidebar__category">교통시설 &gt; 지하철역 &gt; 2호선</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace3" value="gangneung" class="map-indoor-sidebar__radio" aria-label="강릉스피드스케이팅경기장 선택">
+            <label for="indoorPlace3" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--sport" aria-hidden="true">경기장</span>
+              <span class="map-indoor-sidebar__name">강릉스피드스케이팅경기장</span>
+              <span class="map-indoor-sidebar__category">교통시설 &gt; 지하철역 &gt; 2호선</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace4" value="ktx" class="map-indoor-sidebar__radio" aria-label="강릉역KTX 선택">
+            <label for="indoorPlace4" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--station" aria-hidden="true">KTX</span>
+              <span class="map-indoor-sidebar__name">강릉역KTX</span>
+              <span class="map-indoor-sidebar__category">교통시설 &gt; 철도역</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace5" value="curling" class="map-indoor-sidebar__radio" aria-label="강릉컬링센터 선택">
+            <label for="indoorPlace5" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--sport" aria-hidden="true">경기장</span>
+              <span class="map-indoor-sidebar__name">강릉컬링센터</span>
+              <span class="map-indoor-sidebar__category">체육시설</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace6" value="hockey" class="map-indoor-sidebar__radio" aria-label="강릉하키센터 선택">
+            <label for="indoorPlace6" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--sport" aria-hidden="true">경기장</span>
+              <span class="map-indoor-sidebar__name">강릉하키센터</span>
+              <span class="map-indoor-sidebar__category">체육시설</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace7" value="gaebong" class="map-indoor-sidebar__radio" aria-label="개봉역 선택">
+            <label for="indoorPlace7" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--station" aria-hidden="true">역</span>
+              <span class="map-indoor-sidebar__name">개봉역</span>
+              <span class="map-indoor-sidebar__category">교통시설 &gt; 지하철역</span>
+              <span class="map-indoor-sidebar__tag">부산</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace8" value="gaeunpo" class="map-indoor-sidebar__radio" aria-label="개운포역 선택">
+            <label for="indoorPlace8" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--station" aria-hidden="true">역</span>
+              <span class="map-indoor-sidebar__name">개운포역</span>
+              <span class="map-indoor-sidebar__category">교통시설 &gt; 철도역</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace9" value="geoje" class="map-indoor-sidebar__radio" aria-label="거제역 선택">
+            <label for="indoorPlace9" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--station" aria-hidden="true">역</span>
+              <span class="map-indoor-sidebar__name">거제역</span>
+              <span class="map-indoor-sidebar__category">교통시설 &gt; 철도역</span>
+            </label>
+          </li>
+          <li class="map-indoor-sidebar__item">
+            <input type="radio" name="indoorPlace" id="indoorPlace10" value="haemaji" class="map-indoor-sidebar__radio" aria-label="거제해맞이역 선택">
+            <label for="indoorPlace10" class="map-indoor-sidebar__item-inner">
+              <span class="map-indoor-sidebar__icon map-indoor-sidebar__icon--station" aria-hidden="true">역</span>
+              <span class="map-indoor-sidebar__name">거제해맞이역</span>
+              <span class="map-indoor-sidebar__category">교통시설 &gt; 철도역</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <nav class="map-indoor-sidebar__paging map-paging" aria-label="결과 페이지">
+        <button type="button" class="map-paging__prev" aria-label="이전 페이지">이전</button>
+        <span class="map-paging__current">1 / 16</span>
+        <button type="button" class="map-paging__next" aria-label="다음 페이지">다음</button>
+      </nav>
+    </div>
+  </div>
+  <button type="button" class="map-search-sidebar__open" data-target="indoorPanel">열기</button>
+</aside>

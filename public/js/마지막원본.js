@@ -1,0 +1,328 @@
+$(document).ready(function(){
+  
+
+	// gnb
+	$(".gnb > ul > li > a").on("click", function (e){
+		e.preventDefault();
+
+		$(".gnb > ul > li > a").removeClass("active");
+		$(this).addClass("active");
+	});
+	
+	$(".map-toolbar button").on("click", function (e){
+		e.preventDefault();
+		e.stopImmediatePropagation();
+
+		const $this = $(this);
+		const $mapBox = $this.closest('.map-box');
+		const $toolbar = $this.closest('.map-toolbar');
+		const $useAreaSel = $mapBox.find('.usearea-sel');
+
+		// 용도지역 버튼 클릭 시
+		if ($this.hasClass('usearea-btn')) {
+			if ($this.hasClass('active')) {
+				$this.removeClass('active');
+				$useAreaSel.hide();
+			} else {
+				$toolbar.find('button').removeClass('active');
+				$this.addClass('active');
+				$useAreaSel.show();
+			}
+		} else {
+			// 다른 버튼 클릭 시
+			$toolbar.find('button').removeClass('active');
+			$this.addClass('active');
+			$useAreaSel.hide();
+		}
+	});
+
+	// 초기 상태 설정
+	$(".usearea-btn").each(function (){
+		var $mapBox = $(this).closest('.map-box');
+		if(!$(this).hasClass("active")){
+			$mapBox.find(".usearea-sel").hide();
+		} else {
+			$mapBox.find(".usearea-sel").show();
+		}
+	});
+
+	// 용도지역 연도 선택
+	$(".admin-btn").on("click", function(){
+		$(this).toggleClass("active");
+		$(".admin-selbox").toggleClass("active");
+	});
+
+
+	// 용도지역 연도 선택
+	$(".usearea-sel li").on("click", function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	});
+
+	// folding
+	$(".fold-btn").on("click", function(){
+		$(this).toggleClass("active");
+
+		const $foldTit = $(this).parent(".deptit");
+
+		if($(this).hasClass("active")){
+			$foldTit.addClass("active");
+			$foldTit.next("ul").show();
+		}else{
+			$foldTit.removeClass("active");
+			$foldTit.next("ul").hide();
+		}
+	});
+
+	// tbl tr 선택
+	$(".tbl tr").on("click", function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	});
+
+	//select2
+	$('.selectSingle2').select2();
+
+	// tab
+	$(".tab-menu > ul > li > a").click(function(e){
+		e.preventDefault();
+
+		const $menu = $(this).closest(".tab-menu");   // 탭 메뉴
+		const $content = $menu.next(".tab-content");  // 탭 콘텐츠
+		const target = "#" + $(this).data("target"); //  ex) #tab01
+
+		$menu.find("a").removeClass("active");
+		$(this).addClass("active");
+
+		$content.children("div").removeClass("active");
+		$content.children(target).addClass("active");
+
+		// floatThead 초기화된 것만 reflow  - 테이블 제목 고정관련 소스
+		$('.tbl.h-scroll').each(function(){
+			let $thead = $(this);
+			if ($thead.data('floatThead')) {
+				$thead.floatThead('reflow');
+			}
+		});
+
+		$('.tbl.h-scroll').floatThead('reflow');
+	});
+	
+
+	//folding
+	$(".folding > li > .dept1").click(function(e) {
+		e.preventDefault();
+
+		$(this).toggleClass("active");
+	});
+
+	$(".top-menu > .land").click(function(){
+		$(".popover-menu-wrap").toggleClass("active");
+	});
+	
+
+	// 오른쪽 Map maptool active
+	$(".mapset-btn").on("click", function(){
+		$(".mapset-btn").removeClass("active");
+  		$(this).addClass("active");
+
+		$(".maptool-popup").hide();
+		const target = $(this).data("popup");
+		if (target) $("#" + target).show();
+	});
+
+	// Map 버튼별로 툴바 팝업
+	const popupMap = {
+		mapsel: "tp01",    //지도 설정
+		layer: "tp02" ,     //레이어
+	};
+
+	$(".mapset-btn").on("click", function(){
+		let btnClass = $(this).attr("class").split(" ")[1];  // 멀티 클래스 옆에 있는 이름
+		let popupId = popupMap[btnClass];
+
+		if (popupId) {
+			$(".maptool-popup").hide();
+			$("#" + popupId).show();
+		}
+	});
+	
+	// input text reset
+	$(".regiMem").on("input", function() {
+		const $clearBtn = $(this).next(".txtClear");
+
+		if ($(this).val().length > 0) {
+			$clearBtn.show();
+		} else {
+			$clearBtn.hide();
+		}
+	});
+
+	$(".txtClear").on("click", function (e) {
+		e.preventDefault();
+		$(this).prev(".regiMem").val('');
+		$(this).hide(); // 입력 지우면서 버튼도 숨기기
+	});
+
+  //업로드 이력관리
+  $(".uphistory-btn").on("click", function (e){
+      e.preventDefault();
+
+      const $this = $(this);
+      const $historycon = $this.closest('.cont-box').find(".up-history");
+
+      $this.toggleClass("active");
+
+      if($this.hasClass("active")){
+        $historycon.show();
+      }else{
+        $historycon.hide();
+      }
+  });
+
+	
+	$(".allcities-btn").on("click", function (e){
+      e.preventDefault();
+
+      const $this = $(this);
+      const $county = $this.next(".usearea-sel");
+
+      $this.toggleClass("active");
+
+      if($this.hasClass("active")){
+        $county.show();
+      }else{
+        $county.hide();
+      }
+  });
+
+	// 컨텐츠 fold
+	$(".foldcon-btn").on("click", function (e){
+		e.preventDefault();
+
+		const $this = $(this);
+		const $foldContent = $this.closest('.cont-box').find('.fold-cont');
+
+		$this.toggleClass("active");
+		$foldContent.toggle($this.hasClass("active"));
+
+		// 펼쳐질 때 floatThead 재계산 (헤더 사라짐 방지)
+		if ($this.hasClass("active")) {
+			$foldContent.find('.tbl.h-scroll').floatThead('reflow');
+		}
+	});
+
+	// fold 초기화 (첫번째 컨텐츠 보이게)
+	$(".foldcon-btn").each(function(index){
+		if(index === 0){
+			$(this).addClass("active");
+			$(this).closest('.cont-box').find('.fold-cont').show();
+		}
+	});
+
+
+	// file upload preview
+	$(document).on("change", ".fileup-wrap .input-file", function(){
+		var $this = $(this);
+		if (this.files && this.files[0]) {
+			var $label = $this.next("label");
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				$label.css('background-image', 'url(' + e.target.result + ')');
+				$label.css('background-size', 'cover');
+			}
+			reader.readAsDataURL(this.files[0]);
+		}
+	});
+
+	// switch toggle text
+	$(document).on("change", ".switch input", function(){
+		if($(this).is(":checked")){
+			$(this).siblings(".sw-txt").text("활성화");
+		} else {
+			$(this).siblings(".sw-txt").text("비활성화");
+		}
+	});
+
+	// 팝업 닫기 버튼 (지도선택, 레이어, 용도지역 등)
+	$(document).on("click", ".maptool-popup .pop-close-btn, .usearea-sel .pop-close-btn", function() {
+    const $popup = $(this).closest(".maptool-popup, .usearea-sel");
+    $popup.hide();
+
+    if ($popup.hasClass("maptool-popup")) {
+      $(".mapset-btn").removeClass("active");
+    } else if ($popup.hasClass("usearea-sel")){
+      $popup.closest(".map-box").find(".usearea-btn").removeClass("active");
+      $popup.prev(".allcities-btn").removeClass("active");
+    }
+  });
+
+	//테이블 제목 고정 스크롤
+	$('.tbl.h-scroll').each(function(){
+		let $thead = $(this);
+			if ($thead.data('floatThead')){
+				$thead.floatThead('reflow');
+			} else {
+				$thead.floatThead({
+					scrollContainer: function($table){
+						return $table.closest('.tbl-wrap');
+					}
+				});
+			}
+		});
+    
+	});
+
+	
+	
+	function showPopup(popupId) {
+		let $popup = $('#' + popupId);
+		// let popupHeight = $popup.offsetHeight;
+		//let windowHeight = window.innerHeight;
+	
+		if($('.overlay').length === 0){
+			$('body').append('<div class="overlay"></div>');
+		}
+		let $overlay = $('.overlay');
+	
+		$popup.show();
+		$overlay.show();
+	
+		let top = ($(window).height() - $popup.outerHeight()) / 2;
+		let left = ($(window).width() - $popup.outerWidth()) / 2;
+	
+		$popup.css({
+			'top': top + 'px',
+			'left': left + 'px'
+		});
+
+		// 팝업 Z-Index (다중 팝업 시 오버레이 위치 조정)
+		let baseZ = 1000;
+		let maxZ = baseZ;
+
+		// 현재 떠있는 다른 팝업들의 z-index 확인
+		$('.layerpop-wrap:visible').not($popup).each(function(){
+			let z = parseInt($(this).css('z-index')) || baseZ;
+			if(z > maxZ) maxZ = z;
+		});
+
+		// 오버레이를 가장 높은 팝업 위로, 새 팝업을 그 위로 설정
+		$overlay.css('z-index', maxZ + 1);
+		$popup.css('z-index', maxZ + 2);
+	}
+	
+	function closePopup(popupId) {
+		$('#' + popupId).hide();
+		
+		let $visiblePopups = $('.layerpop-wrap:visible');
+		
+		if($visiblePopups.length === 0){
+			$(".overlay").hide();
+		} else {
+			// 아직 열린 팝업이 있다면 오버레이 z-index를 조정하여 남은 팝업 중 최상위 팝업 아래로 이동
+			let maxZ = 0;
+			$visiblePopups.each(function(){
+				let z = parseInt($(this).css('z-index')) || 0;
+				if(z > maxZ) maxZ = z;
+			});
+			$(".overlay").css('z-index', maxZ - 1);
+		}
+	}

@@ -1,0 +1,152 @@
+// 3차원 가시화 레이어 선택
+// 배경지도 선택: 툴바 버튼으로 열기. 2D/3D 탭 + 탭별 옵션 목록 (map-roadview와 동일한 BEM 구조)
+
+.map-basemap {
+	position: absolute;
+	top: 20px;
+	right: 70px;
+	z-index: 15;
+	background: rgba(255, 255, 255, 0.96);
+	border-radius: var(--map-ui-radius);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+	border: 1px solid #eee;
+	padding: 10px 12px;
+	min-width: 160px;
+	transition: opacity 0.2s ease;
+}
+// 툴바에서 열 때만 표시 (data-tool-type 있으면 토글 패널)
+.map-basemap[data-tool-type="basemap"] {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+.map-basemap[data-tool-type="basemap"].is-open {
+	opacity: 1;
+	pointer-events: auto;
+	visibility: visible;
+}
+.map-basemap__tabs {
+	display: flex;
+	gap: 4px;
+	margin-bottom: 10px;
+}
+.map-basemap__tab {
+	display: block;
+	height: 30px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #222;
+	background: #f0f0f0;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	width: 50%;
+	transition: background 0.2s, color 0.2s;
+}
+.map-basemap__tab:hover {
+	background: #e5e5e5;
+	color: #333;
+}
+.map-basemap__tab.is-active {
+	color: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	background:linear-gradient(to right, #7b68ff 0%, #573eff 100%);
+	border-color: #ddd;
+}
+.map-basemap__panels { margin-bottom: 10px; }
+.map-basemap__panel {
+	display: block;
+}
+.map-basemap__panel--hidden {
+	display: none;
+}
+.map-basemap__panel--hidden[aria-hidden="true"] {
+	display: none;
+}
+.map-basemap__options {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	margin-bottom: 10px;
+	padding: 14px 12px;
+	border-radius: 3px;
+	border: 1px solid #e3e4e6;
+
+}
+
+.map-basemap__option {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 14px;
+	color: #333;
+
+}
+
+.map-basemap__label { 
+	position: relative;
+	padding-left: 20px;
+	cursor: pointer;
+	&::before{
+		content: '';
+		display: block;
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		border: 1px solid #e3e4e6;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&::after{
+		content: '';
+		display: block;
+		width: 9px;
+		height: 9px;
+		background: #6c63ff;
+		position: absolute;
+		border-radius: 50%;
+		background: #6c63ff;
+		left: 3px;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+}
+
+.map-basemap__option input[type="radio"]:checked + .map-basemap__label::after{
+	opacity: 1;
+}
+.map-basemap__option input[type="radio"]:checked + .map-basemap__label::before{
+	border-color: #6c63ff;
+}
+
+.map-basemap__vector {
+	display: flex;
+	margin-top: 10px;
+	overflow: hidden;
+	border-radius: 3px;
+	.map-basemap__option{
+		width: 50%;
+		height: 30px;
+	}
+	.map-basemap__label{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		padding-left: 0;
+		width: 100%;
+		height: 100%;
+		background: #f0f0f0;
+		&::before,
+		&::after{
+			display: none;
+		}
+	}
+	input[type="radio"]:checked + .map-basemap__label{
+		color: #fff;
+		background-color: #6c63ff;
+	}
+}
