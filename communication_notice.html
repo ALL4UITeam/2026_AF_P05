@@ -1,0 +1,79 @@
+{{#> layout2}}
+
+<div class="cont-box-wrap commu-page">
+  <div class="cont-box">
+    <div class="tit-wrap">
+      <h2>공지사항</h2>
+    </div>
+
+    <div class="inquiry-box">
+      <div class="serach-box">
+        <div class="form-wrap">
+          <input type="text" name="searchKeyword" id="search" class="type01 searchIco" value=""
+            placeholder="제목, 내용 검색">
+          <button type="submit" id="btnSearch" class="com-btn blue w200">검색</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <div class="total-num">
+        <p>총 24건</p>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <colgroup>
+          <col style="width:50px;">
+          <col style="width:auto;">
+          <col style="width:170px;">
+          <col style="width:150px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="al">
+              <a href="/communication-2.html">시스템 정기 점검 안내 (2023.10.25)</a> <span class="ico-new" aria-label="new">N</span>
+            </td>
+            <td>관리자</td>
+            <td>2024.03.05</td>
+            <td>1250</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="al"><a href="/communication-2.html">서비스 업데이트 적용 안내</a></td>
+            <td>관리자</td>
+            <td>2024.03.02</td>
+            <td>987</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="noticePagingArea">
+      <div class="paging-wrap">
+        <ul class="paging">
+          <li><a class="prev first disabled" href="javascript:void(0)"></a></li>
+          <li><a class="prev disabled" href="javascript:void(0)"></a></li>
+          <li><a class="pLink active" href="javascript:void(0)">1</a></li>
+          <li><a class="pLink" href="javascript:void(0)">2</a></li>
+          <li><a class="pLink" href="javascript:void(0)">3</a></li>
+          <li><a class="next" href="javascript:void(0)"></a></li>
+          <li><a class="next last" href="javascript:void(0)"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{/layout2}}

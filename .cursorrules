@@ -1,14 +1,57 @@
-# 프로젝트 규칙
+You are a professional UI publisher working on a maintenance project.
+
+# 🔒 Core Principles (최우선)
+- The highest priority is to preserve the existing structure.
+- Do NOT refactor, redesign, or restructure existing code.
+- Do NOT rename classes, IDs, or file structures.
+- Do NOT remove existing code unless explicitly instructed.
+
+# 📁 프로젝트 규칙
 - Vite 기반의 순수 HTML/JS/SCSS 프로젝트. (No React, No Vue, No Tailwind)
 - 기존 자산(/css, /font, /images, /js)은 `public/`에 보관하며, 수정하지 않고 그대로 배포.
 - 제공된 HTML 구조를 `src/partials/layout.html`로 사용하여 공통 레이아웃 구성.
 - 각 페이지의 내용은 `<div class="content">` 내부에 삽입함.
 
-# 스타일링 및 명명 규칙
+# 🎨 스타일링 및 명명 규칙
 - 새로운 스타일은 SCSS로 작성하며 `src/scss/`에 저장.
 - 클래스 충돌 방지를 위해 모든 신규 스타일은 `.vibe-container`로 래핑하여 스코프를 지정함.
-- 파일 위치를 항상 명시하고 간결하게 설명할 것.
+- 기존 클래스는 수정하지 않고 확장 방식으로 작업.
 
-# 페이지 구성
+# 🌈 브랜드 컬러 규칙
+- Each menu or brand may use different brand colors.
+- Never apply brand-specific colors globally.
+- Do not modify shared/common color rules in a way that affects other menus.
+- Brand colors must be scoped only to the relevant page or container.
+- Always prevent style leakage to other menus or sections.
+- When applying new colors, use isolated selectors under the relevant wrapper only.
+
+# 📄 페이지 구성
 - 페이지별 독립적인 HTML 파일 생성 (map-leaf.html, map-tool.html).
 - `vite-plugin-handlebars`를 사용하여 공통 레이아웃 시스템 구현.
+
+# ⚙️ Modification Rules
+- Only modify the minimum necessary parts.
+- Add code instead of changing existing code whenever possible.
+- Ensure backward compatibility at all times.
+
+# 💻 Code Style
+- Follow the existing project’s coding style exactly.
+- Do not introduce new patterns or frameworks.
+
+# 🧩 CSS Rules
+- Do not modify existing class names.
+- Prefer adding new classes instead of editing existing ones.
+- Avoid affecting global styles.
+- Do not edit shared styles unless absolutely necessary.
+- Use page-level or section-level scoping for all new styles.
+
+# ⚡ JavaScript Rules
+- Do not rewrite existing logic.
+- Extend functionality carefully without side effects.
+
+# 📢 Output Rules
+- Always explain what was changed and why.
+- Highlight any potential impact.
+- Always mention the file path being modified.
+
+- Answer in Korean.

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property active">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<!-- gnb -->
+			<div class="gnb-wrap">
+				<div class="gnb">
+					<ul>
+						<li>
+							<a href="#" class="m01"></a><span>대쉬보드</span> <!-- active -->
+						</li>
+						<li>
+							<a href="#" class="m02"></a><span>됴유지현황</span>
+						</li>
+						<li>
+							<a href="#" class="m03"></a><span>분석결과</span>
+						</li>
+						<li>
+							<a href="#" class="m04"></a><span>실태조사</span>
+						</li>
+						<li>
+							<a href="#" class="m05"></a><span>제외지</span>
+						</li>
+						<li>
+							<a href="#" class="m06"></a><span>통계</span>
+						</li>
+					</ul>
+				</div>
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+			</div>
+			<!-- gnb -->
+
+			<div class="content">
+				<!-- 왼쪽 컨텐츠 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap">
+							<h2>실태조사 대상 목록</h2>
+
+							<div class="form-group">
+								<p>조건 초기화</p>
+
+								<button type="button" name="" id="" class="reset-btn">
+									<i class="ico-reflash" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
+
+						<!-- 조회 영역 -->
+						<div class="inquiry-box">
+							<!-- 검색 -->
+							<div class="serach-box">
+								<div class="form-wrap">
+									<input type="text" name="" id="search" class="type01 searchIco" placeholder="지번,도로명,재산번호 검색" required="true">
+
+									<button type="button" name="" id="" class="com-btn blue w200">검색</button>
+								</div>
+							</div>
+							<!-- 검색 -->
+
+							<div class="submit-grid col4 w100per">
+								<select name="" id="" class="type02">
+									<option>시군 전체 선택</option>
+									<option>시군</option>
+									<option>시군</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>읍면동 선택</option>
+									<option>읍면동</option>
+									<option>읍면동</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>리 전체</option>
+									<option>리</option>
+									<option>리</option>
+								</select>
+
+								<!-- select2-->
+								<select class="selectSingle2" name="state">
+									<option value="AL">재산관리관1</option>
+										...
+									<option value="WY">재산관리관2</option>
+								</select>
+								<!-- select2-->
+
+								<select name="" id="" class="type02">
+									<option>지목 전체</option>
+									<option>지목</option>
+									<option>지목</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>탐지항목 전체</option>
+									<option>탐지항목</option>
+									<option>탐지항목</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>조사결과 전체</option>
+									<option>조사결과</option>
+									<option>조사결과</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>조사서 전체</option>
+									<option>조사서</option>
+									<option>조사서</option>
+								</select>  
+							</div>
+						</div>
+						<!-- 조회 영역 -->
+
+						<!-- 건수 -->
+						<div class="form-wrap">
+							<div class="total-num">
+								<p>총 0건</p>
+							</div>
+
+							<div class="btn-group">
+								<button type="button" name="" id="" class="com-btn green" disabled><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+							</div>
+						</div>
+						<!-- 건수 -->
+
+						<!-- nodata -->
+						<div class="nodata-wrap type02">
+							<div class="nodata">
+								<i class="ico-nodata" aria-hidden="true"></i>
+								<p>검색 결과가 없습니다</p>
+							</div>
+						</div>
+						<!-- nodata -->
+					</div>
+
+					<!-- paging -->
+					<div class="paging-wrap">
+						<ul class="paging">
+							<li><a class="prev first" href="#"></a></li>
+							<li><a class="prev" href="#"></a></li>
+							<li><a class="pLink" href="#">1</a></li>
+							<!-- <li><a class="pLink" href="#">2</a></li>
+							<li><a class="pLink" href="#">3</a></li>
+							<li><a class="pLink" href="#">4</a></li>
+							<li><a class="pLink" href="#">5</a></li>
+							<li><a class="pLink active" href="#">6</a></li>
+							<li><a class="pLink" href="#">7</a></li>
+							<li><a class="pLink" href="#">8</a></li>
+							<li><a class="pLink" href="#">9</a></li>
+							<li><a class="pLink" href="#">10</a></li> -->
+							<li><a class="next" href="#"></a></li>
+							<li><a class="next last" href="#"></a></li>
+						</ul>
+					</div>
+					<!-- paging -->
+				</div>
+				<!-- 왼쪽 컨텐츠 -->
+
+				<!-- 오른쪽 컨텐츠 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box type02">
+						<!-- 상단 버튼영역 -->
+						<div class="btn-top-wrap">
+							<!-- <button type="button" name="" id="" class="com-btn grayblue">지도 보기</button>
+							<button type="button" name="" id="" class="com-btn red"><i class="ico-ppt" aria-hidden="true"></i>다운로드</button> -->
+						</div>
+						<!-- 상단 버튼영역 -->
+						 
+						<!-- 컨텐츠 시작 -->
+						<div class="content">
+							<!-- nodata -->
+							<div class="nodata-wrap">
+								<div class="nodata">
+									<i class="ico-nodata" aria-hidden="true"></i>
+									<p>조회 할 항목을 선택해 주세요.</p>
+								</div>
+							</div>
+							<!-- nodata -->
+
+							
+						</div>
+						<!-- 컨텐츠 끝 -->
+
+						<div class="footer-area">
+							<!-- <button type="button" name="" id="" class="com-btn grayblue w260">제외지해제</button>
+							<button type="button" name="" id="" class="com-btn blue w260" onclick="showPopup('popup1')">제외사유수정</button> -->
+						</div>
+					</div>
+				</div>
+				<!-- 오른쪽 컨텐츠 -->
+			</div>
+		</div>
+		<!-- content -->		
+	</div>
+
+	<!-- layerpop-wrap 제외사유 수정 -->
+	<div class="layerpop-wrap w564" id="popup1" style="display:none;">
+		<header>
+			<h3>제외사유 수정</h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- tbl -->
+			<table class="tbl view">
+				<colgroup>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>
+							<div class="no-line">
+								<fieldset class="ra-group">
+									<legend>제외사유 선택</legend>
+
+									<div class="ra-list type02">
+										<div class="ra-item">
+											<input type="radio" name="exception" id="exception01" value="" checked="">
+											<label for="exception01">대부중</label>
+										</div>
+
+										<div class="ra-item">
+											<input type="radio" name="exception" id="exception02" value="">
+											<label for="exception02">소유자변경</label>
+										</div>
+
+										<div class="ra-item">
+											<input type="radio" name="exception" id="exception03" value="">
+											<label for="exception03">탐지오류</label>
+										</div>
+
+										<div class="ra-item">
+											<input type="radio" name="exception" id="exception04" value="">
+											<label for="exception04">기타 (직접입력)</label>
+										</div>
+									</div>
+								</fieldset>
+
+								<textarea name="" id="" class="type01" placeholder="내용을 입력해주세요."></textarea>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- tbl -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue" onclick="closePopup('popup2')">취소</button>
+				<button type="button" name="" id="" class="com-btn xl blue">등록</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 제외사유 수정 -->
+</body>
+</html>

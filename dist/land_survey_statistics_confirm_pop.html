@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<!-- <link href="css/select2.min.css" rel="stylesheet" /> -->
+<script src="js/lib/jquery-3.7.1.js"></script>
+<!-- <script src="js/lib/select2.min.js"></script> -->
+<script src="js/lib/jquery.floatThead.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 확정처리건수 통계 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1445" id="popup1" style="display:block; height:790px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>확정처리건수 통계 <span>2013 ~ 2025년 접수 총계 : 705건</span></h3>		
+			
+			<div class="btn-group">
+				<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+				<button type="button" name="" id="" class="com-btn mint"><i class="ico-img" aria-hidden="true"></i>다운로드</button>
+			</div>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<div class="job-statist">
+				<div class="job-graph">
+					<h3>그래프</h3>
+
+					<!-- graph -->
+					<div class="graph-wrap type02">
+						<div class="graph-area mb20">
+							<div class="graph">
+								<h4>연도별 접수 현황 <span>(※ 좌우 이중 Y축 적용)</span></h4>
+
+								<div style="width:654px; height:200px; margin:0 auto 10px;">
+									<canvas id="chart1"></canvas>
+								</div>
+							</div>
+
+							<!-- legend -->
+							<div class="legend type02">
+								<div>
+									<span class="dot st01"></span>
+									<p>합계</p>
+								</div>
+
+								<div>
+									<span class="dot st02"></span>
+									<p>전년도 이월</p>
+								</div>
+
+								<div>
+									<span class="dot st03"></span>
+									<p>신규접수</p>
+								</div>
+							</div>
+							<!-- legend -->
+
+							<div class="graph">
+								<h4>연도별 처리 현황 <span>(※ 좌우 이중 Y축 적용)</span></h4>
+
+								<div style="width:654px; height:200px; margin:0 auto;">
+									<canvas id="chart2"></canvas>
+								</div>
+							</div>
+						</div>
+
+						<div class="legend type03">
+							<div>
+								<span class="dot st04"></span>
+								<p>소계</p>
+							</div>
+
+							<div>
+								<span class="dot st05"></span>
+								<p>완료</p>
+							</div>
+
+							<div>
+								<span class="dot st06"></span>
+								<p>해지</p>
+							</div>
+
+							<div>
+								<span class="dot st07"></span>
+								<p>이월</p>
+							</div>
+						</div>
+					</div>
+					<!-- graph -->
+				</div>
+
+				<div class="job-tbl">
+					<h3>표</h3>
+
+					<!-- tbl -->
+					<div class="tbl-wrap scroll mh570">
+						<table class="tbl h-scroll">
+							<colgroup>
+								<col style="width:11%;">
+								<col style="width:10%;">
+								<col style="width:11%;">								
+								<col style="width:11%;">
+								<col style="width:12%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2">구분</th>
+									<th scope="col" colspan="3">접수</th>
+									<th scope="col" colspan="4">처리</th>
+									<th scope="col" rowspan="2">비고</th>
+								</tr>
+								<tr>
+									<th scope="col">합계</th>
+									<th scope="col">전년도이월</th>
+									<th scope="col">신규접수</th>
+									<th scope="col">소계</th>
+									<th scope="col">완료</th>
+									<th scope="col">해지</th>
+									<th scope="col">이월</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2013년</td>
+									<td>123</td>
+									<td>34</td>
+									<td>888</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2014년</td>
+									<td>123</td>
+									<td>34</td>
+									<td>888</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2015년</td>
+									<td>123</td>
+									<td>34</td>
+									<td>888</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2015년</td>
+									<td>12</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>233</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2016년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2017년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2018년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2019년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2020년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2021년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2022년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2023년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2024년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2025년</td>
+									<td>65</td>
+									<td>34</td>
+									<td>8</td>
+									<td>69</td>
+									<td>67</td>
+									<td>2553</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- tbl -->
+				</div>
+			</div>
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl orange">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 확정처리건수 통계 -->
+
+	<div class="overlay"></div>
+	
+	<script src="js/lib/chart.js"></script>
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script>
+
+	<script>
+		const labels = ["2013년","2014년","2015년","2016년","2017년","2018년","2019년","2020년","2021년"];
+
+		const topRound = {
+			borderRadius: { topLeft: 8, topRight: 8, bottomLeft: 0, bottomRight: 0 },
+			borderSkipped: "bottom",
+		};
+
+		// chart1 
+		new Chart(document.getElementById("chart1"), {
+			type: "bar",
+			data: {
+				labels,
+				datasets: [
+				{ label:"A", data:[100,54,76,54,96,81,79,79,91], yAxisID:"yLeft",  backgroundColor:"#F06800", ...topRound },
+				{ label:"B", data:[86,56,57,69,67,79,56,58,71],  yAxisID:"yLeft",  backgroundColor:"#A55831", ...topRound },
+				{ label:"C", data:[34,18,39,4,48,21,42,40,40],   yAxisID:"yRight", backgroundColor:"#D0A542", ...topRound },
+				]
+			},
+			options: getOption({
+				leftColor:"#F06800",
+				leftTitle:"합계",
+				yLeftMin: 20, yLeftMax: 100, yLeftStep: 20,
+				yRightMin: 0, yRightMax: 80, yRightStep: 20,
+				// chart1은 기본 느낌
+				categoryPercentage: 0.7,
+				barPercentage: 0.9
+			})
+		});
+
+	// chart2
+	// barThickness(고정) 쓰지 말고, maxBarThickness(9) + barPercentage로 간격 만들기
+	new Chart(document.getElementById("chart2"), {
+	type: "bar",
+	data: {
+		labels,
+		datasets: [
+		{
+			label:"보라1",
+			data:[70,15,32,7,96,80,77,77,89],
+			yAxisID:"yLeft",
+			backgroundColor:"#6B5CCF",
+			maxBarThickness: 9,
+			...topRound
+		},
+		{
+			label:"보라2",
+			data:[83,18,35,5,42,48,45,27,26],
+			yAxisID:"yLeft",
+			backgroundColor:"#8E63C6",
+			maxBarThickness: 9,
+			...topRound
+		},
+		{
+			label:"보라3",
+			data:[5, null, 8, 3, 41, 49, 46, 26, 25], // 예시: 없는 해는 null
+			yAxisID:"yLeft",
+			backgroundColor:"#B985E6",
+			maxBarThickness: 9,
+			...topRound
+		},
+		{
+			label:"회색",
+			data:[2,0,6,3,72,44,46,62,83],
+			yAxisID:"yRight",
+			backgroundColor:"#6F6F6F",
+			maxBarThickness: 9,
+			...topRound
+		}
+		]
+	},
+	options: getOption({
+		leftColor:"#6B5CCF",
+		leftTitle:"소계",
+		yLeftMin: 0, yLeftMax: 100, yLeftStep: 25,   // 캡쳐처럼 0/25/50/75/100
+		yRightMin: 0, yRightMax: 80, yRightStep: 20,
+
+		// ategoryPercentage: 그룹(연도) 안에서 막대들이 차지하는 폭
+		categoryPercentage: 1.65,
+		// barPercentage: 같은 그룹 안에서 각 막대 폭 비율 (여기를 줄이면 막대끼리 떨어져 보임)
+		barPercentage: 0.55
+	})
+});
+
+
+// ================= 공통 옵션 =================
+function getOption({
+  leftColor, leftTitle,
+  yLeftMin, yLeftMax, yLeftStep,
+  yRightMin, yRightMax, yRightStep,
+  categoryPercentage, barPercentage
+}) {
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false }
+    },
+    datasets: {
+      bar: {
+        categoryPercentage,
+        barPercentage
+      }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: { color: "#666", font: { size: 10 } }
+      },
+      yLeft: {
+        position: "left",
+        min: yLeftMin,
+        max: yLeftMax,
+        ticks: {
+          stepSize: yLeftStep,
+          color: leftColor,
+          font: { size: 10 }
+        },
+        title: {
+          display: true,
+          text: leftTitle,
+          color: leftColor,
+          font: { size: 9 }
+        },
+        grid: {
+          color: "#EAEAEA",
+          borderDash: [3, 4]
+        }
+      },
+      yRight: {
+        position: "right",
+        min: yRightMin,
+        max: yRightMax,
+        ticks: {
+          stepSize: yRightStep,
+          color: "#777",
+          font: { size: 10 }
+        },
+        title: {
+          display: true,
+          text: "이월/신규",
+          color: "#777",
+          font: { size: 9 }
+        },
+        grid: { drawOnChartArea: false }
+      }
+    }
+  };
+}
+</script>
+
+<!-- display:none → show 렌더 타이밍 이슈로 floatThead 공통 초기화가 적용되지 않아 레이어팝업에서 테이블 헤더 고정이 안되는 현상 발생 -->
+<script>
+	$(function(){
+	const $table = $('#popup1 .tbl-wrap.scroll table.tbl.h-scroll');
+
+	if (typeof $.fn.floatThead !== 'function') {
+		console.error('floatThead not loaded. check js/lib/jquery.floatThead.min.js');
+		return;
+	}
+
+	$table.floatThead({
+		scrollContainer: function($t){
+		return $t.closest('.tbl-wrap.scroll'); 
+		},
+		position: 'absolute' 
+	});
+
+	setTimeout(function(){
+		$table.floatThead('reflow');
+	}, 0);
+
+	$(window).on('resize', function(){
+		$table.floatThead('reflow');
+	});
+});
+</script>
+
+</body>
+</html>

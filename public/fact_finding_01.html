@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property active">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<!-- gnb -->
+			<div class="gnb-wrap">
+				<div class="gnb">
+					<ul>
+						<li>
+							<a href="#" class="m01"></a><span>대쉬보드</span> <!-- active -->
+						</li>
+						<li>
+							<a href="#" class="m02"></a><span>됴유지현황</span>
+						</li>
+						<li>
+							<a href="#" class="m03"></a><span>분석결과</span>
+						</li>
+						<li>
+							<a href="#" class="m04"></a><span>실태조사</span>
+						</li>
+						<li>
+							<a href="#" class="m05"></a><span>제외지</span>
+						</li>
+						<li>
+							<a href="#" class="m06"></a><span>통계</span>
+						</li>
+					</ul>
+				</div>
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+			</div>
+			<!-- gnb -->
+
+			<div class="content">
+				<!-- 왼쪽 컨텐츠 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap">
+							<h2>실태조사 대상 목록</h2>
+
+							<div class="form-group">
+								<p>조건 초기화</p>
+
+								<button type="button" name="" id="" class="reset-btn">
+									<i class="ico-reflash" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
+
+						<!-- 조회 영역 -->
+						<div class="inquiry-box">
+							<!-- 검색 -->
+							<div class="serach-box">
+								<div class="form-wrap">
+									<input type="text" name="" id="search" class="type01 searchIco" placeholder="지번,도로명,재산번호 검색" required="true">
+
+									<button type="button" name="" id="" class="com-btn blue w200">검색</button>
+								</div>
+							</div>
+							<!-- 검색 -->
+
+							<div class="submit-grid col4 w100per">
+								<select name="" id="" class="type02">
+									<option>시군 전체 선택</option>
+									<option>시군</option>
+									<option>시군</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>읍면동 선택</option>
+									<option>읍면동</option>
+									<option>읍면동</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>리 전체</option>
+									<option>리</option>
+									<option>리</option>
+								</select>
+
+								<!-- select2-->
+								<select class="selectSingle2" name="state">
+									<option value="AL">재산관리관1</option>
+										...
+									<option value="WY">재산관리관2</option>
+								</select>
+								<!-- select2-->
+
+								<select name="" id="" class="type02">
+									<option>지목 전체</option>
+									<option>지목</option>
+									<option>지목</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>탐지항목 전체</option>
+									<option>탐지항목</option>
+									<option>탐지항목</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>조사결과 전체</option>
+									<option>조사결과</option>
+									<option>조사결과</option>
+								</select>
+
+								<select name="" id="" class="type02">
+									<option>조사서 전체</option>
+									<option>조사서</option>
+									<option>조사서</option>
+								</select>  
+							</div>
+						</div>
+						<!-- 조회 영역 -->
+
+						<!-- 건수 -->
+						<div class="form-wrap">
+							<div class="total-num">
+								<p>총 12,084건</p>
+							</div>
+
+							<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+						</div>
+						<!-- 건수 -->
+
+						<!-- tbl -->
+						<div class="tbl-wrap">
+							<table class="tbl">
+								<colgroup>
+									<col style="width:6%;">
+									<col>
+									<col style="width:12%;">
+									<col style="width:20%;">
+									<col style="width:8%;">
+									<col style="width:8%;">
+									<col style="width:12%;">
+									<col style="width:8%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순번</th>
+										<th scope="col">소재지</th>
+										<th scope="col">재산번호</th>
+										<th scope="col">재산관리관</th>
+										<th scope="col">지목</th> 
+										<th scope="col">탐지항목</th>
+										<th scope="col">조사결과</th>
+										<th scope="col">조사서</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>도로</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color03 fb">미등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color03 fb">미등록</span>
+										</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+									<tr>
+										<td>11</td>
+										<td>운문면 마일리 1577-1</td>
+										<td>1515151515</td>
+										<td>기후환경국 수자원관리과</td>
+										<td>전</td>
+										<td>논/밭</td>
+										<td>무단점유지</td>
+										<td>
+											<span class="p-color02 fb">등록</span> 
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- tbl -->
+					</div>
+
+					<!-- paging -->
+					<div class="paging-wrap">
+						<ul class="paging">
+							<li><a class="prev first" href="#"></a></li>
+							<li><a class="prev" href="#"></a></li>
+							<li><a class="pLink" href="#">1</a></li>
+							<li><a class="pLink" href="#">2</a></li>
+							<li><a class="pLink" href="#">3</a></li>
+							<li><a class="pLink" href="#">4</a></li>
+							<li><a class="pLink" href="#">5</a></li>
+							<li><a class="pLink active" href="#">6</a></li>
+							<li><a class="pLink" href="#">7</a></li>
+							<li><a class="pLink" href="#">8</a></li>
+							<li><a class="pLink" href="#">9</a></li>
+							<li><a class="pLink" href="#">10</a></li>
+							<li><a class="next" href="#"></a></li>
+							<li><a class="next last" href="#"></a></li>
+						</ul>
+					</div>
+					<!-- paging -->
+
+					<!-- 과거 이력 조회 -->
+					<div class="history-view" style="display:none">
+						<header>
+							<h2>과거 이력 조회</h2>
+
+							<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기" onclick="">
+								<i class="ico-close" aria-hidden="true"></i>
+							</button>
+						</header>
+
+						<div class="content">
+							<!-- 건수 -->
+							<div class="form-wrap">
+								<div class="total-num">
+									<p>총 12,084건</p>
+								</div>
+							</div>
+							<!-- 건수 -->
+
+							<!-- tbl -->
+							<div class="tbl-wrap">
+								<table class="tbl">
+									<colgroup>
+										<col style="width:10%;">
+										<col style="width:20%;">
+										<col>
+										<col style="width:17%;">
+										<col style="width:12%;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">순번</th>
+											<th scope="col">등록일자</th>
+											<th scope="col">작성자 소속</th>
+											<th scope="col">작성자 성명</th>
+											<th scope="col">조사서</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>9</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>11</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>12</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>13</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>14</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+										<tr>
+											<td>15</td>
+											<td>2026-05-08</td>
+											<td>기후환경국 수자원관리과</td>
+											<td>홍길동</td>
+											<td>
+												<button type="button" name="" id="" class="com-btn gray sm rd w130">조사서 조회</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- tbl -->
+						</div>
+						
+						<!-- paging -->
+						<div class="paging-wrap">
+							<ul class="paging">
+								<li><a class="prev first" href="#"></a></li>
+								<li><a class="prev" href="#"></a></li>
+								<li><a class="pLink" href="#">1</a></li>
+								<li><a class="pLink" href="#">2</a></li>
+								<li><a class="pLink" href="#">3</a></li>
+								<li><a class="pLink" href="#">4</a></li>
+								<li><a class="pLink" href="#">5</a></li>
+								<li><a class="pLink active" href="#">6</a></li>
+								<li><a class="pLink" href="#">7</a></li>
+								<li><a class="pLink" href="#">8</a></li>
+								<li><a class="pLink" href="#">9</a></li>
+								<li><a class="pLink" href="#">10</a></li>
+								<li><a class="next" href="#"></a></li>
+								<li><a class="next last" href="#"></a></li>
+							</ul>
+						</div>
+						<!-- paging -->
+					</div>
+					<!-- 과거 이력 조회 -->
+				</div>
+				<!-- 왼쪽 컨텐츠 -->
+
+				<!-- 오른쪽 컨텐츠 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box type02">
+						<!-- 상단 버튼영역 -->
+						<div class="btn-top-wrap">
+							<button type="button" name="" id="" class="com-btn grayblue">과거이력 조회</button>
+							<button type="button" name="" id="" class="com-btn grayblue">지도 보기</button>
+							<button type="button" name="" id="" class="com-btn red"><i class="ico-ppt" aria-hidden="true"></i>다운로드</button>
+						</div>
+						<!-- 상단 버튼영역 -->
+						 
+						<!-- 지도 보기 -->
+						<div class="mapview-wrap" style="display:block;">
+							<!-- map button-->
+							<div class="right-map-tool">
+								<div class="m-group">
+									<button type="button" name="" id="" class="mapset-btn mapsel"><span>지도선택</span></button>
+									<button type="button" name="" id="" class="mapset-btn layer"><span>레어어</span></button>
+								</div>
+
+								<div class="m-group">
+									<button type="button" name="" id="" class="mapset-btn distance"><span>거리</span></button>
+									<button type="button" name="" id="" class="mapset-btn area"><span>면적</span></button>
+									<button type="button" name="" id="" class="mapset-btn output"><span>출력</span></button>
+								</div>
+
+								<!-- size -->
+								<div class="size-control">
+									<button type="button" name="" id="" class="mapset-btn zoomin"></button>
+
+									<div class="size-box">
+										<div class="bar-bg">
+											<!-- bar -->
+											<div class="bar" style="height:50%;">
+												<button type="button" name="" id="" class="dot"></button>
+											</div>
+											<!-- bar -->
+										</div>
+									</div>
+
+									<button type="button" name="" id="" class="mapset-btn zoomout"></button>
+								</div>
+								<!-- size -->
+							</div>
+							<!-- map button-->
+
+							<!-- maptool popup 지도 선택 -->
+							<div class="maptool-popup" id="tp01">
+								<header>
+									<h3>지도 선택</h3>
+
+									<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기" onclick="$('#tp01').hide();">
+										<i class="ico-close" aria-hidden="true"></i>
+									</button>
+								</header>
+			
+								<!-- pop-con 컨텐츠 시작 -->
+								<div class="pop-con">
+									<!-- 지도 선택 -->
+									<ul class="map-type-sel type02">
+										<li>
+											<label for="chk01" class="chkbox">
+												<input type="checkbox" name="" id="chk01">
+												<span class="chkOn"></span>
+												<span class="txt">일반지도</span>
+											</label>
+										</li>
+										<li>
+											<label for="chk02" class="chkbox">
+												<input type="checkbox" name="" id="chk02">
+												<span class="chkOn"></span>
+												<span class="txt">위성지도</span>
+											</label>
+										</li>
+									</ul>
+									<!-- 지도 선택 -->
+								</div>
+								<!-- pop-con 컨텐츠 끝 -->
+							</div>
+							<!-- maptool popup 지도 선택 -->
+
+							<!-- maptool popup 레이어 -->
+							<div class="maptool-popup" id="tp02">
+								<header>
+									<h3>레이어</h3>
+
+									<div class="btn-group">
+										<button type="button" name="" id="" class="reset-btn">초기화</button>
+
+										<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기">
+											<i class="ico-close" aria-hidden="true"></i>
+										</button>
+									</div>
+								</header>
+			
+								<!-- pop-con 컨텐츠 시작 -->
+								<div class="pop-con">
+									<ul class="folding">
+										<li>
+											<a href="#" class="dept1 active">
+												<label for="chkA01" class="chkbox" onclick="event.stopPropagation()">
+													<input type="checkbox" name="" id="chkA01">
+													<span class="chkOn"></span>
+													<span class="txt">레이어 그룹</span>
+												</label>
+											</a>
+
+											<!-- 지도 선택 -->
+											<ul class="map-type-sel">
+												<li>
+													<label for="chk11" class="chkbox">
+														<input type="checkbox" name="" id="chk11">
+														<span class="chkOn"></span>
+														<span class="txt">레이어1</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk12" class="chkbox">
+														<input type="checkbox" name="" id="chk12">
+														<span class="chkOn"></span>
+														<span class="txt">레이어2</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk13" class="chkbox">
+														<input type="checkbox" name="" id="chk13">
+														<span class="chkOn"></span>
+														<span class="txt">레이어3</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk14" class="chkbox">
+														<input type="checkbox" name="" id="chk14">
+														<span class="chkOn"></span>
+														<span class="txt">레이어4</span>
+													</label>
+												</li>
+											</ul>
+											<!-- 지도 선택 -->
+										</li>
+										<li>
+											<a href="#" class="dept1">
+												<label for="chkA21" class="chkbox" onclick="event.stopPropagation()">
+													<input type="checkbox" name="" id="chkA21">
+													<span class="chkOn"></span>
+													<span class="txt">레이어 그룹</span>
+												</label>
+											</a>
+
+											<!-- 지도 선택 -->
+											<ul class="map-type-sel">
+												<li>
+													<label for="chk21" class="chkbox">
+														<input type="checkbox" name="" id="chk21">
+														<span class="chkOn"></span>
+														<span class="txt">레이어1</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk22" class="chkbox">
+														<input type="checkbox" name="" id="chk22">
+														<span class="chkOn"></span>
+														<span class="txt">레이어2</span>
+													</label>
+												</li>
+											</ul>
+											<!-- 지도 선택 -->
+										</li>
+									</ul>
+								</div>
+								<!-- pop-con 컨텐츠 끝 -->
+							</div>
+							<!-- maptool popup 지도 선택 -->
+
+							<div class="map">
+								<img src="images/temp/map_05.png">
+							</div>
+						</div>
+						<!-- 지도 보기 -->
+
+						<!-- 컨텐츠 시작 -->
+						<div class="content">
+							<h2>공유재산 실태조사서</h2>
+
+							<!-- 실태조사 결과 -->
+							<div class="form-wrap">
+								<h4>실태조사 결과 <span class="essen">*</span></h4>
+
+								<p><span class="essen">*</span> 표시는 필수 입력</p>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:130px;">
+									<col>
+									<col style="width:130px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>
+											<label for="">건축/공사명</label>
+										</th>
+										<td colspan="3">
+											<div class="con">
+												<fieldset class="ra-group">
+													<legend>제외사유 선택</legend>
+
+													<div class="ra-list">
+														<div class="ra-item">
+															<input type="radio" name="exception" id="exception01" value="" checked="">
+															<label for="exception01">무단점유지</label>
+														</div>
+
+														<div class="ra-item">
+															<input type="radio" name="exception" id="exception02" value="">
+															<label for="exception02">제외지</label>
+														</div>
+
+														<span>(</span>
+														<div class="ra-item">
+															<input type="radio" name="exception" id="exception03" value="">
+															<label for="exception03">대부중</label>
+														</div>
+
+														<div class="ra-item">
+															<input type="radio" name="exception" id="exception04" value="">
+															<label for="exception04">소유자변경</label>
+														</div>
+
+														<div class="ra-item">
+															<input type="radio" name="exception" id="exception05" value="">
+															<label for="exception05">탐지오류</label>
+														</div>
+
+														<div class="ra-item">
+															<input type="radio" name="exception" id="exception06" value="">
+															<label for="exception06">기타</label>
+														</div>
+														<span>)</span>
+													</div>
+												</fieldset>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><label for="">제외 사유 상세</label></th>
+										<td colspan="3">
+											<input type="text" name="" id="" class="type02" value="-" disabled>
+										</td>
+									</tr>
+									<tr>
+										<th>등록여부</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02 fb p-color02" value="등록" disabled>
+										</td>
+										<th>등록일자</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02 nord" value="2024-01-01" disabled>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 실태조사 결과 -->
+
+							<!-- 재산의 표시 -->
+							<div class="form-wrap">
+								<h4>재산의 표시 <span class="essen">*</span></h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:96px;">
+									<col>
+									<col style="width:96px;">
+									<col>
+									<col style="width:96px;">
+									<col style="width:97px;">
+									<col style="width:96px;">
+									<col style="width:97px;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>
+											<label for="">소재지</label>
+										</th>
+										<td colspan="3">
+											<input type="text" name="" id="" class="type02" value="경주시 강동면 국담리 1234-1" disabled>
+										</td>
+										<th>
+											<label for="">공부지목</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="전" disabled>
+										</td>
+										<th>
+											<label for="">공부면적</label>
+										</th>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="103" disabled>
+												<span class="unit">㎡</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><label for="">공유여부</label></th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th><label for="">공유재분율</label></th>
+										<td>
+											<div class="con">
+												<div class="form">
+													<input type="text" name="" id="" class="type02" value="100">
+													<span class="unit">%</span>
+												</div>
+											</div>
+										</td>
+										<th><label for="">현황지목</label></th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th><label for="">실면적</label></th>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="103" disabled>
+												<span class="unit">㎡</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>공시지가</th>
+										<td colspan="3">
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,777,333" disabled>
+												<span class="unit">원</span>
+											</div>
+										</td>
+										<th>추정가격</th>
+										<td colspan="3">
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,777,333" disabled>
+												<span class="unit">원</span>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 재산의 표시 -->
+
+							<!-- 관리형태 -->
+							<div class="form-wrap">
+								<h4>관리형태 <span class="essen">*</span></h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:130px;">
+									<col style="width:150px;">
+									<col style="width:130px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>재산번호</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="12345678" disabled>
+										</td>
+										<th>회계·기금명</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>재산구분</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="행정재산" disabled>
+										</td>
+										<th>재산관리관</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="경상북도 기후환경국 수자원관리과" disabled>
+										</td>
+									</tr>
+									<tr>
+										<th>관리구분</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="가가가">
+										</td>
+										<th>분임관리관</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="가가가" disabled>
+										</td>
+									</tr>
+									<tr>
+										<th>유휴상태</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="유">
+										</td>
+										<th>위임관리관</th>
+										<td>
+											<input type="text" name="" id="seach" class="type02" value="경상북도 경주시 도시개발국 건설과" disabled>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 관리형태 -->
+
+							<!-- 취득구분 -->
+							<div class="form-wrap">
+								<h4>취득구분</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col>
+									<col style="width:115px;">
+									<col style="width:104px;">
+									<col style="width:120px;">
+									<col style="width:100px;">
+									<col style="width:100px;">
+									<col style="width:104px;">							
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">부서</th>
+										<th scope="col">일자</th>
+										<th scope="col">취득방법</th>
+										<th scope="col">금액(원)</th>
+										<th scope="col">등기</th>
+										<th scope="col">대장</th>
+										<th scope="col">대장가능여부</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="2026-01-17">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,777,333">
+												<span class="unit">원</span>
+											</div>
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							<!-- 관리형태 -->
+
+							<!-- 토지현황 -->
+							<div class="form-wrap">
+								<h4>토지현황</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:96px;">
+									<col style="width:90px;">
+									<col style="width:90px;">
+									<col style="width:120px;">
+									<col style="width:100px;">
+									<col style="width:100px;">
+									<col style="width:100px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th rowspan="2">
+											<label for="">공법상<br/>규제상황</label>
+										</th>
+										<th>
+											<label for="">용도지역</label>
+										</th>
+										<td colspan="4">
+											<input type="text" name="" id="" class="type02" value="생산관리지역" disabled="">
+										</td>
+										<th>
+											<label for="">용도지구</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">도시계획시설</label>
+										</th>
+										<td colspan="4">
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">토지거래허가</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">주위환경</label>
+										</th>
+										<td colspan="2">
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">편의시설</label>
+										</th>
+										<td colspan="2">
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">대중교통</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">도로접면</label>
+										</th>
+										<td colspan="5">
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">간선도로거리</label>
+										</th>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,223">
+												<span class="unit">m</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">고저</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">형상</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">방위</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">이용상제한</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 토지현황 -->
+
+							<!-- 이용현황 -->
+							<div class="form-wrap">
+								<h4>이용현황</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:96px;">
+									<col>
+									<col style="width:96px;">
+									<col>
+									<col style="width:96px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>
+											<label for="">현황지목</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">이용상황</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">주사용주체</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 이용현황 -->
+
+							<!-- 대부 사용허가 현황 -->
+							<div class="form-wrap">
+								<h4>대부 사용허가 현황 <span class="essen">*</span></h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col>
+									<col style="width:90px;">
+									<col style="width:104px;">
+									<col style="width:120px;">
+									<col style="width:110px;">
+									<col style="width:110px;">
+									<col style="width:120px;">							
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">적법사용여부</th>
+										<th scope="col">사용자</th>
+										<th scope="col">목적 및 용도</th>
+										<th scope="col">신청면적</th>
+										<th scope="col">사용시작일</th>
+										<th scope="col">사용종료일</th>
+										<th scope="col">대부료</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="김경북">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,777">
+												<span class="unit">㎡</span>
+											</div>
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="2026-05-05">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="2026-12-12">
+										</td>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,777">
+												<span class="unit">원</span>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							<!-- 대부 사용허가 현황 -->
+
+							<!-- 무단점유 -->
+							<div class="form-wrap">
+								<h4>무단점유 <span class="essen">*</span></h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02 mb0">
+								<colgroup>
+									<col>
+									<col style="width:90px;">
+									<col style="width:104px;">
+									<col style="width:120px;">
+									<col style="width:110px;">
+									<col style="width:110px;">
+									<col style="width:120px;">							
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">조치여부</th>
+										<th scope="col">사용자</th>
+										<th scope="col">사용용도</th>
+										<th scope="col">점유면적</th>
+										<th scope="col">점유시작일</th>
+										<th scope="col">점유종료일</th>
+										<th scope="col">변상금</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="김경북">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,777">
+												<span class="unit">㎡</span>
+											</div>
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="2026-05-05">
+										</td>
+										<td>
+											<input type="text" name="" id="" class="type02" value="2026-12-12">
+										</td>
+										<td>
+											<div class="form">
+												<input type="text" name="" id="" class="type02" value="1,777">
+												<span class="unit">원</span>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:160px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>
+											<label for="">사용자 정보</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="내용 입력">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 무단점유 -->
+
+							<!-- 활용방안 -->
+							<div class="form-wrap">
+								<h4>활용방안</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:160px;">
+									<col>
+									<col style="width:96px;">
+									<col>
+									<col style="width:96px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>
+											<label for="">활용형태</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">활용가능용도</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">활용가능면적</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">의견</label>
+										</th>
+										<td colspan="5">
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 활용방안 -->
+
+							<!-- 기타사항 -->
+							<div class="form-wrap">
+								<h4>기타사항</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:160px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>
+											<label for="">위치</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">주변현황</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">특기사항</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">조사자 종합의견</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 기타사항 -->
+
+							<!-- 책임명세 -->
+							<div class="form-wrap">
+								<h4>책임명세</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col style="width:96px;">
+									<col style="width:90px;">
+									<col style="width:90px;">
+									<col style="width:120px;">
+									<col style="width:100px;">
+									<col style="width:100px;">
+									<col style="width:100px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>
+											<label for="">조사자</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">조사일자</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="2026-05-06">
+										</td>
+										<th>
+											<label for="">확인자</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">확인일자</label>
+										</th>
+										<td>
+											<input type="text" name="" id="" class="type02" value="2026-05-06">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<label for="">관리번호</label>
+										</th>
+										<td colspan="3">
+											<input type="text" name="" id="" class="type02" value="가나다">
+										</td>
+										<th>
+											<label for="">소재지</label>
+										</th>
+										<td colspan="3">
+											<input type="text" name="" id="" class="type02" value="경주시 강동면 국당리 123-45" disabled>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 책임명세 -->
+
+							<!-- 항공사진 · 지적도 -->
+							<div class="form-wrap">
+								<h4>항공사진 · 지적도</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col>
+									<col style="width:50%;">							
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="al">항공사진</th>
+										<th scope="col" class="al">지적도</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="photo-area">
+												<img src="images/temp/photo_01.png">
+											</div>
+										</td>
+										<td>
+											<div class="photo-area">
+												<img src="images/temp/map_04.png">
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							<!-- 항공사진 · 지적도 -->
+
+							<!-- ■ 현장사진 (근경) -->
+							<div class="form-wrap">
+								<h4>■ 현장사진 (근경)</h4>
+							</div>
+
+							<!-- tbl -->
+							<table class="tbl view type02 mb0">
+								<colgroup>
+									<col>
+									<col style="width:50%;">							
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="al">현황사진 (근경) - 1</th>
+										<th scope="col" class="al">현황사진 (근경) - 2</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="photo-area">
+												<img src="images/temp/photo_02.png">
+											</div>
+										</td>
+										<td>
+											<div class="photo-area">
+												<img src="images/temp/photo_03.png">
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<!-- tbl -->
+							<table class="tbl view type02">
+								<colgroup>
+									<col>
+									<col style="width:50%;">							
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="al">현황사진 (근경) - 3</th>
+										<th scope="col" class="al">현황사진 (근경) - 4</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="photo-area">
+												
+											</div>
+										</td>
+										<td>
+											<div class="photo-area">
+												
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- ■ 현장사진 (근경) -->
+						</div>
+						<!-- 컨텐츠 끝 -->
+
+						<div class="footer-area">
+							<button type="button" name="" id="" class="com-btn blue w260">수정</button>
+						</div>
+					</div>
+				</div>
+				<!-- 오른쪽 컨텐츠 -->
+			</div>
+		</div>
+		<!-- content -->
+		
+	</div>
+</body>
+</html>

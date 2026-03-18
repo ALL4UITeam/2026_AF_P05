@@ -1,78 +1,83 @@
 {{#> layout2}}
 
-<div class="cont-box-wrap">
+<div class="cont-box-wrap commu-page commu-faq">
   <div class="cont-box">
     <div class="tit-wrap">
-      <h2>사용자 접속 이력</h2>
+      <h2>자주하는 질문</h2>
     </div>
 
     <div class="inquiry-box">
       <div class="serach-box">
         <div class="form-wrap">
-          <input type="text" name="searchKeyword" id="search" class="type01 searchIco" value=""
-            placeholder="기관명, 담당자 검색">
-          <button type="submit" name="" id="btnSearch" class="com-btn blue w200">검색</button>
-          <button type="submit" name="" id="btnReset" class="com-btn blue w200">초기화</button>
+          <input type="text" name="faqKeyword" id="faqSearch" class="type01 searchIco" value=""
+            placeholder="궁금한 내용을 검색해 보세요.">
+          <button type="button" id="btnFaqSearch" class="com-btn blue w200">검색</button>
         </div>
       </div>
     </div>
 
-    <div class="form-wrap">
-      <div class="total-num">
-        <p>총 24건</p>
-      </div>
-    </div>
-    <div class="tbl-wrap">
-      <table class="tbl">
-        <colgroup>
-          <col style="width:50px;">
-          <col style="width:auto;">
-          <col style="width:170px;">
-          <col style="width:150px;">
-          <col style="width:100px;">
-        </colgroup>
-        <thead>
-          <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>작성일</th>
-            <th>조회수</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td class="al">
-              경상북도통합 데이터시스템 로그인 접속 <span style="color:#e04b3c;">!</span>
-            </td>
-            <td>관리자</td>
-            <td>2024.03.05</td>
-            <td>성공</td>
-          </tr>
-          <tr style="background:#fdf5f5;">
-            <td>2</td>
-            <td style="text-align:left;">경상북도통합 데이터시스템 로그인 실패</td>
-            <td>관리자</td>
-            <td>2024.03.05</td>
-            <td>1250</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="commu-chip-wrap">
+      <button type="button" class="commu-chip active">전체</button>
+      <button type="button" class="commu-chip">계정/권한</button>
+      <button type="button" class="commu-chip">지도 서비스</button>
+      <button type="button" class="commu-chip">자료 다운로드</button>
+      <button type="button" class="commu-chip">기타</button>
     </div>
 
-    <div id="logListPagingArea">
-      <div class="paging-wrap">
-        <ul class="paging">
-          <li><a class="prev first disabled" href="javascript:void(0)"></a></li>
-          <li><a class="prev disabled" href="javascript:void(0)"></a></li>
-          <li><a class="pLink active" href="javascript:void(0)">1</a></li>
-          <li><a class="pLink" href="javascript:void(0)">2</a></li>
-          <li><a class="pLink" href="javascript:void(0)">3</a></li>
-          <li><a class="pLink" href="javascript:void(0)">4</a></li>
-          <li><a class="next" href="javascript:void(0)"></a></li>
-          <li><a class="next last" href="javascript:void(0)"></a></li>
-        </ul>
+    <div class="faq-accordion" id="faqAccordion">
+      <div class="faq-accordion__item">
+        <button type="button" class="faq-accordion__q" aria-expanded="true">
+          <span class="faq-accordion__tag">계정/권한</span>
+          <span class="faq-accordion__title">비밀번호 변경은 어디에서 하나요?</span>
+          <span class="faq-accordion__arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-accordion__a">
+          <div class="faq-accordion__a-inner">
+            <p class="faq-accordion__summary">로그인 후 우측 상단 사용자 메뉴의 내 정보 관리에서 비밀번호를 변경할 수 있습니다.</p>
+            <ul class="faq-accordion__steps">
+              <li>우측 상단 사용자 메뉴 클릭</li>
+              <li>내 정보 관리 진입</li>
+              <li>비밀번호 변경 후 저장</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-accordion__item">
+        <button type="button" class="faq-accordion__q" aria-expanded="false">
+          <span class="faq-accordion__tag">지도 서비스</span>
+          <span class="faq-accordion__title">지도 레이어가 보이지 않을 때 확인할 항목은 무엇인가요?</span>
+          <span class="faq-accordion__arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-accordion__a" hidden>
+          <div class="faq-accordion__a-inner">
+            <p class="faq-accordion__summary">레이어 ON/OFF 상태, 축척 범위, 권한 여부를 순서대로 확인해 주세요.</p>
+            <ul class="faq-accordion__steps">
+              <li>레이어 패널에서 선택 항목 활성화 확인</li>
+              <li>현재 지도 축척에서 해당 레이어 표시 가능한지 확인</li>
+              <li>권한 미보유 시 권한 요청 후 재확인</li>
+            </ul>
+            <p class="faq-accordion__tip">동일 현상이 지속되면 오류 화면 캡처와 함께 문의해 주세요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-accordion__item">
+        <button type="button" class="faq-accordion__q" aria-expanded="false">
+          <span class="faq-accordion__tag">자료 다운로드</span>
+          <span class="faq-accordion__title">자료 다운로드 권한은 어떻게 신청하나요?</span>
+          <span class="faq-accordion__arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-accordion__a" hidden>
+          <div class="faq-accordion__a-inner">
+            <p class="faq-accordion__summary">시스템관리 메뉴에서 다운로드 권한을 신청한 뒤 관리자 승인 후 이용할 수 있습니다.</p>
+            <ul class="faq-accordion__steps">
+              <li>권한 요청 메뉴에서 다운로드 권한 신청</li>
+              <li>신청 사유 및 사용 목적 입력</li>
+              <li>승인 완료 후 자료 다운로드 가능</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

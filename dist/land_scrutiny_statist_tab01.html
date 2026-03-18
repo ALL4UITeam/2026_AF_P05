@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- tab button -->
+		<div class="tab-menu-btn">
+			<button type="button" name="" id="" class="active">정밀조사 통계</button>
+			<button type="button" name="" id="">실거래 월보</button>
+		</div>
+		<!-- tab button-->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content row">
+				<!-- 정밀조사 취합 서식 업로드 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap">
+							<h2 class="type03">정밀조사 취합 서식 업로드</h2>
+						</div>
+
+						<!-- fileup -->
+						<div class="fileup-wrap type02">
+							<input type="file" id="file_01" class="input-file-list">
+							<label for="file_01" class="file-label"></label>
+						</div>
+						<!-- fileup -->
+
+						<div class="form-wrap right">
+							<button type="button" name="" id="" class="dropdown-btn active"><i class="ico-history" aria-hidden="true"></i> 업로드 이력 관리 <span>(2건)</span></button>
+						</div>
+
+						<!-- 업로드 이력 목록 -->
+						<div class="drop-content up-history">
+							<h4>업로드 이력 목록 (업로드 날짜 기준)</h4>
+
+							<ul>
+								<li>
+									<p class="file-name">파일명파일명파일명.xlsx</p>
+
+									<div class="file-info">
+										<ul>
+											<li>업로드 일시: 2026. 1. 31. 오후 11:03:08</li>
+											<li>크기: 150MB</li>
+											<li>담당자: 홍길동</li>
+										</ul>
+
+										<p>비고: 11월 월례 보고용 데이터</p>
+									</div>
+
+									<button type="button" name="" id="" class="com-btn green load-btn"><i class="ico-excel" aria-hidden="true"></i>불러오기</button>
+								</li>
+								<li>
+									<p class="file-name">파일명파일명파일명.xlsx</p>
+
+									<div class="file-info">
+										<ul>
+											<li>업로드 일시: 2026. 1. 31. 오후 11:03:08</li>
+											<li>크기: 150MB</li>
+											<li>담당자: 홍길동</li>
+										</ul>
+
+										<p>비고: 11월 월례 보고용 데이터</p>
+									</div>
+
+									<button type="button" name="" id="" class="com-btn green load-btn"><i class="ico-excel" aria-hidden="true"></i>불러오기</button>
+								</li>
+							</ul>
+						</div>
+						<!-- 업로드 이력 목록 -->
+					</div>
+				</div>
+				<!-- 정밀조사 취합 서식 업로드계 -->
+
+				<!-- 경북 전체 시군별 통계 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap">
+							<h2 class="type03">경북 전체 시군별 통계</h2>
+						</div>
+
+						<!-- 시군 선택 비교 -->
+						<div class="info-box type02">
+							<div class="tit-wrap">
+								<h4>시군 선택 비교</h4>
+
+								<div class="btn-group">
+									<button type="button" name="" id="" class="selall-btn">전체 선택</button>
+									<button type="button" name="" id="" class="seldone-btn">선택 해제</button>
+								</div>
+							</div>
+
+							<div class="chk-group">
+								<label for="chk01" class="chkbox">
+									<input type="checkbox" name="" id="chk01">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk02" class="chkbox">
+									<input type="checkbox" name="" id="chk02">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk03" class="chkbox">
+									<input type="checkbox" name="" id="chk03">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk04" class="chkbox">
+									<input type="checkbox" name="" id="chk04">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk05" class="chkbox">
+									<input type="checkbox" name="" id="chk05">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk06" class="chkbox">
+									<input type="checkbox" name="" id="chk06">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk07" class="chkbox">
+									<input type="checkbox" name="" id="chk07">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk08" class="chkbox">
+									<input type="checkbox" name="" id="chk08">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk09" class="chkbox">
+									<input type="checkbox" name="" id="chk09">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk10" class="chkbox">
+									<input type="checkbox" name="" id="chk10">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk11" class="chkbox">
+									<input type="checkbox" name="" id="chk11">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk12" class="chkbox">
+									<input type="checkbox" name="" id="chk12">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk13" class="chkbox">
+									<input type="checkbox" name="" id="chk13">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk14" class="chkbox">
+									<input type="checkbox" name="" id="chk14">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk15" class="chkbox">
+									<input type="checkbox" name="" id="chk15">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk16" class="chkbox">
+									<input type="checkbox" name="" id="chk16">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk17" class="chkbox">
+									<input type="checkbox" name="" id="chk17">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+
+								<label for="chk18" class="chkbox">
+									<input type="checkbox" name="" id="chk18">
+									<span class="chkOn"></span>
+									<span class="txt">00시</span>
+								</label>
+							</div>
+						</div>
+						<!-- 시군 선택 비교 -->
+
+						<!-- tab -->
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="statsTab01">시각화 그래프</a></li>
+								<li><a href="#" data-target="statsTab02">상세 테이블</a></li>
+							</ul>
+						</div>
+						<!-- tab -->
+
+						<!-- tab-content -->
+						<div class="tab-content">
+							<div id="statsTab01" class="active">
+								<div class="info-box type04">
+									<h4>안내</h4>
+									<p>그래프의 각 영역에 마우스를 올리면 상세 정보를 확인할 수 있습니다. (비중 5% 이상만 레이블 표시)</p>
+								</div>
+
+								<!-- 그래프 -->
+								<div class="graph-wrap">
+									<div class="graph w100per">
+										<h3 class="center">상세 테이블</h3>
+
+										<div class="graph-box type02">
+											<div style="width:440px; height:320px; margin:0 auto;">
+												<canvas id="pieChart1" style="width:420px; height:320px;"></canvas>
+											</div>
+										</div>
+									</div>
+
+									<div class="graph w100per">
+										<h3 class="center">상세 테이블</h3>
+
+										<div class="graph-box type02">
+											<div style="width:440px; height:320px; margin:0 auto;">
+												<canvas id="pieChart2" style="width:420px; height:320px;"></canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 그래프 -->
+							</div>
+
+							<div id="statsTab02">
+								<div class="form-wrap right">
+									<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap">
+									<table class="tbl">
+										<colgroup> 
+											<col >
+											<col style="width:12%;">											
+											<col style="width:12%;">
+											<col style="width:12%;">
+											<col style="width:12%;">
+											<col style="width:12%;">
+											<col style="width:12%;">
+											<col style="width:12%;">
+										</colgroup> 
+										<thead>
+											<tr>
+												<th scope="col">시군명</th>
+												<th scope="col">기획</th>
+												<th scope="col">상시 </th>
+												<th scope="col">총계</th>
+												<th scope="col">조치완료</th> 
+												<th scope="col">조사중 </th>
+												<th scope="col">미조치</th>
+												<th scope="col">과태료</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="al">포항시 남구</td>
+												<td class="ar">500건</td>
+												<td class="ar">52건</td>
+												<td class="ar">5200건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+											</tr>
+											<tr>
+												<td class="al">포항시 남구</td>
+												<td class="ar">500건</td>
+												<td class="ar">52건</td>
+												<td class="ar">5200건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+											</tr> 
+											<tr>
+												<td class="al">포항시 남구</td>
+												<td class="ar">500건</td>
+												<td class="ar">52건</td>
+												<td class="ar">5200건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+											</tr> 
+											<tr>
+												<td class="al">포항시 남구</td>
+												<td class="ar">500건</td>
+												<td class="ar">52건</td>
+												<td class="ar">5200건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+												<td class="ar">2건</td>
+											</tr> 
+										</tbody>
+									</table>
+								</div>
+								<!-- tbl -->
+							</div>
+						</div>
+						<!-- tab-content -->
+					</div>
+				</div>
+				<!-- 경북 전체 시군별 통계 -->
+
+				<!-- 정밀조사 상세 내역 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap">
+							<h2 class="type03">정밀조사 상세 내역</h2>
+						</div>
+
+						<!-- tab -->
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="detailTab01">기획 조사</a></li>
+								<li><a href="#" data-target="detailTab02">상시 조사</a></li>
+								<li><a href="#" data-target="detailTab03">상시 모니터링</a></li>
+							</ul>
+						</div>
+						<!-- tab -->
+
+						<!-- tab-content -->
+						<div class="tab-content">
+							<!-- tab -->
+							<div id="detailTab01" class="active">
+								<div class="form-wrap right">
+									<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap type02">
+									<table class="tbl ">
+										<colgroup>
+											<col style="width:4%;">
+											<col>
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:13%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">연번</th>
+												<th scope="col" colspan="2">구분</th>
+												<th scope="col" rowspan="2">통보건수</th>
+												<th scope="col" colspan="5">조치완료</th>
+												<th scope="col" rowspan="2">조사중</th>
+												<th scope="col" colspan="3">미조치</th>
+												<th scope="col" rowspan="2">비고 <br/>(기타 사유 상세 작성)</th>
+											</tr>
+											<tr>
+												<th scope="col">대분류</th>
+												<th scope="col">세부구분</th>
+												<th scope="col">소계</th>
+												<th scope="col">과태료부과</th>
+												<th scope="col">수사의뢰</th>
+												<th scope="col">기타조치</th>
+												<th scope="col">자체종결<br/>(처분없음)</th>
+												<th scope="col">소계</th>
+												<th scope="col">조사예정</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="total">
+												<td></td>
+												<td>소계</td>
+												<td></td>
+												<td>54</td>
+												<td class="p-color02">51</td>
+												<td>11</td>
+												<td>-</td>
+												<td>2</td>
+												<td>38</td>
+												<td>-</td>
+												<td class="p-color03">3</td>
+												<td>-</td>
+												<td>3</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>3차 합동조사</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>수도권 과열</td>
+												<td>강남 송파</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>수도권 과열</td>
+												<td>용산</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>수도권 과열</td>
+												<td>기타</td>
+												<td>-</td>
+												<td class="p-color02" >-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>지방 과열</td>
+												<td></td>
+												<td>12</td>
+												<td class="p-color02">12</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>6</td>
+												<td>해제신고</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>7</td>
+												<td>신규 공공택지 후보지 1차</td>
+												<td>1 ~ 11지역</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td>신규 공공택지 후보지 1차</td>
+												<td>12 ~ 16지역</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>9</td>
+												<td>도시 복합사업(주택)</td>
+												<td>증산4</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>도시 복합사업(주택)</td>
+												<td>기타</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>11</td>
+												<td>1억이하 저가아파트</td>
+												<td></td>
+												<td>20</td>
+												<td class="p-color02">20</td>
+												<td>2</td>
+												<td>-</td>
+												<td>-</td>
+												<td>18</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>12</td>
+												<td>수도권과열 (잔여분)</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>13</td>
+												<td>신규 공공택지 후보지 후속</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>14</td>
+												<td>도심공공주택 사업지 토지</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>15</td>
+												<td>특이동향지역 주택 ('21.4분기)</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>16</td>
+												<td>오피스텔 분양권</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>17</td>
+												<td>특이동향지역 주택 ('22.1분기)</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>18</td>
+												<td>외국인 주택투기 기획조사</td>
+												<td>5</td>
+												<td>2</td>
+												<td class="p-color02">1</td>
+												<td>-</td>
+												<td>-</td>
+												<td>1</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">3</td>
+												<td>-</td>
+												<td>3</td>
+												<td class="al">연락불가</td>
+											</tr>
+											<tr>
+												<td>19</td>
+												<td>특이동향지역 주택 ('22.2분기)</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>20</td>
+												<td>외국인 주택투기 기획조사(해외발송분)</td>
+												<td></td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+										</tbody>
+									</table>									
+								</div>
+								<!-- tbl -->
+
+								<!-- paging -->
+								<div class="paging-wrap">
+									<ul class="paging">
+										<li><a class="prev first" href="#"></a></li>
+										<li><a class="prev" href="#"></a></li>
+										<li><a class="pLink" href="#">1</a></li>
+										<li><a class="pLink" href="#">2</a></li>
+										<li><a class="pLink" href="#">3</a></li>
+										<li><a class="pLink" href="#">4</a></li>
+										<li><a class="pLink" href="#">5</a></li>
+										<li><a class="pLink active" href="#">6</a></li>
+										<li><a class="pLink" href="#">7</a></li>
+										<li><a class="pLink" href="#">8</a></li>
+										<li><a class="pLink" href="#">9</a></li>
+										<li><a class="pLink" href="#">10</a></li>
+										<li><a class="next" href="#"></a></li>
+										<li><a class="next last" href="#"></a></li>
+									</ul>
+								</div>
+								<!-- paging -->
+							</div>
+							<!-- tab -->
+
+							<!-- tab -->
+							<div id="detailTab02">
+								<div class="form-wrap right">
+									<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap type02">
+									<table class="tbl">
+										<colgroup>
+											<col>
+											<col style="width:6%;">				
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:18%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="3">구분 <br/>(신고일기준)</th>
+												<th scope="col" rowspan="3">통보건수</th>
+												<th scope="col" colspan="5">조치완료</th>					
+												<th scope="col" rowspan="3">조사중</th>
+												<th scope="col" colspan="3">미조치</th>
+												<th scope="col" rowspan="3">비고 <br/>(기타 사유 상세 작성)</th>
+											</tr>
+											<tr>
+												<th scope="col" rowspan="2">소계</th>
+												<th scope="col" colspan="4">세부내역</th>
+												<th scope="col" rowspan="2">소계</th>
+												<th scope="col" colspan="2">세부내역</th>
+											</tr>
+											<tr>
+												<th scope="col">과태료부과</th>
+												<th scope="col">수사의뢰</th>
+												<th scope="col">기타조치</th>
+
+												<th scope="col">조사예정</th>
+												<th scope="col">기타</th>
+												<th scope="col">기타</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="total">
+												<td>합계</td>
+												<td>23</td>
+												<td class="p-color02">19</td>
+												<td>9 </td>
+												<td>-</td>
+												<td>-</td>
+												<td>38</td>
+												<td class="p-color03">3</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>3</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'19.12월 ~ '20.2월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'20.3월 ~ '21.6월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'21.7월 ~ '21.9월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'21.10월 ~ '21.12월</td>
+												<td>-</td>
+												<td class="p-color02" >-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'22.1월 ~ '22.4월</td>
+												<td>12</td>
+												<td class="p-color02">12</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'22.5월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'22.6월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'22.7월 ~ '22.12월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.1월 ~ '23.3월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.4월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.5월</td>
+												<td>20</td>
+												<td class="p-color02">20</td>
+												<td>2</td>
+												<td>-</td>
+												<td>-</td>
+												<td>18</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.6월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.7월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.8월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.9월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.10월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.11월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'23.12월</td>
+												<td>2</td>
+												<td class="p-color02">1</td>
+												<td>-</td>
+												<td>-</td>
+												<td>1</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">3</td>
+												<td>-</td>
+												<td>3</td>
+												<td class="al">연락불가</td>
+											</tr>
+											<tr>
+												<td>'24.1월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>'24.2월</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+										</tbody>
+									</table>							
+								</div>
+								<!-- tbl -->
+
+								<!-- paging -->
+								<div class="paging-wrap">
+									<ul class="paging">
+										<li><a class="prev first" href="#"></a></li>
+										<li><a class="prev" href="#"></a></li>
+										<li><a class="pLink" href="#">1</a></li>
+										<li><a class="pLink" href="#">2</a></li>
+										<li><a class="pLink" href="#">3</a></li>
+										<li><a class="pLink" href="#">4</a></li>
+										<li><a class="pLink" href="#">5</a></li>
+										<li><a class="pLink active" href="#">6</a></li>
+										<li><a class="pLink" href="#">7</a></li>
+										<li><a class="pLink" href="#">8</a></li>
+										<li><a class="pLink" href="#">9</a></li>
+										<li><a class="pLink" href="#">10</a></li>
+										<li><a class="next" href="#"></a></li>
+										<li><a class="next last" href="#"></a></li>
+									</ul>
+								</div>
+								<!-- paging -->
+							</div>
+							<!-- tab -->
+
+							<!-- tab -->
+							<div id="detailTab03">
+								<div class="form-wrap">
+									<div>
+										<label for="">모니터링 유형 선택 :</label>
+										<select name="" id="" class="type01 w234">
+											<option>허위신고의심</option>
+											<option>허위신고의심</option>
+										</select>
+									</div>
+
+									<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap type02 scroll-x">
+									<table class="tbl">
+										<colgroup>
+											<col style="width:150px;">
+											<col style="width:100px;">
+											<col style="width:90px;">
+											<col style="width:80px;">
+											<col style="width:70px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+											<col style="width:110px;">
+											<col style="width:120px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+											<col style="width:110px;">
+											<col style="width:110px;">
+											<col style="width:110px;">
+											<col style="width:110px;">
+											<col style="width:320px;">
+											<col style="width:100px;">																					
+											<col style="width:100px;">
+											<col style="width:100px;">
+											<col style="width:150px;">
+											<col style="width:90px;">
+											<col style="width:90px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">접수번호</th>
+												<th scope="col">계약일자</th>
+												<th scope="col">접수일자</th>
+												<th scope="col">시도</th>
+												<th scope="col">시군구</th>
+												<th scope="col">읍면동</th>
+												<th scope="col">지번</th>
+												<th scope="col">계획도시명</th>
+												<th scope="col">건물명</th>
+												<th scope="col">동명</th>
+												<th scope="col">호명</th>
+												<th scope="col">용도구분</th>
+												<th scope="col">토지면적</th>
+												<th scope="col">건물면적</th>
+												<th scope="col">현실지목</th>
+												<th scope="col">용도지역</th>
+												<th scope="col">거래금액</th>
+												<th scope="col">조사가격(상)</th>
+												<th scope="col">조사가격(하)</th>
+												<th scope="col">검토결과2</th>
+												<th scope="col">비고</th>
+												<th scope="col">자조서점검대상</th> 
+												<th scope="col">잔금월</th>
+												<th scope="col">주요조사대상</th>
+												<th scope="col">사유</th>
+												<th scope="col">조사차액</th>
+												<th scope="col">정밀주사 주체</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>23</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+											<tr>
+												<td>47290-0002312-2025-1</td>
+												<td>20250919</td>
+												<td>20280925</td>
+												<td>경상북도</td>
+												<td>경산시</td>
+												<td>자인면 일언리</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td> 
+												<td>-</td>
+												<td>-</td>
+												<td>토지 </td>
+												<td>1,468</td>
+												<td>-</td>
+												<td>답 </td>
+												<td>농림지역</td>
+												<td class="p-color02">97,700,000</td>
+												<td>146,800,000</td>
+												<td>146,800,000</td>
+												<td class="p-color03">저가신고의심</td>
+												<td class="al">
+													본 토지의 접근조건, 획지조건 등 개별요인 고려시 가격 수준은 약 75,000원/m2 ~ 약 100,000원/m2으로 판단되어 저가 신고 의심됨
+												</td>
+												<td>N</td>												
+												<td>20250925</td>
+												<td>-</td>
+												<td>허위신고 30위내</td>
+												<td class="p-color01">146,800,000</td>
+												<td>지자체</td>
+											</tr> 
+										</tbody>
+									</table>
+								</div>
+								<!-- tbl -->
+
+								<!-- paging -->
+								<div class="paging-wrap">
+									<ul class="paging">
+										<li><a class="prev first" href="#"></a></li>
+										<li><a class="prev" href="#"></a></li>
+										<li><a class="pLink" href="#">1</a></li>
+										<li><a class="pLink" href="#">2</a></li>
+										<li><a class="pLink" href="#">3</a></li>
+										<li><a class="pLink" href="#">4</a></li>
+										<li><a class="pLink" href="#">5</a></li>
+										<li><a class="pLink active" href="#">6</a></li>
+										<li><a class="pLink" href="#">7</a></li>
+										<li><a class="pLink" href="#">8</a></li>
+										<li><a class="pLink" href="#">9</a></li>
+										<li><a class="pLink" href="#">10</a></li>
+										<li><a class="next" href="#"></a></li>
+										<li><a class="next last" href="#"></a></li>
+									</ul>
+								</div>
+								<!-- paging -->
+							</div>
+							<!-- tab -->
+						</div>
+						<!-- tab-content -->
+					</div>
+				</div>
+				<!-- 정밀조사 상세 내역 -->
+
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+	<script src="js/lib/chart.js"></script> <!-- v4.5.1 -->
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script> <!-- v2.2.0 -->
+
+	<script>
+		Chart.register(ChartDataLabels);
+
+		const colors = [
+		"#3B5BA9","#4C77C9","#66A3D2","#6CC3C3",
+		"#52B788","#8BC34A","#D4AF37","#F97316","#9C27B0"
+		];
+
+		const chart = new Chart(document.getElementById("pieChart1"), {
+			type: "pie",
+			data: {
+				labels: [
+				"구미시 (156건)",
+				"안동시 (187건)",
+				"포항시 (179건)",
+				"칠곡군 (197건)",
+				"영덕군 (156건)",
+				"영양군 (195건)",
+				"청송군 (170건)",
+				"군위군 (157건)",
+				"영천시 (178건)"
+				],
+				datasets: [{
+				data: [156,187,179,197,156,195,170,157,178],
+				backgroundColor: colors,
+				borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+
+			plugins: {
+			legend: { display: false },
+
+			datalabels: {
+				formatter: (value, ctx) => ctx.chart.data.labels[ctx.dataIndex],
+				color: (ctx) => colors[ctx.dataIndex],
+				font: { size: 12, weight: "bold" },
+				anchor: "end",
+				align: "end",
+				offset: 20,
+				clamp: false               // ✅ 바깥으로 나가게 (잘리면 padding/부모높이로 해결)
+			}
+			},
+
+			layout: {
+			padding: { top: 50, right: 70, bottom: 50, left: 70 } // ✅ 잘림 방지
+			}
+		}
+	});
+
+	setTimeout(() => chart.resize(), 50);
+	</script>
+
+	<script>
+		Chart.register(ChartDataLabels);
+
+		const colors2 = [
+		"#3B5BA9","#4C77C9","#66A3D2","#6CC3C3",
+		"#52B788","#8BC34A","#D4AF37","#F97316","#9C27B0"
+		];
+
+		const chart2 = new Chart(document.getElementById("pieChart2"), {
+			type: "pie",
+			data: {
+				labels: [
+				"구미시 (156건)",
+				"안동시 (187건)",
+				"포항시 (179건)",
+				"칠곡군 (197건)",
+				"영덕군 (156건)",
+				"영양군 (195건)",
+				"청송군 (170건)",
+				"군위군 (157건)",
+				"영천시 (178건)"
+				],
+				datasets: [{
+				data: [156,187,179,197,156,195,170,157,178],
+				backgroundColor: colors,
+				borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+
+			plugins: {
+			legend: { display: false },
+
+			datalabels: {
+				formatter: (value, ctx) => ctx.chart.data.labels[ctx.dataIndex],
+				color: (ctx) => colors[ctx.dataIndex],
+				font: { size: 12, weight: "bold" },
+				anchor: "end",
+				align: "end",
+				offset: 20,
+				clamp: false               // ✅ 바깥으로 나가게 (잘리면 padding/부모높이로 해결)
+			}
+			},
+
+			layout: {
+			padding: { top: 50, right: 70, bottom: 50, left: 70 } // ✅ 잘림 방지
+			}
+		}
+	});
+
+	setTimeout(() => chart.resize(), 50);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,4009 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/lib/jquery.floatThead.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- tab button -->
+		<div class="tab-menu-btn">
+			<button type="button" name="" id="">정밀조사 통계</button>
+			<button type="button" name="" id="" class="active">실거래 월보</button>
+		</div>
+		<!-- tab button-->
+
+		<!-- 실거래 월보 -->
+		<div class="cont-box-wrap type02">
+			<div class="cont-box">
+				<div class="tit-wrap">
+					<h2 class="type03">실거래 월보</h2>
+				</div>
+
+				<p class="txt02">부동산 실거래 월보 - 과태료 및 신고 관리 현황</p>
+
+				<button type="button" name="" id="" class="com-btn orange xl download-btn">보고서 다운로드</button>
+			</div>
+		</div>
+		<!-- 실거래 월보 -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content row">
+				<!-- tab -->
+				<div class="tab-menu type02">
+					<ul>
+						<li><a href="#" class="active" data-target="statsTab01">실거래 월보 업로드</a></li>
+						<li><a href="#" data-target="statsTab02">신고 포상금 지급 현황</a></li>
+						<li><a href="#" data-target="statsTab03">자진신고 접수 및 처리 현황</a></li>
+						<li><a href="#" data-target="statsTab04">과태료, 증여협의, 자진신고, 불법거래신고 처리 현황</a></li>
+					</ul>
+				</div>
+				<!-- tab -->
+
+				<!-- tab-content -->
+				<div class="tab-content">
+					<!-- 실거래 월보 업로드 -->
+					<div id="statsTab01" class="active">
+						<div class="cont-box-wrap">
+							<div class="cont-box">
+								<div class="tit-wrap">
+									<h2 class="type03">실거래 월보 업로드</h2>
+								</div>
+
+								<!-- fileup -->
+								<div class="fileup-wrap type02">
+									<input type="file" id="file_01" class="input-file-list">
+									<label for="file_01" class="file-label"></label>
+								</div>
+								<!-- fileup -->
+
+								<div class="form-wrap right">
+									<button type="button" name="" id="" class="uphistory-btn active"><i class="ico-history" aria-hidden="true"></i> 업로드 이력 관리 <span>(2건)</span></button>
+								</div>
+
+								<!-- 업로드 이력 목록 -->
+								<div class="up-history">
+									<h4>업로드 이력 목록 (업로드 날짜 기준)</h4>
+
+									<ul>
+										<li>
+											<p class="file-name">파일명파일명파일명.xlsx</p>
+
+											<div class="file-info">
+												<ul>
+													<li>업로드 일시: 2026. 1. 31. 오후 11:03:08</li>
+													<li>크기: 150MB</li>
+													<li>담당자: 홍길동</li>
+												</ul>
+
+												<p>비고: 11월 월례 보고용 데이터</p>
+											</div>
+
+											<button type="button" name="" id="" class="com-btn green load-btn"><i class="ico-excel" aria-hidden="true"></i>불러오기</button>
+										</li>
+										<li>
+											<p class="file-name">파일명파일명파일명.xlsx</p>
+
+											<div class="file-info">
+												<ul>
+													<li>업로드 일시: 2026. 1. 31. 오후 11:03:08</li>
+													<li>크기: 150MB</li>
+													<li>담당자: 홍길동</li>
+												</ul>
+
+												<p>비고: 11월 월례 보고용 데이터</p>
+											</div>
+
+											<button type="button" name="" id="" class="com-btn green load-btn"><i class="ico-excel" aria-hidden="true"></i>불러오기</button>
+										</li>
+									</ul>
+								</div>
+								<!-- 업로드 이력 목록 -->
+							</div>
+						</div>
+					</div>
+					<!-- 실거래 월보 업로드 -->
+
+					<!-- 신고 포상금 지급 현황 -->
+					<div id="statsTab02">
+						<!-- 신고포상금 처리 현황 통계 -->
+						<div class="cont-box-wrap type02">
+							<div class="cont-box">
+								<div class="tit-wrap">
+									<h2 class="type03">신고포상금 처리 현황 통계</h2>
+
+									<button type="button" name="" id="" class="allcities-btn type02"><i class="ico-filter" aria-hidden="true"></i> 전체 시군</button>
+
+									<!-- usearea-sel -->
+									<div class="usearea-sel county">
+										<header>
+											<h3>시군선택</h3>
+
+											<div class="btn-group gap0">
+												<button type="button" name="" id="" class="reset-btn">초기화</button>
+
+												<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기">
+													<i class="ico-close" aria-hidden="true"></i>
+												</button>
+											</div>
+										</header>
+						
+										<ul class="folding">
+											<li>
+												<a href="#" class="dept1 active">
+													<label for="chkA01" class="chkbox" onclick="event.stopPropagation()">
+														<input type="checkbox" name="" id="chkA01">
+														<span class="chkOn"></span>
+														<span class="txt">전체</span>
+													</label>
+												</a>
+
+												<!-- 지도 선택 -->
+												<ul class="map-type-sel">
+													<li>
+														<label for="chk11" class="chkbox">
+															<input type="checkbox" name="" id="chk11">
+															<span class="chkOn"></span>
+															<span class="txt">포항시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk12" class="chkbox">
+															<input type="checkbox" name="" id="chk12">
+															<span class="chkOn"></span>
+															<span class="txt">경주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk13" class="chkbox">
+															<input type="checkbox" name="" id="chk13">
+															<span class="chkOn"></span>
+															<span class="txt">구미시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk14" class="chkbox">
+															<input type="checkbox" name="" id="chk14">
+															<span class="chkOn"></span>
+															<span class="txt">김천시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk15" class="chkbox">
+															<input type="checkbox" name="" id="chk15">
+															<span class="chkOn"></span>
+															<span class="txt">안동시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk16" class="chkbox">
+															<input type="checkbox" name="" id="chk16">
+															<span class="chkOn"></span>
+															<span class="txt">영주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk17" class="chkbox">
+															<input type="checkbox" name="" id="chk17">
+															<span class="chkOn"></span>
+															<span class="txt">영천시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk18" class="chkbox">
+															<input type="checkbox" name="" id="chk18">
+															<span class="chkOn"></span>
+															<span class="txt">상주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk19" class="chkbox">
+															<input type="checkbox" name="" id="chk19">
+															<span class="chkOn"></span>
+															<span class="txt">문경시</span>
+														</label>
+													</li>
+												</ul>
+												<!-- 지도 선택 -->
+											</li>
+										</ul>
+									</div>
+									<!-- usearea-sel -->
+								</div>
+
+								<div class="graph-wrap">
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<div class="graph-box bg01 type03">
+											<p class="tit">① 부동산 거래 거짓신고</p>
+
+											<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+												<canvas id="statusPie1" style="width:230px; height:230px;"></canvas>
+											</div>
+
+											<div class="total">
+												<p>54건</p>
+												<p>합계</p>
+											</div>
+										</div>
+									</div>
+									<!-- 그래프 -->
+
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<div class="graph-box bg02 type03">
+											<p class="tit">② 토지거래허가 부정 취득 등</p>
+
+											<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+												<canvas id="statusPie2" style="width:230px; height:230px;"></canvas>
+											</div>
+
+											<div class="total">
+												<p>154건</p>
+												<p>합계</p>
+											</div>
+										</div>
+									</div>
+									<!-- 그래프 -->
+
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<div class="graph-box bg03 type03">
+											<p class="tit">③ 토지거래허가 목적외 이용</p>
+
+											<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+												<canvas id="statusPie3" style="width:230px; height:230px;"></canvas>
+											</div>
+
+											<div class="total">
+												<p>1건</p>
+												<p>합계</p>
+											</div>
+										</div>
+									</div>
+									<!-- 그래프 -->
+								</div>
+
+							</div>
+						</div>
+						<!-- 신고포상금 처리 현황 통계 -->
+
+						<!-- 2025년도 신고포상금 지급 현황 -->
+						<div class="cont-box-wrap type02">
+							<div class="cont-box">
+								<div class="tit-wrap">
+									<h2 class="type03">2025년도 신고포상금 지급 현황</h2>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap scroll mh563">
+									<table class="tbl h-scroll">
+										<colgroup>
+											<col style="width:4%;">
+											<col>
+											<col style="width:7%;">
+											<col style="width:7%;">
+											<col style="width:7%;">
+											<col style="width:7%;">
+											<col style="width:8%;">
+											<col style="width:8%;">
+											<col style="width:8%;">
+											<col style="width:8%;">
+											<col style="width:18%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">구분</th>
+												<th scope="col" rowspan="2">위반사항</th>
+												<th scope="col" colspan="4">신고(고발)건수</th>
+												<th scope="col" rowspan="2">포상금 지급액</th>
+												<th scope="col" rowspan="2">과태료 부과건수</th>
+												<th scope="col" rowspan="2">과태료 부과인원</th>
+												<th scope="col" rowspan="2">과태료 부과금액</th>
+												<th scope="col" rowspan="2">비고</th>
+											</tr>
+											<tr>
+												<th scope="col">계</th>
+												<th scope="col">지급</th>
+												<th scope="col">미지급</th>
+												<th scope="col">검토중</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>-</td>
+												<td>② 토지거래허가 부정 취득 등</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>③ 토지거래허가 목적외 이용</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>① 부동산 거래 거짓신고</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>② 토지거래허가 부정 취득 등</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>③ 토지거래허가 목적외 이용</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>① 부동산 거래 거짓신고</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>② 토지거래허가 부정 취득 등</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>③ 토지거래허가 목적외 이용</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>① 부동산 거래 거짓신고</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>② 토지거래허가 부정 취득 등</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>-</td>
+												<td>③ 토지거래허가 목적외 이용</td>
+												<td>100</td>
+												<td>3</td>
+												<td>3</td>
+												<td>3</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al">-</td>
+											</tr>
+										</tbody>
+									</table>		
+								</div>
+								<!-- tbl -->
+							</div>
+						</div>
+						<!-- 2025년도 신고포상금 지급 현황 -->
+
+						<!-- 2025년도 신고포상금 지급 상세 내역 -->
+						<div class="cont-box-wrap type02">
+							<div class="cont-box">
+								<div class="tit-wrap">
+									<h2 class="type03">2025년도 신고포상금 지급 상세 내역</h2>
+								</div>
+
+								<div class="s-info type02">
+									<div class="info-grid type02">
+										<div class="info">
+											<p class="tit">주체구분</p>
+											<p class="con">1. 매수인 / 2. 매도인 / 3. 중개업자 / 4. 피허가자</p>
+											<p class="tit">위반내역</p>
+											<p class="con">1. 부동산 거래 거짓신고 / 2. 토지거래허가 부정 취득 등 / 3. 토지거래허가 목적외 이용</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap scroll-x">
+									<table class="tbl ">
+										<colgroup>
+											<col style="width:80px">
+											<col style="width:120px">
+											<col style="width:100px">
+											<col style="width:150px">
+											<col style="width:100px">
+											<col style="width:220px">
+											<col style="width:80px">
+											<col style="width:80px">
+											<col style="width:150px">
+											<col style="width:150px">
+											<col style="width:120px">
+											<col style="width:120px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:320px">
+											<col style="width:150px">
+											<col style="width:150px">
+											<col style="width:90px">
+											<col style="width:100px">
+											<col style="width:100px">
+											<col style="width:100px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:150px">
+											<col style="width:250px">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" colspan="12">부동산거래신고 또는 토지거래허가 내역 상세</th>
+												<th scope="col" colspan="4">1) 과태료 부과 내역 상세</th>
+												<th scope="col" colspan="10">2) 포상금 지급 현황</th>  
+											</tr>
+											<tr>
+												<th scope="col" rowspan="2">순번</th>
+												<th scope="col" rowspan="2">접수번호<br/>또는<br/>허가번호</th> 
+												<th scope="col" rowspan="2">접수일자<br/>또는<br/>허가일자</th>
+												<th scope="col" rowspan="2">광역시도</th>
+												<th scope="col" rowspan="2">시.군</th>
+												<th scope="col" rowspan="2">물건 주소</th> 
+												<th scope="col" rowspan="2">매수자</th>
+												<th scope="col" rowspan="2">매도자</th>
+												<th scope="col" rowspan="2">대표물건</th>
+												<th scope="col" rowspan="2">세부 용도<br/>또는<br/>토지이용목적</th>  
+												<th scope="col" rowspan="2" >신고가격<br/>(단위 : 원)</th>
+												<th scope="col" rowspan="2">실거래가격<br/>(단위 : 원)</th>
+												<th scope="col" rowspan="2">과태료<br/>부과일자 </th>
+												<th scope="col" rowspan="2">주체구분<br/>(1. 매수인)<br/>(2. 매도인)<br/>(3. 중개업자)<br/>(4. 피허가자)</th>
+												<th scope="col" rowspan="2">위반내역<br/>(1. 부동산 거래 거짓신고)<br/>(2. 토지거래허가 부정 취득 등)<br/>(3. 토지거래허가 목적의 이용 )</th>
+												<th scope="col" rowspan="2">과태료부과금액<br/>(단위 : 원)</th>
+												<th scope="col" rowspan="2">신고(고발)<br/>일자</th>
+												<th scope="col" rowspan="2">신고인<br/>(고발인)</th>
+												<th scope="col" colspan="3">포상금 지급 여부 결정</th>
+												<th scope="col" rowspan="2">포상금 지급<br/>또는 미지급<br/>결정 사유</th>
+												<th scope="col" rowspan="2">포상금 지급<br/>신청일 </th>
+												<th scope="col" rowspan="2">포상금 <br/>지급일</th>
+												<th scope="col" rowspan="2">지급포상금액 <br/>(원)</th>
+												<th scope="col" rowspan="2">비고</th>
+											</tr>
+											<tr>
+												<th scope="col">지급</th>
+												<th scope="col">미지급</th> 
+												<th scope="col">검토중</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>1234567890</td>
+												<td>20260202</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>1234567890</td>
+												<td>20260202</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>1234567890</td>
+												<td>20260202</td>
+												<td>-</td>
+												<td class="p-color02">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="p-color03">-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="al"></td>
+											</tr>
+										</tbody>
+									</table>	
+								</div>
+								<!-- tbl -->
+							</div>
+						</div>
+						<!-- 2025년도 신고포상금 지급 상세 내역 -->
+					</div>
+					<!-- 신고 포상금 지급 현황 -->
+
+					<!-- 자진신고 접수 및 처리 현황 -->
+					<div id="statsTab03">
+						<!-- 부동산거래신고 -->
+						<div class="cont-box-wrap type03">
+							<div class="cont-box">
+								<div class="tit-wrap type04">
+									<h2 class="type02">부동산거래신고</h2>
+						
+									<button type="button" name="" id="" class="foldcon-btn type02"></button>
+									<button type="button" name="" id="" class="allcities-btn type03"><i class="ico-filter" aria-hidden="true"></i> 전체 시군</button>
+									
+									<!-- usearea-sel -->
+									<div class="usearea-sel county">
+										<header>
+											<h3>시군선택</h3>
+
+											<div class="btn-group gap0">
+												<button type="button" name="" id="" class="reset-btn">초기화</button>
+
+												<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기">
+													<i class="ico-close" aria-hidden="true"></i>
+												</button>
+											</div>
+										</header>
+						
+										<ul class="folding">
+											<li>
+												<a href="#" class="dept1 active">
+													<label for="chkA21" class="chkbox" onclick="event.stopPropagation()">
+														<input type="checkbox" name="" id="chkA21">
+														<span class="chkOn"></span>
+														<span class="txt">전체</span>
+													</label>
+												</a>
+
+												<!-- 지도 선택 -->
+												<ul class="map-type-sel">
+													<li>
+														<label for="chk21" class="chkbox">
+															<input type="checkbox" name="" id="chk21">
+															<span class="chkOn"></span>
+															<span class="txt">포항시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk22" class="chkbox">
+															<input type="checkbox" name="" id="chk22">
+															<span class="chkOn"></span>
+															<span class="txt">경주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk23" class="chkbox">
+															<input type="checkbox" name="" id="chk23">
+															<span class="chkOn"></span>
+															<span class="txt">구미시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk24" class="chkbox">
+															<input type="checkbox" name="" id="chk24">
+															<span class="chkOn"></span>
+															<span class="txt">김천시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk25" class="chkbox">
+															<input type="checkbox" name="" id="chk25">
+															<span class="chkOn"></span>
+															<span class="txt">안동시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk26" class="chkbox">
+															<input type="checkbox" name="" id="chk26">
+															<span class="chkOn"></span>
+															<span class="txt">영주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk27" class="chkbox">
+															<input type="checkbox" name="" id="chk27">
+															<span class="chkOn"></span>
+															<span class="txt">영천시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk28" class="chkbox">
+															<input type="checkbox" name="" id="chk28">
+															<span class="chkOn"></span>
+															<span class="txt">상주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk29" class="chkbox">
+															<input type="checkbox" name="" id="chk29">
+															<span class="chkOn"></span>
+															<span class="txt">문경시</span>
+														</label>
+													</li>
+												</ul>
+												<!-- 지도 선택 -->
+											</li>
+										</ul>
+									</div>
+									<!-- usearea-sel -->
+								</div>
+
+								<div class="fold-cont" style="display:block;">
+									<!-- 그래프 -->
+									<div class="graph-wrap">
+										<!-- 그래프 -->
+										<div class="graph w100per">
+											<div class="graph-box bg01">
+												<p class="tit">② 외국인등의 상속,경매등 취득 미신고, 거짓신고<br/> <span>(법 제28조제4항)</span></p>
+
+												<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+													<canvas id="barChart1"></canvas>
+												</div>
+
+												<div class="total-wrap">
+													<div class="total">
+														<p>54건</p>
+														<p>조사전</p>
+													</div>
+
+													<div class="total">
+														<p>4건</p>
+														<p>조사후</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 그래프 -->
+
+										<!-- 그래프 -->
+										<div class="graph w100per">
+											<div class="graph-box bg02">
+												<p class="tit">③ 외국인등의 계속보유 미신고, 거짓신고<br/> <span>(법 제28조제5항제1호)</span></p>
+
+												<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+													<canvas id="barChart2"></canvas>
+												</div>
+
+												<div class="total-wrap">
+													<div class="total">
+														<p>2건</p>
+														<p>조사전</p>
+													</div>
+
+													<div class="total">
+														<p>450건</p>
+														<p>조사후</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 그래프 -->
+
+										<!-- 그래프 -->
+										<div class="graph w100per">
+											<div class="graph-box bg03">
+												<p class="tit">③ 토지거래허가 목적외 이용<br/> <span>(법 제28조제5항제2호)</span></p>
+
+												<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+													<canvas id="barChart3"></canvas>
+												</div>
+
+												<div class="total-wrap">
+													<div class="total">
+														<p>22건</p>
+														<p>조사전</p>
+													</div>
+
+													<div class="total">
+														<p>7건</p>
+														<p>조사후</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 그래프 -->
+									</div>
+									<!-- 그래프 -->
+
+									<!-- tbl -->
+									<div class="tbl-wrap type03 scroll mh575">
+										<table class="tbl h-scroll">
+											<colgroup>
+												<col style="width:4%;">								
+												<col style="width:4%;">
+												<col style="width:5%;">
+												<col>
+												<col style="width:5%;">
+												<col style="width:7%;">
+												<col style="width:5%;">
+												<col style="width:8%;">
+												<col style="width:8%;">
+												<col style="width:5%;">
+												<col style="width:5%;">
+												<col style="width:8%;">
+												<col style="width:5%;">
+												<col style="width:6%;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" rowspan="3">구분</th>
+													<th scope="col" rowspan="3"></th>
+													<th scope="col" rowspan="3">자진신고<br/>건수</th>
+													<th scope="col" colspan="9">위반적발</th>											
+													<th scope="col" rowspan="3">조사중<br/>(건)</th>
+													<th scope="col" rowspan="3">3)협의없음<br/>(건)</th>
+												</tr>
+												<tr>
+													<th scope="col" colspan="6">자진신고자</th>
+													<th scope="col" colspan="3">자진신고자 이외 과태료 부과 대상자</th>
+												</tr>
+												<tr>
+													<th scope="col">1) 위반행위별</th>
+													<th scope="col">건수</th>
+													<th scope="col">구분</th>
+													<th scope="col">인원</th>
+													<th scope="col">2) 과태료<br/>원금</th>
+													<th scope="col">감면후<br/>부과금액(원)</th>
+													<th scope="col">구분</th>
+													<th scope="col">부과<br/>인원</th>
+													<th scope="col">부과<br/>금액</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="total">
+													<td>건수 총합</td>
+													<td></td>
+													<td>32</td>
+													<td class="al">합계</td>
+													<td>3</td>
+													<td class="al">합계</td>
+													<td>3</td>
+													<td class="ar">380,368,900</td>
+													<td class="ar">380,368,900</td>
+													<td class="al">합계</td>
+													<td>58</td>
+													<td class="ar">380,368,900</td>						
+													<td>5</td>
+													<td>-</td>
+												</tr>
+												<tr>
+													<td rowspan="8">경북</td>
+													<td rowspan="4">조사전</td>
+													<td rowspan="4">18</td>
+													<td class="al">1. 거짓신고 요구</td>
+													<td>-</td>
+													<td class="al">매도인</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+													<td rowspan="4">-</td>
+													<td rowspan="4">-</td>
+												</tr>
+												<tr>
+													<td class="al">2. 거짓 조장방조</td>
+													<td>-</td>
+													<td class="al">매수인</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">3. 거짓신고</td>
+													<td>-</td>
+													<td class="al">중개업자</td>
+													<td>11</td>
+													<td class="ar">7,339,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">-</td>
+													<td>-</td>
+													<td class="al">기타관계자</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td rowspan="4">조사후</td>
+													<td rowspan="4">18</td>
+													<td class="al">1. 거짓신고 요구</td>
+													<td>-</td>
+													<td class="al">매도인</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+													<td rowspan="4">-</td>
+													<td rowspan="4">-</td>
+												</tr>
+												<tr>
+													<td class="al">2. 거짓 조장방조</td>
+													<td>-</td>
+													<td class="al">매수인</td>
+													<td>4</td>
+													<td class="ar">11,000,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">3. 거짓신고</td>
+													<td>-</td>
+													<td class="al">중개업자</td>
+													<td>11</td>
+													<td class="ar">7,339,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">-</td>
+													<td>-</td>
+													<td class="al">기타관계자</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+											</tbody>
+										</table>		
+									</div>
+									<!-- tbl -->
+
+									<div class="tit-wrap type03">
+										<h2 class="type02">부동산 거래신고 자진신고 세부내역</h2>
+									</div>
+
+									<!-- tbl -->
+									<div class="tbl-wrap type03 scroll-x scroll mh575">
+										<table class="tbl h-scroll">
+											<colgroup>
+												<col style="width:80px">
+												<col style="width:90px">
+												<col style="width:90px">
+												<col style="width:90px">
+												<col style="width:80px">
+												<col style="width:170px">
+												<col style="width:80px">
+												<col style="width:80px">
+												<col style="width:100px">
+												<col style="width:100px">
+												<col style="width:120px">
+												<col style="width:120px">
+												<col style="width:90px">
+												<col style="width:100px">
+												<col style="width:150px">
+												<col style="width:150px">
+												<col style="width:150px">
+												<col style="width:90px">
+												<col style="width:100px">
+												<col style="width:120px">
+												<col style="width:120px">
+												<col style="width:180px">
+												<col style="width:150px">
+												<col style="width:200px">
+												<col style="width:340px">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" colspan="12">신고내역 상세</th>
+													<th scope="col" colspan="7 ">1) 자진신고자 관련 사항</th>
+													<th scope="col" colspan="6">2) 자진신고자 외 과태료 부과 대상자 상세</th>  
+												</tr>
+												<tr>
+													<th scope="col">순번</th>
+													<th scope="col">접수번호</th> 
+													<th scope="col">접수일자</th>
+													<th scope="col">광역시도</th>
+													<th scope="col">시.군</th>
+													<th scope="col">조사물건 주소</th> 
+													<th scope="col">매수자</th>
+													<th scope="col">매도자</th>
+													<th scope="col">대표물건</th>
+													<th scope="col">세부 용도</th>  
+													<th scope="col">신고가격<br>(단위 : 원)</th>
+													<th scope="col">실거래가격<br>(단위 : 원)</th>
+													<th scope="col">신고일자</th>
+													<th scope="col">조사전후<br>(1. 조사전)<br>(2. 조사후)</th>
+													<th scope="col">자진신고자(명)</th>
+													<th scope="col">위반내역<br>(1. 미신고.거짓신고요구)<br>(2. 거짓신고 조장방조)<br>(3. 거짓신고)</th>
+													<th scope="col">주체구분<br>(1. 매수인)<br>(2. 매도인)<br>(3. 중개업자)<br>(4. 기타관계자)</th>
+													<th scope="col">과태료원금(원)</th>
+													<th scope="col">감면후<br>과태료부과금액(원)</th>
+													<th scope="col">과태료<br>부과일자 </th>
+													<th scope="col">주체구분<br>(1. 매수인)<br>(2. 매도인)<br>(3. 중개업자)<br>(4. 기타관계자)</th>
+													<th scope="col">자진신고자외<br>위반자(명)</th>
+													<th scope="col">위반내역<br>(1. 미신고.거짓신고요구)<br>(2. 거짓신고 조장방조)<br>(3. 거짓신고)<br>(4. 지연신고_미신고_신고거부)<br>(5. 자료미제출)</th>
+													<th scope="col">과태료부과금액(원)</th>
+													<th scope="col">사유<br>(조사중, 협의없음,<br>참고사항 등을 표기)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td rowspan="2">1</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">2</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">3</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">4</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">5</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">6</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">7</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">8</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">9</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">10</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">10</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">10</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">10</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">10</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+											</tbody>
+										</table>	
+									</div>
+									<!-- tbl -->
+								</div>
+							</div>
+						</div>
+						<!-- 부동산거래신고 -->
+
+						<!-- 2025년도 신고포상금 지급 현황 -->
+						<div class="cont-box-wrap type03">
+							<div class="cont-box">
+								<div class="tit-wrap type04">
+									<h2 class="type02">2025년도 신고포상금 지급 현황</h2>
+
+									<button type="button" name="" id="" class="foldcon-btn type02"></button>
+								</div>
+
+								<div class="fold-cont" style="display:none;">
+									<!-- 그래프 -->
+									<div class="graph-wrap">
+										<!-- 그래프 -->
+										<div class="graph w100per">
+											<div class="graph-box bg01">
+												<p class="tit">② 외국인등의 상속,경매등 취득 미신고, 거짓신고<br/> <span>(법 제28조제4항)</span></p>
+
+												<div class="graph-wrap" style="width:400px; height:300px; margin:0 auto;">
+													<canvas id="barChart4"></canvas>
+												</div>
+
+												<div class="total-wrap">
+													<div class="total">
+														<p>17건</p>
+														<p>조사전</p>
+													</div>
+
+													<div class="total">
+														<p>73건</p>
+														<p>조사후</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 그래프 -->
+
+										<!-- 그래프 -->
+										<div class="graph w100per">
+											<div class="graph-box bg02">
+												<p class="tit">③ 외국인등의 계속보유 미신고, 거짓신고<br/> <span>(법 제28조제5항제1호)</span></p>
+
+												<div class="graph-wrap" style="width:400px; height:300px; margin:0 auto;">
+													<canvas id="barChart5"></canvas>
+												</div>
+
+												<div class="total-wrap">
+													<div class="total">
+														<p>184건</p>
+														<p>조사전</p>
+													</div>
+
+													<div class="total">
+														<p>7건</p>
+														<p>조사후</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 그래프 -->
+
+										<!-- 그래프 -->
+										<div class="graph w100per">
+											<div class="graph-box bg03">
+												<p class="tit">③ 토지거래허가 목적외 이용<br/> <span>(법 제28조제5항제2호)</span></p>
+
+												<div class="graph-wrap" style="width:400px; height:300px; margin:0 auto;">
+													<canvas id="barChart6"></canvas>
+												</div>
+
+												<div class="total-wrap">
+													<div class="total">
+														<p>1건</p>
+														<p>조사전</p>
+													</div>
+
+													<div class="total">
+														<p>17건</p>
+														<p>조사후</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 그래프 -->
+									</div>
+									<!-- 그래프 -->
+
+									<!-- tbl -->
+									<div class="tbl-wrap type03 scroll mh495">
+										<table class="tbl h-scroll">
+											<colgroup>
+												<col style="width:4%;">								
+												<col style="width:4%;">
+												<col style="width:5%;">
+												<col>
+												<col style="width:5%;">
+												<col style="width:7%;">
+												<col style="width:5%;">
+												<col style="width:8%;">
+												<col style="width:8%;">
+												<col style="width:5%;">
+												<col style="width:5%;">
+												<col style="width:8%;">
+												<col style="width:5%;">
+												<col style="width:6%;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" rowspan="3">구분</th>
+													<th scope="col" rowspan="3"></th>
+													<th scope="col" rowspan="3">자진신고<br/>건수</th>
+													<th scope="col" colspan="9">위반적발</th>											
+													<th scope="col" rowspan="3">조사중<br/>(건)</th>
+													<th scope="col" rowspan="3">3)협의없음<br/>(건)</th>
+												</tr>
+												<tr>
+													<th scope="col" colspan="6">자진신고자</th>
+													<th scope="col" colspan="3">자진신고자 이외 과태료 부과 대상자</th>
+												</tr>
+												<tr>
+													<th scope="col">1) 위반행위별</th>
+													<th scope="col">건수</th>
+													<th scope="col">구분</th>
+													<th scope="col">인원</th>
+													<th scope="col">2) 과태료<br/>원금</th>
+													<th scope="col">감면후<br/>부과금액(원)</th>
+													<th scope="col">구분</th>
+													<th scope="col">부과<br/>인원</th>
+													<th scope="col">부과<br/>금액</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="total">
+													<td>건수 총합</td>
+													<td></td>
+													<td>32</td>
+													<td class="al">합계</td>
+													<td>3</td>
+													<td class="al">합계</td>
+													<td>3</td>
+													<td class="ar">380,368,900</td>
+													<td class="ar">380,368,900</td>
+													<td class="al">합계</td>
+													<td>58</td>
+													<td class="ar">380,368,900</td>						
+													<td>5</td>
+													<td>-</td>
+												</tr>
+												<tr>
+													<td rowspan="8">경북</td>
+													<td rowspan="4">조사전</td>
+													<td rowspan="4">18</td>
+													<td class="al">1. 외국인등의 취득 미신고, 거짓신고(법 제28조제4항)</td>
+													<td>-</td>
+													<td class="al">매도인</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+													<td rowspan="4">-</td>
+													<td rowspan="4">-</td>
+												</tr>
+												<tr>
+													<td class="al">2. 외국인등의 상속,경매등 취득 미신고, 거짓신고(법 제28조제5항제1호)</td>
+													<td>-</td>
+													<td class="al">매수인</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">3. 외국인등의 계속보유 미신고, 거짓신고(법 제28조제5항제2호)</td>
+													<td>-</td>
+													<td class="al">중개업자</td>
+													<td>11</td>
+													<td class="ar">7,339,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">-</td>
+													<td>-</td>
+													<td class="al">기타관계자</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td rowspan="4">조사후</td>
+													<td rowspan="4">18</td>
+													<td class="al">1. 외국인등의 취득 미신고, 거짓신고(법 제28조제4항)</td>
+													<td>-</td>
+													<td class="al">매도인</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+													<td rowspan="4">-</td>
+													<td rowspan="4">-</td>
+												</tr>
+												<tr>
+													<td class="al">2. 외국인등의 상속,경매등 취득 미신고, 거짓신고(법 제28조제5항제1호)</td>
+													<td>-</td>
+													<td class="al">매수인</td>
+													<td>4</td>
+													<td class="ar">11,000,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">3. 외국인등의 계속보유 미신고, 거짓신고(법 제28조제5항제2호)</td>
+													<td>-</td>
+													<td class="al">중개업자</td>
+													<td>11</td>
+													<td class="ar">7,339,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+												<tr>
+													<td class="al">-</td>
+													<td>-</td>
+													<td class="al">기타관계자</td>
+													<td>4</td>
+													<td class="ar">66,999,990</td>
+													<td class="ar">-</td>
+													<td>-</td>
+													<td>-</td>
+													<td class="ar">-</td>
+												</tr>
+											</tbody>
+										</table>		
+									</div>
+									<!-- tbl -->
+
+									<div class="tit-wrap type03">
+										<h2 class="type02">외국인등의 부동산 취득 자진신고 세부내역</h2>
+									</div>
+
+									<!-- tbl -->
+									<div class="tbl-wrap type03 scroll-x scroll mh735">
+										<table class="tbl h-scroll">
+											<colgroup>
+												<col style="width:80px">
+												<col style="width:90px">
+												<col style="width:90px">
+												<col style="width:90px">
+												<col style="width:80px">
+												<col style="width:170px">
+												<col style="width:80px">
+												<col style="width:80px">
+												<col style="width:100px">
+												<col style="width:100px">
+												<col style="width:120px">
+												<col style="width:120px">
+												<col style="width:90px">
+												<col style="width:100px">
+												<col style="width:150px">
+												<col style="width:150px">
+												<col style="width:150px">
+												<col style="width:90px">
+												<col style="width:100px">
+												<col style="width:120px">
+												<col style="width:120px">
+												<col style="width:180px">
+												<col style="width:150px">
+												<col style="width:200px">
+												<col style="width:340px">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col" colspan="12">신고내역 상세</th>
+													<th scope="col" colspan="7 ">1) 자진신고자 관련 사항</th>
+													<th scope="col" colspan="6">2) 자진신고자 외 과태료 부과 대상자 상세</th>  
+												</tr>
+												<tr>
+													<th scope="col">순번</th>
+													<th scope="col">접수번호</th> 
+													<th scope="col">접수일자</th>
+													<th scope="col">광역시도</th>
+													<th scope="col">시.군</th>
+													<th scope="col">조사물건 주소</th> 
+													<th scope="col">매수자</th>
+													<th scope="col">매도자</th>
+													<th scope="col">대표물건</th>
+													<th scope="col">세부 용도</th>  
+													<th scope="col">신고가격<br>(단위 : 원)</th>
+													<th scope="col">실거래가격<br>(단위 : 원)</th>
+													<th scope="col">신고일자</th>
+													<th scope="col">조사전후<br>(1. 조사전)<br>(2. 조사후)</th>
+													<th scope="col">자진신고자(명)</th>
+													<th scope="col">위반내역<br>(1. 미신고.거짓신고요구)<br>(2. 거짓신고 조장방조)<br>(3. 거짓신고)</th>
+													<th scope="col">주체구분<br>(1. 매수인)<br>(2. 매도인)<br>(3. 중개업자)<br>(4. 기타관계자)</th>
+													<th scope="col">과태료원금(원)</th>
+													<th scope="col">감면후<br>과태료부과금액(원)</th>
+													<th scope="col">과태료<br>부과일자 </th>
+													<th scope="col">주체구분<br>(1. 매수인)<br>(2. 매도인)<br>(3. 중개업자)<br>(4. 기타관계자)</th>
+													<th scope="col">자진신고자외<br>위반자(명)</th>
+													<th scope="col">위반내역<br>(1. 미신고.거짓신고요구)<br>(2. 거짓신고 조장방조)<br>(3. 거짓신고)<br>(4. 지연신고_미신고_신고거부)<br>(5. 자료미제출)</th>
+													<th scope="col">과태료부과금액(원)</th>
+													<th scope="col">사유<br>(조사중, 협의없음,<br>참고사항 등을 표기)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td rowspan="2">1</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">2</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">3</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">4</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">5</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">6</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+												<tr>
+													<td rowspan="2">7</td>
+													<td rowspan="2">14320</td>
+													<td rowspan="2">2026-02-02</td>
+													<td rowspan="2">경상북도</td>
+													<td rowspan="2">구미시</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">-</td>
+													<td rowspan="2">토지 및 건축물</td>
+													<td rowspan="2">다가구 주택</td>
+													<td rowspan="2" class="ar">750,000,000</td>
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2">2024-05-05</td>
+													<td rowspan="2">2</td>
+													<td rowspan="2">1</td>
+													<td rowspan="2">3</td>
+													<td rowspan="2">3</td> 
+													<td rowspan="2" class="ar">435,000,000</td>
+													<td rowspan="2" class="ar">125,000,000</td>
+													<td rowspan="2">2024-05-05</td> 
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+													<td rowspan="2">조사중</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>1</td>
+													<td>1</td>
+													<td class="ar">125,000,000</td>
+												</tr>
+											</tbody>
+										</table>	
+									</div>
+									<!-- tbl -->
+								</div>
+							</div>
+						</div>
+						<!-- 2025년도 신고포상금 지급 현황 -->
+					</div>
+					<!-- 자진신고 접수 및 처리 현황 -->
+
+					<!-- 과태료, 증여협의, 자진신고, 불법거래신고 처리 현황 -->
+					<div id="statsTab04">
+						<!-- 2025년도 과태료 부과현황 총괄표 -->
+						<div class="cont-box-wrap type02">
+							<div class="cont-box">
+								<div class="tit-wrap">
+									<h2 class="type03">2025년도 과태료 부과현황 총괄표</h2>
+
+									<button type="button" name="" id="" class="allcities-btn type02"><i class="ico-filter" aria-hidden="true"></i> 전체 시군</button>
+
+									<!-- usearea-sel -->
+									<div class="usearea-sel county">
+										<header>
+											<h3>시군선택</h3>
+
+											<div class="btn-group gap0">
+												<button type="button" name="" id="" class="reset-btn">초기화</button>
+
+												<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기">
+													<i class="ico-close" aria-hidden="true"></i>
+												</button>
+											</div>
+										</header>
+						
+										<ul class="folding">
+											<li>
+												<a href="#" class="dept1 active">
+													<label for="chkA21" class="chkbox" onclick="event.stopPropagation()">
+														<input type="checkbox" name="" id="chkA21">
+														<span class="chkOn"></span>
+														<span class="txt">전체</span>
+													</label>
+												</a>
+
+												<!-- 지도 선택 -->
+												<ul class="map-type-sel">
+													<li>
+														<label for="chk21" class="chkbox">
+															<input type="checkbox" name="" id="chk21">
+															<span class="chkOn"></span>
+															<span class="txt">포항시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk22" class="chkbox">
+															<input type="checkbox" name="" id="chk22">
+															<span class="chkOn"></span>
+															<span class="txt">경주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk23" class="chkbox">
+															<input type="checkbox" name="" id="chk23">
+															<span class="chkOn"></span>
+															<span class="txt">구미시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk24" class="chkbox">
+															<input type="checkbox" name="" id="chk24">
+															<span class="chkOn"></span>
+															<span class="txt">김천시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk25" class="chkbox">
+															<input type="checkbox" name="" id="chk25">
+															<span class="chkOn"></span>
+															<span class="txt">안동시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk26" class="chkbox">
+															<input type="checkbox" name="" id="chk26">
+															<span class="chkOn"></span>
+															<span class="txt">영주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk27" class="chkbox">
+															<input type="checkbox" name="" id="chk27">
+															<span class="chkOn"></span>
+															<span class="txt">영천시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk28" class="chkbox">
+															<input type="checkbox" name="" id="chk28">
+															<span class="chkOn"></span>
+															<span class="txt">상주시</span>
+														</label>
+													</li>
+													<li>
+														<label for="chk29" class="chkbox">
+															<input type="checkbox" name="" id="chk29">
+															<span class="chkOn"></span>
+															<span class="txt">문경시</span>
+														</label>
+													</li>
+												</ul>
+												<!-- 지도 선택 -->
+											</li>
+										</ul>
+									</div>
+									<!-- usearea-sel -->
+								</div>
+
+								<div class="graph-wrap">
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<div class="graph-box bg01 type03">
+											<p class="tit">위반유형별 처분건수</p>
+
+											<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+												<canvas id="statusPie4" style="width:230px; height:230px;"></canvas>
+											</div>
+
+											<div class="total">
+												<p>100건</p>
+												<p>합계</p>
+											</div>
+										</div>
+									</div>
+									<!-- 그래프 -->
+
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<div class="graph-box bg02 type03">
+											<p class="tit">위반유형별 부과인원</p>
+
+											<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+												<canvas id="statusPie5" style="width:230px; height:230px;"></canvas>
+											</div>
+
+											<div class="total">
+												<p>168건</p>
+												<p>합계</p>
+											</div>
+										</div>
+									</div>
+									<!-- 그래프 -->
+
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<div class="graph-box bg03 type03">
+											<p class="tit">위반유형별 부과원금</p>
+
+											<div class="graph-wrap" style="width:420px; height:320px; margin:0 auto;">
+												<canvas id="statusPie6" style="width:230px; height:230px;"></canvas>
+											</div>
+
+											<div class="total">
+												<p>19건</p>
+												<p>합계</p>
+											</div>
+										</div>
+									</div>
+									<!-- 그래프 -->
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap type03 scroll mh545">
+									<table class="tbl h-scroll">
+										<colgroup>
+											<col style="width:80px">
+											<col style="width:250px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:180px">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">구분</th>
+												<th scope="col" rowspan="2">위반유형별</th> 
+												<th scope="col" colspan="3">2025년 과태료 부과현황</th>
+												<th scope="col" colspan="3">1월</th>
+												<th scope="col" colspan="3">2월</th>
+												<th scope="col" colspan="3">3월</th>
+												<th scope="col" colspan="3">4월</th>
+												<th scope="col" colspan="3">5월</th>
+												<th scope="col" colspan="3">6월</th>
+												<th scope="col" colspan="3">7월</th>
+												<th scope="col" colspan="3">8월</th>
+												<th scope="col" colspan="3">9월</th>
+												<th scope="col" colspan="3">10월</th>
+												<th scope="col" colspan="3">11월</th>
+												<th scope="col" colspan="3">12월</th>
+											</tr>
+											<tr>
+												<th scope="col">처분건수<br/>(건)</th> 
+												<th scope="col">부과인원<br/>(명)</th> 
+												<th scope="col">부과원금<br/>(원)</th> 
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+												<th scope="col">처분건수<br/>(건)</th>
+												<th scope="col">부과인원<br/>(명)</th>
+												<th scope="col">부과원금<br/>(원)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="total">
+												<td></td>
+												<td class="al">합계</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">자료 미제출(거래가격)</td>
+												<td>355</td>
+												<td>5</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">자료 미제출(거래가격외)/거짓제출</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">미신고/지연신고</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">미신고/거짓신고 요구</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고 조장방조</td>
+												<td>5</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>2</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고(다운계약)</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고(업계약)</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고(가격외)</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr class="s-total">
+												<td></td>
+												<td class="al">소계</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">자료 미제출(거래가격)</td>
+												<td>355</td>
+												<td>5</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">자료 미제출(거래가격외)/거짓제출</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">미신고/지연신고</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">미신고/거짓신고 요구</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고 조장방조</td>
+												<td>5</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>2</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고(다운계약)</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고(업계약)</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td class="al">거짓신고(가격외)</td>
+												<td>355</td>
+												<td>655</td>
+												<td class="ar">1,803,419,600</td>
+												<td>25</td> 
+												<td>22</td>
+												<td class="ar">1,803,419,600</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>133</td>
+												<td class="ar">125,000,000</td>
+												<td>144</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>1</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+												<td>454</td>
+												<td>13</td>
+												<td class="ar">125,000,000</td>
+											</tr>
+										</tbody>
+									</table>	
+								</div>
+								<!-- tbl -->
+							</div>
+						</div>
+						<!-- 2025년도 과태료 부과현황 총괄표 -->
+
+						<!-- 과태료 처분 세부내역 -->
+						<div class="cont-box-wrap type02">
+							<div class="cont-box">
+								<div class="tit-wrap">
+									<h2 class="type02">과태료 처분 세부내역</h2>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap type03 scroll mh490">
+									<table class="tbl h-scroll">
+										<colgroup>
+											<col style="width:90px">
+											<col style="width:140px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:120px">
+											<col style="width:120px">
+											<col style="width:150px">
+											<col style="width:100px">
+											<col style="width:150px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:120px">
+											<col style="width:90px">
+											<col style="width:120px">
+											<col style="width:90px">
+											<col style="width:120px">
+											<col style="width:120px">
+											<col style="width:120px"> 
+											<col style="width:200px">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="3">조사구분<br/>(항목선택)</th>
+												<th scope="col" rowspan="3">접수번호<br/>*처분건수 산정기준</th>
+												<th scope="col" rowspan="3">시군구코드 </th>
+												<th scope="col" rowspan="3">접수년도<br/>(yyyy)</th>
+												<th scope="col" rowspan="3">접수일자<br/>(mm dd)</th>									
+												<th scope="col" rowspan="3">과태료<br/>부과년도<br/>(yyyy)</th>
+												<th scope="col" rowspan="3">과태료<br/>부과일자<br/>( mm dd)</th>
+												<th scope="col" rowspan="3">시도</th>
+												<th scope="col" rowspan="3">시.군.구</th>
+												<th scope="col" rowspan="3">조사물건<br/>조사</th>
+												<th scope="col" rowspan="3">매수자</th>
+												<th scope="col" rowspan="3">매도자</th>
+												<th scope="col" rowspan="3">물건구분<br/>(항목선택)</th>
+												<th scope="col" rowspan="3">세부용도<br/>(항목선택)</th>
+												<th scope="col" rowspan="3">신고가격<br/>(단위:원)</th>
+												<th scope="col" rowspan="3">실거래가격<br/>(단위:원)</th> 
+												<th scope="col" rowspan="3">위반내역<br/>*중요 위반내역<br/>1건을 항목선택</th>
+												<th scope="col" rowspan="3">부가인원<br/>합계(명)</th>
+												<th scope="col" rowspan="3">부가금액<br/>합계(원)</th> 
+												<th scope="col" colspan="10">과태료 부과 상세 (과태료 부과원금액만 기재_자진납부 또는 이의신청 금액을 기재하는 것이 아님, 단위:명, 원)</th>
+												<th scope="col" rowspan="3">비고</th>
+											</tr>
+											<tr> 
+												<th scope="col" colspan="2">매수인</th>
+												<th scope="col" colspan="2">매도인</th>
+												<th scope="col" colspan="3">중개업자</th>
+												<th scope="col" colspan="3">기타 관계자</th>
+											</tr>
+											<tr>
+												<th scope="col">부과인원</th>
+												<th scope="col">부과원금</th>
+												<th scope="col">부과인원</th>
+												<th scope="col">부과원금</th>
+												<th scope="col">부과인원</th>
+												<th scope="col">부과원금</th>
+												<th scope="col">행정처분결과</th>
+												<th scope="col">부과인원</th>
+												<th scope="col">부과원금</th>
+												<th scope="col">관계</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="total">
+												<td>건수 총합</td>
+												<td></td>
+												<td>32</td>
+												<td>2025</td>
+												<td>3</td>
+												<td>2025</td>
+												<td>2025-05-08</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>		
+												<td>5</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td class="ar">550,000,000</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>32</td>
+												<td>2025</td>
+												<td>3</td>
+												<td>2025</td>
+												<td>2025-05-08</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>		
+												<td>5</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td class="ar">550,000,000</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>32</td>
+												<td>2025</td>
+												<td>3</td>
+												<td>2025</td>
+												<td>2025-05-08</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>		
+												<td>5</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td class="ar">550,000,000</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>32</td>
+												<td>2025</td>
+												<td>3</td>
+												<td>2025</td>
+												<td>2025-05-08</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>		
+												<td>5</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td class="ar">550,000,000</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>32</td>
+												<td>2025</td>
+												<td>3</td>
+												<td>2025</td>
+												<td>2025-05-08</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>		
+												<td>5</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td class="ar">550,000,000</td>
+												<td>-</td>
+												<td>-</td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+												<td class="ar">550,000,000</td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>		
+								</div>
+								<!-- tbl -->
+							</div> 
+						</div> 
+						<!-- 과태료 처분 세부내역 -->
+
+						<!-- 불법거래신고 처리현황 -->
+						<div class="cont-box-wrap type02">
+							<div class="cont-box">
+								<div class="tit-wrap">
+									<h2 class="type02">불법거래신고 처리현황</h2>
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap type03 scroll mh490">
+									<table class="tbl h-scroll">
+										<colgroup>
+											<col style="width:90px">
+											<col style="width:140px">
+											<col style="width:120px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:150px">
+											<col style="width:90px">
+											<col style="width:90px">
+											<col style="width:120px">
+											<col style="width:120px">
+											<col style="width:450px">
+											<col style="width:150px">
+											<col style="width:120px">
+											<col style="width:120px">
+											<col style="width:150px">
+											<col style="width:150px">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">민원구분<br/>(항목선택)</th>
+												<th scope="col" rowspan="2">민원접수<br/>방법</th> 
+												<th scope="col" colspan="3">민원 접수내역</th>
+												<th scope="col" colspan="6">민원 대상내역</th>
+												<th scope="col" colspan="2">민원 처리내역</th>
+												<th scope="col" colspan="4">후속조치</th> 
+												<th scope="col" rowspan="2">비고</th>					
+											</tr>
+											<tr> 
+												<th scope="col">접수일자<br/>(yyyy-mm-dd)</th>
+												<th scope="col">민원<br/>접수번호</th>
+												<th scope="col">민원인<br/>성명</th>
+												<th scope="col">시도</th> 
+												<th scope="col">시.군.구</th>
+												<th scope="col">조사물건<br/>주소</th>
+												<th scope="col">물건구분<br/>(항목선택)</th>
+												<th scope="col">세부용도<br/>(항목선택)</th>
+												<th scope="col">위반내역<br/>*중요 위반내역<br/>1건을 항목선택</th>
+												<th scope="col">회신 일자<br/>(yyyy-mm-dd)</th>
+												<th scope="col">회신내용</th>
+												<th scope="col">조치내역</th>
+												<th scope="col">처분일자<br/>(yyyy-mm-dd)</th>
+												<th scope="col">처분대상자<br/>합계(명)</th>
+												<th scope="col">과태료처분시<br/>금액 합계(원)</th>
+											</tr>
+										</thead> 
+										<tbody>
+											<tr class="total">
+												<td>건수 총합</td>
+												<td></td>
+												<td>32</td>
+												<td>2025</td>
+												<td>홍길동</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td class="al">정밀조사 후 거래내역 등을 확인한 바 신고내용과 일치하여 다운거래 사항이 없음을 확인함.</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+											</tr>
+											<tr>
+												<td>건수 총합</td>
+												<td></td>
+												<td>32</td>
+												<td>2025</td>
+												<td>홍길동</td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td class="al">정밀조사 후 거래내역 등을 확인한 바 신고내용과 일치하여 다운거래 사항이 없음을 확인함.</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+											</tr>
+										</tbody>
+									</table>		
+								</div>
+								<!-- tbl -->
+							</div> 
+						</div> 
+						<!-- 불법거래신고 처리현황  -->
+					</div>
+					<!-- 과태료, 증여협의, 자진신고, 불법거래신고 처리 현황 -->
+				</div>
+				<!-- tab-content -->
+
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+	<script src="js/lib/chart.js"></script>
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script>
+
+	<script>
+  Chart.register(ChartDataLabels);
+
+  // legend 위 간격을 "강제로" 확보해서, 라벨/하단 텍스트와 겹침 방지
+  const legendSpacer = {
+	id: 'legendSpacer',
+	beforeInit(chart, args, opts) {
+	  const add = (opts && opts.height) ? opts.height : 0;
+	  if (!add) return;
+
+	  const fit = chart.legend.fit;
+	  chart.legend.fit = function () {
+		fit.bind(chart.legend)();
+		this.height += add; // ✅ legend 영역 증가 = legend가 위로 올라감
+	  };
+	}
+  };
+  Chart.register(legendSpacer);
+
+  // ===== 1) 공통 컬러 =====
+  const pieColor = [
+	"#A45A2E",  // 지급
+	"#F36C00",  // 미지급
+	"#D0A542"   // 검토중
+  ];
+
+  // ===== 옵션 =====
+  function getPieOption() {
+	return {
+	  responsive: true,
+	  maintainAspectRatio: false,
+
+	  // 딜레이(애니메이션) 제거
+	  animation: false,
+	  transitions: {
+		active: { animation: { duration: 0 } },
+		resize: { animation: { duration: 0 } },
+		show:   { animation: { duration: 0 } },
+		hide:   { animation: { duration: 0 } }
+	  },
+
+	  // 바깥 라벨/legend 겹침 방지용 기본 여백
+	  layout: {
+		padding: { top: 20, right: 20, bottom: 20, left: 20 }
+	  },
+
+	  plugins: {
+		legend: {
+		  position: "bottom",
+		  labels: {
+			font: { size: 10 },
+			boxWidth: 9,
+			boxHeight: 9,
+			padding: 10,
+			usePointStyle: false
+		  }
+		},
+
+		legendBottomGap: {
+			height:30 
+		},
+
+		tooltip: { enabled: false },
+
+		datalabels: {
+		  // 실제 %로 표시
+		  formatter: (value, ctx) => {
+			const data = ctx.dataset.data;
+			const total = data.reduce((a,b)=>a+b,0);
+			if (total === 0) return "";
+
+			const percent = Math.round((value / total) * 100);
+			if (percent === 0) return "";
+
+			const label = ctx.chart.data.labels[ctx.dataIndex];
+			return label + " " + percent + "%";
+		  },
+
+		  font: { weight: "bold", size: 14 },
+
+		  // 바깥으로
+		  anchor: "end",
+		  align: "end",
+		  offset: 13,
+		  clamp: false,
+		  clip: false,
+
+		  // 조각 색상과 동일
+		  color: (ctx) => ctx.dataset.backgroundColor[ctx.dataIndex]
+		}
+	  }
+	};
+  }
+
+  // ===== 차트 생성 함수 =====
+  function createPie(id, dataArr) {
+	return new Chart(document.getElementById(id), {
+	  type: "pie",
+	  data: {
+		labels: ["지급", "미지급", "검토중"],
+		datasets: [{
+		  data: dataArr,
+		  backgroundColor: pieColor,
+		  borderColor: "#fff",
+		  borderWidth: 2
+		}]
+	  },
+	  options: getPieOption()
+	});
+  }
+
+
+  const statusPie1 = createPie("statusPie1", [54, 29, 18]);
+  const statusPie2 = createPie("statusPie2", [100, 89, 50]);
+  const statusPie3 = createPie("statusPie3", [54, 90, 118]);
+  const statusPie4 = createPie("statusPie4", [54, 29, 18]);
+  const statusPie5 = createPie("statusPie5", [100, 89, 50]);
+  const statusPie6 = createPie("statusPie6", [54, 90, 118]);
+
+
+  $('.tab-menu a').on('click', function (){
+	const target = $(this).data('target');
+
+	// 탭이 보이는 프레임 다음에 갱신 (한박자 늦음 최소화)
+	requestAnimationFrame(() => {
+	  if (target === 'statsTab02') {
+		statusPie1.resize();
+		statusPie2.resize();
+		statusPie3.resize();
+	  }
+	  if (target === 'statsTab03') {
+		if(typeof barChart1 !== 'undefined') barChart1.resize();
+		if(typeof barChart2 !== 'undefined') barChart2.resize();
+		if(typeof barChart3 !== 'undefined') barChart3.resize();
+	  }
+	  if (target === 'statsTab04') {
+		statusPie4.resize();
+		statusPie5.resize();
+		statusPie6.resize();
+	  }
+	});
+  });
+
+  	</script>
+
+	<script>
+		const barCtx1 = document.getElementById("barChart1");
+
+		const barChart1 = new Chart(barCtx1, {
+			type: 'bar',
+			data: {
+				labels: ['거짓신고 요구','거짓 조장방조','거짓신고'],
+				datasets: [
+				{
+					label: '조사전',
+					data: [0,7,7],
+					backgroundColor: '#F06800',
+					borderRadius: 4,
+					barThickness: 30
+				},
+				{
+					label: '조사후',
+					data: [1,2,11],
+					backgroundColor: '#A65A2E',
+					borderRadius: 4,
+					barThickness: 30
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				animation: false,
+
+			// legend 자리 확보 (하단 공간)
+			layout: { padding: { bottom:50 } },
+
+			plugins: {
+				legend: {
+				display: true,
+				position: 'bottom',
+				align: 'center',
+				labels: {
+					font: { size: 10 },
+					boxWidth: 9,
+					boxHeight: 9,
+					padding: 12
+				}
+				},
+				datalabels: {
+				color: '#333',
+				anchor: 'end',
+				align: 'top',
+				font: { weight: 'bold' }
+				}
+			},
+
+			scales: {
+				y: { beginAtZero: true, ticks: { stepSize: 3 }, grid: { borderDash: [5, 5] } },
+				x: { grid: { display: false } }
+			}
+			}
+		});
+
+		const barCtx2 = document.getElementById("barChart2");
+
+		const barChart2 = new Chart(barCtx2, {
+			type: 'bar',
+			data: {
+				labels: ['매도인','매수인','중개업자','기타'],
+				datasets: [
+				{
+					label: '조사전',
+					data: [2,15,50,80],
+					backgroundColor: '#F06800',
+					borderRadius: 4,
+					barThickness: 30
+				},
+				{
+					label: '조사후',
+					data: [150,200,100,20],
+					backgroundColor: '#A65A2E',
+					borderRadius: 4,
+					barThickness: 30
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				animation: false,
+
+			// legend 자리 확보 (하단 공간)
+			layout: { padding: { bottom:50 } },
+
+			plugins: {
+				legend: {
+				display: true,
+				position: 'bottom',
+				align: 'center',
+				labels: {
+					font: { size: 10 },
+					boxWidth: 9,
+					boxHeight: 9,
+					padding: 12
+				}
+				},
+				datalabels: {
+				color: '#333',
+				anchor: 'end',
+				align: 'top',
+				font: { weight: 'bold' }
+				}
+			},
+
+			scales: {
+				y: { beginAtZero: true, ticks: { stepSize: 50 }, grid: { borderDash: [5, 5] } },
+				x: { grid: { display: false } }
+			}
+			}
+		});
+
+		const barCtx3 = document.getElementById("barChart3");
+
+		const barChart3 = new Chart(barCtx3, {
+			type: 'bar',
+			data: {
+				labels: ['매도인','매수인','중개업자','기타'],
+				datasets: [
+				{
+					label: '조사전',
+					data: [22,12,10,50],
+					backgroundColor: '#F06800',
+					borderRadius: 4,
+					barThickness: 30
+				},
+				{
+					label: '조사후',
+					data: [22,50,30,50],
+					backgroundColor: '#A65A2E',
+					borderRadius: 4,
+					barThickness: 30
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				animation: false,
+
+			// legend 자리 확보 (하단 공간)
+			layout: { padding: { bottom:50 } },
+
+			plugins: {
+				legend: {
+				display: true,
+				position: 'bottom',
+				align: 'center',
+				labels: {
+					font: { size: 10 },
+					boxWidth: 9,
+					boxHeight: 9,
+					padding: 12
+				}
+				},
+				datalabels: {
+				color: '#333',
+				anchor: 'end',
+				align: 'top',
+				font: { weight: 'bold' }
+				}
+			},
+
+			scales: {
+				y: { beginAtZero: true, ticks: { stepSize: 5 }, grid: { borderDash: [5, 5] } },
+				x: { grid: { display: false } }
+			}
+			}
+		});
+
+	</script>
+
+    <script>
+		const commonOptions = {
+		responsive:true,
+		maintainAspectRatio:false,
+		animation:false,
+		layout:{ padding:{ bottom:80 } },
+		plugins:{
+			legend:{
+			position:'bottom',
+			align:'center',
+			labels:{
+				font:{ size:10 },
+				boxWidth:9,
+				boxHeight:9,
+				padding:12
+			}
+			},
+			datalabels:{ display:false }
+		},
+		scales:{
+			// 선형 x축(막대 위치 직접 지정)
+			x:{
+			type:'linear',
+			min:0,
+			max:200,               // 폭(스케일) 조절용
+			grid:{ display:false },
+			ticks:{ display:false },
+			border:{ display:false }
+			},
+			y:{
+			min:0,
+			max:1,
+			ticks:{ stepSize:0.25 },
+			grid:{ borderDash:[5,5] }
+			}
+		}
+	 };
+
+	// ===== 막대 스타일 공통 =====
+	const barStyle = {
+	borderRadius:4,
+	barThickness:90
+	};
+
+	const x1 = 60;
+	const x2 = 140;
+
+	// ---- barChart4 ----
+	new Chart(document.getElementById('barChart4'), {
+		type:'bar',
+		data:{
+			datasets:[
+			{
+				label:'조사전',
+				data:[{ x:x1, y:1 }],
+				backgroundColor:'#F06800',
+				...barStyle
+			},
+			{
+				label:'조사후',
+				data:[{ x:x2, y:0.85 }],
+				backgroundColor:'#A65A2E',
+				...barStyle
+			}
+			]
+		},
+		options: commonOptions
+	});
+
+	// ---- barChart5 ----
+	new Chart(document.getElementById('barChart5'), {
+	type:'bar',
+	data:{
+		datasets:[
+			{ label:'조사전', data:[{ x:x1, y:0.9 }], backgroundColor:'#F06800', ...barStyle },
+			{ label:'조사후', data:[{ x:x2, y:0.6 }], backgroundColor:'#A65A2E', ...barStyle }
+		]
+	},
+	options: commonOptions
+	});
+
+	// ---- barChart6 ----
+	new Chart(document.getElementById('barChart6'), {
+	type:'bar',
+	data:{
+		datasets:[
+			{ label:'조사전', data:[{ x:x1, y:0.7 }],  backgroundColor:'#F06800', ...barStyle },
+			{ label:'조사후', data:[{ x:x2, y:0.95 }], backgroundColor:'#A65A2E', ...barStyle }
+		]
+	},
+	options: commonOptions
+	});
+
+	</script>
+</body>
+</html>

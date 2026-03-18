@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 임시저장 -->
+	<div class="layerpop-wrap alert w480" id="popup1" style="display:block; position:relative;">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info">
+				<p class="message">임시저장 완료</p>
+				<p class="desc">
+					작성중인 조사서가 임시저장되었습니다.<br/>
+					작성완료 후 반드시 “완료”를 눌러 등록해주세요.
+				</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl blue" onclick="closePopup('popup1')">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 임시저장 -->
+
+	<!-- layerpop-wrap 무단점유 여부 입력 안내 1 -->
+	<div class="layerpop-wrap alert w480" id="popup2" style="display:block; position:relative; top:30px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info type02">
+				<p class="message">무단점유 여부 입력 안내</p>
+				<p class="desc">
+					무단점유 여부를 선택하지 않으셨습니다. <br/>
+					무단점유 여부를 선택해주세요.
+				</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl blue" onclick="closePopup('popup1')">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 무단점유 여부 입력 안내 1 -->
+
+	<!-- layerpop-wrap 무단점유 여부 입력 안내 2 -->
+	<div class="layerpop-wrap alert w480" id="popup3" style="display:block; position:relative; top:60px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info type02">
+				<p class="message">무단점유 여부 입력 안내</p>
+				<p class="desc">
+					제외지 사유를 선택하지 않으셨습니다.<br/>
+					제외지 사유를 선택해주세요.
+				</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl blue" onclick="closePopup('popup1')">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 무단점유 여부 입력 안내 2 -->
+
+	<!-- layerpop-wrap 무단점유 여부 입력 안내 3 -->
+	<div class="layerpop-wrap alert w480" id="popup4" style="display:block; position:relative; top:90px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info type02">
+				<p class="message">무단점유 여부 입력 안내</p>
+				<p class="desc">
+					“제외사유 상세” 칸을 입력해주세요.<br/>
+					(제외사유 “기타“ 선택 시 필수)
+				</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl blue" onclick="closePopup('popup1')">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 무단점유 여부 입력 안내 3 -->
+
+	<!-- layerpop-wrap 필수 항목 미입력 안내  -->
+	<div class="layerpop-wrap alert w480" id="popup5" style="display:block; position:relative; top:120px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info type02">
+				<p class="message">필수 항목 미입력 안내</p>
+				<p class="desc">
+					필수 항목이 모두 입력되지 않았습니다.<br/>
+					확인 후 모두 입력하고 등록해 주세요.
+				</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl blue" onclick="closePopup('popup1')">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 필수 항목 미입력 안내 -->
+
+	<!-- layerpop-wrap 조사서 등록  -->
+	<div class="layerpop-wrap alert w480" id="popup5" style="display:block; position:relative; top:150px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info">
+				<p class="message mb40">조사서가 등록되었습니다</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl blue" onclick="closePopup('popup1')">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 조사서 등록 -->
+
+	<!-- layerpop-wrap 조사서 등록  -->
+	<div class="layerpop-wrap alert w480" id="popup5" style="display:block; position:relative; top:180px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info type03">
+				<p class="message mb40">조사서를 등록하시겠습니까?</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue" onclick="closePopup('popup1')">취소</button>
+				<button type="button" name="" id="" class="com-btn xl blue" onclick="">등록하기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 조사서 등록 -->
+
+	<!-- layerpop-wrap 제외지 해제  -->
+	<div class="layerpop-wrap alert w480" id="popup6" style="display:block; position:relative; top:210px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info type03">
+				<p class="message mb40">이 제외지를 해제하시겠습니까?</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue" onclick="closePopup('popup1')">취소</button>
+				<button type="button" name="" id="" class="com-btn xl red" onclick="">제외지 해제</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 제외지 해제 -->
+
+	<!-- layerpop-wrap 제외지 일괄해제  -->
+	<div class="layerpop-wrap alert w480" id="popup7" style="display:block; position:relative; top:240px">	
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- info -->
+			<div class="alert-info type03">
+				<p class="message mb40">
+					총 5개의 제외지를<br/>
+					일괄 해제하시겠습니까?
+				</p>
+			</div>
+			<!-- info -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue" onclick="closePopup('popup1')">취소</button>
+				<button type="button" name="" id="" class="com-btn xl red" onclick="">제외지 해제</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 제외지 일괄해제 -->
+</body>
+</html>

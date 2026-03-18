@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- tab button -->
+		<div class="tab-menu-btn">
+			<button type="button" name="" id="" class="active">지적확정측량 목록</button>
+			<button type="button" name="" id="">지적확정측량 집계</button>
+		</div>
+		<!-- tab button-->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content row">
+				<!-- 지적확정측량 접수 목록 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap">
+							<h2 class="type03">지적확정측량 접수 목록</h2>
+						</div>
+
+
+					</div>
+				</div>
+				<!-- 지적확정측량 접수 목록 -->
+
+
+
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+	<script src="js/lib/chart.js"></script> <!-- v4.5.1 -->
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script> <!-- v2.2.0 -->
+
+	<script>
+		Chart.register(ChartDataLabels);
+
+		const colors = [
+		"#3B5BA9","#4C77C9","#66A3D2","#6CC3C3",
+		"#52B788","#8BC34A","#D4AF37","#F97316","#9C27B0"
+		];
+
+		const chart = new Chart(document.getElementById("pieChart1"), {
+			type: "pie",
+			data: {
+				labels: [
+				"구미시 (156건)",
+				"안동시 (187건)",
+				"포항시 (179건)",
+				"칠곡군 (197건)",
+				"영덕군 (156건)",
+				"영양군 (195건)",
+				"청송군 (170건)",
+				"군위군 (157건)",
+				"영천시 (178건)"
+				],
+				datasets: [{
+				data: [156,187,179,197,156,195,170,157,178],
+				backgroundColor: colors,
+				borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+
+			plugins: {
+			legend: { display: false },
+
+			datalabels: {
+				formatter: (value, ctx) => ctx.chart.data.labels[ctx.dataIndex],
+				color: (ctx) => colors[ctx.dataIndex],
+				font: { size: 12, weight: "bold" },
+				anchor: "end",
+				align: "end",
+				offset: 20,
+				clamp: false               // ✅ 바깥으로 나가게 (잘리면 padding/부모높이로 해결)
+			}
+			},
+
+			layout: {
+			padding: { top: 50, right: 70, bottom: 50, left: 70 } // ✅ 잘림 방지
+			}
+		}
+	});
+
+	setTimeout(() => chart.resize(), 50);
+	</script>
+
+	<script>
+		Chart.register(ChartDataLabels);
+
+		const colors2 = [
+		"#3B5BA9","#4C77C9","#66A3D2","#6CC3C3",
+		"#52B788","#8BC34A","#D4AF37","#F97316","#9C27B0"
+		];
+
+		const chart2 = new Chart(document.getElementById("pieChart2"), {
+			type: "pie",
+			data: {
+				labels: [
+				"구미시 (156건)",
+				"안동시 (187건)",
+				"포항시 (179건)",
+				"칠곡군 (197건)",
+				"영덕군 (156건)",
+				"영양군 (195건)",
+				"청송군 (170건)",
+				"군위군 (157건)",
+				"영천시 (178건)"
+				],
+				datasets: [{
+				data: [156,187,179,197,156,195,170,157,178],
+				backgroundColor: colors,
+				borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+
+			plugins: {
+			legend: { display: false },
+
+			datalabels: {
+				formatter: (value, ctx) => ctx.chart.data.labels[ctx.dataIndex],
+				color: (ctx) => colors[ctx.dataIndex],
+				font: { size: 12, weight: "bold" },
+				anchor: "end",
+				align: "end",
+				offset: 20,
+				clamp: false               // ✅ 바깥으로 나가게 (잘리면 padding/부모높이로 해결)
+			}
+			},
+
+			layout: {
+			padding: { top: 50, right: 70, bottom: 50, left: 70 } // ✅ 잘림 방지
+			}
+		}
+	});
+
+	setTimeout(() => chart.resize(), 50);
+	</script>
+
+</body>
+</html>

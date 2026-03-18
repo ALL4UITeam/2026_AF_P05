@@ -1,0 +1,47 @@
+{{#> layout3}}
+
+<div class="cont-box-wrap">
+  <div class="cont-box write-form">
+    <div class="tit-wrap">
+      <h2>자주하는 질문 등록</h2>
+    </div>
+    <p class="write-form__guide">자주 문의되는 질문과 답변을 입력해 사용자 안내 품질을 높여주세요.</p>
+
+    <div class="tbl-wrap write-form__table">
+      <table class="tbl">
+        <colgroup>
+          <col style="width:180px;">
+          <col style="width:auto;">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>질문</th>
+            <td><input type="text" class="type01" placeholder="질문을 입력하세요."></td>
+          </tr>
+          <tr>
+            <th>카테고리</th>
+            <td>
+              <select class="type01">
+                <option>계정/권한</option>
+                <option>지도 서비스</option>
+                <option>자료 다운로드</option>
+                <option>기타</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>답변</th>
+            <td><textarea class="type01" placeholder="답변을 입력하세요."></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="form-wrap write-form__actions">
+      <a href="/system_faq_list.html" class="com-btn blue w200">목록</a>
+      <button type="button" class="com-btn blue w200">저장</button>
+    </div>
+  </div>
+</div>
+
+{{/layout3}}

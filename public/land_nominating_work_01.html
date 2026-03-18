@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/lib/jquery.floatThead.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap row type02">
+			<!-- 검색 -->
+			<div class="search-top-wrap">
+				<div class="serach-box">
+					<div class="form-wrap">
+						<label for="search">지명검색</label>
+						<input type="text" name="" id="search" class="type01 searchIco" placeholder="지명 입력 (예: 죽도산)" required="true">
+
+						<button type="button" name="" id="" class="com-btn orange w200">검색</button>
+					</div>
+				</div>
+			</div>
+			<!-- 검색 -->
+
+			<div class="content">
+				<!-- 왼쪽 컨텐츠 -->
+				<div class="cont-left">
+					<div class="channel">
+						<!-- 네이버 검색결과 -->
+						<div class="ch-result naver">
+							<h3>네이버 검색결과</h3>
+
+							<div class="ch-con">
+								<!-- tbl -->
+								<div class="tbl-wrap scroll">
+									<table class="tbl h-scroll">
+										<colgroup>
+											<col style="width:25%;">
+											<col>
+											<col style="width:45%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">지명</th>
+												<th scope="col">행정구역</th>
+												<th scope="col">주소</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>죽도해수욕장1</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- tbl -->
+							</div>
+						</div>
+						<!-- 네이버 검색결과 -->
+
+						<!-- 카카오 검색결과 -->
+						<div class="ch-result kakako">
+							<h3>카카오 검색결과</h3>
+
+							<div class="ch-con">
+								<!-- tbl -->
+								<div class="tbl-wrap scroll">
+									<table class="tbl h-scroll">
+										<colgroup>
+											<col style="width:25%;">
+											<col>
+											<col style="width:45%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">지명</th>
+												<th scope="col">행정구역</th>
+												<th scope="col">주소</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- tbl -->
+							</div>
+						</div>
+						<!-- 카카오 검색결과 -->
+
+						<!-- 국토정보맵 검색결과 -->
+						<div class="ch-result infomap">
+							<h3>국토정보맵 검색결과</h3>
+
+							<div class="ch-con">
+								<!-- tbl -->
+								<div class="tbl-wrap scroll">
+									<table class="tbl h-scroll">
+										<colgroup>
+											<col style="width:25%;">
+											<col>
+											<col style="width:45%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">지명</th>
+												<th scope="col">행정구역</th>
+												<th scope="col">주소</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+											<tr>
+												<td>죽도해수욕장</td>
+												<td>경상북도 포항시 북구 죽도동</td>
+												<td>경상북도 포항시 북구 죽도동 123-456</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- tbl -->
+							</div>
+						</div>
+						<!-- 국토정보맵 검색결과 -->
+					</div>
+				</div>
+				<!-- 왼쪽 컨텐츠 -->
+
+				<!-- 오른쪽 컨텐츠 -->
+				<div class="cont-right">
+					<div class="cont-box-wrap w1140 h770">
+						<div class="cont-box">
+							<!-- 지도 -->
+							<div class="channel-map-area">
+								<span class="state naver">네이버</span>
+								<!-- <span class="state kakako">카카오</span> -->
+								<!-- <span class="state infomap">국토정보맵</span> -->
+
+								<button type="button" name="" id="" class="analysis-btn"><i class="ico-plus02"></i>인접분석</button>
+
+								<img src="images/temp/map_10.png">
+							</div>
+							<!-- 지도 -->
+						</div>
+					</div>
+				</div>
+				<!-- 오른쪽 컨텐츠 -->
+			</div>
+
+			<!-- 검색결과 전체 리스트 -->
+			<div class="cont-box-wrap w100per">
+				<div class="cont-box h590">
+					<div class="tit-wrap type02">
+						<div class="tit-num">
+							<h2 class="type02">검색결과 전체 리스트</h2>
+							<span class="total-num">총 12,084건</span>
+						</div>
+
+						<div class="filter-wrap">
+							<p>필터</p>
+
+							<div class="filter">
+								<button type="button" name="" id="" class="filter-btn all active">전체</button>
+								<button type="button" name="" id="" class="filter-btn info">국토정보맵</button>
+								<button type="button" name="" id="" class="filter-btn kakako">카카오맵</button>
+								<button type="button" name="" id="" class="filter-btn naver">네이버지도</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- tbl -->
+					<div class="tbl-wrap">
+						<table class="tbl">
+							<colgroup>
+								<col style="width:5%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col>
+								<col style="width:10%;">
+								<col style="width:8%;">
+								<col style="width:15%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">연번</th>
+									<th scope="col">출처</th>
+									<th scope="col">지명</th>
+									<th scope="col">행정구역</th>
+									<th scope="col">주소</th>
+									<th scope="col">유형</th>
+									<th scope="col">거리(km)</th>
+									<th scope="col">좌표</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>001</td>
+									<td>
+										<span class="mapinfo purple">국토정보맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>002</td>
+									<td>
+										<span class="mapinfo yellow">카카오맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>003</td>
+									<td>
+										<span class="mapinfo green">네이버지도</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>004</td>
+									<td>
+										<span class="mapinfo green">네이버지도</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>005</td>
+									<td>
+										<span class="mapinfo yellow">카카오맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>006</td>
+									<td>
+										<span class="mapinfo yellow">카카오맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>007</td>
+									<td>
+										<span class="mapinfo yellow">카카오맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>008</td>
+									<td>
+										<span class="mapinfo purple">국토정보맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>009</td>
+									<td>
+										<span class="mapinfo purple">국토정보맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+								<tr>
+									<td>010</td>
+									<td>
+										<span class="mapinfo purple">국토정보맵</span>
+									</td>
+									<td>축도산7</td>
+									<td>
+										경상북도 포항시 북구 죽도동
+									</td>
+									<td>
+										경상북도 포항시 북구 죽도동 123-456
+									</td>
+									<td>
+										산
+									</td>
+									<td>
+										0.4
+									</td>
+									<td>
+										25.2345, 234.2345
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- tbl -->
+
+					<!-- paging -->
+					<div class="paging-wrap">
+						<ul class="paging">
+							<li><a class="prev first" href="#"></a></li>
+							<li><a class="prev" href="#"></a></li>
+							<li><a class="pLink" href="#">1</a></li>
+							<li><a class="pLink" href="#">2</a></li>
+							<li><a class="pLink" href="#">3</a></li>
+							<li><a class="pLink" href="#">4</a></li>
+							<li><a class="pLink" href="#">5</a></li>
+							<li><a class="pLink active" href="#">6</a></li>
+							<li><a class="pLink" href="#">7</a></li>
+							<li><a class="pLink" href="#">8</a></li>
+							<li><a class="pLink" href="#">9</a></li>
+							<li><a class="pLink" href="#">10</a></li>
+							<li><a class="next" href="#"></a></li>
+							<li><a class="next last" href="#"></a></li>
+						</ul>
+					</div>
+					<!-- paging -->
+				</div>
+			</div>
+			<!-- 검색결과 전체 리스트 -->
+			
+		</div>
+		<!-- content -->
+	</div>
+
+
+</body>
+</html>

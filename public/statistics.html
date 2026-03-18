@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property active">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<!-- gnb -->
+			<div class="gnb-wrap">
+				<div class="gnb">
+					<ul>
+						<li>
+							<a href="#" class="m01"></a><span>대쉬보드</span> <!-- active -->
+						</li>
+						<li>
+							<a href="#" class="m02"></a><span>됴유지현황</span>
+						</li>
+						<li>
+							<a href="#" class="m03"></a><span>분석결과</span>
+						</li>
+						<li>
+							<a href="#" class="m04"></a><span>실태조사</span>
+						</li>
+						<li>
+							<a href="#" class="m05"></a><span>제외지</span>
+						</li>
+						<li>
+							<a href="#" class="m06 active"></a><span>통계</span>
+						</li>
+					</ul>
+				</div>
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+			</div>
+			<!-- gnb -->
+
+			<div class="content row">
+				<!-- 상단 컨텐츠 -->
+				<div class="graph-wrap">
+					<!-- 행정재산 -->
+					<div class="graph-box">
+						<div class="tit-wrap">
+							<h2>행정재산</h2>
+
+							<div class="legend">
+								<span class="dot bg01"></span>
+								<span class="txt">필지</span>
+								<span class="dot bg02"></span>
+								<span class="txt">면적</span>
+								<span class="dot bg03"></span>
+								<span class="txt">재산가액</span>
+							</div>
+						</div>
+
+						<!-- graph -->
+						<div class="graph-area" style="width:519px; height:262px">
+							<canvas id="barChart1" style="width:519px; height:262px"></canvas>
+						</div>
+						<!-- graph -->
+					</div>
+					<!-- 행정재산 -->
+
+					<div class="graph-box">
+						<div class="tit-wrap">
+							<h2>일반재산</h2>
+
+							<div class="legend">
+								<span class="dot bg01"></span>
+								<span class="txt">필지</span>
+								<span class="dot bg02"></span>
+								<span class="txt">면적</span>
+								<span class="dot bg03"></span>
+								<span class="txt">재산가액</span>
+							</div>
+						</div>
+
+						<!-- graph -->
+						<div class="graph-area" style="width:519px; height:262px">
+							<canvas id="barChart2" style="width:519px; height:262px"></canvas>
+						</div>
+						<!-- graph -->
+					</div>
+
+					<div class="graph-box">
+						<div class="tit-wrap">
+							<h2>무단점유 현황</h2>
+
+							<div class="legend">
+								<span class="dot bg01"></span>
+								<span class="txt">필지</span>
+								<span class="dot bg02"></span>
+								<span class="txt">면적</span>
+							</div>
+						</div>
+
+						<!-- graph -->
+						<div class="graph-area" style="width:519px; height:262px">
+							<canvas id="barChart3" style="width:519px; height:262px"></canvas>
+						</div>
+						<!-- graph -->
+					</div>
+				</div>
+				<!-- 상단 컨텐츠 -->
+
+				<!-- 하단 컨텐츠 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box h-auto">
+						<div class="tit-wrap">
+							<h2>무단점유·사용현황 실태조사</h2>
+
+							<button type="button" name="" id="" class="com-btn green mb12"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+						</div>
+
+						<!-- tbl -->
+						<div class="tbl-wrap">
+							<table class="tbl">
+								<colgroup>
+									<col style="width:10%;">
+									<col>
+									<col style="width:10%;">
+									<col style="width:10%;">
+									<col style="width:10%;">
+									<col style="width:10%;">
+									<col style="width:10%;">
+									<col style="width:10%;">
+									<col style="width:10%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col" colspan="3">행정재산</th>
+										<th scope="col" colspan="3">일반재산</th>
+										<th scope="col" colspan="3">무단점유현황</th>
+									</tr>
+									<tr>
+										<th scope="col">경상북도</th>
+										<th scope="col">필지수</th>
+										<th scope="col">면적</th>
+										<th scope="col">재산가액</th>
+										<th scope="col">필지수</th>
+										<th scope="col">면적</th>
+										<th scope="col">재산가액</th>
+										<th scope="col">필지수</th>
+										<th scope="col">면적</th>
+										<th scope="col">재산가액</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>본청</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+									<tr>
+										<td>00시</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+										<td>00000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- tbl -->
+					</div>
+
+				</div>
+				<!-- 하단 컨텐츠 -->
+
+			</div>
+		</div>
+		<!-- content -->		
+	</div>
+
+	<script>
+
+   	 window.addEventListener("DOMContentLoaded", () => {
+
+      if (typeof Chart === "undefined") {
+        console.error("Chart.js 로드 실패: Chart is undefined");
+        return;
+      }
+
+      function createDenseBarChart(canvasId, labels, dataA, dataB, dataC) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) {
+          console.error("canvas 못찾음:", canvasId);
+          return;
+        }
+
+        const ctx = canvas.getContext("2d");
+
+        window.__charts ??= {};
+        if (window.__charts[canvasId]) window.__charts[canvasId].destroy();
+
+        window.__charts[canvasId] = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels,
+            datasets: [
+              { data: dataA, backgroundColor: "#1f5bd9", barThickness: 3, maxBarThickness: 3 },
+              { data: dataB, backgroundColor: "#7ec3ff", barThickness: 3, maxBarThickness: 3 },
+              { data: dataC, backgroundColor: "#b38bff", barThickness: 3, maxBarThickness: 3 }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: false,
+            layout: { padding: { left: 6, right: 6, top: 6, bottom: 6 } },
+            plugins: { legend: { display: false }, tooltip: { enabled: false } },
+            datasets: { bar: { categoryPercentage: 1.0, barPercentage: 1.0 } },
+            scales: {
+              x: {
+                grid: { display: false, drawBorder: false },
+                ticks: {
+                  autoSkip: false,
+                  maxRotation: 55,
+                  minRotation: 55,
+                  padding: 0,
+                  font: { size: 11 }
+                },
+                offset: true
+              },
+              y: {
+                beginAtZero: true,
+                grid: { drawBorder: false, color: "#e9edf3", borderDash: [4, 4] },
+                ticks: { display: false }
+              }
+            }
+          }
+        });
+      }
+
+      const labels = Array.from({ length: 22 }, () => "용상리남부");
+
+      createDenseBarChart(
+        "barChart1",
+        labels,
+        [95,60,92,55,120,70,95,60,25,95,60,115,95,30,95,95,95,120,50,20,95,45],
+        [60,80,75,60,78,60,40,80,20,60,80,75,60,20,60,80,75,78,25,15,80,35],
+        [50,50,55,50,60,55,10,60,15,50,50,65,55,10,50,50,55,60,20,10,50,25]
+      );
+
+      createDenseBarChart(
+        "barChart2",
+        labels,
+        [70,55,80,60,90,65,85,70,30,75,60,95,80,40,70,85,90,100,55,25,80,50],
+        [50,60,55,50,65,55,35,60,25,55,60,58,50,25,50,60,55,65,30,20,60,40],
+        [40,45,50,40,55,45,15,50,20,45,45,52,45,15,40,45,50,55,25,15,45,30]
+      );
+
+      createDenseBarChart(
+        "barChart3",
+        labels,
+        [60,50,75,55,100,60,90,65,25,70,55,105,85,35,80,90,95,110,45,20,85,40],
+        [35,40,45,35,60,40,10,45,15,40,40,55,40,10,35,40,45,60,20,10,40,25]
+      );
+    });
+  </script>
+  
+</body>
+</html>

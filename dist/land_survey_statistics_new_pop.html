@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+<div>
+	<!-- layerpop-wrap 지적확정측량 집계 신규 입력 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1128" id="popup1" style="display:block; height:585px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>지적확정측량 집계 신규 입력</h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- 기본정보 -->
+			<h4 class="type03">기본정보</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col style="width:410px;">
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="city">시군</label></th>
+						<td>
+							<input type="text" name="" id="city" class="type01" value="" placeholder="예: 포항시">
+						</td>
+						<th><label for="perfor01">수행구분</label></th>
+						<td>
+							<select name="" id="perfor01" class="type01">
+								<option>선택</option>
+								<option>상태</option>
+								<option>상태</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="district_name">지구명</label></th>
+						<td colspan="3">
+							<input type="text" name="" id="district_name" class="type01" value="" placeholder="예: 포항 죽도지구 도시개발사업">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="checker">검사자</label></th>
+						<td>
+							<input type="text" name="" id="checker" class="type01" value="" placeholder="예: 홍길동">
+						</td>
+						<th><label for="perfor02">수행구분</label></th>
+						<td>
+							<select name="" id="perfor02" class="type01">
+								<option>선택</option>
+								<option>상태</option>
+								<option>상태</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="survey_agency">지적측량 수행기관<br/>(약칭)</label></th>
+						<td>
+							<input type="text" name="" id="survey_agency" class="type01" value="" placeholder="예: LX포항지사">
+						</td>
+						<th><label for="agency_name">수행기관명(전체)</label></th>
+						<td>
+							<input type="text" name="" id="agency_name" class="type01" value="" placeholder="예: 한국국토정보공사 포항지사">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 기본정보 -->
+
+			<!-- 기본점 측량 -->
+			<h4 class="type02">기본점 측량</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col style="width:410px;">
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="total">합계</label></th>
+						<td>
+							<input type="text" name="" id="total" class="type01" value="" placeholder="예: 포항시">
+						</td>
+						<th><label for="trigonometric">삼각점</label></th>
+						<td>
+							<input type="text" name="" id="trigonometric" class="type01" value="" placeholder="예: 포항시">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="aux_tri">보조삼각점</label></th>
+						<td>
+							<input type="text" name="" id="aux_tri" class="type01" value="" placeholder="예: 포항시">
+						</td>
+						<th><label for="dogeun">도근점</label></th>
+						<td>
+							<input type="text" name="" id="dogeun" class="type01" value="" placeholder="예: 포항시">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 기본점 측량 -->
+
+			<!-- 세부측량 -->
+			<h4 class="type02">세부측량</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col style="width:410px;">
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="lot_num">필지수 (필)</label></th>
+						<td>
+							<input type="text" name="" id="lot_num" class="type01" value="" placeholder="예: 포항시">
+						</td>
+						<th><label for="area">면적</label></th>
+						<td>
+							<input type="text" name="" id="area" class="type01" value="" placeholder="예: 포항시">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 세부측량 -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+				<button type="button" name="" id="" class="com-btn xl orange">저장</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 지적확정측량 집계 신규 입력 -->
+
+	<div class="overlay"></div>
+</body>
+</html>

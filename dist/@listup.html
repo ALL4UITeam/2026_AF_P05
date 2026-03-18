@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+<style>
+	
+	body{background:#F0F6FF; overflow-y:auto;}
+	.registerWrap{width:100%; min-height:100vh; background:rgb(34, 34, 34, 0.8); color:#000; display:flex;  align-items:start; justify-content:center;}
+	.listBoxWrap header h3{margin-bottom:20px; font-size:20px; letter-spacing:-.5px; text-align:center; font-weight:bold;}
+	.listBoxWrap{width:100%; padding:20px 0 40px}
+	.listBox{width:100%; height:100%; margin:0 auto; padding:0 20px;}
+	.bg{position:absolute; width:100vh; height:100vh; background:rgb(34, 34, 34, 0.8);}
+	.info{background:#fff; padding:15px; border:1px dashed #2A61BA; color:#000; margin-bottom:10px; font-weight:700;}
+	.info p{color:#333;}
+	/* Table */
+	.tableStyle {margin:0 auto; width:100%; border-top:1px solid #313131;}
+	.tableStyle thead th {padding:8px; background:#eee; border-bottom:1px solid #a7a7a7; text-align:center;color:#000000; font-size:14px;}
+	.tableStyle tbody td {padding:4px; background:#fff; border-bottom:1px solid #dcdcdc; text-align:center;color:#000000; font-size:14px; line-height:24px; word-break:break-all;}
+	.tableStyle tbody td.al{text-align:left;}
+	.tableStyle tbody td a:hover{text-decoration:underline; color:#000;}
+
+	span.work{display:inline-block; width:40px; padding:3px; background:#cfcfcf; border-radius:3px; font-size:12px; color:#fff}
+	span.work.on{background:#2A61BA;}
+	span.work.modify{background:#ed495d;}
+	span.work.ing{background:#1cc49a;}
+	span.work.del{background:#6e1bf3;}
+</style>
+<script>
+	$(function(){
+		var $pgNum = $('table td.pgNum');
+		var number = 1;
+		$pgNum.each(function(){
+			$(this).text(number);
+			number = number+1;
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="loginWrap">
+		<div style="height:100vh;">
+			<!-- list -->
+			<div class="listBoxWrap">
+				<header>
+					<h3>경북 지능공간정보 플랫폼 퍼블리싱 List</h3>
+				</header>
+
+				<div class="listBox">
+					<div class="info">
+						<p>* 레이어팝업은 해당 관련페이지 <span style="color:red">하단에 주석처리 </span> 되었으며, 리스트에 있는 팝업(popupSample.html)은 preview 하기위한 예시파일입니다.</p>
+					</div>
+
+					<table class="tableStyle">
+						<caption></caption>
+						<colgroup>
+							<col width="6%" />
+							<col width="25%" />
+							<col width="22%" />
+							<col width="8%" />
+							<col width="10%" />
+							<col width="" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">No.</th>
+								<th scope="col">파일</th>
+								<th scope="col">파일링크</th>
+								<th scope="col">유형</th>
+								<th scope="col">완료여부</th>
+								<th scope="col">비고</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">알럿 팝업 sample</td>
+								<td class="al"><a href="popupSample.html" target="_blank" title="새창열림" class="page-link">popupSample.html</a></td>
+								<td>layerpop</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 대쉬보드</td>
+								<td class="al"><a href="dashboard.html" target="_blank" title="새창열림" class="page-link">dashboard.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 불법점유 분석</td>
+								<td class="al"><a href="analysis_results.html" target="_blank" title="새창열림" class="page-link">analysis_results.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									상세페이지, 제외팝업 하단에 주석처리
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 실태조사 신규작성</td>
+								<td class="al"><a href="fact_finding_write.html" target="_blank" title="새창열림" class="page-link">fact_finding_write.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 실태조사 수정</td>
+								<td class="al"><a href="fact_finding_modify.html" target="_blank" title="새창열림" class="page-link">fact_finding_modify.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 항공사진 · 지적도 첨부</td>
+								<td class="al"><a href="air_photo_popup.html" target="_blank" title="새창열림" class="page-link">air_photo_popup.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 실태조사</td>
+								<td class="al"><a href="fact_finding.html" target="_blank" title="새창열림" class="page-link">fact_finding.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									지도보기, 과거이력조회 주석
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 실태조사 지도보기</td>
+								<td class="al"><a href="fact_finding_01.html" target="_blank" title="새창열림" class="page-link">fact_finding_01.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 실태조사 과거이력조회</td>
+								<td class="al"><a href="fact_finding_02.html" target="_blank" title="새창열림" class="page-link">fact_finding_02.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 실태조사 과거이력비교</td>
+								<td class="al"><a href="fact_finding_03.html" target="_blank" title="새창열림" class="page-link">fact_finding_03.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 도유재산 종합</td>
+								<td class="al"><a href="com_property_total.html" target="_blank" title="새창열림" class="page-link">com_property_total.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 제외지 목록</td>
+								<td class="al"><a href="exclude_land_list.html" target="_blank" title="새창열림" class="page-link">exclude_land_list.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									제외지 사유수정 팝업 하단 주석
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">도유재산 - 통계</td>
+								<td class="al"><a href="statistics.html" target="_blank" title="새창열림" class="page-link">statistics.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 토지거래 허가구역 > 관리 (토지거래 허가구역 관리)</td>
+								<td class="al"><a href="land_permit_admin_tab01.html" target="_blank" title="새창열림" class="page-link">land_permit_admin_tab01.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<!-- <tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 토지거래 허가구역 > 허가구역 정보 (맵에서 핀 선택)</td>
+								<td class="al"><a href="land_permit_popup.html" target="_blank" title="새창열림" class="page-link">land_permit_popup.html(검토중)</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr> -->
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 토지거래 허가구역 > 허가구역 이력</td>
+								<td class="al"><a href="land_permit_his_popup.html" target="_blank" title="새창열림" class="page-link">land_permit_his_popup.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr> 
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 토지거래 허가구역 > 관리 (지가불안정 분석)</td>
+								<td class="al"><a href="land_permit_admin_tab02.html" target="_blank" title="새창열림" class="page-link">land_permit_admin_tab02.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 토지거래 허가구역 > 관리 > 추가 등록</td>
+								<td class="al"><a href="land_permit_add_popup.html" target="_blank" title="새창열림" class="page-link">land_permit_add_popup.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 토지거래 허가구역 > 지가불안정 > 정량지표 참고</td>
+								<td class="al"><a href="land_permit_instability_popup.html" target="_blank" title="새창열림" class="page-link">land_permit_instability_popup.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work del">제외</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 부동산실거래신고 >  정밀조사 통계</td>
+								<td class="al"><a href="land_scrutiny_statist_tab01.html" target="_blank" title="새창열림" class="page-link">land_scrutiny_statist_tab01.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 부동산실거래신고 > 실거래 월보</td>
+								<td class="al"><a href="land_scrutiny_statist_tab02.html" target="_blank" title="새창열림" class="page-link">land_scrutiny_statist_tab02.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work del">홀딩</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 토지거래 허가구역 > 지가불안정 > 시군별 지가 안정도 지역 선택</td>
+								<td class="al"><a href="land_permit_area_popup.html" target="_blank" title="새창열림" class="page-link">land_permit_area_popup.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 외국인 토지취득 > 보유 현황  (보유 현황)</td>
+								<td class="al"><a href="land_foreign_owner_tab01.html" target="_blank" title="새창열림" class="page-link">land_foreign_owner_tab01.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 외국인 토지취득 > 보유 현황 (상세통계)</td>
+								<td class="al"><a href="land_foreign_owner_tab02.html" target="_blank" title="새창열림" class="page-link">land_foreign_owner_tab02.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 외국인 토지 등록 > 보유 현황 > 업로드 팝업</td>
+								<td class="al"><a href="land_foreign_owner_upload_pop.html" target="_blank" title="새창열림" class="page-link">land_foreign_owner_upload_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 부동산거래동향 분석</td>
+								<td class="al"><a href="land_estate_trends.html" target="_blank" title="새창열림" class="page-link">land_estate_trends.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 개별공시지가</td>
+								<td class="al"><a href="land_publicly_price.html" target="_blank" title="새창열림" class="page-link">land_publicly_price.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 개별공시지가 >  이력조회 팝업</td>
+								<td class="al"><a href="land_publicly_price_history_pop.html" target="_blank" title="새창열림" class="page-link">land_publicly_price_history_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 부동산개발업 비등록대상확인서</td>
+								<td class="al"><a href="land_no_regist_subject.html" target="_blank" title="새창열림" class="page-link">land_no_regist_subject.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 중개업소 현황 조회</td>
+								<td class="al"><a href="land_brokerage_state.html" target="_blank" title="새창열림" class="page-link">land_brokerage_state.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work ing">진행중</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 중개업소 현황 조회 > 부동산정보</td>
+								<td class="al"><a href="land_brokerage_state_pop.html" target="_blank" title="새창열림" class="page-link">land_brokerage_state_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 지적통계 관리</td>
+								<td class="al"><a href="land_cadastral_statistics.html" target="_blank" title="새창열림" class="page-link">land_cadastral_statistics.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">토지관리 > 저적통계 관리 > 업로드 이력조회</td>
+								<td class="al"><a href="land_cadastral_statis_history_pop.html" target="_blank" title="새창열림" class="page-link">land_cadastral_statis_history_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지적확정측량 관리 | 목록</td>
+								<td class="al"><a href="land_survey_manage_tab01.html" target="_blank" title="새창열림" class="page-link">land_survey_manage_tab01.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지적확정측량 관리 | 집계</td>
+								<td class="al"><a href="land_survey_manage_tab02.html" target="_blank" title="새창열림" class="page-link">land_survey_manage_tab02.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지적확정측량 관리 | 목록 > 신규 입력</td>
+								<td class="al"><a href="land_survey_manage_list_pop.html" target="_blank" title="새창열림" class="page-link">land_survey_manage_list_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr> 
+							
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지적확정측량 관리 | 목록 > 업무별 통계</td>
+								<td class="al"><a href="land_survey_statistics_pop.html" target="_blank" title="새창열림" class="page-link">land_survey_statistics_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지적확정측량 관리 | 집계 > 확정처리건수 통계</td>
+								<td class="al"><a href="land_survey_statistics_confirm_pop.html" target="_blank" title="새창열림" class="page-link">land_survey_statistics_confirm_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지적확정측량 관리 | 집계 > 신규 입력</td>
+								<td class="al"><a href="land_survey_statistics_new_pop.html" target="_blank" title="새창열림" class="page-link">land_survey_statistics_new_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지명위원회 업무 관리</td>
+								<td class="al"><a href="land_nominating_work_01.html" target="_blank" title="새창열림" class="page-link">land_nominating_work_01.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지명위원회 업무 관리 > 인접분석 팝업</td>
+								<td class="al"><a href="land_nominating_work_pop.html" target="_blank" title="새창열림" class="page-link">land_nominating_work_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 지명위원회 업무 관리 > 검색결과 없음</td>
+								<td class="al"><a href="land_nominating_work_nodata.html" target="_blank" title="새창열림" class="page-link">land_nominating_work_nodata.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 적부심사 | 지적층량적부심사</td>
+								<td class="al"><a href="land_suitability_review_tab01.html" target="_blank" title="새창열림" class="page-link">land_suitability_review_tab01.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 적부심사 | 의결서 조회</td>
+								<td class="al"><a href="land_suitability_review_tab02.html" target="_blank" title="새창열림" class="page-link">land_suitability_review_tab02.html</a></td>
+								<td>tab page</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 적부심사 | 지적층량적부심사 > 청구서 등록</td>
+								<td class="al"><a href="land_nominating_bill_pop.html" target="_blank" title="새창열림" class="page-link">land_nominating_bill_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">지적관리 > 적부심사 | 의결서 조회 > 위원회 추가</td>
+								<td class="al"><a href="land_committee_add_pop.html" target="_blank" title="새창열림" class="page-link">land_committee_add_pop.html</a></td>
+								<td>layer popup</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">admin - 사용신청</td>
+								<td class="al"><a href="admin_use_apply.html" target="_blank" title="새창열림" class="page-link">admin_use_apply.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">admin - 사용승인관리</td>
+								<td class="al"><a href="admin_use_approval.html" target="_blank" title="새창열림" class="page-link">admin_use_approval.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									사용자 그룹 변경 팝업주석
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">admin - 사용자 그룹관리</td>
+								<td class="al"><a href="admin_use_group.html" target="_blank" title="새창열림" class="page-link">admin_use_group.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									사용자 그룹 관리, 사용자 설정 팝업 주석
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">공통 - 검색결과 없음</td>
+								<td class="al"><a href="no_result.html" target="_blank" title="새창열림" class="page-link">no_result.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">공통 - 네트워크 오류 페이지</td>
+								<td class="al"><a href="error_info_01.html" target="_blank" title="새창열림" class="page-link">error_info_01.html</a></td>
+								<td>page</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+
+								</td>
+							</tr>
+							<!-- <tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">footer alert</td>
+								<td class="al"><a href="footer_alert_sample.html" target="_blank" title="새창열림" class="page-link">footer_alert_sample.html</a></td>
+								<td>popup</td>
+								<td class="tCenter"><span class="work">미완료</span></td>
+								<td class="al">
+
+								</td>
+							</tr> -->
+							<tr>
+								<td class="pgNum tCenter"></td>
+								<td class="al">loading</td>
+								<td class="al"><a href="loading.html" target="_blank" title="새창열림" class="page-link">loading.html</a></td>
+								<td>popup</td>
+								<td class="tCenter"><span class="work on">완료</span></td>
+								<td class="al">
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- list -->
+		</div>
+	</div>
+
+</body>
+</html>

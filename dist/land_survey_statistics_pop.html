@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<!-- <link href="css/select2.min.css" rel="stylesheet" /> -->
+<script src="js/lib/jquery-3.7.1.js"></script>
+<!-- <script src="js/lib/select2.min.js"></script> -->
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 업무별 통계 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1445" id="popup1" style="display:block; height:560px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>업무별 통계 <span>전체 19개 지구</span></h3>		
+			
+			<div class="btn-group">
+				<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+				<button type="button" name="" id="" class="com-btn mint"><i class="ico-img" aria-hidden="true"></i>다운로드</button>
+			</div>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<div class="job-statist">
+				<div class="job-graph">
+					<h3>그래프</h3>
+
+					<!-- graph -->
+					<div class="graph-wrap">
+						<div class="graph-area">
+							<div class="graph">
+								<h4>지구수 비율</h4>
+
+								<div style="width:162px; height:162px; margin:0 auto;">
+									<canvas id="chart1"></canvas>
+								</div>
+							</div>
+
+							<div class="graph">
+								<h4>필지수 비율</h4>
+
+								<div style="width:162px; height:162px; margin:0 auto;">
+									<canvas id="chart2"></canvas>
+								</div>
+							</div>
+
+							<div class="graph">
+								<h4>면적 비율</h4>
+
+								<div style="width:162px; height:162px; margin:0 auto;">
+									<canvas id="chart3"></canvas>
+								</div>
+							</div>
+						</div>
+
+						<div class="legend">
+							<div>
+								<span class="dot st01"></span>
+								<p>구획</p>
+							</div>
+
+							<div>
+								<span class="dot st02"></span>
+								<p>도로철도</p>
+							</div>
+						</div>
+					</div>
+					<!-- graph -->
+
+					
+				</div>
+
+				<div class="job-tbl">
+					<h3>표</h3>
+
+					<!-- tbl -->
+					<div class="tbl-wrap">
+						<table class="tbl">
+							<colgroup>
+								<col style="width:20%;">
+								<col>
+								<col style="width:25%;">
+								<col style="width:25%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">구분</th>
+									<th scope="col">지구수</th>
+									<th scope="col">필지수</th>
+									<th scope="col">면적</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>구획</td>
+									<td>123</td>
+									<td>34</td>
+									<td>123,456,789</td>
+								</tr>
+								<tr>
+									<td>경지</td>
+									<td>123</td>
+									<td>34</td>
+									<td>123,456,789</td>
+								</tr>
+								<tr>
+									<td>도로철도</td>
+									<td>123</td>
+									<td>34</td>
+									<td>123,456,789</td>
+								</tr>
+								<tr class="total">
+									<td>합계</td>
+									<td>123</td>
+									<td>34</td>
+									<td>5,123,456,7899</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- tbl -->
+				</div>
+			</div>
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl orange">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 업무별 통계 -->
+
+	<div class="overlay"></div>
+	
+	<script src="js/lib/chart.js"></script>
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script>
+
+	<script>
+		const RADIUS = 81;
+		const THICKNESS = 48;
+		const CUTOUT = RADIUS - THICKNESS; // 33
+
+		// % 텍스트 찍기 플러그인
+		const labelPlugin = {
+		id: 'labelPlugin',
+		afterDraw(chart) {
+			const meta = chart.getDatasetMeta(0);
+			if (!meta?.data?.length) return;
+
+			const { ctx } = chart;
+			ctx.save();
+			ctx.font = 'bold 14px Arial';
+			ctx.fillStyle = '#fff';
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+
+			meta.data.forEach((arc, i) => {
+			const pos = arc.tooltipPosition();
+			ctx.fillText(chart.data.datasets[0].data[i] + '%', pos.x, pos.y);
+			});
+
+			ctx.restore();
+		}
+		};
+
+		function createDonutChart(canvasId, values, colors) {
+		const canvas = document.getElementById(canvasId);
+		if (!canvas) {
+			console.warn(canvasId + ' 캔버스를 찾을 수 없습니다.');
+			return;
+		}
+
+		const ctx = canvas.getContext('2d');
+
+		return new Chart(ctx, {
+			type: 'doughnut',
+			data: {
+			labels: ['A', 'B'],
+			datasets: [{
+				data: values,
+				backgroundColor: colors,
+				borderWidth: 0,
+				radius: RADIUS,
+				cutout: CUTOUT
+			}]
+			},
+			options: {
+			responsive: false,
+			animation: false,
+			plugins: {
+				legend: { display: false },
+				tooltip: { enabled: false }
+			}
+			},
+			plugins: [labelPlugin]
+		});
+		}
+
+		//  chart1 / chart2 / chart3 생성
+		createDonutChart('chart1', [89.5, 10.5], ['#f36f00', '#8a5a2b']);
+		createDonutChart('chart2', [72.0, 28.0], ['#f36f00', '#8a5a2b']);
+		createDonutChart('chart3', [40.0, 60.0], ['#f36f00', '#8a5a2b']);
+  </script>
+
+</body>
+</html>

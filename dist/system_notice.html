@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/community.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/community.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					<a href="#" class="comuu">소통공간</a>
+					<a href="#" class="system active">시스템관리</a>
+				</div>
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+      <div class="mega-menu-wrap system">
+        <!-- 시스템관리 메가메뉴 -->
+        <div class="mega-menu">
+          <nav class="mega-menu-nav">
+            <ul class="mega-menu-root">
+              <li class="mega-menu-item has-sub active">
+                <a href="#">사용자</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">사용 승인 요청</a></li>
+                  <li><a href="#">사용자 권한 요청</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">안내</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_notice_list.html">공지사항</a></li>
+                  <li><a href="/system_faq_list.html">자주하는 질문</a></li>
+                  <li><a href="/system_qna_list.html">질의응답</a></li>
+                  <li><a href="/system_guide_list.html">사용자 가이드</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">운영 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">사용자 승인 관리</a></li>
+                  <li><a href="#">사용자 관리</a></li>
+                  <li><a href="#">권한 승인 요청 관리</a></li>
+                  <li><a href="#">자료 제공 요청 관리</a></li>
+                  <li><a href="#">사용자 그룹 관리</a></li>
+                  <li><a href="#">사용 약관 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">로그 및 통계</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">로그 조회</a></li>
+                  <li><a href="#">접속 현황 통계</a></li>
+                  <li><a href="#">이용 현황 통계</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">공간정보 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">공간정보 대시보드</a></li>
+                  <li><a href="#">공간 데이터 관리</a></li>
+                  <li><a href="#">주제도 관리</a></li>
+                  <li><a href="#">보안 각서 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">시스템 지원</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">공지사항 관리</a></li>
+                  <li><a href="#">자주하는 질문 관리</a></li>
+                  <li><a href="#">질의응답 관리</a></li>
+                  <li><a href="#">사용자 가이드 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">연계 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">연계 대시보드</a></li>
+                  <li><a href="#">연계 현황 관리</a></li>
+                  <li><a href="#">연계 오류 조회</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="cont-box-wrap">
+				  <div class="cont-box">
+				    <div class="tit-wrap">
+				      <h2>공지사항</h2>
+				    </div>
+				
+				    <div class="inquiry-box">
+				      <div class="serach-box">
+				        <div class="form-wrap">
+				          <input type="text" name="searchKeyword" id="search" class="type01 searchIco" value=""
+				            placeholder="제목, 작성자 검색">
+				          <button type="submit" name="" id="btnSearch" class="com-btn blue w200">검색</button>
+				        </div>
+				      </div>
+				    </div>
+				
+				    <div class="form-wrap">
+				      <div class="total-num">
+				        <p>총 24건</p>
+				      </div>
+				    </div>
+				    <div class="tbl-wrap">
+				      <table class="tbl">
+				        <colgroup>
+				          <col style="width:50px;">
+				          <col style="width:auto;">
+				          <col style="width:170px;">
+				          <col style="width:150px;">
+				          <col style="width:100px;">
+				        </colgroup>
+				        <thead>
+				          <tr>
+				            <th>번호</th>
+				            <th>제목</th>
+				            <th>작성자</th>
+				            <th>작성일</th>
+				            <th>조회수</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td class="al">
+				              시스템 정기 점검 안내 (2023.10.25) <span class="ico-new" aria-label="new">N</span>
+				            </td>
+				            <td>관리자</td>
+				            <td>2024.03.05</td>
+				            <td>1250</td>
+				          </tr>
+				          <tr style="background:#fdf5f5;">
+				            <td>2</td>
+				            <td style="text-align:left;">서비스 업데이트 적용 안내</td>
+				            <td>관리자</td>
+				            <td>2024.03.02</td>
+				            <td>987</td>
+				          </tr>
+				        </tbody>
+				      </table>
+				    </div>
+				
+				    <div id="logListPagingArea">
+				      <div class="paging-wrap">
+				        <ul class="paging">
+				          <li><a class="prev first disabled" href="javascript:void(0)"></a></li>
+				          <li><a class="prev disabled" href="javascript:void(0)"></a></li>
+				          <li><a class="pLink active" href="javascript:void(0)">1</a></li>
+				          <li><a class="pLink" href="javascript:void(0)">2</a></li>
+				          <li><a class="pLink" href="javascript:void(0)">3</a></li>
+				          <li><a class="pLink" href="javascript:void(0)">4</a></li>
+				          <li><a class="next" href="javascript:void(0)"></a></li>
+				          <li><a class="next last" href="javascript:void(0)"></a></li>
+				        </ul>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

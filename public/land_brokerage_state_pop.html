@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<!-- <link href="css/select2.min.css" rel="stylesheet" /> -->
+<script src="js/lib/jquery-3.7.1.js"></script>
+<!-- <script src="js/lib/select2.min.js"></script> -->
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 부동산 정보 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1128" id="popup1" style="display:block; height:580px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>포항부동산 <span>부동산 중개업소 상세정보</span></h3>			
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- tbl -->
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:96px;">
+					<col style="width:400px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="">등록번호</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="RE-2024-001" readonly>
+						</td>
+						<th><label for="">대표사진</label></th>
+					</tr>
+					<tr>
+						<th><label for="">대표자</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="김철수" readonly>
+						</td>
+						<td rowspan="8" style="padding:0 0 0 0px">
+							<!-- photo -->
+							<div class="photo-view">
+								<img src="images/temp/map_08.png">
+							</div>
+							<!-- photo -->
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">구분</label></th>
+						<td>
+							<span class="land st01">중개사</span> 
+							<!-- <span class="land st04">가입</span>
+							<span class="land st04">정상</span>
+							<span class="land st05">폐업</span> -->
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">소재지</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="포항시 남구 대잠동 123-45" readonly>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">전화번호</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="000-0000-0000" readonly>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">등록상세</label></th>
+						<td>
+							<span class="land st02">휴업</span>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">등록일자</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="2020-02-02" readonly>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">보증보험유무</label></th>
+						<td>
+							<span class="land st03">미가입</span>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">비고</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="신규 등록" readonly>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- tbl -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl orange">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 부동산 정보 -->
+
+	<div class="overlay"></div>
+	<script>
+		$(function(){
+			var $popup = $('.layerpop-wrap');
+			console.log('Popup Height:', $popup.height());
+			console.log('Popup Outer Height:', $popup.outerHeight());
+		});
+	</script>
+</body>
+</html>

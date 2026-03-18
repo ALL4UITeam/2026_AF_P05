@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="tbl-wrap type02 scroll-x">
+		<table class="tbl">
+			<colgroup>
+				<col style="width:80px">
+				<col style="width:250px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+				<col style="width:90px">
+				<col style="width:90px">
+				<col style="width:180px">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" rowspan="2">구분</th>
+					<th scope="col" rowspan="2">위반유형별</th> 
+					<th scope="col" colspan="3">2025년 과태료 부과현황</th>
+					<th scope="col" colspan="3">1월</th>
+					<th scope="col" colspan="3">2월</th>
+					<th scope="col" colspan="3">3월</th>
+					<th scope="col" colspan="3">4월</th>
+					<th scope="col" colspan="3">5월</th>
+					<th scope="col" colspan="3">6월</th>
+					<th scope="col" colspan="3">7월</th>
+					<th scope="col" colspan="3">8월</th>
+					<th scope="col" colspan="3">9월</th>
+					<th scope="col" colspan="3">10월</th>
+					<th scope="col" colspan="3">11월</th>
+					<th scope="col" colspan="3">12월</th>
+				</tr>
+				<tr>
+					<th scope="col">처분건수<br/>(건)</th> 
+					<th scope="col">부과인원<br/>(명)</th> 
+					<th scope="col">부과원금<br/>(원)</th> 
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+					<th scope="col">처분건수<br/>(건)</th>
+					<th scope="col">부과인원<br/>(명)</th>
+					<th scope="col">부과원금<br/>(원)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="total">
+					<td></td>
+					<td class="al">합계</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">자료 미제출(거래가격)</td>
+					<td>355</td>
+					<td>5</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">자료 미제출(거래가격외)/거짓제출</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">미신고/지연신고</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">미신고/거짓신고 요구</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고 조장방조</td>
+					<td>5</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>2</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고(다운계약)</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고(업계약)</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고(가격외)</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr class="s-total">
+					<td></td>
+					<td class="al">소계</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">자료 미제출(거래가격)</td>
+					<td>355</td>
+					<td>5</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">자료 미제출(거래가격외)/거짓제출</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">미신고/지연신고</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">미신고/거짓신고 요구</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고 조장방조</td>
+					<td>5</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>2</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고(다운계약)</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고(업계약)</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="al">거짓신고(가격외)</td>
+					<td>355</td>
+					<td>655</td>
+					<td class="ar">1,803,419,600</td>
+					<td>25</td> 
+					<td>22</td>
+					<td class="ar">1,803,419,600</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>133</td>
+					<td class="ar">125,000,000</td>
+					<td>144</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>1</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+					<td>454</td>
+					<td>13</td>
+					<td class="ar">125,000,000</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+
+</body>
+</html>

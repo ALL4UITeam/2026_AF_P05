@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/community.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/community.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					<a href="/communication_notice.html" class="commu active">소통공간</a>
+					<a href="#" class="system">시스템관리</a>
+
+					<div class="popover-menu-wrap commu active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="/communication_notice.html" class="active">공지사항</a></li>
+								<li><a href="/communication.html">자주하는 질문</a></li>
+								<li><a href="/communication_qna.html">질의응답</a></li>
+								<li><a href="/communication_guide.html">사용자 가이드</a></li>
+							</ul>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="cont-box-wrap commu-page">
+				  <div class="cont-box">
+				    <div class="tit-wrap">
+				      <h2>공지사항</h2>
+				    </div>
+				
+				    <div class="inquiry-box">
+				      <div class="serach-box">
+				        <div class="form-wrap">
+				          <input type="text" name="searchKeyword" id="search" class="type01 searchIco" value=""
+				            placeholder="제목, 내용 검색">
+				          <button type="submit" id="btnSearch" class="com-btn blue w200">검색</button>
+				        </div>
+				      </div>
+				    </div>
+				
+				    <div class="form-wrap">
+				      <div class="total-num">
+				        <p>총 24건</p>
+				      </div>
+				    </div>
+				    <div class="tbl-wrap">
+				      <table class="tbl">
+				        <colgroup>
+				          <col style="width:50px;">
+				          <col style="width:auto;">
+				          <col style="width:170px;">
+				          <col style="width:150px;">
+				          <col style="width:100px;">
+				        </colgroup>
+				        <thead>
+				          <tr>
+				            <th>번호</th>
+				            <th>제목</th>
+				            <th>작성자</th>
+				            <th>작성일</th>
+				            <th>조회수</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td class="al">
+				              <a href="/communication-2.html">시스템 정기 점검 안내 (2023.10.25)</a> <span class="ico-new" aria-label="new">N</span>
+				            </td>
+				            <td>관리자</td>
+				            <td>2024.03.05</td>
+				            <td>1250</td>
+				          </tr>
+				          <tr>
+				            <td>2</td>
+				            <td class="al"><a href="/communication-2.html">서비스 업데이트 적용 안내</a></td>
+				            <td>관리자</td>
+				            <td>2024.03.02</td>
+				            <td>987</td>
+				          </tr>
+				        </tbody>
+				      </table>
+				    </div>
+				
+				    <div id="noticePagingArea">
+				      <div class="paging-wrap">
+				        <ul class="paging">
+				          <li><a class="prev first disabled" href="javascript:void(0)"></a></li>
+				          <li><a class="prev disabled" href="javascript:void(0)"></a></li>
+				          <li><a class="pLink active" href="javascript:void(0)">1</a></li>
+				          <li><a class="pLink" href="javascript:void(0)">2</a></li>
+				          <li><a class="pLink" href="javascript:void(0)">3</a></li>
+				          <li><a class="next" href="javascript:void(0)"></a></li>
+				          <li><a class="next last" href="javascript:void(0)"></a></li>
+				        </ul>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

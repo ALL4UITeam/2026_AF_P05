@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- tab button -->
+		<div class="tab-menu-btn">
+			<button type="button" name="" id="">지적확정측량 목록</button>
+			<button type="button" name="" id="" class="active">지적확정측량 집계</button>
+		</div>
+		<!-- tab button-->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content row">
+				<!-- 지적확정측량 접수 목록 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap type02">
+							<div class="tit-num center">
+								<h2 class="type02">지적확정측량 접수 목록</h2>
+								<span class="date">2026-01-26 현재</span>
+							</div>
+
+							<button type="button" name="" id="" class="com-btn grayblue md type02">신규 입력</button>
+						</div>
+
+						<div class="survey-status">
+							<div class="dash-info">
+								<!-- 업무별 통계 -->
+								<div class="info">
+									<h3>업무별 통계</h3>
+									<p>구획, 경지, 도로철도</p>
+
+									<div class="num">90</div>
+								</div>
+								<!-- 업무별 통계 -->
+
+								<!-- 수행자별 통계 -->
+								<div class="info">
+									<h3>수행자별 통계</h3>
+									<p>공사, 일반, 공사일반 등</p>
+
+									<div class="num">19</div>
+								</div>
+								<!-- 수행자별 통계 -->
+
+								<!-- 김상훈, 송형재, 김대락 등 -->
+								<div class="info">
+									<h3>검사자별 통계</h3>
+									<p>김상훈, 송형재, 김대락 등</p>
+
+									<div class="num">346</div>
+								</div>
+								<!-- 김상훈, 송형재, 김대락 등 -->
+
+								<!-- 시군별 통계 -->
+								<div class="info">
+									<h3>시군별 통계</h3>
+									<p>25개 시군구</p>
+
+									<div class="num">800 </div>
+								</div>
+								<!-- 시군별 통계 -->
+
+								<!-- 확정처리건수 -->
+								<div class="info">
+									<h3>확정처리건수</h3>
+									<p>연도별 처리 현황</p>
+
+									<div class="num">8,556,000</div>
+								</div>
+								<!-- 확정처리건수 -->
+							</div>
+						</div>
+
+						<!-- tbl -->
+						<div class="tbl-wrap type02">
+							<table class="tbl ">
+								<colgroup>
+									<col style="width:4%;">									
+									<col style="width:6%;">
+									<col style="width:6%;">
+									<col>
+									<col style="width:6%;">
+									<col style="width:6%;">
+									<col style="width:6%;">
+									<col style="width:6%;">
+									<col style="width:6%;">
+									<col style="width:10%;">
+									<col style="width:6%;">
+									<col style="width:6%;">
+									<col style="width:10%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" rowspan="2">순번</th>
+										<th scope="col" rowspan="2">시군</th>
+										<th scope="col" rowspan="2">구분</th>  
+										<th scope="col" rowspan="2">지구명</th>
+										<th scope="col" colspan="4">기초</th>
+										<th scope="col" colspan="2">세부</th>
+										<th scope="col" rowspan="2">검사자</th>									
+										<th scope="col" colspan="2">지적측량 수행기관</th>
+									</tr>
+									<tr> 
+										<th scope="col">계</th>
+										<th scope="col">지적삼각점</th>
+										<th scope="col">지적삼각보조점</th>
+										<th scope="col">도근점</th> 
+										<th scope="col">필지수(필)</th>
+										<th scope="col">면적(m2)</th>
+										<th scope="col">수행구분</th>
+										<th scope="col">수행기관명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="total">
+										<td>합계</td>
+										<td></td>
+										<td></td>
+										<td class="al">19개 지구</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">753</td>
+										<td class="ar">28,364,491.8</td>
+										<td>3</td>
+										<td>-</td>
+										<td>3</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>칠곡군</td>
+										<td>구획</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>청송군</td>
+										<td>도로철도</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>청송군</td>
+										<td>도로철도</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>청송군</td>
+										<td>도로철도</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>청송군</td>
+										<td>도로철도</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+									<tr class="active">
+										<td>6</td>
+										<td>청송군</td>
+										<td>도로철도</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>청송군</td>
+										<td>도로철도</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>청송군</td>
+										<td>도로철도</td>
+										<td class="al">칠곡 화남 태양광 발전시설 조성사업</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td>-</td>
+										<td class="ar">36</td>
+										<td class="ar">364,491.8</td>
+										<td>김상훈</td>
+										<td>일반</td>
+										<td>대일지적측량사무소</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- tbl -->
+
+						<!-- paging -->
+						<div class="paging-wrap">
+							<ul class="paging">
+								<li><a class="prev first" href="#"></a></li>
+								<li><a class="prev" href="#"></a></li>
+								<li><a class="pLink" href="#">1</a></li>
+								<li><a class="pLink" href="#">2</a></li>
+								<li><a class="pLink" href="#">3</a></li>
+								<li><a class="pLink" href="#">4</a></li>
+								<li><a class="pLink" href="#">5</a></li>
+								<li><a class="pLink active" href="#">6</a></li>
+								<li><a class="pLink" href="#">7</a></li>
+								<li><a class="pLink" href="#">8</a></li>
+								<li><a class="pLink" href="#">9</a></li>
+								<li><a class="pLink" href="#">10</a></li>
+								<li><a class="next" href="#"></a></li>
+								<li><a class="next last" href="#"></a></li>
+							</ul>
+						</div>
+						<!-- paging -->
+					</div>
+				</div>
+				<!-- 지적확정측량 접수 목록 -->
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+	<script src="js/lib/chart.js"></script> <!-- v4.5.1 -->
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script> <!-- v2.2.0 -->
+
+	<script>
+		Chart.register(ChartDataLabels);
+
+		const colors = [
+		"#3B5BA9","#4C77C9","#66A3D2","#6CC3C3",
+		"#52B788","#8BC34A","#D4AF37","#F97316","#9C27B0"
+		];
+
+		const chart = new Chart(document.getElementById("pieChart1"), {
+			type: "pie",
+			data: {
+				labels: [
+				"구미시 (156건)",
+				"안동시 (187건)",
+				"포항시 (179건)",
+				"칠곡군 (197건)",
+				"영덕군 (156건)",
+				"영양군 (195건)",
+				"청송군 (170건)",
+				"군위군 (157건)",
+				"영천시 (178건)"
+				],
+				datasets: [{
+				data: [156,187,179,197,156,195,170,157,178],
+				backgroundColor: colors,
+				borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+
+			plugins: {
+			legend: { display: false },
+
+			datalabels: {
+				formatter: (value, ctx) => ctx.chart.data.labels[ctx.dataIndex],
+				color: (ctx) => colors[ctx.dataIndex],
+				font: { size: 12, weight: "bold" },
+				anchor: "end",
+				align: "end",
+				offset: 20,
+				clamp: false               // ✅ 바깥으로 나가게 (잘리면 padding/부모높이로 해결)
+			}
+			},
+
+			layout: {
+			padding: { top: 50, right: 70, bottom: 50, left: 70 } // ✅ 잘림 방지
+			}
+		}
+	});
+
+	setTimeout(() => chart.resize(), 50);
+	</script>
+
+	<script>
+		Chart.register(ChartDataLabels);
+
+		const colors2 = [
+		"#3B5BA9","#4C77C9","#66A3D2","#6CC3C3",
+		"#52B788","#8BC34A","#D4AF37","#F97316","#9C27B0"
+		];
+
+		const chart2 = new Chart(document.getElementById("pieChart2"), {
+			type: "pie",
+			data: {
+				labels: [
+				"구미시 (156건)",
+				"안동시 (187건)",
+				"포항시 (179건)",
+				"칠곡군 (197건)",
+				"영덕군 (156건)",
+				"영양군 (195건)",
+				"청송군 (170건)",
+				"군위군 (157건)",
+				"영천시 (178건)"
+				],
+				datasets: [{
+				data: [156,187,179,197,156,195,170,157,178],
+				backgroundColor: colors,
+				borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+
+			plugins: {
+			legend: { display: false },
+
+			datalabels: {
+				formatter: (value, ctx) => ctx.chart.data.labels[ctx.dataIndex],
+				color: (ctx) => colors[ctx.dataIndex],
+				font: { size: 12, weight: "bold" },
+				anchor: "end",
+				align: "end",
+				offset: 20,
+				clamp: false               // ✅ 바깥으로 나가게 (잘리면 padding/부모높이로 해결)
+			}
+			},
+
+			layout: {
+			padding: { top: 50, right: 70, bottom: 50, left: 70 } // ✅ 잘림 방지
+			}
+		}
+	});
+
+	setTimeout(() => chart.resize(), 50);
+	</script>
+
+</body>
+</html>

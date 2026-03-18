@@ -40,21 +40,57 @@
 			number = number+1;
 		});
 	}
+
+	function appendPageRow($tbody, page){
+		$tbody.append(
+			'<tr><td class="pgNum tCenter"></td>' +
+			'<td class="al">' + (page.title || page.file) + '</td>' +
+			'<td class="al"><a href="' + page.file + '" target="_blank" title="새창열림" class="page-link">' + page.file + '</a></td>' +
+			'<td>' + (page.type || '') + '</td>' +
+			'<td class="tCenter"><span class="work on">완료</span></td>' +
+			'<td class="al">' + (page.note || '') + '</td></tr>'
+		);
+	}
 	$(function(){
 		updateRowNumbers();
+		var $tbody = $('#pageListBody');
+
+		// 시스템관리 페이지 고정 목록
+		var systemPages = [
+			{ file: 'communication_notice.html', title: '소통공간 공지사항', type: 'commu' },
+			{ file: 'communication.html', title: '소통공간 FAQ(아코디언)', type: 'commu' },
+			{ file: 'communication_qna.html', title: '소통공간 질의응답', type: 'commu' },
+			{ file: 'communication_guide.html', title: '소통공간 사용자 가이드', type: 'commu' },
+			{ file: 'communication_guide_view.html', title: '소통공간 가이드 상세', type: 'commu' },
+			{ file: 'communication-2.html', title: '소통공간 공지 상세', type: 'commu' },
+			{ file: 'system.html', title: '시스템관리 메인', type: 'system' },
+			{ file: 'system_notice_list.html', title: '공지사항 리스트', type: 'system' },
+			{ file: 'system_notice_view.html', title: '공지사항 상세', type: 'system' },
+			{ file: 'system_notice_write.html', title: '공지사항 등록', type: 'system' },
+			{ file: 'system_faq_list.html', title: '자주하는 질문 리스트', type: 'system' },
+			{ file: 'system_faq_view.html', title: '자주하는 질문 상세', type: 'system' },
+			{ file: 'system_faq_write.html', title: '자주하는 질문 등록', type: 'system' },
+			{ file: 'system_qna_list.html', title: '질의응답 리스트', type: 'system' },
+			{ file: 'system_qna_view.html', title: '질의응답 상세', type: 'system' },
+			{ file: 'system_qna_write.html', title: '질의응답 등록', type: 'system' },
+			{ file: 'system_guide_list.html', title: '사용자 가이드 리스트', type: 'system' },
+			{ file: 'system_guide_view.html', title: '사용자 가이드 상세', type: 'system' },
+			{ file: 'system_guide_write.html', title: '사용자 가이드 등록', type: 'system' }
+		];
+
+		$.each(systemPages, function(i, page){
+			appendPageRow($tbody, page);
+		});
+
 		// 생성된 map 페이지 목록 자동 추가 (public/map-pages.json)
 		$.getJSON('map-pages.json')
 			.done(function(pages){
-				var $tbody = $('#pageListBody');
 				$.each(pages, function(i, p){
-					$tbody.append(
-						'<tr><td class="pgNum tCenter"></td>' +
-						'<td class="al">' + (p.title || p.file) + '</td>' +
-						'<td class="al"><a href="' + p.file + '" target="_blank" title="새창열림" class="page-link">' + p.file + '</a></td>' +
-						'<td>map</td>' +
-						'<td class="tCenter"><span class="work on">완료</span></td>' +
-						'<td class="al"></td></tr>'
-					);
+					appendPageRow($tbody, {
+						file: p.file,
+						title: p.title,
+						type: 'map'
+					});
 				});
 				updateRowNumbers();
 			})

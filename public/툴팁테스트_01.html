@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SVG 지도 - Hover Tooltip + Click Active</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif; padding: 20px; }
+
+  /* ===== 지도 기본 ===== */
+  #mapSvg { width: 600px; max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 12px; }
+
+  /* 지역(클릭/hover 대상 path) */
+  #mapSvg .cls-3{
+    fill:#fff;
+    cursor:pointer;
+    transition:.15s;
+    stroke:#cfcfcf;
+    stroke-width:1;
+  }
+  #mapSvg .cls-3:hover{
+    fill:#eaf0f9;
+  }
+  #mapSvg .cls-3.is-active{
+    fill:#dbe9ff;
+    stroke:#6b8fd6;
+  }
+
+  /* 라벨(텍스트/패스 등 whatever) */
+  #mapSvg .cls-2{
+    fill:#666;
+    transition:.15s;
+    pointer-events:none; /* 라벨이 hover를 가로채지 않게(중요) */
+  }
+
+  /* 클릭된 지역의 라벨만 검정 */
+  #mapSvg .cls-2.label-active{
+    fill:#000 !important;
+  }
+
+  /* 그룹 hover로 라벨 검정(가능할 때만) */
+  #mapSvg .region-group:hover .cls-2{
+    fill:#000 !important;
+  }
+
+  /* ===== 툴팁 ===== */
+  .map-tooltip{
+    position: absolute;
+    z-index: 9999;
+    display:none;
+    padding:10px 12px;
+    background: rgba(0,0,0,.85);
+    color:#fff;
+    border-radius:10px;
+    font-size:12px;
+    line-height:1.35;
+    pointer-events:none; /* 툴팁이 마우스 이벤트를 막지 않게 */
+    white-space: nowrap;
+  }
+  .map-tooltip strong{ font-size:13px; display:block; margin-bottom:4px; }
+</style>
+</head>
+
+<body>
+
+<h2>SVG 지도 테스트</h2>
+<p>✅ hover 하면 툴팁 바로 뜨고 / ✅ 클릭하면 active + 라벨(label-active) 적용</p>
+
+<!-- ====== 예시 SVG (여기만 너 지도 SVG로 교체하면 됨) ====== -->
+<svg id="mapSvg" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" aria-label="map">
+  <!-- region-group 구조가 있으면 hover 라벨도 같이 쉬움 -->
+  <g class="region-group">
+    <path class="cls-3" data-name="A지역" data-info="A지역 상세 정보"
+          d="M60 60 H260 V160 H60 Z" />
+    <!-- 라벨이 path/text 어떤 형태든 cls-2만 붙이면 됨 -->
+    <text class="cls-2" x="160" y="120" text-anchor="middle" dominant-baseline="middle">A</text>
+  </g>
+
+  <g class="region-group">
+    <path class="cls-3" data-name="B지역" data-info="B지역 상세 정보"
+          d="M300 80 H520 V200 H300 Z" />
+    <text class="cls-2" x="410" y="140" text-anchor="middle" dominant-baseline="middle">B</text>
+  </g>
+
+  <g class="region-group">
+    <path class="cls-3" data-name="C지역" data-info="C지역 상세 정보"
+          d="M120 210 H360 V320 H120 Z" />
+    <text class="cls-2" x="240" y="265" text-anchor="middle" dominant-baseline="middle">C</text>
+  </g>
+</svg>
+
+<script>
+$(function () {
+  const svgEl = document.querySelector("#mapSvg");
+
+  // ✅ tooltip은 1번만 만들기
+  const $tooltip = $('<div class="map-tooltip"></div>').appendTo('body').hide();
+
+  // =========================
+  // 1) CLICK: active + label-active 매칭
+  // =========================
+  $(document).on("click", "#mapSvg .cls-3", function () {
+    const region = this; // 클릭한 지역 path
+
+    // 지역 active 초기화
+    $("#mapSvg .cls-3").removeClass("is-active");
+    $(region).addClass("is-active");
+
+    // 라벨 초기화
+    $("#mapSvg .cls-2").removeClass("label-active");
+
+    // 클릭한 region 내부 라벨 찾기: isPointInFill 활용
+    // (라벨이 path/text 등 무엇이든 getBBox 가능한 요소면 됨)
+    const labels = svgEl.querySelectorAll(".cls-2");
+    const pt = svgEl.createSVGPoint();
+
+    labels.forEach(label => {
+      // getBBox는 display:none이면 에러날 수 있음
+      let b;
+      try {
+        b = label.getBBox();
+      } catch(e) {
+        return;
+      }
+      pt.x = b.x + b.width / 2;
+      pt.y = b.y + b.height / 2;
+
+      if (typeof region.isPointInFill === "function" && region.isPointInFill(pt)) {
+        label.classList.add("label-active");
+      }
+    });
+  });
+
+  // =========================
+  // 2) HOVER: 툴팁(클릭 없이 바로)
+  // =========================
+  $(document).on('mouseenter', '#mapSvg .cls-3', function () {
+    const title = $(this).attr('data-name') || "지역 정보";
+    const content = $(this).attr('data-info') || "상세 정보가 없습니다.";
+    $tooltip.html("<strong>" + title + "</strong>" + content).show();
+  });
+
+  $(document).on('mousemove', '#mapSvg .cls-3', function(e) {
+    $tooltip.css({
+      top: (e.pageY + 15) + 'px',
+      left: (e.pageX + 15) + 'px'
+    });
+  });
+
+  $(document).on('mouseleave', '#mapSvg .cls-3', function() {
+    $tooltip.hide();
+  });
+});
+</script>
+
+</body>
+</html>

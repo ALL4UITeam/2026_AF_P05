@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 항공사진 · 지적도 첨부 -->
+	<div class="layerpop-wrap w1340" id="popup1" style="display:block;">
+		<header>
+			<h3>항공사진 · 지적도 첨부</h3>
+
+            <div class="btn-group">
+                <button type="button" name="" id="" class="com-btn posi-btn"><i class="ico-marker" aria-hidden="true"></i>소재지 위치로</button>
+                <button type="button" name="" id="" class="com-btn grayblue plus-btn"><i class="ico-plus" aria-hidden="true"></i>확대</button>
+                <button type="button" name="" id="" class="com-btn grayblue minus-btn"><i class="ico-minus" aria-hidden="true"></i>축소</button>
+            </div>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<div class="detail-info-wrap">
+				<!-- 지도 -->
+				<div class="map-area-wrap w100per">
+					<!-- map -->
+					<div class="map-box">
+						<div class="map-area type02">
+							<img src="images/temp/map_06.png">
+						</div>
+					</div>
+					<!-- map -->
+
+					<!-- map -->
+					<div class="map-box">
+						<div class="map-area type02">
+							<img src="images/temp/map_07.png">
+						</div>
+					</div>
+					<!-- map -->
+				</div>
+				<!-- 지도 -->
+			</div>
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue" onclick="closePopup('popup1')">닫기</button>
+				<button type="button" name="" id="" class="com-btn xl blue">캡처 및 첨부</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 항공사진 · 지적도 첨부 -->
+
+    <div class="overlay"></div>
+</body>
+</html>

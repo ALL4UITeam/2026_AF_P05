@@ -153,6 +153,18 @@ $(document).ready(function(){
 		$(".popover-menu-wrap").toggleClass("active");
 	});
 
+	$(".top-menu > .system").on("click", function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		$(".mega-menu-wrap.system").toggleClass("active");
+	});
+
+	$(document).on("click", function(e){
+		if(!$(e.target).closest(".top-menu > .system, .mega-menu-wrap.system").length){
+			$(".mega-menu-wrap.system").removeClass("active");
+		}
+	});
+
 	// 오른쪽 Map maptool active
 	$(".mapset-btn").on("click", function(){
 		$(".mapset-btn").removeClass("active");
