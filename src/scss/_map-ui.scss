@@ -31,8 +31,6 @@
 }
 
 .vibe-container {
-	
-	
 	width: 100%;
 	height: 100%;
 	min-height: 60vh;
@@ -83,12 +81,10 @@
 	// 공통 폼 (border 1px solid #eee, 간격 넓게)
 	.map-ui-form-group {
 		margin-bottom: 18px;
-
 		label {
-			display: block;
-			font-size: 12px;
-			font-weight: 600;
-			color: #555;
+			font-size: 14px;
+			font-weight: 500;
+			color: #111111;
 			margin-bottom: 8px;
 		}
 	}
@@ -398,6 +394,9 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		flex: 1;
+		overflow-y: auto;
+		padding-top: 20px;
 	}
 
 	.map-ui-tree__node {
@@ -409,16 +408,20 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		padding: 10px 12px;
+		padding: 0 12px;
 		border-radius: 6px;
 		cursor: pointer;
-		font-size: 13px;
-		color: #333;
+		font-size: 14px;
+		font-weight: 500;
+		color: #666666;
+		background: #ffffff;
 		transition: background 0.2s;
+		border: 1px solid #e3e4e6;
+		height: 40px;
 	}
 
 	.map-ui-tree__item:hover {
-		background: var(--map-ui-blue-bg);
+		background: #f3f1ff;
 	}
 
 	.tree-icon {
@@ -439,17 +442,15 @@
 	.map-ui-tree__children {
 		list-style: none;
 		padding-left: 26px;
-		margin: 2px 0 0 0;
-		border-left: 1px solid #eee;
+		margin-top: 6px;
+		> .map-ui-tree__node:not(:first-child) {
+			margin-top: 6px;
+		}
 		&.is-hidden { display: none; }
 	}
 
 	.map-ui-tree__toolbar {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 8px;
-		margin-bottom: 10px;
+		
 	}
 	.map-ui-tree__count { font-size: 13px; color: #555; }
 	.map-ui-btn {
@@ -466,21 +467,24 @@
 		&--sm { padding: 6px 10px; font-size: 12px; }
 	}
 	.map-ui-tree__caret {
-		width: 18px;
-		height: 18px;
+		width: 12px;
+		height: 8px;
 		flex-shrink: 0;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		color: #666;
 		transition: transform 0.2s ease;
-		&::before { content: '›'; font-size: 14px; font-weight: 700; }
-		&--open { transform: rotate(90deg); }
+		
+		&::before { content: ''; background: url('/images/map/tree__caret.png') no-repeat center center; background-size: 100% 100%;width: 100%;height: 100%;}
+		&--open {
+			&::before{background-image: url('/images/map/tree__caret-active.png');}
+		}
 	}
 	.map-ui-tree__spacer {
 		width: 18px;
 		flex-shrink: 0;
 		display: inline-block;
+		&[aria-hidden="true"]{display: none;}
 	}
 	.map-ui-tree__label {
 		flex: 1;
@@ -489,15 +493,16 @@
 	}
 	.map-ui-tree__item input[type="checkbox"] { flex-shrink: 0; margin: 0; }
 	.map-ui-tree__node--root > .map-ui-tree__item {
-		background: #f5f5f5;
-		border: 1px solid #eee;
-		border-radius: 6px;
-		margin-bottom: 2px;
-		font-weight: 600;
+		
 	}
-	.map-ui-tree__node--root > .map-ui-tree__item:hover {
-		background: #eee;
-		border-color: #ddd;
+	
+	.map-ui-tree__node--root[aria-expanded="true"] > .map-ui-tree__item {
+		background-color: #f3f1ff;
+		border-color: #6366f1;
+		.map-ui-tree__label{
+			color: #6366f1;
+			font-weight: 500;
+		}
 	}
 
 	// ---- 테이블 (시트 내 데이터) ----

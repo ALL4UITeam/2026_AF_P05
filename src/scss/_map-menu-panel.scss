@@ -1,5 +1,5 @@
 // 좌측 고정 메뉴 패널: 토지검색 / 건물 검색 / 공유재산 검색
-$map-menu-panel-width: 240px;
+$map-menu-panel-width: 300px;
 
 
 .map-menu-panel {
@@ -9,21 +9,37 @@ $map-menu-panel-width: 240px;
   width: $map-menu-panel-width;
   height: 100%;
   z-index: 4;
-  background: #e8e8e8;
-  border-right: 1px solid #ddd;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06);
   transform: translateX(-100%);
   transition: transform 0.2s ease;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
   &.is-open {
     transform: translateX(0);
   }
 }
+.map-menu-panel__header {
+  background: url('/images/map/sidebar-header-logo2.png') no-repeat center center, linear-gradient(to right, #5a4aff, #3f3dff);
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  h2{
+    background: url('/images/map/sidebar-header-title.png') no-repeat left top;
+    padding-top: 40px;
+    color: #fff;
+    font-size: 18px;
+    font-family: var(--map-title-font);
+    margin-bottom: 0;
+  }
+
+}
 .map-menu-panel__inner {
   padding: 20px 16px;
   overflow-y: auto;
-  height: 100%;
+  flex: 1;
+
 }
 .map-menu-panel__section {
   margin-bottom: 20px;
@@ -32,31 +48,69 @@ $map-menu-panel-width: 240px;
   }
 }
 .map-menu-panel__title {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: #1a1a1a;
-  margin: 0 0 10px 0;
-  padding: 0;
+  padding: 0 0 0 14px;
+  margin: 0;
+  background-color: #f5f6f8;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
 }
+.map-menu-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.map-menu-icon-user {
+  background: url('/images/map/menu-icon-user.png') no-repeat center center;
+}
+.map-menu-icon-drone {
+  background: url('/images/map/menu-icon-drone.png') no-repeat center center;
+}
+.map-menu-icon-interest {
+  background: url('/images/map/menu-icon-interest.png') no-repeat center center;
+}
+
 .map-menu-panel__list {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-left: 35px;
+  padding-top: 20px;
 }
 .map-menu-panel__list li {
-  margin-bottom: 4px;
+  &:not(last-child) {
+    padding-top: 5px;
+  }
 }
 .map-menu-panel__link {
   display: block;
-  padding: 6px 0 6px 14px;
-  font-size: 13px;
-  font-weight: 400;
-  color: #333;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
-}
-.map-menu-panel__link:hover {
-  background: rgba(255, 255, 255, 0.5);
-  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  position: relative;
+  padding-left: 10px;
+  transition: all 0.3s ease;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #333;
+  }
+  &:hover,
+  &:focus{
+    color: #000;
+    &:before {
+      background: #000;
+    }
+  }
 }

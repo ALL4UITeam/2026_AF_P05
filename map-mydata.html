@@ -4,19 +4,728 @@
 	
 	{{> map-mydata-menu}}
 	{{> map-mydata-user}}
+	{{> map-mydata-drone}}
+	{{> map-mydata-interest}}
 	<!-- 우측: 지도 영역 (전체 채움) -->
 	<div class="map-area">
 		<div id="map-container"></div>
+	</div>
 
-    <div class="map-floating-search">
-      <div class="map-floating-search__input">
-        <input type="text" class="map-floating-search__input-field" placeholder="검색어를 입력하세요.">
-        <button type="button" class="map-floating-search__btn">
-          <span class="sr-only">검색</span>
+	
+<!-- 사용자데이터 등록 모달 -->
+<div class="mydata-modal" aria-hidden="true" data-mydata-modal>
+  <div class="mydata-modal__backdrop" data-mydata-close></div>
+  <div class="mydata-modal__dialog" role="dialog" aria-modal="true" aria-label="사용자데이터 등록">
+    <header class="mydata-modal__header">
+      <h3 class="mydata-modal__title">사용자데이터 등록</h3>
+      <button type="button" class="mydata-modal__close" aria-label="닫기" data-mydata-close></button>
+    </header>
+    <div class="mydata-modal__tabs" role="tablist">
+      <button type="button" class="mydata-modal__tab is-active" data-mydata-tab="shp" role="tab" aria-selected="true">공간데이터(shp) 등록</button>
+      <button type="button" class="mydata-modal__tab" data-mydata-tab="share" role="tab" aria-selected="false">사용자 공유</button>
+    </div>
+    <div class="mydata-modal__body">
+      <div class="mydata-form">
+        <div class="mydata-form__row">
+          <label class="mydata-form__label">레이어명</label>
+          <input type="text" class="mydata-form__input" placeholder="등록할 공간 데이터명을 입력해주세요.">
+        </div>
+        <div class="mydata-form__row">
+          <label class="mydata-form__label">설명</label>
+          <textarea class="mydata-form__textarea" placeholder="데이터에 대한 간략한 설명을 입력해주세요."></textarea>
+        </div>
+        <div class="mydata-form__row">
+          <label class="mydata-form__label">첨부파일</label>
+          <div class="mydata-form__file">
+            <label class="mydata-form__file-btn">
+              파일선택
+              <input type="file" hidden data-mydata-file>
+            </label>
+            <div class="mydata-form__file-name" data-mydata-file-name>선택된 파일 없음</div>
+          </div>
+        </div>
+        <ul class="mydata-form__help">
+          <li>동일한 파일명으로 shp, dbf, shx, prj 파일 첨부 필요합니다.</li>
+          <li>zip 파일 첨부 가능 (단, zip 파일 내 동일한 파일명으로 파일이 있어야 함)</li>
+          <li>첨부파일 1개당 최대 용량 500MB 입니다.</li>
+        </ul>
+      </div>
+    </div>
+    <footer class="mydata-modal__footer">
+      <button type="button" class="mydata-modal__btn" data-mydata-close>취소</button>
+      <button type="button" class="mydata-modal__btn mydata-modal__btn--primary">적용</button>
+    </footer>
+  </div>
+</div>
+
+<div class="map-ui-modal-backdrop" id="shareModal" aria-hidden="true">
+<div class="map-ui-modal mydata-share-modal">
+  <header class="map-ui-modal__header mydata-share-modal__header">
+    <h3>데이터 공유 설정</h3>
+    <button type="button" class="map-ui-modal__close" aria-label="닫기">&times;</button>
+  </header>
+  <div class="mydata-share-modal__info">
+    <span class="mydata-share-modal__filename">사업지구_경계.shp</span>
+    <span class="mydata-share-modal__type">POLYGON</span>
+  </div>
+  <div class="mydata-share-modal__tabs" role="tablist">
+    <button type="button" class="mydata-share-modal__tab is-active" data-share-tab="dept" role="tab" aria-selected="true">부서 공유</button>
+    <button type="button" class="mydata-share-modal__tab" data-share-tab="user" role="tab" aria-selected="false">사용자 공유</button>
+  </div>
+  <div class="map-ui-modal__body mydata-share-modal__body">
+    <!-- 부서 공유 패널 -->
+    <div class="mydata-share-panel" data-share-panel="dept">
+      <div class="mydata-share-search">
+        <div class="mydata-share-search__input">
+          <span class="mydata-share-search__icon" aria-hidden="true"></span>
+          <input type="text" placeholder="레이어명 검색">
+        </div>
+        <button type="button" class="mydata-share-search__btn">검색</button>
+      </div>
+      <div class="mydata-share-dept">
+        <div class="mydata-share-dept__title">조직도</div>
+        <ul class="mydata-share-dept__list">
+          <li>
+            <label class="mydata-share-dept__check">
+              <input type="checkbox" checked>
+              <span class="mydata-share-dept__check-ui"></span>
+              <span>토지정보과</span>
+            </label>
+          </li>
+          <li>
+            <label class="mydata-share-dept__check">
+              <input type="checkbox">
+              <span class="mydata-share-dept__check-ui"></span>
+              <span>도시계획과</span>
+            </label>
+          </li>
+          <li>
+            <label class="mydata-share-dept__check">
+              <input type="checkbox">
+              <span class="mydata-share-dept__check-ui"></span>
+              <span>안전재난과</span>
+            </label>
+          </li>
+          <li>
+            <label class="mydata-share-dept__check">
+              <input type="checkbox" checked>
+              <span class="mydata-share-dept__check-ui"></span>
+              <span>환경정책과</span>
+            </label>
+          </li>
+          <li>
+            <label class="mydata-share-dept__check">
+              <input type="checkbox">
+              <span class="mydata-share-dept__check-ui"></span>
+              <span>도로철도과</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- 사용자 공유 패널 -->
+    <div class="mydata-share-panel" data-share-panel="user" hidden>
+      <div class="mydata-share-search">
+        <div class="mydata-share-search__input">
+          <span class="mydata-share-search__icon" aria-hidden="true"></span>
+          <input type="text" placeholder="사용자명 또는 ID 검색">
+        </div>
+        <button type="button" class="mydata-share-search__btn">검색</button>
+      </div>
+      <div class="mydata-share-users">
+        <div class="mydata-share-users__head">
+          <span class="mydata-share-users__title">공유 사용자 목록</span>
+          <button type="button" class="mydata-share-users__add">추가하기</button>
+        </div>
+        <ul class="mydata-share-users__list">
+          <li class="mydata-share-users__item">
+            <span class="mydata-share-users__name">김철수 (도시과)</span>
+            <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+          </li>
+          <li class="mydata-share-users__item">
+            <span class="mydata-share-users__name">이영희 (환경과)</span>
+            <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+          </li>
+          <li class="mydata-share-users__item">
+            <span class="mydata-share-users__name">박민수 (안전과)</span>
+            <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="mydata-share-modal__footer">
+    <button type="button" class="mydata-modal__btn map-ui-modal__close">취소</button>
+    <button type="button" class="mydata-modal__btn mydata-modal__btn--primary">적용</button>
+  </footer>
+</div>
+</div>
+
+<!-- 드론영상 목록 오버레이 (맵 위 전체 덮기) -->
+<div class="drone-layer" id="droneLayer">
+  <!-- 상단 탭 + 액션 -->
+  <header class="drone-layer__header">
+    <nav class="drone-layer__tabs">
+      <button type="button" class="drone-layer__tab is-active" data-drone-tab="image">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        영상데이터
+      </button>
+      <button type="button" class="drone-layer__tab" data-drone-tab="eo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        EO데이터
+      </button>
+      <button type="button" class="drone-layer__tab" data-drone-tab="meta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        메타데이터
+      </button>
+    </nav>
+    <div class="drone-layer__actions">
+      <button type="button" class="drone-layer__register" data-drone-register>
+        <span>+</span> 드론영상 등록
+      </button>
+      <div class="drone-layer__view-toggle">
+        <button type="button" class="drone-layer__view-btn is-active" data-drone-view="grid" aria-label="갤러리형">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </button>
+        <button type="button" class="drone-layer__view-btn" data-drone-view="list" aria-label="목록형">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="3" rx="1"/><rect x="3" y="10.5" width="18" height="3" rx="1"/><rect x="3" y="17" width="18" height="3" rx="1"/></svg>
         </button>
       </div>
     </div>
-		<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
-	</div>
+  </header>
+
+  <!-- 갤러리형 그리드 -->
+  <div class="drone-layer__body" data-drone-body>
+    <div class="drone-grid" data-drone-grid>
+
+      <div class="drone-card" data-drone-card>
+        <div class="drone-card__thumb">
+          <div class="drone-card__thumb-actions">
+            <button type="button" class="drone-card__icon" aria-label="수정" data-drone-edit>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="공유" data-share-open>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="삭제" data-drone-delete>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+          <span class="drone-card__status drone-card__status--done">처리완료</span>
+          <button type="button" class="drone-card__detail" data-drone-detail>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            상세 보기
+          </button>
+        </div>
+        <div class="drone-card__info">
+          <h3 class="drone-card__title">안동시 도심지 정사영상</h3>
+          <dl class="drone-card__meta">
+            <div><dt>촬영일</dt><dd>2026-02-10</dd></div>
+            <div><dt>해상도</dt><dd>5cm</dd></div>
+            <div><dt>용량</dt><dd>4.2 GB</dd></div>
+          </dl>
+          <p class="drone-card__location">경북 안동시 풍천면</p>
+        </div>
+      </div>
+
+      <div class="drone-card" data-drone-card>
+        <div class="drone-card__thumb">
+          <div class="drone-card__thumb-actions">
+            <button type="button" class="drone-card__icon" aria-label="수정" data-drone-edit>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="공유" data-share-open>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="삭제" data-drone-delete>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+          <span class="drone-card__status drone-card__status--done">처리완료</span>
+          <button type="button" class="drone-card__detail" data-drone-detail>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            상세 보기
+          </button>
+        </div>
+        <div class="drone-card__info">
+          <h3 class="drone-card__title">낙동강 하천 모니터링</h3>
+          <dl class="drone-card__meta">
+            <div><dt>촬영일</dt><dd>2026-02-08</dd></div>
+            <div><dt>해상도</dt><dd>3cm</dd></div>
+            <div><dt>용량</dt><dd>12.5 GB</dd></div>
+          </dl>
+          <p class="drone-card__location">경북 예천군 호명면</p>
+        </div>
+      </div>
+
+      <div class="drone-card" data-drone-card>
+        <div class="drone-card__thumb">
+          <div class="drone-card__thumb-actions">
+            <button type="button" class="drone-card__icon" aria-label="수정" data-drone-edit>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="공유" data-share-open>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="삭제" data-drone-delete>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+          <span class="drone-card__status drone-card__status--processing">처리중</span>
+          <button type="button" class="drone-card__detail" data-drone-detail>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            상세 보기
+          </button>
+        </div>
+        <div class="drone-card__info">
+          <h3 class="drone-card__title">산림 병해충 해철(구미)</h3>
+          <dl class="drone-card__meta">
+            <div><dt>촬영일</dt><dd>2026-02-05</dd></div>
+            <div><dt>해상도</dt><dd>4cm</dd></div>
+            <div><dt>용량</dt><dd>8.1 GB</dd></div>
+          </dl>
+          <p class="drone-card__location">경북 구미시 금오산</p>
+        </div>
+      </div>
+
+      <div class="drone-card" data-drone-card>
+        <div class="drone-card__thumb">
+          <div class="drone-card__thumb-actions">
+            <button type="button" class="drone-card__icon" aria-label="수정" data-drone-edit>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="공유" data-share-open>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="삭제" data-drone-delete>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+          <span class="drone-card__status drone-card__status--waiting">대기</span>
+          <button type="button" class="drone-card__detail" data-drone-detail>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            상세 보기
+          </button>
+        </div>
+        <div class="drone-card__info">
+          <h3 class="drone-card__title">문화재 보호구역 항공촬영</h3>
+          <dl class="drone-card__meta">
+            <div><dt>촬영일</dt><dd>2026-01-28</dd></div>
+            <div><dt>해상도</dt><dd>2cm</dd></div>
+            <div><dt>용량</dt><dd>15.3 GB</dd></div>
+          </dl>
+          <p class="drone-card__location">경북 경주시 감포읍</p>
+        </div>
+      </div>
+
+      <div class="drone-card" data-drone-card>
+        <div class="drone-card__thumb">
+          <div class="drone-card__thumb-actions">
+            <button type="button" class="drone-card__icon" aria-label="수정" data-drone-edit>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="공유" data-share-open>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="삭제" data-drone-delete>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+          <span class="drone-card__status drone-card__status--done">처리완료</span>
+          <button type="button" class="drone-card__detail" data-drone-detail>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            상세 보기
+          </button>
+        </div>
+        <div class="drone-card__info">
+          <h3 class="drone-card__title">포항 태풍피해 현장조사</h3>
+          <dl class="drone-card__meta">
+            <div><dt>촬영일</dt><dd>2026-01-20</dd></div>
+            <div><dt>해상도</dt><dd>3cm</dd></div>
+            <div><dt>용량</dt><dd>9.7 GB</dd></div>
+          </dl>
+          <p class="drone-card__location">경북 포항시 남구</p>
+        </div>
+      </div>
+
+      <div class="drone-card" data-drone-card>
+        <div class="drone-card__thumb">
+          <div class="drone-card__thumb-actions">
+            <button type="button" class="drone-card__icon" aria-label="수정" data-drone-edit>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="공유" data-share-open>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </button>
+            <button type="button" class="drone-card__icon" aria-label="삭제" data-drone-delete>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </button>
+          </div>
+          <span class="drone-card__status drone-card__status--done">처리완료</span>
+          <button type="button" class="drone-card__detail" data-drone-detail>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            상세 보기
+          </button>
+        </div>
+        <div class="drone-card__info">
+          <h3 class="drone-card__title">상주 도로확장 측량영상</h3>
+          <dl class="drone-card__meta">
+            <div><dt>촬영일</dt><dd>2026-01-15</dd></div>
+            <div><dt>해상도</dt><dd>5cm</dd></div>
+            <div><dt>용량</dt><dd>6.4 GB</dd></div>
+          </dl>
+          <p class="drone-card__location">경북 상주시 함창읍</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 목록형 테이블 (hidden by default) -->
+    <div class="drone-list" data-drone-list hidden>
+      <table class="drone-list__table">
+        <thead>
+          <tr>
+            <th>프로젝트명</th>
+            <th>촬영일</th>
+            <th>촬영지역</th>
+            <th>해상도</th>
+            <th>용량</th>
+            <th>상태</th>
+            <th>관리</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="drone-list__name">안동시 도심지 정사영상</td>
+            <td>2026-02-10</td>
+            <td>경북 안동시 풍천면</td>
+            <td>5cm</td>
+            <td>4.2 GB</td>
+            <td><span class="drone-card__status drone-card__status--done">처리완료</span></td>
+            <td class="drone-list__actions">
+              <button type="button" class="drone-list__btn" aria-label="수정" data-drone-edit>수정</button>
+              <button type="button" class="drone-list__btn" aria-label="공유" data-share-open>공유</button>
+              <button type="button" class="drone-list__btn drone-list__btn--danger" aria-label="삭제" data-drone-delete>삭제</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="drone-list__name">낙동강 하천 모니터링</td>
+            <td>2026-02-08</td>
+            <td>경북 예천군 호명면</td>
+            <td>3cm</td>
+            <td>12.5 GB</td>
+            <td><span class="drone-card__status drone-card__status--done">처리완료</span></td>
+            <td class="drone-list__actions">
+              <button type="button" class="drone-list__btn" aria-label="수정" data-drone-edit>수정</button>
+              <button type="button" class="drone-list__btn" aria-label="공유" data-share-open>공유</button>
+              <button type="button" class="drone-list__btn drone-list__btn--danger" aria-label="삭제" data-drone-delete>삭제</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="drone-list__name">산림 병해충 해철(구미)</td>
+            <td>2026-02-05</td>
+            <td>경북 구미시 금오산</td>
+            <td>4cm</td>
+            <td>8.1 GB</td>
+            <td><span class="drone-card__status drone-card__status--processing">처리중</span></td>
+            <td class="drone-list__actions">
+              <button type="button" class="drone-list__btn" aria-label="수정" data-drone-edit>수정</button>
+              <button type="button" class="drone-list__btn" aria-label="공유" data-share-open>공유</button>
+              <button type="button" class="drone-list__btn drone-list__btn--danger" aria-label="삭제" data-drone-delete>삭제</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="drone-list__name">문화재 보호구역 항공촬영</td>
+            <td>2026-01-28</td>
+            <td>경북 경주시 감포읍</td>
+            <td>2cm</td>
+            <td>15.3 GB</td>
+            <td><span class="drone-card__status drone-card__status--waiting">대기</span></td>
+            <td class="drone-list__actions">
+              <button type="button" class="drone-list__btn" aria-label="수정" data-drone-edit>수정</button>
+              <button type="button" class="drone-list__btn" aria-label="공유" data-share-open>공유</button>
+              <button type="button" class="drone-list__btn drone-list__btn--danger" aria-label="삭제" data-drone-delete>삭제</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="drone-list__name">포항 태풍피해 현장조사</td>
+            <td>2026-01-20</td>
+            <td>경북 포항시 남구</td>
+            <td>3cm</td>
+            <td>9.7 GB</td>
+            <td><span class="drone-card__status drone-card__status--done">처리완료</span></td>
+            <td class="drone-list__actions">
+              <button type="button" class="drone-list__btn" aria-label="수정" data-drone-edit>수정</button>
+              <button type="button" class="drone-list__btn" aria-label="공유" data-share-open>공유</button>
+              <button type="button" class="drone-list__btn drone-list__btn--danger" aria-label="삭제" data-drone-delete>삭제</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="drone-list__name">상주 도로확장 측량영상</td>
+            <td>2026-01-15</td>
+            <td>경북 상주시 함창읍</td>
+            <td>5cm</td>
+            <td>6.4 GB</td>
+            <td><span class="drone-card__status drone-card__status--done">처리완료</span></td>
+            <td class="drone-list__actions">
+              <button type="button" class="drone-list__btn" aria-label="수정" data-drone-edit>수정</button>
+              <button type="button" class="drone-list__btn" aria-label="공유" data-share-open>공유</button>
+              <button type="button" class="drone-list__btn drone-list__btn--danger" aria-label="삭제" data-drone-delete>삭제</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 하단 페이지네이션 -->
+  <footer class="drone-layer__footer">
+    <div class="drone-paging">
+      <button type="button" class="drone-paging__btn" disabled>&laquo;</button>
+      <button type="button" class="drone-paging__btn" disabled>&lsaquo;</button>
+      <button type="button" class="drone-paging__num is-active">1</button>
+      <button type="button" class="drone-paging__num">2</button>
+      <button type="button" class="drone-paging__num">3</button>
+      <button type="button" class="drone-paging__btn">&rsaquo;</button>
+      <button type="button" class="drone-paging__btn">&raquo;</button>
+    </div>
+  </footer>
 </div>
+
+<!-- 드론 영상 등록 모달 -->
+<div class="map-ui-modal-backdrop" id="droneRegisterModal" aria-hidden="true">
+  <div class="map-ui-modal drone-modal">
+    <header class="map-ui-modal__header drone-modal__header">
+      <h3>드론 영상 등록</h3>
+      <button type="button" class="map-ui-modal__close" aria-label="닫기">&times;</button>
+    </header>
+    <div class="map-ui-modal__body drone-modal__body">
+      <div class="drone-modal__form">
+        <div class="drone-modal__row">
+          <label class="drone-modal__label">프로젝트명 <em>*</em></label>
+          <input type="text" class="drone-modal__input" placeholder="">
+        </div>
+        <div class="drone-modal__row">
+          <label class="drone-modal__label">촬영 지역</label>
+          <input type="text" class="drone-modal__input" placeholder="">
+        </div>
+        <div class="drone-modal__row drone-modal__row--half">
+          <div class="drone-modal__col">
+            <label class="drone-modal__label">촬영일자</label>
+            <input type="date" class="drone-modal__input" value="2026-02-11">
+          </div>
+          <div class="drone-modal__col">
+            <label class="drone-modal__label">해상도</label>
+            <div class="drone-modal__select-wrap">
+              <select class="drone-modal__select">
+                <option value="">선택</option>
+                <option value="2cm">2cm</option>
+                <option value="3cm">3cm</option>
+                <option value="4cm">4cm</option>
+                <option value="5cm">5cm</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="drone-modal__row">
+          <label class="drone-modal__label">진행 상태</label>
+          <div class="drone-modal__select-wrap">
+            <select class="drone-modal__select">
+              <option value="processing">처리중</option>
+              <option value="done">처리완료</option>
+              <option value="waiting">대기</option>
+            </select>
+          </div>
+        </div>
+        <div class="drone-modal__row">
+          <label class="drone-modal__label">영상 파일</label>
+          <div class="drone-modal__upload">
+            <div class="drone-modal__upload-area" data-drone-upload>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span>파일을 업로드하세요 (jp, tif 등)</span>
+              <input type="file" hidden data-drone-file-input>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="drone-modal__footer">
+      <button type="button" class="drone-modal__btn drone-modal__btn--primary">저장</button>
+      <button type="button" class="drone-modal__btn map-ui-modal__close">닫기</button>
+    </footer>
+  </div>
+</div>
+
+<!-- 드론 영상 수정 모달 -->
+<div class="map-ui-modal-backdrop" id="droneEditModal" aria-hidden="true">
+  <div class="map-ui-modal drone-modal">
+    <header class="map-ui-modal__header drone-modal__header">
+      <h3>드론 영상 수정</h3>
+      <button type="button" class="map-ui-modal__close" aria-label="닫기">&times;</button>
+    </header>
+    <div class="map-ui-modal__body drone-modal__body">
+      <div class="drone-modal__form">
+        <div class="drone-modal__row">
+          <label class="drone-modal__label">프로젝트명 <em>*</em></label>
+          <input type="text" class="drone-modal__input" value="안동시 도심지 정사영상">
+        </div>
+        <div class="drone-modal__row">
+          <label class="drone-modal__label">촬영 지역</label>
+          <input type="text" class="drone-modal__input" value="경북 안동시 풍천면">
+        </div>
+        <div class="drone-modal__row drone-modal__row--half">
+          <div class="drone-modal__col">
+            <label class="drone-modal__label">촬영일자</label>
+            <input type="date" class="drone-modal__input" value="2026-02-10">
+          </div>
+          <div class="drone-modal__col">
+            <label class="drone-modal__label">해상도</label>
+            <div class="drone-modal__select-wrap">
+              <select class="drone-modal__select">
+                <option value="2cm">2cm</option>
+                <option value="3cm">3cm</option>
+                <option value="4cm">4cm</option>
+                <option value="5cm" selected>5cm</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="drone-modal__row">
+          <label class="drone-modal__label">진행 상태</label>
+          <div class="drone-modal__select-wrap">
+            <select class="drone-modal__select">
+              <option value="processing">처리중</option>
+              <option value="done" selected>처리완료</option>
+              <option value="waiting">대기</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="drone-modal__footer">
+      <button type="button" class="drone-modal__btn drone-modal__btn--primary">저장</button>
+      <button type="button" class="drone-modal__btn map-ui-modal__close">닫기</button>
+    </footer>
+  </div>
+</div>
+
+<!-- 드론 영상 상세보기 팝업 (더미) -->
+<div class="map-ui-modal-backdrop" id="droneDetailModal" aria-hidden="true">
+  <div class="map-ui-modal drone-detail-modal">
+    <header class="drone-detail-modal__header">
+      <button type="button" class="drone-detail-modal__close map-ui-modal__close" aria-label="닫기">&times;</button>
+    </header>
+    <div class="drone-detail-modal__video">
+      <span class="drone-detail-modal__placeholder">드론 영상</span>
+    </div>
+  </div>
+</div>
+
+<div class="map-ui-modal-backdrop" id="shareModal" aria-hidden="true">
+  <div class="map-ui-modal mydata-share-modal">
+    <header class="map-ui-modal__header mydata-share-modal__header">
+      <h3>데이터 공유 설정</h3>
+      <button type="button" class="map-ui-modal__close" aria-label="닫기">&times;</button>
+    </header>
+    <div class="mydata-share-modal__info">
+      <span class="mydata-share-modal__filename">사업지구_경계.shp</span>
+      <span class="mydata-share-modal__type">POLYGON</span>
+    </div>
+    <div class="mydata-share-modal__tabs" role="tablist">
+      <button type="button" class="mydata-share-modal__tab is-active" data-share-tab="dept" role="tab" aria-selected="true">부서 공유</button>
+      <button type="button" class="mydata-share-modal__tab" data-share-tab="user" role="tab" aria-selected="false">사용자 공유</button>
+    </div>
+    <div class="map-ui-modal__body mydata-share-modal__body">
+      <!-- 부서 공유 패널 -->
+      <div class="mydata-share-panel" data-share-panel="dept">
+        <div class="mydata-share-search">
+          <div class="mydata-share-search__input">
+            <span class="mydata-share-search__icon" aria-hidden="true"></span>
+            <input type="text" placeholder="레이어명 검색">
+          </div>
+          <button type="button" class="mydata-share-search__btn">검색</button>
+        </div>
+        <div class="mydata-share-dept">
+          <div class="mydata-share-dept__title">조직도</div>
+          <ul class="mydata-share-dept__list">
+            <li>
+              <label class="mydata-share-dept__check">
+                <input type="checkbox" checked>
+                <span class="mydata-share-dept__check-ui"></span>
+                <span>토지정보과</span>
+              </label>
+            </li>
+            <li>
+              <label class="mydata-share-dept__check">
+                <input type="checkbox">
+                <span class="mydata-share-dept__check-ui"></span>
+                <span>도시계획과</span>
+              </label>
+            </li>
+            <li>
+              <label class="mydata-share-dept__check">
+                <input type="checkbox">
+                <span class="mydata-share-dept__check-ui"></span>
+                <span>안전재난과</span>
+              </label>
+            </li>
+            <li>
+              <label class="mydata-share-dept__check">
+                <input type="checkbox" checked>
+                <span class="mydata-share-dept__check-ui"></span>
+                <span>환경정책과</span>
+              </label>
+            </li>
+            <li>
+              <label class="mydata-share-dept__check">
+                <input type="checkbox">
+                <span class="mydata-share-dept__check-ui"></span>
+                <span>도로철도과</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 사용자 공유 패널 -->
+      <div class="mydata-share-panel" data-share-panel="user" hidden>
+        <div class="mydata-share-search">
+          <div class="mydata-share-search__input">
+            <span class="mydata-share-search__icon" aria-hidden="true"></span>
+            <input type="text" placeholder="사용자명 또는 ID 검색">
+          </div>
+          <button type="button" class="mydata-share-search__btn">검색</button>
+        </div>
+        <div class="mydata-share-users">
+          <div class="mydata-share-users__head">
+            <span class="mydata-share-users__title">공유 사용자 목록</span>
+            <button type="button" class="mydata-share-users__add">추가하기</button>
+          </div>
+          <ul class="mydata-share-users__list">
+            <li class="mydata-share-users__item">
+              <span class="mydata-share-users__name">김철수 (도시과)</span>
+              <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+            </li>
+            <li class="mydata-share-users__item">
+              <span class="mydata-share-users__name">이영희 (환경과)</span>
+              <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+            </li>
+            <li class="mydata-share-users__item">
+              <span class="mydata-share-users__name">박민수 (안전과)</span>
+              <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="mydata-share-modal__footer">
+      <button type="button" class="mydata-modal__btn map-ui-modal__close">취소</button>
+      <button type="button" class="mydata-modal__btn mydata-modal__btn--primary">적용</button>
+    </footer>
+  </div>
+</div>
+
+</div>
+
+
+
 {{/layout}}

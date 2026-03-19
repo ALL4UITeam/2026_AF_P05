@@ -1,7 +1,9 @@
 {{#> layout}}
-<div class="vibe-container map-search-page">
-	
-	{{> map-search-location-panel}}
+<div class="vibe-container map-theme-page">
+	{{> map-menu-panel}}
+	{{> map-search-theme-panel}}
+
+
 	<!-- 우측: 지도 영역 (전체 채움) -->
 	<div class="map-area">
 		<div id="map-container"></div>
@@ -11,15 +13,7 @@
 		{{> map-floating-controls}}
 		{{> map-building-info}}
 		{{> map-options}}
-		<!--
-		스케일 바
-		<div class="map-scale-bar">
-			<span class="map-scale-bar__line"></span>
-			<span class="map-scale-bar__labels">
-				<span>0</span><span>100m</span><span>200m</span>
-			</span>
-		</div> -->
-
+		
 		<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
 	</div>
 </div>

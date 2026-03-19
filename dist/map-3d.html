@@ -61,55 +61,113 @@
 		<!-- content -->
 		<div class="content-wrap">
 			<div class="content">
-				<div class="vibe-container map-search-page">
-					
-					<!-- 좌측 사이드바: VWorld dtkmap 스타일 (고정 폭, 회색 배경) -->
-					<aside class="map-search-sidebar is-open" id="locationSearchPanel">
+				<div class="vibe-container map-3d-page">
+					<aside class="map-menu-panel" aria-label="서비스 메뉴">
+						<nav class="map-menu-panel__inner">
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title">토지검색</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">토지(임야)</a></li>
+									<li><a href="#" class="map-menu-panel__link">부동산 정보</a></li>
+									<li><a href="#" class="map-menu-panel__link">토지 이용 규제</a></li>
+								</ul>
+							</section>
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title">건물 검색</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">건물 검색</a></li>
+								</ul>
+							</section>
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title">공유재산 검색</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">규제 확인</a></li>
+									<li><a href="#" class="map-menu-panel__link">건축물 대장</a></li>
+									<li><a href="#" class="map-menu-panel__link">도유지(공유지)</a></li>
+								</ul>
+							</section>
+						</nav>
+					</aside>
+					<aside class="map-search-sidebar is-open" id="layerPanel">
 					  <div class="map-search-sidebar__inner">
 					    <header class="map-search-sidebar__header">
-					      <h2>위치 검색</h2>
-					      <button title="닫기" class="map-search-sidebar__close" data-target="locationSearchPanel">
+					      <h2>3차원 가시화 <i class="info-icon" aria-label="3차원 가시화 정보"></i></h2>
+					      <button title="닫기" class="map-search-sidebar__close" data-target="layerPanel">
 					        닫기
 					      </button>
 					    </header>
-					    <div class="map-search-sidebar__body">
-					      <div class="sidebar__search">
-					        <div class="sidebar__search-location">
-					          <div class="map-ui-form-group">
-					            <label for="searchSigungu">시군</label>
-					            <select id="searchSigungu" class="map-ui-select">
-					              <option value="">전체</option>
-					              <option value="andong">안동시</option>
-					              <option value="yeongyang">영양군</option>
-					              <option value="yeongju">영주시</option>
-					              <option value="gyeongsan">경산시</option>
-					            </select>
-					          </div>
-					          <div class="map-ui-form-group">
-					            <label for="searchEmd">읍면동</label>
-					            <select id="searchEmd" class="map-ui-select">
-					              <option value="">전체</option>
-					            </select>
-					          </div>
-					          <div class="map-ui-form-group">
-					            <label for="searchRi">리</label>
-					            <select id="searchRi" class="map-ui-select">
-					              <option value="">전체</option>
-					            </select>
-					          </div>
-					        </div>
-					        <div class="sidebar__search-row">
-					          <input type="search" id="locationSearchInput" class="map-ui-input input-search" placeholder="주소 또는 장소 검색" autocomplete="off">
-					          <button type="button" class="sidebar__search-btn" id="locationSearchBtn" aria-label="검색">
-					            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-					          </button>
-					        </div>
+					
+					    <div class="map-search-sidebar__body" data-tree>
+					      <div class="map-ui-tree__toolbar map-search-sidebar__top">
+					        <span class="map-ui-tree__count" aria-live="polite">총 <strong>402</strong> 건</span>
+					        <button type="button" class="map-search-sidebar__expand-all" data-tree-expand-all aria-label="모두 열기">모두 열기 <i class="icon-arrow"></i></button>
 					      </div>
+					      <ul class="map-ui-tree" role="tree">
+					        <li class="map-ui-tree__node map-ui-tree__node--root" role="treeitem" aria-expanded="true">
+					          <div class="map-ui-tree__item" data-tree-toggle>
+					            <input type="checkbox" data-parent data-children="terrain,realimg,building3d" data-tree-id="map3d" aria-label="3D지도">
+					            <span class="map-ui-tree__label">3D지도</span>
+					            <span class="map-ui-tree__caret map-ui-tree__caret--open" aria-hidden="true"></span>
+					          </div>
+					          <ul class="map-ui-tree__children" role="group">
+					            <li class="map-ui-tree__node" role="treeitem" aria-expanded="true">
+					              <div class="map-ui-tree__item" data-tree-toggle>
+					                <input type="checkbox" data-parent data-children="aerial,dem" data-tree-id="terrain" aria-label="지형">
+					                <span class="map-ui-tree__label">지형</span>
+					                <span class="map-ui-tree__caret map-ui-tree__caret--open" aria-hidden="true"></span>
+					              </div>
+					              <ul class="map-ui-tree__children" role="group">
+					                <li class="map-ui-tree__node" role="treeitem">
+					                  <div class="map-ui-tree__item">
+					                    <span class="map-ui-tree__spacer" aria-hidden="true"></span>
+					                    <input type="checkbox" data-leaf data-tree-id="aerial" checked aria-label="항공영상">
+					                    <span class="map-ui-tree__label">항공영상</span>
+					                  </div>
+					                </li>
+					                <li class="map-ui-tree__node" role="treeitem">
+					                  <div class="map-ui-tree__item">
+					                    <span class="map-ui-tree__spacer" aria-hidden="true"></span>
+					                    <input type="checkbox" data-leaf data-tree-id="dem" aria-label="수치표고모델(DEM)">
+					                    <span class="map-ui-tree__label">수치표고모델(DEM)</span>
+					                  </div>
+					                </li>
+					              </ul>
+					            </li>
+					            <li class="map-ui-tree__node" role="treeitem">
+					              <div class="map-ui-tree__item">
+					                <span class="map-ui-tree__spacer" aria-hidden="true"></span>
+					                <input type="checkbox" data-leaf data-tree-id="realimg" aria-label="실감영상">
+					                <span class="map-ui-tree__label">실감영상</span>
+					              </div>
+					            </li>
+					            <li class="map-ui-tree__node" role="treeitem" aria-expanded="true">
+					              <div class="map-ui-tree__item" data-tree-toggle>
+					                <input type="checkbox" data-parent data-children="lod3,gyeongbuk" data-tree-id="building3d" aria-label="건물 3D">
+					                <span class="map-ui-tree__label">건물 3D</span>
+					                <span class="map-ui-tree__caret map-ui-tree__caret--open" aria-hidden="true"></span>
+					              </div>
+					              <ul class="map-ui-tree__children" role="group">
+					                <li class="map-ui-tree__node" role="treeitem">
+					                  <div class="map-ui-tree__item">
+					                    <span class="map-ui-tree__spacer" aria-hidden="true"></span>
+					                    <input type="checkbox" data-leaf data-tree-id="lod3" aria-label="브이월드 LOD3">
+					                    <span class="map-ui-tree__label">브이월드 LOD3</span>
+					                  </div>
+					                </li>
+					                <li class="map-ui-tree__node" role="treeitem">
+					                  <div class="map-ui-tree__item">
+					                    <span class="map-ui-tree__spacer" aria-hidden="true"></span>
+					                    <input type="checkbox" data-leaf data-tree-id="gyeongbuk" checked aria-label="경북3D모델 서비스">
+					                    <span class="map-ui-tree__label">경북3D모델 서비스</span>
+					                  </div>
+					                </li>
+					              </ul>
+					            </li>
+					          </ul>
+					        </li>
+					      </ul>
 					    </div>
 					  </div>
-					  <!-- <button type="button" class="map-search-sidebar__open" data-target="locationSearchPanel">
-					    열기
-					  </button> -->
 					</aside>	<!-- 우측: 지도 영역 (전체 채움) -->
 					<div class="map-area">
 						<div id="map-container"></div>
@@ -311,15 +369,7 @@
 						    </div>
 						  </div>
 						  
-						</div>		<!--
-						스케일 바
-						<div class="map-scale-bar">
-							<span class="map-scale-bar__line"></span>
-							<span class="map-scale-bar__labels">
-								<span>0</span><span>100m</span><span>200m</span>
-							</span>
-						</div> -->
-				
+						</div>		
 						<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
 					</div>
 				</div>

@@ -2,6 +2,8 @@ import '../scss/main.scss';
 import { init as initBasemapTabs } from './modules/basemapTabs.js';
 import { init as initBottomSheet } from './modules/bottomSheet.js';
 import { init as initDrawOptions } from './modules/drawOptions.js';
+import { init as initDrone } from './modules/drone.js';
+import { init as initInterest } from './modules/interest.js';
 import { init as initMapSearch } from './modules/mapSearch.js';
 import { init as initModal } from './modules/modal.js';
 import { init as initMydata } from './modules/mydata.js';
@@ -22,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	run(initPanel, 'panel');
 	run(initBasemapTabs, 'basemapTabs');
 	run(initToolbar, 'toolbar');
+	run(initDrone, 'drone');
 	run(initDrawOptions, 'drawOptions');
+	run(initInterest, 'interest');
 	run(initModal, 'modal');
 	run(initBottomSheet, 'bottomSheet');
 	run(initTree, 'tree');
