@@ -115,78 +115,80 @@
 		<div class="content-wrap">
 			<div class="content">
 				
-				<div class="cont-box-wrap">
-				  <div class="cont-box">
+				<div class="cont-box-wrap terms-policy-write-wrap">
+				  <div class="cont-box terms-policy-write">
 				    <div class="tit-wrap">
-				      <h2>공지사항</h2>
+				      <h2>사용 약관 등록</h2>
 				    </div>
 				
-				    <div class="inquiry-box">
-				      <div class="serach-box">
-				        <div class="form-wrap">
-				          <input type="text" name="searchKeyword" id="search" class="type01 searchIco" value=""
-				            placeholder="제목, 작성자 검색">
-				          <button type="submit" name="" id="btnSearch" class="com-btn blue w200">검색</button>
+				    <div class="terms-policy-write__section">
+				      <h3 class="terms-policy-write__section-title">기본 정보 입력</h3>
+				
+				      <div class="terms-policy-write__form">
+				        <div class="terms-policy-write__row terms-policy-write__row--half">
+				          <div class="terms-policy-write__field">
+				            <label for="termsCategory" class="terms-policy-write__label">약관 구분 <span>*</span></label>
+				            <select id="termsCategory" class="type01">
+				              <option>서비스이용약관</option>
+				              <option>개인정보처리방침</option>
+				              <option>위치기반서비스</option>
+				            </select>
+				          </div>
+				          <div class="terms-policy-write__field">
+				            <label for="termsVersion" class="terms-policy-write__label">버전 <span>*</span></label>
+				            <input type="text" id="termsVersion" class="type01" value="1.2">
+				          </div>
+				        </div>
+				
+				        <div class="terms-policy-write__row">
+				          <div class="terms-policy-write__field">
+				            <label for="termsTitle" class="terms-policy-write__label">약관 명 <span>*</span></label>
+				            <input type="text" id="termsTitle" class="type01" value="지능공간정보 플랫폼 서비스 이용약관">
+				          </div>
+				        </div>
+				
+				        <div class="terms-policy-write__row terms-policy-write__row--half">
+				          <div class="terms-policy-write__field">
+				            <label for="termsStartDate" class="terms-policy-write__label">시행일자 <span>*</span></label>
+				            <input type="date" id="termsStartDate" class="type01" value="2026-01-01">
+				          </div>
+				          <div class="terms-policy-write__field">
+				            <label class="terms-policy-write__label">사용여부 <span>*</span></label>
+				            <div class="terms-policy-write__radio-wrap">
+				              <label for="termsUseY" class="terms-policy-write__radio"><input type="radio" id="termsUseY" name="termsUseYn" checked> <span>사용</span></label>
+				              <label for="termsUseN" class="terms-policy-write__radio"><input type="radio" id="termsUseN" name="termsUseYn"> <span>미사용</span></label>
+				            </div>
+				          </div>
+				        </div>
+				
+				        <div class="terms-policy-write__row">
+				          <div class="terms-policy-write__field">
+				            <div class="terms-policy-write__label-row">
+				              <label class="terms-policy-write__label">약관 내용 <span>*</span></label>
+				              <span class="terms-policy-write__hint">* HTML 편집이 가능합니다.</span>
+				            </div>
+				            <div class="terms-policy-write__editor-placeholder">에디터 영역</div>
+				          </div>
+				        </div>
+				
+				        <div class="terms-policy-write__row">
+				          <div class="terms-policy-write__field">
+				            <label class="terms-policy-write__label">첨부파일</label>
+				            <div class="terms-policy-write__upload">
+				              <input type="file" id="termsFile" hidden>
+				              <label for="termsFile" class="terms-policy-write__upload-inner">
+				                <span class="terms-policy-write__upload-icon"></span>
+				                <strong>클릭하여 파일을 업로드하거나 드래그 앤 드롭하세요.</strong>
+				                <em>(PDF, HWP, DOCX 지원)</em>
+				              </label>
+				            </div>
+				          </div>
 				        </div>
 				      </div>
-				    </div>
 				
-				    <div class="form-wrap">
-				      <div class="total-num">
-				        <p>총 24건</p>
-				      </div>
-				    </div>
-				    <div class="tbl-wrap">
-				      <table class="tbl">
-				        <colgroup>
-				          <col style="width:50px;">
-				          <col style="width:auto;">
-				          <col style="width:170px;">
-				          <col style="width:150px;">
-				          <col style="width:100px;">
-				        </colgroup>
-				        <thead>
-				          <tr>
-				            <th>번호</th>
-				            <th>제목</th>
-				            <th>작성자</th>
-				            <th>작성일</th>
-				            <th>조회수</th>
-				          </tr>
-				        </thead>
-				        <tbody>
-				          <tr>
-				            <td>1</td>
-				            <td class="al">
-				              시스템 정기 점검 안내 (2023.10.25) <span class="ico-new" aria-label="new">N</span>
-				            </td>
-				            <td>관리자</td>
-				            <td>2024.03.05</td>
-				            <td>1250</td>
-				          </tr>
-				          <tr style="background:#fdf5f5;">
-				            <td>2</td>
-				            <td style="text-align:left;">서비스 업데이트 적용 안내</td>
-				            <td>관리자</td>
-				            <td>2024.03.02</td>
-				            <td>987</td>
-				          </tr>
-				        </tbody>
-				      </table>
-				    </div>
-				
-				    <div id="logListPagingArea">
-				      <div class="paging-wrap">
-				        <ul class="paging">
-				          <li><a class="prev first disabled" href="javascript:void(0)"></a></li>
-				          <li><a class="prev disabled" href="javascript:void(0)"></a></li>
-				          <li><a class="pLink active" href="javascript:void(0)">1</a></li>
-				          <li><a class="pLink" href="javascript:void(0)">2</a></li>
-				          <li><a class="pLink" href="javascript:void(0)">3</a></li>
-				          <li><a class="pLink" href="javascript:void(0)">4</a></li>
-				          <li><a class="next" href="javascript:void(0)"></a></li>
-				          <li><a class="next last" href="javascript:void(0)"></a></li>
-				        </ul>
+				      <div class="terms-policy-write__actions">
+				        <button type="button" class="com-btn blue w200">저장</button>
+				        <a href="/system_terms_manage.html" class="com-btn grayblue w200">취소</a>
 				      </div>
 				    </div>
 				  </div>

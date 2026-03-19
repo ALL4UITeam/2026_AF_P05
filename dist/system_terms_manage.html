@@ -115,111 +115,155 @@
 		<div class="content-wrap">
 			<div class="content">
 				
-				<div class="cont-box-wrap permission-approval-wrap">
-				  <div class="cont-box permission-approval">
+				<div class="cont-box-wrap terms-policy-wrap">
+				  <div class="cont-box terms-policy">
 				    <div class="tit-wrap">
-				      <h2>권한 승인 요청 관리</h2>
+				      <h2>사용 약관 관리</h2>
 				    </div>
 				
-				    <div class="permission-approval__search">
-				      <div class="permission-approval__search-form">
-				        <label for="reqName" class="permission-approval__label">신청자명</label>
-				        <input type="text" id="reqName" class="type01 w180" value="">
+				    <div class="terms-policy__search">
+				      <div class="terms-policy__search-form">
+				        <label for="policyName" class="terms-policy__label">약관 명</label>
+				        <input type="text" id="policyName" class="type01 w320" value="">
 				
-				        <label for="reqStatus" class="permission-approval__label">처리상태</label>
-				        <select id="reqStatus" class="type01 w120">
+				        <label for="policyType" class="terms-policy__label">약관 구분</label>
+				        <select id="policyType" class="type01 w320">
 				          <option>전체</option>
-				          <option>대기</option>
-				          <option>승인</option>
-				          <option>반려</option>
+				          <option>서비스이용약관</option>
+				          <option>개인정보처리방침</option>
+				          <option>위치기반서비스</option>
+				        </select>
+				
+				        <label for="policyUseYn" class="terms-policy__label">사용여부</label>
+				        <select id="policyUseYn" class="type01 w190">
+				          <option>전체</option>
+				          <option>사용</option>
+				          <option>미사용</option>
 				        </select>
 				
 				        <button type="button" class="com-btn blue w120">검색</button>
+				        <button type="button" class="com-btn grayblue w120">초기화</button>
 				      </div>
 				    </div>
 				
-				    <div class="permission-approval__head">
-				      <p>총 <span>3건</span>의 요청이 있습니다.</p>
+				    <div class="terms-policy__head">
+				      <p class="terms-policy__total">총 <span>5</span> 건</p>
+				      <div class="btn-area type02">
+				        <a href="/system_terms_write.html" class="com-btn blue sm rd w96">등록</a>
+				      </div>
 				    </div>
 				
-				    <div class="tbl-wrap permission-approval__table-wrap">
+				    <div class="tbl-wrap terms-policy__table-wrap">
 				      <table class="tbl">
 				        <colgroup>
-				          <col style="width:56px;">
-				          <col style="width:110px;">
-				          <col style="width:90px;">
-				          <col style="width:110px;">
-				          <col style="width:170px;">
-				          <col style="width:200px;">
-				          <col style="width:110px;">
-				          <col style="width:90px;">
-				          <col style="width:120px;">
+				          <col style="width:7%;">
+				          <col style="width:15%;">
+				          <col style="width:auto;">
+				          <col style="width:8%;">
+				          <col style="width:13%;">
+				          <col style="width:12%;">
+				          <col style="width:13%;">
+				          <col style="width:10%;">
 				        </colgroup>
 				        <thead>
 				          <tr>
-				            <th>No</th>
-				            <th>아이디</th>
-				            <th>성명</th>
-				            <th>부서</th>
-				            <th>요청 메뉴/URL</th>
-				            <th>신청사유</th>
-				            <th>신청일</th>
-				            <th>상태</th>
+				            <th>No.</th>
+				            <th>약관 구분</th>
+				            <th>약관 명</th>
+				            <th>버전</th>
+				            <th>시행일자</th>
+				            <th>사용여부</th>
+				            <th>등록일</th>
 				            <th>관리</th>
 				          </tr>
 				        </thead>
 				        <tbody>
 				          <tr>
 				            <td>1</td>
-				            <td>hong123</td>
-				            <td>홍길동</td>
-				            <td>도시과</td>
-				            <td class="al"><a href="#">공간데이터 관리</a></td>
-				            <td class="al">데이터 현황화 업무</td>
-				            <td>2026-02-09</td>
-				            <td><span class="permission-state permission-state--wait">대기</span></td>
+				            <td>서비스이용약관</td>
+				            <td class="al">지능공간정보 플랫폼 서비스 이용약관</td>
+				            <td>1.2</td>
+				            <td>2026-01-01</td>
+				            <td><span class="terms-policy-state terms-policy-state--on">사용</span></td>
+				            <td>2025-12-20</td>
 				            <td>
-				              <div class="permission-approval__actions">
-				                <button type="button" class="com-btn blue sm rd">승인</button>
-				                <button type="button" class="com-btn gray sm rd">반려</button>
+				              <div class="terms-policy__actions">
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--edit" aria-label="수정" onclick="location.href='/system_terms_write.html'"></button>
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--delete" aria-label="삭제"></button>
 				              </div>
 				            </td>
 				          </tr>
 				          <tr>
 				            <td>2</td>
-				            <td>park_aa</td>
-				            <td>박아름</td>
-				            <td>도시과</td>
-				            <td class="al"><a href="#">메타데이터 관리</a></td>
-				            <td class="al">데이터 품질 점검</td>
-				            <td>2026-02-08</td>
-				            <td><span class="permission-state permission-state--done">승인</span></td>
-				            <td>-</td>
+				            <td>개인정보처리방침</td>
+				            <td class="al">개인정보 처리방침</td>
+				            <td>1.1</td>
+				            <td>2026-01-01</td>
+				            <td><span class="terms-policy-state terms-policy-state--on">사용</span></td>
+				            <td>2025-12-20</td>
+				            <td>
+				              <div class="terms-policy__actions">
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--edit" aria-label="수정" onclick="location.href='/system_terms_write.html'"></button>
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--delete" aria-label="삭제"></button>
+				              </div>
+				            </td>
 				          </tr>
 				          <tr>
 				            <td>3</td>
-				            <td>lee_ss</td>
-				            <td>이성수</td>
-				            <td>행정과</td>
-				            <td class="al"><a href="#">사용자 통계</a></td>
-				            <td class="al">성과 보고서 작성</td>
-				            <td>2026-02-07</td>
-				            <td><span class="permission-state permission-state--reject">반려</span></td>
-				            <td>-</td>
+				            <td>위치기반서비스</td>
+				            <td class="al">위치기반 서비스 이용약관</td>
+				            <td>1.0</td>
+				            <td>2025-01-01</td>
+				            <td><span class="terms-policy-state terms-policy-state--on">사용</span></td>
+				            <td>2024-12-20</td>
+				            <td>
+				              <div class="terms-policy__actions">
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--edit" aria-label="수정" onclick="location.href='/system_terms_write.html'"></button>
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--delete" aria-label="삭제"></button>
+				              </div>
+				            </td>
+				          </tr>
+				          <tr>
+				            <td>4</td>
+				            <td>서비스이용약관</td>
+				            <td class="al">서비스 이용약관(구)</td>
+				            <td>1.1</td>
+				            <td>2025-01-01</td>
+				            <td><span class="terms-policy-state terms-policy-state--off">미사용</span></td>
+				            <td>2024-12-20</td>
+				            <td>
+				              <div class="terms-policy__actions">
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--edit" aria-label="수정" onclick="location.href='/system_terms_write.html'"></button>
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--delete" aria-label="삭제"></button>
+				              </div>
+				            </td>
+				          </tr>
+				          <tr>
+				            <td>5</td>
+				            <td>개인정보처리방침</td>
+				            <td class="al">개인정보 처리방침(구)</td>
+				            <td>1.0</td>
+				            <td>2025-01-01</td>
+				            <td><span class="terms-policy-state terms-policy-state--off">미사용</span></td>
+				            <td>2024-12-20</td>
+				            <td>
+				              <div class="terms-policy__actions">
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--edit" aria-label="수정" onclick="location.href='/system_terms_write.html'"></button>
+				                <button type="button" class="terms-policy__icon-btn terms-policy__icon-btn--delete" aria-label="삭제"></button>
+				              </div>
+				            </td>
 				          </tr>
 				        </tbody>
 				      </table>
 				    </div>
 				
-				    <div class="paging-wrap">
+				    <div class="paging-wrap terms-policy__paging">
 				      <ul class="paging">
 				        <li><a class="prev first" href="#"></a></li>
 				        <li><a class="prev" href="#"></a></li>
 				        <li><a class="pLink active" href="#">1</a></li>
 				        <li><a class="pLink" href="#">2</a></li>
 				        <li><a class="pLink" href="#">3</a></li>
-				        <li><a class="pLink" href="#">4</a></li>
-				        <li><a class="pLink" href="#">5</a></li>
 				        <li><a class="next" href="#"></a></li>
 				        <li><a class="next last" href="#"></a></li>
 				      </ul>
