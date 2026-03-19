@@ -1,0 +1,159 @@
+{{#> layout3}}
+
+<div class="cont-box-wrap data-request-wrap">
+  <div class="cont-box data-request">
+    <div class="tit-wrap">
+      <h2>자료 제공 요청 관리</h2>
+    </div>
+
+    <div class="data-request__search">
+      <div class="data-request__search-form">
+        <label for="requestEmail" class="data-request__label">이메일</label>
+        <input type="text" id="requestEmail" class="type01 w260" value="">
+
+        <label for="approveStatus" class="data-request__label">승인상태</label>
+        <select id="approveStatus" class="type01 w248">
+          <option>전체</option>
+          <option>대기</option>
+          <option>승인</option>
+          <option>반려</option>
+        </select>
+
+        <button type="button" class="com-btn blue w120">검색</button>
+        <button type="button" class="com-btn grayblue w120">초기화</button>
+      </div>
+    </div>
+
+    <div class="data-request__head">
+      <p class="data-request__total">총 <span>10</span> 건</p>
+      <div class="btn-area type02">
+        <button type="button" class="com-btn grayblue">승인</button>
+        <button type="button" class="com-btn red">반려</button>
+      </div>
+    </div>
+
+    <div class="tbl-wrap data-request__table-wrap">
+      <table class="tbl">
+        <colgroup>
+          <col style="width:5%;">
+          <col style="width:7%;">
+          <col style="width:23%;">
+          <col style="width:auto;">
+          <col style="width:14%;">
+          <col style="width:14%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>
+              <label for="dataReqChkAll" class="chkbox">
+                <input type="checkbox" id="dataReqChkAll">
+                <span class="chkOn"></span>
+              </label>
+            </th>
+            <th>No.</th>
+            <th>신청자 이메일</th>
+            <th>사용목적</th>
+            <th>승인 상태</th>
+            <th>신청 일</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label for="drChk01" class="chkbox"><input type="checkbox" id="drChk01"><span class="chkOn"></span></label></td>
+            <td>1</td>
+            <td>khg05338@snu.ac.kr</td>
+            <td class="al">프로그램 개발 (웹, 모바일)</td>
+            <td><span class="permission-state permission-state--wait">대기</span></td>
+            <td>2026-02-08</td>
+          </tr>
+          <tr>
+            <td><label for="drChk02" class="chkbox"><input type="checkbox" id="drChk02"><span class="chkOn"></span></label></td>
+            <td>2</td>
+            <td>ks960308@naver.com</td>
+            <td class="al">업무 활용 (교육용, 공모전 등)</td>
+            <td><span class="permission-state permission-state--wait">대기</span></td>
+            <td>2026-02-08</td>
+          </tr>
+          <tr>
+            <td><label for="drChk03" class="chkbox"><input type="checkbox" id="drChk03"><span class="chkOn"></span></label></td>
+            <td>3</td>
+            <td>ks960308@naver.com</td>
+            <td class="al">아이디어 기획, 창업 활용</td>
+            <td><span class="permission-state permission-state--wait">대기</span></td>
+            <td>2026-02-08</td>
+          </tr>
+          <tr>
+            <td><label for="drChk04" class="chkbox"><input type="checkbox" id="drChk04"><span class="chkOn"></span></label></td>
+            <td>4</td>
+            <td>civil107@naver.com</td>
+            <td class="al">기타</td>
+            <td><span class="permission-state permission-state--done">승인</span></td>
+            <td>2026-02-07</td>
+          </tr>
+          <tr>
+            <td><label for="drChk05" class="chkbox"><input type="checkbox" id="drChk05"><span class="chkOn"></span></label></td>
+            <td>5</td>
+            <td>khg05338@snu.ac.kr</td>
+            <td class="al">프로그램 개발 (웹, 모바일)</td>
+            <td><span class="permission-state permission-state--done">승인</span></td>
+            <td>2026-02-07</td>
+          </tr>
+          <tr>
+            <td><label for="drChk06" class="chkbox"><input type="checkbox" id="drChk06"><span class="chkOn"></span></label></td>
+            <td>6</td>
+            <td>khg05338@snu.ac.kr</td>
+            <td class="al">프로그램 개발 (웹, 모바일)</td>
+            <td><span class="permission-state permission-state--done">승인</span></td>
+            <td>2026-02-07</td>
+          </tr>
+          <tr>
+            <td><label for="drChk07" class="chkbox"><input type="checkbox" id="drChk07"><span class="chkOn"></span></label></td>
+            <td>7</td>
+            <td>khg05338@snu.ac.kr</td>
+            <td class="al">프로그램 개발 (웹, 모바일)</td>
+            <td><span class="permission-state permission-state--done">승인</span></td>
+            <td>2026-02-07</td>
+          </tr>
+          <tr>
+            <td><label for="drChk08" class="chkbox"><input type="checkbox" id="drChk08"><span class="chkOn"></span></label></td>
+            <td>8</td>
+            <td>khg05338@snu.ac.kr</td>
+            <td class="al">프로그램 개발 (웹, 모바일)</td>
+            <td><span class="permission-state permission-state--done">승인</span></td>
+            <td>2026-02-07</td>
+          </tr>
+          <tr>
+            <td><label for="drChk09" class="chkbox"><input type="checkbox" id="drChk09"><span class="chkOn"></span></label></td>
+            <td>9</td>
+            <td>khg05338@snu.ac.kr</td>
+            <td class="al">프로그램 개발 (웹, 모바일)</td>
+            <td><span class="permission-state permission-state--done">승인</span></td>
+            <td>2026-02-07</td>
+          </tr>
+          <tr>
+            <td><label for="drChk10" class="chkbox"><input type="checkbox" id="drChk10"><span class="chkOn"></span></label></td>
+            <td>10</td>
+            <td>khg05338@snu.ac.kr</td>
+            <td class="al">프로그램 개발 (웹, 모바일)</td>
+            <td><span class="permission-state permission-state--done">승인</span></td>
+            <td>2026-02-07</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="paging-wrap data-request__paging">
+      <ul class="paging">
+        <li><a class="prev first" href="#"></a></li>
+        <li><a class="prev" href="#"></a></li>
+        <li><a class="pLink active" href="#">1</a></li>
+        <li><a class="pLink" href="#">2</a></li>
+        <li><a class="pLink" href="#">3</a></li>
+        <li><a class="next" href="#"></a></li>
+        <li><a class="next last" href="#"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{/layout3}}

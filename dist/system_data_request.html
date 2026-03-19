@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/community.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/community.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					<a href="#" class="comuu">소통공간</a>
+					<a href="#" class="system active">시스템관리</a>
+				</div>
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+      <div class="mega-menu-wrap system">
+        <!-- 시스템관리 메가메뉴 -->
+        <div class="mega-menu">
+          <nav class="mega-menu-nav">
+            <ul class="mega-menu-root">
+              <li class="mega-menu-item has-sub active">
+                <a href="#">사용자</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">사용 승인 요청</a></li>
+                  <li><a href="#">사용자 권한 요청</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">안내</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_notice_list.html">공지사항</a></li>
+                  <li><a href="/system_faq_list.html">자주하는 질문</a></li>
+                  <li><a href="/system_qna_list.html">질의응답</a></li>
+                  <li><a href="/system_guide_list.html">사용자 가이드</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">운영 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_use_approval.html">사용자 승인 관리</a></li>
+                  <li><a href="#">사용자 관리</a></li>
+                  <li><a href="/system_permission_approval.html">권한 승인 요청 관리</a></li>
+                  <li><a href="/system_data_request.html">자료 제공 요청 관리</a></li>
+                  <li><a href="#">사용자 그룹 관리</a></li>
+                  <li><a href="/system_code_manage.html">코드 관리</a></li>
+                  <li><a href="#">사용 약관 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">로그 및 통계</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">로그 조회</a></li>
+                  <li><a href="#">접속 현황 통계</a></li>
+                  <li><a href="#">이용 현황 통계</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">공간정보 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">공간정보 대시보드</a></li>
+                  <li><a href="#">공간 데이터 관리</a></li>
+                  <li><a href="#">주제도 관리</a></li>
+                  <li><a href="#">보안 각서 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">시스템 지원</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">공지사항 관리</a></li>
+                  <li><a href="#">자주하는 질문 관리</a></li>
+                  <li><a href="#">질의응답 관리</a></li>
+                  <li><a href="#">사용자 가이드 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">연계 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">연계 대시보드</a></li>
+                  <li><a href="#">연계 현황 관리</a></li>
+                  <li><a href="#">연계 오류 조회</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="cont-box-wrap data-request-wrap">
+				  <div class="cont-box data-request">
+				    <div class="tit-wrap">
+				      <h2>자료 제공 요청 관리</h2>
+				    </div>
+				
+				    <div class="data-request__search">
+				      <div class="data-request__search-form">
+				        <label for="requestEmail" class="data-request__label">이메일</label>
+				        <input type="text" id="requestEmail" class="type01 w260" value="">
+				
+				        <label for="approveStatus" class="data-request__label">승인상태</label>
+				        <select id="approveStatus" class="type01 w248">
+				          <option>전체</option>
+				          <option>대기</option>
+				          <option>승인</option>
+				          <option>반려</option>
+				        </select>
+				
+				        <button type="button" class="com-btn blue w120">검색</button>
+				        <button type="button" class="com-btn grayblue w120">초기화</button>
+				      </div>
+				    </div>
+				
+				    <div class="data-request__head">
+				      <p class="data-request__total">총 <span>10</span> 건</p>
+				      <div class="btn-area type02">
+				        <button type="button" class="com-btn grayblue">승인</button>
+				        <button type="button" class="com-btn red">반려</button>
+				      </div>
+				    </div>
+				
+				    <div class="tbl-wrap data-request__table-wrap">
+				      <table class="tbl">
+				        <colgroup>
+				          <col style="width:5%;">
+				          <col style="width:7%;">
+				          <col style="width:23%;">
+				          <col style="width:auto;">
+				          <col style="width:14%;">
+				          <col style="width:14%;">
+				        </colgroup>
+				        <thead>
+				          <tr>
+				            <th>
+				              <label for="dataReqChkAll" class="chkbox">
+				                <input type="checkbox" id="dataReqChkAll">
+				                <span class="chkOn"></span>
+				              </label>
+				            </th>
+				            <th>No.</th>
+				            <th>신청자 이메일</th>
+				            <th>사용목적</th>
+				            <th>승인 상태</th>
+				            <th>신청 일</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td><label for="drChk01" class="chkbox"><input type="checkbox" id="drChk01"><span class="chkOn"></span></label></td>
+				            <td>1</td>
+				            <td>khg05338@snu.ac.kr</td>
+				            <td class="al">프로그램 개발 (웹, 모바일)</td>
+				            <td><span class="permission-state permission-state--wait">대기</span></td>
+				            <td>2026-02-08</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk02" class="chkbox"><input type="checkbox" id="drChk02"><span class="chkOn"></span></label></td>
+				            <td>2</td>
+				            <td>ks960308@naver.com</td>
+				            <td class="al">업무 활용 (교육용, 공모전 등)</td>
+				            <td><span class="permission-state permission-state--wait">대기</span></td>
+				            <td>2026-02-08</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk03" class="chkbox"><input type="checkbox" id="drChk03"><span class="chkOn"></span></label></td>
+				            <td>3</td>
+				            <td>ks960308@naver.com</td>
+				            <td class="al">아이디어 기획, 창업 활용</td>
+				            <td><span class="permission-state permission-state--wait">대기</span></td>
+				            <td>2026-02-08</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk04" class="chkbox"><input type="checkbox" id="drChk04"><span class="chkOn"></span></label></td>
+				            <td>4</td>
+				            <td>civil107@naver.com</td>
+				            <td class="al">기타</td>
+				            <td><span class="permission-state permission-state--done">승인</span></td>
+				            <td>2026-02-07</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk05" class="chkbox"><input type="checkbox" id="drChk05"><span class="chkOn"></span></label></td>
+				            <td>5</td>
+				            <td>khg05338@snu.ac.kr</td>
+				            <td class="al">프로그램 개발 (웹, 모바일)</td>
+				            <td><span class="permission-state permission-state--done">승인</span></td>
+				            <td>2026-02-07</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk06" class="chkbox"><input type="checkbox" id="drChk06"><span class="chkOn"></span></label></td>
+				            <td>6</td>
+				            <td>khg05338@snu.ac.kr</td>
+				            <td class="al">프로그램 개발 (웹, 모바일)</td>
+				            <td><span class="permission-state permission-state--done">승인</span></td>
+				            <td>2026-02-07</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk07" class="chkbox"><input type="checkbox" id="drChk07"><span class="chkOn"></span></label></td>
+				            <td>7</td>
+				            <td>khg05338@snu.ac.kr</td>
+				            <td class="al">프로그램 개발 (웹, 모바일)</td>
+				            <td><span class="permission-state permission-state--done">승인</span></td>
+				            <td>2026-02-07</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk08" class="chkbox"><input type="checkbox" id="drChk08"><span class="chkOn"></span></label></td>
+				            <td>8</td>
+				            <td>khg05338@snu.ac.kr</td>
+				            <td class="al">프로그램 개발 (웹, 모바일)</td>
+				            <td><span class="permission-state permission-state--done">승인</span></td>
+				            <td>2026-02-07</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk09" class="chkbox"><input type="checkbox" id="drChk09"><span class="chkOn"></span></label></td>
+				            <td>9</td>
+				            <td>khg05338@snu.ac.kr</td>
+				            <td class="al">프로그램 개발 (웹, 모바일)</td>
+				            <td><span class="permission-state permission-state--done">승인</span></td>
+				            <td>2026-02-07</td>
+				          </tr>
+				          <tr>
+				            <td><label for="drChk10" class="chkbox"><input type="checkbox" id="drChk10"><span class="chkOn"></span></label></td>
+				            <td>10</td>
+				            <td>khg05338@snu.ac.kr</td>
+				            <td class="al">프로그램 개발 (웹, 모바일)</td>
+				            <td><span class="permission-state permission-state--done">승인</span></td>
+				            <td>2026-02-07</td>
+				          </tr>
+				        </tbody>
+				      </table>
+				    </div>
+				
+				    <div class="paging-wrap data-request__paging">
+				      <ul class="paging">
+				        <li><a class="prev first" href="#"></a></li>
+				        <li><a class="prev" href="#"></a></li>
+				        <li><a class="pLink active" href="#">1</a></li>
+				        <li><a class="pLink" href="#">2</a></li>
+				        <li><a class="pLink" href="#">3</a></li>
+				        <li><a class="next" href="#"></a></li>
+				        <li><a class="next last" href="#"></a></li>
+				      </ul>
+				    </div>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+{{#> layout3}}
+
+<div class="cont-box-wrap approval-manage-wrap">
+  <div class="cont-box approval-manage">
+    <div class="tit-wrap">
+      <h2>사용자 승인 관리</h2>
+      <div class="btn-area type02">
+        <button type="button" class="com-btn grayblue">승인</button>
+        <button type="button" class="com-btn red">반려</button>
+      </div>
+    </div>
+
+    <div class="tbl-wrap approval-manage__table-wrap">
+      <table class="tbl">
+        <colgroup>
+          <col style="width:5%;">
+          <col>
+          <col style="width:15%;">
+          <col style="width:12%;">
+          <col style="width:12%;">
+          <col style="width:22%;">
+          <col style="width:12%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">
+              <label for="chkall" class="chkbox">
+                <input type="checkbox" id="chkall">
+                <span class="chkOn"></span>
+              </label>
+            </th>
+            <th scope="col">기관</th>
+            <th scope="col">부서</th>
+            <th scope="col">직급</th>
+            <th scope="col">사용자</th>
+            <th scope="col">그룹</th>
+            <th scope="col">상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <label for="chk01" class="chkbox">
+                <input type="checkbox" id="chk01" checked>
+                <span class="chkOn"></span>
+              </label>
+            </td>
+            <td>OOOO시청</td>
+            <td>OO과 - OO팀</td>
+            <td>OOO</td>
+            <td>홍길동</td>
+            <td class="ac">
+              <div class="fl-center-center gap10">
+                <span class="w200 ell">최초승인(기본)</span>
+                <button type="button" class="com-btn gray sm rd w96" onclick="showPopup('popupUserGroupChange')">변경</button>
+              </div>
+            </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>
+              <label for="chk02" class="chkbox">
+                <input type="checkbox" id="chk02">
+                <span class="chkOn"></span>
+              </label>
+            </td>
+            <td>OOOO시청</td>
+            <td>OO과 - OO팀</td>
+            <td>OOO</td>
+            <td>홍길동</td>
+            <td class="ac">
+              <div class="fl-center-center gap10">
+                <span class="w200 ell">최초승인(기본), 도유재산</span>
+                <button type="button" class="com-btn gray sm rd w96" onclick="showPopup('popupUserGroupChange')">변경</button>
+              </div>
+            </td>
+            <td><span class="p-color02 fb">승인</span></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="chk03" class="chkbox">
+                <input type="checkbox" id="chk03">
+                <span class="chkOn"></span>
+              </label>
+            </td>
+            <td>OOOO시청</td>
+            <td>OO과 - OO팀</td>
+            <td>OOO</td>
+            <td>홍길동</td>
+            <td class="ac">
+              <div class="fl-center-center gap10">
+                <span class="w200 ell">최초승인(기본), 도유재산, 도유재산 위임관리관, 가나다라마바사그룹명</span>
+                <button type="button" class="com-btn gray sm rd w96" onclick="showPopup('popupUserGroupChange')">변경</button>
+              </div>
+            </td>
+            <td><span class="p-color03 fb">반려</span></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="chk04" class="chkbox">
+                <input type="checkbox" id="chk04">
+                <span class="chkOn"></span>
+              </label>
+            </td>
+            <td>OOOO시청</td>
+            <td>OO과 - OO팀</td>
+            <td>OOO</td>
+            <td>홍길동</td>
+            <td class="ac">
+              <div class="fl-center-center gap10">
+                <span class="w200 ell">최초승인(기본), 도유재산, 도유재산 위임관리관, 가나다라마바사그룹명</span>
+                <button type="button" class="com-btn gray sm rd w96" onclick="showPopup('popupUserGroupChange')">변경</button>
+              </div>
+            </td>
+            <td><span class="p-color03 fb">반려</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="paging-wrap">
+      <ul class="paging">
+        <li><a class="prev first" href="#"></a></li>
+        <li><a class="prev" href="#"></a></li>
+        <li><a class="pLink" href="#">1</a></li>
+        <li><a class="pLink active" href="#">2</a></li>
+        <li><a class="pLink" href="#">3</a></li>
+        <li><a class="pLink" href="#">4</a></li>
+        <li><a class="pLink" href="#">5</a></li>
+        <li><a class="pLink" href="#">6</a></li>
+        <li><a class="pLink" href="#">7</a></li>
+        <li><a class="pLink" href="#">8</a></li>
+        <li><a class="pLink" href="#">9</a></li>
+        <li><a class="pLink" href="#">10</a></li>
+        <li><a class="next" href="#"></a></li>
+        <li><a class="next last" href="#"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- layerpop-wrap 사용자 그룹 변경 -->
+<div class="layerpop-wrap w564 approval-manage-modal" id="popupUserGroupChange" style="display:none;">
+  <header>
+    <h3>사용자 그룹 변경</h3>
+    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupUserGroupChange')">
+      <i class="ico-close" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <div class="pop-con">
+    <div class="label-area">
+      <div class="name">
+        <span>최초승인(기본)</span>
+        <button type="button" class="del-btn"></button>
+      </div>
+      <div class="name">
+        <span>도유재산</span>
+        <button type="button" class="del-btn"></button>
+      </div>
+      <div class="name">
+        <span>도유재산 위임관리관</span>
+        <button type="button" class="del-btn"></button>
+      </div>
+    </div>
+
+    <ul class="group-list">
+      <li>
+        <label for="grp_all" class="chkbox">
+          <input type="checkbox" id="grp_all">
+          <span class="chkOn"></span>
+          <span class="txt">전체</span>
+        </label>
+      </li>
+      <li>
+        <label for="grp_01" class="chkbox">
+          <input type="checkbox" id="grp_01">
+          <span class="chkOn"></span>
+          <span class="txt">최초승인(기본)</span>
+        </label>
+      </li>
+      <li>
+        <label for="grp_02" class="chkbox">
+          <input type="checkbox" id="grp_02">
+          <span class="chkOn"></span>
+          <span class="txt">도유재산</span>
+        </label>
+      </li>
+      <li>
+        <label for="grp_03" class="chkbox">
+          <input type="checkbox" id="grp_03">
+          <span class="chkOn"></span>
+          <span class="txt">도유재산 위임관리관</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+
+  <div class="pop-footer">
+    <div class="btn-area">
+      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupUserGroupChange')">취소</button>
+      <button type="button" class="com-btn xl approval-manage-modal__btn-save">저장</button>
+    </div>
+  </div>
+</div>
+<!-- layerpop-wrap 사용자 그룹 변경 -->
+
+{{/layout3}}
