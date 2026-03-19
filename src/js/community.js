@@ -66,8 +66,80 @@ function initCommuChips() {
   });
 }
 
+function initCodeManageTree() {
+  const tree = document.querySelector('.code-manage-tree');
+  if (!tree) return;
+
+  const nodes = tree.querySelectorAll('.code-node');
+
+  const setNodeState = (node, expanded) => {
+    const row = node.querySelector('.code-row-parent');
+    const toggle = row?.querySelector('.code-toggle');
+    const childrenWrap = node.querySelector('.code-row-children');
+    if (!row || !toggle) return;
+
+    const hasChildren = !!childrenWrap && childrenWrap.querySelectorAll('.code-row-child').length > 0;
+
+    toggle.classList.toggle('is-leaf', !hasChildren);
+    toggle.classList.toggle('is-open', hasChildren && expanded);
+    toggle.setAttribute('aria-expanded', hasChildren && expanded ? 'true' : 'false');
+    toggle.textContent = hasChildren && expanded ? '-' : '+';
+
+    if (!hasChildren) {
+      toggle.setAttribute('disabled', '');
+      toggle.setAttribute('aria-disabled', 'true');
+      return;
+    }
+
+    toggle.removeAttribute('disabled');
+    toggle.removeAttribute('aria-disabled');
+    childrenWrap.hidden = !expanded;
+  };
+
+  nodes.forEach((node) => {
+    const row = node.querySelector('.code-row-parent');
+    const toggle = row?.querySelector('.code-toggle');
+    if (!row || !toggle) return;
+
+    const isExpanded = toggle.classList.contains('is-open') || toggle.getAttribute('aria-expanded') === 'true';
+    setNodeState(node, isExpanded);
+  });
+
+  tree.addEventListener('click', (event) => {
+    const clickedToggle = event.target.closest('.code-toggle');
+    const clickedName = event.target.closest('.code-row-parent .code-name');
+    if (!clickedToggle && !clickedName) return;
+
+    const row = (clickedToggle || clickedName).closest('.code-row-parent');
+    const node = row?.closest('.code-node');
+    const toggle = row?.querySelector('.code-toggle');
+    if (!node || !toggle || toggle.classList.contains('is-leaf')) return;
+
+    if (clickedToggle) event.preventDefault();
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    setNodeState(node, !expanded);
+  });
+}
+
+function initCodeManageModals() {
+  const wrap = document.querySelector('.code-manage-wrap');
+  if (!wrap) return;
+
+  wrap.addEventListener('click', (event) => {
+    const editBtn = event.target.closest('.code-action .com-btn.sm, .code-manage__table--detail .com-btn.sm');
+    if (!editBtn) return;
+
+    event.preventDefault();
+    if (typeof window.showPopup === 'function') {
+      window.showPopup('codeManageCodeEditModal');
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setActiveCommuTab();
   initFaqAccordion();
   initCommuChips();
+  initCodeManageTree();
+  initCodeManageModals();
 });

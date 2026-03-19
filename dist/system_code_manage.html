@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/community.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/community.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					<a href="#" class="comuu">소통공간</a>
+					<a href="#" class="system active">시스템관리</a>
+				</div>
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+      <div class="mega-menu-wrap system">
+        <!-- 시스템관리 메가메뉴 -->
+        <div class="mega-menu">
+          <nav class="mega-menu-nav">
+            <ul class="mega-menu-root">
+              <li class="mega-menu-item has-sub active">
+                <a href="#">사용자</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">사용 승인 요청</a></li>
+                  <li><a href="#">사용자 권한 요청</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">안내</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_notice_list.html">공지사항</a></li>
+                  <li><a href="/system_faq_list.html">자주하는 질문</a></li>
+                  <li><a href="/system_qna_list.html">질의응답</a></li>
+                  <li><a href="/system_guide_list.html">사용자 가이드</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">운영 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">사용자 승인 관리</a></li>
+                  <li><a href="#">사용자 관리</a></li>
+                  <li><a href="#">권한 승인 요청 관리</a></li>
+                  <li><a href="#">자료 제공 요청 관리</a></li>
+                  <li><a href="#">사용자 그룹 관리</a></li>
+                  <li><a href="/system_code_manage.html">코드 관리</a></li>
+                  <li><a href="#">사용 약관 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">로그 및 통계</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">로그 조회</a></li>
+                  <li><a href="#">접속 현황 통계</a></li>
+                  <li><a href="#">이용 현황 통계</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">공간정보 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">공간정보 대시보드</a></li>
+                  <li><a href="#">공간 데이터 관리</a></li>
+                  <li><a href="#">주제도 관리</a></li>
+                  <li><a href="#">보안 각서 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">시스템 지원</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">공지사항 관리</a></li>
+                  <li><a href="#">자주하는 질문 관리</a></li>
+                  <li><a href="#">질의응답 관리</a></li>
+                  <li><a href="#">사용자 가이드 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">연계 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">연계 대시보드</a></li>
+                  <li><a href="#">연계 현황 관리</a></li>
+                  <li><a href="#">연계 오류 조회</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="cont-box-wrap code-manage-wrap">
+				  <div class="cont-box code-manage__box code-manage__box--left h-auto">
+				    <div class="code-manage__panel-head">
+				      <h3>코드목록</h3>
+				      <button type="button" class="com-btn blue" onclick="showPopup('codeManageCodeModal')">등록</button>
+				    </div>
+				
+				    <div class="code-manage-tree">
+				      <div class="code-manage-tree__head">
+				        <span>코드명</span>
+				        <span>코드</span>
+				        <span>편집</span>
+				      </div>
+				
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="solar">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>태양광</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				
+				      <div class="code-node">
+				        <div class="active code-row-parent" data-tree-id="greeninfra">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>그린인프라</span></div>
+				          <div class="code-code">TMM321</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				        <div class="code-row-children" hidden>
+				          <div class="code-row-child">
+				            <div class="code-name"><span>도시 공원 평가</span></div>
+				            <div class="code-code">DLCL08</div>
+				            <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				          </div>
+				          <div class="code-row-child">
+				            <div class="code-name"><span>생태계 서비스 평가</span></div>
+				            <div class="code-code">DLCL08</div>
+				            <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				          </div>
+				        </div>
+				      </div>
+				
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon01">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="eco-map">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>도시생태현황지도</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon02">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				      <div class="code-node">
+				        <div class="code-row-parent" data-tree-id="carbon03">
+				          <div class="code-name"><button type="button" class="code-toggle" aria-expanded="false">+</button><span>탄소공간</span></div>
+				          <div class="code-code">DLCL08</div>
+				          <div class="code-action"><button type="button" class="com-btn blue sm">수정</button></div>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				
+				  <div class="cont-box code-manage__box code-manage__box--right h-auto">
+				    <div class="code-manage__panel-head">
+				      <h3>상세코드 목록 <span>(총 1 건)</span></h3>
+				      <button type="button" class="com-btn blue" onclick="showPopup('codeManageCodeModal')">등록</button>
+				    </div>
+				
+				    <div class="tbl-wrap">
+				      <table class="tbl code-manage__table code-manage__table--detail">
+				        <colgroup>
+				          <col style="width:60px;">
+				          <col style="width:110px;">
+				          <col style="width:auto;">
+				          <col style="width:70px;">
+				          <col style="width:90px;">
+				          <col style="width:130px;">
+				          <col style="width:90px;">
+				          <col style="width:130px;">
+				          <col style="width:80px;">
+				        </colgroup>
+				        <thead>
+				          <tr>
+				            <th>NO</th>
+				            <th>코드 ID</th>
+				            <th>코드명</th>
+				            <th>사용</th>
+				            <th>등록자</th>
+				            <th>등록일시</th>
+				            <th>수정자</th>
+				            <th>수정일시</th>
+				            <th>관리</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td>TMM321</td>
+				            <td class="al">도시공원분류</td>
+				            <td>예</td>
+				            <td>admin</td>
+				            <td>25.08.26 오후 2:48</td>
+				            <td>admin</td>
+				            <td>25.08.26 오후 2:48</td>
+				            <td><button type="button" class="com-btn blue sm">수정</button></td>
+				          </tr>
+				        </tbody>
+				      </table>
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- layerpop-wrap 코드 등록 -->
+				<div class="layerpop-wrap w564 code-manage-modal" id="codeManageCodeModal" style="display:none;">
+				  <header>
+				    <h3>코드 등록</h3>
+				    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('codeManageCodeModal')">
+				      <i class="ico-close" aria-hidden="true"></i>
+				    </button>
+				  </header>
+				
+				  <div class="pop-con">
+				    <table class="tbl view type02">
+				      <colgroup>
+				        <col style="width:130px;">
+				        <col style="width:auto;">
+				      </colgroup>
+				      <tbody>
+				        <tr>
+				          <th><label for="codeName">코드명</label> <span class="essen">*</span></th>
+				          <td>
+				            <input type="text" name="codeName" id="codeName" class="type01" placeholder="코드명을 입력하세요.">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="parentCodeName">상위코드명</label></th>
+				          <td>
+				            <select name="parentCodeName" id="parentCodeName" class="type01 selectSingle2">
+				              <option value="">선택</option>
+				              <option value="solar">태양광</option>
+				              <option value="greeninfra">그린인프라</option>
+				            </select>
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="codeValue">코드</label> <span class="essen">*</span></th>
+				          <td>
+				            <input type="text" name="codeValue" id="codeValue" class="type01" placeholder="코드를 입력하세요.">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="codeDesc">코드설명</label></th>
+				          <td>
+				            <input type="text" name="codeDesc" id="codeDesc" class="type01" placeholder="코드설명을 입력하세요.">
+				          </td>
+				        </tr>
+				      </tbody>
+				    </table>
+				  </div>
+				
+				  <div class="pop-footer">
+				    <div class="btn-area">
+				      <button type="button" class="com-btn xl code-manage-modal__btn-save" onclick="closePopup('codeManageCodeModal')">저장</button>
+				      <button type="button" class="com-btn xl grayblue" onclick="closePopup('codeManageCodeModal')">닫기</button>
+				    </div>
+				  </div>
+				</div>
+				<!-- layerpop-wrap 코드 등록 -->
+				
+				<!-- layerpop-wrap 코드 수정 -->
+				<div class="layerpop-wrap w564 code-manage-modal" id="codeManageCodeEditModal" style="display:none;">
+				  <header>
+				    <h3>코드 수정</h3>
+				    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('codeManageCodeEditModal')">
+				      <i class="ico-close" aria-hidden="true"></i>
+				    </button>
+				  </header>
+				
+				  <div class="pop-con">
+				    <table class="tbl view type02">
+				      <colgroup>
+				        <col style="width:130px;">
+				        <col style="width:auto;">
+				      </colgroup>
+				      <tbody>
+				        <tr>
+				          <th><label for="editCodeName">코드명</label> <span class="essen">*</span></th>
+				          <td>
+				            <input type="text" name="editCodeName" id="editCodeName" class="type01" value="도시공원 평가">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="editParentCodeName">상위코드명</label></th>
+				          <td>
+				            <select name="editParentCodeName" id="editParentCodeName" class="type01 selectSingle2">
+				              <option value="">선택</option>
+				              <option value="solar">태양광</option>
+				              <option value="greeninfra" selected>그린인프라</option>
+				            </select>
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="editCodeValue">코드</label> <span class="essen">*</span></th>
+				          <td>
+				            <input type="text" name="editCodeValue" id="editCodeValue" class="type01" value="THM821">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="editCodeDesc">코드설명</label></th>
+				          <td>
+				            <input type="text" name="editCodeDesc" id="editCodeDesc" class="type01" value="도시 공원 평가를 위한 코드">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th>사용여부</th>
+				          <td>
+				            <fieldset class="ra-group">
+				              <legend>사용여부 선택</legend>
+				              <div class="ra-list">
+				                <div class="ra-item">
+				                  <input type="radio" name="editUseYn" id="editUseYnY" value="Y" checked>
+				                  <label for="editUseYnY">사용</label>
+				                </div>
+				                <div class="ra-item">
+				                  <input type="radio" name="editUseYn" id="editUseYnN" value="N">
+				                  <label for="editUseYnN">미사용</label>
+				                </div>
+				              </div>
+				            </fieldset>
+				          </td>
+				        </tr>
+				      </tbody>
+				    </table>
+				  </div>
+				
+				  <div class="pop-footer">
+				    <div class="btn-area">
+				      <button type="button" class="com-btn xl code-manage-modal__btn-save" onclick="closePopup('codeManageCodeEditModal')">수정</button>
+				      <button type="button" class="com-btn xl grayblue" onclick="closePopup('codeManageCodeEditModal')">취소</button>
+				    </div>
+				  </div>
+				</div>
+				<!-- layerpop-wrap 코드 수정 -->
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>
