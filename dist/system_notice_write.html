@@ -50,15 +50,6 @@
                 </ul>
               </li>
               <li class="mega-menu-item has-sub">
-                <a href="#">안내</a>
-                <ul class="mega-menu-sub">
-                  <li><a href="/system_notice_list.html">공지사항</a></li>
-                  <li><a href="/system_faq_list.html">자주하는 질문</a></li>
-                  <li><a href="/system_qna_list.html">질의응답</a></li>
-                  <li><a href="/system_guide_list.html">사용자 가이드</a></li>
-                </ul>
-              </li>
-              <li class="mega-menu-item has-sub">
                 <a href="#">운영 관리</a>
                 <ul class="mega-menu-sub">
                   <li><a href="/system_use_approval.html">사용자 승인 관리</a></li>
@@ -90,10 +81,10 @@
               <li class="mega-menu-item has-sub">
                 <a href="#">시스템 지원</a>
                 <ul class="mega-menu-sub">
-                  <li><a href="#">공지사항 관리</a></li>
-                  <li><a href="#">자주하는 질문 관리</a></li>
-                  <li><a href="#">질의응답 관리</a></li>
-                  <li><a href="#">사용자 가이드 관리</a></li>
+                  <li><a href="/system_notice_list.html">공지사항 관리</a></li>
+                  <li><a href="/system_faq_list.html">자주하는 질문 관리</a></li>
+                  <li><a href="/system_qna_list.html">질의응답 관리</a></li>
+                  <li><a href="/system_guide_list.html">사용자 가이드 관리</a></li>
                 </ul>
               </li>
               <li class="mega-menu-item has-sub">
@@ -134,19 +125,13 @@
 				            <td><input type="text" class="type01" placeholder="제목을 입력하세요."></td>
 				          </tr>
 				          <tr>
-				            <th>카테고리</th>
+				            <th>상단 고정</th>
 				            <td>
-				              <select class="type01">
-				                <option>점검안내</option>
-				                <option>업데이트</option>
-				                <option>정책공지</option>
-				              </select>
-				            </td>
-				          </tr>
-				          <tr>
-				            <th>고정 공지</th>
-				            <td>
-				              <label class="write-form__check"><input type="checkbox"> 상단 고정</label>
+				              <label for="noticePinned" class="chkbox write-form__chkbox">
+				                <input type="checkbox" id="noticePinned" name="topNotice" value="Y">
+				                <span class="chkOn"></span>
+				                <span class="txt">사용</span>
+				              </label>
 				            </td>
 				          </tr>
 				          <tr>

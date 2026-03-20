@@ -595,6 +595,15 @@ body:has(.top-menu > a.system.active) {
   border-bottom: 0;
 }
 
+/* 테이블 셀 안 공통 chkbox: 기본 .tbl 규칙(width:20px) 해제 */
+.write-form__table .tbl > tbody > tr > td .chkbox.write-form__chkbox {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
 .write-form .type01 {
   width: 100%;
   border: 1px solid #d5dee3;
@@ -615,14 +624,6 @@ body:has(.top-menu > a.system.active) {
   outline: none;
   border-color: var(--page-color);
   box-shadow: 0 0 0 3px rgba(24, 166, 177, 0.14);
-}
-
-.write-form__check {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #374151;
-  font-size: 15px;
 }
 
 .write-form__actions {
@@ -648,8 +649,48 @@ body:has(.top-menu > a.system.active) {
   white-space: nowrap;
 }
 
+.notice-list-page__summary-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notice-list-page .terms-policy__search-form {
+  gap: 8px;
+}
+
+.notice-list-page__keyword {
+  width: clamp(260px, 34vw, 420px) !important;
+}
+
+.notice-list-page__date {
+  width: 170px !important;
+}
+
+.notice-list-page__search-btn {
+  min-width: 96px !important;
+  width: 96px;
+}
+
+.notice-list-page__summary-row .btn-area.type02 {
+  margin-bottom: 0;
+}
+
+.notice-list-page__actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 .qna-write-form__textarea {
   min-height: 180px !important;
+}
+
+.qna-write-form__status {
+  width: 140px !important;
+  min-width: 140px;
 }
 
 .board-desc {
@@ -838,7 +879,7 @@ body:has(.top-menu > a.system.active) {
 
 .mega-menu-root {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 24px;
   padding: 0;
   width: 100%;

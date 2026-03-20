@@ -19,19 +19,13 @@
             <td><input type="text" class="type01" placeholder="제목을 입력하세요."></td>
           </tr>
           <tr>
-            <th>카테고리</th>
+            <th>상단 고정</th>
             <td>
-              <select class="type01">
-                <option>점검안내</option>
-                <option>업데이트</option>
-                <option>정책공지</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <th>고정 공지</th>
-            <td>
-              <label class="write-form__check"><input type="checkbox"> 상단 고정</label>
+              <label for="noticePinned" class="chkbox write-form__chkbox">
+                <input type="checkbox" id="noticePinned" name="topNotice" value="Y">
+                <span class="chkOn"></span>
+                <span class="txt">사용</span>
+              </label>
             </td>
           </tr>
           <tr>
