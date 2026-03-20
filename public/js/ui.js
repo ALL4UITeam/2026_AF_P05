@@ -153,14 +153,14 @@ $(document).ready(function(){
 		$(".popover-menu-wrap").toggleClass("active");
 	});
 
-	$(".top-menu > .system").on("click", function(e){
+	$(".top-menu > .system, .header-system-link").on("click", function(e){
 		e.preventDefault();
 		e.stopPropagation();
 		$(".mega-menu-wrap.system").toggleClass("active");
 	});
 
 	$(document).on("click", function(e){
-		if(!$(e.target).closest(".top-menu > .system, .mega-menu-wrap.system").length){
+		if(!$(e.target).closest(".top-menu > .system, .header-system-link, .mega-menu-wrap.system").length){
 			$(".mega-menu-wrap.system").removeClass("active");
 		}
 	});

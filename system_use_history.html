@@ -1,0 +1,100 @@
+{{#> layout3}}
+
+<div class="cont-box-wrap use-history-wrap">
+  <div class="cont-box use-history">
+    <div class="tit-wrap">
+      <h2>사용 이력 조회</h2>
+    </div>
+
+    <div class="use-history__search">
+      <div class="use-history__search-grid">
+        <label for="useSystemType" class="use-history__label">시스템 구분</label>
+        <select id="useSystemType" class="type01">
+          <option>전체</option>
+          <option>운영관리</option>
+          <option>토지정보</option>
+          <option>도유재산</option>
+        </select>
+
+        <label for="useActionType" class="use-history__label">사용 구분</label>
+        <select id="useActionType" class="type01">
+          <option>전체</option>
+          <option>메뉴 조회</option>
+          <option>자료 다운로드</option>
+          <option>권한 변경</option>
+        </select>
+
+        <label for="useUserId" class="use-history__label">사용자 아이디</label>
+        <input type="text" id="useUserId" class="type01" value="">
+
+        <label for="useFromDate" class="use-history__label">기간</label>
+        <div class="use-history__period">
+          <input type="date" id="useFromDate" class="type01" value="2026-01-09">
+          <span class="use-history__dash">~</span>
+          <input type="date" id="useToDate" class="type01" value="2026-02-08">
+        </div>
+      </div>
+
+      <div class="use-history__search-actions">
+        <button type="button" class="com-btn blue w120">검색</button>
+        <button type="button" class="com-btn grayblue w120">초기화</button>
+      </div>
+    </div>
+
+    <div class="use-history__head">
+      <p class="use-history__total">총 <span>217</span> 건</p>
+    </div>
+
+    <div class="tbl-wrap use-history__table-wrap">
+      <table class="tbl">
+        <colgroup>
+          <col style="width:6%;">
+          <col style="width:12%;">
+          <col style="width:12%;">
+          <col style="width:auto;">
+          <col style="width:16%;">
+          <col style="width:16%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>시스템구분</th>
+            <th>사용구분</th>
+            <th>사용내용</th>
+            <th>사용자 아이디</th>
+            <th>최초등록일시</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>운영관리</td><td>메뉴 조회</td><td class="al">사용자 메뉴 목록을 조회했습니다.</td><td>user123</td><td>26. 2. 8 오후 10:20</td></tr>
+          <tr><td>2</td><td>운영관리</td><td>자료 다운로드</td><td class="al">데이터 현황 파일을 다운로드했습니다.</td><td>user123</td><td>26. 2. 8 오후 4:15</td></tr>
+          <tr><td>3</td><td>운영관리</td><td>권한 변경</td><td class="al">권한 요청 결과를 확인했습니다.</td><td>admin</td><td>26. 2. 8 오후 2:00</td></tr>
+          <tr><td>4</td><td>운영관리</td><td>메뉴 조회</td><td class="al">코드 관리 화면을 조회했습니다.</td><td>guest</td><td>26. 2. 8 오전 11:30</td></tr>
+          <tr><td>5</td><td>운영관리</td><td>자료 다운로드</td><td class="al">공지사항 첨부자료를 다운로드했습니다.</td><td>user456</td><td>26. 2. 8 오전 10:10</td></tr>
+          <tr><td>6</td><td>토지정보</td><td>메뉴 조회</td><td class="al">토지정보 대시보드를 조회했습니다.</td><td>user789</td><td>26. 2. 7 오후 6:45</td></tr>
+          <tr><td>7</td><td>토지정보</td><td>자료 다운로드</td><td class="al">통계 자료를 다운로드했습니다.</td><td>user789</td><td>26. 2. 7 오후 6:30</td></tr>
+          <tr><td>8</td><td>도유재산</td><td>메뉴 조회</td><td class="al">도유재산 현황 화면을 조회했습니다.</td><td>user112</td><td>26. 2. 7 오후 5:59</td></tr>
+          <tr><td>9</td><td>도유재산</td><td>권한 변경</td><td class="al">권한 설정 변경 이력을 확인했습니다.</td><td>admin</td><td>26. 2. 7 오후 5:20</td></tr>
+          <tr><td>10</td><td>운영관리</td><td>메뉴 조회</td><td class="al">사용자 가이드 화면을 조회했습니다.</td><td>guest</td><td>26. 2. 7 오후 4:10</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="paging-wrap use-history__paging">
+      <ul class="paging">
+        <li><a class="prev first" href="#"></a></li>
+        <li><a class="prev" href="#"></a></li>
+        <li class="pLink active" href="#">1</a></li>
+        <li class="pLink" href="#">2</a></li>
+        <li class="pLink" href="#">3</a></li>
+        <li class="pLink" href="#">4</a></li>
+        <li class="pLink" href="#">5</a></li>
+        <li class="next" href="#"></a></li>
+        <li class="next last" href="#"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{/layout3}}
+

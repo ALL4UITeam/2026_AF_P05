@@ -1,0 +1,159 @@
+{{#> layout3}}
+
+<div class="cont-box-wrap use-status-wrap">
+  <div class="cont-box use-status">
+    <div class="tit-wrap">
+      <h2>이용 현황 통계</h2>
+    </div>
+
+    <div class="tab-menu type02 use-status__tabs">
+      <ul>
+        <li><a href="#useStatusTabOrg" class="active">기관별</a></li>
+        <li><a href="#useStatusTabDept">부서별</a></li>
+        <li><a href="#useStatusTabUser">사용자별</a></li>
+      </ul>
+    </div>
+
+    <div class="tab-content use-status__tab-content">
+      <div id="useStatusTabOrg" class="active">
+        <div class="use-status__search">
+          <div class="use-status__search-form">
+            <label for="useStatusOrgFromDate" class="use-status__label">기간</label>
+            <div class="use-status__period">
+              <input type="date" id="useStatusOrgFromDate" class="type01" value="2026-01-01">
+              <span class="use-status__dash">~</span>
+              <input type="date" id="useStatusOrgToDate" class="type01" value="2026-02-08">
+            </div>
+            <button type="button" class="com-btn access-status__btn-search">조회</button>
+          </div>
+        </div>
+
+        <div class="use-status__chart-card">
+          <div class="stats-chart" aria-label="기관별 이용 현황 그래프 placeholder"></div>
+        </div>
+
+        <div class="tbl-wrap use-status__table-wrap">
+          <table class="tbl">
+            <colgroup>
+              <col style="width:8%;">
+              <col style="width:auto;">
+              <col style="width:16%;">
+              <col style="width:16%;">
+              <col style="width:16%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>기관명</th>
+                <th>방문수</th>
+                <th>조회수</th>
+                <th>다운로드수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>경상북도청</td><td>1,540</td><td>4,500</td><td>320</td></tr>
+              <tr><td>2</td><td>포항시청</td><td>1,200</td><td>3,800</td><td>280</td></tr>
+              <tr><td>3</td><td>경주시청</td><td>980</td><td>3,100</td><td>210</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="useStatusTabDept">
+        <div class="use-status__search">
+          <div class="use-status__search-form">
+            <label for="useStatusDeptFromDate" class="use-status__label">기간</label>
+            <div class="use-status__period">
+              <input type="date" id="useStatusDeptFromDate" class="type01" value="2026-01-01">
+              <span class="use-status__dash">~</span>
+              <input type="date" id="useStatusDeptToDate" class="type01" value="2026-02-08">
+            </div>
+            <button type="button" class="com-btn access-status__btn-search">조회</button>
+          </div>
+        </div>
+
+        <div class="use-status__chart-card">
+          <div class="stats-chart" aria-label="부서별 이용 현황 그래프 placeholder"></div>
+        </div>
+
+        <div class="tbl-wrap use-status__table-wrap">
+          <table class="tbl">
+            <colgroup>
+              <col style="width:8%;">
+              <col style="width:24%;">
+              <col style="width:auto;">
+              <col style="width:14%;">
+              <col style="width:14%;">
+              <col style="width:14%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>기관명</th>
+                <th>부서명</th>
+                <th>방문수</th>
+                <th>조회수</th>
+                <th>다운로드수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>경상북도청</td><td>정보화담당관</td><td>920</td><td>2,830</td><td>190</td></tr>
+              <tr><td>2</td><td>포항시청</td><td>도시계획과</td><td>710</td><td>2,110</td><td>145</td></tr>
+              <tr><td>3</td><td>경주시청</td><td>토지정보과</td><td>640</td><td>1,980</td><td>120</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="useStatusTabUser">
+        <div class="use-status__search">
+          <div class="use-status__search-form">
+            <label for="useStatusUserFromDate" class="use-status__label">기간</label>
+            <div class="use-status__period">
+              <input type="date" id="useStatusUserFromDate" class="type01" value="2026-01-01">
+              <span class="use-status__dash">~</span>
+              <input type="date" id="useStatusUserToDate" class="type01" value="2026-02-08">
+            </div>
+            <button type="button" class="com-btn access-status__btn-search">조회</button>
+          </div>
+        </div>
+
+        <div class="use-status__chart-card">
+          <div class="stats-chart" aria-label="사용자별 이용 현황 그래프 placeholder"></div>
+        </div>
+
+        <div class="tbl-wrap use-status__table-wrap">
+          <table class="tbl">
+            <colgroup>
+              <col style="width:8%;">
+              <col style="width:18%;">
+              <col style="width:18%;">
+              <col style="width:auto;">
+              <col style="width:12%;">
+              <col style="width:12%;">
+              <col style="width:12%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>기관명</th>
+                <th>부서명</th>
+                <th>사용자명</th>
+                <th>방문수</th>
+                <th>조회수</th>
+                <th>다운로드수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>경상북도청</td><td>정보화담당관</td><td>홍길동</td><td>320</td><td>980</td><td>62</td></tr>
+              <tr><td>2</td><td>포항시청</td><td>도시계획과</td><td>김민수</td><td>280</td><td>840</td><td>51</td></tr>
+              <tr><td>3</td><td>경주시청</td><td>토지정보과</td><td>이서연</td><td>250</td><td>760</td><td>46</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{/layout3}}

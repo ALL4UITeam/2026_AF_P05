@@ -108,49 +108,54 @@
 		<div class="content-wrap">
 			<div class="content">
 				
-				<div class="cont-box-wrap">
-				  <div class="cont-box">
-				    <div class="board-header">
-				      <span class="board-badge">Q&A</span>
-				      <h2 class="board-title">지도 레이어가 보이지 않을 때 확인 방법</h2>
-				      <div class="board-meta">
-				        <span class="meta-item"><span class="meta-label icon1">작성자</span> <span class="meta-value">관리자</span></span>
-				        <span class="meta-item"><span class="meta-label icon2">등록일</span> <span class="meta-value">2023.10.20</span></span>
-				        <span class="meta-item"><span class="meta-label icon3">조회수</span> <span class="meta-value">1250회</span></span>
+				<div class="cont-box-wrap access-status-wrap">
+				  <div class="cont-box access-status">
+				    <div class="tit-wrap">
+				      <h2>접속 현황 통계</h2>
+				    </div>
+				
+				    <div class="access-status__search">
+				      <div class="access-status__search-form">
+				        <label for="accessUnitDaily" class="access-status__label">통계 단위</label>
+				        <fieldset class="ra-group access-status__ra-group">
+				          <legend>통계 단위</legend>
+				          <div class="ra-list">
+				            <div class="ra-item">
+				              <input type="radio" id="accessUnitDaily" name="accessUnit" checked>
+				              <label for="accessUnitDaily">일</label>
+				            </div>
+				            <div class="ra-item">
+				              <input type="radio" id="accessUnitWeekly" name="accessUnit">
+				              <label for="accessUnitWeekly">주</label>
+				            </div>
+				            <div class="ra-item">
+				              <input type="radio" id="accessUnitMonthly" name="accessUnit">
+				              <label for="accessUnitMonthly">월</label>
+				            </div>
+				            <div class="ra-item">
+				              <input type="radio" id="accessUnitQuarterly" name="accessUnit">
+				              <label for="accessUnitQuarterly">분기</label>
+				            </div>
+				            <div class="ra-item">
+				              <input type="radio" id="accessUnitYearly" name="accessUnit">
+				              <label for="accessUnitYearly">연도</label>
+				            </div>
+				          </div>
+				        </fieldset>
+				
+				        <label for="accessStatusFromDate" class="access-status__label">기간</label>
+				        <div class="access-status__period">
+				          <input type="date" id="accessStatusFromDate" class="type01" value="2026-01-09">
+				          <span class="access-status__dash">~</span>
+				          <input type="date" id="accessStatusToDate" class="type01" value="2026-02-08">
+				        </div>
+				
+				        <button type="button" class="com-btn access-status__btn-search">검색</button>
 				      </div>
 				    </div>
 				
-				    <div class="board-body faq-view">
-				      <div class="faq-view__item faq-view__item--question">
-				        <span class="faq-view__badge faq-view__badge--question">Q</span>
-				        <div class="faq-view__content">
-				          <p class="faq-view__title">지도 레이어가 보이지 않을 때 어떤 항목을 먼저 확인해야 하나요?</p>
-				          <p class="faq-view__desc">레이어가 비활성화된 경우 화면에 표시되지 않을 수 있습니다.</p>
-				        </div>
-				      </div>
-				
-				      <div class="faq-view__item faq-view__item--answer">
-				        <span class="faq-view__badge faq-view__badge--answer">A</span>
-				        <div class="faq-view__content">
-				          <p class="faq-view__title">레이어 ON/OFF, 축척 범위, 권한을 순서대로 확인해 주세요.</p>
-				          <p class="faq-view__desc">레이어 ON/OFF 상태, 축척 범위, 권한 여부를 순서대로 확인해 주세요. 이후에도 동일하면 로그와 함께 문의 바랍니다.</p>
-				        </div>
-				      </div>
-				    </div>
-				
-				    <div class="board-footer">
-				      <div class="board-nav">
-				        <button type="button" class="nav-arrow prev" disabled aria-label="이전 글">
-				          <span class="arrow-icon"></span>
-				        </button>
-				        <button type="button" class="nav-arrow next" aria-label="다음 글">
-				          <span class="arrow-icon"></span>
-				        </button>
-				      </div>
-				      <div class="board-actions">
-				        <a href="/system_qna_write.html" class="btn-edit">수정</a>
-				        <a href="/system_qna_list.html" class="btn-list">목록으로</a>
-				      </div>
+				    <div class="access-status__chart-card">
+				      <div class="access-status__chart"><div class="access-status__chart-inner"></div></div>
 				    </div>
 				  </div>
 				</div>
@@ -163,3 +168,4 @@
 </body>
 
 </html>
+
