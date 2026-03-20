@@ -1,0 +1,73 @@
+<!-- 좌측 사이드바: VWorld dtkmap 스타일 (고정 폭, 회색 배경) -->
+<aside class="map-search-sidebar is-open" id="landSearchPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header">
+      <h2><i class="map-search-icon map-search-icon-land"></i>토지(임야) 검색</h2>
+      <button title="닫기" class="map-search-sidebar__close" data-target="landSearchPanel">
+        닫기
+      </button>
+    </header> 
+    <div class="map-search-sidebar__body">
+      <div class="sidebar__search">
+        <div class="sidebar__search-location">
+          <div class="map-ui-form-group">
+            <label for="searchSigungu">시군</label>
+            <select id="searchSigungu" class="map-ui-select">
+              <option value="">전체</option>
+              <option value="andong">안동시</option>
+              <option value="yeongyang">영양군</option>
+              <option value="yeongju">영주시</option>
+              <option value="gyeongsan">경산시</option>
+            </select>
+          </div>
+          <div class="map-ui-form-group">
+            <label for="searchEmd">읍면동</label>
+            <select id="searchEmd" class="map-ui-select">
+              <option value="">전체</option>
+            </select>
+          </div>
+          <div class="map-ui-form-group">
+            <label for="searchRi">리</label>
+            <select id="searchRi" class="map-ui-select">
+              <option value="">전체</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sidebar__search-radio">
+          
+            <label for="landSearchRadio1" class="map-ui-radio">
+              <input type="radio" id="landSearchRadio1" name="landSearchRadio">
+              <span class="map-ui-radio__ui"></span>
+              <span class="map-ui-radio__label">일반</span>
+            </label>
+            
+            <label for="landSearchRadio2" class="map-ui-radio">
+              <input type="radio" id="landSearchRadio2" name="landSearchRadio">
+              <span class="map-ui-radio__ui"></span>
+              <span class="map-ui-radio__label">산</span>
+            </label>
+        </div>
+
+        <div class="sidebar__search-number">
+          <input type="text" title="본번" class="map-ui-input" placeholder="본번">
+          <span class="sidebar__search-row-separator">-</span>
+          <input type="text" class="map-ui-input sub-number" placeholder="부번">
+        </div>
+        
+        <div class="sidebar__notice">
+          <p>* 도로명 주소 검색은 상단 탭을 변경하여 이용해 주세요.</p>
+          <p>* 정확한 지번을 입력하셔야 상세 정보 조회가 가능합니다.</p>
+        </div>
+      </div>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">검색</button>
+        
+      </div>
+    </div>
+  </div>
+  <!-- <button type="button" class="map-search-sidebar__open" data-target="locationSearchPanel">
+    열기
+  </button> -->
+</aside>

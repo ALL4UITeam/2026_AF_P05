@@ -1,0 +1,104 @@
+{{#> layout}}
+
+<div class="vibe-container map-mydata-page">
+
+	{{> map-mydata-drone}}
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+    <div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+	</div>
+  <!-- 사용자데이터 등록 모달 -->
+  <div class="map-ui-modal-backdrop" id="mydataModal" aria-hidden="true">
+    <div class="map-ui-modal" role="dialog" aria-modal="true" aria-label="사용자데이터 등록">
+      <header class="map-ui-modal__header">
+        <h3><i class="user_icon"></i>사용자데이터 등록</h3>
+        <button type="button" class="map-ui-modal__close" aria-label="닫기" data-mydata-close></button>
+      </header>
+      <div class="map-ui-modal__body">
+        <div class="map-ui-tabs" role="tablist">
+          <button type="button" class="map-ui-tabs__item is-active" data-map-ui-tab="shp" role="tab" aria-selected="true"><span>공간데이터(shp) 등록</span></button>
+          <button type="button" class="map-ui-tabs__item" data-map-ui-tab="share" role="tab" aria-selected="false"><span>속성데이터(xlsx,csv) 등록</span></button>
+        </div>
+        <div class="map-ui-modal_tab-content" data-map-ui-content="shp">
+          <div class="mydata-form__row">
+            <label class="mydata-form__label">레이어명</label>
+            <input type="text" class="map-ui-input input-search" placeholder="등록할 공간 데이터명을 입력해주세요.">
+          </div>
+          <div class="mydata-form__row">
+            <label class="mydata-form__label">설명</label>
+            <textarea class="map-ui-textarea" placeholder="데이터에 대한 간략한 설명을 입력해주세요."></textarea>
+          </div>
+          <div class="mydata-form__row">
+            <label class="mydata-form__label">첨부파일</label>
+            <div class="form__file-wrap">
+              <div class="map-ui-file">
+                <label class="map-ui-file__btn">
+                  <input type="file" hidden data-mydata-file>
+                  파일선택
+                </label>
+                <div class="map-ui-file__name" data-mydata-file-name>선택된 파일 없음</div>
+              </div>
+              <ul class="form__help">
+                <li>동일한 파일명으로 shp, dbf, shx, prj 파일 첨부 필요합니다.</li>
+                <li>zip 파일 첨부 가능<br>(단, zip 파일 내 동일한 파일명으로 파일이 있어야 함)</li>
+                <li>첨부파일 1개당 최대 용량 500MB 입니다.</li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+        <div class="map-ui-modal_tab-content" data-map-ui-content="share" hidden>
+          <div class="mydata-form__row">
+            <label class="mydata-form__label">레이어명</label>
+            <input type="text" class="map-ui-input input-search" placeholder="등록할 공간 데이터명을 입력해주세요.">
+          </div>
+          <div class="mydata-form__row">
+            <label class="mydata-form__label">설명</label>
+            <textarea class="map-ui-textarea" placeholder="데이터에 대한 간략한 설명을 입력해주세요."></textarea>
+          </div>
+          <div class="mydata-form__row">
+            <label class="mydata-form__label">첨부파일</label>
+            <div class="form__file-wrap">
+              <div class="map-ui-file">
+                <label class="map-ui-file__btn">
+                  <input type="file" hidden data-mydata-file>
+                  파일선택
+                </label>
+                <div class="map-ui-file__name" data-mydata-file-name>선택된 파일 없음</div>
+              </div>
+              <ul class="form__help">
+                <li>xlsx, csv 파일 첨부 필요합니다.</li>
+                <li>주소 컬럼이 포함되어야 지오코딩이 가능합니다.</li>
+                <li>대용량 데이터는 CSV 포맷을 권장합니다.</li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+
+        <footer class="map-ui-modal__footer">
+          <button type="button" class="map-ui-btn" data-mydata-close>취소</button>
+          <button type="button" class="map-ui-btn map-ui-btn--primary">적용</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 드론 영상 상세보기 팝업 (더미) -->
+  <div class="map-ui-modal-backdrop" id="droneDetailModal" aria-hidden="true">
+    <div class="map-ui-modal drone-detail-modal">
+      <header class="map-ui-modal__header">
+        <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
+      </header>
+      <div class="drone-detail-modal__video">
+        <span class="drone-detail-modal__placeholder">드론 영상</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{/layout}}

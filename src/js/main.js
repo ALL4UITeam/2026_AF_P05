@@ -8,6 +8,7 @@ import { init as initMapSearch } from './modules/mapSearch.js';
 import { init as initModal } from './modules/modal.js';
 import { init as initMydata } from './modules/mydata.js';
 import { init as initPanel } from './modules/sidebar.js';
+import { init as initThemePanel } from './modules/themePanel.js';
 import { init as initToolbar } from './modules/toolbar.js';
 import { init as initTree } from './modules/tree.js';
 import { init as initZoom } from './modules/zoom.js';
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	run(initModal, 'modal');
 	run(initBottomSheet, 'bottomSheet');
 	run(initTree, 'tree');
+	run(initThemePanel, 'themePanel');
 	run(initZoom, 'zoom');
 	run(initMapSearch, 'mapSearch');
 	run(initMydata, 'mydata');

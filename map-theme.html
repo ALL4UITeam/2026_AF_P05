@@ -1,6 +1,9 @@
 {{#> layout}}
+<style>
+	.map-search-zoom__track-wrap{display: none;}
+</style>
 <div class="vibe-container map-theme-page">
-	{{> map-menu-panel}}
+	
 	{{> map-search-theme-panel}}
 
 
@@ -15,6 +18,29 @@
 		{{> map-options}}
 		
 		<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
+	</div>
+
+	<div class="map-bottom-sheet is-open">
+		<div class="map-bottom-sheet__body">
+			<div class="map-ui-table-wrap">
+				<table class="map-ui-table">
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>작성자</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>제목</td>
+							<td>작성자</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 </div>
 {{/layout}}

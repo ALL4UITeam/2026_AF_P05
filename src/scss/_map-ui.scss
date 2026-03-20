@@ -15,9 +15,10 @@
 // · .map-bottom-sheet — 하단 슬라이드 시트 (handle, title, body)
 // · .map-paging — 페이징 (prev/next, current/total)
 // · .map-ui-modal-backdrop, .map-ui-modal — 모달 (header, close, body)
-// · .map-ui-tabs, .map-ui-tabs__item — 탭 (검색/결과 등)
+// · .map-ui-tabs, .map-ui-tabs__item — 탭 (JS: mapUiTabs.js, data-map-ui-tab + data-map-ui-content)
 // · .map-ui-tree — 트리 (레이어 목록, tree-icon, __children)
-// · .map-ui-table-wrap, .map-ui-table — 테이블 (시트 내 데이터)
+// · .map-ui-table-wrap, .map-ui-table — 테이블 (--sheet 변형: 연보라 헤더·중앙정렬, .map-ui-td--emph)
+// · .map-ui-chip — 용도·규제 라벨 (--green, --blue, --rose, --amber)
 //
 // ============================================================
 
@@ -52,13 +53,113 @@
 
 	input[type="checkbox"] {
 		opacity: 1;
-		width: 18px;
-		height: 18px;
+		width: 16px;
+		height: 16px;
 		margin: 0;
 		accent-color: var(--map-ui-blue);
 		cursor: pointer;
 		flex-shrink: 0;
 	}
+
+	//
+	.input-check{
+		position: relative;
+		display: inline-flex;
+		vertical-align: top;
+		align-items: center;
+		gap: 8px;
+		cursor: pointer;
+		flex-shrink: 0;
+		input{
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+		}
+		.input-check__ui{
+			width: 16px;
+			height: 16px;
+			inset: 0;
+			border-radius: 4px;
+			border: 1px solid #c6c6c6;
+			background: #fff;
+		}
+		input:checked + .input-check__ui{
+			background: #5a4aff url('/images/map/checkbox.png') no-repeat center center;
+			border-color: #5a4aff;
+		}
+		.input-check__label{
+			display: block;
+			font-size: 14px;
+			font-weight: 500;
+			color: #666666;
+		}
+	}
+
+	.map-ui-date{
+		height: 36px;
+		border: 1px solid #e3e4e6;
+		background: #fff url('/images/map/date-icon.png') no-repeat right 12px center;
+		font-size: 14px;
+		color: #111111;
+		padding: 0 12px;
+	}
+
+	.map-ui-radio-group{
+		display: flex;
+		align-items: center;
+		gap: 18px;
+	}
+	.map-ui-radio{
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		vertical-align: top;
+		cursor: pointer;
+		input[type="radio"]{
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+		}
+		.map-ui-radio__ui{
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			border: 1px solid #c6c6c6;
+			background: #fff;
+			position: relative;
+			display: block;
+			&::before{
+				content: '';
+				display: block;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: #6b5ce7;
+				position: absolute;
+				left: 3px;
+				top: 3px;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		input[type="radio"]:checked + .map-ui-radio__ui{
+			border-color: #6b5ce7;
+			&::before{
+				opacity: 1;
+				visibility: visible;
+			}
+			+.map-ui-radio__label{
+				color: #6b5ce7;
+			}
+		}
+		.map-ui-radio__label{
+			font-size: 14px;
+			font-weight: 500;
+			color: #666666;
+		}
+	}
+
+
 
 	// Base Map: 화면 전체를 꽉 채우는 배경 (절대 위치)
 	.map-area {
@@ -110,6 +211,49 @@
 		&:focus {
 			border-color: var(--map-ui-blue);
 			box-shadow: 0 0 0 3px rgba(42, 97, 186, 0.12);
+		}
+	}
+
+	.form__file-wrap{
+		min-width: 0;
+  	overflow: hidden; // 추가
+
+	}
+
+	.map-ui-file{
+		display: flex;
+		border: 1px solid #dbdbe3;
+		background-color: #fff;
+		border-radius: 6px;
+		overflow: hidden;
+		width: 100%;
+  	min-width: 0;
+		.map-ui-file__btn{
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			vertical-align: top;
+			width: 80px;
+			height: 34px;
+			cursor: pointer;
+			background-color: #334155;
+			color: #fff;
+		}
+		.map-ui-file__name{
+			display: block;
+			padding: 0 12px;
+			line-height: 34px;
+			font-size: 14px;
+			color: #87878f;
+			height: 34px;
+			flex: 1;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			min-width: 0;
+			max-width: calc(100% - 80px);
 		}
 	}
 
@@ -167,7 +311,7 @@
 	// ---- 하단 슬라이드 시트 (공간 연산 결과 테이블 + 페이징) ----
 	.map-bottom-sheet {
 		position: absolute;
-		left: 0;
+		left: 358px;
 		right: 0;
 		bottom: 0;
 		z-index: 15;
@@ -304,7 +448,6 @@
 		flex-direction: column;
 		transform: scale(0.96);
 		transition: transform 0.25s;
-		border: 1px solid #eee;
 	}
 
 	.map-ui-modal-backdrop.is-open .map-ui-modal {
@@ -315,78 +458,124 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 16px 20px;
-		border-bottom: 1px solid #eee;
+		background: #414963;
 		flex-shrink: 0;
+		padding: 0 20px;
+		height: 60px;
 	}
 
 	.map-ui-modal__header h3 {
 		margin: 0;
-		font-size: 16px;
-		font-weight: 700;
-		color: #1a1a1a;
+		font-size: 18px;
+		font-weight: 600;
+		color: #fff;
+		&:has(i){
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			i{
+				display: inline-block;
+				background-repeat: no-repeat;
+				background-position: 0% 50%;
+				&.user_icon{
+					background-image: url('/images/map/modal_user_icon.png');
+					width: 15px;
+					height: 16px;
+				}
+				&.share_icon{
+					background-image: url('/images/map/modal_share_icon.png');
+					width: 15px;
+					height: 16px;
+				}
+				&.menu_icon{
+					background-image: url('/images/map/modal_menu_icon.png');
+					width: 15px;
+					height: 16px;
+				}
+				&.search_icon{
+					background-image: url('/images/map/modal_search_icon.png');
+					width: 15px;
+					height: 16px;
+				}
+				&.deal_icon{
+					background-image: url('/images/map/modal_deal_icon.png');
+					width: 15px;
+					height: 16px;
+				}
+			}
+		}
 	}
 
 	.map-ui-modal__close {
-		width: 32px;
-		height: 32px;
-		border: none;
-		background: transparent;
-		color: #666;
-		font-size: 20px;
-		line-height: 1;
-		cursor: pointer;
-		border-radius: 6px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		width: 30px;
+		height: 30px;
 		transition: background 0.2s, color 0.2s;
-	}
-
-	.map-ui-modal__close:hover {
-		background: #f0f0f0;
-		color: #1a1a1a;
+		background:#545c73 url('/images/map/modal_close.png') no-repeat center center;
+		border-radius: 50%;
 	}
 
 	.map-ui-modal__body {
 		padding: 20px;
 		overflow-y: auto;
 		flex: 1;
+		background-color: #f5f6f8;
 	}
 
 	// ---- 탭 (검색/결과 등) ----
 	.map-ui-tabs {
 		display: flex;
-		background: #f5f5f5;
-		border-radius: 8px;
-		padding: 4px;
-		gap: 2px;
-		margin-bottom: 18px;
+		border: 1px solid #dbdbe3;
+		background-color: #ffffff;
+		border-radius: 6px;
+		overflow: hidden;
 	}
 
 	.map-ui-tabs__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex: 1;
-		padding: 10px 14px;
-		font-size: 13px;
+		position: relative;
+		font-size: 14px;
 		font-weight: 600;
-		color: #555;
+		color: #7e8396;
 		background: transparent;
-		border: none;
-		border-radius: 6px;
-		cursor: pointer;
-		text-align: center;
 		transition: background 0.2s, color 0.2s;
-	}
-
-	.map-ui-tabs__item:hover {
-		background: rgba(255, 255, 255, 0.8);
-		color: #1a1a1a;
+		height: 36px;
+		border-radius: 0 !important;
+		span{
+			position: relative;
+			z-index: 2;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			border: 1px solid transparent;
+		}
 	}
 
 	.map-ui-tabs__item.is-active {
-		background: #fff;
-		color: var(--map-ui-blue);
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+		span{
+			color: #563dff;
+		}
+		&::after{
+			border-radius: 6px;
+			background: #f2f0ff;
+			border-color: #563dff;
+		}
+	}
+	.map-ui-modal__footer{
+		display: flex;
+		justify-content: flex-end;
+		gap: 8px;
+		margin-top: 20px;
+		.map-ui-modal__close{
+			width: auto;
+		}
 	}
 
 	// ---- 트리 (레이어 목록) ----
@@ -453,19 +642,6 @@
 		
 	}
 	.map-ui-tree__count { font-size: 13px; color: #555; }
-	.map-ui-btn {
-		padding: 8px 12px;
-		font-size: 13px;
-		font-weight: 500;
-		color: #333;
-		background: #fff;
-		border: 1px solid #ddd;
-		border-radius: var(--map-ui-radius);
-		cursor: pointer;
-		transition: background 0.2s, border-color 0.2s;
-		&:hover { background: #f5f5f5; border-color: #ccc; }
-		&--sm { padding: 6px 10px; font-size: 12px; }
-	}
 	.map-ui-tree__caret {
 		width: 12px;
 		height: 8px;
@@ -542,5 +718,119 @@
 		color: #333;
 		line-height: 1.4;
 	}
-	
+
+	// 데이터 시트형 (모달·플로트 등 공통): 연보라 헤더, 가로줄만, 셀 중앙 정렬
+	.map-ui-table-wrap--sheet {
+		border: 1px solid #e5e7eb;
+		border-radius: 10px;
+		background: #fff;
+	}
+
+	.map-ui-table--sheet {
+		font-size: 13px;
+		color: #6b7280;
+
+		tbody tr {
+			border-bottom: none;
+		}
+
+		thead th {
+			text-align: center;
+			padding: 14px 10px;
+			font-weight: 700;
+			color: #1f2937;
+			background: #f3f4ff;
+			border-bottom: 1px solid #e5e7eb;
+			white-space: nowrap;
+		}
+
+		tbody td {
+			text-align: center;
+			padding: 14px 10px;
+			color: #6b7280;
+			font-weight: 500;
+			border-bottom: 1px solid #eef0f4;
+		}
+
+		tbody tr:last-child td {
+			border-bottom: none;
+		}
+
+		tbody tr:hover {
+			background: #faf9ff;
+		}
+	}
+
+	// 강조 셀 (예: 보증금·금액 열)
+	.map-ui-td--emph {
+		font-weight: 700 !important;
+		color: #111827 !important;
+	}
+
+	// 규제·용도 라벨 칩 (토지이용계획 등 공통)
+	.map-ui-chip {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		//width: 100%;
+		padding: 4px 10px;
+		border-radius: 999px;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		line-height: 1.3;
+		border: 1px solid;
+	}
+
+	.map-ui-chip--green {
+		color: #15803d;
+		background: #ecfdf5;
+		border-color: #6ee7b7;
+	}
+
+	.map-ui-chip--blue {
+		color: #1d4ed8;
+		background: #eff6ff;
+		border-color: #93c5fd;
+	}
+
+	.map-ui-chip--rose {
+		color: #be123c;
+		background: #fff1f2;
+		border-color: #fda4af;
+	}
+
+	.map-ui-chip--amber {
+		color: #c2410c;
+		background: #fffbeb;
+		border-color: #fcd34d;
+	}
+
+	// 버튼
+	.map-ui-btn{
+		height: 36px;
+		padding: 0 20px;
+		font-size: 14px;
+		font-weight: 400;
+		color: #374151;
+		background: #fff;
+		border: 1px solid #d1d5db;
+		border-radius: var(--map-ui-radius);
+		&:hover,
+		&:focus{
+			background: #f3f4f6;
+			border-color: #d1d5db;
+		}
+	}
+	.map-ui-btn--primary{
+		background: #5a4bd6;
+		color: #fff;
+		border-color: #5a4bd6;
+		&:hover,
+		&:focus{
+			background: #4b3fff;
+			border-color: #4b3fff;
+		}
+	}
+
 }

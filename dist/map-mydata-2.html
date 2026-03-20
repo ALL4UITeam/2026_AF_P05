@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/main.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli active">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					
+
+					<div class="popover-menu-wrap intelli active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active">통합지도</a></li>
+								<li><a href="#">3D지도</a></li>
+								<li><a href="#">실내지도</a></li>
+								<li><a href="#">주제도</a></li>
+								<li><a href="#">검색</a></li>
+								<li><a href="#">분석</a></li>
+								<li><a href="#">통계지도</a></li>
+								<li><a href="#">마이 데이터</a></li>
+								<li><a href="#">입지분석 시뮬레이션</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="vibe-container map-mydata-page">
+					
+					
+					<aside class="map-search-sidebar is-open" id="userPanel">
+					  <div class="map-search-sidebar__inner">
+					    <header class="map-search-sidebar__header">
+					      <h2>사용자 데이터</h2>
+					      <button title="닫기" class="map-search-sidebar__close" data-target="userPanel">
+					        닫기
+					      </button>
+					    </header>
+					
+					    <div class="map-search-sidebar__body">
+					      <div class="mydata-panel">
+					        <button type="button" class="search-sidebar__primary" data-mydata-open>
+					          <i class="plus_icon"></i>사용자 데이터 등록
+					        </button>
+					
+					        <div class="sidebar__search-row">
+					          <input type="search" id="locationSearchInput" class="map-ui-input input-search" placeholder="주소 또는 장소 검색" autocomplete="off">
+					          <button type="button" class="sidebar__search-btn" id="locationSearchBtn" aria-label="검색">
+					            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+					          </button>
+					        </div>
+					
+					        <div class="sidebar_divider"></div>
+					
+					        <div class="mydata-panel__section">
+					          <div class="mydata-panel__section-title">
+					            등록된 레이어 <span class="mydata-panel__count">(4)</span>
+					          </div>
+					
+					          <ul class="mydata-layer-list" data-mydata-layers>
+					            <li class="mydata-layer is-checked" data-layer>
+					              <div class="mydata-layer__row">
+					                <label class="input-check">
+					                  <input type="checkbox" checked data-layer-check>
+					                  <span class="input-check__ui" aria-hidden="true"></span>
+					                </label>
+					                <div class="mydata-layer__name" title="사업지구_경계.shp">사업지구_경계.shp</div>
+					                <div class="mydata-layer__actions">
+					                  <button type="button" class="icon--setting" aria-label="설정"></button>
+					                  <button type="button" class="icon--more" aria-label="공유"></button>
+					                  <button type="button" class="icon--del" aria-label="삭제"></button>
+					                </div>
+					              </div>
+					              <div class="mydata-layer__controls">
+					                <div class="mydata-layer__opacity">
+					                  <span class="mydata-layer__opacity-label">투명도</span>
+					                  <input type="range" min="0" max="100" value="60" class="mydata-layer__range" data-layer-opacity>
+					                </div>
+					                <div class="mydata-layer__badges">
+					                  <span class="layer__badge layer__badge--layer"><i class="badge-icon"></i>1</span>
+					                  <span class="layer__badge layer__badge--user"><i class="badge-icon"></i>1</span>
+					                </div>
+					              </div>
+					            </li>
+					
+					            <li class="mydata-layer is-checked" data-layer>
+					              <div class="mydata-layer__row">
+					                <label class="input-check">
+					                  <input type="checkbox" checked data-layer-check>
+					                  <span class="input-check__ui" aria-hidden="true"></span>
+					                </label>
+					                <div class="mydata-layer__name" title="CCTV설치위치.csv">CCTV설치위치.csv</div>
+					                <div class="mydata-layer__actions">
+					                  <button type="button" class="icon--more" aria-label="공유"></button>
+					                  <button type="button" class="icon--setting" aria-label="설정"></button>
+					                  <button type="button" class="icon--del" aria-label="삭제" data-layer-delete></button>
+					                </div>
+					              </div>
+					              <div class="mydata-layer__controls">
+					                <div class="mydata-layer__opacity">
+					                  <span class="mydata-layer__opacity-label">투명도</span>
+					                  <input type="range" min="0" max="100" value="45" class="mydata-layer__range" data-layer-opacity>
+					                </div>
+					                <div class="mydata-layer__badges">
+					                  <span class="layer__badge layer__badge--user"><i class="badge-icon"></i>1</span>
+					                </div>
+					              </div>
+					            </li>
+					
+					            <li class="mydata-layer" data-layer>
+					              <div class="mydata-layer__row">
+					                <label class="input-check">
+					                  <input type="checkbox" data-layer-check>
+					                  <span class="input-check__ui" aria-hidden="true"></span>
+					                </label>
+					                <div class="mydata-layer__name" title="드론영상_2025.tif">드론영상_2025.tif</div>
+					                <div class="mydata-layer__actions">
+					                  <button type="button" class="icon--more" aria-label="공유"></button>
+					                  <button type="button" class="icon--setting" aria-label="설정"></button>
+					                  <button type="button" class="icon--del" aria-label="삭제" data-layer-delete></button>
+					                </div>
+					              </div>
+					              <div class="mydata-layer__controls">
+					                <div class="mydata-layer__opacity">
+					                  <span class="mydata-layer__opacity-label">투명도</span>
+					                  <input type="range" min="0" max="100" value="30" class="mydata-layer__range" data-layer-opacity disabled>
+					                </div>
+					              </div>
+					            </li>
+					          </ul>
+					        </div>
+					
+					        <div class="mydata-panel__footer">
+					          <button type="button" class="mydata-panel__btn">레이어 다운로드</button>
+					          <button type="button" class="mydata-panel__btn mydata-panel__btn--primary">사용자 주제도 저장</button>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					</aside>
+					
+					<!-- 우측: 지도 영역 (전체 채움) -->
+					<div class="map-area">
+						<div id="map-container"></div>
+				    <div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+					</div>
+				
+				
+				  <!-- 데이터 공유 설정 모달 -->
+				  <div class="map-ui-modal-backdrop is-open" id="shareModal" aria-hidden="true">
+				    <div class="map-ui-modal mydata-share-modal">
+				      <header class="map-ui-modal__header">
+				        <h3><i class="share_icon"></i>데이터 공유 설정</h3>
+				        <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
+				      </header>
+				      <div class="share-modal__info">
+				        <span class="share-modal__filename">사업지구_경계.shp</span>
+				        <span class="share-modal__type">POLYGON</span>
+				      </div>
+				      <div class="map-ui-modal__body">
+				
+				        <div class="map-ui-tabs" role="tablist">
+				          <button type="button" class="map-ui-tabs__item is-active" data-map-ui-tab="dept" role="tab" aria-selected="true"><span>부서 공유</span></button>
+				          <button type="button" class="map-ui-tabs__item" data-map-ui-tab="user" role="tab" aria-selected="false"><span>사용자 공유</span></button>
+				        </div>
+				
+				        <!-- 부서 공유 패널 -->
+				        <div class="map-ui-modal_tab-content mydata-share-panel" data-map-ui-content="dept">
+				          <div class="mydata-share-search">
+				            <div class="sidebar__search-row">
+				              <input type="text" class="map-ui-input input-search" placeholder="레이어명 검색">
+				              <button type="button" class="sidebar__search-btn" aria-label="검색">검색</button>
+				            </div>
+				          </div>
+				          <div class="mydata-share-dept">
+				            <div class="interest-panel__section-title">조직도</div>
+				            <ul class="interest-panel__section-list">
+				              <li>
+				                <label class="input-check">
+				                  <input type="checkbox" checked>
+				                  <span class="input-check__ui" aria-hidden="true"></span>
+				                  <span class="input-check__label">토지정보과</span>
+				                </label>
+				              </li>
+				              <li>
+				                <label class="input-check">
+				                  <input type="checkbox">
+				                  <span class="input-check__ui" aria-hidden="true"></span>
+				                  <span class="input-check__label">도시계획과</span>
+				                </label>
+				              </li>
+				              <li>
+				                <label class="input-check">
+				                  <input type="checkbox">
+				                  <span class="input-check__ui" aria-hidden="true"></span>
+				                  <span class="input-check__label">안전재난과</span>
+				                </label>
+				              </li>
+				              <li>
+				                <label class="input-check">
+				                  <input type="checkbox" checked>
+				                  <span class="input-check__ui" aria-hidden="true"></span>
+				                  <span class="input-check__label">환경정책과</span>
+				                </label>
+				              </li>
+				              <li>
+				                <label class="input-check">
+				                  <input type="checkbox">
+				                  <span class="input-check__ui" aria-hidden="true"></span>
+				                  <span class="input-check__label">도로철도과</span>
+				                </label>
+				              </li>
+				            </ul>
+				          </div>
+				        </div>
+				        <!-- 사용자 공유 패널 -->
+				        <div class="map-ui-modal_tab-content mydata-share-panel" data-map-ui-content="user" hidden>
+				          <div class="mydata-share-search">
+				            <div class="sidebar__search-row">
+				              <input type="text" class="map-ui-input input-search" placeholder="사용자명 또는 ID 검색">
+				              <button type="button" class="sidebar__search-btn input-search" aria-label="검색">검색</button>
+				            </div>
+				          </div>
+				          <div class="mydata-share-users">
+				            <div class="mydata-share-users__head">
+				              <span class="mydata-share-users__title">공유 사용자 목록</span>
+				              <button type="button" class="mydata-share-users__add">추가하기</button>
+				            </div>
+				            <ul class="mydata-share-users__list">
+				              <li class="mydata-share-users__item">
+				                <span class="mydata-share-users__name">김철수 (도시과)</span>
+				                <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+				              </li>
+				              <li class="mydata-share-users__item">
+				                <span class="mydata-share-users__name">이영희 (환경과)</span>
+				                <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+				              </li>
+				              <li class="mydata-share-users__item">
+				                <span class="mydata-share-users__name">박민수 (안전과)</span>
+				                <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+				              </li>
+				            </ul>
+				          </div>
+				        </div>
+				
+				        <footer class="map-ui-modal__footer">
+				          <button type="button" class="map-ui-btn map-ui-modal__close">취소</button>
+				          <button type="button" class="map-ui-btn map-ui-btn--primary">적용</button>
+				        </footer>
+				      </div>
+				      
+				    </div>
+				  </div>
+				
+				</div>
+				
+				
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

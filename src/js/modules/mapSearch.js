@@ -57,4 +57,22 @@ export function init() {
 	if (locationSearchInput && locationSearchBtn) {
 		locationSearchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') locationSearchBtn.click(); });
 	}
+
+	const landFloatStack = document.getElementById('landSearchFloatStack');
+	const landPanelSearchBtn = document.querySelector('#landSearchPanel .sidebar__footer-btn--primary');
+	if (landFloatStack && landPanelSearchBtn) {
+		landPanelSearchBtn.addEventListener('click', () => {
+			landFloatStack.classList.add('is-open');
+			landFloatStack.setAttribute('aria-hidden', 'false');
+		});
+	}
+
+	page.querySelectorAll('.lnd-rslt__fold').forEach((foldBtn) => {
+		foldBtn.addEventListener('click', () => {
+			const panel = foldBtn.closest('.lnd-rslt');
+			if (!panel) return;
+			const collapsed = panel.classList.toggle('is-collapsed');
+			foldBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+		});
+	});
 }

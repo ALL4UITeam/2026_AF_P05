@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/main.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli active">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					
+
+					<div class="popover-menu-wrap intelli active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active">통합지도</a></li>
+								<li><a href="#">3D지도</a></li>
+								<li><a href="#">실내지도</a></li>
+								<li><a href="#">주제도</a></li>
+								<li><a href="#">검색</a></li>
+								<li><a href="#">분석</a></li>
+								<li><a href="#">통계지도</a></li>
+								<li><a href="#">마이 데이터</a></li>
+								<li><a href="#">입지분석 시뮬레이션</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="vibe-container map-mydata-page">
+					
+					<aside class="map-search-sidebar is-open" id="interestPanel">
+					  <div class="map-search-sidebar__inner">
+					    <header class="map-search-sidebar__header">
+					      <h2>관심지역 관리</h2>
+					      <button title="닫기" class="map-search-sidebar__close" data-target="interestPanel">
+					        닫기
+					      </button>
+					    </header>
+					
+					    <div class="map-search-sidebar__body">
+					      <div class="mydata-panel interest-panel">
+					        <!-- 탭 -->
+					        <div class="panel__tabs" role="tablist">
+					          <button type="button" class="panel__tab is-active" data-interest-tab="mine" role="tab" aria-selected="true">나의 관심지역</button>
+					          <button type="button" class="panel__tab" data-interest-tab="shared" role="tab" aria-selected="false">공유받은 관심지역</button>
+					        </div>
+					
+					        <!-- 나의 관심지역 패널 -->
+					        <div class="tab-panel__content" data-interest-content="mine">
+					          <div class="interest-search">
+					            <div class="sidebar__search-row">
+					              <input type="search" class="map-ui-input" placeholder="등록명 입력" autocomplete="off">
+					              <button type="button" class="sidebar__search-btn" aria-label="등록">등록</button>
+					            </div>
+					          </div>
+					          <div class="sidebar__search">
+					            <div class="sidebar__search-location">
+					              <div class="map-ui-form-group">
+					                <label for="searchSigungu">시/군 선택</label>
+					                <select id="searchSigungu" class="map-ui-select">
+					                  <option value="">전체</option>
+					                  <option value="andong">안동시</option>
+					                  <option value="yeongyang">영양군</option>
+					                  <option value="yeongju">영주시</option>
+					                  <option value="gyeongsan">경산시</option>
+					                </select>
+					              </div>
+					              <div class="map-ui-form-group">
+					                <label for="searchEmd">읍/면/동 선택</label>
+					                <select id="searchEmd" class="map-ui-select">
+					                  <option value="">전체</option>
+					                </select>
+					              </div>
+					            </div>
+					          </div>
+					          <div class="interest-draw">
+					            <div class="interest-draw__title">영역선택 (그리기)</div>
+					            <div class="interest-draw__btns">
+					              <button type="button" class="interest-draw__btn is-active" data-draw-type="fullscreen">
+					                <i class="ico_fullscreen" aria-hidden="true"></i>
+					                <span class="interest-draw__btn-label">전체화면</span>
+					              </button>
+					              <button type="button" class="interest-draw__btn" data-draw-type="box">
+					                <i class="ico_box" aria-hidden="true"></i>
+					                <span class="interest-draw__btn-label">박스</span>
+					              </button>
+					              <button type="button" class="interest-draw__btn" data-draw-type="polygon">
+					                <i class="ico_polygon" aria-hidden="true"></i>
+					                <span class="interest-draw__btn-label">폴리곤</span>
+					              </button>
+					            </div>
+					          </div>
+					          <div class="interest-panel__section">
+					            <div class="interest-panel__section-title">나의 관심지역 <span class="interest-panel__count">(5)</span></div>
+					            <ul class="interest-list">
+					              <li class="interest-card">
+					                <label class="interest-card__radio">
+					                  <input type="radio" name="interestMine" value="1">
+					                  <span class="interest-card__radio-ui"></span>
+					                </label>
+					                <div class="interest-card__main">
+					                  <span class="interest-card__title">반월동</span>
+					                  <div class="interest-card__meta">
+					                    <span class="interest-card__tag">행정구역</span>
+					                    <span class="interest-card__date">2026-02-10</span>
+					                  </div>
+					                </div>
+					                <div class="interest-card__actions">
+					                  <button type="button" class="interest-card__icon icon--more" aria-label="공유"></button>
+					                  <button type="button" class="interest-card__icon icon--del" aria-label="삭제"></button>
+					                </div>
+					              </li>
+					              <li class="interest-card is-selected">
+					                <label class="interest-card__radio">
+					                  <input type="radio" name="interestMine" value="2" checked>
+					                  <span class="interest-card__radio-ui"></span>
+					                </label>
+					                <div class="interest-card__main">
+					                  <span class="interest-card__title">상수도 공사지역</span>
+					                  <div class="interest-card__meta">
+					                    <span class="interest-card__tag">박스</span>
+					                    <span class="interest-card__date">2026-02-10</span>
+					                  </div>
+					                </div>
+					                <div class="interest-card__actions">
+					                  <button type="button" class="interest-card__icon icon--more" aria-label="공유"></button>
+					                  <button type="button" class="interest-card__icon icon--del" aria-label="삭제"></button>
+					                </div>
+					              </li>
+					              <li class="interest-card">
+					                <label class="interest-card__radio">
+					                  <input type="radio" name="interestMine" value="3">
+					                  <span class="interest-card__radio-ui"></span>
+					                </label>
+					                <div class="interest-card__main">
+					                  <span class="interest-card__title">도시개발 구역</span>
+					                  <div class="interest-card__meta">
+					                    <span class="interest-card__tag">행정구역</span>
+					                    <span class="interest-card__date">2026-02-09</span>
+					                  </div>
+					                </div>
+					                <div class="interest-card__actions">
+					                  <button type="button" class="interest-card__icon" aria-label="공유"></button>
+					                  <button type="button" class="interest-card__icon icon--del" aria-label="삭제"></button>
+					                </div>
+					              </li>
+					            </ul>
+					          </div>
+					          <div class="interest-panel__footer">
+					            <button type="button" class="interest-panel__footer-btn">선택삭제</button>
+					            <button type="button" class="interest-panel__footer-btn">모두삭제</button>
+					            <button type="button" class="interest-panel__footer-btn interest-panel__footer-btn--primary">분석영역해제</button>
+					          </div>
+					        </div>
+					
+					        <!-- 공유받은 관심지역 패널 -->
+					        <div class="tab-panel__content" data-interest-content="shared" hidden>
+					          <div class="interest-panel__section">
+					            <div class="interest-panel__section-title">공유받은 목록 <span class="interest-panel__count">(5)</span></div>
+					            <ul class="interest-list">
+					              <li class="interest-card interest-card--shared">
+					                <label class="interest-card__radio">
+					                  <input type="radio" name="interestShared" value="1">
+					                  <span class="interest-card__radio-ui"></span>
+					                </label>
+					                <div class="interest-card__main">
+					                  <span class="interest-card__title">2025 토지이용 현황</span>
+					                  <div class="interest-card__meta">
+					                    <span class="interest-card__tag">행정구역</span>
+					                    <span class="interest-card__date">2026-02-10</span>
+					                  </div>
+					                  <p class="interest-card__user"><i class="interest-card__user-icon"></i>김철수 (도시과)</p>
+					                </div>
+					                <button type="button" class="interest-card__icon icon--del" aria-label="삭제"></button>
+					              </li>
+					              <li class="interest-card interest-card--shared is-selected">
+					                <label class="interest-card__radio">
+					                  <input type="radio" name="interestShared" value="2" checked>
+					                  <span class="interest-card__radio-ui"></span>
+					                </label>
+					                <div class="interest-card__main">
+					                  <span class="interest-card__title">2026 도시계획 구역</span>
+					                  <div class="interest-card__meta">
+					                    <span class="interest-card__tag">행정구역</span>
+					                    <span class="interest-card__date">2026-02-10</span>
+					                  </div>
+					                  <p class="interest-card__user"><i class="interest-card__user-icon"></i>김철수 (도시과)</p>
+					                </div>
+					                <button type="button" class="interest-card__icon icon--del" aria-label="삭제"></button>
+					              </li>
+					              <li class="interest-card interest-card--shared">
+					                <label class="interest-card__radio">
+					                  <input type="radio" name="interestShared" value="3">
+					                  <span class="interest-card__radio-ui"></span>
+					                </label>
+					                <div class="interest-card__main">
+					                  <span class="interest-card__title">재해위험지역</span>
+					                  <div class="interest-card__meta">
+					                    <span class="interest-card__tag">폴리곤</span>
+					                    <span class="interest-card__date">2026-02-08</span>
+					                  </div>
+					                  <p class="interest-card__user"><i class="interest-card__user-icon"></i>이영희 (환경과)</p>
+					                </div>
+					                <button type="button" class="interest-card__icon icon--del" aria-label="삭제"></button>
+					              </li>
+					            </ul>
+					          </div>
+					          <div class="interest-panel__footer">
+					            <button type="button" class="interest-panel__footer-btn">선택삭제</button>
+					            <button type="button" class="interest-panel__footer-btn">모두삭제</button>
+					            <button type="button" class="interest-panel__footer-btn interest-panel__footer-btn--primary">분석영역해제</button>
+					          </div>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					</aside>	<!-- 우측: 지도 영역 (전체 채움) -->
+					<div class="map-area">
+						<div id="map-container"></div>
+				    <div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+					</div>
+				
+				  <!-- 드론 영상 수정 모달 -->
+				  <div class="map-ui-modal-backdrop is-open" id="droneEditModal" aria-hidden="true">
+				    <div class="map-ui-modal drone-modal">
+				      <header class="map-ui-modal__header">
+				        <h3>드론 영상 수정</h3>
+				        <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
+				      </header>
+				      <div class="map-ui-modal__body drone-modal__body">
+				        <div class="drone-modal__form">
+				          <div class="drone-modal__row">
+				            <label class="drone-modal__label">프로젝트명 <em>*</em></label>
+				            <input type="text" class="drone-modal__input" value="안동시 도심지 정사영상">
+				          </div>
+				          <div class="drone-modal__row">
+				            <label class="drone-modal__label">촬영 지역</label>
+				            <input type="text" class="drone-modal__input" value="경북 안동시 풍천면">
+				          </div>
+				          <div class="drone-modal__row drone-modal__row--half">
+				            <div class="drone-modal__col">
+				              <label class="drone-modal__label">촬영일자</label>
+				              <input type="date" class="drone-modal__input" value="2026-02-10">
+				            </div>
+				            <div class="drone-modal__col">
+				              <label class="drone-modal__label">해상도</label>
+				              <div class="drone-modal__select-wrap">
+				                <select class="drone-modal__select">
+				                  <option value="2cm">2cm</option>
+				                  <option value="3cm">3cm</option>
+				                  <option value="4cm">4cm</option>
+				                  <option value="5cm" selected>5cm</option>
+				                </select>
+				              </div>
+				            </div>
+				          </div>
+				          <div class="drone-modal__row">
+				            <label class="drone-modal__label">진행 상태</label>
+				            <div class="drone-modal__select-wrap">
+				              <select class="drone-modal__select">
+				                <option value="processing">처리중</option>
+				                <option value="done" selected>처리완료</option>
+				                <option value="waiting">대기</option>
+				              </select>
+				            </div>
+				          </div>
+				        </div>
+				
+				        <footer class="map-ui-modal__footer">
+				          <button type="button" class="map-ui-btn map-ui-btn--primary">저장</button>
+				          <button type="button" class="map-ui-btn map-ui-modal__close">닫기</button>
+				        </footer>
+				
+				      </div>
+				      
+				    </div>
+				  </div>
+				
+				</div>
+				
+				
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

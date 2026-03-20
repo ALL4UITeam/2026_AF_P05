@@ -1,0 +1,75 @@
+{{#> layout}}
+<div class="vibe-container map-search-page">
+	
+
+	{{> map-search-road}}
+
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+		
+		{{> map-toolbar}}
+		{{> map-search-zoom}}
+		{{> map-floating-controls}}
+		{{> map-building-info}}
+		{{> map-options}}
+		<!-- 규제 확인 플로트 -->
+		<div class="map-ui-modal-backdrop lnd-stack is-open" id="regFloatStack" aria-hidden="true">
+			<div class="lnd-rslt" id="regResultPanel">
+				<header class="map-ui-modal__header lnd-rslt__hd">
+					<h3><i class="menu_icon" aria-hidden="true"></i>규제 확인 결과 목록</h3>
+					<button type="button" class="lnd-rslt__fold" aria-expanded="true"></button>
+				</header>
+				<div class="lnd-rslt__body" id="regResultBody">
+					<input type="search" class="map-ui-input lnd-rslt__q" id="regResultQuery" readonly value="경상북도 문경시 점촌동 123-4">
+					<ol class="lnd-rslt__list" id="regResultList">
+						<li><button type="button" class="lnd-rslt__item is-active"><span class="lnd-rslt__no">1</span> 경상북도 문경시 점촌동 123-4</button></li>
+					</ol>
+				</div>
+			</div>
+			<div class="map-ui-modal lnd-modal" id="regDetailModal">
+				<header class="map-ui-modal__header">
+					<h3>규제 확인</h3>
+					<button type="button" class="map-ui-modal__close" aria-label="닫기" data-land-search-close></button>
+				</header>
+				<div class="map-ui-modal__body">
+					<div class="map-ui-modal__content lnd-dtl" data-land-search-detail>
+						<p class="lnd-addr" data-land-search-address>경상북도 문경시 점촌동 123-4</p>
+						<section class="lnd-sec">
+							<h4 id="regHdrBasic" class="lnd-h">기본정보</h4>
+							<div class="lnd-tbl">
+								<div class="lnd-row">
+									<div class="lnd-lbl">지목</div>
+									<div class="lnd-val" data-land-jimok>대 (08)</div>
+								</div>
+								<div class="lnd-row">
+									<div class="lnd-lbl">면적</div>
+									<div class="lnd-val" data-land-area>345.2㎡</div>
+								</div>
+								<div class="lnd-row">
+									<div class="lnd-lbl">소유구분</div>
+									<div class="lnd-val" data-land-owner>사유지</div>
+								</div>
+								<div class="lnd-row">
+									<div class="lnd-lbl">변동일자</div>
+									<div class="lnd-val" data-land-changed>2021-05-12</div>
+								</div>
+							</div>
+						</section>
+						<section class="lnd-sec">
+							<h4 id="regHdrPlan" class="lnd-h">토지이용계획</h4>
+							<div class="lnd-plan-list">
+								<span class="map-ui-chip map-ui-chip--green">도시지역</span>
+								<span class="map-ui-chip map-ui-chip--blue">제2종 일반주거지역</span>
+								<span class="map-ui-chip map-ui-chip--rose">가축사육제한구역</span>
+								<span class="map-ui-chip map-ui-chip--amber">상대보호구역</span>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+{{/layout}}

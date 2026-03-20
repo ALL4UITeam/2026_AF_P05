@@ -1,0 +1,83 @@
+{{#> layout}}
+
+<div class="vibe-container map-mydata-page">
+	
+	{{> map-mydata-interest}}
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+    <div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+	</div>
+
+
+  <!-- 드론 영상 등록 모달 -->
+  <div class="map-ui-modal-backdrop is-open" id="droneRegisterModal" aria-hidden="true">
+    <div class="map-ui-modal drone-modal">
+      <header class="map-ui-modal__header">
+        <h3>드론 영상 등록</h3>
+        <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
+      </header>
+      <div class="map-ui-modal__body">
+        <div class="drone-modal__form">
+          <div class="drone-modal__row">
+            <label class="drone-modal__label">프로젝트명 <em>*</em></label>
+            <input type="text" class="drone-modal__input" placeholder="">
+          </div>
+          <div class="drone-modal__row">
+            <label class="drone-modal__label">촬영 지역</label>
+            <input type="text" class="drone-modal__input" placeholder="">
+          </div>
+          <div class="drone-modal__row drone-modal__row--half">
+            <div class="drone-modal__col">
+              <label class="drone-modal__label">촬영일자</label>
+              <input type="date" class="drone-modal__input" value="2026-02-11">
+            </div>
+            <div class="drone-modal__col">
+              <label class="drone-modal__label">해상도</label>
+              <div class="drone-modal__select-wrap">
+                <select class="drone-modal__select">
+                  <option value="">선택</option>
+                  <option value="2cm">2cm</option>
+                  <option value="3cm">3cm</option>
+                  <option value="4cm">4cm</option>
+                  <option value="5cm">5cm</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="drone-modal__row">
+            <label class="drone-modal__label">진행 상태</label>
+            <div class="drone-modal__select-wrap">
+              <select class="drone-modal__select">
+                <option value="processing">처리중</option>
+                <option value="done">처리완료</option>
+                <option value="waiting">대기</option>
+              </select>
+            </div>
+          </div>
+          <div class="drone-modal__row">
+            <label class="drone-modal__label">영상 파일</label>
+            <div class="drone-modal__upload">
+              <div class="drone-modal__upload-area" data-drone-upload>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>파일을 업로드하세요 (jp, tif 등)</span>
+                <input type="file" hidden data-drone-file-input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="map-ui-modal__footer">
+          <button type="button" class="map-ui-btn map-ui-btn--primary">저장</button>
+          <button type="button" class="map-ui-btn map-ui-modal__close">닫기</button>
+        </footer>
+        
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+{{/layout}}

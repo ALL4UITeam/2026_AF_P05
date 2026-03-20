@@ -390,6 +390,26 @@
   .map-toolbar__btn[data-tool="info"]::before {
     background-image: url('/images/map/toolbar-info.png');
   }
+  .map-toolbar__btn[data-tool="compass"]::before {
+    background-image: url('/images/map/toolbar-compass.png');
+  }
+  
+  .map-toolbar__btn[data-tool="current-location"]::before {
+    background-image: url('/images/map/toolbar-current-location.png');
+  }
+
+  .map-toolbar__btn[data-tool="home"]::before {
+    background-image: url('/images/map/toolbar-home.png');
+  }
+
+  
+
+  .map-toolbar__btn-wrap{
+    margin-top: 6px;
+    .map-toolbar__btn{
+      border-radius: 4px;
+    }
+  }
 	
   .map-options {
     position: absolute;

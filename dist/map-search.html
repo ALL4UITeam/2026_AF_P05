@@ -61,59 +61,42 @@
 		<!-- content -->
 		<div class="content-wrap">
 			<div class="content">
+				
 				<div class="vibe-container map-search-page">
 					
-					<!-- 좌측 사이드바: VWorld dtkmap 스타일 (고정 폭, 회색 배경) -->
-					<aside class="map-search-sidebar is-open" id="locationSearchPanel">
-					  <div class="map-search-sidebar__inner">
-					    <header class="map-search-sidebar__header">
-					      <h2>위치 검색</h2>
-					      <button title="닫기" class="map-search-sidebar__close" data-target="locationSearchPanel">
-					        닫기
-					      </button>
-					    </header>
-					    <div class="map-search-sidebar__body">
-					      <div class="sidebar__search">
-					        <div class="sidebar__search-location">
-					          <div class="map-ui-form-group">
-					            <label for="searchSigungu">시군</label>
-					            <select id="searchSigungu" class="map-ui-select">
-					              <option value="">전체</option>
-					              <option value="andong">안동시</option>
-					              <option value="yeongyang">영양군</option>
-					              <option value="yeongju">영주시</option>
-					              <option value="gyeongsan">경산시</option>
-					            </select>
-					          </div>
-					          <div class="map-ui-form-group">
-					            <label for="searchEmd">읍면동</label>
-					            <select id="searchEmd" class="map-ui-select">
-					              <option value="">전체</option>
-					            </select>
-					          </div>
-					          <div class="map-ui-form-group">
-					            <label for="searchRi">리</label>
-					            <select id="searchRi" class="map-ui-select">
-					              <option value="">전체</option>
-					            </select>
-					          </div>
-					        </div>
-					        <div class="sidebar__search-row">
-					          <input type="search" id="locationSearchInput" class="map-ui-input input-search" placeholder="주소 또는 장소 검색" autocomplete="off">
-					          <button type="button" class="sidebar__search-btn" id="locationSearchBtn" aria-label="검색">
-					            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-					          </button>
-					        </div>
-					      </div>
-					    </div>
-					  </div>
-					  <!-- <button type="button" class="map-search-sidebar__open" data-target="locationSearchPanel">
-					    열기
-					  </button> -->
-					</aside>	<!-- 우측: 지도 영역 (전체 채움) -->
+					<aside class="map-menu-panel is-open" aria-label="서비스 메뉴">
+						<header class="map-menu-panel__header">
+							<h2>지능공간정보 플랫폼</h2>
+						</header>
+						<nav class="map-menu-panel__inner">
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title"><i class="map-menu-icon map-menu-icon-land"></i>토지검색</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">토지(임야)</a></li>
+									<li><a href="#" class="map-menu-panel__link">부동산 정보</a></li>
+									<li><a href="#" class="map-menu-panel__link">토지 이용 규제</a></li>
+								</ul>
+							</section>
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title"><i class="map-menu-icon map-menu-icon-building"></i>건물 검색</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">건물 검색</a></li>
+								</ul>
+							</section>
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title"><i class="map-menu-icon map-menu-icon-property"></i>공유재산 검색</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">규제 확인</a></li>
+									<li><a href="#" class="map-menu-panel__link">건축물 대장</a></li>
+									<li><a href="#" class="map-menu-panel__link">도유지(공유지)</a></li>
+								</ul>
+							</section>
+						</nav>
+					</aside>
+					<!-- 우측: 지도 영역 (전체 채움) -->
 					<div class="map-area">
 						<div id="map-container"></div>
-						<div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+						
 						
 						<div class="map-toolbar-wrap">
 							<button type="button" class="map-toolbar__btn" data-tool="theme">
@@ -154,11 +137,14 @@
 								</button>
 							</div>
 						
-							<div>
+							<div class="map-toolbar__btn-wrap">
 								<button type="button" class="map-toolbar__btn" data-tool="compass" title="나침반"></button>
 							</div>
-							<div>
+							<div class="map-toolbar__btn-wrap">
 								<button type="button" class="map-toolbar__btn" data-tool="current-location" title="현재위치"></button>
+							</div>
+							<div class="map-toolbar__btn-wrap">
+								<button type="button" class="map-toolbar__btn" data-tool="home" title="홈"></button>
 							</div>
 							
 						</div>		<div class="map-search-zoom" id="mapSearchZoom">
@@ -311,16 +297,68 @@
 						    </div>
 						  </div>
 						  
-						</div>		<!--
-						스케일 바
-						<div class="map-scale-bar">
-							<span class="map-scale-bar__line"></span>
-							<span class="map-scale-bar__labels">
-								<span>0</span><span>100m</span><span>200m</span>
-							</span>
-						</div> -->
+						</div>
+						<!-- 토지(임야) 검색 플로트 -->
+						<div class="map-ui-modal-backdrop lnd-stack is-open" id="landSearchFloatStack" aria-hidden="true">
+							<div class="lnd-rslt" id="landSearchResultPanel">
+								<header class="map-ui-modal__header lnd-rslt__hd">
+									<h3><i class="menu_icon" aria-hidden="true"></i>토지 검색 결과 목록</h3>
+									<button type="button" class="lnd-rslt__fold" aria-expanded="true"></button>
+								</header>
+								<div class="lnd-rslt__body" id="landSearchResultBody">
+									<input type="search" class="map-ui-input lnd-rslt__q" id="landSearchResultQuery" readonly value="경상북도 문경시 점촌동 123-4">
+									<ol class="lnd-rslt__list" id="landSearchResultList">
+										<li><button type="button" class="lnd-rslt__item is-active"><span class="lnd-rslt__no">1</span> 경상북도 문경시 점촌동 123-4</button></li>
+									</ol>
+								</div>
+							</div>
+							<div class="map-ui-modal lnd-modal" id="landSearchDetailModal">
+								<header class="map-ui-modal__header">
+									<h3>토지(임야) 검색</h3>
+									<button type="button" class="map-ui-modal__close" aria-label="닫기" data-land-search-close></button>
+								</header>
+								<div class="map-ui-modal__body">
+									<div class="map-ui-modal__content lnd-dtl" data-land-search-detail>
+										<div class="lnd-tags">
+											<span class="lnd-tag lnd-tag_pri">대지</span>
+											<span class="lnd-tag lnd-tag_mute">일반</span>
+										</div>
+										<p class="lnd-addr" data-land-search-address>경상북도 문경시 점촌동 123-4</p>
+										<section class="lnd-sec">
+											<h4 id="landHdrBasic" class="lnd-h">기본정보</h4>
+											<div class="lnd-tbl">
+												<div class="lnd-row">
+													<div class="lnd-lbl">지목</div>
+													<div class="lnd-val" data-land-jimok>대 (08)</div>
+												</div>
+												<div class="lnd-row">
+													<div class="lnd-lbl">면적</div>
+													<div class="lnd-val" data-land-area>345.2㎡</div>
+												</div>
+												<div class="lnd-row">
+													<div class="lnd-lbl">소유구분</div>
+													<div class="lnd-val" data-land-owner>사유지</div>
+												</div>
+												<div class="lnd-row">
+													<div class="lnd-lbl">변동일자</div>
+													<div class="lnd-val" data-land-changed>2021-05-12</div>
+												</div>
+											</div>
+										</section>
+										<section class="lnd-sec lnd-sec_price">
+											<h4 id="landHdrPrice" class="lnd-h">공시가 정보</h4>
+											<div class="lnd-price">
+												<p class="lnd-pnote" data-land-price-meta>2023년 1월 기준 (㎡)</p>
+												<p class="lnd-pval" data-land-price>1,245,000 원</p>
+												<button type="button" class="lnd-trend">연도별 변동 추이 보기</button>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
 				
-						<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
+				
 					</div>
 				</div>
 			</div>

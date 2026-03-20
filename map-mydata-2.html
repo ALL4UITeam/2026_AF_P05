@@ -1,0 +1,125 @@
+{{#> layout}}
+
+<div class="vibe-container map-mydata-page">
+	
+	
+	{{> map-mydata-user}}
+	
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+    <div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+	</div>
+
+
+  <!-- 데이터 공유 설정 모달 -->
+  <div class="map-ui-modal-backdrop is-open" id="shareModal" aria-hidden="true">
+    <div class="map-ui-modal mydata-share-modal">
+      <header class="map-ui-modal__header">
+        <h3><i class="share_icon"></i>데이터 공유 설정</h3>
+        <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
+      </header>
+      <div class="share-modal__info">
+        <span class="share-modal__filename">사업지구_경계.shp</span>
+        <span class="share-modal__type">POLYGON</span>
+      </div>
+      <div class="map-ui-modal__body">
+
+        <div class="map-ui-tabs" role="tablist">
+          <button type="button" class="map-ui-tabs__item is-active" data-map-ui-tab="dept" role="tab" aria-selected="true"><span>부서 공유</span></button>
+          <button type="button" class="map-ui-tabs__item" data-map-ui-tab="user" role="tab" aria-selected="false"><span>사용자 공유</span></button>
+        </div>
+
+        <!-- 부서 공유 패널 -->
+        <div class="map-ui-modal_tab-content mydata-share-panel" data-map-ui-content="dept">
+          <div class="mydata-share-search">
+            <div class="sidebar__search-row">
+              <input type="text" class="map-ui-input input-search" placeholder="레이어명 검색">
+              <button type="button" class="sidebar__search-btn" aria-label="검색">검색</button>
+            </div>
+          </div>
+          <div class="mydata-share-dept">
+            <div class="interest-panel__section-title">조직도</div>
+            <ul class="interest-panel__section-list">
+              <li>
+                <label class="input-check">
+                  <input type="checkbox" checked>
+                  <span class="input-check__ui" aria-hidden="true"></span>
+                  <span class="input-check__label">토지정보과</span>
+                </label>
+              </li>
+              <li>
+                <label class="input-check">
+                  <input type="checkbox">
+                  <span class="input-check__ui" aria-hidden="true"></span>
+                  <span class="input-check__label">도시계획과</span>
+                </label>
+              </li>
+              <li>
+                <label class="input-check">
+                  <input type="checkbox">
+                  <span class="input-check__ui" aria-hidden="true"></span>
+                  <span class="input-check__label">안전재난과</span>
+                </label>
+              </li>
+              <li>
+                <label class="input-check">
+                  <input type="checkbox" checked>
+                  <span class="input-check__ui" aria-hidden="true"></span>
+                  <span class="input-check__label">환경정책과</span>
+                </label>
+              </li>
+              <li>
+                <label class="input-check">
+                  <input type="checkbox">
+                  <span class="input-check__ui" aria-hidden="true"></span>
+                  <span class="input-check__label">도로철도과</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 사용자 공유 패널 -->
+        <div class="map-ui-modal_tab-content mydata-share-panel" data-map-ui-content="user" hidden>
+          <div class="mydata-share-search">
+            <div class="sidebar__search-row">
+              <input type="text" class="map-ui-input input-search" placeholder="사용자명 또는 ID 검색">
+              <button type="button" class="sidebar__search-btn input-search" aria-label="검색">검색</button>
+            </div>
+          </div>
+          <div class="mydata-share-users">
+            <div class="mydata-share-users__head">
+              <span class="mydata-share-users__title">공유 사용자 목록</span>
+              <button type="button" class="mydata-share-users__add">추가하기</button>
+            </div>
+            <ul class="mydata-share-users__list">
+              <li class="mydata-share-users__item">
+                <span class="mydata-share-users__name">김철수 (도시과)</span>
+                <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+              </li>
+              <li class="mydata-share-users__item">
+                <span class="mydata-share-users__name">이영희 (환경과)</span>
+                <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+              </li>
+              <li class="mydata-share-users__item">
+                <span class="mydata-share-users__name">박민수 (안전과)</span>
+                <button type="button" class="mydata-share-users__remove" aria-label="삭제" data-share-user-remove>&times;</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <footer class="map-ui-modal__footer">
+          <button type="button" class="map-ui-btn map-ui-modal__close">취소</button>
+          <button type="button" class="map-ui-btn map-ui-btn--primary">적용</button>
+        </footer>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+{{/layout}}

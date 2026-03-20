@@ -1,0 +1,21 @@
+{{#> layout}}
+<style>
+  .map-toolbar__btn-wrap{display: none;}
+</style>
+<div class="vibe-container map-search-page">
+	
+	{{> map-search-location-panel}}
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+		<div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i class="map-search-breadcrumb__separator"></i> 관양동</div>
+		{{> map-toolbar}}
+		{{> map-search-zoom}}
+		{{> map-floating-controls}}
+		{{> map-building-info}}
+		{{> map-options}}
+		
+		<footer class="map-disclaimer">※ 연속지적도를 포함한 모든 주제도는 참고용으로만 사용하시기 바랍니다.</footer>
+	</div>
+</div>
+{{/layout}}

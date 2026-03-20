@@ -1,4 +1,4 @@
-<aside class="map-search-sidebar" id="dronePanel">
+<aside class="map-search-sidebar is-open" id="dronePanel">
   <div class="map-search-sidebar__inner">
     <header class="map-search-sidebar__header">
       <h2>드론영상</h2>
@@ -10,17 +10,18 @@
     <div class="map-search-sidebar__body">
       <div class="mydata-panel">
         <div class="drone-filter">
-          <div class="drone-filter__group">
-            <label class="drone-filter__label">프로젝트명</label>
-            <div class="drone-filter__input-wrap">
-              <input type="text" class="drone-filter__input" placeholder="검색어 입력">
+          <div class="filter-group">
+            <label class="filter-group__label">프로젝트명</label>
+            <div class="sidebar__search-row">
+              <input type="text" class="map-ui-input input-search" placeholder="검색어 입력">
+              <button type="button" class="sidebar__search-btn input-search" aria-label="검색">검색</button>
             </div>
           </div>
 
-          <div class="drone-filter__group">
-            <label class="drone-filter__label">촬영지역</label>
-            <div class="drone-filter__select-wrap">
-              <select class="drone-filter__select">
+          <div class="filter-group">
+            <label class="filter-group__label">촬영지역</label>
+            <div class="filter-group__select-wrap">
+              <select class="map-ui-select">
                 <option value="">전체</option>
                 <option value="gyeongbuk">경상북도</option>
                 <option value="daegu">대구광역시</option>
@@ -29,42 +30,48 @@
             </div>
           </div>
 
-          <div class="drone-filter__group">
-            <label class="drone-filter__label">촬영기간</label>
-            <div class="drone-filter__date-wrap">
-              <div class="drone-filter__date">
-                <input type="date" class="drone-filter__date-input" value="2026-01-01">
+          <div class="filter-group">
+            <label class="filter-group__label">촬영기간</label>
+              <div class="filter-group__date-wrap">
+              <div class="map-ui-date-start">
+                <input type="date" class="map-ui-date" value="2026-01-01">
               </div>
-              <div class="drone-filter__date">
-                <input type="date" class="drone-filter__date-input" value="2026-02-01">
+              <div class="map-ui-date-end">
+                <input type="date" class="map-ui-date" value="2026-02-01">
               </div>
             </div>
           </div>
 
-          <div class="drone-filter__group">
-            <label class="drone-filter__label">진행상태</label>
-            <div class="drone-filter__radio-wrap">
-              <label class="drone-filter__radio">
+          <div class="filter-divider"></div>
+
+          <div class="filter-group">
+            <label class="filter-group__label">진행상태</label>
+            <div class="map-ui-radio-group">
+              <label class="map-ui-radio">
                 <input type="radio" name="droneStatus" value="all" checked>
-                <span>전체</span>
+                <span class="map-ui-radio__ui"></span>
+                <span class="map-ui-radio__label">전체</span>
               </label>
-              <label class="drone-filter__radio">
+              <label class="map-ui-radio">
                 <input type="radio" name="droneStatus" value="processing">
-                <span>처리중</span>
+                <span class="map-ui-radio__ui"></span>
+                <span class="map-ui-radio__label">처리중</span>
               </label>
-              <label class="drone-filter__radio">
+              <label class="map-ui-radio">
                 <input type="radio" name="droneStatus" value="done">
-                <span>처리완료</span>
+                <span class="map-ui-radio__ui"></span>
+                <span class="map-ui-radio__label">처리완료</span>
               </label>
-              <label class="drone-filter__radio">
+              <label class="map-ui-radio">
                 <input type="radio" name="droneStatus" value="waiting">
-                <span>대기</span>
+                <span class="map-ui-radio__ui"></span>
+                <span class="map-ui-radio__label">대기</span>
               </label>
             </div>
           </div>
         </div>
-        <div class="mydata-panel__footer">
-          <button type="button" class="mydata-panel__btn">조회하기</button>
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">조회하기</button>
         </div>
       </div>
     </div>

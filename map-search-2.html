@@ -1,0 +1,112 @@
+{{#> layout}}
+<div class="vibe-container map-search-page">
+	
+
+	{{> map-search-land}}
+
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+		
+		{{> map-toolbar}}
+		{{> map-search-zoom}}
+		{{> map-floating-controls}}
+		{{> map-building-info}}
+		{{> map-options}}
+
+
+
+		<!-- 실거래가 플로트 -->
+		<div class="map-ui-modal-backdrop lnd-stack is-open" id="tradeFloatStack" aria-hidden="true">
+			<div class="lnd-rslt" id="tradeResultPanel">
+				<header class="map-ui-modal__header lnd-rslt__hd">
+					<h3><i class="menu_icon" aria-hidden="true"></i>실거래가 목록</h3>
+					<button type="button" class="lnd-rslt__fold" aria-expanded="true"></button>
+				</header>
+				<div class="lnd-rslt__body" id="tradeResultBody">
+					<input type="search" class="map-ui-input lnd-rslt__q" id="tradeResultQuery" readonly value="경상북도 문경시 점촌동 123-4">
+					<ol class="lnd-rslt__list" id="tradeResultList">
+						<li><button type="button" class="lnd-rslt__item is-active"><span class="lnd-rslt__no">1</span> 경상북도 문경시 점촌동 123-4</button></li>
+					</ol>
+				</div>
+			</div>
+			<div class="map-ui-modal lnd-modal lnd-modal--wide" id="tradeDetailModal">
+				<header class="map-ui-modal__header">
+					<h3>실거래가 목록</h3>
+					<button type="button" class="map-ui-modal__close" aria-label="닫기" data-land-search-close></button>
+				</header>
+				<div class="map-ui-modal__body">
+					<div class="map-ui-modal__content lnd-dtl" data-land-search-detail>
+						<p class="lnd-addr" data-land-search-address>경상북도 문경시 점촌동 123-4</p>
+						<div class="map-ui-table-wrap map-ui-table-wrap--sheet">
+							<table class="map-ui-table map-ui-table--sheet">
+								<thead>
+									<tr>
+										<th scope="col">계약년월</th>
+										<th scope="col">층</th>
+										<th scope="col">면적(㎡)</th>
+										<th scope="col">보증금(만원)</th>
+										<th scope="col">임대료(만원)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2026년 12월</td>
+										<td>15층</td>
+										<td>84.975</td>
+										<td class="map-ui-td--emph">30,000</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td>2026년 11월</td>
+										<td>14층</td>
+										<td>84.975</td>
+										<td class="map-ui-td--emph">29,500</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td>2026년 08월</td>
+										<td>12층</td>
+										<td>84.975</td>
+										<td class="map-ui-td--emph">28,000</td>
+										<td>120</td>
+									</tr>
+									<tr>
+										<td>2025년 12월</td>
+										<td>15층</td>
+										<td>84.975</td>
+										<td class="map-ui-td--emph">27,000</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td>2025년 06월</td>
+										<td>8층</td>
+										<td>84.975</td>
+										<td class="map-ui-td--emph">26,000</td>
+										<td>110</td>
+									</tr>
+									<tr>
+										<td>2024년 09월</td>
+										<td>22층</td>
+										<td>59.872</td>
+										<td class="map-ui-td--emph">22,000</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td>2024년 03월</td>
+										<td>5층</td>
+										<td>59.872</td>
+										<td class="map-ui-td--emph">20,000</td>
+										<td>95</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+{{/layout}}
