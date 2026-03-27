@@ -1,0 +1,717 @@
+// src/scss/_toc-manage.scss — toc-manage.html 전용 (페이지 스코프)
+@use 'toc-vars' as *;
+
+// ── 전체 카드 레이아웃 ──
+.toc-manage-page {
+
+	.toc-layout {
+		padding: 16px;
+		gap: 16px;
+	}
+
+	.toc-sidebar {
+		border-radius: 12px;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+	}
+
+	.toc-map-area {
+		border-radius: 12px;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+		overflow: hidden;
+
+		#map-container {
+			border-radius: 12px;
+		}
+	}
+
+	.toc-sidebar__search {
+		padding: 12px 14px;
+	}
+
+	.toc-sidebar__body {
+		padding: 10px 14px;
+	}
+}
+
+// ── 검색 인풋 (아이콘 우측) ──
+.toc-manage-page__search-input {
+	width: 100%;
+	height: 38px;
+	padding: 0 36px 0 14px;
+	font-size: 13px;
+	border: 1px solid #cfd8e3;
+	border-radius: 8px;
+	background: #fff url('/images/svg/ico_search_16_01.svg') calc(100% - 12px) center / 14px no-repeat;
+	outline: none;
+
+	&:focus {
+		border-color: $toc-primary;
+		box-shadow: 0 0 0 2px rgba($toc-primary, 0.1);
+	}
+}
+
+// ── 레이어 검색 탭: 그룹 카드 ──
+.toc-manage-page__group-card {
+	margin-bottom: 10px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.toc-manage-page__group-header {
+	display: flex;
+	align-items: center;
+	padding: 10px 14px;
+	cursor: pointer;
+	transition: background 0.15s;
+	border: 1px solid $toc-border;
+	border-radius: 6px;
+	&:hover {
+		background: #f9fafb;
+	}
+}
+
+.toc-manage-page__group-name {
+	flex: 1;
+	font-size: 14px;
+	font-weight: 700;
+	color: #1f2937;
+}
+
+.toc-manage-page__arrow {
+	width: 6px;
+	height: 6px;
+	flex-shrink: 0;
+	border-right: 1px solid #9ca3af;
+	border-bottom: 1px solid #9ca3af;
+	transform: rotate(45deg);
+	transition: transform 0.2s;
+	margin-left: 6px;
+
+	&.is-open {
+		transform: rotate(-135deg);
+	}
+}
+
+.toc-manage-page__group-body {
+	padding: 4px 0px 00px 20px;
+	border-top: 1px solid #f0f1f3;
+}
+
+// 서브그룹 카드
+.toc-manage-page__sub-card {
+	margin-bottom: 6px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.toc-manage-page__sub-header {
+	display: flex;
+	align-items: center;
+	padding: 10px 14px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #374151;
+	cursor: pointer;
+	transition: background 0.15s;
+	border: 1px solid $toc-border;
+	border-radius: 6px;
+	background: #f8f9fb;
+	&:hover {
+		background: #f9fafb;
+	}
+
+	span:first-child {
+		flex: 1;
+	}
+}
+
+.toc-manage-page__sub-body {
+	padding: 4px 0 0px 20px;
+	border-top: 1px solid #f0f1f3;
+}
+
+// 레이어 행
+.toc-manage-page__layer-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 12px;
+	border-radius: 6px;
+	font-size: 13px;
+	color: #374151;
+	cursor: pointer;
+	transition: background 0.15s;
+	border: 1px solid $toc-border;
+	margin-bottom: 6px;
+	&:hover {
+		background: #f3f4f6;
+	}
+
+	&.is-active {
+		background: $toc-primary-bg;
+		color: $toc-primary;
+		font-weight: 600;
+		span{
+			color:#008a9a;
+		}
+	}
+
+	// 공통 .chkbox: 체크 UI만 감싸는 span (전체 행 label과 분리)
+	> .chkbox {
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+		margin-bottom: 0;
+		align-self: center;
+		cursor: pointer;
+
+		.chkOn {
+			left: 0;
+			top: 50%;
+			margin-top: -10px;
+		}
+	}
+}
+
+.toc-manage-page__layer-code {
+	font-size: 11px;
+	color: #9ca3af;
+	font-family: 'Consolas', monospace;
+	flex-shrink: 0;
+}
+
+.toc-manage-page__layer-name {
+	flex: 1;
+}
+
+// ── TOC 관리 탭: 헤더 ──
+.toc-manage-page__manage-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 14px;
+	border-bottom: 1px solid #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+	flex-shrink: 0;
+	margin-top: 25px;
+	background: #f8fafc;
+}
+
+.toc-manage-page__manage-title {
+	font-size: 13px;
+	font-weight: 700;
+	color: #4b5563;
+}
+
+.toc-manage-page__add-group-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 10px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #2c7da8;
+	background: #fff;
+	border: 1px solid #2c7da8;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background 0.15s;
+	min-height: 20px;
+	i {
+		display: inline-block;
+		background-image: url('/images/system/toc/group-add.png');
+		width: 14px;
+		height: 12px;
+		color: #6b7280;
+		background-repeat: no-repeat;
+	}
+}
+
+// ── TOC 관리 탭: 편집 카드 ──
+.toc-manage-page__edit-card {
+	
+	margin-bottom: 6px;
+	overflow: hidden;
+	transition: border-color 0.2s, box-shadow 0.2s;
+
+	&.is-selected {
+
+		.toc-manage-page__edit-header {
+			background: #f2f6f7;
+			border: 1px solid #d8e2e6;
+			border-radius: 6px;
+		}
+
+		.toc-manage-page__edit-name {
+			color: $toc-primary;
+		}
+	}
+}
+
+.toc-manage-page__edit-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 12px;
+	cursor: pointer;
+	transition: background 0.15s;
+
+	&:hover {
+		background: #fafbfc;
+	}
+}
+
+.toc-manage-page__folder-ico {
+	flex-shrink: 0;
+	width: 19px;
+	height: 14px;
+	background: url('/images/system/toc/folder_icon.png') no-repeat center / contain;
+}
+
+.toc-manage-page__edit-name {
+	flex: 1;
+	font-size: 13px;
+	font-weight: 700;
+	color: #1f2937;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.toc-manage-page__edit-header-chk {
+	flex-shrink: 0;
+	margin-left: auto;
+	margin-bottom: 0;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.toc-manage-page__edit-tools {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	flex-shrink: 0;
+	height: 20px;
+	padding: 0 8px;
+	background: #fff;
+	border: 1px solid #d1d5db;
+	border-radius: 4px;
+
+	.toc-manage-page__edit-tool {
+		width: 12px;
+		height: 12px;
+		border: 0;
+		cursor: pointer;
+		opacity: 0.85;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		transition: opacity 0.15s, background-image 0.15s;
+		padding: 8px;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+// 툴 아이콘 매핑 (op01~op05)
+.toc-manage-page__edit-tool--edit {
+	background-image: url('/images/system/toc/op01.png');
+	&:hover { background-image: url('/images/system/toc/op01-on.png'); }
+}
+.toc-manage-page__edit-tool--add {
+	background-image: url('/images/system/toc/op02.png');
+	&:hover { background-image: url('/images/system/toc/op02-on.png'); }
+}
+.toc-manage-page__edit-tool--up {
+	background-image: url('/images/system/toc/op03.png');
+	&:hover { background-image: url('/images/system/toc/op03-on.png'); }
+}
+.toc-manage-page__edit-tool--down {
+	background-image: url('/images/system/toc/op04.png');
+	&:hover { background-image: url('/images/system/toc/op04-on.png'); }
+}
+.toc-manage-page__edit-tool--delete {
+	background-image: url('/images/system/toc/op05.png');
+	&:hover { background-image: url('/images/system/toc/op05-on.png'); }
+}
+
+// 선택된 그룹은 폴더 아이콘 on 상태
+.toc-manage-page__edit-card.is-selected .toc-manage-page__folder-ico {
+	background-image: url('/images/system/toc/folder_icon-on.png');
+}
+
+.toc-manage-page__edit-body {
+	padding: 4px 12px 8px 20px;
+}
+
+// 편집 탭: 2~3뎁스 폴더 트리 (헤더 + data-toc-toggle / body)
+.toc-manage-page__edit-folder {
+	margin-bottom: 6px;
+	overflow: hidden;
+	border-radius: 6px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&--nested {
+		margin-bottom: 6px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.toc-manage-page__edit-folder-header {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 7px 10px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #374151;
+	cursor: pointer;
+	transition: background 0.15s;
+	border-radius: 6px;
+	background: #f8f9fb;
+
+	&:hover {
+		background: #f3f4f6;
+	}
+
+	.toc-manage-page__arrow {
+		margin-left: auto;
+		flex-shrink: 0;
+	}
+}
+
+.toc-manage-page__edit-folder-ico {
+	flex-shrink: 0;
+	width: 16px;
+	height: 12px;
+	background: url('/images/system/toc/folder_icon.png') no-repeat center / contain;
+	opacity: 0.9;
+}
+
+.toc-manage-page__edit-folder-title {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.toc-manage-page__edit-folder-body {
+	padding: 4px 0 2px 14px;
+	margin-top: 2px;
+
+	.toc-manage-page__edit-folder--nested > .toc-manage-page__edit-folder-header {
+		background: #fff;
+	}
+
+	.toc-manage-page__edit-layer:last-child {
+		margin-bottom: 2px;
+	}
+}
+
+.toc-manage-page__edit-sub {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 5px 4px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #6b7280;
+
+	svg {
+		flex-shrink: 0;
+	}
+
+	&--nested {
+		padding-left: 20px;
+	}
+}
+
+.toc-manage-page__edit-layer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 4px;
+	font-size: 12px;
+	color: #374151;
+	cursor: pointer;
+	border-radius: 4px;
+
+	&:hover {
+		background: #f9fafb;
+	}
+
+	> .chkbox {
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+		margin-bottom: 0;
+		align-self: center;
+		cursor: pointer;
+
+		.chkOn {
+			left: 0;
+			top: 50%;
+			margin-top: -10px;
+		}
+	}
+
+	&--deep {
+		padding-left: 36px;
+	}
+}
+
+.toc-manage-page__edit-layer-code {
+	font-size: 11px;
+	color: #9ca3af;
+	font-family: 'Consolas', monospace;
+}
+
+// ── 사이드바 하단 고정 푸터 ──
+.toc-manage-page__footer {
+	flex-shrink: 0;
+	padding: 10px 14px;
+	border-top: 1px solid $toc-border;
+	background: #fafbfc;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	border-radius: 0 0 12px 12px;
+}
+
+.toc-manage-page__footer-input {
+	flex: 1;
+	height: 34px;
+	padding: 0 12px;
+	font-size: 13px;
+	border: 1px solid $toc-border;
+	border-radius: 6px;
+	outline: none;
+	min-width: 0;
+
+	&:focus {
+		border-color: $toc-primary;
+	}
+}
+
+.toc-manage-page__footer-save {
+	height: 34px;
+	padding: 0 18px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #fff;
+	background: $toc-primary;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	flex-shrink: 0;
+	transition: background 0.15s;
+
+	&:hover {
+		background: $toc-primary-dark;
+	}
+}
+
+.toc-manage-page__footer-list {
+	height: 34px;
+	padding: 0 14px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #374151;
+	background: #fff;
+	border: 1px solid $toc-border;
+	border-radius: 6px;
+	cursor: pointer;
+	flex-shrink: 0;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	transition: background 0.15s;
+
+	&:hover {
+		background: #f3f4f6;
+	}
+}
+
+// ── 플로팅 레이어 추가 패널 ── (지도 우측 오버레이)
+.toc-manage-page__float-panel {
+	display: none;
+	position: absolute;
+	top: 40px;
+	left: 450px;
+	transform: none;
+	width: 420px;
+	max-width: calc(100% - 40px);
+	max-height: calc(100% - 120px);
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 16px 60px rgba(19, 19, 19, 0.28);
+	z-index: 100;
+	flex-direction: column;
+	overflow: hidden;
+
+	&.is-open {
+		display: flex;
+	}
+}
+
+.toc-manage-page__float-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 16px;
+	height: 56px;
+	background: #334155;
+	flex-shrink: 0;
+
+	h3 {
+		font-size: 18px;
+		font-weight: 700;
+		color: #fff;
+		margin: 0;
+	}
+}
+
+.toc-manage-page__float-close {
+	width: 34px;
+	height: 34px;
+	border: none;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	font-size: 22px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(('/images/system/toc/modal-close.png'));
+	background-repeat: no-repeat;
+	background-position: center;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+}
+
+.toc-manage-page__float-search {
+	padding: 14px 16px;
+	background: #f8fafc;
+	border-bottom: 1px solid #e4e9ef;
+}
+
+.toc-manage-page__float-search-field {
+	position: relative;
+}
+
+.toc-manage-page__float-search-input {
+	width: 100%;
+	height: 44px;
+	padding: 0 46px 0 14px;
+	font-size: 14px;
+	border: 1px solid #dbe3ee;
+	border-radius: 10px;
+	outline: none;
+	background: #fff;
+
+	&:focus {
+		border-color: $toc-primary;
+		box-shadow: 0 0 0 3px rgba(24, 166, 177, 0.18);
+	}
+}
+
+.toc-manage-page__float-search-btn {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 32px;
+	height: 32px;
+	border: 0;
+	cursor: pointer;
+	background: url('/images/system/toc/modal-search.png') no-repeat center / 16px 16px;
+
+}
+
+.toc-manage-page__float-list {
+	list-style: none;
+	margin: 0;
+	padding: 12px 16px 16px;
+	overflow-y: auto;
+	flex: 1;
+	background: #fff;
+	max-height: 400px;
+}
+
+.toc-manage-page__float-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 14px;
+	background: #fff;
+	border: 1px solid #e6edf5;
+	border-radius: 12px;
+	margin-bottom: 12px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.toc-manage-page__float-info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+
+	strong {
+		font-size: 15px;
+		font-weight: 700;
+		color: #1f2937;
+	}
+
+	small {
+		font-size: 12px;
+		color: #9ca3af;
+	}
+}
+
+.toc-manage-page__float-add {
+	width: 34px;
+	height: 34px;
+	flex-shrink: 0;
+	border: 0;
+	border-radius: 50%;
+	background: #eef2f7;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background: #97a6ba;
+		border-radius: 2px;
+	}
+	&::before {
+		width: 12px;
+		height: 2px;
+	}
+	&::after {
+		width: 2px;
+		height: 12px;
+	}
+
+	&:hover {
+		background: #e6edf6;
+	}
+}

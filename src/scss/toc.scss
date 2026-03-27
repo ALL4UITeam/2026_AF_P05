@@ -1,0 +1,25 @@
+// src/scss/toc.scss — TOC 전용 스타일 (reset/input 등보다 우선하도록 .toc-wrap 스코프)
+@use 'sass:meta';
+
+// 래퍼 자체 + 직계 레이아웃 (이중 .toc-wrap 방지를 위해 최상위에 둠)
+.toc-wrap {
+	padding: 0 !important;
+	width: 100%;
+	height: 100%;
+
+	.cont-box.toc-page {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		height: calc(100vh - 160px);
+		min-height: 600px;
+		border-radius: 12px;
+		overflow: hidden;
+	}
+
+	@include meta.load-css('toc-common-inner');
+	@include meta.load-css('toc-components');
+	@include meta.load-css('toc-manage');
+	@include meta.load-css('toc-style-setting');
+	@include meta.load-css('toc-saved-list');
+}

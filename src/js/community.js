@@ -136,10 +136,36 @@ function initCodeManageModals() {
   });
 }
 
+function initSpatialDash() {
+  const segmentGroups = document.querySelectorAll('.spatial-dash__segment-group');
+  segmentGroups.forEach((group) => {
+    group.addEventListener('click', (e) => {
+      const btn = e.target.closest('.spatial-dash__segment');
+      if (!btn || !group.contains(btn)) return;
+      group.querySelectorAll('.spatial-dash__segment').forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  });
+
+  document.querySelectorAll('.spatial-dash__panel-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const panel = toggle.closest('.spatial-dash__panel');
+      const body = panel?.querySelector('.spatial-dash__panel-body');
+      if (!panel || !body) return;
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      const next = !expanded;
+      toggle.setAttribute('aria-expanded', next ? 'true' : 'false');
+      panel.classList.toggle('is-collapsed', !next);
+      body.hidden = !next;
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setActiveCommuTab();
   initFaqAccordion();
   initCommuChips();
   initCodeManageTree();
   initCodeManageModals();
+  initSpatialDash();
 });

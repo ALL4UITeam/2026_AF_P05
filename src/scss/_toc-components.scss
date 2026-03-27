@@ -1,0 +1,451 @@
+// src/scss/_toc-components.scss — TOC 공용 컴포넌트 (시스템관리 톤앤매너)
+@use 'toc-vars' as *;
+
+// ── 레이어 검색 탭: 그룹 ──
+.toc-group {
+	margin-bottom: 6px;
+
+	&.is-hidden {
+		display: none;
+	}
+}
+
+.toc-group__header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 12px;
+	background: #fff;
+	border: 1px solid $toc-border;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.15s, border-color 0.15s;
+
+	&:hover {
+		background: $toc-primary-light;
+		border-color: #d1dfe0;
+	}
+}
+
+.toc-group__color {
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	flex-shrink: 0;
+}
+
+.toc-group__name {
+	flex: 1;
+	font-size: 13px;
+	font-weight: 600;
+	color: #1f2937;
+}
+
+.toc-group__caret {
+	width: 10px;
+	height: 10px;
+	flex-shrink: 0;
+	border-right: 2px solid #9ca3af;
+	border-bottom: 2px solid #9ca3af;
+	transform: rotate(45deg);
+	transition: transform 0.2s;
+
+	&.is-open {
+		transform: rotate(-135deg);
+	}
+}
+
+.toc-group__children {
+	list-style: none;
+	padding: 4px 0 0 20px;
+	margin: 0;
+
+	&.is-hidden {
+		display: none;
+	}
+}
+
+.toc-group__sub,
+.toc-group__folder {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: #6b7280;
+}
+
+.toc-group__folder {
+	cursor: pointer;
+	border-radius: 4px;
+
+	&:hover {
+		background: #f9fafb;
+	}
+}
+
+.toc-group__sub-icon {
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+	opacity: 0.35;
+	background: url('/images/svg/ico_search_16_01.svg') no-repeat center center;
+	background-size: 12px;
+}
+
+// ── 레이어 아이템 ──
+.toc-layer-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 5px 10px;
+	border-radius: 4px;
+	transition: background 0.15s;
+	cursor: pointer;
+
+	&:hover {
+		background: $toc-primary-light;
+	}
+
+	&.is-hidden {
+		display: none;
+	}
+
+	&--nested {
+		padding-left: 28px;
+	}
+
+	&.is-selected {
+		background: $toc-selected-bg;
+		outline: 1px solid $toc-selected-border;
+	}
+}
+
+.toc-layer-item__code {
+	font-size: 11px;
+	color: #9ca3af;
+	font-family: 'Consolas', monospace;
+	flex-shrink: 0;
+}
+
+.toc-layer-item__name {
+	flex: 1;
+	font-size: 13px;
+	font-weight: 500;
+	color: #374151;
+}
+
+// ── 편집 트리 (TOC 관리 탭) ──
+.toc-edit-group {
+	margin-bottom: 4px;
+	border: 1px solid $toc-border;
+	border-radius: $toc-radius;
+	overflow: hidden;
+	transition: border-color 0.2s;
+
+	&.is-selected {
+		border-color: $toc-selected-border;
+	}
+}
+
+.toc-edit-group__header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 12px;
+	background: #fff;
+	cursor: pointer;
+	transition: background 0.15s;
+
+	&:hover {
+		background: #fafbfc;
+	}
+
+	.is-selected > & {
+		background: $toc-selected-bg;
+	}
+}
+
+.toc-edit-group__color {
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	flex-shrink: 0;
+}
+
+.toc-edit-group__name {
+	flex: 1;
+	font-size: 13px;
+	font-weight: 600;
+	color: #1f2937;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	.is-selected & {
+		color: $toc-primary;
+	}
+}
+
+.toc-edit-group__toolbar {
+	display: none;
+	align-items: center;
+	gap: 2px;
+	margin-left: auto;
+	flex-shrink: 0;
+
+	.is-selected & {
+		display: flex;
+	}
+}
+
+.toc-edit-group__tool {
+	width: 26px;
+	height: 26px;
+	border: 1px solid #d1d5db;
+	border-radius: 4px;
+	background: #fff;
+	color: #6b7280;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background 0.15s, border-color 0.15s, color 0.15s;
+
+	&:hover {
+		background: $toc-primary-light;
+		border-color: $toc-primary;
+		color: $toc-primary;
+	}
+
+	&--danger:hover {
+		background: #fef2f2;
+		border-color: #fca5a5;
+		color: $toc-danger;
+	}
+}
+
+.toc-edit-group__children {
+	list-style: none;
+	margin: 0;
+	padding: 4px 10px 8px 24px;
+	border-top: 1px solid #f0f0f2;
+
+	&.is-hidden {
+		display: none;
+	}
+}
+
+.toc-edit-group__sub-folder {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	padding: 5px 8px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #6b7280;
+	cursor: pointer;
+	border-radius: 4px;
+
+	&:hover {
+		background: #f9fafb;
+	}
+
+	&--nested {
+		padding-left: 16px;
+	}
+}
+
+.toc-edit-group__folder-icon {
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+	opacity: 0.35;
+	background: url('/images/svg/ico_search_16_01.svg') no-repeat center center;
+	background-size: 12px;
+}
+
+.toc-edit-group__layers {
+	list-style: none;
+	margin: 2px 0 0;
+	padding: 0 0 0 20px;
+	width: 100%;
+
+	&.is-hidden {
+		display: none;
+	}
+}
+
+.toc-edit-layer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+
+	&:hover {
+		background: #f9fafb;
+	}
+}
+
+.toc-edit-layer__code {
+	font-size: 11px;
+	color: #9ca3af;
+	font-family: 'Consolas', monospace;
+	flex-shrink: 0;
+}
+
+.toc-edit-layer__name {
+	flex: 1;
+	color: #374151;
+	font-weight: 500;
+}
+
+// ── 레이어 추가 모달 ──
+.toc-add-modal__list {
+	list-style: none;
+	margin: 14px 0 0;
+	padding: 0;
+}
+
+.toc-add-modal__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 0;
+	border-bottom: 1px solid #f0f0f2;
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&.is-hidden {
+		display: none;
+	}
+
+	&.is-added {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+}
+
+.toc-add-modal__info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.toc-add-modal__name {
+	font-size: 14px;
+	font-weight: 600;
+	color: #1f2937;
+}
+
+.toc-add-modal__key {
+	font-size: 11px;
+	color: #9ca3af;
+	font-family: 'Consolas', monospace;
+}
+
+.toc-add-modal__add {
+	width: 30px;
+	height: 30px;
+	flex-shrink: 0;
+	border: 1px solid #d1d5db;
+	border-radius: 6px;
+	background: #fff;
+	color: #6b7280;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background 0.15s, border-color 0.15s, color 0.15s;
+
+	&:hover {
+		background: #ecfdf5;
+		border-color: #86efac;
+		color: #16a34a;
+	}
+}
+
+// ── 모달 오버라이드 (시스템관리 스타일) ──
+.toc-modal-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(4px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s;
+
+	&.is-open {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.toc-modal {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+	max-width: 420px;
+	width: 100%;
+	max-height: 80vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.toc-modal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	height: 52px;
+	background: $toc-primary;
+	flex-shrink: 0;
+
+	h3 {
+		font-size: 16px;
+		font-weight: 600;
+		color: #fff;
+		margin: 0;
+	}
+}
+
+.toc-modal__close {
+	width: 28px;
+	height: 28px;
+	border: none;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.15s;
+	font-size: 16px;
+
+	&::before {
+		content: '✕';
+	}
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.25);
+	}
+}
+
+.toc-modal__body {
+	padding: 16px 20px 20px;
+	overflow-y: auto;
+	flex: 1;
+}

@@ -1,0 +1,315 @@
+{{#> layout-toc}}
+
+<div class="toc-wrap">
+	<div class="cont-box toc-page toc-manage-page">
+
+		<div class="toc-layout">
+			<!-- 좌측 사이드바 -->
+			<aside class="toc-sidebar" id="tocSidebar">
+
+				<!-- 탭 -->
+				<div class="toc-sidebar__tabs">
+					<button type="button" class="toc-sidebar__tab is-active" data-toc-tab="search">레이어 검색</button>
+					<button type="button" class="toc-sidebar__tab" data-toc-tab="manage">TOC 관리</button>
+				</div>
+
+				<!-- 탭: 레이어 검색 -->
+				<div class="toc-sidebar__panel is-active" data-toc-panel="search">
+					<div class="toc-sidebar__search">
+						<input type="text" class="toc-manage-page__search-input" placeholder="레이어 명 검색">
+						<button type="button" class="toc-manage-page__add-group-btn"><i></i>추가</button>
+					</div>
+					<div class="toc-sidebar__body">
+
+						<!-- 교통편의 그룹 카드 -->
+						<div class="toc-manage-page__group-card">
+							<div class="toc-manage-page__group-header" data-toc-toggle>
+								<strong class="toc-manage-page__group-name">교통편의</strong>
+								<span class="toc-manage-page__arrow is-open"></span>
+							</div>
+							<div class="toc-manage-page__group-body">
+								<div class="toc-manage-page__sub-card">
+									<div class="toc-manage-page__sub-header" data-toc-toggle>
+										<span>교통시설</span>
+										<span class="toc-manage-page__arrow is-open"></span>
+									</div>
+									<div class="toc-manage-page__sub-body">
+										<div class="toc-manage-page__sub-card">
+											<div class="toc-manage-page__sub-header" data-toc-toggle>
+												<span>공항</span>
+												<span class="toc-manage-page__arrow is-open"></span>
+											</div>
+											<div class="toc-manage-page__sub-body">
+												<label class="toc-manage-page__layer-row">
+													<span class="chkbox">
+														<input type="checkbox">
+														<span class="chkOn"></span>
+													</span>
+													<span class="toc-manage-page__layer-code">[01010101]</span>
+													<span class="toc-manage-page__layer-name">국제</span>
+												</label>
+												<label class="toc-manage-page__layer-row">
+													<span class="chkbox">
+														<input type="checkbox">
+														<span class="chkOn"></span>
+													</span>
+													<span class="toc-manage-page__layer-code">[01010101]</span>
+													<span class="toc-manage-page__layer-name">국제</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+
+						<!-- 산림배경 그룹 카드 -->
+						<div class="toc-manage-page__group-card">
+							<div class="toc-manage-page__group-header" data-toc-toggle>
+								<strong class="toc-manage-page__group-name">산림배경</strong>
+								<span class="toc-manage-page__arrow is-open"></span>
+							</div>
+							<div class="toc-manage-page__group-body">
+								<div class="toc-manage-page__sub-card">
+									<div class="toc-manage-page__sub-header" data-toc-toggle>
+										<span>도로중심선</span>
+										<span class="toc-manage-page__arrow is-open"></span>
+									</div>
+									<div class="toc-manage-page__sub-body">
+										<label class="toc-manage-page__layer-row is-active">
+											<span class="chkbox">
+												<input type="checkbox" checked>
+												<span class="chkOn"></span>
+											</span>
+											<span class="toc-manage-page__layer-code">[0x1310]</span>
+											<span class="toc-manage-page__layer-name">고속도로</span>
+										</label>
+										<label class="toc-manage-page__layer-row">
+											<span class="chkbox">
+												<input type="checkbox">
+												<span class="chkOn"></span>
+											</span>
+											<span class="toc-manage-page__layer-code">[0x1320]</span>
+											<span class="toc-manage-page__layer-name">일반국도</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 탭: TOC 관리 -->
+				<div class="toc-sidebar__panel" data-toc-panel="manage">
+					<div class="toc-manage-page__manage-header">
+						<span class="toc-manage-page__manage-title">그룹 및 레이어 편집</span>
+						<button type="button" class="toc-manage-page__add-group-btn" data-toc-open-add-panel>
+							<i></i>
+							그룹추가
+						</button>
+					</div>
+
+					<div class="toc-sidebar__body">
+						<!-- 교통편의 -->
+						<div class="toc-manage-page__edit-card">
+							<div class="toc-manage-page__edit-header" data-toc-toggle>
+								<span class="toc-manage-page__folder-ico" aria-hidden="true"></span>
+								<strong class="toc-manage-page__edit-name">교통편의</strong>
+								<label class="chkbox toc-manage-page__edit-header-chk">
+									<input type="checkbox" checked>
+									<span class="chkOn"></span>
+								</label>
+							</div>
+							<div class="toc-manage-page__edit-body">
+								<div class="toc-manage-page__edit-folder">
+									<div class="toc-manage-page__edit-folder-header" data-toc-toggle>
+										<span class="toc-manage-page__edit-folder-ico" aria-hidden="true"></span>
+										<span class="toc-manage-page__edit-folder-title">교통시설</span>
+										<span class="toc-manage-page__arrow is-open"></span>
+									</div>
+									<div class="toc-manage-page__edit-folder-body">
+										<div class="toc-manage-page__edit-folder toc-manage-page__edit-folder--nested">
+											<div class="toc-manage-page__edit-folder-header" data-toc-toggle>
+												<span class="toc-manage-page__edit-folder-ico" aria-hidden="true"></span>
+												<span class="toc-manage-page__edit-folder-title">공항</span>
+												<span class="toc-manage-page__arrow is-open"></span>
+											</div>
+											<div class="toc-manage-page__edit-folder-body">
+												<label class="toc-manage-page__edit-layer">
+													<span class="chkbox">
+														<input type="checkbox">
+														<span class="chkOn"></span>
+													</span>
+													<span class="toc-manage-page__edit-layer-code">[01010101]</span>
+													<span>국제</span>
+												</label>
+												<label class="toc-manage-page__edit-layer">
+													<span class="chkbox">
+														<input type="checkbox">
+														<span class="chkOn"></span>
+													</span>
+													<span class="toc-manage-page__edit-layer-code">[01010101]</span>
+													<span>국제</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 산림배경 -->
+						<div class="toc-manage-page__edit-card">
+							<div class="toc-manage-page__edit-header" data-toc-toggle>
+								<span class="toc-manage-page__folder-ico" aria-hidden="true"></span>
+								<strong class="toc-manage-page__edit-name">산림배경</strong>
+								<label class="chkbox toc-manage-page__edit-header-chk">
+									<input type="checkbox" checked>
+									<span class="chkOn"></span>
+								</label>
+							</div>
+							<div class="toc-manage-page__edit-folder-body">
+								<div class="toc-manage-page__edit-folder toc-manage-page__edit-folder--nested">
+									<div class="toc-manage-page__edit-folder-header" data-toc-toggle>
+										<span class="toc-manage-page__edit-folder-ico" aria-hidden="true"></span>
+										<span class="toc-manage-page__edit-folder-title">공항</span>
+										<span class="toc-manage-page__arrow is-open"></span>
+									</div>
+									<div class="toc-manage-page__edit-folder-body">
+										<label class="toc-manage-page__edit-layer">
+											<span class="chkbox">
+												<input type="checkbox">
+												<span class="chkOn"></span>
+											</span>
+											<span class="toc-manage-page__edit-layer-code">[01010101]</span>
+											<span>국제</span>
+										</label>
+										<label class="toc-manage-page__edit-layer">
+											<span class="chkbox">
+												<input type="checkbox">
+												<span class="chkOn"></span>
+											</span>
+											<span class="toc-manage-page__edit-layer-code">[01010101]</span>
+											<span>국제</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 현황배경 (선택됨) -->
+						<div class="toc-manage-page__edit-card is-selected">
+							<div class="toc-manage-page__edit-header">
+								<span class="toc-manage-page__folder-ico" aria-hidden="true"></span>
+								<strong class="toc-manage-page__edit-name">현황배경</strong>
+								<div class="toc-manage-page__edit-tools">
+									<button type="button" class="toc-manage-page__edit-tool toc-manage-page__edit-tool--edit" title="편집" aria-label="편집"></button>
+									<button type="button" class="toc-manage-page__edit-tool toc-manage-page__edit-tool--add" title="추가" aria-label="추가" ></button>
+									<button type="button" class="toc-manage-page__edit-tool toc-manage-page__edit-tool--up" title="위로" aria-label="위로"></button>
+									<button type="button" class="toc-manage-page__edit-tool toc-manage-page__edit-tool--down" title="아래로" aria-label="아래로"></button>
+									<button type="button" class="toc-manage-page__edit-tool toc-manage-page__edit-tool--delete" title="삭제" aria-label="삭제"></button>
+								</div>
+							</div>
+							<div class="toc-manage-page__edit-folder-body">
+								<div class="toc-manage-page__edit-folder toc-manage-page__edit-folder--nested">
+									<div class="toc-manage-page__edit-folder-header" data-toc-toggle>
+										<span class="toc-manage-page__edit-folder-ico" aria-hidden="true"></span>
+										<span class="toc-manage-page__edit-folder-title">공항</span>
+										<span class="toc-manage-page__arrow is-open"></span>
+									</div>
+									<div class="toc-manage-page__edit-folder-body">
+										<label class="toc-manage-page__edit-layer">
+											<span class="chkbox">
+												<input type="checkbox">
+												<span class="chkOn"></span>
+											</span>
+											<span class="toc-manage-page__edit-layer-code">[01010101]</span>
+											<span>국제</span>
+										</label>
+										<label class="toc-manage-page__edit-layer">
+											<span class="chkbox">
+												<input type="checkbox">
+												<span class="chkOn"></span>
+											</span>
+											<span class="toc-manage-page__edit-layer-code">[01010101]</span>
+											<span>국제</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 새그룹 -->
+						<div class="toc-manage-page__edit-card">
+							<div class="toc-manage-page__edit-header" data-toc-toggle>
+								<span class="toc-manage-page__folder-ico" aria-hidden="true"></span>
+								<strong class="toc-manage-page__edit-name">새그룹</strong>
+								<span class="toc-manage-page__arrow"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 사이드바 공통 하단 푸터 -->
+				<div class="toc-manage-page__footer">
+					<input type="text" class="toc-manage-page__footer-input" placeholder="저장명 입력">
+					<button type="button" class="toc-manage-page__footer-save">저장</button>
+					<a href="toc-saved-list.html" class="toc-manage-page__footer-list">목록</a>
+				</div>
+			</aside>
+
+			<!-- 레이어 선택 추가: 지도 우측 패널 -->
+			<div class="toc-manage-page__float-panel is-open" id="tocAddLayerPanel" role="dialog" aria-label="레이어 선택 추가">
+				<div class="toc-manage-page__float-header">
+					<h3>레이어 선택 추가</h3>
+					<button type="button" class="toc-manage-page__float-close" data-toc-close-panel aria-label="닫기"></button>
+				</div>
+				<div class="toc-manage-page__float-search">
+					<div class="toc-manage-page__float-search-field">
+						<input type="text" class="toc-manage-page__float-search-input" placeholder="레이어 명 검색">
+						<button type="button" class="toc-manage-page__float-search-btn" aria-label="검색"></button>
+					</div>
+				</div>
+				<ul class="toc-manage-page__float-list">
+					<li class="toc-manage-page__float-item">
+						<div class="toc-manage-page__float-info">
+							<strong>방범용 CCTV</strong>
+							<small>lyr_cctv</small>
+						</div>
+						<button type="button" class="toc-manage-page__float-add" aria-label="추가"></button>
+					</li>
+					<li class="toc-manage-page__float-item">
+						<div class="toc-manage-page__float-info">
+							<strong>소화전</strong>
+							<small>lyr_fire</small>
+						</div>
+						<button type="button" class="toc-manage-page__float-add" aria-label="추가"></button>
+					</li>
+					<li class="toc-manage-page__float-item">
+						<div class="toc-manage-page__float-info">
+							<strong>버스정류장</strong>
+							<small>lyr_bus</small>
+						</div>
+						<button type="button" class="toc-manage-page__float-add" aria-label="추가"></button>
+					</li>
+					<li class="toc-manage-page__float-item">
+						<div class="toc-manage-page__float-info">
+							<strong>지하철 노선</strong>
+							<small>lyr_subway</small>
+						</div>
+						<button type="button" class="toc-manage-page__float-add" aria-label="추가"></button>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 우측 지도 -->
+			<div class="toc-map-area">
+				<div id="map-container"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{{/layout-toc}}

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// 전역 CSS 변수(--BK-70 등)는 /css/gb_Intelligent.css → root.css 에서 제공됨.
+// :root 는 meta.load-css(.toc-wrap) 중첩 시 .toc-wrap :root 로 깨지므로 여기 두지 않음.
+
+// src/scss/_toc-vars.scss — 시스템관리 기반 TOC 공용 변수
+$toc-primary: #18a6b1;
+$toc-primary-dark: #0f8f9a;
+$toc-primary-bg: #e6f7f8;
+$toc-primary-light: #f2fcfb;
+$toc-sidebar-width: 400px;
+$toc-selected-bg: #e6f7f8;
+$toc-selected-border: #18a6b1;
+$toc-danger: #ef4444;
+$toc-border: #e3e4e6;
+$toc-radius: 8px;
