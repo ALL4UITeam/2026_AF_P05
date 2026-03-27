@@ -2081,8 +2081,8 @@ body:has(.header-system-link.active) {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  height: calc(100dvh - 157px - 38px);
-  min-height: 0;
+  min-height: calc(100dvh - 157px - 38px);
+  height: auto;
 }
 
 .access-history__search{
@@ -2196,7 +2196,20 @@ body:has(.header-system-link.active) {
 }
 
 .access-history__paging{
-  margin-top: auto;
+  margin-top: 8px;
+}
+
+.access-history-wrap .paging-wrap{
+  position: static;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  border-top: 0;
+}
+
+.access-history-wrap .paging{
+  height: auto;
 }
 
 .use-history-wrap .use-history{
@@ -2859,8 +2872,8 @@ body:has(.header-system-link.active) {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  height: calc(100dvh - 157px - 38px);
-  min-height: 0;
+  min-height: calc(100dvh - 157px - 38px);
+  height: auto;
   min-width: 0;
   padding-bottom: 8px;
 }
@@ -3088,7 +3101,7 @@ body:has(.header-system-link.active) {
   border: 1px solid #e4e9ef;
   background: #fff;
   border-radius: 8px;
-  padding: 16px 0 0;
+  padding: 16px;
   overflow: hidden;
 }
 
@@ -3108,6 +3121,10 @@ body:has(.header-system-link.active) {
 .spatial-dash__table-wrap .tbl{
   width: 100%;
   min-width: 100%;
+  margin-bottom: 15px !important;
+  &.m-0{
+    margin-bottom: 0 !important;
+  }
 }
 
 .spatial-dash__tbl .spatial-dash__field-name{
@@ -3226,6 +3243,19 @@ body:has(.header-system-link.active) {
 
 .spatial-dash__result-block .paging-wrap{
   margin-top: 4px;
+}
+
+.spatial-dash-wrap .paging-wrap{
+  position: static;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  border-top: 0;
+}
+
+.spatial-dash-wrap .paging{
+  height: auto;
 }
 
 .spatial-dash__status{
@@ -3356,7 +3386,7 @@ body:has(.header-system-link.active) {
 }
 
 .spatial-dash__panel-body{
-  padding: 0;
+  padding: 16px;
   min-width: 0;
 }
 
@@ -3446,5 +3476,307 @@ body:has(.header-system-link.active) {
 
   .spatial-dash__toolbar-btn{
     margin-left: 0;
+  }
+}
+
+/* ---------- 공간데이터 관리 (spatial_data_manage.html) ---------- */
+
+$spatial-mgmt-eye-off: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+$spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2'%3E%3Cpath d='M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+
+.spatial-data-mgmt-wrap .spatial-data-mgmt{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: calc(100dvh - 157px - 38px);
+  min-height: 0;
+}
+
+.spatial-data-mgmt__module-nav{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #e8f1f8 0%, #dde8f2 100%);
+  border: 1px solid #c9d8e8;
+}
+
+.spatial-data-mgmt__module-link{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.spatial-data-mgmt__module-link:hover{
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.spatial-data-mgmt__module-link.is-active{
+  color: #1e3a5f;
+  background: #fff;
+  border-color: #b8cce0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.spatial-data-mgmt__sub-nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  padding: 0 4px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.spatial-data-mgmt__sub-link{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  margin-bottom: -1px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.spatial-data-mgmt__sub-link:hover{
+  color: #334155;
+}
+
+.spatial-data-mgmt__sub-link.is-active{
+  color: #0f172a;
+  border-bottom-color: #2563eb;
+}
+
+.spatial-data-mgmt__page-head{
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-bottom: 0;
+}
+
+.spatial-data-mgmt__page-head h2{
+  margin: 0;
+}
+
+.spatial-data-mgmt__card{
+  border: 1px solid #e4e9ef;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0 0 14px;
+  overflow: hidden;
+}
+
+.spatial-data-mgmt__card--result{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+.spatial-data-mgmt__card-title{
+  margin: 0;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  border-bottom: 1px solid #e4e9ef;
+  background: #f8fafc;
+}
+
+.spatial-data-mgmt__card-title--collapsible::before{
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #64748b;
+}
+
+.spatial-data-mgmt__card-title--plain{
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+}
+
+.spatial-data-mgmt__total-num{
+  color: #0f8f9a;
+}
+
+.spatial-data-mgmt__search-body{
+  padding: 14px 16px 0;
+}
+
+.spatial-data-mgmt__search-grid{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spatial-data-mgmt__form-row{
+  display: flex;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.spatial-data-mgmt__form-row .data-request__label{
+  flex: 0 0 72px;
+  justify-content: flex-start;
+}
+
+.spatial-data-mgmt__input-full{
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  width: 100%;
+  height: 32px;
+  border-color: #cfd8e3;
+  font-size: 13px;
+}
+
+.spatial-data-mgmt__search-actions{
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 4px;
+}
+
+.spatial-data-mgmt__search-actions .com-btn.blue{
+  min-width: 88px !important;
+  height: 34px;
+  line-height: 34px;
+  font-size: 14px;
+}
+
+.spatial-data-mgmt__result-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e4e9ef;
+  background: #f8fafc;
+}
+
+.spatial-data-mgmt__result-bar .com-btn.blue{
+  min-width: 88px !important;
+  height: 32px;
+  line-height: 32px;
+  font-size: 13px;
+}
+
+.spatial-data-mgmt__table-wrap{
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  margin: 0;
+}
+
+.spatial-data-mgmt__table-wrap .tbl td{
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.spatial-data-mgmt__paging{
+  position: static;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  margin-top: 8px;
+  border-top: 0;
+}
+
+.spatial-data-mgmt__epsg{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.spatial-data-mgmt__svc{
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #e2e8f0;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.spatial-data-mgmt__svc::after{
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.24);
+  transition: transform 0.18s ease;
+}
+
+.spatial-data-mgmt__svc:hover{
+  border-color: #94a3b8;
+}
+
+.spatial-data-mgmt__svc--on{
+  border-color: #18a6b1;
+  background: #18a6b1;
+}
+
+.spatial-data-mgmt__svc--on::after{
+  transform: translateX(20px);
+}
+
+.spatial-data-mgmt__svc--on:hover{
+  border-color: #0f8f9a;
+}
+
+.spatial-data-mgmt__act-btn{
+  min-width: 0 !important;
+  height: 28px !important;
+  line-height: 26px !important;
+  padding: 0 10px !important;
+  font-size: 12px !important;
+}
+
+@media (max-width: 768px){
+  .spatial-data-mgmt__form-row{
+    flex-wrap: wrap;
+  }
+
+  .spatial-data-mgmt__form-row .data-request__label{
+    flex: 0 0 100%;
   }
 }

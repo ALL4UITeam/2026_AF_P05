@@ -233,20 +233,33 @@
 	}
 }
 
+// select 커스텀 화살표 (브라우저 기본 드롭다운 UI 제거 후 통일)
+$toc-select-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
 .toc-style-field__select {
 	flex: 1;
 	height: 30px;
-	padding: 0 8px;
+	padding: 0 26px 0 8px;
 	font-size: 12px;
 	border: 1px solid $toc-border;
 	border-radius: 4px;
-	background: #fff;
+	background-color: #fff;
+	background-image: $toc-select-chevron;
+	background-repeat: no-repeat;
+	background-position: right 8px center;
+	background-size: 12px 12px;
+	-webkit-appearance: none;
+	appearance: none;
 	outline: none;
 	cursor: pointer;
 	min-width: 0;
 
 	&:focus {
 		border-color: $toc-primary;
+	}
+
+	&::-ms-expand {
+		display: none;
 	}
 }
 

@@ -136,6 +136,18 @@ function initCodeManageModals() {
   });
 }
 
+function initSpatialDataMgmtSvcToggle() {
+  const root = document.querySelector('.spatial-data-mgmt');
+  if (!root) return;
+
+  root.addEventListener('click', (e) => {
+    const btn = e.target.closest('.spatial-data-mgmt__svc');
+    if (!btn || !root.contains(btn)) return;
+    const on = btn.classList.toggle('spatial-data-mgmt__svc--on');
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
 function initSpatialDash() {
   const segmentGroups = document.querySelectorAll('.spatial-dash__segment-group');
   segmentGroups.forEach((group) => {
@@ -168,4 +180,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCodeManageTree();
   initCodeManageModals();
   initSpatialDash();
+  initSpatialDataMgmtSvcToggle();
 });

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/community.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/community.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					<a href="#" class="comuu">소통공간</a>
+				</div>
+				<div class="header-util">
+					<a href="#" class="header-system-link active">시스템관리</a>
+					<div class="login-info">
+						<p>경상북도청</p>
+						<p class="name">홍길동 님</p>
+					</div>
+				</div>
+			</div>
+      <div class="mega-menu-wrap system">
+        <!-- 시스템관리 메가메뉴 -->
+        <div class="mega-menu">
+          <nav class="mega-menu-nav">
+            <ul class="mega-menu-root">
+              <li class="mega-menu-item has-sub active">
+                <a href="#">사용자</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">사용 승인 요청</a></li>
+                  <li><a href="#">사용자 권한 요청</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">운영 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_use_approval.html">사용자 승인 관리</a></li>
+                  <li><a href="/system_permission_approval.html">권한 승인 요청 관리</a></li>
+                  <li><a href="/system_data_request.html">자료 제공 요청 관리</a></li>
+                  <li><a href="/system_user_group_manage.html">사용자 그룹 관리</a></li>
+                  <li><a href="/system_code_manage.html">코드 관리</a></li>
+                  <li><a href="/system_terms_manage.html">사용 약관 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">로그 및 통계</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_access_history.html">접속 이력 조회</a></li>
+                  <li><a href="/system_use_history.html">사용 이력 조회</a></li>
+                  <li><a href="/system_access_status.html">접속 현황 통계</a></li>
+                  <li><a href="/system_use_status.html">이용 현황 통계</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">공간정보 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/spatial_data_dashboard.html">공간정보 대시보드</a></li>
+                  <li><a href="/spatial_data_manage.html">공간 데이터 관리</a></li>
+                  <li><a href="#">주제도 관리</a></li>
+                  <li><a href="#">보안 각서 관리</a></li>
+                  <li><a href="/toc-manage.html">TOC 관리</a></li>
+                  <li><a href="/toc-style-setting.html">레이어 스타일 설정</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">시스템 지원</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_notice_list.html">공지사항 관리</a></li>
+                  <li><a href="/system_faq_list.html">자주하는 질문 관리</a></li>
+                  <li><a href="/system_qna_list.html">질의응답 관리</a></li>
+                  <li><a href="/system_guide_list.html">사용자 가이드 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">연계 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">연계 대시보드</a></li>
+                  <li><a href="#">연계 현황 관리</a></li>
+                  <li><a href="#">연계 오류 조회</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="cont-box-wrap spatial-data-mgmt-wrap">
+				  <div class="cont-box spatial-data-mgmt">
+				
+				
+				    <div class="tit-wrap spatial-data-mgmt__page-head">
+				      <h2>공간데이터 관리</h2>
+				      <span class="spatial-dash__breadcrumb">데이터관리 &gt; 공간데이터 관리</span>
+				    </div>
+				
+				    <section class="spatial-data-mgmt__card" aria-labelledby="spatial-mgmt-search-title">
+				      <h3 id="spatial-mgmt-search-title" class="spatial-data-mgmt__card-title spatial-data-mgmt__card-title--collapsible">
+				        검색조건 입력
+				      </h3>
+				      <div class="spatial-data-mgmt__search-body">
+				        <div class="spatial-data-mgmt__search-grid">
+				          <div class="spatial-data-mgmt__form-row">
+				            <label for="spatialMgmtDataName" class="data-request__label">데이터명</label>
+				            <input type="text" id="spatialMgmtDataName" class="type01 spatial-data-mgmt__input-full" placeholder="데이터명을 입력하세요." value="">
+				          </div>
+				          <div class="spatial-data-mgmt__form-row">
+				            <label for="spatialMgmtCrs" class="data-request__label">좌표계</label>
+				            <select id="spatialMgmtCrs" class="type01 spatial-data-mgmt__input-full">
+				              <option selected>전체</option>
+				              <option>EPSG:4326</option>
+				              <option>EPSG:5174</option>
+				              <option>EPSG:5179</option>
+				            </select>
+				          </div>
+				        </div>
+				        <div class="spatial-data-mgmt__search-actions">
+				          <button type="button" class="com-btn blue">검색</button>
+				        </div>
+				      </div>
+				    </section>
+				
+				    <section class="spatial-data-mgmt__card spatial-data-mgmt__card--result" aria-labelledby="spatial-mgmt-result-title">
+				      <div class="spatial-data-mgmt__result-bar">
+				        <h3 id="spatial-mgmt-result-title" class="spatial-data-mgmt__card-title spatial-data-mgmt__card-title--plain">총 <span class="spatial-data-mgmt__total-num">5</span> 건</h3>
+				        <button type="button" class="com-btn blue">등록</button>
+				      </div>
+				
+				      <div class="tbl-wrap spatial-data-mgmt__table-wrap">
+				        <table class="tbl">
+				          <colgroup>
+				            <col style="width:5%;">
+				            <col style="width:auto;">
+				            <col style="width:12%;">
+				            <col style="width:8%;">
+				            <col style="width:7%;">
+				            <col style="width:8%;">
+				            <col style="width:11%;">
+				            <col style="width:12%;">
+				          </colgroup>
+				          <thead>
+				            <tr>
+				              <th>No.</th>
+				              <th>데이터명</th>
+				              <th>좌표계</th>
+				              <th>서비스</th>
+				              <th>보안</th>
+				              <th>공동사용</th>
+				              <th>등록일</th>
+				              <th>관리</th>
+				            </tr>
+				          </thead>
+				          <tbody>
+				            <tr>
+				              <td>1</td>
+				              <td class="al">연속지적도_경북</td>
+				              <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				              <td>
+				                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true" title="서비스 여부"></button>
+				              </td>
+				              <td><label for="sdmSec01" class="chkbox"><input type="checkbox" id="sdmSec01" checked><span class="chkOn"></span></label></td>
+				              <td><label for="sdmShr01" class="chkbox"><input type="checkbox" id="sdmShr01" checked><span class="chkOn"></span></label></td>
+				              <td>2026-02-01</td>
+				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
+				            </tr>
+				            <tr>
+				              <td>2</td>
+				              <td class="al">행정구역_시군구</td>
+				              <td><span class="spatial-data-mgmt__epsg">EPSG:5179</span></td>
+				              <td>
+				                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true" title="서비스 여부"></button>
+				              </td>
+				              <td><label for="sdmSec02" class="chkbox"><input type="checkbox" id="sdmSec02" checked><span class="chkOn"></span></label></td>
+				              <td><label for="sdmShr02" class="chkbox"><input type="checkbox" id="sdmShr02" checked><span class="chkOn"></span></label></td>
+				              <td>2026-01-20</td>
+				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
+				            </tr>
+				            <tr>
+				              <td>3</td>
+				              <td class="al">상수도관로_현황</td>
+				              <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				              <td>
+				                <button type="button" class="spatial-data-mgmt__svc" aria-pressed="false" title="서비스 여부"></button>
+				              </td>
+				              <td><label for="sdmSec03" class="chkbox"><input type="checkbox" id="sdmSec03"><span class="chkOn"></span></label></td>
+				              <td><label for="sdmShr03" class="chkbox"><input type="checkbox" id="sdmShr03" checked><span class="chkOn"></span></label></td>
+				              <td>2025-11-30</td>
+				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
+				            </tr>
+				            <tr>
+				              <td>4</td>
+				              <td class="al">도로명주소_도로</td>
+				              <td><span class="spatial-data-mgmt__epsg">EPSG:4326</span></td>
+				              <td>
+				                <button type="button" class="spatial-data-mgmt__svc" aria-pressed="false" title="서비스 여부"></button>
+				              </td>
+				              <td><label for="sdmSec04" class="chkbox"><input type="checkbox" id="sdmSec04" checked><span class="chkOn"></span></label></td>
+				              <td><label for="sdmShr04" class="chkbox"><input type="checkbox" id="sdmShr04"><span class="chkOn"></span></label></td>
+				              <td>2025-12-15</td>
+				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
+				            </tr>
+				            <tr>
+				              <td>5</td>
+				              <td class="al">수질오염_관측소</td>
+				              <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				              <td>
+				                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true" title="서비스 여부"></button>
+				              </td>
+				              <td><label for="sdmSec05" class="chkbox"><input type="checkbox" id="sdmSec05"><span class="chkOn"></span></label></td>
+				              <td><label for="sdmShr05" class="chkbox"><input type="checkbox" id="sdmShr05" checked><span class="chkOn"></span></label></td>
+				              <td>2026-02-05</td>
+				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
+				            </tr>
+				          </tbody>
+				        </table>
+				      </div>
+				
+				      <div class="paging-wrap spatial-data-mgmt__paging">
+				        <ul class="paging">
+				          <li><a class="prev first" href="#"></a></li>
+				          <li><a class="prev" href="#"></a></li>
+				          <li><a class="pLink active" href="#">1</a></li>
+				          <li><a class="pLink" href="#">2</a></li>
+				          <li><a class="pLink" href="#">3</a></li>
+				          <li><a class="next" href="#"></a></li>
+				          <li><a class="next last" href="#"></a></li>
+				        </ul>
+				      </div>
+				    </section>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>
