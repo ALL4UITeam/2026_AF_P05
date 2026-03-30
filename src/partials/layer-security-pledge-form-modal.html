@@ -1,0 +1,133 @@
+<!-- 보안각서 양식 등록/수정 모달 (시스템관리 layerpop 패턴: approval-manage-modal) -->
+<div class="layerpop-wrap w896 approval-manage-modal security-pledge-form-modal" id="popupSecurityPledgeFormRegister" style="display:none;">
+  <header>
+    <h3>보안각서 양식 등록</h3>
+    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSecurityPledgeFormRegister')">
+      <i class="ico-close" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <div class="pop-con security-pledge-form-modal__con">
+    <div class="security-pledge-form-modal__field">
+      <label for="spfRegTitle" class="security-pledge-form-modal__label">양식 제목 <span class="essen">*</span></label>
+      <input type="text" id="spfRegTitle" class="type01 w100per" value="" placeholder="양식 제목을 입력하세요.">
+    </div>
+
+    <div class="security-pledge-form-modal__grid2">
+      <div class="security-pledge-form-modal__field">
+        <label for="spfRegType" class="security-pledge-form-modal__label">서약 구분 <span class="essen">*</span></label>
+        <select id="spfRegType" class="type01 w100per">
+          <option value="">선택</option>
+          <option value="system" selected>시스템 이용</option>
+          <option value="export">자료 반출</option>
+        </select>
+      </div>
+
+      <div class="security-pledge-form-modal__field">
+        <span class="security-pledge-form-modal__label">사용 여부</span>
+        <div class="security-pledge-form-modal__radio-wrap" role="radiogroup" aria-label="사용 여부 선택">
+          <label class="security-pledge-form-modal__radio">
+            <input type="radio" name="spfRegUseYn" value="Y" checked>
+            <span>사용</span>
+          </label>
+          <label class="security-pledge-form-modal__radio">
+            <input type="radio" name="spfRegUseYn" value="N">
+            <span>미사용</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="security-pledge-form-modal__field">
+      <label for="spfRegBody" class="security-pledge-form-modal__label">서약 내용 (동의 문구)</label>
+      <div class="security-pledge-form-modal__editor">
+        <textarea id="spfRegBody" class="security-pledge-form-modal__editor-area" rows="8" placeholder="사용자가 동의해야 할 보안 준수 사항을 입력하세요."></textarea>
+      </div>
+    </div>
+
+    <div class="security-pledge-form-modal__field">
+      <label for="spfRegAttach" class="security-pledge-form-modal__label">첨부 양식 (선택)</label>
+      <div class="security-pledge-form-modal__dropzone">
+        <input type="file" id="spfRegAttach" class="security-pledge-form-modal__file" accept=".hwp,.pdf,application/pdf" />
+        <label for="spfRegAttach" class="security-pledge-form-modal__drop-label">
+          <span class="security-pledge-form-modal__upload-ico" aria-hidden="true"></span>
+          <span class="security-pledge-form-modal__drop-text">클릭하여 서면 양식(HWP, PDF) 업로드</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="pop-footer security-pledge-form-modal__footer jtc">
+    <div class="security-pledge-form-modal__footer-right">
+      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSecurityPledgeFormRegister')">취소</button>
+      <button type="button" class="com-btn xl approval-manage-modal__btn-save" onclick="closePopup('popupSecurityPledgeFormRegister')">저장</button>
+    </div>
+  </div>
+</div>
+
+<div class="layerpop-wrap w896 approval-manage-modal security-pledge-form-modal" id="popupSecurityPledgeFormEdit" style="display:none;">
+  <header>
+    <h3>보안각서 양식 수정</h3>
+    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSecurityPledgeFormEdit')">
+      <i class="ico-close" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <div class="pop-con security-pledge-form-modal__con">
+    <div class="security-pledge-form-modal__field">
+      <label for="spfEditTitle" class="security-pledge-form-modal__label">양식 제목 <span class="essen">*</span></label>
+      <input type="text" id="spfEditTitle" class="type01 w100per" value="시스템 이용 보안각서 (기본)">
+    </div>
+
+    <div class="security-pledge-form-modal__grid2">
+      <div class="security-pledge-form-modal__field">
+        <label for="spfEditType" class="security-pledge-form-modal__label">서약 구분 <span class="essen">*</span></label>
+        <select id="spfEditType" class="type01 w100per">
+          <option value="">선택</option>
+          <option value="system" selected>시스템 이용</option>
+          <option value="export">자료 반출</option>
+        </select>
+      </div>
+
+      <div class="security-pledge-form-modal__field">
+        <span class="security-pledge-form-modal__label">사용 여부</span>
+        <div class="security-pledge-form-modal__radio-wrap" role="radiogroup" aria-label="사용 여부 선택">
+          <label class="security-pledge-form-modal__radio">
+            <input type="radio" name="spfEditUseYn" value="Y" checked>
+            <span>사용</span>
+          </label>
+          <label class="security-pledge-form-modal__radio">
+            <input type="radio" name="spfEditUseYn" value="N">
+            <span>미사용</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="security-pledge-form-modal__field">
+      <label for="spfEditBody" class="security-pledge-form-modal__label">서약 내용 (동의 문구)</label>
+      <div class="security-pledge-form-modal__editor">
+        <textarea id="spfEditBody" class="security-pledge-form-modal__editor-area" rows="8" placeholder="사용자가 동의해야 할 보안 준수 사항을 입력하세요."></textarea>
+      </div>
+    </div>
+
+    <div class="security-pledge-form-modal__field">
+      <label for="spfEditAttach" class="security-pledge-form-modal__label">첨부 양식 (선택)</label>
+      <div class="security-pledge-form-modal__dropzone">
+        <input type="file" id="spfEditAttach" class="security-pledge-form-modal__file" accept=".hwp,.pdf,application/pdf" />
+        <label for="spfEditAttach" class="security-pledge-form-modal__drop-label">
+          <span class="security-pledge-form-modal__upload-ico" aria-hidden="true"></span>
+          <span class="security-pledge-form-modal__drop-text">클릭하여 서면 양식(HWP, PDF) 업로드</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="pop-footer security-pledge-form-modal__footer">
+    <button type="button" class="security-pledge-form-modal__btn-delete" onclick="closePopup('popupSecurityPledgeFormEdit')">삭제</button>
+    <div class="security-pledge-form-modal__footer-right">
+      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSecurityPledgeFormEdit')">취소</button>
+      <button type="button" class="com-btn xl approval-manage-modal__btn-save" onclick="closePopup('popupSecurityPledgeFormEdit')">저장</button>
+    </div>
+  </div>
+</div>

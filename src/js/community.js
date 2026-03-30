@@ -137,14 +137,29 @@ function initCodeManageModals() {
 }
 
 function initSpatialDataMgmtSvcToggle() {
-  const root = document.querySelector('.spatial-data-mgmt');
-  if (!root) return;
-
-  root.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     const btn = e.target.closest('.spatial-data-mgmt__svc');
-    if (!btn || !root.contains(btn)) return;
+    if (!btn) return;
     const on = btn.classList.toggle('spatial-data-mgmt__svc--on');
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
+function initSpatialCoordTransformModal() {
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.spatial-data-mgmt__coord-btn');
+    if (!btn) return;
+
+    const name = btn.dataset.sdmName ?? '';
+    const epsg = btn.dataset.sdmEpsg ?? '';
+    const nameEl = document.getElementById('sdmCoordDataName');
+    const srcEl = document.getElementById('sdmCoordSource');
+    if (nameEl) nameEl.textContent = name || '—';
+    if (srcEl) srcEl.value = epsg;
+
+    if (typeof window.showPopup === 'function') {
+      window.showPopup('popupSpatialCoordTransform');
+    }
   });
 }
 
@@ -181,4 +196,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCodeManageModals();
   initSpatialDash();
   initSpatialDataMgmtSvcToggle();
+  initSpatialCoordTransformModal();
 });

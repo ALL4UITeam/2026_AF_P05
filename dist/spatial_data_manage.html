@@ -76,10 +76,8 @@
                 <ul class="mega-menu-sub">
                   <li><a href="/spatial_data_dashboard.html">공간정보 대시보드</a></li>
                   <li><a href="/spatial_data_manage.html">공간 데이터 관리</a></li>
-                  <li><a href="#">주제도 관리</a></li>
-                  <li><a href="#">보안 각서 관리</a></li>
-                  <li><a href="/toc-manage.html">TOC 관리</a></li>
-                  <li><a href="/toc-style-setting.html">레이어 스타일 설정</a></li>
+                  <li><a href="/toc-manage.html">주제도 관리</a></li>
+									<li><a href="/system_security_pledge_manage.html">보안각서 관리</a></li>
                 </ul>
               </li>
               <li class="mega-menu-item has-sub">
@@ -119,139 +117,466 @@
 				      <span class="spatial-dash__breadcrumb">데이터관리 &gt; 공간데이터 관리</span>
 				    </div>
 				
-				    <section class="spatial-data-mgmt__card" aria-labelledby="spatial-mgmt-search-title">
-				      <h3 id="spatial-mgmt-search-title" class="spatial-data-mgmt__card-title spatial-data-mgmt__card-title--collapsible">
-				        검색조건 입력
-				      </h3>
-				      <div class="spatial-data-mgmt__search-body">
-				        <div class="spatial-data-mgmt__search-grid">
-				          <div class="spatial-data-mgmt__form-row">
-				            <label for="spatialMgmtDataName" class="data-request__label">데이터명</label>
-				            <input type="text" id="spatialMgmtDataName" class="type01 spatial-data-mgmt__input-full" placeholder="데이터명을 입력하세요." value="">
-				          </div>
-				          <div class="spatial-data-mgmt__form-row">
-				            <label for="spatialMgmtCrs" class="data-request__label">좌표계</label>
-				            <select id="spatialMgmtCrs" class="type01 spatial-data-mgmt__input-full">
-				              <option selected>전체</option>
-				              <option>EPSG:4326</option>
-				              <option>EPSG:5174</option>
-				              <option>EPSG:5179</option>
+				    <div class="tab-menu type02 use-status__tabs">
+				      <ul>
+				        <li><a href="#" class="active" data-target="spatialDataMgmtTabSpatial">공간 데이터관리</a></li>
+				        <li><a href="#" data-target="spatialDataMgmtTabMeta">메타데이터 관리</a></li>
+				      </ul>
+				    </div>
+				    <div class="tab-content spatial-data-mgmt__tab-content">
+				      <div id="spatialDataMgmtTabSpatial" class="active">
+				        <div class="permission-approval__search">
+				          <div class="permission-approval__search-form">
+				            <label for="reqData" class="permission-approval__label">데이터명</label>
+				            <input type="text" id="reqName" class="type01 w180" value="">
+				
+				            <label for="reqStatus" class="permission-approval__label">좌표계</label>
+				            <select id="reqStatus" class="type01 w120">
+				              <option>1</option>
+				              <option>2</option>
+				              <option>3</option>
+				              <option>4</option>
 				            </select>
+				
+				            <button type="button" class="com-btn blue">검색</button>
 				          </div>
 				        </div>
-				        <div class="spatial-data-mgmt__search-actions">
-				          <button type="button" class="com-btn blue">검색</button>
+				
+				        <section class="spatial-data-mgmt__card spatial-data-mgmt__card--result"
+				          aria-labelledby="spatial-mgmt-result-title">
+				          <div class="spatial-data-mgmt__result-bar">
+				            <h3 id="spatial-mgmt-result-title"
+				              class="spatial-data-mgmt__card-title spatial-data-mgmt__card-title--plain">총 <span
+				                class="spatial-data-mgmt__total-num">5</span> 건</h3>
+				            <button type="button" class="com-btn blue" onclick="showPopup('popupSpatialDataRegister')">+ 등록</button>
+				          </div>
+				
+				          <div class="tbl-wrap spatial-data-mgmt__table-wrap">
+				            <table class="tbl">
+				              <colgroup>
+				                <col style="width:5%;">
+				                <col style="width:auto;">
+				                <col style="width:12%;">
+				                <col style="width:8%;">
+				                <col style="width:7%;">
+				                <col style="width:8%;">
+				                <col style="width:11%;">
+				                <col style="width:12%;">
+				              </colgroup>
+				              <thead>
+				                <tr>
+				                  <th>No.</th>
+				                  <th>데이터명</th>
+				                  <th>좌표계</th>
+				                  <th>서비스</th>
+				                  <th>보안</th>
+				                  <th>공동사용</th>
+				                  <th>등록일</th>
+				                  <th>관리</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+				                <tr>
+				                  <td>1</td>
+				                  <td class="al">연속지적도_경북</td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				                  <td>
+				                    <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true"
+				                      title="서비스 여부"></button>
+				                  </td>
+				                  <td><label for="sdmSec01" class="chkbox"><input type="checkbox" id="sdmSec01" checked><span
+				                        class="chkOn"></span></label></td>
+				                  <td><label for="sdmShr01" class="chkbox"><input type="checkbox" id="sdmShr01" checked><span
+				                        class="chkOn"></span></label></td>
+				                  <td>2026-02-01</td>
+				                  <td><button type="button"
+				                      class="com-btn grayblue spatial-data-mgmt__act-btn spatial-data-mgmt__coord-btn"
+				                      data-sdm-name="연속지적도_경북" data-sdm-epsg="EPSG:5174">좌표변환</button></td>
+				                </tr>
+				                <tr>
+				                  <td>2</td>
+				                  <td class="al">행정구역_시군구</td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:5179</span></td>
+				                  <td>
+				                    <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true"
+				                      title="서비스 여부"></button>
+				                  </td>
+				                  <td><label for="sdmSec02" class="chkbox"><input type="checkbox" id="sdmSec02" checked><span
+				                        class="chkOn"></span></label></td>
+				                  <td><label for="sdmShr02" class="chkbox"><input type="checkbox" id="sdmShr02" checked><span
+				                        class="chkOn"></span></label></td>
+				                  <td>2026-01-20</td>
+				                  <td><button type="button"
+				                      class="com-btn grayblue spatial-data-mgmt__act-btn spatial-data-mgmt__coord-btn"
+				                      data-sdm-name="행정구역_시군구" data-sdm-epsg="EPSG:5179">좌표변환</button></td>
+				                </tr>
+				                <tr>
+				                  <td>3</td>
+				                  <td class="al">상수도관로_현황</td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				                  <td>
+				                    <button type="button" class="spatial-data-mgmt__svc" aria-pressed="false" title="서비스 여부"></button>
+				                  </td>
+				                  <td><label for="sdmSec03" class="chkbox"><input type="checkbox" id="sdmSec03"><span
+				                        class="chkOn"></span></label></td>
+				                  <td><label for="sdmShr03" class="chkbox"><input type="checkbox" id="sdmShr03" checked><span
+				                        class="chkOn"></span></label></td>
+				                  <td>2025-11-30</td>
+				                  <td><button type="button"
+				                      class="com-btn grayblue spatial-data-mgmt__act-btn spatial-data-mgmt__coord-btn"
+				                      data-sdm-name="상수도관로_현황" data-sdm-epsg="EPSG:5174">좌표변환</button></td>
+				                </tr>
+				                <tr>
+				                  <td>4</td>
+				                  <td class="al">도로명주소_도로</td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:4326</span></td>
+				                  <td>
+				                    <button type="button" class="spatial-data-mgmt__svc" aria-pressed="false" title="서비스 여부"></button>
+				                  </td>
+				                  <td><label for="sdmSec04" class="chkbox"><input type="checkbox" id="sdmSec04" checked><span
+				                        class="chkOn"></span></label></td>
+				                  <td><label for="sdmShr04" class="chkbox"><input type="checkbox" id="sdmShr04"><span
+				                        class="chkOn"></span></label></td>
+				                  <td>2025-12-15</td>
+				                  <td><button type="button"
+				                      class="com-btn grayblue spatial-data-mgmt__act-btn spatial-data-mgmt__coord-btn"
+				                      data-sdm-name="도로명주소_도로" data-sdm-epsg="EPSG:4326">좌표변환</button></td>
+				                </tr>
+				                <tr>
+				                  <td>5</td>
+				                  <td class="al">수질오염_관측소</td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				                  <td>
+				                    <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true"
+				                      title="서비스 여부"></button>
+				                  </td>
+				                  <td><label for="sdmSec05" class="chkbox"><input type="checkbox" id="sdmSec05"><span
+				                        class="chkOn"></span></label></td>
+				                  <td><label for="sdmShr05" class="chkbox"><input type="checkbox" id="sdmShr05" checked><span
+				                        class="chkOn"></span></label></td>
+				                  <td>2026-02-05</td>
+				                  <td><button type="button"
+				                      class="com-btn grayblue spatial-data-mgmt__act-btn spatial-data-mgmt__coord-btn"
+				                      data-sdm-name="수질오염_관측소" data-sdm-epsg="EPSG:5174">좌표변환</button></td>
+				                </tr>
+				              </tbody>
+				            </table>
+				            <div class="paging-wrap spatial-data-mgmt__paging">
+				              <ul class="paging">
+				                <li><a class="prev first" href="#"></a></li>
+				                <li><a class="prev" href="#"></a></li>
+				                <li><a class="pLink active" href="#">1</a></li>
+				                <li><a class="pLink" href="#">2</a></li>
+				                <li><a class="pLink" href="#">3</a></li>
+				                <li><a class="next" href="#"></a></li>
+				                <li><a class="next last" href="#"></a></li>
+				              </ul>
+				            </div>
+				          </div>
+				        </section>
+				      </div>
+				
+				      <div id="spatialDataMgmtTabMeta">
+				        <div class="permission-approval__search">
+				          <div class="permission-approval__search-form">
+				            <label for="metaReqName" class="permission-approval__label">데이터명</label>
+				            <input type="text" id="metaReqName" class="type01 w180" value="" placeholder="한글 또는 영문명 검색">
+				
+				            <label for="metaReqCategory" class="permission-approval__label">분류</label>
+				            <select id="metaReqCategory" class="type01 w120">
+				              <option selected>전체</option>
+				              <option>토지/지형</option>
+				              <option>임업</option>
+				              <option>주소</option>
+				              <option>교통</option>
+				            </select>
+				
+				            <button type="button" class="com-btn blue">조회</button>
+				          </div>
 				        </div>
-				      </div>
-				    </section>
 				
-				    <section class="spatial-data-mgmt__card spatial-data-mgmt__card--result" aria-labelledby="spatial-mgmt-result-title">
-				      <div class="spatial-data-mgmt__result-bar">
-				        <h3 id="spatial-mgmt-result-title" class="spatial-data-mgmt__card-title spatial-data-mgmt__card-title--plain">총 <span class="spatial-data-mgmt__total-num">5</span> 건</h3>
-				        <button type="button" class="com-btn blue">등록</button>
-				      </div>
+				        <section class="spatial-data-mgmt__card spatial-data-mgmt__card--result"
+				          aria-labelledby="spatial-mgmt-meta-result-title">
+				          <div class="spatial-data-mgmt__result-bar">
+				            <h3 id="spatial-mgmt-meta-result-title"
+				              class="spatial-data-mgmt__card-title spatial-data-mgmt__card-title--plain">총 <span
+				                class="spatial-data-mgmt__total-num">3</span> 건</h3>
+				            <button type="button" class="com-btn blue" onclick="showPopup('popupMetadataRegister')">+ 신규 등록</button>
+				          </div>
 				
-				      <div class="tbl-wrap spatial-data-mgmt__table-wrap">
-				        <table class="tbl">
-				          <colgroup>
-				            <col style="width:5%;">
-				            <col style="width:auto;">
-				            <col style="width:12%;">
-				            <col style="width:8%;">
-				            <col style="width:7%;">
-				            <col style="width:8%;">
-				            <col style="width:11%;">
-				            <col style="width:12%;">
-				          </colgroup>
-				          <thead>
-				            <tr>
-				              <th>No.</th>
-				              <th>데이터명</th>
-				              <th>좌표계</th>
-				              <th>서비스</th>
-				              <th>보안</th>
-				              <th>공동사용</th>
-				              <th>등록일</th>
-				              <th>관리</th>
-				            </tr>
-				          </thead>
-				          <tbody>
-				            <tr>
-				              <td>1</td>
-				              <td class="al">연속지적도_경북</td>
-				              <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
-				              <td>
-				                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true" title="서비스 여부"></button>
-				              </td>
-				              <td><label for="sdmSec01" class="chkbox"><input type="checkbox" id="sdmSec01" checked><span class="chkOn"></span></label></td>
-				              <td><label for="sdmShr01" class="chkbox"><input type="checkbox" id="sdmShr01" checked><span class="chkOn"></span></label></td>
-				              <td>2026-02-01</td>
-				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
-				            </tr>
-				            <tr>
-				              <td>2</td>
-				              <td class="al">행정구역_시군구</td>
-				              <td><span class="spatial-data-mgmt__epsg">EPSG:5179</span></td>
-				              <td>
-				                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true" title="서비스 여부"></button>
-				              </td>
-				              <td><label for="sdmSec02" class="chkbox"><input type="checkbox" id="sdmSec02" checked><span class="chkOn"></span></label></td>
-				              <td><label for="sdmShr02" class="chkbox"><input type="checkbox" id="sdmShr02" checked><span class="chkOn"></span></label></td>
-				              <td>2026-01-20</td>
-				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
-				            </tr>
-				            <tr>
-				              <td>3</td>
-				              <td class="al">상수도관로_현황</td>
-				              <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
-				              <td>
-				                <button type="button" class="spatial-data-mgmt__svc" aria-pressed="false" title="서비스 여부"></button>
-				              </td>
-				              <td><label for="sdmSec03" class="chkbox"><input type="checkbox" id="sdmSec03"><span class="chkOn"></span></label></td>
-				              <td><label for="sdmShr03" class="chkbox"><input type="checkbox" id="sdmShr03" checked><span class="chkOn"></span></label></td>
-				              <td>2025-11-30</td>
-				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
-				            </tr>
-				            <tr>
-				              <td>4</td>
-				              <td class="al">도로명주소_도로</td>
-				              <td><span class="spatial-data-mgmt__epsg">EPSG:4326</span></td>
-				              <td>
-				                <button type="button" class="spatial-data-mgmt__svc" aria-pressed="false" title="서비스 여부"></button>
-				              </td>
-				              <td><label for="sdmSec04" class="chkbox"><input type="checkbox" id="sdmSec04" checked><span class="chkOn"></span></label></td>
-				              <td><label for="sdmShr04" class="chkbox"><input type="checkbox" id="sdmShr04"><span class="chkOn"></span></label></td>
-				              <td>2025-12-15</td>
-				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
-				            </tr>
-				            <tr>
-				              <td>5</td>
-				              <td class="al">수질오염_관측소</td>
-				              <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
-				              <td>
-				                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" aria-pressed="true" title="서비스 여부"></button>
-				              </td>
-				              <td><label for="sdmSec05" class="chkbox"><input type="checkbox" id="sdmSec05"><span class="chkOn"></span></label></td>
-				              <td><label for="sdmShr05" class="chkbox"><input type="checkbox" id="sdmShr05" checked><span class="chkOn"></span></label></td>
-				              <td>2026-02-05</td>
-				              <td><button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">좌표변환</button></td>
-				            </tr>
-				          </tbody>
-				        </table>
+				          <div class="tbl-wrap spatial-data-mgmt__table-wrap">
+				            <table class="tbl">
+				              <colgroup>
+				                <col style="width:5%;">
+				                <col style="width:11%;">
+				                <col style="width:auto;">
+				                <col style="width:11%;">
+				                <col style="width:12%;">
+				                <col style="width:11%;">
+				                <col style="width:16%;">
+				              </colgroup>
+				              <thead>
+				                <tr>
+				                  <th>No.</th>
+				                  <th>분류</th>
+				                  <th>데이터명 (한/영)</th>
+				                  <th>좌표계</th>
+				                  <th>제공처</th>
+				                  <th>최근 갱신일</th>
+				                  <th>관리</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+				                <tr>
+				                  <td>1</td>
+				                  <td>임업</td>
+				                  <td class="al">산림입지도 1:5,000<span class="spatial-data-mgmt__meta-name-en">Forest Map 1:5000</span>
+				                  </td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				                  <td class="al">산림청</td>
+				                  <td>2025-12-20</td>
+				                  <td>
+				                    <button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">수정</button>
+				                    <button type="button" class="com-btn red spatial-data-mgmt__act-btn">삭제</button>
+				                  </td>
+				                </tr>
+				                <tr>
+				                  <td>2</td>
+				                  <td>주소</td>
+				                  <td class="al">도로명주소 건물<span class="spatial-data-mgmt__meta-name-en">Road Name Address Building</span>
+				                  </td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:5179</span></td>
+				                  <td class="al">행정안전부</td>
+				                  <td>2026-01-08</td>
+				                  <td>
+				                    <button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">수정</button>
+				                    <button type="button" class="com-btn red spatial-data-mgmt__act-btn">삭제</button>
+				                  </td>
+				                </tr>
+				                <tr>
+				                  <td>3</td>
+				                  <td>토지/지형</td>
+				                  <td class="al">연속지적도 (2026)<span class="spatial-data-mgmt__meta-name-en">Continuous Cadastral
+				                      Map</span></td>
+				                  <td><span class="spatial-data-mgmt__epsg">EPSG:5174</span></td>
+				                  <td class="al">국토교통부</td>
+				                  <td>2026-02-10</td>
+				                  <td>
+				                    <button type="button" class="com-btn grayblue spatial-data-mgmt__act-btn">수정</button>
+				                    <button type="button" class="com-btn red spatial-data-mgmt__act-btn">삭제</button>
+				                  </td>
+				                </tr>
+				              </tbody>
+				            </table>
+				            <div class="paging-wrap spatial-data-mgmt__paging">
+				              <ul class="paging">
+				                <li><a class="prev first" href="#"></a></li>
+				                <li><a class="prev" href="#"></a></li>
+				                <li><a class="pLink active" href="#">1</a></li>
+				                <li><a class="pLink" href="#">2</a></li>
+				                <li><a class="pLink" href="#">3</a></li>
+				                <li><a class="next" href="#"></a></li>
+				                <li><a class="next last" href="#"></a></li>
+				              </ul>
+				            </div>
+				          </div>
+				        </section>
 				      </div>
+				    </div>
+				  </div>
+				</div>
 				
-				      <div class="paging-wrap spatial-data-mgmt__paging">
-				        <ul class="paging">
-				          <li><a class="prev first" href="#"></a></li>
-				          <li><a class="prev" href="#"></a></li>
-				          <li><a class="pLink active" href="#">1</a></li>
-				          <li><a class="pLink" href="#">2</a></li>
-				          <li><a class="pLink" href="#">3</a></li>
-				          <li><a class="next" href="#"></a></li>
-				          <li><a class="next last" href="#"></a></li>
-				        </ul>
+				<!-- 공간데이터 등록 (시스템관리 layerpop 패턴: approval-manage-modal) -->
+				<div class="layerpop-wrap w610 approval-manage-modal spatial-data-reg-modal" id="popupSpatialDataRegister" style="display:none;">
+				  <header>
+				    <h3>공간데이터 등록</h3>
+				    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSpatialDataRegister')">
+				      <i class="ico-close" aria-hidden="true"></i>
+				    </button>
+				  </header>
+				
+				  <div class="pop-con">
+				    <table class="tbl view type02 spatial-data-reg-modal__form">
+				      <colgroup>
+				        <col style="width:168px;">
+				        <col style="width:auto;">
+				      </colgroup>
+				      <tbody>
+				        <tr>
+				          <th><label for="sdmRegName">데이터명</label> <span class="essen">*</span></th>
+				          <td>
+				            <input type="text" name="sdmRegName" id="sdmRegName" class="type01 w100per" placeholder="데이터명을 입력하세요" autocomplete="off">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="sdmRegEpsg">좌표계</label></th>
+				          <td>
+				            <select name="sdmRegEpsg" id="sdmRegEpsg" class="type01 w100per">
+				              <option value="5174">EPSG:5174 (Korea 2000 / Central Belt)</option>
+				              <option value="5179" selected>EPSG:5179 (GRS80)</option>
+				              <option value="4326">EPSG:4326 (WGS84)</option>
+				            </select>
+				          </td>
+				        </tr>
+				        <tr>
+				          <th>서비스 · 옵션</th>
+				          <td>
+				            <div class="spatial-data-reg-modal__opts">
+				              <div class="spatial-data-reg-modal__opt spatial-data-reg-modal__opt--toggle">
+				                <span class="spatial-data-reg-modal__opt-label">서비스 활성화</span>
+				                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" id="sdmRegSvc" aria-pressed="true" title="서비스 활성화"></button>
+				              </div>
+				              <label for="sdmRegSec" class="chkbox spatial-data-reg-modal__chk">
+				                <input type="checkbox" id="sdmRegSec">
+				                <span class="chkOn"></span>
+				                <span class="txt">보안 데이터</span>
+				              </label>
+				              <label for="sdmRegShare" class="chkbox spatial-data-reg-modal__chk">
+				                <input type="checkbox" id="sdmRegShare">
+				                <span class="chkOn"></span>
+				                <span class="txt">공동 활용</span>
+				              </label>
+				            </div>
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="sdmRegFile">파일 첨부 <span class="spatial-data-reg-modal__th-sub">(SHP, GeoJSON 등)</span></label></th>
+				          <td>
+				            <div class="spatial-data-reg-modal__dropzone">
+				              <input type="file" name="sdmRegFile" id="sdmRegFile" class="spatial-data-reg-modal__file" accept=".shp,.zip,.json,.geojson,.dbf,.shx,.prj,application/zip,application/json" multiple>
+				              <label for="sdmRegFile" class="spatial-data-reg-modal__drop-label">
+				                <span class="spatial-data-reg-modal__upload-ico" aria-hidden="true"></span>
+				                <span class="spatial-data-reg-modal__drop-text">파일을 업로드하세요</span>
+				              </label>
+				            </div>
+				          </td>
+				        </tr>
+				      </tbody>
+				    </table>
+				  </div>
+				
+				  <div class="pop-footer">
+				    <div class="btn-area">
+				      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSpatialDataRegister')">취소</button>
+				      <button type="button" class="com-btn xl approval-manage-modal__btn-save spatial-data-reg-modal__btn-submit">등록</button>
+				    </div>
+				  </div>
+				</div>
+				<!-- 메타데이터 등록 (시스템관리: approval-manage-modal + tbl 폼) -->
+				<div class="layerpop-wrap w610 approval-manage-modal metadata-reg-modal" id="popupMetadataRegister" style="display:none;">
+				  <header>
+				    <h3>메타데이터 등록</h3>
+				    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupMetadataRegister')">
+				      <i class="ico-close" aria-hidden="true"></i>
+				    </button>
+				  </header>
+				
+				  <div class="pop-con">
+				    <table class="tbl view type02 metadata-reg-modal__form">
+				      <colgroup>
+				        <col style="width:168px;">
+				        <col style="width:auto;">
+				      </colgroup>
+				      <tbody>
+				        <tr>
+				          <th><label for="metaRegNameKo">데이터명 (한글)</label> <span class="essen">*</span></th>
+				          <td>
+				            <input type="text" name="metaRegNameKo" id="metaRegNameKo" class="type01 w100per" placeholder="예: 연속지적도" autocomplete="off">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="metaRegNameEn">데이터명 (영문)</label></th>
+				          <td>
+				            <input type="text" name="metaRegNameEn" id="metaRegNameEn" class="type01 w100per" placeholder="예: Continuous Cadastral Map" autocomplete="off">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th scope="row" class="metadata-reg-modal__th-pair">분류 · 좌표계</th>
+				          <td class="metadata-reg-modal__td-pair">
+				            <div class="metadata-reg-modal__pair">
+				              <div class="metadata-reg-modal__pair-item">
+				                <label for="metaRegCategory" class="metadata-reg-modal__field-lbl">분류 <span class="essen">*</span></label>
+				                <select name="metaRegCategory" id="metaRegCategory" class="type01 w100per">
+				                  <option value="">선택</option>
+				                  <option value="land" selected>토지/지형</option>
+				                  <option value="forest">임업</option>
+				                  <option value="addr">주소</option>
+				                  <option value="traffic">교통</option>
+				                  <option value="env">환경</option>
+				                </select>
+				              </div>
+				              <div class="metadata-reg-modal__pair-item">
+				                <label for="metaRegEpsg" class="metadata-reg-modal__field-lbl">좌표계 (EPSG) <span class="essen">*</span></label>
+				                <input type="text" name="metaRegEpsg" id="metaRegEpsg" class="type01 w100per" value="EPSG:5179" placeholder="예: EPSG:5179" autocomplete="off">
+				              </div>
+				            </div>
+				          </td>
+				        </tr>
+				        <tr>
+				          <th><label for="metaRegProvider">제공처 / 출처</label></th>
+				          <td>
+				            <input type="text" name="metaRegProvider" id="metaRegProvider" class="type01 w100per" placeholder="예: 국토교통부, 자체구축 등" autocomplete="off">
+				          </td>
+				        </tr>
+				        <tr>
+				          <th class="metadata-reg-modal__th-valign-top"><label for="metaRegDesc">데이터 상세 설명</label></th>
+				          <td>
+				            <textarea name="metaRegDesc" id="metaRegDesc" class="metadata-reg-modal__textarea" rows="5" placeholder="데이터에 대한 상세한 설명을 입력하세요."></textarea>
+				          </td>
+				        </tr>
+				      </tbody>
+				    </table>
+				  </div>
+				
+				  <div class="pop-footer">
+				    <div class="btn-area metadata-reg-modal__btn-area">
+				      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupMetadataRegister')">취소</button>
+				      <button type="button" class="com-btn xl approval-manage-modal__btn-save">등록하기</button>
+				    </div>
+				  </div>
+				</div>
+				<!-- 좌표계 변환 (시스템관리: approval-manage-modal) -->
+				<div class="layerpop-wrap w610 approval-manage-modal spatial-coord-xform-modal" id="popupSpatialCoordTransform" style="display:none;">
+				  <header>
+				    <h3 class="spatial-coord-xform-modal__title">
+				      좌표계 변환
+				    </h3>
+				    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSpatialCoordTransform')">
+				      <i class="ico-close" aria-hidden="true"></i>
+				    </button>
+				  </header>
+				
+				  <div class="pop-con">
+				    <div class="spatial-coord-xform-modal__target-bar" role="status">
+				      <span class="spatial-coord-xform-modal__target-label">대상 데이터:</span>
+				      <strong class="spatial-coord-xform-modal__target-name" id="sdmCoordDataName">—</strong>
+				    </div>
+				
+				    <div class="spatial-coord-xform-modal__row">
+				      <div class="spatial-coord-xform-modal__field">
+				        <label for="sdmCoordSource" class="spatial-coord-xform-modal__lbl">원본 좌표계 <span class="spatial-coord-xform-modal__lbl-en">(Source)</span></label>
+				        <input type="text" id="sdmCoordSource" class="type01 w100per spatial-coord-xform-modal__input-readonly" readonly tabindex="-1" aria-readonly="true">
 				      </div>
-				    </section>
+				      <span class="spatial-coord-xform-modal__arrow" aria-hidden="true">→</span>
+				      <div class="spatial-coord-xform-modal__field">
+				        <label for="sdmCoordTarget" class="spatial-coord-xform-modal__lbl">변환 좌표계 <span class="spatial-coord-xform-modal__lbl-en">(Target)</span></label>
+				        <select id="sdmCoordTarget" class="type01 w100per">
+				          <option value="5174">EPSG:5174 (Korea 2000 / Central Belt)</option>
+				          <option value="5179" selected>EPSG:5179 (GRS80)</option>
+				          <option value="4326">EPSG:4326 (WGS84)</option>
+				          <option value="3857">EPSG:3857 (Web Mercator)</option>
+				        </select>
+				      </div>
+				    </div>
+				
+				    <p class="spatial-coord-xform-modal__note">* 좌표 변환 시 원본 데이터는 유지되며, 새로운 레이어가 생성됩니다.</p>
+				  </div>
+				
+				  <div class="pop-footer">
+				    <div class="btn-area spatial-coord-xform-modal__btn-area">
+				      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSpatialCoordTransform')">취소</button>
+				      <button type="button" class="com-btn xl blue spatial-coord-xform-modal__btn-run">변환 실행</button>
+				    </div>
 				  </div>
 				</div>
 				

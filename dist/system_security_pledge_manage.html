@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/community.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/community.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					<a href="#" class="comuu">소통공간</a>
+				</div>
+				<div class="header-util">
+					<a href="#" class="header-system-link active">시스템관리</a>
+					<div class="login-info">
+						<p>경상북도청</p>
+						<p class="name">홍길동 님</p>
+					</div>
+				</div>
+			</div>
+      <div class="mega-menu-wrap system">
+        <!-- 시스템관리 메가메뉴 -->
+        <div class="mega-menu">
+          <nav class="mega-menu-nav">
+            <ul class="mega-menu-root">
+              <li class="mega-menu-item has-sub active">
+                <a href="#">사용자</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">사용 승인 요청</a></li>
+                  <li><a href="#">사용자 권한 요청</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">운영 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_use_approval.html">사용자 승인 관리</a></li>
+                  <li><a href="/system_permission_approval.html">권한 승인 요청 관리</a></li>
+                  <li><a href="/system_data_request.html">자료 제공 요청 관리</a></li>
+                  <li><a href="/system_user_group_manage.html">사용자 그룹 관리</a></li>
+                  <li><a href="/system_code_manage.html">코드 관리</a></li>
+                  <li><a href="/system_terms_manage.html">사용 약관 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">로그 및 통계</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_access_history.html">접속 이력 조회</a></li>
+                  <li><a href="/system_use_history.html">사용 이력 조회</a></li>
+                  <li><a href="/system_access_status.html">접속 현황 통계</a></li>
+                  <li><a href="/system_use_status.html">이용 현황 통계</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">공간정보 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/spatial_data_dashboard.html">공간정보 대시보드</a></li>
+                  <li><a href="/spatial_data_manage.html">공간 데이터 관리</a></li>
+                  <li><a href="/toc-manage.html">주제도 관리</a></li>
+									<li><a href="/system_security_pledge_manage.html">보안각서 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">시스템 지원</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_notice_list.html">공지사항 관리</a></li>
+                  <li><a href="/system_faq_list.html">자주하는 질문 관리</a></li>
+                  <li><a href="/system_qna_list.html">질의응답 관리</a></li>
+                  <li><a href="/system_guide_list.html">사용자 가이드 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">연계 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="#">연계 대시보드</a></li>
+                  <li><a href="#">연계 현황 관리</a></li>
+                  <li><a href="#">연계 오류 조회</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="cont-box-wrap security-pledge-mgmt-wrap">
+				  <div class="cont-box security-pledge-mgmt">
+				    <div class="tit-wrap security-pledge-mgmt__page-head">
+				      <h2>보안각서 관리</h2>
+				    </div>
+				
+				    <div class="tab-menu type02 use-status__tabs">
+				      <ul>
+				        <li><a href="#" class="active" data-target="securityPledgeTabHistory">서약 내역 조회</a></li>
+				        <li><a href="#" data-target="securityPledgeTabForm">양식 관리</a></li>
+				      </ul>
+				    </div>
+				    <div class="tab-content security-pledge-mgmt__tab-content">
+				      <div id="securityPledgeTabHistory" class="active">
+				        <div class="security-pledge-mgmt__search" aria-labelledby="security-pledge-search-title">
+				          <div class="security-pledge-mgmt__search-grid">
+				            <label for="securityPledgeUserId" class="security-pledge-mgmt__label">사용자 아이디</label>
+				            <input type="text" id="securityPledgeUserId" class="type01" value="" autocomplete="username">
+				
+				            <label for="securityPledgeUserName" class="security-pledge-mgmt__label">성명</label>
+				            <input type="text" id="securityPledgeUserName" class="type01" value="" autocomplete="name">
+				
+				            <label for="securityPledgeDateFrom" class="security-pledge-mgmt__label">서약 일자</label>
+				            <div class="security-pledge-mgmt__period security-pledge-mgmt__period--span">
+				              <input type="date" id="securityPledgeDateFrom" class="type01" value="2026-01-01">
+				              <span class="security-pledge-mgmt__dash">~</span>
+				              <input type="date" id="securityPledgeDateTo" class="type01" value="2026-02-08">
+				            </div>
+				          </div>
+				
+				          <div class="security-pledge-mgmt__search-actions">
+				            <button type="button" class="com-btn blue w120">검색</button>
+				            <button type="button" class="com-btn grayblue w120">초기화</button>
+				          </div>
+				        </div>
+				
+				        <section class="security-pledge-mgmt__card security-pledge-mgmt__card--result" aria-labelledby="security-pledge-result-title">
+				          <div class="security-pledge-mgmt__result-bar">
+				            <h3 id="security-pledge-result-title" class="security-pledge-mgmt__card-title security-pledge-mgmt__card-title--plain">
+				              총 <span class="security-pledge-mgmt__total-num">10</span> 건
+				            </h3>
+				          </div>
+				
+				          <div class="tbl-wrap security-pledge-mgmt__table-wrap">
+				            <table class="tbl">
+				              <colgroup>
+				                <col style="width:5%;">
+				                <col style="width:12%;">
+				                <col style="width:10%;">
+				                <col style="width:14%;">
+				                <col style="width:14%;">
+				                <col style="width:12%;">
+				                <col style="width:10%;">
+				                <col style="width:11%;">
+				              </colgroup>
+				              <thead>
+				                <tr>
+				                  <th>No.</th>
+				                  <th>사용자 아이디</th>
+				                  <th>성명</th>
+				                  <th>부서</th>
+				                  <th>서약 구분</th>
+				                  <th>서약 일자</th>
+				                  <th>상태</th>
+				                  <th>상세</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+				                <tr>
+				                  <td>1</td>
+				                  <td>hjkim</td>
+				                  <td>김현정</td>
+				                  <td>토지정보과</td>
+				                  <td>시스템 이용</td>
+				                  <td>2026-01-15</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--valid">유효</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>2</td>
+				                  <td>nane</td>
+				                  <td>박나네</td>
+				                  <td>도시계획과</td>
+				                  <td>자료 반출</td>
+				                  <td>2026-01-22</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--valid">유효</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>3</td>
+				                  <td>test</td>
+				                  <td>이테스트</td>
+				                  <td>정보화담당관</td>
+				                  <td>시스템 이용</td>
+				                  <td>2025-08-10</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--expired">만료</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>4</td>
+				                  <td>kpark</td>
+				                  <td>박경민</td>
+				                  <td>건축과</td>
+				                  <td>시스템 이용</td>
+				                  <td>2026-02-01</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--valid">유효</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>5</td>
+				                  <td>jchoi</td>
+				                  <td>최지민</td>
+				                  <td>토지정보과</td>
+				                  <td>자료 반출</td>
+				                  <td>2025-11-30</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--expired">만료</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>6</td>
+				                  <td>slee</td>
+				                  <td>이수진</td>
+				                  <td>재산관리과</td>
+				                  <td>시스템 이용</td>
+				                  <td>2026-01-28</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--valid">유효</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>7</td>
+				                  <td>yhan</td>
+				                  <td>한영수</td>
+				                  <td>도시계획과</td>
+				                  <td>시스템 이용</td>
+				                  <td>2026-02-05</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--valid">유효</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>8</td>
+				                  <td>mjeong</td>
+				                  <td>정민아</td>
+				                  <td>환경과</td>
+				                  <td>자료 반출</td>
+				                  <td>2025-06-20</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--expired">만료</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>9</td>
+				                  <td>doh</td>
+				                  <td>오도현</td>
+				                  <td>토지정보과</td>
+				                  <td>자료 반출</td>
+				                  <td>2026-01-10</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--valid">유효</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				                <tr>
+				                  <td>10</td>
+				                  <td>kangsh</td>
+				                  <td>강상환</td>
+				                  <td>정보화담당관</td>
+				                  <td>시스템 이용</td>
+				                  <td>2026-02-08</td>
+				                  <td><span class="security-pledge-mgmt__status security-pledge-mgmt__status--valid">유효</span></td>
+				                  <td><a href="/system_security_pledge_detail.html" class="com-btn grayblue security-pledge-mgmt__btn-view">보기</a></td>
+				                </tr>
+				              </tbody>
+				            </table>
+				            <div class="paging-wrap security-pledge-mgmt__paging">
+				              <ul class="paging">
+				                <li><a class="prev first" href="#" aria-label="첫 페이지"></a></li>
+				                <li><a class="prev" href="#" aria-label="이전 페이지"></a></li>
+				                <li><a class="pLink active" href="#" aria-current="page">1</a></li>
+				                <li><a class="next" href="#" aria-label="다음 페이지"></a></li>
+				                <li><a class="next last" href="#" aria-label="마지막 페이지"></a></li>
+				              </ul>
+				            </div>
+				          </div>
+				        </section>
+				      </div>
+				
+				      <div id="securityPledgeTabForm">
+				        <section class="security-pledge-mgmt__card security-pledge-form-mgmt" aria-labelledby="security-pledge-form-list-title">
+				          <div class="security-pledge-form-mgmt__bar">
+				            <h3 id="security-pledge-form-list-title" class="security-pledge-form-mgmt__title">
+				              <span class="security-pledge-form-mgmt__title-icon" aria-hidden="true"></span>
+				              등록된 보안각서 양식
+				            </h3>
+				            <button type="button" class="com-btn blue security-pledge-form-mgmt__btn-register" onclick="showPopup('popupSecurityPledgeFormRegister')">+ 양식 등록</button>
+				          </div>
+				
+				          <div class="tbl-wrap security-pledge-form-mgmt__table-wrap">
+				            <table class="tbl">
+				              <colgroup>
+				                <col style="width:6%;">
+				                <col style="width:auto;">
+				                <col style="width:13%;">
+				                <col style="width:11%;">
+				                <col style="width:12%;">
+				                <col style="width:220px;">
+				              </colgroup>
+				              <thead>
+				                <tr>
+				                  <th>No.</th>
+				                  <th>양식 제목</th>
+				                  <th>서약 구분</th>
+				                  <th>상태</th>
+				                  <th>등록일</th>
+				                  <th>관리</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+				                <tr>
+				                  <td>3</td>
+				                  <td class="al">시스템 이용 보안각서 (기본)</td>
+				                  <td>시스템 이용</td>
+				                  <td><span class="security-pledge-form-mgmt__badge security-pledge-form-mgmt__badge--active">사용중</span></td>
+				                  <td>2025-01-01</td>
+				                  <td>
+				                    <div class="security-pledge-form-mgmt__actions">
+				                      <button type="button" class="security-pledge-form-mgmt__btn-preview">미리보기</button>
+				                      <button type="button" class="security-pledge-form-mgmt__btn-edit" onclick="showPopup('popupSecurityPledgeFormEdit')">수정</button>
+				                    </div>
+				                  </td>
+				                </tr>
+				                <tr>
+				                  <td>2</td>
+				                  <td class="al">공간정보 자료 반출 보안각서 v2</td>
+				                  <td>자료 반출</td>
+				                  <td><span class="security-pledge-form-mgmt__badge security-pledge-form-mgmt__badge--active">사용중</span></td>
+				                  <td>2025-06-15</td>
+				                  <td>
+				                    <div class="security-pledge-form-mgmt__actions">
+				                      <button type="button" class="security-pledge-form-mgmt__btn-preview">미리보기</button>
+				                      <button type="button" class="security-pledge-form-mgmt__btn-edit" onclick="showPopup('popupSecurityPledgeFormEdit')">수정</button>
+				                    </div>
+				                  </td>
+				                </tr>
+				                <tr>
+				                  <td>1</td>
+				                  <td class="al">외부 협력업체용 보안각서</td>
+				                  <td>시스템 이용</td>
+				                  <td><span class="security-pledge-form-mgmt__badge security-pledge-form-mgmt__badge--inactive">미사용</span></td>
+				                  <td>2024-11-20</td>
+				                  <td>
+				                    <div class="security-pledge-form-mgmt__actions">
+				                      <button type="button" class="security-pledge-form-mgmt__btn-preview">미리보기</button>
+				                      <button type="button" class="security-pledge-form-mgmt__btn-edit" onclick="showPopup('popupSecurityPledgeFormEdit')">수정</button>
+				                    </div>
+				                  </td>
+				                </tr>
+				              </tbody>
+				            </table>
+				          </div>
+				        </section>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+				<!-- 보안각서 양식 등록/수정 모달 (시스템관리 layerpop 패턴: approval-manage-modal) -->
+				<div class="layerpop-wrap w896 approval-manage-modal security-pledge-form-modal" id="popupSecurityPledgeFormRegister" style="display:none;">
+				  <header>
+				    <h3>보안각서 양식 등록</h3>
+				    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSecurityPledgeFormRegister')">
+				      <i class="ico-close" aria-hidden="true"></i>
+				    </button>
+				  </header>
+				
+				  <div class="pop-con security-pledge-form-modal__con">
+				    <div class="security-pledge-form-modal__field">
+				      <label for="spfRegTitle" class="security-pledge-form-modal__label">양식 제목 <span class="essen">*</span></label>
+				      <input type="text" id="spfRegTitle" class="type01 w100per" value="" placeholder="양식 제목을 입력하세요.">
+				    </div>
+				
+				    <div class="security-pledge-form-modal__grid2">
+				      <div class="security-pledge-form-modal__field">
+				        <label for="spfRegType" class="security-pledge-form-modal__label">서약 구분 <span class="essen">*</span></label>
+				        <select id="spfRegType" class="type01 w100per">
+				          <option value="">선택</option>
+				          <option value="system" selected>시스템 이용</option>
+				          <option value="export">자료 반출</option>
+				        </select>
+				      </div>
+				
+				      <div class="security-pledge-form-modal__field">
+				        <span class="security-pledge-form-modal__label">사용 여부</span>
+				        <div class="security-pledge-form-modal__radio-wrap" role="radiogroup" aria-label="사용 여부 선택">
+				          <label class="security-pledge-form-modal__radio">
+				            <input type="radio" name="spfRegUseYn" value="Y" checked>
+				            <span>사용</span>
+				          </label>
+				          <label class="security-pledge-form-modal__radio">
+				            <input type="radio" name="spfRegUseYn" value="N">
+				            <span>미사용</span>
+				          </label>
+				        </div>
+				      </div>
+				    </div>
+				
+				    <div class="security-pledge-form-modal__field">
+				      <label for="spfRegBody" class="security-pledge-form-modal__label">서약 내용 (동의 문구)</label>
+				      <div class="security-pledge-form-modal__editor">
+				        <textarea id="spfRegBody" class="security-pledge-form-modal__editor-area" rows="8" placeholder="사용자가 동의해야 할 보안 준수 사항을 입력하세요."></textarea>
+				      </div>
+				    </div>
+				
+				    <div class="security-pledge-form-modal__field">
+				      <label for="spfRegAttach" class="security-pledge-form-modal__label">첨부 양식 (선택)</label>
+				      <div class="security-pledge-form-modal__dropzone">
+				        <input type="file" id="spfRegAttach" class="security-pledge-form-modal__file" accept=".hwp,.pdf,application/pdf" />
+				        <label for="spfRegAttach" class="security-pledge-form-modal__drop-label">
+				          <span class="security-pledge-form-modal__upload-ico" aria-hidden="true"></span>
+				          <span class="security-pledge-form-modal__drop-text">클릭하여 서면 양식(HWP, PDF) 업로드</span>
+				        </label>
+				      </div>
+				    </div>
+				  </div>
+				
+				  <div class="pop-footer security-pledge-form-modal__footer jtc">
+				    <div class="security-pledge-form-modal__footer-right">
+				      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSecurityPledgeFormRegister')">취소</button>
+				      <button type="button" class="com-btn xl approval-manage-modal__btn-save" onclick="closePopup('popupSecurityPledgeFormRegister')">저장</button>
+				    </div>
+				  </div>
+				</div>
+				
+				<div class="layerpop-wrap w896 approval-manage-modal security-pledge-form-modal" id="popupSecurityPledgeFormEdit" style="display:none;">
+				  <header>
+				    <h3>보안각서 양식 수정</h3>
+				    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSecurityPledgeFormEdit')">
+				      <i class="ico-close" aria-hidden="true"></i>
+				    </button>
+				  </header>
+				
+				  <div class="pop-con security-pledge-form-modal__con">
+				    <div class="security-pledge-form-modal__field">
+				      <label for="spfEditTitle" class="security-pledge-form-modal__label">양식 제목 <span class="essen">*</span></label>
+				      <input type="text" id="spfEditTitle" class="type01 w100per" value="시스템 이용 보안각서 (기본)">
+				    </div>
+				
+				    <div class="security-pledge-form-modal__grid2">
+				      <div class="security-pledge-form-modal__field">
+				        <label for="spfEditType" class="security-pledge-form-modal__label">서약 구분 <span class="essen">*</span></label>
+				        <select id="spfEditType" class="type01 w100per">
+				          <option value="">선택</option>
+				          <option value="system" selected>시스템 이용</option>
+				          <option value="export">자료 반출</option>
+				        </select>
+				      </div>
+				
+				      <div class="security-pledge-form-modal__field">
+				        <span class="security-pledge-form-modal__label">사용 여부</span>
+				        <div class="security-pledge-form-modal__radio-wrap" role="radiogroup" aria-label="사용 여부 선택">
+				          <label class="security-pledge-form-modal__radio">
+				            <input type="radio" name="spfEditUseYn" value="Y" checked>
+				            <span>사용</span>
+				          </label>
+				          <label class="security-pledge-form-modal__radio">
+				            <input type="radio" name="spfEditUseYn" value="N">
+				            <span>미사용</span>
+				          </label>
+				        </div>
+				      </div>
+				    </div>
+				
+				    <div class="security-pledge-form-modal__field">
+				      <label for="spfEditBody" class="security-pledge-form-modal__label">서약 내용 (동의 문구)</label>
+				      <div class="security-pledge-form-modal__editor">
+				        <textarea id="spfEditBody" class="security-pledge-form-modal__editor-area" rows="8" placeholder="사용자가 동의해야 할 보안 준수 사항을 입력하세요."></textarea>
+				      </div>
+				    </div>
+				
+				    <div class="security-pledge-form-modal__field">
+				      <label for="spfEditAttach" class="security-pledge-form-modal__label">첨부 양식 (선택)</label>
+				      <div class="security-pledge-form-modal__dropzone">
+				        <input type="file" id="spfEditAttach" class="security-pledge-form-modal__file" accept=".hwp,.pdf,application/pdf" />
+				        <label for="spfEditAttach" class="security-pledge-form-modal__drop-label">
+				          <span class="security-pledge-form-modal__upload-ico" aria-hidden="true"></span>
+				          <span class="security-pledge-form-modal__drop-text">클릭하여 서면 양식(HWP, PDF) 업로드</span>
+				        </label>
+				      </div>
+				    </div>
+				  </div>
+				
+				  <div class="pop-footer security-pledge-form-modal__footer">
+				    <button type="button" class="security-pledge-form-modal__btn-delete" onclick="closePopup('popupSecurityPledgeFormEdit')">삭제</button>
+				    <div class="security-pledge-form-modal__footer-right">
+				      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSecurityPledgeFormEdit')">취소</button>
+				      <button type="button" class="com-btn xl approval-manage-modal__btn-save" onclick="closePopup('popupSecurityPledgeFormEdit')">저장</button>
+				    </div>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

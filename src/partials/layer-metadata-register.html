@@ -1,0 +1,73 @@
+<!-- 메타데이터 등록 (시스템관리: approval-manage-modal + tbl 폼) -->
+<div class="layerpop-wrap w610 approval-manage-modal metadata-reg-modal" id="popupMetadataRegister" style="display:none;">
+  <header>
+    <h3>메타데이터 등록</h3>
+    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupMetadataRegister')">
+      <i class="ico-close" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <div class="pop-con">
+    <table class="tbl view type02 metadata-reg-modal__form">
+      <colgroup>
+        <col style="width:168px;">
+        <col style="width:auto;">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th><label for="metaRegNameKo">데이터명 (한글)</label> <span class="essen">*</span></th>
+          <td>
+            <input type="text" name="metaRegNameKo" id="metaRegNameKo" class="type01 w100per" placeholder="예: 연속지적도" autocomplete="off">
+          </td>
+        </tr>
+        <tr>
+          <th><label for="metaRegNameEn">데이터명 (영문)</label></th>
+          <td>
+            <input type="text" name="metaRegNameEn" id="metaRegNameEn" class="type01 w100per" placeholder="예: Continuous Cadastral Map" autocomplete="off">
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="metadata-reg-modal__th-pair">분류 · 좌표계</th>
+          <td class="metadata-reg-modal__td-pair">
+            <div class="metadata-reg-modal__pair">
+              <div class="metadata-reg-modal__pair-item">
+                <label for="metaRegCategory" class="metadata-reg-modal__field-lbl">분류 <span class="essen">*</span></label>
+                <select name="metaRegCategory" id="metaRegCategory" class="type01 w100per">
+                  <option value="">선택</option>
+                  <option value="land" selected>토지/지형</option>
+                  <option value="forest">임업</option>
+                  <option value="addr">주소</option>
+                  <option value="traffic">교통</option>
+                  <option value="env">환경</option>
+                </select>
+              </div>
+              <div class="metadata-reg-modal__pair-item">
+                <label for="metaRegEpsg" class="metadata-reg-modal__field-lbl">좌표계 (EPSG) <span class="essen">*</span></label>
+                <input type="text" name="metaRegEpsg" id="metaRegEpsg" class="type01 w100per" value="EPSG:5179" placeholder="예: EPSG:5179" autocomplete="off">
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="metaRegProvider">제공처 / 출처</label></th>
+          <td>
+            <input type="text" name="metaRegProvider" id="metaRegProvider" class="type01 w100per" placeholder="예: 국토교통부, 자체구축 등" autocomplete="off">
+          </td>
+        </tr>
+        <tr>
+          <th class="metadata-reg-modal__th-valign-top"><label for="metaRegDesc">데이터 상세 설명</label></th>
+          <td>
+            <textarea name="metaRegDesc" id="metaRegDesc" class="metadata-reg-modal__textarea" rows="5" placeholder="데이터에 대한 상세한 설명을 입력하세요."></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pop-footer">
+    <div class="btn-area metadata-reg-modal__btn-area">
+      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupMetadataRegister')">취소</button>
+      <button type="button" class="com-btn xl approval-manage-modal__btn-save">등록하기</button>
+    </div>
+  </div>
+</div>

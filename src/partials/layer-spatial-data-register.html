@@ -1,0 +1,76 @@
+<!-- 공간데이터 등록 (시스템관리 layerpop 패턴: approval-manage-modal) -->
+<div class="layerpop-wrap w610 approval-manage-modal spatial-data-reg-modal" id="popupSpatialDataRegister" style="display:none;">
+  <header>
+    <h3>공간데이터 등록</h3>
+    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSpatialDataRegister')">
+      <i class="ico-close" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <div class="pop-con">
+    <table class="tbl view type02 spatial-data-reg-modal__form">
+      <colgroup>
+        <col style="width:168px;">
+        <col style="width:auto;">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th><label for="sdmRegName">데이터명</label> <span class="essen">*</span></th>
+          <td>
+            <input type="text" name="sdmRegName" id="sdmRegName" class="type01 w100per" placeholder="데이터명을 입력하세요" autocomplete="off">
+          </td>
+        </tr>
+        <tr>
+          <th><label for="sdmRegEpsg">좌표계</label></th>
+          <td>
+            <select name="sdmRegEpsg" id="sdmRegEpsg" class="type01 w100per">
+              <option value="5174">EPSG:5174 (Korea 2000 / Central Belt)</option>
+              <option value="5179" selected>EPSG:5179 (GRS80)</option>
+              <option value="4326">EPSG:4326 (WGS84)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>서비스 · 옵션</th>
+          <td>
+            <div class="spatial-data-reg-modal__opts">
+              <div class="spatial-data-reg-modal__opt spatial-data-reg-modal__opt--toggle">
+                <span class="spatial-data-reg-modal__opt-label">서비스 활성화</span>
+                <button type="button" class="spatial-data-mgmt__svc spatial-data-mgmt__svc--on" id="sdmRegSvc" aria-pressed="true" title="서비스 활성화"></button>
+              </div>
+              <label for="sdmRegSec" class="chkbox spatial-data-reg-modal__chk">
+                <input type="checkbox" id="sdmRegSec">
+                <span class="chkOn"></span>
+                <span class="txt">보안 데이터</span>
+              </label>
+              <label for="sdmRegShare" class="chkbox spatial-data-reg-modal__chk">
+                <input type="checkbox" id="sdmRegShare">
+                <span class="chkOn"></span>
+                <span class="txt">공동 활용</span>
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="sdmRegFile">파일 첨부 <span class="spatial-data-reg-modal__th-sub">(SHP, GeoJSON 등)</span></label></th>
+          <td>
+            <div class="spatial-data-reg-modal__dropzone">
+              <input type="file" name="sdmRegFile" id="sdmRegFile" class="spatial-data-reg-modal__file" accept=".shp,.zip,.json,.geojson,.dbf,.shx,.prj,application/zip,application/json" multiple>
+              <label for="sdmRegFile" class="spatial-data-reg-modal__drop-label">
+                <span class="spatial-data-reg-modal__upload-ico" aria-hidden="true"></span>
+                <span class="spatial-data-reg-modal__drop-text">파일을 업로드하세요</span>
+              </label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pop-footer">
+    <div class="btn-area">
+      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSpatialDataRegister')">취소</button>
+      <button type="button" class="com-btn xl approval-manage-modal__btn-save spatial-data-reg-modal__btn-submit">등록</button>
+    </div>
+  </div>
+</div>

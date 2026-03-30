@@ -1,0 +1,44 @@
+<!-- 좌표계 변환 (시스템관리: approval-manage-modal) -->
+<div class="layerpop-wrap w610 approval-manage-modal spatial-coord-xform-modal" id="popupSpatialCoordTransform" style="display:none;">
+  <header>
+    <h3 class="spatial-coord-xform-modal__title">
+      좌표계 변환
+    </h3>
+    <button type="button" class="pop-close-btn" aria-label="닫기" onclick="closePopup('popupSpatialCoordTransform')">
+      <i class="ico-close" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <div class="pop-con">
+    <div class="spatial-coord-xform-modal__target-bar" role="status">
+      <span class="spatial-coord-xform-modal__target-label">대상 데이터:</span>
+      <strong class="spatial-coord-xform-modal__target-name" id="sdmCoordDataName">—</strong>
+    </div>
+
+    <div class="spatial-coord-xform-modal__row">
+      <div class="spatial-coord-xform-modal__field">
+        <label for="sdmCoordSource" class="spatial-coord-xform-modal__lbl">원본 좌표계 <span class="spatial-coord-xform-modal__lbl-en">(Source)</span></label>
+        <input type="text" id="sdmCoordSource" class="type01 w100per spatial-coord-xform-modal__input-readonly" readonly tabindex="-1" aria-readonly="true">
+      </div>
+      <span class="spatial-coord-xform-modal__arrow" aria-hidden="true">→</span>
+      <div class="spatial-coord-xform-modal__field">
+        <label for="sdmCoordTarget" class="spatial-coord-xform-modal__lbl">변환 좌표계 <span class="spatial-coord-xform-modal__lbl-en">(Target)</span></label>
+        <select id="sdmCoordTarget" class="type01 w100per">
+          <option value="5174">EPSG:5174 (Korea 2000 / Central Belt)</option>
+          <option value="5179" selected>EPSG:5179 (GRS80)</option>
+          <option value="4326">EPSG:4326 (WGS84)</option>
+          <option value="3857">EPSG:3857 (Web Mercator)</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="spatial-coord-xform-modal__note">* 좌표 변환 시 원본 데이터는 유지되며, 새로운 레이어가 생성됩니다.</p>
+  </div>
+
+  <div class="pop-footer">
+    <div class="btn-area spatial-coord-xform-modal__btn-area">
+      <button type="button" class="com-btn xl grayblue" onclick="closePopup('popupSpatialCoordTransform')">취소</button>
+      <button type="button" class="com-btn xl blue spatial-coord-xform-modal__btn-run">변환 실행</button>
+    </div>
+  </div>
+</div>

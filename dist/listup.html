@@ -52,7 +52,6 @@
 		);
 	}
 	$(function(){
-		updateRowNumbers();
 		var $tbody = $('#pageListBody');
 
 		// 시스템관리 페이지 고정 목록
@@ -103,12 +102,16 @@
 			{ file: 'toc-saved-list.html', title: 'TOC 저장된 목록', type: 'toc' },
 			{ file: 'toc-style-setting.html', title: 'TOC 스타일 설정', type: 'toc' },
 			{ file: 'spatial_data_dashboard.html', title: '공간 데이터 대시보드', type: 'data' },
-			{ file: 'spatial_data_manage.html', title: '공간데이터 관리', type: 'data' }
+			{ file: 'spatial_data_manage.html', title: '공간데이터 관리', type: 'data' },
+			{ file: 'system_security_pledge_manage.html', title: '보안각서 관리', type: 'system', note: '양식관리 탭(리스트) + 양식 등록/수정 모달 포함' },
+			{ file: 'system_security_pledge_detail.html', title: '보안 서약서 상세', type: 'system', note: '인쇄/워터마크 포함' },
+			{ file: 'public/admin_sso_link.html', title: 'SSO 연계', type: 'admin' }
 		];
 
 		$.each(systemPages, function(i, page){
 			appendPageRow($tbody, page);
 		});
+		updateRowNumbers();
 
 		// 생성된 map 페이지 목록 자동 추가 (public/map-pages.json)
 		$.getJSON('map-pages.json')
