@@ -1,0 +1,58 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>경관 분석 &gt; 일조권 분석</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
+
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <p class="">
+          일조권 분석결과
+        </p>
+
+        <section class="map-spatial-sidebar__section">
+          <div class="map-spatial-sun-result">
+            <div class="map-spatial-sun-result__card">
+              <div class="map-spatial-sun-result__line">분석기준일(동지) : 2026년 12월 22일</div>
+            </div>
+
+            <div class="map-spatial-sun-result__card map-spatial-sun-result__legend">
+              <div class="map-spatial-sun-result__legend-item">
+                <span class="map-spatial-sun-result__swatch map-spatial-sun-result__swatch--sun"></span>
+                <span>일조</span>
+              </div>
+              <div class="map-spatial-sun-result__legend-item">
+                <span class="map-spatial-sun-result__swatch map-spatial-sun-result__swatch--shade"></span>
+                <span>비일조</span>
+              </div>
+            </div>
+
+            <div class="map-spatial-sun-result__card">
+              <ul class="map-spatial-sun-result__list" aria-label="일조권 분석결과">
+                <li>일출시간 : 8시 45분</li>
+                <li>일몰시간 : 15시 18분</li>
+                <li>총 일조량 : 6시간 33분</li>
+                <li>연속 일조량(최대) : 6시간 33분</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn">인쇄</button>
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">다시 분석</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>
+  </aside>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+</div>
+{{/layout}}

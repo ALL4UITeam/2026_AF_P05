@@ -1,0 +1,147 @@
+<!-- 통계지도: map-ui 탭·폼 공통 클래스, 페이지 전용은 .map-statistics-sidebar__* -->
+<aside class="map-search-sidebar map-statistics-sidebar is-open" id="statisticsPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-statistics-sidebar__header">
+      <h2>통계지도</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="statisticsPanel" title="닫기">닫기</button>
+    </header>
+    <div class="map-search-sidebar__body map-statistics-sidebar__body">
+      <div class="map-statistics-sidebar__main" data-statistics-tabs>
+        <div class="map-ui-tabs map-statistics-sidebar__tabs" role="tablist" aria-label="통계 구분">
+          <button type="button" class="map-ui-tabs__item is-active" role="tab" aria-selected="true" data-map-ui-tab="population"><span>인구</span></button>
+          <button type="button" class="map-ui-tabs__item" role="tab" aria-selected="false" data-map-ui-tab="housing"><span>주택</span></button>
+          <button type="button" class="map-ui-tabs__item" role="tab" aria-selected="false" data-map-ui-tab="household"><span>가구</span></button>
+        </div>
+        <button type="button" class="map-statistics-sidebar__chart-btn">차트보기</button>
+
+        <div class="map-statistics-sidebar__panel" data-map-ui-content="population">
+          <div class="map-statistics-sidebar__filter-grid">
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statPopCategory">분류</label>
+              <select id="statPopCategory" class="map-ui-select" title="분류">
+                <option>총인구</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statPopDataType">자료유형</label>
+              <select id="statPopDataType" class="map-ui-select" title="자료유형">
+                <option>총인구(전체)</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statPopSigungu">시군구</label>
+              <select id="statPopSigungu" class="map-ui-select" title="시군구">
+                <option>전체</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statPopEmd">읍면동</label>
+              <select id="statPopEmd" class="map-ui-select" title="읍면동">
+                <option>전체</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statPopGrid">격자</label>
+              <select id="statPopGrid" class="map-ui-select" title="격자">
+                <option>1km x 1km</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statPopYear">연도선택</label>
+              <select id="statPopYear" class="map-ui-select" title="연도">
+                <option>2024년</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-statistics-sidebar__panel" data-map-ui-content="housing" hidden>
+          <div class="map-statistics-sidebar__filter-grid">
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHouseCategory">분류</label>
+              <select id="statHouseCategory" class="map-ui-select" title="분류">
+                <option>주택 유형</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHouseDataType">자료유형</label>
+              <select id="statHouseDataType" class="map-ui-select" title="자료유형">
+                <option>총주택</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHouseSigungu">시군구</label>
+              <select id="statHouseSigungu" class="map-ui-select" title="시군구">
+                <option>전체</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHouseEmd">읍면동</label>
+              <select id="statHouseEmd" class="map-ui-select" title="읍면동">
+                <option>전체</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHouseGrid">격자</label>
+              <select id="statHouseGrid" class="map-ui-select" title="격자">
+                <option>1km x 1km</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHouseYear">연도선택</label>
+              <select id="statHouseYear" class="map-ui-select" title="연도">
+                <option>2024년</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-statistics-sidebar__panel" data-map-ui-content="household" hidden>
+          <div class="map-statistics-sidebar__filter-grid">
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHhCategory">분류</label>
+              <select id="statHhCategory" class="map-ui-select" title="분류">
+                <option>가구 구성</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHhDataType">자료유형</label>
+              <select id="statHhDataType" class="map-ui-select" title="자료유형">
+                <option>총가구</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHhSigungu">시군구</label>
+              <select id="statHhSigungu" class="map-ui-select" title="시군구">
+                <option>전체</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHhEmd">읍면동</label>
+              <select id="statHhEmd" class="map-ui-select" title="읍면동">
+                <option>전체</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHhGrid">격자</label>
+              <select id="statHhGrid" class="map-ui-select" title="격자">
+                <option>1km x 1km</option>
+              </select>
+            </div>
+            <div class="map-ui-form-group map-statistics-sidebar__field">
+              <label for="statHhYear">연도선택</label>
+              <select id="statHhYear" class="map-ui-select" title="연도">
+                <option>2024년</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="map-search-sidebar__open" data-target="statisticsPanel">열기</button>
+</aside>

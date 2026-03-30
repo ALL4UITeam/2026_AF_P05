@@ -1,0 +1,228 @@
+{{#> layout}}
+<style>
+	.map-search-zoom__track-wrap{display: none;}
+</style>
+<div class="vibe-container map-theme-page">
+	
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+	</div>
+
+	
+	<div class="map-ui-modal-backdrop is-open" id="simulationModal" aria-hidden="true">
+		<div class="map-ui-modal">
+			<header class="map-ui-modal__header">
+				<h3>입지 적합성 분석</h3>
+				<button type="button" class="map-ui-modal__close" aria-label="닫기" data-land-search-close></button>
+			</header>
+			<div class="map-ui-modal__body">
+				<div class="map-ui-modal__content">
+					<div class="map-ui-wizard">
+						<div class="map-ui-wizard__main map-ui-wizard__main--split">
+							<header class="map-ui-wizard__head">
+								<h3>Step 2. 입지적합성 분석</h3>
+								<p>선택된 후보지에 대해 상세 정보를 조회하여 “입지 적합” 판단 근거를 확보합니다.</p>
+							</header>
+
+							<div class="map-ui-wizard__tab-stack">
+								<div class="map-ui-tabs" role="tablist">
+									<button type="button" class="map-ui-tabs__item is-active" role="tab" aria-selected="true" data-map-ui-tab="cadastre">
+										<span>지적현황</span>
+									</button>
+									<button type="button" class="map-ui-tabs__item" role="tab" aria-selected="false" data-map-ui-tab="landuse">
+										<span>토지이용계획</span>
+									</button>
+								</div>
+
+								<div class="map-ui-wizard__tab-panels">
+									<div class="map-ui-wizard__tab-panel" data-map-ui-content="cadastre" role="tabpanel">
+										<div class="map-ui-compare">
+											<div class="map-ui-compare__col">
+												<section class="map-ui-kv-section" aria-labelledby="map-s2-cad-a-basic">
+													<h4 class="map-ui-kv-section__title" id="map-s2-cad-a-basic">기본 정보</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">소재지</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">영천시 신녕면 부산리 274-3</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산관리관명</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">경상북도 건설도시국 도로철도과</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">위임관리관명</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">경상북도 건설도시국 도로철도과</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">대부존재여부</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">미대부</span>
+														</div>
+													</div>
+												</section>
+												<section class="map-ui-kv-section" aria-labelledby="map-s2-cad-a-parcel">
+													<h4 class="map-ui-kv-section__title" id="map-s2-cad-a-parcel">필지 종류</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">지목</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">도로</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산용도</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">행정재산</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">용도지역</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">-</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">계획지구</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">-</span>
+														</div>
+													</div>
+												</section>
+												<section class="map-ui-kv-section" aria-labelledby="map-s2-cad-a-num">
+													<h4 class="map-ui-kv-section__title" id="map-s2-cad-a-num">수치 정보</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산가격</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">0원</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">기준가격</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40,000원</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">면적</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40.00㎡</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">실소유면적</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40.00㎡</span>
+														</div>
+													</div>
+												</section>
+											</div>
+
+											<div class="map-ui-compare__col">
+												<section class="map-ui-kv-section" aria-labelledby="map-s2-cad-b-basic">
+													<h4 class="map-ui-kv-section__title" id="map-s2-cad-b-basic">기본 정보</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">소재지</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">영천시 신녕면 부산리 274-3</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산관리관명</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">경상북도 건설도시국 도로철도과</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">위임관리관명</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">경상북도 건설도시국 도로철도과</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">대부존재여부</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">미대부</span>
+														</div>
+													</div>
+												</section>
+												<section class="map-ui-kv-section" aria-labelledby="map-s2-cad-b-parcel">
+													<h4 class="map-ui-kv-section__title" id="map-s2-cad-b-parcel">필지 종류</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">지목</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">도로</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산용도</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">행정재산</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">용도지역</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">-</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">계획지구</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">-</span>
+														</div>
+													</div>
+												</section>
+												<section class="map-ui-kv-section" aria-labelledby="map-s2-cad-b-num">
+													<h4 class="map-ui-kv-section__title" id="map-s2-cad-b-num">수치 정보</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산가격</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">0원</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">기준가격</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40,000원</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">면적</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40.00㎡</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">실소유면적</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40.00㎡</span>
+														</div>
+													</div>
+												</section>
+											</div>
+										</div>
+									</div>
+
+									<div class="map-ui-wizard__tab-panel" data-map-ui-content="landuse" hidden role="tabpanel">
+										<div class="map-ui-compare">
+											<div class="map-ui-compare__col">
+												<p class="map-ui-empty-hint">토지이용계획 정보는 연계 후 표시됩니다.</p>
+											</div>
+											<div class="map-ui-compare__col">
+												<p class="map-ui-empty-hint">토지이용계획 정보는 연계 후 표시됩니다.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 스텝별 하단 고정 액션 -->
+						<div class="map-ui-wizard__actions">
+							<button type="button" class="map-ui-wizard__action-btn map-ui-btn">이전</button>
+							<button type="button" class="map-ui-wizard__action-btn map-ui-btn-primary">다음</button>
+						</div>
+					</div>
+
+					<div class="map-ui-side-panel">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/layout}}

@@ -1,0 +1,59 @@
+<!-- 인접 영역 분석 패널 (PPT slide 8/9) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialAdjacentPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>인접 영역 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialAdjacentPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>대상 레이어를 설정하고, 인접 조건을 지정하여 영역 분석을 실행하세요.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">1. 대상 레이어 설정</h3>
+        <select class="map-ui-select" id="adjacentTargetLayer" title="대상 레이어 선택">
+          <option value="">대상 레이어를 선택하세요.</option>
+          <option value="building">건물</option>
+          <option value="road">도로</option>
+          <option value="land">토지</option>
+        </select>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">2. 인접 거리 설정</h3>
+        <div class="map-spatial-sidebar__radius-box">
+          <div class="map-spatial-sidebar__radius-row">
+            <label for="adjacentDistInput" class="map-spatial-sidebar__zone-label is-active">
+              <span class="dot"></span>인접 거리
+            </label>
+            <div class="map-spatial-sidebar__distance-input">
+              <input id="adjacentDistInput" type="number" class="map-ui-input" value="100" min="0" title="인접 거리" aria-label="인접 거리">
+              <span>m</span>
+            </div>
+          </div>
+          <input type="range" class="mydata-layer__range" min="0" max="1000" value="100" aria-label="인접 거리 슬라이더">
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">3. 공간 관계</h3>
+        <select class="map-ui-select" id="adjacentRelation" title="공간 관계">
+          <option value="touches">인접 (Touches)</option>
+          <option value="intersects">교차 (Intersects)</option>
+          <option value="within">포함 (Within)</option>
+          <option value="contains">포함됨 (Contains)</option>
+        </select>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">초기화</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialAdjacentPanel">열기</button>
+</aside>

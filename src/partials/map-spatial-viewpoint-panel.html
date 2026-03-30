@@ -1,0 +1,38 @@
+<!-- 조망권 분석 패널 (PPT slide 14) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialViewpointPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>조망권 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialViewpointPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>시점과 조망점을 지도상에서 선택해 시점에서 조망점의 가시 여부를 확인할 수 있습니다.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">시점 · 조망점 지정</h3>
+        <div class="map-spatial-point-pick">
+          <span class="map-spatial-point-pick__label">시점</span>
+          <button type="button" class="map-spatial-point-pick__btn">지도에서 선택</button>
+        </div>
+        <div class="map-spatial-point-pick" style="margin-top:8px;">
+          <span class="map-spatial-point-pick__label">조망점</span>
+          <button type="button" class="map-spatial-point-pick__btn">조망점을 지정하세요.</button>
+          <button type="button" class="map-spatial-point-pick__btn map-spatial-point-pick__btn--cancel">취소</button>
+        </div>
+      </section>
+
+      <p class="map-spatial-map-hint">지도에 마우스로 시점과 조망점을 순서대로 클릭하세요.</p>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">취소</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">분석실행</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialViewpointPanel">열기</button>
+</aside>

@@ -1,0 +1,131 @@
+<!-- 가시권 분석 패널 (PPT slide 12) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialVisibilityPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>가시권 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialVisibilityPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>분석 인자(지점, 퍼짐각, 정밀도)를 통한 총면적, 가시면적, 비가시면적을 추출합니다.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">분석 인자</h3>
+        <div class="map-spatial-sidebar__radius-box">
+          <div class="map-spatial-stepper">
+            <span class="map-spatial-stepper__label">퍼짐각</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn" aria-label="퍼짐각 감소">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="40" min="0" max="360" aria-label="퍼짐각">
+              <button type="button" class="map-spatial-stepper__btn" aria-label="퍼짐각 증가">+</button>
+              <span class="map-spatial-stepper__unit">°</span>
+            </div>
+          </div>
+          <div class="map-spatial-stepper" style="margin-top:10px;">
+            <span class="map-spatial-stepper__label">정밀도</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn" aria-label="정밀도 감소">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="1" min="1" max="10" aria-label="정밀도">
+              <button type="button" class="map-spatial-stepper__btn" aria-label="정밀도 증가">+</button>
+              <span class="map-spatial-stepper__unit"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">색상 설정</h3>
+        <div class="map-spatial-sidebar__radius-box">
+          <div class="map-spatial-color-row">
+            <span class="map-spatial-color-row__label">가시 색상</span>
+            <button type="button" class="map-spatial-color-row__swatch" style="background:#3b82f6;" aria-label="가시 색상 선택"></button>
+          </div>
+          <div class="map-spatial-color-row" style="margin-top:8px;">
+            <span class="map-spatial-color-row__label">비가시 색상</span>
+            <button type="button" class="map-spatial-color-row__swatch" style="background:#ef4444;" aria-label="비가시 색상 선택"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">기준점 설정</h3>
+        <div class="map-spatial-point-group">
+          <p class="map-spatial-point-group__title">기준점</p>
+          <div class="map-spatial-stepper">
+            <span class="map-spatial-stepper__label">X축 이동</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="0.5" step="0.1" aria-label="기준점 X축">
+              <button type="button" class="map-spatial-stepper__btn">+</button>
+              <span class="map-spatial-stepper__unit">m</span>
+            </div>
+          </div>
+          <div class="map-spatial-stepper">
+            <span class="map-spatial-stepper__label">Y축 이동</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="0.5" step="0.1" aria-label="기준점 Y축">
+              <button type="button" class="map-spatial-stepper__btn">+</button>
+              <span class="map-spatial-stepper__unit">m</span>
+            </div>
+          </div>
+          <div class="map-spatial-stepper">
+            <span class="map-spatial-stepper__label">Z축 이동</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="0.5" step="0.1" aria-label="기준점 Z축">
+              <button type="button" class="map-spatial-stepper__btn">+</button>
+              <span class="map-spatial-stepper__unit">m</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">방향점 설정</h3>
+        <div class="map-spatial-point-group">
+          <p class="map-spatial-point-group__title">방향점</p>
+          <div class="map-spatial-stepper">
+            <span class="map-spatial-stepper__label">X축 이동</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="0.5" step="0.1" aria-label="방향점 X축">
+              <button type="button" class="map-spatial-stepper__btn">+</button>
+              <span class="map-spatial-stepper__unit">m</span>
+            </div>
+          </div>
+          <div class="map-spatial-stepper">
+            <span class="map-spatial-stepper__label">Y축 이동</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="0.5" step="0.1" aria-label="방향점 Y축">
+              <button type="button" class="map-spatial-stepper__btn">+</button>
+              <span class="map-spatial-stepper__unit">m</span>
+            </div>
+          </div>
+          <div class="map-spatial-stepper">
+            <span class="map-spatial-stepper__label">Z축 이동</span>
+            <div class="map-spatial-stepper__control">
+              <button type="button" class="map-spatial-stepper__btn">−</button>
+              <input type="number" class="map-spatial-stepper__input" value="0.5" step="0.1" aria-label="방향점 Z축">
+              <button type="button" class="map-spatial-stepper__btn">+</button>
+              <span class="map-spatial-stepper__unit">m</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <p class="map-spatial-map-hint">지도에 마우스로 시점 위치와 방향을 선택하세요</p>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">취소</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">분석실행</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialVisibilityPanel">열기</button>
+</aside>

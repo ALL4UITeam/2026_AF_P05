@@ -1,0 +1,42 @@
+{{#> layout}}
+<div class="vibe-container map-statistics-page">
+
+	{{> map-statistics-panel}}
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+	<div class="map-ui-modal-backdrop is-open" id="chartModal" aria-hidden="true">
+		<div class="map-ui-modal">
+			<header class="map-ui-modal__header">
+				<h3>차트보기</h3>
+				<button type="button" class="map-ui-modal__close" aria-label="닫기" data-chart-close></button>
+			</header>
+			<div class="map-ui-modal__body">
+				<div class="map-ui-modal__content">
+					<div class="map-ui-chart">
+						<div class="map-ui-wizard__tab-stack">
+							<div class="map-ui-tabs" role="tablist" aria-label="차트 유형">
+								<button type="button" class="map-ui-tabs__item is-active" role="tab" aria-selected="true"
+									data-map-ui-tab="pie"><span>원형 그래프</span></button>
+								<button type="button" class="map-ui-tabs__item" role="tab" aria-selected="false"
+									data-map-ui-tab="line"><span>꺾은선 그래프</span></button>
+								<button type="button" class="map-ui-tabs__item" role="tab" aria-selected="false"
+									data-map-ui-tab="bar"><span>막대 그래프</span></button>
+							</div>
+							<div class="map-ui-wizard__tab-panels">
+								<div class="map-ui-wizard__tab-panel map-ui-chart__panel is-active" data-map-ui-content="pie">
+									차트 영역
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{/layout}}

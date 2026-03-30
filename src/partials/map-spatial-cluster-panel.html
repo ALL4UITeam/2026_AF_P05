@@ -1,0 +1,68 @@
+<!-- 포인터 군집 분석 패널 (PPT slide 10) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialClusterPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>포인터 군집</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialClusterPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>단계별로 설정을 완료하면 포인터 군집 분석을 실행할 수 있습니다.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <div class="map-spatial-steps">
+          <div class="map-spatial-steps__item is-done">
+            <span class="map-spatial-steps__num">1</span>
+            <span class="map-spatial-steps__label">레이어 선택</span>
+          </div>
+          <div class="map-spatial-steps__item is-done">
+            <span class="map-spatial-steps__num">2</span>
+            <span class="map-spatial-steps__label">속성 선택</span>
+          </div>
+          <div class="map-spatial-steps__item is-active">
+            <span class="map-spatial-steps__num">3</span>
+            <span class="map-spatial-steps__label">군집 반경 설정</span>
+          </div>
+          <div class="map-spatial-steps__item">
+            <span class="map-spatial-steps__num">4</span>
+            <span class="map-spatial-steps__label">최소 포인트 수 설정</span>
+          </div>
+          <div class="map-spatial-steps__item">
+            <span class="map-spatial-steps__num">5</span>
+            <span class="map-spatial-steps__label">색상 설정</span>
+          </div>
+          <div class="map-spatial-steps__item">
+            <span class="map-spatial-steps__num">6</span>
+            <span class="map-spatial-steps__label">결과 확인</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">군집 반경</h3>
+        <div class="map-spatial-sidebar__radius-box">
+          <div class="map-spatial-sidebar__radius-row">
+            <label for="clusterRadiusInput" class="map-spatial-sidebar__zone-label is-active">
+              <span class="dot"></span>반경
+            </label>
+            <div class="map-spatial-sidebar__distance-input">
+              <input id="clusterRadiusInput" type="number" class="map-ui-input" value="200" min="0" title="군집 반경" aria-label="군집 반경">
+              <span>m</span>
+            </div>
+          </div>
+          <input type="range" class="mydata-layer__range" min="0" max="2000" value="200" aria-label="군집 반경 슬라이더">
+        </div>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">이전</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">계속</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialClusterPanel">열기</button>
+</aside>

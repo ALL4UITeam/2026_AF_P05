@@ -1,0 +1,64 @@
+<!-- 종횡단면 분석 패널 (PPT slide 20) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialSectionPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>지형단면 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialSectionPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>지형의 종단 · 횡단면 및 구조물의 평면을 분석하여 가시화합니다.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">종단면 설정</h3>
+        <button type="button" class="map-spatial-sidebar__anchor-btn" style="height:52px; font-size:14px;">
+          종단면 그리기
+        </button>
+        <p class="map-spatial-map-hint" style="text-align:left; font-size:11px;">
+          지도에 마우스로 그리기를 시작하세요. 마우스 클릭마다 정점이 추가되며 [그리기 완료] 버튼 및 마우스 우클릭 시 그리기모드가 종료됩니다.
+        </p>
+        <div class="sidebar__footer" style="padding:0; margin-top:0; border-top:none;">
+          <button type="button" class="sidebar__footer-btn">취소</button>
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">그리기 완료</button>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">횡단면 설정</h3>
+        <div class="map-spatial-mode-tabs">
+          <button type="button" class="map-spatial-mode-tabs__btn is-active">지점선택</button>
+          <button type="button" class="map-spatial-mode-tabs__btn">등간격 설정</button>
+        </div>
+
+        <div class="map-spatial-point-pick">
+          <span class="map-spatial-point-pick__label">단지점 선택</span>
+          <button type="button" class="map-spatial-point-pick__btn">지도에서 선택</button>
+        </div>
+
+        <div class="map-spatial-sidebar__radius-box" style="margin-top:0;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <span style="font-size:13px; color:#374151; font-weight:600;">횡단지점</span>
+            <span style="font-size:12px; color:#6b7280;">0개 선택됨</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="font-size:13px; color:#374151; font-weight:600;">횡단길이</span>
+            <div class="map-spatial-sidebar__distance-input" style="gap:6px;">
+              <input type="number" class="map-ui-input" value="50" min="0" title="횡단길이" aria-label="횡단길이" style="width:70px; text-align:center;">
+              <span>m</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">초기화</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">분석실행</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialSectionPanel">열기</button>
+</aside>

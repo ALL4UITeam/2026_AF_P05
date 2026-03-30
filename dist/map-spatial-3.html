@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/main.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli active">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					
+
+					<div class="popover-menu-wrap intelli active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active">통합지도</a></li>
+								<li><a href="#">3D지도</a></li>
+								<li><a href="#">실내지도</a></li>
+								<li><a href="#">주제도</a></li>
+								<li><a href="#">검색</a></li>
+								<li><a href="#">분석</a></li>
+								<li><a href="#">통계지도</a></li>
+								<li><a href="#">마이 데이터</a></li>
+								<li><a href="#">입지분석 시뮬레이션</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				<div class="vibe-container map-spatial-page">
+					<div class="map-search-sidebar__inner">
+				    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+				      <h2>기하분석 &gt; 버퍼분석</h2>
+				      <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+				    </header>
+				
+				    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+				      <p class="map-spatial-sidebar__notice">
+				        <i aria-hidden="true">i</i>
+				        <span>다중 반경 multi-Ring)영향권 분석
+				          <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
+				        </span>
+				        
+				      </p>
+				
+				      <section class="map-spatial-sidebar__section">
+				        <h3 class="map-spatial-sidebar__title">기준점 설정</h3>
+				        <input type="text" class="map-ui-input input-search" value="경상북도 포항시 남구 시청로 1" placeholder="주소 입력" aria-label="기준점 주소">
+				        <p class="map-spatial-sidebar__hint">*지도 클릭으로 위치 수정 가능</p>
+				      </section>
+				
+				      <section class="map-spatial-sidebar__section">
+				        <h3 class="map-spatial-sidebar__title">버퍼 거리 설정
+				          <button type="button" class="map-spatial-sidebar__add map-ui-btn">추가</button>
+				        </h3>
+				        <div class="map-spatial-sidebar__radius-box">
+				          <div class="map-spatial-sidebar__radius-row">
+				            <label for="spatialZone1Range" class="map-spatial-sidebar__zone-label is-active">
+				              <span class="dot"></span>Zone 1
+				            </label>
+				            <div class="map-spatial-sidebar__distance-input">
+				              <input type="text" class="map-ui-input" value="50" min="0" title="Zone 1 거리" aria-label="Zone 1 거리">
+				              <span>m</span>
+				            </div>
+				          </div>      
+				        </div>
+				      </section>
+				
+				      <section class="map-spatial-sidebar__section">
+				        <h3 class="map-spatial-sidebar__title">분석 대상</h3>
+				        <div class="map-spatial-sidebar__target-grid">
+				          <div class="map-spatial-sidebar__target">
+				            <label class="input-check">
+				              <input type="checkbox">
+				              <span class="input-check__ui"></span>
+				              <span class="input-check__label">건물</span>
+				            </label>
+				          </div>
+				          <div class="map-spatial-sidebar__target">
+				            <label class="input-check">
+				              <input type="checkbox" checked="">
+				              <span class="input-check__ui"></span>
+				              <span class="input-check__label">도로</span>
+				            </label>
+				          </div>
+				          <div class="map-spatial-sidebar__target">
+				            <label class="input-check">
+				              <input type="checkbox" checked="">
+				              <span class="input-check__ui"></span>
+				              <span class="input-check__label">가로수</span>
+				            </label>
+				          </div>
+				          <div class="map-spatial-sidebar__target">
+				            <label class="input-check">
+				              <input type="checkbox" checked="">
+				              <span class="input-check__ui"></span>
+				              <span class="input-check__label">소화전</span>
+				            </label>
+				          </div>
+				          <div class="map-spatial-sidebar__target">
+				            <label class="input-check">
+				              <input type="checkbox" checked="">
+				              <span class="input-check__ui"></span>
+				              <span class="input-check__label">CCTV</span>
+				            </label>
+				          </div>
+				          <div class="map-spatial-sidebar__target">
+				            <label class="input-check">
+				              <input type="checkbox" checked="">
+				              <span class="input-check__ui"></span>
+				              <span class="input-check__label">인구</span>
+				            </label>
+				          </div>
+				        </div>
+				      </section>
+				
+				      <div class="sidebar__footer">
+				        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+				      </div>
+				    </div>
+				  </div>
+				
+					<div class="map-area">
+						<div id="map-container"></div>
+						
+						<div class="map-toolbar-wrap">
+							<button type="button" class="map-toolbar__btn" data-tool="theme">
+								<span class="map-toolbar__label">주제도</span>
+							</button>
+							
+							<div class="map-toolbar" aria-label="지도 도구">
+								<button type="button" class="map-toolbar__btn" data-tool="basemap">
+									<span class="map-toolbar__label">3D</span>
+								</button>
+								
+								<button type="button" class="map-toolbar__btn" data-tool="distance">
+									<span class="map-toolbar__label">거리</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="area">
+									<span class="map-toolbar__label">면적</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="elevation">
+									<span class="map-toolbar__label">표고</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="radius">
+									<span class="map-toolbar__label">반경</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="draw">
+									<span class="map-toolbar__label">그리기</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="print">
+									<span class="map-toolbar__label">인쇄</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="save">
+									<span class="map-toolbar__label">저장</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="roadview">
+									<span class="map-toolbar__label">로드뷰</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="info">
+									<span class="map-toolbar__label">정보보기</span>
+								</button>
+							</div>
+						
+							<div class="map-toolbar__btn-wrap">
+								<button type="button" class="map-toolbar__btn" data-tool="compass" title="나침반"></button>
+							</div>
+							<div class="map-toolbar__btn-wrap">
+								<button type="button" class="map-toolbar__btn" data-tool="current-location" title="현재위치"></button>
+							</div>
+							<div class="map-toolbar__btn-wrap">
+								<button type="button" class="map-toolbar__btn" data-tool="home" title="홈"></button>
+							</div>
+							
+						</div>	</div>
+				
+				
+				  <div class="map-ui-modal-backdrop is-open" id="spatialBufferModal" aria-hidden="true">
+				    <div class="map-ui-modal map-spatial-buffer-report" role="dialog" aria-modal="true" aria-labelledby="spatialBufferReportTitle">
+				      <header class="map-ui-modal__header">
+				        <h3 id="spatialBufferReportTitle">영향권 분석 리포트</h3>
+				        <button type="button" class="map-ui-modal__close" aria-label="닫기" data-spatial-buffer-close></button>
+				      </header>
+				
+				      <div class="map-ui-modal__body">
+				        <div class="map-ui-modal__content">
+				          <div class="map-spatial-buffer-report__sections">
+				            <section class="map-spatial-buffer-report__section">
+				              <h4 class="map-spatial-buffer-report__section-title">구간별 영향권 요약 (Zone Summary)</h4>
+				
+				              <div class="map-ui-table-wrap map-ui-table-wrap--sheet">
+				                <table class="map-ui-table map-ui-table--sheet" aria-label="Zone Summary 테이블">
+				                  <thead>
+				                    <tr>
+				                      <th>구분</th>
+				                      <th>거리</th>
+				                      <th>건물 수</th>
+				                      <th>인구</th>
+				                    </tr>
+				                  </thead>
+				                  <tbody>
+				                    <tr>
+				                      <td>Zone 1</td>
+				                      <td>0~200m</td>
+				                      <td>45동</td>
+				                      <td>1,200명</td>
+				                    </tr>
+				                    <tr>
+				                      <td>Zone 2</td>
+				                      <td>200~500m</td>
+				                      <td>152동</td>
+				                      <td>4,580명</td>
+				                    </tr>
+				                    <tr>
+				                      <td>Zone 3</td>
+				                      <td>500~1km</td>
+				                      <td>410동</td>
+				                      <td>12,400명</td>
+				                    </tr>
+				                  </tbody>
+				                </table>
+				              </div>
+				            </section>
+				
+				            <section class="map-spatial-buffer-report__section">
+				              <h4 class="map-spatial-buffer-report__section-title">누적 인구 변화</h4>
+				
+				              <div class="map-spatial-buffer-report__chart-wrap">
+				                <div class="map-spatial-buffer-report__legend" aria-label="차트 범례">
+				                  <div class="map-spatial-buffer-report__legend-item">
+				                    <span class="map-spatial-buffer-report__legend-dot map-spatial-buffer-report__legend-dot--blue"></span>
+				                    인구 변화
+				                  </div>
+				                  <div class="map-spatial-buffer-report__legend-item">
+				                    <span class="map-spatial-buffer-report__legend-dot map-spatial-buffer-report__legend-dot--gray"></span>
+				                    누적 건물 수
+				                  </div>
+				                </div>
+				
+				                <svg class="map-spatial-buffer-report__svg" viewBox="0 0 320 160" role="img" aria-label="누적 인구 변화 차트">
+				                  <g fill="none" stroke="#e5e7eb" stroke-width="1">
+				                    <line x1="56" y1="120" x2="300" y2="120" />
+				                    <line x1="56" y1="90" x2="300" y2="90" />
+				                    <line x1="56" y1="60" x2="300" y2="60" />
+				                    <line x1="56" y1="30" x2="300" y2="30" />
+				                  </g>
+				
+				                  <g>
+				                    <rect x="96" y="72" width="30" height="48" rx="4" fill="#93c5fd" stroke="#93c5fd" />
+				                    <rect x="160" y="52" width="30" height="68" rx="4" fill="#6b5ce7" opacity="0.35" stroke="#6b5ce7" opacity="0.35" />
+				                    <rect x="224" y="30" width="30" height="90" rx="4" fill="#4f46e5" opacity="0.45" stroke="#4f46e5" opacity="0.45" />
+				                  </g>
+				
+				                  <polyline points="111,82 175,65 239,55" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+				                  <g>
+				                    <circle cx="111" cy="82" r="4.5" fill="#2563eb" />
+				                    <circle cx="175" cy="65" r="4.5" fill="#2563eb" />
+				                    <circle cx="239" cy="55" r="4.5" fill="#2563eb" />
+				                  </g>
+				
+				                  <g fill="#6b7280" font-size="12" font-weight="700">
+				                    <text x="96" y="146">Zone 1</text>
+				                    <text x="160" y="146">Zone 2</text>
+				                    <text x="224" y="146">Zone 3</text>
+				                  </g>
+				                </svg>
+				              </div>
+				            </section>
+				
+				            <section class="map-spatial-buffer-report__section">
+				              <h4 class="map-spatial-buffer-report__section-title">활용 안내</h4>
+				              <div class="map-spatial-buffer-report__bullets">
+				                <ul>
+				                  <li>Zone 1 (200m) 내에는 생활 인프라가 상대적으로 집중되어 있습니다.</li>
+				                  <li>Zone 2 (500m) 내에는 주거/상업 혼재 분포가 확인됩니다.</li>
+				                  <li>전체 1km 기준, 유동인구와 거주인구의 비중 차이가 나타납니다.</li>
+				                </ul>
+				              </div>
+				            </section>
+				          </div>
+				        </div>
+				      </div>
+				
+				      <footer class="map-ui-modal__footer map-spatial-buffer-report__footer">
+				        <button type="button" class="map-ui-btn">SHP 다운로드</button>
+				        <button type="button" class="map-ui-btn map-ui-btn--primary">리포트 생성</button>
+				      </footer>
+				    </div>
+				  </div>
+				
+				  
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

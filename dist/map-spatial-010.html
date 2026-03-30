@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/main.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli active">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					
+
+					<div class="popover-menu-wrap intelli active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active">통합지도</a></li>
+								<li><a href="#">3D지도</a></li>
+								<li><a href="#">실내지도</a></li>
+								<li><a href="#">주제도</a></li>
+								<li><a href="#">검색</a></li>
+								<li><a href="#">분석</a></li>
+								<li><a href="#">통계지도</a></li>
+								<li><a href="#">마이 데이터</a></li>
+								<li><a href="#">입지분석 시뮬레이션</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				<div class="vibe-container map-spatial-page">
+				  <!-- 조망권 분석 패널 (PPT slide 14) -->
+				  <aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialViewpointPanel">
+				    <div class="map-search-sidebar__inner">
+				      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+				        <h2>조망권 분석</h2>
+				        <button type="button" class="map-search-sidebar__close" data-target="spatialViewpointPanel" title="닫기">닫기</button>
+				      </header>
+				  
+				      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+				        <p class="map-spatial-sidebar__notice">
+				          <i aria-hidden="true">i</i>
+				          <span>시점과 조망점을 지도상에서 선택해 시점에서 조망점의 가시 여부를 확인할 수 있습니다.</span>
+				        </p>
+				  
+				        <section class="map-spatial-sidebar__section">
+				          <h3 class="map-spatial-sidebar__section-title">시점 · 조망점 지정</h3>
+				          <div class="map-spatial-point-pick">
+				            <span class="map-spatial-point-pick__label">시점</span>
+				            <button type="button" class="map-spatial-point-pick__btn">지도에서 선택</button>
+				          </div>
+				          <div class="map-spatial-point-pick" style="margin-top:8px;">
+				            <span class="map-spatial-point-pick__label">조망점</span>
+				            <button type="button" class="map-spatial-point-pick__btn">조망점을 지정하세요.</button>
+				            <button type="button" class="map-spatial-point-pick__btn map-spatial-point-pick__btn--cancel">취소</button>
+				          </div>
+				        </section>
+				  
+				        <p class="map-spatial-map-hint">지도에 마우스로 시점과 조망점을 순서대로 클릭하세요.</p>
+				  
+				        <div class="sidebar__footer">
+				          <button type="button" class="sidebar__footer-btn">취소</button>
+				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">분석실행</button>
+				        </div>
+				      </div>
+				    </div>
+				  
+				    <button type="button" class="map-search-sidebar__open" data-target="spatialViewpointPanel">열기</button>
+				  </aside>
+				  <div class="map-area">
+				    <div id="map-container"></div>
+				    
+				    <div class="map-toolbar-wrap">
+				    	<button type="button" class="map-toolbar__btn" data-tool="theme">
+				    		<span class="map-toolbar__label">주제도</span>
+				    	</button>
+				    	
+				    	<div class="map-toolbar" aria-label="지도 도구">
+				    		<button type="button" class="map-toolbar__btn" data-tool="basemap">
+				    			<span class="map-toolbar__label">3D</span>
+				    		</button>
+				    		
+				    		<button type="button" class="map-toolbar__btn" data-tool="distance">
+				    			<span class="map-toolbar__label">거리</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="area">
+				    			<span class="map-toolbar__label">면적</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="elevation">
+				    			<span class="map-toolbar__label">표고</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="radius">
+				    			<span class="map-toolbar__label">반경</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="draw">
+				    			<span class="map-toolbar__label">그리기</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="print">
+				    			<span class="map-toolbar__label">인쇄</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="save">
+				    			<span class="map-toolbar__label">저장</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="roadview">
+				    			<span class="map-toolbar__label">로드뷰</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="info">
+				    			<span class="map-toolbar__label">정보보기</span>
+				    		</button>
+				    	</div>
+				    
+				    	<div class="map-toolbar__btn-wrap">
+				    		<button type="button" class="map-toolbar__btn" data-tool="compass" title="나침반"></button>
+				    	</div>
+				    	<div class="map-toolbar__btn-wrap">
+				    		<button type="button" class="map-toolbar__btn" data-tool="current-location" title="현재위치"></button>
+				    	</div>
+				    	<div class="map-toolbar__btn-wrap">
+				    		<button type="button" class="map-toolbar__btn" data-tool="home" title="홈"></button>
+				    	</div>
+				    	
+				    </div>  </div>
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1765 @@
+.vibe-container.map-spatial-page {
+	.map-spatial-sidebar__header h2{
+		background: url('/images/map/statistics-icon.png') no-repeat left center;
+		padding-left: 28px;
+		min-height: 20px;
+		line-height: 20px;
+	}
+
+	.map-spatial-sidebar__body{
+		padding: 16px;
+		gap: 18px;
+	}
+
+	.map-spatial-sidebar__notice{
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+		margin: 0;
+		padding: 14px 12px;
+		background: #fff;
+		border: 1px solid #e3e4e6;
+		border-radius: 6px;
+		font-size: 14px;
+		font-weight: 500;
+		color: #4b5563;
+		line-height: 1.45;
+		i{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 16px;
+			height: 16px;
+			flex-shrink: 0;
+			border-radius: 50%;
+			border: 1px solid #9ca3af;
+			font-style: normal;
+			font-size: 11px;
+			font-weight: 700;
+			color: #6b7280;
+			margin-top: 2px;
+		}
+	}
+
+	.map-spatial-sidebar__section{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.map-spatial-sidebar__section .map-ui-input{
+		background-color: #fff;
+	}
+
+	.map-spatial-sidebar__hint{
+		font-size: 12px;
+		color: #666;
+	}
+
+	.map-spatial-sidebar__title{
+		margin: 0;
+		font-size: 17px;
+		font-weight: 600;
+		color: #111;
+		letter-spacing: -0.03em;
+		line-height: 1.2;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		
+	}
+
+	.map-spatial-sidebar__anchor-btn{
+		width: 100%;
+		height: 88px;
+		border: 1px dashed #ccd3e0;
+		border-radius: 8px;
+		background: #f8fbff;
+		color: #6b7a99;
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.map-spatial-sidebar__radius-box{
+		border: 1px solid #e3e4e6;
+		border-radius: 8px;
+		background: #fff;
+		padding: 16px;
+	}
+
+	.map-spatial-sidebar__radius-row{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+	.map-spatial-sidebar__radius-row + .mydata-layer__range{
+		width: 100%;
+		margin: 12px 0 16px;
+	}
+	.map-spatial-sidebar__radius-row.is-disabled{
+		opacity: .5;
+	}
+
+	.map-spatial-sidebar__zone-label{
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #999;
+		.dot{
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: #c5c9d6;
+		}
+		&.is-active{
+			color: #111;
+			.dot{
+				background: #5a4bd6;
+			}
+		}
+	}
+
+	.map-spatial-sidebar__distance-input{
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		input{
+			width: 80px;
+			text-align: center;
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		span{
+			font-size: 18px;
+			color: #666;
+		}
+	}
+
+	.map-spatial-sidebar__add-zone{
+		width: 100%;
+		height: 40px;
+		border: 1px solid #e3e4e6;
+		border-radius: 8px;
+		background: #f8f9fb;
+		color: #374151;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1;
+	}
+
+	.map-spatial-sidebar__target-grid{
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 10px;
+	}
+
+	.map-spatial-sidebar__target{
+		display: flex;
+		align-items: center;
+		height: 40px;
+		padding: 0 12px;
+		border: 1px solid #dbe0ea;
+		border-radius: 6px;
+		background: #f8f9ff;
+		.input-check{
+			width: 100%;
+		}
+	}
+
+	.map-spatial-sidebar__actions{
+		margin-top: auto;
+	}
+
+	.map-spatial-sidebar__run-btn{
+		width: 100%;
+		height: 48px;
+		border-radius: 8px;
+		background: #5a4bd6;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	// 섹션 제목 크기 재정의 (새 패널 공통: 기존 30px → 13px)
+	.map-spatial-sidebar__section-title {
+		margin: 0;
+		font-size: 13px;
+		font-weight: 700;
+		color: #374151;
+		letter-spacing: -0.02em;
+	}
+
+	// 레이어 선택 + 직접 추가 행
+	.map-spatial-layer-add {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		select { flex: 1; }
+		&__btn {
+			flex-shrink: 0;
+			height: 36px;
+			padding: 0 12px;
+			border: 1px dashed #c7d2fe;
+			border-radius: 6px;
+			background: #f0f4ff;
+			color: #4f46e5;
+			font-size: 12px;
+			font-weight: 700;
+			cursor: pointer;
+			white-space: nowrap;
+			font-family: inherit;
+			transition: background 0.12s;
+			&:hover { background: #dde6ff; }
+		}
+	}
+
+	// +/- 스텝퍼 컨트롤
+	.map-spatial-stepper {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		&__label {
+			flex: 1;
+			font-size: 13px;
+			color: #374151;
+			font-weight: 500;
+		}
+		&__control {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+		}
+		&__btn {
+			width: 28px;
+			height: 28px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid #e3e4e6;
+			border-radius: 6px;
+			background: #fff;
+			color: #374151;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 1;
+			cursor: pointer;
+			font-family: inherit;
+			transition: background 0.12s, border-color 0.12s;
+			&:hover { background: #eef2ff; border-color: #c7d2fe; }
+		}
+		&__input {
+			width: 56px;
+			height: 28px;
+			text-align: center;
+			border: 1px solid #e3e4e6;
+			border-radius: 6px;
+			background: #fff;
+			color: #111;
+			font-size: 13px;
+			font-family: inherit;
+			padding: 0 4px;
+		}
+		&__unit {
+			font-size: 13px;
+			color: #6b7280;
+			min-width: 20px;
+		}
+	}
+
+	// 색상 선택 행
+	.map-spatial-color-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		&__label {
+			font-size: 13px;
+			color: #374151;
+			font-weight: 500;
+		}
+		&__swatch {
+			width: 36px;
+			height: 28px;
+			border-radius: 6px;
+			border: 1px solid #d1d5db;
+			cursor: pointer;
+			transition: border-color 0.12s;
+			&:hover { border-color: #6b7280; }
+		}
+	}
+
+	// 기준점/방향점 그룹 박스
+	.map-spatial-point-group {
+		border: 1px solid #e3e4e6;
+		border-radius: 8px;
+		background: #f8f9fb;
+		padding: 12px 14px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		&__title {
+			font-size: 12px;
+			font-weight: 700;
+			color: #374151;
+			margin: 0;
+			padding-bottom: 6px;
+			border-bottom: 1px solid #e3e4e6;
+		}
+	}
+
+	// 지점 지정 버튼 행
+	.map-spatial-point-pick {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 14px;
+		border: 1px solid #e3e4e6;
+		border-radius: 8px;
+		background: #f8f9fb;
+		&__label {
+			font-size: 13px;
+			font-weight: 600;
+			color: #374151;
+			flex: 1;
+		}
+		&__btn {
+			height: 30px;
+			padding: 0 12px;
+			border: 1px solid #d0d5e8;
+			border-radius: 6px;
+			background: #fff;
+			font-size: 12px;
+			font-weight: 600;
+			color: #4b5569;
+			cursor: pointer;
+			font-family: inherit;
+			transition: background 0.12s;
+			&:hover { background: #eef2ff; border-color: #c7d2fe; color: #4f46e5; }
+			&--cancel { border-color: #fca5a5; color: #ef4444; &:hover { background: #fef2f2; border-color: #f87171; } }
+		}
+	}
+
+	// 일조권 결과 KV 블록
+	.map-spatial-result-kv {
+		border: 1px solid #e3e4e6;
+		border-radius: 8px;
+		background: #fff;
+		overflow: hidden;
+		&__row {
+			display: flex;
+			align-items: center;
+			padding: 10px 14px;
+			border-bottom: 1px solid #f0f1f5;
+			&:last-child { border-bottom: none; }
+		}
+		&__label {
+			flex: 1;
+			font-size: 12px;
+			color: #6b7280;
+			font-weight: 500;
+		}
+		&__value {
+			font-size: 13px;
+			font-weight: 700;
+			color: #111;
+		}
+	}
+
+	// 범례
+	.map-spatial-legend {
+		display: flex;
+		gap: 14px;
+		flex-wrap: wrap;
+		&__item {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			font-size: 13px;
+			color: #374151;
+		}
+		&__dot {
+			width: 12px;
+			height: 12px;
+			border-radius: 3px;
+			flex-shrink: 0;
+		}
+	}
+
+	// 경사도 결과 테이블
+	.map-spatial-result-table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 11px;
+		th {
+			padding: 7px 8px;
+			background: #f0f2f7;
+			color: #374151;
+			font-weight: 600;
+			text-align: center;
+			border-bottom: 1px solid #dde1ee;
+			border-right: 1px solid #e5e7eb;
+			&:last-child { border-right: none; }
+		}
+		td {
+			padding: 6px 8px;
+			text-align: center;
+			border-bottom: 1px solid #f0f1f5;
+			border-right: 1px solid #f0f1f5;
+			color: #374151;
+			&:last-child { border-right: none; }
+		}
+		tr:last-child td { border-bottom: none; }
+	}
+
+	// 포인터 군집 단계 목록
+	.map-spatial-steps {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		border: 1px solid #e3e4e6;
+		border-radius: 8px;
+		overflow: hidden;
+		&__item {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			padding: 12px 14px;
+			border-bottom: 1px solid #f0f1f5;
+			&:last-child { border-bottom: none; }
+			&.is-done {
+				background: #f0f7ff;
+				.map-spatial-steps__num { background: #2563eb; color: #fff; border-color: #2563eb; }
+				.map-spatial-steps__label { color: #1e40af; }
+			}
+			&.is-active {
+				background: #fafbff;
+				.map-spatial-steps__num { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+				.map-spatial-steps__label { color: #4f46e5; font-weight: 700; }
+			}
+		}
+		&__num {
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			border: 1px solid #c9cdd8;
+			background: #f0f2f7;
+			color: #9ca3af;
+			font-size: 12px;
+			font-weight: 700;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+		&__label {
+			font-size: 13px;
+			color: #6b7280;
+			font-weight: 500;
+		}
+	}
+
+	// 종횡단면 모드 탭
+	.map-spatial-mode-tabs {
+		display: flex;
+		gap: 6px;
+		&__btn {
+			flex: 1;
+			height: 34px;
+			border: 1px solid #e3e4e6;
+			border-radius: 6px;
+			background: #f8f9fb;
+			color: #6b7280;
+			font-size: 13px;
+			font-weight: 600;
+			cursor: pointer;
+			font-family: inherit;
+			transition: all 0.15s;
+			&.is-active { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+			&:hover:not(.is-active) { background: #eef2ff; border-color: #c7d2fe; color: #4f46e5; }
+		}
+	}
+
+	// 분석 안내 텍스트 (지도 안내 등)
+	.map-spatial-map-hint {
+		padding: 10px 14px;
+		border: 1px dashed #ccd3e0;
+		border-radius: 8px;
+		background: #f8fbff;
+		color: #6b7a99;
+		font-size: 12px;
+		line-height: 1.6;
+		text-align: center;
+	}
+
+	.map-spatial-result.map-ui-modal {
+		width: 320px;
+		max-width: 320px;
+		left: auto;
+		right: 24px;
+		top: 76px;
+		transform: none;
+		border-radius: 12px;
+		overflow: hidden;
+		border: 1px solid #d7dbe3;
+		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+	}
+
+	.map-spatial-result {
+		.map-ui-modal__header {
+			background: #1e2f4f;
+			h3 { font-size: 18px; letter-spacing: -0.02em; }
+		}
+
+		.map-ui-modal__body {
+			padding: 12px;
+			background: #f3f4f6;
+		}
+
+		.map-ui-modal__content {
+			background: transparent;
+			padding: 0;
+		}
+
+		.map-spatial-result__sections {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		.map-spatial-result__panel {
+			background: #ffffff;
+			border: 1px solid #e2e8f0;
+			border-radius: 10px;
+			padding: 12px;
+		}
+
+		.map-spatial-result__panel--summary {
+			background: #eef4ff;
+			border-color: #d6e4ff;
+		}
+
+		.map-spatial-result__title {
+			margin: 0 0 8px;
+			font-size: 14px;
+			font-weight: 700;
+			color: #1e293b;
+		}
+
+		.map-spatial-result__summary-top {
+			display: flex;
+			justify-content: space-between;
+			font-size: 13px;
+			font-weight: 600;
+			color: #2563eb;
+			margin-bottom: 6px;
+		}
+
+		.map-spatial-result__summary-value {
+			margin: 0;
+			font-size: 48px;
+			line-height: 1;
+			font-weight: 800;
+			color: #2563eb;
+			letter-spacing: -0.04em;
+			em {
+				font-style: normal;
+				font-size: 20px;
+				color: #334155;
+				font-weight: 700;
+			}
+		}
+
+		.map-spatial-result__item + .map-spatial-result__item {
+			margin-top: 8px;
+		}
+
+		.map-spatial-result__item-head {
+			height: 28px;
+			padding: 0 10px;
+			background: #f1f5f9;
+			border: 1px solid #e2e8f0;
+			border-radius: 6px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			strong {
+				font-size: 13px;
+				font-weight: 700;
+				color: #334155;
+			}
+			span {
+				font-size: 12px;
+				font-weight: 700;
+				color: #64748b;
+			}
+		}
+
+		.map-spatial-result__item-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 8px 10px;
+			border-bottom: 1px solid #edf2f7;
+			font-size: 13px;
+			color: #475569;
+			&:last-child { border-bottom: none; }
+			.is-danger {
+				color: #ef4444;
+				font-weight: 700;
+			}
+		}
+
+		.map-spatial-result__stats {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			background: #f8fafc;
+			border: 1px solid #e2e8f0;
+			border-radius: 8px;
+			margin-top: 6px;
+			> div {
+				padding: 10px 6px;
+				text-align: center;
+			}
+			> div + div {
+				border-left: 1px solid #e2e8f0;
+			}
+			span {
+				display: block;
+				font-size: 12px;
+				color: #94a3b8;
+				margin-bottom: 2px;
+			}
+			strong {
+				font-size: 22px;
+				line-height: 1;
+				font-weight: 800;
+				color: #1e293b;
+				letter-spacing: -0.03em;
+			}
+		}
+
+		.map-spatial-result__footer {
+			padding: 4px 2px 0;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 8px;
+		}
+
+		.map-spatial-result__btn {
+			height: 40px;
+			border-radius: 9px;
+			border: 1px solid #cbd5e1;
+			background: #ffffff;
+			color: #334155;
+			font-size: 14px;
+			font-weight: 700;
+			font-family: inherit;
+			cursor: pointer;
+			transition: border-color 0.15s, background 0.15s, color 0.15s;
+			&:hover {
+				border-color: #94a3b8;
+				background: #f8fafc;
+			}
+		}
+
+		.map-spatial-result__btn--primary {
+			border-color: #3558e8;
+			background: #3558e8;
+			color: #fff;
+			&:hover {
+				border-color: #2f4ed2;
+				background: #2f4ed2;
+			}
+		}
+	}
+
+	// ===== 버퍼분석 설정 폼 (map-simulation-3) =====
+	.map-spatial-buffer-modal {
+		height: 100%;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		padding: 14px;
+		border-radius: 14px;
+		background: #f1f5f9;
+	}
+
+	.map-spatial-buffer-info {
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		padding: 14px 14px;
+	}
+
+	.map-spatial-buffer-info__row {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.map-spatial-buffer-info__text {
+		font-size: 13px;
+		font-weight: 800;
+		color: #111827;
+	}
+
+	.map-spatial-buffer-info__dot {
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background: #eef2ff;
+		border: 1px solid #c7d2fe;
+		position: relative;
+		flex-shrink: 0;
+		&::before {
+			content: 'i';
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #2563eb;
+			font-weight: 900;
+			font-size: 12px;
+			line-height: 1;
+		}
+	}
+
+	.map-spatial-buffer-step {
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		padding: 14px;
+	}
+
+	.map-spatial-buffer-step__title {
+		margin: 0 0 12px;
+		font-size: 14px;
+		font-weight: 800;
+		color: #111827;
+	}
+
+	.map-spatial-buffer-step__title--row {
+		margin: 0;
+	}
+
+	.map-spatial-buffer-step__title-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		margin-bottom: 12px;
+	}
+
+	.map-spatial-buffer-add {
+		background: transparent;
+		border: 1px solid #e5e7eb;
+		color: #374151;
+		border-radius: 8px;
+		height: 28px;
+		padding: 0 10px;
+		font-size: 13px;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.map-spatial-buffer-anchor-card {
+		background: #f8fafc;
+		border: 1px solid #e2e8f0;
+		border-radius: 12px;
+		padding: 12px 12px;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 12px;
+	}
+
+	.map-spatial-buffer-anchor-card__top {
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.map-spatial-buffer-anchor-card__pin {
+		width: 18px;
+		height: 18px;
+		border-radius: 6px;
+		background: #eef2ff;
+		border: 1px solid #c7d2fe;
+		flex-shrink: 0;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 5px 6px 6px;
+			background: #5a4bd6;
+			border-radius: 2px;
+		}
+	}
+
+	.map-spatial-buffer-anchor-card__text {
+		font-size: 13px;
+		font-weight: 700;
+		color: #111827;
+		line-height: 1.35;
+	}
+
+	.map-spatial-buffer-anchor-card__sub {
+		margin-top: 4px;
+		font-size: 12px;
+		font-weight: 600;
+		color: #6b7280;
+	}
+
+	.map-spatial-buffer-pill {
+		flex-shrink: 0;
+		font-size: 12px;
+		font-weight: 800;
+		color: #374151;
+		background: #e8f0ff;
+		border: 1px solid #c7d2fe;
+		border-radius: 999px;
+		padding: 8px 10px;
+		white-space: nowrap;
+	}
+
+	.map-spatial-buffer-anchor-actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		margin-top: 10px;
+	}
+
+	.map-spatial-buffer-anchor-help {
+		font-size: 12px;
+		font-weight: 700;
+		color: #6b7280;
+		white-space: nowrap;
+	}
+
+	.map-spatial-buffer-zones {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.map-spatial-buffer-zone {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 12px;
+		border-radius: 10px;
+		border: 1px solid #e5e7eb;
+		background: #f8fafc;
+	}
+
+	.map-spatial-buffer-zone__dot {
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background: #a5b4fc;
+		flex-shrink: 0;
+	}
+
+	.map-spatial-buffer-zone.is-active .map-spatial-buffer-zone__dot {
+		background: #5a4bd6;
+	}
+
+	.map-spatial-buffer-zone.is-active {
+		border-color: #c7d2fe;
+		background: #eef2ff;
+	}
+
+	.map-spatial-buffer-zone__label {
+		width: 62px;
+		font-size: 13px;
+		font-weight: 800;
+		color: #6b7280;
+	}
+
+	.map-spatial-buffer-zone__input {
+		width: 92px;
+		flex-shrink: 0;
+		padding: 8px 10px !important;
+		height: 36px;
+	}
+
+	.map-spatial-buffer-modal {
+		.sidebar__footer {
+			padding-top: 16px;
+			margin-top: auto;
+		}
+
+		.sidebar__footer-btn {
+			height: 46px;
+			border-radius: 10px;
+		}
+	}
+
+	.map-spatial-buffer-zone__unit {
+		font-size: 13px;
+		font-weight: 800;
+		color: #6b7280;
+		flex-shrink: 0;
+	}
+
+	.map-spatial-buffer-target-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	}
+
+	.map-spatial-overlay-layer-card {
+		background: #f8fafc;
+		border: 1px solid #e5e7eb;
+		border-radius: 14px;
+		padding: 12px;
+	}
+
+	.map-spatial-overlay-layer-card__head {
+		font-size: 12px;
+		font-weight: 800;
+		color: #475569;
+		margin-bottom: 10px;
+	}
+
+	.map-spatial-overlay-layer-row {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding: 10px 8px;
+		border-radius: 8px;
+		background: #fff;
+		border: 1px solid #e5e7eb;
+	}
+
+	.map-spatial-overlay-layer-row + .map-spatial-overlay-layer-row {
+		margin-top: 8px;
+	}
+
+	.map-spatial-overlay-layer-row__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	.map-spatial-overlay-layer-row .input-check {
+		gap: 6px;
+	}
+
+	.map-spatial-overlay-layer-row .input-check__label {
+		font-size: 13px;
+		font-weight: 700;
+		color: #374151;
+	}
+
+	.map-spatial-overlay-layer-row__dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+
+	.map-spatial-overlay-layer-row__dot.is-blue { background: #3b82f6; }
+	.map-spatial-overlay-layer-row__dot.is-green { background: #22c55e; }
+	.map-spatial-overlay-layer-row__dot.is-red { background: #f87171; }
+
+	.map-spatial-overlay-layer-row__pct {
+		font-size: 12px;
+		font-weight: 800;
+		color: #94a3b8;
+		min-width: 32px;
+		text-align: right;
+	}
+
+	.map-spatial-overlay-layer-row__range {
+		display: grid;
+		grid-template-columns: 12px 1fr auto;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.map-spatial-overlay-layer-row__eye {
+		width: 12px;
+		height: 8px;
+		border: 1.5px solid #94a3b8;
+		border-radius: 8px;
+		position: relative;
+	}
+
+	.map-spatial-overlay-layer-row__eye::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		background: #94a3b8;
+		transform: translate(-50%, -50%);
+	}
+
+	.map-spatial-overlay-layer-row.is-disabled {
+		opacity: 0.45;
+	}
+
+	.map-spatial-locate-add-btn {
+		width: 100%;
+		height: 44px;
+		border: 0;
+		border-radius: 10px;
+		background: #4f46e5;
+		color: #fff;
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	.map-spatial-adjacent-mode {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+
+		.map-ui-radio-group {
+			gap: 10px;
+			flex-shrink: 0;
+		}
+
+		.map-ui-select {
+			flex: 1;
+			min-width: 0;
+		}
+	}
+
+	.map-spatial-sun-controls {
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		background: #f8fafc;
+		padding: 12px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.map-spatial-sun-controls__row {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.map-spatial-sun-controls__label {
+		width: 72px;
+		font-size: 14px;
+		font-weight: 700;
+		color: #374151;
+		line-height: 1.3;
+	}
+
+	.map-spatial-sun-controls__select {
+		flex: 1;
+	}
+
+	.map-spatial-sun-controls__time {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		flex: 1;
+		span {
+			font-size: 28px;
+			font-weight: 700;
+			color: #111827;
+			line-height: 1;
+			letter-spacing: -0.01em;
+		}
+		.mydata-layer__range {
+			flex: 1;
+		}
+	}
+
+	.map-spatial-sun-actions__btn {
+		color: #fff;
+		border-color: transparent;
+	}
+
+	.map-spatial-sun-actions__btn--pick {
+		background: #0b72c5;
+	}
+
+	.map-spatial-sun-actions__btn--reset {
+		background: #8d8752;
+	}
+
+	.map-spatial-sun-result__heading {
+		font-size: 28px;
+		font-weight: 700;
+		color: #6b7280;
+		letter-spacing: -0.02em;
+	}
+
+	.map-spatial-sun-result {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.map-spatial-sun-result__card {
+		background: #f6f7f9;
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		padding: 12px;
+	}
+
+	.map-spatial-sun-result__line {
+		font-size: 14px;
+		font-weight: 500;
+		color: #6b7280;
+	}
+
+	.map-spatial-sun-result__legend {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+
+	.map-spatial-sun-result__legend-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 15px;
+		font-weight: 500;
+		color: #6b7280;
+	}
+
+	.map-spatial-sun-result__swatch {
+		width: 20px;
+		height: 20px;
+		border-radius: 5px;
+		display: inline-block;
+	}
+
+	.map-spatial-sun-result__swatch--sun { background: #fff200; }
+	.map-spatial-sun-result__swatch--shade { background: #0d2d72; }
+
+	.map-spatial-sun-result__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		li {
+			font-size: 14px;
+			font-weight: 500;
+			color: #6b7280;
+		}
+	}
+
+	// ===== 영향권 분석 리포트 모달 (map-spatial-3) =====
+	.map-spatial-buffer-report {
+		width: 360px;
+		max-width: 360px;
+
+		.map-ui-modal__body {
+			padding: 14px;
+			background: #f5f6f8;
+		}
+
+		.map-ui-modal__content {
+			background: transparent;
+			padding: 0;
+		}
+	}
+
+	.map-spatial-buffer-report__sections {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	.map-spatial-buffer-report__section-title {
+		margin: 0 0 10px;
+		font-size: 13px;
+		font-weight: 800;
+		color: #111827;
+	}
+
+	.map-spatial-buffer-report__chart-wrap {
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		padding: 12px 10px;
+	}
+
+	.map-spatial-buffer-report__legend {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		margin-bottom: 8px;
+		font-size: 12px;
+		font-weight: 700;
+		color: #6b7280;
+	}
+
+	.map-spatial-buffer-report__legend-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.map-spatial-buffer-report__legend-dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		flex-shrink: 0;
+		border: 1px solid rgba(0, 0, 0, 0.05);
+	}
+
+	.map-spatial-buffer-report__legend-dot--blue {
+		background: #2563eb;
+	}
+
+	.map-spatial-buffer-report__legend-dot--gray {
+		background: #93a3b8;
+	}
+
+	.map-spatial-buffer-report__svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.map-spatial-buffer-report__bullets {
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		padding: 12px;
+
+		ul {
+			margin: 0;
+			padding-left: 16px;
+			list-style: disc;
+		}
+
+		li {
+			font-size: 12px;
+			font-weight: 600;
+			color: #64748b;
+			line-height: 1.55;
+		}
+	}
+
+	.map-spatial-buffer-report__footer {
+		padding: 0 14px 14px;
+		gap: 10px;
+
+		button {
+			flex: 1;
+		}
+	}
+
+	// ===== 형식지 밀집 분석 리포트 모달 (map-spatial-4) =====
+	.map-spatial-density-report {
+		width: 560px;
+		max-width: 560px;
+	}
+
+	.map-spatial-density-report__desc {
+		margin: 0 0 14px;
+		font-size: 14px;
+		font-weight: 600;
+		color: #6b7280;
+	}
+
+	.map-spatial-density-report__section + .map-spatial-density-report__section {
+		margin-top: 14px;
+	}
+
+	.map-spatial-density-report__title {
+		margin: 0 0 8px;
+		padding-left: 10px;
+		border-left: 2px solid #4f46e5;
+		font-size: 17px;
+		font-weight: 800;
+		color: #111827;
+	}
+
+	.map-spatial-density-report__select-wrap {
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 10px;
+		padding: 8px;
+	}
+
+	.map-spatial-density-report__split {
+		display: grid;
+		grid-template-columns: 1fr 220px;
+		gap: 12px;
+		align-items: stretch;
+	}
+
+	.map-spatial-density-report__table-wrap {
+		min-width: 0;
+	}
+
+	.map-spatial-density-report__chart-area {
+		border: 1px dashed #cbd5e1;
+		border-radius: 10px;
+		background: #ffffff;
+		min-height: 210px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		font-weight: 700;
+		color: #94a3b8;
+	}
+
+	.map-spatial-density-report__title-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	.map-spatial-density-report__link {
+		flex-shrink: 0;
+		border: none;
+		background: transparent;
+		color: #5a4bd6;
+		font-size: 12px;
+		font-weight: 800;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.map-spatial-density-report__type-badge {
+		width: 12px;
+		height: 12px;
+		border-radius: 3px;
+		display: inline-block;
+		margin-right: 6px;
+		vertical-align: middle;
+	}
+
+	.map-spatial-density-report__type-badge--res {
+		background: #f97316;
+	}
+	.map-spatial-density-report__type-badge--com {
+		background: #3b82f6;
+	}
+	.map-spatial-density-report__type-badge--agr {
+		background: #14b8a6;
+	}
+	.map-spatial-density-report__type-badge--for {
+		background: #a3e635;
+	}
+
+	.map-spatial-density-report__chart-legend {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding: 10px 14px;
+	}
+
+	.map-spatial-density-report__legend-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 13px;
+		font-weight: 700;
+		color: #334155;
+	}
+
+	.map-spatial-density-report__top5-badge {
+		width: 10px;
+		height: 10px;
+		border-radius: 2px;
+		display: inline-block;
+		margin-right: 8px;
+		vertical-align: middle;
+	}
+
+	.map-spatial-density-report__top5-badge--res { background: #f97316; }
+	.map-spatial-density-report__top5-badge--com { background: #3b82f6; }
+
+	// ===== 종합 분석 결과 모달 (map-spatial-5) =====
+	.map-spatial-overall-report {
+		width: 560px;
+		max-width: 560px;
+
+		.map-ui-modal__body {
+			padding: 16px;
+			background: #f5f6f8;
+		}
+
+		.map-ui-modal__content {
+			padding: 0;
+			background: transparent;
+		}
+	}
+
+	.map-spatial-overall-report__subtitle {
+		font-size: 12px;
+		font-weight: 700;
+		color: #f59e0b;
+		margin-bottom: 12px;
+	}
+
+	.map-spatial-overall-report__summary {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+		margin-bottom: 14px;
+	}
+
+	.map-spatial-overall-report__summary-card {
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		padding: 14px 14px;
+	}
+
+	.map-spatial-overall-report__summary-card--right {
+		background: #fff7ed;
+		border-color: #fed7aa;
+	}
+
+	.map-spatial-overall-report__summary-label {
+		font-size: 13px;
+		font-weight: 700;
+		color: #374151;
+		margin-bottom: 10px;
+	}
+
+	.map-spatial-overall-report__summary-value {
+		font-size: 22px;
+		font-weight: 900;
+		color: #111827;
+		letter-spacing: -0.02em;
+	}
+
+	.map-spatial-overall-report__summary-unit {
+		font-size: 12px;
+		font-weight: 800;
+		color: #6b7280;
+		margin-left: 6px;
+	}
+
+	.map-spatial-overall-report__section {
+		margin-bottom: 14px;
+	}
+
+	.map-spatial-overall-report__section-title {
+		font-size: 13px;
+		font-weight: 900;
+		color: #111827;
+		margin: 0 0 8px;
+		padding-left: 10px;
+		border-left: 4px solid #f59e0b;
+	}
+
+	.map-spatial-overall-report__tag {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4px 10px;
+		border-radius: 999px;
+		font-size: 12px;
+		font-weight: 800;
+	}
+
+	.map-spatial-overall-report__tag--ok {
+		background: #eff6ff;
+		color: #2563eb;
+		border: 1px solid #dbeafe;
+	}
+
+	.map-spatial-overall-report__tag--no {
+		background: #fef2f2;
+		color: #ef4444;
+		border: 1px solid #fee2e2;
+	}
+
+	.map-spatial-overall-report__donut-layout {
+		display: grid;
+		grid-template-columns: 180px 1fr;
+		gap: 14px;
+		align-items: center;
+	}
+
+	.map-spatial-overall-report__donut-area {
+		width: 180px;
+		height: 180px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.map-spatial-overall-report__donut {
+		width: 160px;
+		height: 160px;
+		border-radius: 50%;
+		background: conic-gradient(#f59e0b 0% 62%, #93c5fd 62% 74%, #14b8a6 74% 82%, #6b7280 82% 100%);
+		position: relative;
+	}
+
+	.map-spatial-overall-report__donut::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 92px;
+		height: 92px;
+		border-radius: 50%;
+		background: #fff;
+		transform: translate(-50%, -50%);
+		border: 1px solid #e5e7eb;
+	}
+
+	.map-spatial-overall-report__donut-legend {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.map-spatial-overall-report__legend-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 13px;
+		font-weight: 800;
+		color: #374151;
+		white-space: nowrap;
+	}
+
+	.map-spatial-overall-report__legend-dot {
+		width: 12px;
+		height: 12px;
+		border-radius: 3px;
+		display: inline-block;
+	}
+
+	.map-spatial-overall-report__legend-dot--ok { background: #f59e0b; }
+	.map-spatial-overall-report__legend-dot--soso { background: #2563eb; }
+	.map-spatial-overall-report__legend-dot--no { background: #ef4444; }
+
+	.map-spatial-overall-report__footer {
+		padding: 0 16px 16px;
+		width: 100%;
+		justify-content: center;
+		gap: 0;
+	}
+
+	.map-spatial-overall-report__download-btn {
+		width: 100%;
+		flex: 1;
+	}
+
+	.map-spatial-visibility__title-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 8px;
+	}
+
+	.map-spatial-visibility__reset {
+		height: 34px;
+		padding: 0 14px;
+		border: 0;
+		border-radius: 8px;
+		background: #91895a;
+		color: #fff;
+		font-size: 18px;
+		font-weight: 700;
+		font-family: inherit;
+	}
+
+	.map-spatial-visibility__card {
+		background: #f3f4f6;
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		padding: 10px;
+	}
+
+	.map-spatial-visibility__param {
+		display: grid;
+		grid-template-columns: 44px 84px 1fr;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.map-spatial-visibility__param + .map-spatial-visibility__param {
+		margin-top: 8px;
+	}
+
+	.map-spatial-visibility__label {
+		font-size: 14px;
+		font-weight: 700;
+		color: #4b5563;
+	}
+
+	.map-spatial-visibility__input {
+		height: 38px;
+		border: 1px solid #d1d5db;
+		border-radius: 8px;
+		padding: 0 8px;
+		font-size: 20px;
+		font-weight: 700;
+		color: #4b5563;
+		text-align: center;
+		font-family: inherit;
+		background: #fff;
+	}
+
+	.map-spatial-visibility__unit {
+		font-size: 14px;
+		font-weight: 500;
+		color: #374151;
+	}
+
+	.map-spatial-visibility__colors {
+		margin-top: 10px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 8px;
+	}
+
+	.map-spatial-visibility__color-item {
+		height: 42px;
+		padding: 0 10px;
+		border: 0;
+		border-radius: 8px;
+		background: #e5e7eb;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 14px;
+		font-weight: 700;
+		color: #6b7280;
+		font-family: inherit;
+	}
+
+	.map-spatial-visibility__swatch {
+		width: 24px;
+		height: 30px;
+		border-radius: 7px;
+		display: inline-block;
+	}
+
+	.map-spatial-visibility__swatch--vis { background: #0772c6; }
+	.map-spatial-visibility__swatch--hid { background: #f30f0f; }
+
+	.map-spatial-visibility-point {
+		background: #f3f4f6;
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		padding: 8px;
+	}
+
+	.map-spatial-visibility-point__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 6px;
+	}
+
+	.map-spatial-visibility-point__title {
+		font-size: 15px;
+		font-weight: 700;
+		color: #4b5563;
+		padding-left: 18px;
+		position: relative;
+	}
+
+	.map-spatial-visibility-point__title::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		transform: translateY(-50%);
+	}
+
+	.map-spatial-visibility-point__title--base::before { background: #27a0ff; }
+	.map-spatial-visibility-point__title--dir::before { background: #ff4040; }
+
+	.map-spatial-visibility-point__height {
+		font-size: 12px;
+		font-weight: 700;
+		color: #4b5563;
+	}
+
+	.map-spatial-visibility-axis {
+		display: grid;
+		grid-template-columns: 44px 84px 14px 28px 28px;
+		align-items: center;
+		gap: 6px;
+	}
+
+	.map-spatial-visibility-axis + .map-spatial-visibility-axis {
+		margin-top: 6px;
+	}
+
+	.map-spatial-visibility-axis__label {
+		font-size: 14px;
+		font-weight: 700;
+		color: #4b5563;
+	}
+
+	.map-spatial-visibility-axis__input {
+		height: 32px;
+		border: 1px solid #d1d5db;
+		border-radius: 8px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 700;
+		color: #4b5563;
+		font-family: inherit;
+		background: #fff;
+	}
+
+	.map-spatial-visibility-axis__unit {
+		font-size: 13px;
+		font-weight: 700;
+		color: #4b5563;
+	}
+
+	.map-spatial-visibility-axis__btn {
+		width: 28px;
+		height: 28px;
+		border: 0;
+		border-radius: 6px;
+		background: #b8b383;
+		color: #fff;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 1;
+		font-family: inherit;
+	}
+
+	.map-spatial-visibility__action {
+		color: #fff;
+		border-color: transparent;
+		font-weight: 700;
+	}
+
+	.map-spatial-visibility__action--pick { background: #5b477b; }
+	.map-spatial-visibility__action--run { background: #006cb8; }
+}
+
+
+.map-ui-table--sheet tbody td{
+	&.text-left{
+		text-align: left;
+	}
+}

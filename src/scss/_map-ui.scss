@@ -36,6 +36,10 @@
 	height: 100%;
 	min-height: 60vh;
 
+	button{
+		line-height: 1;
+	}
+
 	// hashVisibility 모듈에서 사용: #값에 따라 보이기/숨기기
 	.is-hidden {
 		display: none !important;
@@ -156,6 +160,22 @@
 			font-size: 14px;
 			font-weight: 500;
 			color: #666666;
+		}
+	}
+	
+	.map-ui-btn-primary{
+		color: #5a4bd6;
+		border: 1px solid #5a4bd6;
+		font-weight: 600;
+		border-radius: var(--map-ui-radius);
+		line-height: 1;
+		background: #fff;
+		transition: background 0.15s, border-color 0.15s, color 0.15s;
+		&:hover,
+		&:focus{
+			background: #5a4bd6;
+			color: #fff;
+			border-color: #5a4bd6;
 		}
 	}
 
@@ -682,6 +702,13 @@
 	}
 
 	// ---- 테이블 (시트 내 데이터) ----
+
+	.table-wrap{
+		+.map-paging{
+			margin-top: 10px;
+		}
+	}
+
 	.map-ui-table-wrap {
 		overflow-x: auto;
 		border: 1px solid #eee;
@@ -831,6 +858,540 @@
 			background: #4b3fff;
 			border-color: #4b3fff;
 		}
+	}
+
+	.map-ui-btn--table{
+		line-height: 1;
+		font-size: 12px;
+		font-weight: 500 !important;
+		border-radius: 3px !important;
+		padding: 5px 8px !important;
+		height: auto;
+	}
+
+	// ---- 모달 분할: 좌측 스텝/폼 + 하단 고정 액션 ----
+	.map-ui-wizard{
+		background-color: #fff;
+		padding: 20px;
+		min-height: 0;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.map-ui-wizard__main{
+		flex: 1 1 0;
+		min-height: 0;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.map-ui-wizard__head{
+		flex-shrink: 0;
+		margin-bottom: 20px;
+		h3{
+			font-weight: 600;
+			font-size: 20px;
+			color: #333;
+			padding-bottom: 15px;
+			margin: 0;
+		}
+		p{
+			font-size: 16px;
+			font-weight: 500;
+			margin: 0;
+		}
+	}
+
+	.map-ui-wizard__search{
+		padding: 20px 0;
+	}
+
+	.map-ui-wizard__search-row{
+		display: flex;
+		gap: 10px;
+	}
+
+	.map-ui-wizard__filters{
+		margin-top: 8px;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 8px;
+		.map-ui-select{
+			width: 100%;
+			background-color: #f0f2ff;
+		}
+	}
+
+	.map-ui-range-inline{
+		border: 1px solid #e3e4e6;
+		border-radius: 6px;
+		padding: 0 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 36px;
+		gap: 10px;
+		label{
+			font-size: 12px;
+			font-weight: 500;
+			flex-shrink: 0;
+		}
+		input[type="range"]{
+			accent-color: #5a4aff;
+			flex: 1;
+			height: 4px;
+			min-width: 0;
+			&::-webkit-slider-thumb{
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background: #5a4aff;
+			}
+		}
+	}
+
+	.map-ui-wizard__result-summary{
+		margin-bottom: 10px;
+		font-size: 14px;
+		font-weight: 500;
+		color: #333;
+		b{
+			font-weight: 600;
+			color: #5a4bd6;
+		}
+	}
+
+	.map-ui-wizard__actions{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 8px;
+		width: 100%;
+		flex-shrink: 0;
+	}
+
+	.map-ui-wizard__action-btn{
+		padding: 16px 100px;
+		line-height: 1;
+		height: auto;
+	}
+
+	.map-ui-wizard__main--split{
+		overflow: hidden;
+	}
+
+	.map-ui-wizard__main--split .map-ui-wizard__tab-stack,
+	.map-ui-wizard__main--split .map-ui-wizard__chart-board{
+		flex: 1 1 0;
+		min-height: 0;
+	}
+
+	.map-ui-wizard__tab-stack{
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.map-ui-wizard__tab-panels{
+		flex: 1 1 0;
+		min-height: 0;
+		overflow-y: auto;
+	}
+
+	.map-ui-wizard__tab-panel{
+		min-height: 0;
+	}
+
+	.map-ui-compare{
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+		align-items: start;
+	}
+
+	.map-ui-compare__col{
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.map-ui-empty-hint{
+		margin: 0;
+		padding: 24px 16px;
+		text-align: center;
+		font-size: 14px;
+		color: #888;
+		background: #f4f6f8;
+		border-radius: 8px;
+		border: 1px dashed #dbdbe3;
+	}
+
+	// ---- 지역분석 등: 차트 카드 그리드(플레이스홀더·범례 자리) ----
+	.map-ui-wizard__chart-board{
+		flex: 1 1 0;
+		min-height: 0;
+		overflow-y: auto;
+		padding-right: 2px;
+	}
+
+	.map-ui-chart-grid{
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+		align-items: stretch;
+	}
+
+	.map-ui-chart-card{
+		display: flex;
+		flex-direction: column;
+		min-height: 260px;
+		background: #fff;
+		border: 1px solid #e3e4e6;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.map-ui-chart-card__head{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		flex-shrink: 0;
+		padding: 12px 14px;
+		border-bottom: 1px solid #eee;
+		background: #fff;
+	}
+
+	.map-ui-chart-card__title{
+		margin: 0;
+		font-size: 15px;
+		font-weight: 600;
+		color: #333;
+	}
+
+	.map-ui-chart-card__note,
+	.map-ui-chart-card__title-note{
+		border-radius: 50%;
+		background-color: #6b5ce7;
+		font-size: 10px;
+		color: #fff;
+		width: 14px;
+		height: 14px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+		&:before{
+			line-height: 1;
+			content: '?';
+		}
+	}
+	.map-ui-chart-card__note{
+		width: 18px;height: 18px;
+		font-size: 14px;
+		background-color: #bcc2cf;
+	}
+
+	.map-ui-chart-card__body{
+		flex: 1;
+		min-height: 0;
+		padding: 14px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.map-ui-chart-card__body--split{
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(100px, 38%);
+		gap: 12px;
+		align-items: center;
+	}
+
+	.map-ui-chart-surface{
+		position: relative;
+		min-height: 160px;
+		border-radius: 8px;
+		background: #f4f6f8;
+		border: 1px dashed #dbdbe3;
+	}
+
+	.map-ui-chart-surface svg{
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: 200px;
+	}
+
+	.map-ui-chart-surface--center{
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px;
+	}
+
+	.map-ui-donut-wrap{
+		position: relative;
+		width: min(148px, 100%);
+		aspect-ratio: 1;
+	}
+
+	.map-ui-donut-preview{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background:
+			radial-gradient(circle at center, #fff 46%, transparent 47%),
+			var(--map-ui-donut-fill, conic-gradient(#ccc 0% 100%));
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+	}
+
+	.map-ui-donut-preview__label{
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 13px;
+		font-weight: 700;
+		color: #333;
+		pointer-events: none;
+	}
+
+	.map-ui-chart-legend{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		font-size: 12px;
+		color: #555;
+	}
+
+	.map-ui-chart-legend__item{
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		min-width: 0;
+	}
+
+	.map-ui-chart-legend__swatch{
+		flex-shrink: 0;
+		width: 10px;
+		height: 10px;
+		border-radius: 2px;
+	}
+
+	.map-ui-chart-legend__text{
+		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.map-ui-chart-legend__val{
+		flex-shrink: 0;
+		font-weight: 600;
+		color: #333;
+	}
+
+	.map-ui-chart-bars{
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.map-ui-chart-bars__row{
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) 44px;
+		align-items: center;
+		gap: 8px;
+		font-size: 12px;
+		color: #555;
+	}
+
+	.map-ui-chart-bars__label{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.map-ui-chart-bars__track{
+		height: 10px;
+		border-radius: 999px;
+		background: #eceef2;
+		overflow: hidden;
+	}
+
+	.map-ui-chart-bars__fill{
+		display: block;
+		height: 100%;
+		border-radius: 999px;
+		background: #5a4bd6;
+	}
+
+	.map-ui-chart-bars__pct{
+		text-align: right;
+		font-weight: 600;
+		color: #333;
+	}
+
+	.map-ui-chart-boxplot{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		min-height: 200px;
+	}
+
+	.map-ui-chart-boxplot__plot{
+		flex: 1;
+		min-height: 140px;
+		border-radius: 8px;
+		background: #f4f6f8;
+		border: 1px dashed #dbdbe3;
+		position: relative;
+	}
+
+	.map-ui-chart-boxplot__footer{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 14px;
+		font-size: 12px;
+		color: #555;
+	}
+
+	.map-ui-chart-boxplot__stat{
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	.map-ui-chart-boxplot__dot{
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: #7eb6ff;
+	}
+
+	// ---- 모달 분할: 우측 패널(상세 등) ----
+	.map-ui-side-panel{
+		min-height: 0;
+		height: 100%;
+		background-color: #f8f8f8;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	}
+
+	.map-ui-side-panel__sheet{
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		position: absolute;
+		left: 40px;
+		top: 40px;
+		bottom: 40px;
+		width: 410px;
+		background-color: #FFF;
+		border-radius: 10px;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+
+	.map-ui-side-panel__head{
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+		font-weight: 600;
+		color: #333;
+		background: #f0efff;
+		padding-left: 20px;
+		height: 60px;
+	}
+
+	.map-ui-side-panel__body{
+		flex: 1 1 0;
+		min-height: 0;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 20px;
+	}
+
+	.map-ui-side-panel__footer{
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: auto;
+	}
+
+	// ---- 키-값 상세 블록(지도 모달·패널 공통) ----
+	.map-ui-kv-section{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.map-ui-kv-section__title{
+		margin: 0;
+		font-size: 14px;
+		font-weight: 600;
+		color: #5e5ce6;
+	}
+
+	.map-ui-kv-block{
+		background-color: #f4f6f8;
+		border-radius: 8px;
+		padding: 20px;
+		border: 1px solid #dbdbe3;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.map-ui-kv-row{
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+		font-size: 14px;
+		line-height: 1.45;
+		color: #666666;
+	}
+
+	.map-ui-kv-row__label{
+		flex: 0 0 90px;
+		font-weight: 500;
+		color: #444;
+	}
+
+	.map-ui-kv-row__sep{
+		flex: 0 0 1px;
+		align-self: stretch;
+		min-height: 1em;
+		width: 1px;
+		background-color: #c9cdd4;
+		margin-top: 0.2em;
+	}
+
+	.map-ui-kv-row__value{
+		flex: 1;
+		min-width: 0;
+		font-weight: 500;
+		color: #666666;
+		word-break: break-all;
 	}
 
 }

@@ -1,0 +1,329 @@
+
+// 입지 시뮬레이션 등: 이 페이지(#simulationModal)만의 레이아웃 오버라이드
+// 공통 UI는 _map-ui.scss 의 .map-ui-wizard / .map-ui-side-panel / .map-ui-kv-* 사용
+
+#simulationModal{
+  .map-ui-modal{
+    width: 1440px;
+    max-width: 100%;
+  }
+  .map-ui-modal__body{
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .map-ui-modal__content{
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    height: calc(85dvh - 60px);
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  .map-simul-upload-wrap{
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  // Step4 좌측: 구역/평단/shp 업로드 탭 + 목록
+  .map-simul-upload{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .map-simul-upload__tabs{
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .map-simul-upload__tab{
+    flex: 1;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #dbdbe3;
+    background: #f5f6f8;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5c6370;
+    line-height: 1.3;
+    transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    &:hover{
+      border-color: #c5c9d4;
+    }
+    &.is-active{
+      border-color: #563dff;
+      color: #563dff;
+      background-color: #f3f1ff;
+      
+    }
+  }
+
+  .map-simul-upload__panel{
+    flex: 1;
+    min-height: 0;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f5f6f8;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .map-simul-upload__add{
+    width: 130px;
+    display: inline-flex;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #563dff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    i{
+      display: inline-block;
+      width: 16px;
+      height: 9px;
+      background: url(/images/map/modal_add_icon.png) no-repeat center center;
+      font-size: 0;
+      vertical-align: top;
+      transform: translateY(1px);
+    }
+    &:hover{
+      background: #4a32e6;
+      box-shadow: 0 2px 8px rgba(86, 61, 255, 0.35);
+    }
+  }
+
+  .map-simul-upload__list-heading{
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #414963;
+  }
+
+  .map-simul-upload__list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .map-simul-upload-card{
+    display: flex;
+    gap: 20px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #dbdbe3;
+    border-radius: 8px;
+    // stretch: 우측 본문(.map-simul-upload-card__main)이 썸네일 높이만큼 세로로 맞춰짐 (flex-start면 본문만큼만 줄어듦)
+    align-items: stretch;
+  }
+
+  .map-simul-upload-card__thumb{
+    flex-shrink: 0;
+    align-self: flex-start;
+    width: 160px;
+    height: 110px;
+    border-radius: 6px;
+    background:
+      linear-gradient(135deg, #dfe6f0 0%, #eef2f7 40%, #d4dce8 100%);
+    border: 1px solid #e0e4ea;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &::after{
+      content: 'NO IMAGE';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      color: #fff;
+      line-height: 1.3;
+      font-size: 14px;
+      font-weight: 600;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  .map-simul-upload-card__main{
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .map-simul-upload-card__title-row{
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .map-simul-upload-card__name{
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    word-break: break-all;
+  }
+
+  .map-simul-upload-card__more{
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: url(/images/map/modal_more_icon.png) no-repeat center center;
+    
+  }
+
+  .map-simul-upload-card__badge{
+    flex-shrink: 0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: #92a1ed;
+    line-height: 1;
+  }
+
+  .map-simul-upload-card__top{
+    .map-simul-upload-card__meta{
+      padding-top: 15px;
+    }
+  }
+  
+  .map-simul-upload-card__meta{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .map-simul-upload-card__meta-line{
+    display: block;
+    
+  }
+
+  .map-simul-upload-card__actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .map-simul-upload-card__btn{
+    min-height: 28px;
+    padding: 0 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    padding-left: 25px;
+    &--map{
+      color: #964ada;
+      border-color: #e3d3f6;
+      background: #faf5ff;
+      background-image: url(/images/map/modal_map_icon.png);
+      background-repeat: no-repeat;
+      background-position: 9px 50%;
+    }
+    &--del{
+      color: #5177e2;
+      border-color: #d3e3fa;
+      background: #eff6ff url(/images/map/modal_delete_icon.png) no-repeat 8px center;
+    }
+  }
+
+  // 우측 패널 필 버튼 — ms-tools (아이콘: --reg / --rad / --elv / --dst / --ar)
+  .ms-tools{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .ms-tools__btn{
+    appearance: none;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 10px 15px 10px 35px;
+    border-radius: 9999px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    line-height: 1.2;
+    text-align: left;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    background-position: 14px 50%;
+    &:hover{
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+    }
+    &:focus-visible{
+      outline: 2px solid #5e5ce6;
+      outline-offset: 2px;
+    }
+    &--reg{
+      background-image: url(/images/map/modal_user_area_icon.png);
+      
+    }
+    &--rad{
+      background-image: url(/images/map/modal_radius_icon.png);
+      
+    }
+    &--elv{
+      background-image: url(/images/map/modal_elevation_icon.png);
+      
+    }
+    &--dst{
+      background-image: url(/images/map/modal_distance_icon.png);
+      
+    }
+    &--ar{
+      background-image: url(/images/map/modal_area_icon.png);
+      
+    }
+
+    // --elv(고도) / --dst(거리) / --ar(면적): 위와 동일하게 background-image, background-size
+  }
+}

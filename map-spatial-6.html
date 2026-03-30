@@ -1,0 +1,72 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
+	<div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>2D 분석 &gt; 위치 찾기 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>분석 대상 레이어와 비교 대상 레이어/사용자 도형/행정구역의 공간 연관 결과 분석
+          <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
+        </span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">1. 분석 대상 레이어 설정</h3>
+        <select class="map-ui-select" id="locationTargetLayer" title="분석 대상 레이어">
+          <option value="">분석 대상 레이어를 선택하세요.</option>
+          <option value="zoning">용도지역</option>
+          <option value="slope">경사도</option>
+        </select>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">2. 비교 대상 레이어 설정</h3>
+        <select class="map-ui-select" id="locationCompareLayer" title="비교 대상 레이어">
+          <option value="">비교 대상 레이어를 선택하세요.</option>
+          <option value="zoning">용도지역</option>
+          <option value="eco">생태자연도</option>
+        </select>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">3. 사용자 도형 설정</h3>
+        <button type="button" class="map-spatial-locate-add-btn">직접 추가</button>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">4. 행정구역 설정</h3>
+        <select class="map-ui-select" id="locationRegion" title="행정구역 설정">
+          <option value="">행정구역을 선택하세요.</option>
+        </select>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">5. 공간연산 설정</h3>
+        <select class="map-ui-select" id="locationOperation" title="공간연산 설정">
+          <option value="">공간연산을 선택하세요.</option>
+          <option value="intersect">교집합 (Intersect)</option>
+          <option value="union">합집합 (Union)</option>
+          <option value="difference">차집합 (Difference)</option>
+        </select>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>
+  </aside>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+</div>
+{{/layout}}

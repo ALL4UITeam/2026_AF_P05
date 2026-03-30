@@ -2,6 +2,8 @@
  * 좌측 패널 접기/펴기 ( 위치검색 패널용)
  */
 
+import { bindMapUiTabs } from './mapUiTabs.js';
+
 const SIDEBAR_SELECTOR = '.map-search-sidebar';
 const BREADCRUMB_SELECTOR = '.map-search-breadcrumb';
 const STICKY_CLASS = 'left-sticky';
@@ -46,4 +48,7 @@ export function init() {
 	});
 
 	syncBreadcrumb();
+
+	const statisticsTabsRoot = document.querySelector('[data-statistics-tabs]');
+	if (statisticsTabsRoot) bindMapUiTabs(statisticsTabsRoot);
 }

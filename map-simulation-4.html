@@ -1,0 +1,113 @@
+{{#> layout}}
+<style>
+	.map-search-zoom__track-wrap{display: none;}
+</style>
+<div class="vibe-container map-theme-page">
+	
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+	</div>
+
+	
+	<div class="map-ui-modal-backdrop is-open" id="simulationModal" aria-hidden="true">
+		<div class="map-ui-modal">
+			<header class="map-ui-modal__header">
+				<h3>입지 설정</h3>
+				<button type="button" class="map-ui-modal__close" aria-label="닫기" data-land-search-close></button>
+			</header>
+			<div class="map-ui-modal__body">
+				<div class="map-ui-modal__content">
+					<div class="map-ui-wizard">
+						<div class="map-ui-wizard__main map-ui-wizard__main--split">
+							<header class="map-ui-wizard__head">
+								<h3>Step 4. 입지 설정</h3>
+								<p>사용자의 구역 자료를 시각화하고, 측정으로 “실제 배치 기준”을 확정합니다.</p>
+							</header>
+
+							<div class="map-simul-upload-wrap">
+								<div class="map-simul-upload">
+									<div class="map-simul-upload__tabs" role="tablist" aria-label="업로드 유형">
+										<button type="button" class="map-simul-upload__tab is-active" role="tab" aria-selected="true">구역 이미지 업로드</button>
+										<button type="button" class="map-simul-upload__tab" role="tab" aria-selected="false">평단 이미지 업로드</button>
+										<button type="button" class="map-simul-upload__tab" role="tab" aria-selected="false">구역 경계 (shp) 업로드</button>
+									</div>
+
+									<div class="map-simul-upload__panel">
+										<h4 class="map-simul-upload__list-heading">업로드 목록</h4>
+										<ul class="map-simul-upload__list">
+											<li class="map-simul-upload-card">
+												<div class="map-simul-upload-card__thumb" role="img" aria-label="구역 이미지 미리보기"></div>
+												<div class="map-simul-upload-card__main">
+													<div class="map-simul-upload-card__top">
+														<div class="map-simul-upload-card__title-row">
+															<strong class="map-simul-upload-card__name">site_plan_01.png</strong>
+															<button type="button" class="map-simul-upload-card__more" aria-label="더보기">
+                                
+                              </button>
+														</div>
+														<p class="map-simul-upload-card__meta">1280 × 1280</p>
+													</div>
+													<div class="map-simul-upload-card__actions">
+														<button type="button" class="map-simul-upload-card__btn map-simul-upload-card__btn--map">지도표시</button>
+														<button type="button" class="map-simul-upload-card__btn map-simul-upload-card__btn--del">삭제</button>
+													</div>
+												</div>
+											</li>
+											<li class="map-simul-upload-card">
+												<div class="map-simul-upload-card__thumb" role="img" aria-label="SHP 미리보기"></div>
+												<div class="map-simul-upload-card__main">
+													<div class="map-simul-upload-card__top">
+														<div class="map-simul-upload-card__title-row">
+															<strong class="map-simul-upload-card__name">site_plan_01.png</strong>
+															<span class="map-simul-upload-card__badge">SHP</span>
+														</div>
+														<p class="map-simul-upload-card__meta">
+															<span class="map-simul-upload-card__meta-line">객체 수: 1</span>
+															<span class="map-simul-upload-card__meta-line">좌표계: EPSG:5186</span>
+														</p>
+													</div>
+													<div class="map-simul-upload-card__actions">
+														<button type="button" class="map-simul-upload-card__btn map-simul-upload-card__btn--map">지도표시</button>
+														<button type="button" class="map-simul-upload-card__btn map-simul-upload-card__btn--del">삭제</button>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 스텝별 하단 고정 액션 -->
+						<div class="map-ui-wizard__actions">
+							<button type="button" class="map-ui-wizard__action-btn map-ui-btn">이전</button>
+							<button type="button" class="map-ui-wizard__action-btn map-ui-btn-primary">다음</button>
+						</div>
+					</div>
+
+					<div class="map-ui-side-panel">
+						<div class="ms-tools" role="group" aria-label="지역·측정 도구">
+							<button type="button" class="ms-tools__btn ms-tools__btn--reg">
+								사용자 지역 지정
+							</button>
+							<button type="button" class="ms-tools__btn ms-tools__btn--rad">
+								반경 지정
+							</button>
+							<button type="button" class="ms-tools__btn ms-tools__btn--elv">
+								고도
+							</button>
+							<button type="button" class="ms-tools__btn ms-tools__btn--dst">
+								거리
+							</button>
+							<button type="button" class="ms-tools__btn ms-tools__btn--ar">
+								면적
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/layout}}

@@ -1,0 +1,41 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>2D 분석 &gt; 포인터 집계</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
+
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <p class="map-spatial-sidebar__notice">
+          <i aria-hidden="true">i</i>
+          <span>행정경계 영역 안에 포함된 포인트 개수를 계산하여 표현
+            <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
+          </span>
+        </p>
+
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__section-title">대상 레이어 설정 </h3>
+          <select class="map-ui-select" id="locationTargetLayer" title="대상 레이어 설정">
+            <option value="">대상 레이어를 선택하세요.</option>
+            <option value="zoning">용도지역</option>
+            <option value="slope">경사도</option>
+          </select>
+        </section>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>
+  </aside>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+</div>
+{{/layout}}

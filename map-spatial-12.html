@@ -1,0 +1,124 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>경관 분석 &gt; 가시권 분석</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
+
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <p class="map-spatial-sidebar__notice">
+          <i aria-hidden="true">i</i>
+          <span>분석 인자(지점, 퍼짐각, 정밀도)를 통한 총면적, 가시면적, 비가시면적을 추출합니다.
+            <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
+          </span>
+        </p>
+
+        <section class="map-spatial-sidebar__section">
+          <div class="map-spatial-visibility__title-row">
+            <h3 class="map-spatial-sidebar__section-title">분석 인자</h3>
+            <button type="button" class="map-spatial-visibility__reset">초기화</button>
+          </div>
+          <div class="map-spatial-visibility__card">
+            <div class="map-spatial-visibility__param">
+              <span class="map-spatial-visibility__label">퍼짐각</span>
+              <input type="number" class="map-spatial-visibility__input" value="40" min="0" max="360" aria-label="퍼짐각">
+              <span class="map-spatial-visibility__unit">&deg; (deg)</span>
+            </div>
+            <div class="map-spatial-visibility__param">
+              <span class="map-spatial-visibility__label">정밀도</span>
+              <input type="number" class="map-spatial-visibility__input" value="1" min="1" max="10" aria-label="정밀도">
+              <span class="map-spatial-visibility__unit">&deg; (deg)</span>
+            </div>
+            <div class="map-spatial-visibility__colors">
+              <button type="button" class="map-spatial-visibility__color-item" aria-label="가시색상 선택">
+                <span class="map-spatial-visibility__swatch map-spatial-visibility__swatch--vis"></span>
+                <span>가시색상</span>
+              </button>
+              <button type="button" class="map-spatial-visibility__color-item" aria-label="비가시색상 선택">
+                <span class="map-spatial-visibility__swatch map-spatial-visibility__swatch--hid"></span>
+                <span>비가시색상</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="map-spatial-sidebar__section">
+          <div class="map-spatial-visibility-point">
+            <div class="map-spatial-visibility-point__head">
+              <span class="map-spatial-visibility-point__title map-spatial-visibility-point__title--base">기준점</span>
+              <span class="map-spatial-visibility-point__height">높이: 10.1(m)</span>
+            </div>
+            <div class="map-spatial-visibility-axis">
+              <span class="map-spatial-visibility-axis__label">x축 이동</span>
+              <input type="number" class="map-spatial-visibility-axis__input" value="0.5" step="0.1" aria-label="기준점 X축 이동">
+              <span class="map-spatial-visibility-axis__unit">m</span>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="기준점 X축 증가">+</button>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="기준점 X축 감소">-</button>
+            </div>
+            <div class="map-spatial-visibility-axis">
+              <span class="map-spatial-visibility-axis__label">y축 이동</span>
+              <input type="number" class="map-spatial-visibility-axis__input" value="0.5" step="0.1" aria-label="기준점 Y축 이동">
+              <span class="map-spatial-visibility-axis__unit">m</span>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="기준점 Y축 증가">+</button>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="기준점 Y축 감소">-</button>
+            </div>
+            <div class="map-spatial-visibility-axis">
+              <span class="map-spatial-visibility-axis__label">z축 이동</span>
+              <input type="number" class="map-spatial-visibility-axis__input" value="0.5" step="0.1" aria-label="기준점 Z축 이동">
+              <span class="map-spatial-visibility-axis__unit">m</span>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="기준점 Z축 증가">+</button>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="기준점 Z축 감소">-</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="map-spatial-sidebar__section">
+          <div class="map-spatial-visibility-point">
+            <div class="map-spatial-visibility-point__head">
+              <span class="map-spatial-visibility-point__title map-spatial-visibility-point__title--dir">방향점</span>
+              <span class="map-spatial-visibility-point__height">높이: 17.1(m)</span>
+            </div>
+            <div class="map-spatial-visibility-axis">
+              <span class="map-spatial-visibility-axis__label">x축 이동</span>
+              <input type="number" class="map-spatial-visibility-axis__input" value="0.5" step="0.1" aria-label="방향점 X축 이동">
+              <span class="map-spatial-visibility-axis__unit">m</span>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="방향점 X축 증가">+</button>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="방향점 X축 감소">-</button>
+            </div>
+            <div class="map-spatial-visibility-axis">
+              <span class="map-spatial-visibility-axis__label">y축 이동</span>
+              <input type="number" class="map-spatial-visibility-axis__input" value="0.5" step="0.1" aria-label="방향점 Y축 이동">
+              <span class="map-spatial-visibility-axis__unit">m</span>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="방향점 Y축 증가">+</button>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="방향점 Y축 감소">-</button>
+            </div>
+            <div class="map-spatial-visibility-axis">
+              <span class="map-spatial-visibility-axis__label">z축 이동</span>
+              <input type="number" class="map-spatial-visibility-axis__input" value="0.5" step="0.1" aria-label="방향점 Z축 이동">
+              <span class="map-spatial-visibility-axis__unit">m</span>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="방향점 Z축 증가">+</button>
+              <button type="button" class="map-spatial-visibility-axis__btn" aria-label="방향점 Z축 감소">-</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn map-spatial-visibility__action map-spatial-visibility__action--pick">지점선택</button>
+          <button type="button" class="sidebar__footer-btn map-spatial-visibility__action map-spatial-visibility__action--run">분석실행</button>
+        </div>
+      </div>
+
+
+    </div>
+    <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>
+  </aside>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+</div>
+{{/layout}}

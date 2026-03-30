@@ -1,0 +1,48 @@
+<!-- 포인터 집계 분석 패널 (PPT slide 7) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialAggregatePanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>포인터 집계</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialAggregatePanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>분석 대상과 비교 레이어를 설정하고, 분석 방식을 지정하여 포인트를 집계합니다.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">1. 분석 대상 레이어 설정</h3>
+        <select class="map-ui-select" id="aggregateTargetLayer" title="분석 대상 레이어">
+          <option value="">분석 대상 레이어를 선택하세요.</option>
+          <option value="building">건물</option>
+          <option value="land">토지</option>
+        </select>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">2. 비교 대상 레이어 설정</h3>
+        <select class="map-ui-select" id="aggregateCompareLayer" title="비교 대상 레이어">
+          <option value="">비교 대상 레이어를 선택하세요.</option>
+          <option value="building">건물</option>
+          <option value="land">토지</option>
+        </select>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">3. 분석 방식 설정</h3>
+        <button type="button" class="map-spatial-sidebar__anchor-btn" style="height:52px; font-size:14px;">
+          필드 선택
+        </button>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">초기화</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialAggregatePanel">열기</button>
+</aside>

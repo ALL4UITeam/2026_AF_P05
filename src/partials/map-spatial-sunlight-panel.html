@@ -1,0 +1,62 @@
+<!-- 일조권 분석 결과 패널 (PPT slide 11) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialSunlightPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>일조권 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialSunlightPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">분석 기준일</h3>
+        <div class="map-spatial-sidebar__radius-box" style="padding:10px 14px;">
+          <span style="font-size:13px; color:#374151; font-weight:600;">동지 기준 &nbsp;</span>
+          <span style="font-size:13px; color:#111; font-weight:700;">2026년 12월 22일</span>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">일조권 분석결과</h3>
+        <div class="map-spatial-result-kv">
+          <div class="map-spatial-result-kv__row">
+            <span class="map-spatial-result-kv__label">일출시간</span>
+            <span class="map-spatial-result-kv__value">8시 45분</span>
+          </div>
+          <div class="map-spatial-result-kv__row">
+            <span class="map-spatial-result-kv__label">일몰시간</span>
+            <span class="map-spatial-result-kv__value">15시 18분</span>
+          </div>
+          <div class="map-spatial-result-kv__row">
+            <span class="map-spatial-result-kv__label">총 일조량</span>
+            <span class="map-spatial-result-kv__value">6시간 33분</span>
+          </div>
+          <div class="map-spatial-result-kv__row">
+            <span class="map-spatial-result-kv__label">연속 일조량 (최대)</span>
+            <span class="map-spatial-result-kv__value">6시간 33분</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">범례</h3>
+        <div class="map-spatial-legend">
+          <div class="map-spatial-legend__item">
+            <span class="map-spatial-legend__dot" style="background:#f59e0b;"></span>
+            일조
+          </div>
+          <div class="map-spatial-legend__item">
+            <span class="map-spatial-legend__dot" style="background:#6b7280;"></span>
+            비일조
+          </div>
+        </div>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">인쇄</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">다시 분석</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialSunlightPanel">열기</button>
+</aside>

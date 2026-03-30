@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/main.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli active">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					
+
+					<div class="popover-menu-wrap intelli active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active">통합지도</a></li>
+								<li><a href="#">3D지도</a></li>
+								<li><a href="#">실내지도</a></li>
+								<li><a href="#">주제도</a></li>
+								<li><a href="#">검색</a></li>
+								<li><a href="#">분석</a></li>
+								<li><a href="#">통계지도</a></li>
+								<li><a href="#">마이 데이터</a></li>
+								<li><a href="#">입지분석 시뮬레이션</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				<div class="vibe-container map-spatial-page">
+				  <!-- 경사도 분석 결과 패널 (PPT slide 19) -->
+				  <aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialSlopeResultPanel">
+				    <div class="map-search-sidebar__inner">
+				      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+				        <h2>경사도 분석결과</h2>
+				        <button type="button" class="map-search-sidebar__close" data-target="spatialSlopeResultPanel" title="닫기">닫기</button>
+				      </header>
+				  
+				      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+				        <section class="map-spatial-sidebar__section">
+				          <div class="map-spatial-sidebar__radius-box" style="padding:10px 14px;">
+				            <div style="display:flex; align-items:center; justify-content:space-between;">
+				              <span style="font-size:13px; color:#6b7280; font-weight:500;">분석영역 넓이</span>
+				              <span style="font-size:13px; color:#111; font-weight:700;">10,000 m²</span>
+				            </div>
+				          </div>
+				        </section>
+				  
+				        <section class="map-spatial-sidebar__section">
+				          <h3 class="map-spatial-sidebar__section-title">경사도 범위</h3>
+				          <div style="overflow-x:auto;">
+				            <table class="map-spatial-result-table">
+				              <thead>
+				                <tr>
+				                  <th>경사각(도)</th>
+				                  <th>경사도(%)</th>
+				                  <th>분포도(%)</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+				                <tr><td>45~</td><td>100~</td><td>0.00</td></tr>
+				                <tr><td>40~45</td><td>83.91~100</td><td>0.00</td></tr>
+				                <tr><td>35~40</td><td>72.72~83.91</td><td>0.00</td></tr>
+				                <tr><td>30~35</td><td>57.74~70.02</td><td>0.05</td></tr>
+				                <tr><td>25~30</td><td>46.63~57.74</td><td>0.30</td></tr>
+				                <tr><td>20~25</td><td>36.40~46.63</td><td>0.40</td></tr>
+				                <tr><td>15~20</td><td>26.79~36.40</td><td>1.29</td></tr>
+				                <tr><td>10~15</td><td>17.63~26.79</td><td>1.79</td></tr>
+				                <tr><td>5~10</td><td>8.75~17.63</td><td>3.67</td></tr>
+				                <tr><td>0~5</td><td>0.00~8.75</td><td>92.51</td></tr>
+				              </tbody>
+				            </table>
+				          </div>
+				        </section>
+				  
+				        <div class="sidebar__footer">
+				          <button type="button" class="sidebar__footer-btn">인쇄</button>
+				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">다시 분석</button>
+				        </div>
+				      </div>
+				    </div>
+				  
+				    <button type="button" class="map-search-sidebar__open" data-target="spatialSlopeResultPanel">열기</button>
+				  </aside>
+				  <div class="map-area">
+				    <div id="map-container"></div>
+				    
+				    <div class="map-toolbar-wrap">
+				    	<button type="button" class="map-toolbar__btn" data-tool="theme">
+				    		<span class="map-toolbar__label">주제도</span>
+				    	</button>
+				    	
+				    	<div class="map-toolbar" aria-label="지도 도구">
+				    		<button type="button" class="map-toolbar__btn" data-tool="basemap">
+				    			<span class="map-toolbar__label">3D</span>
+				    		</button>
+				    		
+				    		<button type="button" class="map-toolbar__btn" data-tool="distance">
+				    			<span class="map-toolbar__label">거리</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="area">
+				    			<span class="map-toolbar__label">면적</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="elevation">
+				    			<span class="map-toolbar__label">표고</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="radius">
+				    			<span class="map-toolbar__label">반경</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="draw">
+				    			<span class="map-toolbar__label">그리기</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="print">
+				    			<span class="map-toolbar__label">인쇄</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="save">
+				    			<span class="map-toolbar__label">저장</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="roadview">
+				    			<span class="map-toolbar__label">로드뷰</span>
+				    		</button>
+				    		<button type="button" class="map-toolbar__btn" data-tool="info">
+				    			<span class="map-toolbar__label">정보보기</span>
+				    		</button>
+				    	</div>
+				    
+				    	<div class="map-toolbar__btn-wrap">
+				    		<button type="button" class="map-toolbar__btn" data-tool="compass" title="나침반"></button>
+				    	</div>
+				    	<div class="map-toolbar__btn-wrap">
+				    		<button type="button" class="map-toolbar__btn" data-tool="current-location" title="현재위치"></button>
+				    	</div>
+				    	<div class="map-toolbar__btn-wrap">
+				    		<button type="button" class="map-toolbar__btn" data-tool="home" title="홈"></button>
+				    	</div>
+				    	
+				    </div>  </div>
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

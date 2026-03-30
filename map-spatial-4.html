@@ -1,0 +1,153 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>2D 분석 &gt; 밀도 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>위치기반으로 선택한 레이어의 속성에 대한 밀집도를 분석
+          <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
+        </span>
+      </p>
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">1. 레이어 설정</h3>
+        <div class="map-spatial-sidebar__radius-box">
+          <select class="map-ui-select" title="레이어 설정">
+            <option value="">레이어를 선택하세요.</option>
+          </select>
+        </div>
+
+        <h3 class="map-spatial-sidebar__section-title">2. 속성 설정</h3>
+        <div class="map-spatial-sidebar__radius-box">
+          <select class="map-ui-select" title="속성 설정">
+            <option value="">속성을 선택하세요.</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+      </div>
+    </div>
+  </div>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+
+  <div class="map-ui-modal-backdrop is-open" id="spatialBufferModal" aria-hidden="true">
+    <div class="map-ui-modal map-spatial-density-report" role="dialog" aria-modal="true" aria-labelledby="spatialDensityReportTitle">
+      <header class="map-ui-modal__header">
+        <h3 id="spatialDensityReportTitle">형식지 밀집 분석</h3>
+        <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
+      </header>
+
+      <div class="map-ui-modal__body">
+        <div class="map-ui-modal__content">
+          <p class="map-spatial-density-report__desc">조건을 설정하여 최적의 위치를 찾아보세요.</p>
+
+          <section class="map-spatial-density-report__section">
+            <div class="map-spatial-density-report__title-row">
+              <h4 class="map-spatial-density-report__title">선택 레이어 : 형식지</h4>
+              <button type="button" class="map-spatial-density-report__link" aria-label="선택 레이어 변경">변경</button>
+            </div>
+            <div class="map-spatial-density-report__select-wrap">
+              <select class="map-ui-select" title="속성 선택">
+                <option>선택 속성 : 유형</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="map-spatial-density-report__section">
+            <h4 class="map-spatial-density-report__title">분포</h4>
+            <div class="map-spatial-density-report__split">
+              <div class="map-spatial-density-report__table-wrap">
+                <div class="map-ui-table-wrap map-ui-table-wrap--sheet">
+                  <table class="map-ui-table map-ui-table--sheet" aria-label="유형별 분포표">
+                    <thead>
+                      <tr>
+                        <th>유형</th>
+                        <th>개수</th>
+                        <th>비율</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="map-spatial-density-report__type-badge map-spatial-density-report__type-badge--res"></span>
+                          주거
+                        </td>
+                        <td>1,144</td>
+                        <td>62%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="map-spatial-density-report__type-badge map-spatial-density-report__type-badge--com"></span>
+                          상업
+                        </td>
+                        <td>331</td>
+                        <td>18%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="map-spatial-density-report__type-badge map-spatial-density-report__type-badge--agr"></span>
+                          농업
+                        </td>
+                        <td>215</td>
+                        <td>12%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="map-spatial-density-report__type-badge map-spatial-density-report__type-badge--for"></span>
+                          산림
+                        </td>
+                        <td>156</td>
+                        <td>8%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="map-spatial-density-report__chart-area" aria-label="분포 차트 영역">
+                
+              </div>
+            </div>
+          </section>
+
+          <section class="map-spatial-density-report__section">
+            <h4 class="map-spatial-density-report__title">밀집 상위 구역 TOP 5</h4>
+            <div class="map-ui-table-wrap map-ui-table-wrap--sheet">
+              <table class="map-ui-table map-ui-table--sheet" aria-label="밀집 상위 구역 TOP 5">
+                <colgroup>
+                  <col style="width: 10%;">
+                  <col style="width: 40%;">
+                  <col style="width: 20%;">
+                </colgroup>
+                <tbody>
+                  <tr><td>1</td><td class="text-left"><span class="map-spatial-density-report__top5-badge map-spatial-density-report__top5-badge--res"></span>A 주거 단지</td><td>16%</td></tr>
+                  <tr><td>2</td><td class="text-left"><span class="map-spatial-density-report__top5-badge map-spatial-density-report__top5-badge--res"></span>A 주거 단지</td><td>16%</td></tr>
+                  <tr><td>3</td><td class="text-left"><span class="map-spatial-density-report__top5-badge map-spatial-density-report__top5-badge--res"></span>B 주거 단지</td><td>13%</td></tr>
+                  <tr><td>4</td><td class="text-left"><span class="map-spatial-density-report__top5-badge map-spatial-density-report__top5-badge--com"></span>C 아파트</td><td>10%</td></tr>
+                  <tr><td>5</td><td class="text-left"><span class="map-spatial-density-report__top5-badge map-spatial-density-report__top5-badge--com"></span>D 아파트</td><td>9%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          
+        </div>
+        <footer class="map-ui-modal__footer">
+          <button type="button" class="map-ui-btn map-ui-btn--primary">리포트 생성</button>
+        </footer>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+{{/layout}}

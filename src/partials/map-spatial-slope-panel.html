@@ -1,0 +1,33 @@
+<!-- 경사도 분석 입력 패널 (PPT slide 18) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialSlopePanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>경사도 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialSlopePanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>희망하는 분석영역의 넓이를 설정하고, 지도상에 지점을 선택하여 해당 지점을 중심으로 경사도를 확인할 수 있습니다.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">분석영역 넓이</h3>
+        <div class="map-spatial-sidebar__distance-input" style="gap:6px;">
+          <input type="number" class="map-ui-input" value="10000" min="0" title="분석영역 넓이" aria-label="분석영역 넓이" style="width:120px; text-align:right;">
+          <span>m²</span>
+        </div>
+      </section>
+
+      <p class="map-spatial-map-hint">지도에 마우스로 위치를 클릭하여 분석을 시작하세요.</p>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn">취소</button>
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">분석실행</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialSlopePanel">열기</button>
+</aside>

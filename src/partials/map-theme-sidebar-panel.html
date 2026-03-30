@@ -1,0 +1,284 @@
+<!-- 주제도: 탭(검색어로/분류별), 상단 고정 + 목록 스크롤 -->
+<aside class="map-search-sidebar map-theme-sidebar is-open" id="{{panelId}}">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-theme-sidebar__header">
+      <h2>{{title}}</h2>
+      <button type="button" class="map-theme-sidebar__info">i</button>
+      <button type="button" class="map-search-sidebar__close" data-target="{{panelId}}" title="닫기">닫기</button>
+    </header>
+    <div class="map-theme-sidebar__body" data-theme-tabs>
+      <div class="map-theme-sidebar__tabs">
+        <button type="button" class="map-theme-sidebar__tab is-active" data-theme-tab="search">검색어로 찾기</button>
+        <button type="button" class="map-theme-sidebar__tab" data-theme-tab="category">분류별 찾기</button>
+      </div>
+
+      <!-- 검색어로 찾기 -->
+      <div class="map-theme-sidebar__panel" data-theme-panel="search" id="theme-panel-search">
+        <div class="map-theme-sidebar__fixed">
+          <div class="sidebar__search-row">
+            <input type="text" class="map-ui-input input-search" placeholder="검색어 입력">
+            <button type="button" class="sidebar__search-btn input-search" aria-label="검색">검색</button>
+          </div>
+
+          <div class="map-theme-sidebar__toolbar">
+            <span class="map-ui-tree__count">총 <strong id="themeCountSearch">402</strong> 건</span>
+            <select id="themeSortList" class="map-ui-select map-theme-sidebar__sort" title="정렬 기준">
+              <option value="0">최근갱신순</option>
+              <option value="2">갱신일역순</option>
+              <option value="1">가나다순</option>
+              <option value="3">하파타순</option>
+            </select>
+          </div>
+        </div>
+        <div class="map-theme-sidebar__scroll">
+          <div class="list layer">
+            <ul>
+              <li>
+                <div class="item">
+                  <div class="item__header">
+                    <label for="chk_LX맵" class="input-check">
+                      <input type="checkbox" id="chk_LX맵" name="chk_LX맵">
+                      <span class="input-check__ui" aria-hidden="true"></span>
+                      <span class="input-check__label">LX맵</span>
+                    </label>
+                    <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                  </div>
+                  <div class="dropbox">
+                    <p class="ctg"><span>국토관리/지역개발</span><span>토지</span></p>
+                    <ul class="note">
+                      <li>전국 지자체 연속지적도를 지형에 부합하는 형태로 가공한 정보</li>
+                      <li class="dot"><b>갱신일</b>
+                        <p>2026-03-19</p>
+                      </li>
+                      <li class="dot"><b>제공처</b>
+                        <p>한국국토정보공사</p>
+                      </li>
+                    </ul>
+                    <div class="btns"><button type="button" class="btPop">다운로드</button></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="item__header">
+                    <label for="chk_연속지적도" class="input-check">
+                      <input type="checkbox" id="chk_연속지적도" name="chk_연속지적도">
+                      <span class="input-check__ui" aria-hidden="true"></span>
+                      <span class="input-check__label">연속지적도</span>
+                    </label>
+                    <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                  </div>
+                  <div class="dropbox">
+                    <p class="ctg"><span>국토관리/지역개발</span><span>토지</span></p>
+                    <ul class="note">
+                      <li>전산화된 지적도 및 임야도의 도면상 경계점을 연결하여 연속된 형태로 작성한 도면정보</li>
+                      <li class="dot"><b>갱신일</b>
+                        <p>2026-02-04</p>
+                      </li>
+                      <li class="dot"><b>제공처</b>
+                        <p>국토교통부</p>
+                      </li>
+                    </ul>
+                    <div class="btns"><button type="button" class="btPop">자세히보기</button></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 분류별 찾기 -->
+      <div class="map-theme-sidebar__panel map-theme-sidebar__panel--hidden" data-theme-panel="category"
+        id="theme-panel-category">
+        <div class="map-theme-sidebar__fixed">
+          <div class="map-theme-sidebar__toolbar">
+            <span class="map-ui-tree__count">총 <strong id="themeCountCategory">402</strong> 건</span>
+            <button type="button" class="map-theme-sidebar__expand-all" data-theme-expand-all>모두열기 +</button>
+          </div>
+        </div>
+        <div class="map-theme-sidebar__scroll">
+          <div class="list tree" id="themeCategoryRoot">
+            <ul>
+              <li>
+                <button type="button" class="btToggle text big on" data-theme-branch-toggle>3D지도</button>
+                <ul class="dropbox">
+                  <li>
+                    <button type="button" class="btToggle text on" data-theme-branch-toggle>명칭</button>
+                    <ul class="dropbox">
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_교통시설" class="input-check">
+                              <input type="checkbox" id="chk_t_교통시설" name="chk_t_교통시설">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">교통시설</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>3D지도</span><span>명칭</span></p>
+                            <div class="btns"><button type="button" class="btPop">자세히보기</button></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_명칭영문" class="input-check">
+                              <input type="checkbox" id="chk_t_명칭영문" name="chk_t_명칭영문">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">명칭(영문)</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>3D지도</span><span>명칭</span></p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_명칭한글" class="input-check">
+                              <input type="checkbox" id="chk_t_명칭한글" name="chk_t_명칭한글" checked>
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">명칭(한글)</span>
+                            </label>
+                            <button type="button" class="btToggle on" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>3D지도</span><span>명칭</span></p>
+                            <div class="btns"><button type="button" class="btPop">자세히보기</button></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_행정경계" class="input-check">
+                              <input type="checkbox" id="chk_t_행정경계" name="chk_t_행정경계">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">행정경계</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>3D지도</span><span>명칭</span></p>
+                            <div class="btns"><button type="button" class="btPop">자세히보기</button></div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button type="button" class="btToggle text" data-theme-branch-toggle>+ 실감영상</button>
+                    <ul class="dropbox">
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_실감영상" class="input-check">
+                              <input type="checkbox" id="chk_t_실감영상" name="chk_t_실감영상">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">실감영상</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>3D지도</span><span>실감영상</span></p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button type="button" class="btToggle text" data-theme-branch-toggle>+ 입체모형</button>
+                    <ul class="dropbox">
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_lod4" class="input-check">
+                              <input type="checkbox" id="chk_t_lod4" name="chk_t_lod4">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">3차원 입체모형(LoD4)</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>3D지도</span><span>입체모형</span></p>
+                            <div class="btns"><button type="button" class="btPop">자세히보기</button></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_lod1" class="input-check">
+                              <input type="checkbox" id="chk_t_lod1" name="chk_t_lod1">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">3차원 입체모형(LoD1)</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>3D지도</span><span>입체모형</span></p>
+                            <div class="btns"><button type="button" class="btPop">자세히보기</button></div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <button type="button" class="btToggle text big" data-theme-branch-toggle>지도</button>
+                <ul class="dropbox">
+                  <li>
+                    <button type="button" class="btToggle text" data-theme-branch-toggle>+ 과거항공사진</button>
+                    <ul class="dropbox">
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_air1950" class="input-check">
+                              <input type="checkbox" id="chk_t_air1950" name="chk_t_air1950">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">과거항공사진(1950)</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>지도</span><span>과거항공사진</span></p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item">
+                          <div class="item__header">
+                            <label for="chk_t_air2007" class="input-check">
+                              <input type="checkbox" id="chk_t_air2007" name="chk_t_air2007">
+                              <span class="input-check__ui" aria-hidden="true"></span>
+                              <span class="input-check__label">과거항공사진(2007)</span>
+                            </label>
+                            <button type="button" class="btToggle" data-theme-item-toggle>열고닫기</button>
+                          </div>
+                          <div class="dropbox">
+                            <p class="ctg"><span>지도</span><span>과거항공사진</span></p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">적용</button>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="map-search-sidebar__open" data-target="{{panelId}}">열기</button>
+</aside>

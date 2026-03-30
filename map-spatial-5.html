@@ -1,0 +1,191 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>기하분석 &gt; 중첩 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>다중 반경 multi-Ring)영향권 분석
+          <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
+        </span>
+      </p>
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">1. 기준점 설정</h3>
+
+        <div class="map-spatial-buffer-anchor-card">
+          <div class="map-spatial-buffer-anchor-card__top">
+            <span class="map-spatial-buffer-anchor-card__pin" aria-hidden="true"></span>
+            <div>
+              <div class="map-spatial-buffer-anchor-card__text">경상북도 포항시 남구 시청로 1</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-spatial-buffer-anchor-actions">
+          <button type="button" class="map-ui-btn map-ui-btn-primary">지점(Point)</button>
+          <span class="map-spatial-buffer-anchor-help">*지도 클릭으로 위치 수정 가능</span>
+        </div>
+
+        <div class="map-spatial-buffer-step__title-row">
+          <h4 class="map-spatial-sidebar__section-title map-spatial-buffer-step__title--row">2. 레이어선택</h4>
+          <button type="button" class="map-spatial-buffer-add">+추가</button>
+        </div>
+
+        <div class="map-spatial-overlay-layer-card">
+          <div class="map-spatial-overlay-layer-card__head">2. 레이어 선택</div>
+
+          <div class="map-spatial-overlay-layer-row">
+            <div class="map-spatial-overlay-layer-row__top">
+              <label class="input-check">
+                <input type="checkbox" checked>
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">용도지역 (Zoning)</span>
+              </label>
+              <span class="map-spatial-overlay-layer-row__dot is-blue"></span>
+            </div>
+            <div class="map-spatial-overlay-layer-row__range">
+              <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
+              <input type="range" class="mydata-layer__range" min="0" max="100" value="50" aria-label="용도지역 가중치">
+              <span class="map-spatial-overlay-layer-row__pct">50%</span>
+            </div>
+          </div>
+
+          <div class="map-spatial-overlay-layer-row">
+            <div class="map-spatial-overlay-layer-row__top">
+              <label class="input-check">
+                <input type="checkbox" checked>
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">경사도 (Slope)</span>
+              </label>
+              <span class="map-spatial-overlay-layer-row__dot is-green"></span>
+            </div>
+            <div class="map-spatial-overlay-layer-row__range">
+              <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
+              <input type="range" class="mydata-layer__range" min="0" max="100" value="40" aria-label="경사도 가중치">
+              <span class="map-spatial-overlay-layer-row__pct">40%</span>
+            </div>
+          </div>
+
+          <div class="map-spatial-overlay-layer-row is-disabled">
+            <div class="map-spatial-overlay-layer-row__top">
+              <label class="input-check">
+                <input type="checkbox">
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">생태자연도</span>
+              </label>
+              <span class="map-spatial-overlay-layer-row__dot is-red"></span>
+            </div>
+            <div class="map-spatial-overlay-layer-row__range">
+              <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
+              <input type="range" class="mydata-layer__range" min="0" max="100" value="0" aria-label="생태자연도 가중치" disabled>
+              <span class="map-spatial-overlay-layer-row__pct">0%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+      </div>
+    </div>
+  </div>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+
+  <div class="map-ui-modal-backdrop is-open" id="spatialBufferModal" aria-hidden="true">
+    <div class="map-ui-modal map-spatial-overall-report" role="dialog" aria-modal="true" aria-labelledby="spatialOverallReportTitle">
+      <header class="map-ui-modal__header">
+        <h3 id="spatialOverallReportTitle">종합 분석 결과</h3>
+        <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
+      </header>
+
+      <div class="map-ui-modal__body">
+        <div class="map-ui-modal__content">
+          <div class="map-spatial-overall-report__subtitle">Interest : 용도지구 Q 간상도</div>
+
+          <div class="map-spatial-overall-report__summary">
+            <div class="map-spatial-overall-report__summary-card">
+              <div class="map-spatial-overall-report__summary-label">총 면적</div>
+              <div class="map-spatial-overall-report__summary-value">14,500 <span class="map-spatial-overall-report__summary-unit">㎡</span></div>
+            </div>
+            <div class="map-spatial-overall-report__summary-card map-spatial-overall-report__summary-card--right">
+              <div class="map-spatial-overall-report__summary-label">적합도 점수</div>
+              <div class="map-spatial-overall-report__summary-value">89.4 <span class="map-spatial-overall-report__summary-unit">점</span></div>
+            </div>
+          </div>
+
+          <section class="map-spatial-overall-report__section">
+            <div class="map-spatial-overall-report__section-title">수형 테이블 미리보기</div>
+            <div class="map-ui-table-wrap map-ui-table-wrap--sheet">
+              <table class="map-ui-table map-ui-table--sheet" aria-label="적합성 분포 테이블">
+                <thead>
+                  <tr>
+                    <th>FID</th>
+                    <th>위치</th>
+                    <th>유형</th>
+                    <th>판정</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2동일반</td>
+                    <td>동일</td>
+                    <td><span class="map-spatial-overall-report__tag map-spatial-overall-report__tag--ok">적합</span></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>2동일반</td>
+                    <td>동일</td>
+                    <td><span class="map-spatial-overall-report__tag map-spatial-overall-report__tag--ok">적합</span></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>상업</td>
+                    <td>상업</td>
+                    <td><span class="map-spatial-overall-report__tag map-spatial-overall-report__tag--no">부적합</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="map-spatial-overall-report__section">
+            <div class="map-spatial-overall-report__section-title">적합성 분포</div>
+            <div class="map-spatial-overall-report__donut-layout">
+              <div class="map-spatial-overall-report__donut-area" aria-label="적합성 도넛 차트 영역">
+                <div class="map-spatial-overall-report__donut" aria-hidden="true"></div>
+              </div>
+              <div class="map-spatial-overall-report__donut-legend" aria-label="차트 범례">
+                <div class="map-spatial-overall-report__legend-item">
+                  <span class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--ok"></span>
+                  최적 (Optimal)
+                </div>
+                <div class="map-spatial-overall-report__legend-item">
+                  <span class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--soso"></span>
+                  적정 (Satisfiable)
+                </div>
+                <div class="map-spatial-overall-report__legend-item">
+                  <span class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--no"></span>
+                  부적합 (Unstuitable)
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer class="map-ui-modal__footer map-spatial-overall-report__footer">
+          <button type="button" class="map-ui-btn map-ui-btn--primary map-spatial-overall-report__download-btn">결과 레이어 저장 (GEOJSON)</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
+{{/layout}}

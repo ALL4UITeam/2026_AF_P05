@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/main.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli active">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					
+
+					<div class="popover-menu-wrap intelli active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active">통합지도</a></li>
+								<li><a href="#">3D지도</a></li>
+								<li><a href="#">실내지도</a></li>
+								<li><a href="#">주제도</a></li>
+								<li><a href="#">검색</a></li>
+								<li><a href="#">분석</a></li>
+								<li><a href="#">통계지도</a></li>
+								<li><a href="#">마이 데이터</a></li>
+								<li><a href="#">입지분석 시뮬레이션</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				<style>
+					.map-search-zoom__track-wrap{display: none;}
+				</style>
+				<div class="vibe-container map-theme-page">
+					
+					<!-- 우측: 지도 영역 (전체 채움) -->
+					<div class="map-area">
+						<div id="map-container"></div>
+					</div>
+				
+					
+					<div class="map-ui-modal-backdrop is-open" id="simulationModal" aria-hidden="true">
+						<div class="map-ui-modal">
+							<header class="map-ui-modal__header">
+								<h3>입지검색</h3>
+								<button type="button" class="map-ui-modal__close" aria-label="닫기" data-land-search-close></button>
+							</header>
+							<div class="map-ui-modal__body">
+								<div class="map-ui-modal__content">
+									<div class="map-ui-wizard">
+										<div class="map-ui-wizard__main">
+											<header class="map-ui-wizard__head">
+												<h3>Step 1. 입지 검색</h3>
+												<p>최소면적, 최대면적, 행정구역, 소유구분, 지모 등으로 후보 필지/구역으로 검색하세요.</p>
+											</header>
+					
+											<div class="map-ui-wizard__search">
+												<div class="map-ui-wizard__search-row">
+													<input type="text" class="map-ui-input input-search" placeholder="검색어를 입력하세요.">
+													<button type="button" class="sidebar__search-btn" aria-label="검색">검색</button>
+												</div>
+					
+												<div class="map-ui-wizard__filters">
+													<select name="" id="" class="map-ui-select">
+														<option value="">전체</option>
+													</select>
+													<select name="" id="" class="map-ui-select">
+														<option value="">전체</option>
+													</select>
+													<select name="" id="" class="map-ui-select">
+														<option value="">전체</option>
+													</select>
+													<select name="" id="" class="map-ui-select">
+														<option value="">전체</option>
+													</select>
+													<select name="" id="" class="map-ui-select">
+														<option value="">전체</option>
+													</select>
+													<div class="map-ui-range-inline">
+														<label for="map-range-filter">면적</label>
+														<input id="map-range-filter" type="range" min="0" max="100" value="0">
+													</div>
+												</div>
+											</div>
+											<!-- // map-ui-wizard__search -->
+											
+											<div class="map-ui-wizard__result">
+					
+												<div class="map-ui-wizard__result-summary">총 <b aria-live="polite">100</b>건</div>
+				
+												<div class="table-wrap">
+													<table class="tbl">
+														<thead>
+															<tr>
+																<th>번호</th>
+																<th>소재지</th>
+																<th>재산관리란</th>
+																<th>지목</th>
+																<th>재산구분</th>
+																<th>&nbsp;</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<td>1</td>
+																<td>영천시 금호읍 산대리 737-18</td>
+																<td>경상북도 기후환경구 수자원관리과</td>
+																<td>도로</td>
+																<td>행정재산</td>
+																<td>
+																	<button type="button" class="map-ui-btn map-ui-btn--primary map-ui-btn--table">
+																		상세보기
+																	</button>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												
+												<nav class="map-paging">
+													<button type="button" class="map-paging__num is-active">1</button>
+													<button type="button" class="map-paging__num">2</button>
+													<button type="button" class="map-paging__num">3</button>
+													<button type="button" class="map-paging__num">4</button>
+												</nav>
+											</div>
+										</div>
+				
+										<!-- 스텝별 하단 고정 액션 -->
+										<div class="map-ui-wizard__actions">
+											<button type="button" class="map-ui-wizard__action-btn map-ui-btn-primary">다음</button>
+										</div>
+									</div>
+				
+									<div class="map-ui-side-panel">
+										<div class="map-ui-side-panel__sheet">
+											<header class="map-ui-side-panel__head">도유재산 상세정보</header>
+											<div class="map-ui-side-panel__body">
+												<section class="map-ui-kv-section" aria-labelledby="map-kv-basic">
+													<h4 class="map-ui-kv-section__title" id="map-kv-basic">기본 정보</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">소재지</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">영천시 신녕면 부산리 274-3</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산관리관명</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">경상북도 건설도시국 도로철도과</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">위임관리관명</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">경상북도 건설도시국 도로철도과</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">대부존재여부</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">미대부</span>
+														</div>
+													</div>
+												</section>
+				
+												<section class="map-ui-kv-section" aria-labelledby="map-kv-parcel">
+													<h4 class="map-ui-kv-section__title" id="map-kv-parcel">필지 종류</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">지목</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">도로</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산용도</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">행정재산</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">용도지역</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">-</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">계획지구</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">-</span>
+														</div>
+													</div>
+												</section>
+				
+												<section class="map-ui-kv-section" aria-labelledby="map-kv-numeric">
+													<h4 class="map-ui-kv-section__title" id="map-kv-numeric">수치 정보</h4>
+													<div class="map-ui-kv-block">
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산가격</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">0원</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">기준가격</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40,000원</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">면적</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40.00㎡</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">실소유면적</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">40.00㎡</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">재산번호</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">1524345</span>
+														</div>
+														<div class="map-ui-kv-row">
+															<span class="map-ui-kv-row__label">필지고유번호</span>
+															<span class="map-ui-kv-row__sep" aria-hidden="true"></span>
+															<span class="map-ui-kv-row__value">4723032022102740003</span>
+														</div>
+													</div>
+												</section>
+											</div>
+											<footer class="map-ui-side-panel__footer">
+												<button type="button" class="map-ui-wizard__action-btn map-ui-btn-primary">닫기</button>
+											</footer>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

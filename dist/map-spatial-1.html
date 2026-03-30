@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/main.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+
+					<a href="#" class="intelli active">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					
+
+					<div class="popover-menu-wrap intelli active">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active">통합지도</a></li>
+								<li><a href="#">3D지도</a></li>
+								<li><a href="#">실내지도</a></li>
+								<li><a href="#">주제도</a></li>
+								<li><a href="#">검색</a></li>
+								<li><a href="#">분석</a></li>
+								<li><a href="#">통계지도</a></li>
+								<li><a href="#">마이 데이터</a></li>
+								<li><a href="#">입지분석 시뮬레이션</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				<div class="vibe-container map-spatial-page">
+					<aside class="map-menu-panel is-open" aria-label="공간분석 메뉴">
+						<header class="map-menu-panel__header">
+							<h2>지능공간정보 플랫폼</h2>
+						</header>
+						<nav class="map-menu-panel__inner">
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title"><i class="map-menu-icon map-menu-icon-user"></i>2D 분석</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">공간 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">버퍼 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">밀도 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">레이어 중첩 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">위치 찾기 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">인접 영역 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">포인터 집계</a></li>
+									<li><a href="#" class="map-menu-panel__link">포인터 군집</a></li>
+								</ul>
+							</section>
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title"><i class="map-menu-icon map-menu-icon-drone"></i>3D 경관 분석</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">일조권 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">가시권 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">조망권 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">스카이라인 분석</a></li>
+								</ul>
+							</section>
+							<section class="map-menu-panel__section">
+								<h2 class="map-menu-panel__title"><i class="map-menu-icon map-menu-icon-interest"></i>3D 지형 분석</h2>
+								<ul class="map-menu-panel__list">
+									<li><a href="#" class="map-menu-panel__link">경사도 분석</a></li>
+									<li><a href="#" class="map-menu-panel__link">종횡단면 분석</a></li>
+								</ul>
+							</section>
+						</nav>
+					</aside>
+					<div class="map-area">
+						<div id="map-container"></div>
+						
+						<div class="map-toolbar-wrap">
+							<button type="button" class="map-toolbar__btn" data-tool="theme">
+								<span class="map-toolbar__label">주제도</span>
+							</button>
+							
+							<div class="map-toolbar" aria-label="지도 도구">
+								<button type="button" class="map-toolbar__btn" data-tool="basemap">
+									<span class="map-toolbar__label">3D</span>
+								</button>
+								
+								<button type="button" class="map-toolbar__btn" data-tool="distance">
+									<span class="map-toolbar__label">거리</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="area">
+									<span class="map-toolbar__label">면적</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="elevation">
+									<span class="map-toolbar__label">표고</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="radius">
+									<span class="map-toolbar__label">반경</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="draw">
+									<span class="map-toolbar__label">그리기</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="print">
+									<span class="map-toolbar__label">인쇄</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="save">
+									<span class="map-toolbar__label">저장</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="roadview">
+									<span class="map-toolbar__label">로드뷰</span>
+								</button>
+								<button type="button" class="map-toolbar__btn" data-tool="info">
+									<span class="map-toolbar__label">정보보기</span>
+								</button>
+							</div>
+						
+							<div class="map-toolbar__btn-wrap">
+								<button type="button" class="map-toolbar__btn" data-tool="compass" title="나침반"></button>
+							</div>
+							<div class="map-toolbar__btn-wrap">
+								<button type="button" class="map-toolbar__btn" data-tool="current-location" title="현재위치"></button>
+							</div>
+							<div class="map-toolbar__btn-wrap">
+								<button type="button" class="map-toolbar__btn" data-tool="home" title="홈"></button>
+							</div>
+							
+						</div>	</div>
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>

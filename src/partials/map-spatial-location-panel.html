@@ -1,0 +1,81 @@
+<!-- 위치 찾기 분석 패널 (PPT slide 5) -->
+<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialLocationPanel">
+  <div class="map-search-sidebar__inner">
+    <header class="map-search-sidebar__header map-spatial-sidebar__header">
+      <h2>위치 찾기 분석</h2>
+      <button type="button" class="map-search-sidebar__close" data-target="spatialLocationPanel" title="닫기">닫기</button>
+    </header>
+
+    <div class="map-search-sidebar__body map-spatial-sidebar__body">
+      <p class="map-spatial-sidebar__notice">
+        <i aria-hidden="true">i</i>
+        <span>지도를 클릭하여 기준 위치를 설정하거나 수정할 수 있습니다.</span>
+      </p>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">기준 위치 설정</h3>
+        <button type="button" class="map-spatial-sidebar__anchor-btn">
+          지도에서 위치를 클릭하세요
+        </button>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">검색 반경</h3>
+        <div class="map-spatial-sidebar__distance-input">
+          <input type="number" class="map-ui-input" value="500" min="0" title="검색 반경" aria-label="검색 반경">
+          <span>m</span>
+        </div>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">행정구역</h3>
+        <select class="map-ui-select" id="locationSigungu" title="시군구 선택">
+          <option value="">시군구 전체</option>
+        </select>
+        <select class="map-ui-select" id="locationEmd" title="읍면동 선택">
+          <option value="">읍면동 전체</option>
+        </select>
+      </section>
+
+      <section class="map-spatial-sidebar__section">
+        <h3 class="map-spatial-sidebar__section-title">분석 대상</h3>
+        <div class="map-spatial-sidebar__target-grid">
+          <div class="map-spatial-sidebar__target">
+            <label class="input-check">
+              <input type="checkbox" checked>
+              <span class="input-check__ui"></span>
+              <span class="input-check__label">건물</span>
+            </label>
+          </div>
+          <div class="map-spatial-sidebar__target">
+            <label class="input-check">
+              <input type="checkbox" checked>
+              <span class="input-check__ui"></span>
+              <span class="input-check__label">도로</span>
+            </label>
+          </div>
+          <div class="map-spatial-sidebar__target">
+            <label class="input-check">
+              <input type="checkbox" checked>
+              <span class="input-check__ui"></span>
+              <span class="input-check__label">학교</span>
+            </label>
+          </div>
+          <div class="map-spatial-sidebar__target">
+            <label class="input-check">
+              <input type="checkbox" checked>
+              <span class="input-check__ui"></span>
+              <span class="input-check__label">공원</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <div class="sidebar__footer">
+        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="map-search-sidebar__open" data-target="spatialLocationPanel">열기</button>
+</aside>

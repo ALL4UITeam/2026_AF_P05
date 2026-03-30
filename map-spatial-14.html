@@ -1,0 +1,44 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>경관 분석 &gt; 가시권 분석</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
+
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <p class="">
+          가시권 분석결과
+        </p>
+
+        <section class="map-spatial-sidebar__section">
+          <div class="map-spatial-sun-result">
+
+          
+
+            <div class="map-spatial-sun-result__card">
+              <ul class="map-spatial-sun-result__list" aria-label="일조권 분석결과">
+                <li>총면적 : 1,331.59 m²  (100%)</li>
+                <li>가시면적 : 1,103.98 m² (82.91%)</li>
+                <li>비가시면적 : 227.61 m² (17.09%)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">시점〮조망점지정</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>
+  </aside>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+</div>
+{{/layout}}

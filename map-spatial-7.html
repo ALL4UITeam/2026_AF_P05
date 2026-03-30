@@ -1,0 +1,71 @@
+{{#> layout}}
+<div class="vibe-container map-spatial-page">
+	<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>2D 분석 &gt; 인접 영역 분석</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
+
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <p class="map-spatial-sidebar__notice">
+          <i aria-hidden="true">i</i>
+          <span>분석 대상 레이어와 비교 대상 레이어의 인접 영역 경계 또는 필드 값에 의한 디졸브 분석
+            <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
+          </span>
+        </p>
+
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__section-title">1. 분석 대상 레이어 설정</h3>
+          <select class="map-ui-select" id="adjacentTargetLayer" title="분석 대상 레이어">
+            <option value="">분석 대상 레이어를 선택하세요.</option>
+            <option value="zoning">용도지역</option>
+            <option value="slope">경사도</option>
+          </select>
+        </section>
+
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__section-title">2. 비교 대상 레이어 설정</h3>
+          <select class="map-ui-select" id="adjacentCompareLayer" title="비교 대상 레이어">
+            <option value="">비교 대상 레이어를 선택하세요.</option>
+            <option value="zoning">용도지역</option>
+            <option value="eco">생태자연도</option>
+          </select>
+        </section>
+
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__section-title">3. 분석 방식 설정</h3>
+          <div class="map-spatial-adjacent-mode">
+            <div class="map-ui-radio-group">
+              <label class="map-ui-radio">
+                <input type="radio" name="adjacentMode" value="boundary" checked>
+                <span class="map-ui-radio__ui"></span>
+                <span class="map-ui-radio__label">경계</span>
+              </label>
+              <label class="map-ui-radio">
+                <input type="radio" name="adjacentMode" value="field">
+                <span class="map-ui-radio__ui"></span>
+                <span class="map-ui-radio__label">필드</span>
+              </label>
+            </div>
+            <select class="map-ui-select" id="adjacentField" title="필드 선택" disabled>
+              <option value="">필드 선택</option>
+            </select>
+          </div>
+        </section>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>
+  </aside>
+
+	<div class="map-area">
+		<div id="map-container"></div>
+		{{> map-toolbar}}
+	</div>
+
+</div>
+{{/layout}}
