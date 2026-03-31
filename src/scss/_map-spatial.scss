@@ -72,7 +72,7 @@
 
 	.map-spatial-sidebar__radius-box{
 		border: 1px solid #e3e4e6;
-		border-radius: 8px;
+		border-radius: 5px;
 		background: #fff;
 		padding: 16px;
 	}
@@ -82,6 +82,7 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 10px;
+		width: 100%;
 	}
 	.map-spatial-sidebar__radius-row + .mydata-layer__range{
 		width: 100%;
@@ -272,7 +273,7 @@
 			font-weight: 500;
 		}
 		&__swatch {
-			width: 36px;
+			width: 28px;
 			height: 28px;
 			border-radius: 6px;
 			border: 1px solid #d1d5db;
@@ -1574,6 +1575,9 @@
 		border: 1px solid #e5e7eb;
 		border-radius: 8px;
 		padding: 10px;
+		&:not(:last-child){
+			margin-bottom: 10px;
+		}
 	}
 
 	.map-spatial-visibility__param {
@@ -1594,13 +1598,13 @@
 	}
 
 	.map-spatial-visibility__input {
-		height: 38px;
+		height: 36px;
 		border: 1px solid #d1d5db;
-		border-radius: 8px;
+		border-radius: 5px;
 		padding: 0 8px;
-		font-size: 20px;
-		font-weight: 700;
-		color: #4b5563;
+		font-size: 14px;
+		font-weight: 500;
+		color: #333;
 		text-align: center;
 		font-family: inherit;
 		background: #fff;
@@ -1636,8 +1640,8 @@
 
 	.map-spatial-visibility__swatch {
 		width: 24px;
-		height: 30px;
-		border-radius: 7px;
+		height: 24px;
+		border-radius: 5px;
 		display: inline-block;
 	}
 
@@ -1688,7 +1692,7 @@
 
 	.map-spatial-visibility-axis {
 		display: grid;
-		grid-template-columns: 44px 84px 14px 28px 28px;
+		grid-template-columns: 100px 84px 14px 28px auto;
 		align-items: center;
 		gap: 6px;
 	}
@@ -1708,17 +1712,17 @@
 		border: 1px solid #d1d5db;
 		border-radius: 8px;
 		text-align: center;
-		font-size: 18px;
-		font-weight: 700;
-		color: #4b5563;
+		font-size: 14px;
+		font-weight: 500;
+		color: #333;
 		font-family: inherit;
 		background: #fff;
 	}
 
 	.map-spatial-visibility-axis__unit {
 		font-size: 13px;
-		font-weight: 700;
-		color: #4b5563;
+		font-weight: 500;
+		color: #333;
 	}
 
 	.map-spatial-visibility-axis__btn {
@@ -1770,7 +1774,7 @@
       align-items: center;
       justify-content: space-between;
 			flex-direction: column;
-      gap: 12px;
+      gap:0;
       padding: 14px 16px;
       background: #fff;
       border: 1px solid #e3e6ef;
@@ -1825,7 +1829,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 18px;
     }
 
     .map-spatial-slope-result__meta-label {
@@ -1833,18 +1836,16 @@
       font-size: 15px;
       font-weight: 500;
       color: #333;
-      text-decoration: underline;
-      text-underline-offset: 3px;
     }
 
     .map-spatial-slope-result__meta-value {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
 			width: 120px;
       color: #333;
       line-height: 1;
-      background: #f1f5f9;
-      border-radius: 6px;
+      background: #f5f6f8;
+      border-radius: var(--map-ui-radius);
       padding: 8px 10px;
     }
 

@@ -16,13 +16,14 @@
           <button type="button" class="btn-notice" aria-label="설명 보기">사용법 및 산출방식</button>
         </div>
         <div class="sidebar_divider"></div>
-      
+
         <section class="map-spatial-sidebar__section">
           <h3 class="map-spatial-sidebar__title">기준점 설정</h3>
-          <input type="text" class="map-ui-input input-search" value="경상북도 포항시 남구 시청로 1" placeholder="주소 입력" aria-label="기준점 주소">
-          <p class="map-spatial-sidebar__hint">*지도 클릭으로 위치 수정 가능</p>
+          <input type="text" class="map-ui-input input-search" value="경상북도 포항시 남구 시청로 1" placeholder="주소 입력"
+            aria-label="기준점 주소">
+          <p class="map-sidebar__hint">*지도 클릭으로 위치 수정 가능</p>
         </section>
-          <div class="sidebar_divider"></div>
+        <div class="sidebar_divider"></div>
         <section class="map-spatial-sidebar__section">
           <div class="map-spatial-buffer-step__title-row">
             <h4 class="map-spatial-sidebar__section-title map-spatial-buffer-step__title--row">2. 레이어선택</h4>
@@ -73,7 +74,8 @@
               </div>
               <div class="map-spatial-overlay-layer-row__range">
                 <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
-                <input type="range" class="mydata-layer__range" min="0" max="100" value="0" aria-label="생태자연도 가중치" disabled>
+                <input type="range" class="mydata-layer__range" min="0" max="100" value="0" aria-label="생태자연도 가중치"
+                  disabled>
                 <span class="map-spatial-overlay-layer-row__pct">0%</span>
               </div>
             </div>
@@ -87,14 +89,15 @@
     </div>
   </aside>
 
-	<div class="map-area">
-		<div id="map-container"></div>
-		{{> map-toolbar}}
-	</div>
+  <div class="map-area">
+    <div id="map-container"></div>
+    {{> map-toolbar}}
+  </div>
 
 
   <div class="map-ui-modal-backdrop is-open" id="spatialBufferModal" aria-hidden="true">
-    <div class="map-ui-modal map-spatial-overall-report" role="dialog" aria-modal="true" aria-labelledby="spatialOverallReportTitle">
+    <div class="map-ui-modal map-spatial-overall-report" role="dialog" aria-modal="true"
+      aria-labelledby="spatialOverallReportTitle">
       <header class="map-ui-modal__header">
         <h3 id="spatialOverallReportTitle">종합 분석 결과</h3>
         <button type="button" class="map-ui-modal__close" aria-label="닫기"></button>
@@ -107,11 +110,13 @@
           <div class="map-spatial-overall-report__summary">
             <div class="map-spatial-overall-report__summary-card">
               <div class="map-spatial-overall-report__summary-label">총 면적</div>
-              <div class="map-spatial-overall-report__summary-value">14,500 <span class="map-spatial-overall-report__summary-unit">㎡</span></div>
+              <div class="map-spatial-overall-report__summary-value">14,500 <span
+                  class="map-spatial-overall-report__summary-unit">㎡</span></div>
             </div>
             <div class="map-spatial-overall-report__summary-card map-spatial-overall-report__summary-card--right">
               <div class="map-spatial-overall-report__summary-label">적합도 점수</div>
-              <div class="map-spatial-overall-report__summary-value">89.4 <span class="map-spatial-overall-report__summary-unit">점</span></div>
+              <div class="map-spatial-overall-report__summary-value">89.4 <span
+                  class="map-spatial-overall-report__summary-unit">점</span></div>
             </div>
           </div>
 
@@ -144,7 +149,8 @@
                     <td>3</td>
                     <td>상업</td>
                     <td>상업</td>
-                    <td><span class="map-spatial-overall-report__tag map-spatial-overall-report__tag--no">부적합</span></td>
+                    <td><span class="map-spatial-overall-report__tag map-spatial-overall-report__tag--no">부적합</span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -159,15 +165,18 @@
               </div>
               <div class="map-spatial-overall-report__donut-legend" aria-label="차트 범례">
                 <div class="map-spatial-overall-report__legend-item">
-                  <span class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--ok"></span>
+                  <span
+                    class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--ok"></span>
                   최적 (Optimal)
                 </div>
                 <div class="map-spatial-overall-report__legend-item">
-                  <span class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--soso"></span>
+                  <span
+                    class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--soso"></span>
                   적정 (Satisfiable)
                 </div>
                 <div class="map-spatial-overall-report__legend-item">
-                  <span class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--no"></span>
+                  <span
+                    class="map-spatial-overall-report__legend-dot map-spatial-overall-report__legend-dot--no"></span>
                   부적합 (Unstuitable)
                 </div>
               </div>
@@ -175,7 +184,8 @@
           </section>
         </div>
         <footer class="map-ui-modal__footer map-spatial-overall-report__footer">
-          <button type="button" class="map-ui-btn map-ui-btn--primary map-spatial-overall-report__download-btn">결과 레이어 저장 (GEOJSON)</button>
+          <button type="button" class="map-ui-btn map-ui-btn--primary map-spatial-overall-report__download-btn">결과 레이어
+            저장 (GEOJSON)</button>
         </footer>
       </div>
     </div>

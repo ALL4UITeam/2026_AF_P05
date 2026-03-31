@@ -88,9 +88,9 @@
 											</header>
 					
 											<div class="map-ui-wizard__search">
-												<div class="map-ui-wizard__search-row">
+												<div class="map-sidebar__location-input">
 													<input type="text" class="map-ui-input input-search" placeholder="검색어를 입력하세요.">
-													<button type="button" class="sidebar__search-btn" aria-label="검색">검색</button>
+													<button type="button" class="map-sidebar__search-btn" aria-label="검색">검색</button>
 												</div>
 					
 												<div class="map-ui-wizard__filters">
@@ -283,10 +283,14 @@
 												</div>
 												
 												<nav class="map-paging">
-													<button type="button" class="map-paging__num is-active">1</button>
-													<button type="button" class="map-paging__num">2</button>
-													<button type="button" class="map-paging__num">3</button>
-													<button type="button" class="map-paging__num">4</button>
+													<button type="button" class="map-paging__prev" aria-label="이전 페이지"></button>
+													<div class="map-paging__num-wrap">
+														<button type="button" class="map-paging__num is-active">1</button>
+														<button type="button" class="map-paging__num">2</button>
+														<button type="button" class="map-paging__num">3</button>
+														<button type="button" class="map-paging__num">4</button>	
+													</div>
+													<button type="button" class="map-paging__next" aria-label="다음 페이지"></button>
 												</nav>
 											</div>
 										</div>

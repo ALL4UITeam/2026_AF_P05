@@ -1394,7 +1394,6 @@
   align-items: center;
   justify-content: center;
   transition: all .15s;
-  &:hover:not(:disabled){ background: #f3f4f6; border-color: #d1d5db; }
   &:disabled{ opacity: .35; cursor: default; }
 }
 .map-paging__num.is-active{
