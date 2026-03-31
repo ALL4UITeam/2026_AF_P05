@@ -75,6 +75,10 @@
 			{ file: 'system_guide_list.html', title: '사용자 가이드 리스트', type: 'system' },
 			{ file: 'system_guide_view.html', title: '사용자 가이드 상세', type: 'system' },
 			{ file: 'system_guide_write.html', title: '사용자 가이드 등록', type: 'system' },
+			{ file: 'system_notice.html', title: '공지사항 관리(탭)', type: 'system' },
+			{ file: 'system_faq.html', title: '자주하는 질문 관리(탭)', type: 'system' },
+			{ file: 'system_guide.html', title: '사용자 가이드 관리(탭)', type: 'system' },
+			{ file: 'system_qna.html', title: '질의응답 관리(탭)', type: 'system' },
 			{ file: 'system_code_manage.html', title: '코드 관리', type: 'system' },
 			{ file: 'system_access_history.html', title: '접속 이력 조회', type: 'system' },
 			{ file: 'system_access_status.html', title: '접속 현황 통계', type: 'system' },
@@ -86,18 +90,6 @@
 			{ file: 'system_user_group_manage.html', title: '사용자 그룹 관리', type: 'system' },
 			{ file: 'system_terms_manage.html', title: '사용 약관 관리', type: 'system' },
 			{ file: 'system_terms_write.html', title: '사용 약관 등록', type: 'system' },
-			{ file: 'map-search.html', title: '검색', type: 'map' },
-			{ file: 'map-search-2.html', title: '검색', type: 'map' },
-			{ file: 'map-search-3.html', title: '검색', type: 'map' },
-			{ file: 'map-search-4.html', title: '검색', type: 'map' },
-			{ file: 'map-integration-1.html', title: '통합지도', type: 'map' },
-			{ file: 'map-integration-2.html', title: '통합지도', type: 'map' },
-			{ file: 'map-mydata-1.html', title: '마이데이터', type: 'map' },
-			{ file: 'map-mydata-2.html', title: '마이데이터', type: 'map' },
-			{ file: 'map-mydata-3.html', title: '마이데이터', type: 'map' },
-			{ file: 'map-mydata-4.html', title: '마이데이터', type: 'map' },
-			{ file: 'map-mydata-5.html', title: '마이데이터', type: 'map' },
-			{ file: 'map-mydata-6.html', title: '마이데이터', type: 'map' },
 			{ file: 'toc-manage.html', title: 'TOC 관리 (레이어 검색·TOC)', type: 'toc' },
 			{ file: 'toc-saved-list.html', title: 'TOC 저장된 목록', type: 'toc' },
 			{ file: 'toc-style-setting.html', title: 'TOC 스타일 설정', type: 'toc' },
@@ -105,7 +97,9 @@
 			{ file: 'spatial_data_manage.html', title: '공간데이터 관리', type: 'data' },
 			{ file: 'system_security_pledge_manage.html', title: '보안각서 관리', type: 'system', note: '양식관리 탭(리스트) + 양식 등록/수정 모달 포함' },
 			{ file: 'system_security_pledge_detail.html', title: '보안 서약서 상세', type: 'system', note: '인쇄/워터마크 포함' },
-			{ file: 'public/admin_sso_link.html', title: 'SSO 연계', type: 'admin' }
+			{ file: 'linkage_monitoring.html', title: '연계모니터링(연계 대시보드)', type: 'system', note: '연계관리 메가메뉴' },
+			{ file: 'linkage_error_detail.html', title: '연계 오류 상세', type: 'system' },
+			{ file: 'public/admin_sso_link.html', title: 'SSO 연계', type: 'admin' },
 		];
 
 		$.each(systemPages, function(i, page){
@@ -141,6 +135,7 @@
 				<div class="listBox">
 					<div class="info">
 						<p>* 레이어팝업은 해당 관련페이지 <span style="color:red">하단에 주석처리 </span> 되었으며, 리스트에 있는 팝업(popupSample.html)은 preview 하기위한 예시파일입니다.</p>
+						<p style="margin-top:8px;font-weight:600;">* 지도 등 추가 페이지는 <code>public/map-pages.json</code> 배열에 <code>{&quot;file&quot;,&quot;title&quot;}</code> 형태로 넣으면 목록 하단에 자동 합류합니다. (로컬 서버에서 열기)</p>
 					</div>
 
 					<table class="tableStyle">

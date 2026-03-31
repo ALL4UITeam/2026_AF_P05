@@ -1,0 +1,94 @@
+<div class="data-request__search spatial-dash__search--stack linkage-monitor__search">
+  <div class="linkage-monitor__search-grid spatial-dash__search-grid">
+    <div class="spatial-dash__form-row">
+      <label for="linkageErrCode" class="data-request__label">오류 코드</label>
+      <input type="text" id="linkageErrCode" class="type01 spatial-dash__input-text" value="" placeholder="오류 코드 입력">
+    </div>
+    <div class="spatial-dash__form-row">
+      <label for="linkageErrAction" class="data-request__label">조치 상태</label>
+      <select id="linkageErrAction" class="type01 spatial-dash__select">
+        <option selected>전체</option>
+        <option>미조치</option>
+        <option>조치완료</option>
+      </select>
+    </div>
+    <button type="button" class="com-btn blue">검색</button>
+  </div>
+</div>
+
+<div class="data-request__head">
+  <div class="linkage-monitor__errors-total-wrap">
+    <p class="data-request__total">총 <span>3</span> 건</p>
+    <button type="button" class="linkage-monitor__errors-fold" aria-expanded="true" aria-controls="linkageErrorsTableBlock" title="영역 접기·펼치기">
+      <span class="linkage-monitor__errors-fold-ico" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+<div id="linkageErrorsTableBlock" class="tbl-wrap data-request__table-wrap">
+  <table class="tbl">
+    <colgroup>
+      <col style="width:5%;">
+      <col style="width:13%;">
+      <col style="width:auto;">
+      <col style="width:11%;">
+      <col style="width:18%;">
+      <col style="width:14%;">
+      <col style="width:10%;">
+      <col style="width:8%;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>기관/시스템</th>
+        <th>연계명</th>
+        <th>오류코드</th>
+        <th>오류메시지</th>
+        <th>발생일시</th>
+        <th>조치상태</th>
+        <th>관리</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="al">
+          <span class="linkage-monitor__org-name">산림청</span>
+          <span class="linkage-monitor__org-sys">산림공간</span>
+        </td>
+        <td class="al">산사태위험지도</td>
+        <td class="linkage-monitor__err-code">ERR_TIMEOUT</td>
+        <td class="al">Connection timed out</td>
+        <td>2026-02-08 23:00:00</td>
+        <td><span class="linkage-monitor__err-action linkage-monitor__err-action--pending">미조치</span></td>
+        <td><a href="/linkage_error_detail.html" class="com-btn gray sm rd linkage-monitor__detail-btn">상세</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="al">
+          <span class="linkage-monitor__org-name">국토교통부</span>
+          <span class="linkage-monitor__org-sys">UPIS</span>
+        </td>
+        <td class="al">도시계획정보</td>
+        <td class="linkage-monitor__err-code">ERR_AUTH</td>
+        <td class="al">Authentication failed</td>
+        <td>2026-02-07 14:20:00</td>
+        <td><span class="linkage-monitor__err-action linkage-monitor__err-action--done">조치완료</span></td>
+        <td><a href="/linkage_error_detail.html" class="com-btn gray sm rd linkage-monitor__detail-btn">상세</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="al">
+          <span class="linkage-monitor__org-name">행정안전부</span>
+          <span class="linkage-monitor__org-sys">새주소</span>
+        </td>
+        <td class="al">도로명주소 일변동</td>
+        <td class="linkage-monitor__err-code">ERR_DATA</td>
+        <td class="al">Invalid data format</td>
+        <td>2026-02-05 09:30:00</td>
+        <td><span class="linkage-monitor__err-action linkage-monitor__err-action--done">조치완료</span></td>
+        <td><a href="/linkage_error_detail.html" class="com-btn gray sm rd linkage-monitor__detail-btn">상세</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -188,6 +188,18 @@ function initSpatialDash() {
   });
 }
 
+function initLinkageMonitorErrorsFold() {
+  const btn = document.querySelector('.linkage-monitor__errors-fold');
+  const block = document.getElementById('linkageErrorsTableBlock');
+  if (!btn || !block) return;
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const next = !expanded;
+    btn.setAttribute('aria-expanded', next ? 'true' : 'false');
+    block.hidden = !next;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setActiveCommuTab();
   initFaqAccordion();
@@ -197,4 +209,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpatialDash();
   initSpatialDataMgmtSvcToggle();
   initSpatialCoordTransformModal();
+  initLinkageMonitorErrorsFold();
 });

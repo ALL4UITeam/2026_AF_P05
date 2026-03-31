@@ -1,0 +1,43 @@
+{{#> layout3}}
+
+<div class="cont-box-wrap linkage-monitor-wrap">
+  <div class="cont-box linkage-monitor">
+    <div class="tit-wrap">
+      <h2>연계모니터링</h2>
+    </div>
+
+    <div class="tab-menu type02 use-status__tabs">
+      <ul>
+        <li><a href="#" class="active" data-target="linkageTabDashboard">연계 대시보드</a></li>
+        <li><a href="#" data-target="linkageTabStatus">연계 현황 관리</a></li>
+        <li><a href="#" data-target="linkageTabErrors">연계 오류 현황 조회</a></li>
+      </ul>
+    </div>
+
+    <div class="tab-content linkage-monitor__tab-content">
+      <div id="linkageTabDashboard" class="active">
+        <div class="linkage-monitor__kpi-grid">
+          {{> linkage-monitor-kpi-card label="총 연계 건수" value="12,540" variant="total"}}
+          {{> linkage-monitor-kpi-card label="금일 처리 건수" value="4,310" variant="processed"}}
+          {{> linkage-monitor-kpi-card label="금일 오류 건수" value="2" variant="error"}}
+          {{> linkage-monitor-kpi-card label="연계 성공률" value="99.9%" variant="rate"}}
+        </div>
+
+        <div class="linkage-monitor__charts-row">
+          {{> linkage-monitor-chart-panel title="시간대별 연계 트래픽" placeholder="그래프 들어가는 자리"}}
+          {{> linkage-monitor-chart-panel title="시스템별 연계 현황" placeholder="그래프 들어가는 자리"}}
+        </div>
+      </div>
+
+      <div id="linkageTabStatus">
+        {{> linkage-monitor-status-tab}}
+      </div>
+
+      <div id="linkageTabErrors">
+        {{> linkage-monitor-errors-tab}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{/layout3}}

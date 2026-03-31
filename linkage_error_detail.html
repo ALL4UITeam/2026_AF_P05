@@ -1,0 +1,55 @@
+{{#> layout3}}
+
+<div class="cont-box-wrap linkage-err-detail-wrap">
+  <div class="cont-box linkage-err-detail">
+    <div class="tit-wrap">
+      <h2>연계 오류 상세 정보</h2>
+    </div>
+
+    <div class="linkage-err-detail__toolbar">
+      <a href="/linkage_monitoring.html" class="linkage-err-detail__back" aria-label="목록으로 돌아가기">
+        <span class="linkage-err-detail__back-icon" aria-hidden="true"></span>
+        목록
+      </a>
+      <span class="linkage-err-detail__head-badge linkage-err-detail__head-badge--pending">미조치</span>
+    </div>
+
+    <section class="linkage-err-detail__section" aria-labelledby="linkageErrBasicTitle">
+      <h3 id="linkageErrBasicTitle" class="linkage-err-detail__block-title">기본 정보</h3>
+      <div class="linkage-err-detail__kv-grid" aria-label="기본 정보">
+        <div class="linkage-err-detail__kv-label">기관 / 시스템</div>
+        <div class="linkage-err-detail__kv-value">산림청 / 산림공간</div>
+        <div class="linkage-err-detail__kv-label">연계명</div>
+        <div class="linkage-err-detail__kv-value">산사태위험지도</div>
+        <div class="linkage-err-detail__kv-label">발생 일시</div>
+        <div class="linkage-err-detail__kv-value">2026-02-08 23:00:00</div>
+        <div class="linkage-err-detail__kv-label">오류 번호 (No)</div>
+        <div class="linkage-err-detail__kv-value">1</div>
+      </div>
+    </section>
+
+    <section class="linkage-err-detail__section" aria-labelledby="linkageErrBodyTitle">
+      <h3 id="linkageErrBodyTitle" class="linkage-err-detail__block-title linkage-err-detail__block-title--danger">오류 상세 내용</h3>
+      <div class="linkage-err-detail__err-panel">
+        <p class="linkage-err-detail__err-code-line">
+          오류 코드 : <strong class="linkage-err-detail__err-code">ERR_TIMEOUT</strong>
+        </p>
+        <div class="linkage-err-detail__err-log-shell">
+          <pre class="linkage-err-detail__err-pre">Connection timed out
+
+// 상세 시스템 로그 (Stack Trace)
+at System.Net.HttpWebRequest.GetResponse()
+at LinkageAgent.Service.SyncData() in C:\src\Agent.cs:line 45
+...</pre>
+        </div>
+      </div>
+    </section>
+
+    <div class="btn-area type02 linkage-err-detail__foot">
+      <a href="/linkage_monitoring.html" class="com-btn grayblue w120">목록으로</a>
+      <button type="button" class="com-btn blue w200">조치 완료 처리</button>
+    </div>
+  </div>
+</div>
+
+{{/layout3}}

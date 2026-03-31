@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/gb_Intelligent.css">
+	<link rel="stylesheet" href="/css/select2.min.css">
+	<script src="/js/lib/jquery-3.7.1.js"></script>
+	<script src="/js/lib/select2.min.js"></script>
+	<script src="/js/ui.js"></script>
+	<title>경북 지능공간정보 플랫폼</title>
+  <script type="module" crossorigin src="/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/js/community.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/community.css">
+</head>
+
+<body>
+	<div class="all-wrap">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land">토지정보</a>
+					<a href="#" class="comuu">소통공간</a>
+				</div>
+				<div class="header-util">
+					<a href="#" class="header-system-link active">시스템관리</a>
+					<div class="login-info">
+						<p>경상북도청</p>
+						<p class="name">홍길동 님</p>
+					</div>
+				</div>
+			</div>
+      <div class="mega-menu-wrap system">
+        <!-- 시스템관리 메가메뉴 -->
+        <div class="mega-menu">
+          <nav class="mega-menu-nav">
+            <ul class="mega-menu-root">
+              <li class="mega-menu-item has-sub">
+                <a href="#">운영 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_use_approval.html">사용자 승인 관리</a></li>
+                  <li><a href="/system_permission_approval.html">권한 승인 요청 관리</a></li>
+                  <li><a href="/system_data_request.html">자료 제공 요청 관리</a></li>
+                  <li><a href="/system_user_group_manage.html">사용자 그룹 관리</a></li>
+                  <li><a href="/system_code_manage.html">코드 관리</a></li>
+                  <li><a href="/system_terms_manage.html">사용 약관 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">로그 및 통계</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_access_history.html">접속 이력 조회</a></li>
+                  <li><a href="/system_use_history.html">사용 이력 조회</a></li>
+                  <li><a href="/system_access_status.html">접속 현황 통계</a></li>
+                  <li><a href="/system_use_status.html">이용 현황 통계</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">공간정보 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/spatial_data_dashboard.html">공간정보 대시보드</a></li>
+                  <li><a href="/spatial_data_manage.html">공간 데이터 관리</a></li>
+                  <li><a href="/toc-manage.html">주제도 관리</a></li>
+									<li><a href="/system_security_pledge_manage.html">보안각서 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">시스템 지원</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/system_notice_list.html">공지사항 관리</a></li>
+                  <li><a href="/system_faq_list.html">자주하는 질문 관리</a></li>
+                  <li><a href="/system_qna_list.html">질의응답 관리</a></li>
+                  <li><a href="/system_guide_list.html">사용자 가이드 관리</a></li>
+                </ul>
+              </li>
+              <li class="mega-menu-item has-sub">
+                <a href="#">연계 관리</a>
+                <ul class="mega-menu-sub">
+                  <li><a href="/linkage_monitoring.html">연계 대시보드</a></li>
+                  <li><a href="/linkage_monitoring.html">연계 현황 관리</a></li>
+                  <li><a href="/linkage_monitoring.html">연계 오류 현황 조회</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+		</header>
+		<!-- header -->
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content">
+				
+				<div class="cont-box-wrap linkage-monitor-wrap">
+				  <div class="cont-box linkage-monitor">
+				    <div class="tit-wrap">
+				      <h2>연계모니터링</h2>
+				    </div>
+				
+				    <div class="tab-menu type02 use-status__tabs">
+				      <ul>
+				        <li><a href="#" class="active" data-target="linkageTabDashboard">연계 대시보드</a></li>
+				        <li><a href="#" data-target="linkageTabStatus">연계 현황 관리</a></li>
+				        <li><a href="#" data-target="linkageTabErrors">연계 오류 현황 조회</a></li>
+				      </ul>
+				    </div>
+				
+				    <div class="tab-content linkage-monitor__tab-content">
+				      <div id="linkageTabDashboard" class="active">
+				        <div class="linkage-monitor__kpi-grid">
+				          <article class="linkage-monitor__kpi linkage-monitor__kpi--total" aria-label="총 연계 건수">
+				            <div class="linkage-monitor__kpi-header">
+				              <span class="linkage-monitor__kpi-icon-wrap" aria-hidden="true">
+				                <span class="linkage-monitor__kpi-icon"></span>
+				              </span>
+				              <span class="linkage-monitor__kpi-label">총 연계 건수</span>
+				            </div>
+				            <p class="linkage-monitor__kpi-value">12,540</p>
+				          </article>
+				          <article class="linkage-monitor__kpi linkage-monitor__kpi--processed" aria-label="금일 처리 건수">
+				            <div class="linkage-monitor__kpi-header">
+				              <span class="linkage-monitor__kpi-icon-wrap" aria-hidden="true">
+				                <span class="linkage-monitor__kpi-icon"></span>
+				              </span>
+				              <span class="linkage-monitor__kpi-label">금일 처리 건수</span>
+				            </div>
+				            <p class="linkage-monitor__kpi-value">4,310</p>
+				          </article>
+				          <article class="linkage-monitor__kpi linkage-monitor__kpi--error" aria-label="금일 오류 건수">
+				            <div class="linkage-monitor__kpi-header">
+				              <span class="linkage-monitor__kpi-icon-wrap" aria-hidden="true">
+				                <span class="linkage-monitor__kpi-icon"></span>
+				              </span>
+				              <span class="linkage-monitor__kpi-label">금일 오류 건수</span>
+				            </div>
+				            <p class="linkage-monitor__kpi-value">2</p>
+				          </article>
+				          <article class="linkage-monitor__kpi linkage-monitor__kpi--rate" aria-label="연계 성공률">
+				            <div class="linkage-monitor__kpi-header">
+				              <span class="linkage-monitor__kpi-icon-wrap" aria-hidden="true">
+				                <span class="linkage-monitor__kpi-icon"></span>
+				              </span>
+				              <span class="linkage-monitor__kpi-label">연계 성공률</span>
+				            </div>
+				            <p class="linkage-monitor__kpi-value">99.9%</p>
+				          </article>
+				        </div>
+				
+				        <div class="linkage-monitor__charts-row">
+				          <section class="linkage-monitor__chart-panel">
+				            <h3 class="linkage-monitor__chart-title">시간대별 연계 트래픽</h3>
+				            <div class="linkage-monitor__chart-body">
+				              <p class="linkage-monitor__chart-placeholder">그래프 들어가는 자리</p>
+				            </div>
+				          </section>
+				          <section class="linkage-monitor__chart-panel">
+				            <h3 class="linkage-monitor__chart-title">시스템별 연계 현황</h3>
+				            <div class="linkage-monitor__chart-body">
+				              <p class="linkage-monitor__chart-placeholder">그래프 들어가는 자리</p>
+				            </div>
+				          </section>
+				        </div>
+				      </div>
+				
+				      <div id="linkageTabStatus">
+				        <div class="access-history__search">
+				          <div class="access-history__search-grid">
+				            <label for="linkageStatusOrg" class="access-history__label">연계 기관</label>
+				            <select id="linkageStatusOrg" class="type01">
+				              <option selected>전체</option>
+				              <option>국토교통부</option>
+				              <option>행정안전부</option>
+				              <option>산림청</option>
+				              <option>환경부</option>
+				            </select>
+				        
+				            <label for="linkageStatusFilter" class="access-history__label">상태</label>
+				            <select id="linkageStatusFilter" class="type01">
+				              <option selected>전체</option>
+				              <option>성공</option>
+				              <option>실패</option>
+				            </select>
+				        
+				            <label for="linkageStatusFrom" class="access-history__label">기간</label>
+				            <div class="access-history__period linkage-monitor__search-period-span">
+				              <input type="date" id="linkageStatusFrom" class="type01" value="2026-02-09">
+				              <span class="access-history__dash">~</span>
+				              <input type="date" id="linkageStatusTo" class="type01" value="2026-02-09">
+				            </div>
+				          </div>
+				          <div class="access-history__search-actions">
+				            <button type="button" class="com-btn blue w120">검색</button>
+				          </div>
+				        </div>
+				        
+				        <div class="data-request__head">
+				          <p class="data-request__total">총 <span>7</span> 건</p>
+				          <button type="button" class="linkage-monitor__excel-btn com-btn grayblue">
+				            <span class="linkage-monitor__excel-ico" aria-hidden="true"></span>
+				            엑셀 다운로드
+				          </button>
+				        </div>
+				        
+				        <div class="tbl-wrap data-request__table-wrap">
+				          <table class="tbl">
+				            <colgroup>
+				              <col style="width:5%;">
+				              <col style="width:11%;">
+				              <col style="width:11%;">
+				              <col style="width:7%;">
+				              <col style="width:auto;">
+				              <col style="width:10%;">
+				              <col style="width:14%;">
+				              <col style="width:9%;">
+				            </colgroup>
+				            <thead>
+				              <tr>
+				                <th>No.</th>
+				                <th>기관명</th>
+				                <th>시스템명</th>
+				                <th>유형</th>
+				                <th>연계명</th>
+				                <th>처리건수</th>
+				                <th>처리일시</th>
+				                <th>상태</th>
+				              </tr>
+				            </thead>
+				            <tbody>
+				              <tr>
+				                <td>1</td>
+				                <td>국토교통부</td>
+				                <td>NSDI</td>
+				                <td>수신</td>
+				                <td class="al">연속지적도 갱신</td>
+				                <td class="ar">1,540</td>
+				                <td>2026-02-09 10:00:00</td>
+				                <td><span class="linkage-monitor__status-badge linkage-monitor__status-badge--ok">성공</span></td>
+				              </tr>
+				              <tr>
+				                <td>2</td>
+				                <td>행정안전부</td>
+				                <td>새주소</td>
+				                <td>송신</td>
+				                <td class="al">도로명주소 배치</td>
+				                <td class="ar">892</td>
+				                <td>2026-02-09 09:42:11</td>
+				                <td><span class="linkage-monitor__status-badge linkage-monitor__status-badge--ok">성공</span></td>
+				              </tr>
+				              <tr>
+				                <td>3</td>
+				                <td>환경부</td>
+				                <td>국가환경정보</td>
+				                <td>수신</td>
+				                <td class="al">대기오염 측정망</td>
+				                <td class="ar">320</td>
+				                <td>2026-02-09 08:15:00</td>
+				                <td><span class="linkage-monitor__status-badge linkage-monitor__status-badge--ok">성공</span></td>
+				              </tr>
+				              <tr>
+				                <td>4</td>
+				                <td>산림청</td>
+				                <td>산림공간</td>
+				                <td>수신</td>
+				                <td class="al">산사태위험지도</td>
+				                <td class="ar">0</td>
+				                <td>2026-02-08 23:00:00</td>
+				                <td><span class="linkage-monitor__status-badge linkage-monitor__status-badge--fail">실패</span></td>
+				              </tr>
+				              <tr>
+				                <td>5</td>
+				                <td>국토교통부</td>
+				                <td>실거래가</td>
+				                <td>수신</td>
+				                <td class="al">아파트 실거래 공개자료</td>
+				                <td class="ar">2,105</td>
+				                <td>2026-02-08 22:30:00</td>
+				                <td><span class="linkage-monitor__status-badge linkage-monitor__status-badge--ok">성공</span></td>
+				              </tr>
+				              <tr>
+				                <td>6</td>
+				                <td>행정안전부</td>
+				                <td>행정표준코드</td>
+				                <td>송신</td>
+				                <td class="al">법정동 코드 동기화</td>
+				                <td class="ar">45</td>
+				                <td>2026-02-08 21:00:05</td>
+				                <td><span class="linkage-monitor__status-badge linkage-monitor__status-badge--ok">성공</span></td>
+				              </tr>
+				              <tr>
+				                <td>7</td>
+				                <td>환경부</td>
+				                <td>물환경</td>
+				                <td>수신</td>
+				                <td class="al">수질 자동측정망 현황</td>
+				                <td class="ar">128</td>
+				                <td>2026-02-08 20:10:33</td>
+				                <td><span class="linkage-monitor__status-badge linkage-monitor__status-badge--ok">성공</span></td>
+				              </tr>
+				            </tbody>
+				          </table>
+				        </div>
+				      </div>
+				
+				      <div id="linkageTabErrors">
+				        <div class="data-request__search spatial-dash__search--stack linkage-monitor__search">
+				          <div class="linkage-monitor__search-grid spatial-dash__search-grid">
+				            <div class="spatial-dash__form-row">
+				              <label for="linkageErrCode" class="data-request__label">오류 코드</label>
+				              <input type="text" id="linkageErrCode" class="type01 spatial-dash__input-text" value="" placeholder="오류 코드 입력">
+				            </div>
+				            <div class="spatial-dash__form-row">
+				              <label for="linkageErrAction" class="data-request__label">조치 상태</label>
+				              <select id="linkageErrAction" class="type01 spatial-dash__select">
+				                <option selected>전체</option>
+				                <option>미조치</option>
+				                <option>조치완료</option>
+				              </select>
+				            </div>
+				            <button type="button" class="com-btn blue">검색</button>
+				          </div>
+				        </div>
+				        
+				        <div class="data-request__head">
+				          <div class="linkage-monitor__errors-total-wrap">
+				            <p class="data-request__total">총 <span>3</span> 건</p>
+				            <button type="button" class="linkage-monitor__errors-fold" aria-expanded="true" aria-controls="linkageErrorsTableBlock" title="영역 접기·펼치기">
+				              <span class="linkage-monitor__errors-fold-ico" aria-hidden="true"></span>
+				            </button>
+				          </div>
+				        </div>
+				        
+				        <div id="linkageErrorsTableBlock" class="tbl-wrap data-request__table-wrap">
+				          <table class="tbl">
+				            <colgroup>
+				              <col style="width:5%;">
+				              <col style="width:13%;">
+				              <col style="width:auto;">
+				              <col style="width:11%;">
+				              <col style="width:18%;">
+				              <col style="width:14%;">
+				              <col style="width:10%;">
+				              <col style="width:8%;">
+				            </colgroup>
+				            <thead>
+				              <tr>
+				                <th>No.</th>
+				                <th>기관/시스템</th>
+				                <th>연계명</th>
+				                <th>오류코드</th>
+				                <th>오류메시지</th>
+				                <th>발생일시</th>
+				                <th>조치상태</th>
+				                <th>관리</th>
+				              </tr>
+				            </thead>
+				            <tbody>
+				              <tr>
+				                <td>1</td>
+				                <td class="al">
+				                  <span class="linkage-monitor__org-name">산림청</span>
+				                  <span class="linkage-monitor__org-sys">산림공간</span>
+				                </td>
+				                <td class="al">산사태위험지도</td>
+				                <td class="linkage-monitor__err-code">ERR_TIMEOUT</td>
+				                <td class="al">Connection timed out</td>
+				                <td>2026-02-08 23:00:00</td>
+				                <td><span class="linkage-monitor__err-action linkage-monitor__err-action--pending">미조치</span></td>
+				                <td><a href="/linkage_error_detail.html" class="com-btn gray sm rd linkage-monitor__detail-btn">상세</a></td>
+				              </tr>
+				              <tr>
+				                <td>2</td>
+				                <td class="al">
+				                  <span class="linkage-monitor__org-name">국토교통부</span>
+				                  <span class="linkage-monitor__org-sys">UPIS</span>
+				                </td>
+				                <td class="al">도시계획정보</td>
+				                <td class="linkage-monitor__err-code">ERR_AUTH</td>
+				                <td class="al">Authentication failed</td>
+				                <td>2026-02-07 14:20:00</td>
+				                <td><span class="linkage-monitor__err-action linkage-monitor__err-action--done">조치완료</span></td>
+				                <td><a href="/linkage_error_detail.html" class="com-btn gray sm rd linkage-monitor__detail-btn">상세</a></td>
+				              </tr>
+				              <tr>
+				                <td>3</td>
+				                <td class="al">
+				                  <span class="linkage-monitor__org-name">행정안전부</span>
+				                  <span class="linkage-monitor__org-sys">새주소</span>
+				                </td>
+				                <td class="al">도로명주소 일변동</td>
+				                <td class="linkage-monitor__err-code">ERR_DATA</td>
+				                <td class="al">Invalid data format</td>
+				                <td>2026-02-05 09:30:00</td>
+				                <td><span class="linkage-monitor__err-action linkage-monitor__err-action--done">조치완료</span></td>
+				                <td><a href="/linkage_error_detail.html" class="com-btn gray sm rd linkage-monitor__detail-btn">상세</a></td>
+				              </tr>
+				            </tbody>
+				          </table>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+</body>
+
+</html>
