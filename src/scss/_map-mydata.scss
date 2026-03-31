@@ -699,35 +699,6 @@
   display: inline-flex;
 }
 
-// 페이징
-.map-paging{
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.map-paging__btn,
-.map-paging__num{
-  min-width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  border: 1px solid #e5e7eb;
-  background: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  color: #6b7280;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .15s;
-  &:hover:not(:disabled){ background: #f3f4f6; border-color: #d1d5db; }
-  &:disabled{ opacity: .35; cursor: default; }
-}
-.map-paging__num.is-active{
-  background: #3b82f6;
-  border-color: #3b82f6;
-  color: #fff;
-}
 
 // ===== 드론 등록/수정 모달 =====
 .drone-modal{

@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // 위치 검색 페이지 전용 (map-search.html) — VWorld dtkmap 스타일
 // 좌측 메뉴 패널(240px) + 사이드바(300px) + 우측 지도 영역
 // ============================================================
@@ -169,90 +169,176 @@ $map-menu-panel-width: 240px;
 	color: #888;
 	margin: 6px 0 0 0;
 }
-.map-indoor-sidebar__list-wrap {
+.map-sidebar__list-wrap {
 	flex: 1;
 	min-height: 0;
 	overflow-y: auto;
 	margin-bottom: 12px;
 }
-.map-indoor-sidebar__list {
+.map-sidebar__list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
-.map-indoor-sidebar__item {
-	margin-bottom: 4px;
-	border-radius: 6px;
+.map-sidebar__item {
+	border-radius: var(--map-ui-radius);
 	background: #fff;
 	border: 1px solid #e3e4e6;
 	transition: background 0.2s, border-color 0.2s;
+	padding: 20px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	.map-ui-radio__label{
+		font-size: 16px;
+		color: #000 !important;
+		font-weight: 600;
+	}
+	&:has(input:checked){
+		border-color: #6b5ce7;
+		background-color: #f3f1ff;
+	}
 }
-.map-indoor-sidebar__item--selected,
-.map-indoor-sidebar__item:hover {
-	border-color: #6b5ce7;
-	background-color: #f3f1ff;
-}
-.map-indoor-sidebar__radio {
-	position: absolute;
-	opacity: 0;
-	width: 0;
-	height: 0;
-	margin: 0;
-	pointer-events: none;
-}
-.map-indoor-sidebar__item-inner {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 6px 8px;
-	padding: 8px 10px;
-	cursor: pointer;
-	font-size: 13px;
-}
-.map-indoor-sidebar__icon {
-	flex-shrink: 0;
-	width: 24px;
-	height: 24px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 10px;
-	color: #666;
-	background: #eee;
-	border-radius: 4px;
-}
-.map-indoor-sidebar__icon--building { background: #e3f2fd; color: #1565c0; }
-.map-indoor-sidebar__icon--station { background: #f3e5f5; color: #7b1fa2; }
-.map-indoor-sidebar__icon--sport { background: #e8f5e9; color: #2e7d32; }
-.map-indoor-sidebar__name { font-weight: 600; color: #1a1a1a; width: 100%; }
-.map-indoor-sidebar__category { font-size: 12px; color: #666; width: 100%; }
-.map-indoor-sidebar__tag {
-	font-size: 11px;
-	padding: 2px 6px;
-	background: #f5f5f5;
-	color: #555;
-	border-radius: 4px;
-}
-.map-indoor-sidebar__paging {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
-	padding-top: 10px;
-	border-top: 1px solid #eee;
-}
-.map-paging__prev,
-.map-paging__next {
-	padding: 6px 12px;
-	font-size: 12px;
-	background: #fff;
-	border: 1px solid #ddd;
-	border-radius: 6px;
-	cursor: pointer;
-}
-.map-paging__current { font-size: 13px; color: #555; }
+.map-sidebar__category { font-size: 14px; color: #888888; padding-top: 14px;}
 
-// 주제도 사이드바: 탭(검색어로/분류별), 상단·총건수 고정, 목록만 스크롤
+
+.map-ui-modal__header-title{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	strong{
+		color: #fff;
+	}
+	.back-btn{
+		background: url('../images/map/ico_back_24_01.png') no-repeat center center;
+		width: 15px;
+		height: 12px;
+	}
+	.close-btn{
+		background: url('../images/map/ico_close_24_01.png') no-repeat center center;
+		width: 14px;
+		height: 14px;
+	}
+}
+.map-ui-modal__header-toggle{
+	background: url('../images/map/ico_toggle_24_01.png') no-repeat center center;
+	width: 28px;
+	height: 28px;
+}
+
+/* 실내지도 모달 */
+#indoorModal{
+	width: 320px;
+}
+.indoor-modal-category{
+	border-bottom: 1px solid #dbdbe3;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0 -20px;
+	color: #666666;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap:0 8px;
+	.arrow-right{
+		background: url('../images/map/arrow-right.png') no-repeat center center;
+		width: 6px;
+		height: 10px;
+		display: block;
+	}
+}
+
+.indoor-modal-list {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	dl{
+		display: flex;
+		align-items: center;
+		gap: 0 10px;
+		dt{
+			font-size: 12px;
+			color: #fff;
+			font-weight: 500;
+			background-color: #92a1ed;
+			border-radius: 4px;
+			width: 42px;
+			height: 18px;
+			text-align: center;
+			line-height: 18px;
+		}
+		dd{
+			font-size: 14px;
+			color: #333333;
+		}
+		&:nth-child(even){
+			margin-top: 8px;
+			dt{
+				background-color: #82868e;
+			}
+		}
+	}
+}
+
+.indoor-floor{
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+	button{
+		width: 32px;
+		height: 32px;
+		border-radius: 3px;
+		background-color: #fff;
+		border: 1px solid #dbdbe3;
+		color: #000;
+		&.is-active{
+			border-color: #7c6ff0;
+			background-color: #7c6ff0;
+			color: #fff;
+			
+		}
+	}
+}
+
+.indoor-info-list{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+}
+.indoor-info-item{
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #dbdbe3;
+	border-radius: 4px;
+	div{
+		border-top: 1px solid #dbdbe3;
+		padding: 13px;
+		font-size: 13px;
+		color: #444;
+	}
+}
+.indoor-info-btn{
+	padding: 13px;
+	position: relative;
+	width: 100%;
+	text-align: left;
+	&.extend{
+		&::after{
+			content: '';
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 12px;
+			height: 8px;
+			background: url('../images/map/ico_expand_24_01.png') no-repeat center center;
+		}
+	}
+}
+
 
 .sr-only {
 	position: absolute;
@@ -268,7 +354,7 @@ $map-menu-panel-width: 240px;
 // 지도 우측 하단 원형 버튼 그룹 (정보, 새로고침, 되돌리기, 내위치, 나가기)
 .map-floating-controls {
 	position: absolute;
-	bottom: 20%;
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 15;
@@ -277,36 +363,37 @@ $map-menu-panel-width: 240px;
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.2s ease, visibility 0.2s ease;
+	background: #fff;
+	border-radius: 999px;
+	padding: 6px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 	&.is-open {
 		opacity: 1;
 		visibility: visible;
 	}
-}
-.map-floating-controls__btn {
-	width: 40px;
-	height: 40px;
-	padding: 0;
-	border: none;
-	border-radius: 50%;
-	background: #fff;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-	color: #444;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: background 0.2s, box-shadow 0.2s;
-}
-.map-floating-controls__btn:hover {
-	background: #f5f5f5;
-	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-}
-.map-floating-controls__btn:focus-visible {
-	outline: 2px solid var(--map-ui-blue);
-	outline-offset: 2px;
-}
-.map-floating-controls__btn svg { flex-shrink: 0; }
 
+	button{
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+	}
+}
+.map-floating-info-btn {
+	background: url('../images/map/ico_info_24_01.png') no-repeat center center;
+	
+}
+.map-floating-refresh-btn {
+	background: url('../images/map/ico_refresh_24_01.png') no-repeat center center;
+	
+}
+.map-floating-mode-btn {
+	background: url('../images/map/ico_mode_24_01.png') no-repeat center center;
+	
+}
+.map-floating-exit-btn {
+	background: url('../images/map/ico_exit_24_01.png') no-repeat center center;
+	
+}
 // 보행자모드 종료: 하단 50px, 좌우 가운데
 .map-walkout {
 	position: absolute;

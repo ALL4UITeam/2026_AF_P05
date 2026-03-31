@@ -396,43 +396,6 @@
 		margin-bottom: 16px;
 	}
 
-	// ---- 페이징 ----
-	.map-paging {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 12px;
-		font-size: 14px;
-		color: #555;
-	}
-
-	.map-paging__prev,
-	.map-paging__next {
-		padding: 6px 12px;
-		border: 1px solid #eee;
-		background: #fff;
-		border-radius: 6px;
-		cursor: pointer;
-		font-size: 13px;
-		transition: background 0.2s, border-color 0.2s;
-	}
-
-	.map-paging__prev:hover:not(:disabled),
-	.map-paging__next:hover:not(:disabled) {
-		background: var(--map-ui-blue-bg);
-		border-color: var(--map-ui-blue);
-	}
-
-	.map-paging__prev:disabled,
-	.map-paging__next:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
-
-	.map-paging__current {
-		font-weight: 700;
-		color: #1a1a1a;
-	}
 
 	// ---- 모달 (분석 결과 팝업) ----
 	.map-ui-modal-backdrop {
@@ -1394,4 +1357,62 @@
 		word-break: break-all;
 	}
 
+}
+
+
+
+// 페이징
+.map-paging{
+  display: flex;
+  align-items: center;
+	justify-content: space-between;
+}
+
+.map-paging--line{
+	border-top: 1px solid #dbdbe3;
+	margin-left: -16px;
+	margin-right: -16px;
+	padding: 10px 16px;
+}
+
+.map-paging__num-wrap{
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.map-paging__btn,
+.map-paging__num{
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #717171;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+  &:hover:not(:disabled){ background: #f3f4f6; border-color: #d1d5db; }
+  &:disabled{ opacity: .35; cursor: default; }
+}
+.map-paging__num.is-active{
+  background: #2f3340;
+  color: #fff;
+}
+
+.map-paging__prev,
+.map-paging__next{
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	display: inline-flex;
+}
+.map-paging__prev{
+	background-image: url('../images/map/paging_prev.png');
+}
+.map-paging__next{
+	background-image: url('../images/map/paging_next.png');
 }

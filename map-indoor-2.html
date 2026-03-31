@@ -1,0 +1,125 @@
+{{#> layout}}
+<div class="vibe-container map-indoor-page">
+	<!-- 실내지도: 다중반경 영향권 분석 패널 -->
+	<aside class="map-search-sidebar is-open  map-indoor-sidebar" id="indoorPanel">
+		<div class="map-search-sidebar__inner">
+			<header class="map-search-sidebar__header">
+				<h2>실내지도</h2>
+				<button type="button" title="닫기" class="map-search-sidebar__close" data-target="indoorPanel"><i
+						class="map-search-sidebar__close-icon"></i></button>
+			</header>
+			<div class="map-search-sidebar__body">
+				<div class="map-sidebar__notice">
+					<div class="map-sidebar__notice-content">
+						<strong>다중 반경(multi-Ring)영향권 분석</strong>
+						<p>해당지역의 생활 편의시설 접근근성진단. </p>
+					</div>
+					<button type="button" class="btn-notice">사용법 및 산출방식</button>
+				</div>
+
+				<div class="sidebar_divider"></div>
+
+				<div class="map-sidebar__search">
+					<div class="map-sidebar__location-input">
+						<input type="text" class="map-ui-input input-search" placeholder="주소 입력">
+						<button type="button" class="map-sidebar__search-btn">검색</button>
+					</div>
+					<p class="map-sidebar__hint">* 지도 클릭으로 위치 수정 가능</p>
+				</div>
+
+				<div class="map-sidebar__list-wrap">
+					<ul class="map-sidebar__list">
+						<li class="map-sidebar__item">
+							<label class="map-ui-radio">
+								<input type="radio" name="" id="" value="" checked>
+								<span class="map-ui-radio__ui"></span>
+								<span class="map-ui-radio__label">4.19기념관</span>
+							</label>
+							<p class="map-sidebar__category">건물 &gt; 공공문화시설</p>
+						</li>
+						<li class="map-sidebar__item">
+							<label class="map-ui-radio">
+								<input type="radio" name="" id="" value="">
+								<span class="map-ui-radio__ui"></span>
+								<span class="map-ui-radio__label">4.19기념관</span>
+							</label>
+							<p class="map-sidebar__category">건물 &gt; 공공문화시설</p>
+						</li>
+					</ul>
+				</div>
+
+				<nav class="map-paging" aria-label="결과 페이지">
+					<button type="button" class="map-paging__prev" aria-label="이전 페이지"></button>
+					<div class="map-paging__num-wrap">
+						<button class="map-paging__num">1</button>
+						<button class="map-paging__num is-active" aria-current="page">2</button>
+						<button class="map-paging__num">3</button>
+						<button class="map-paging__num">4</button>
+						<button class="map-paging__num">5</button>
+					</div>
+					<button type="button" class="map-paging__next" aria-label="다음 페이지"></button>
+				</nav>
+			</div>
+		</div>
+		<button type="button" class="map-search-sidebar__open" data-target="indoorPanel">열기</button>
+	</aside>
+	<!-- 우측: 지도 영역 (전체 채움) -->
+	<div class="map-area">
+		<div id="map-container"></div>
+		<div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i
+				class="map-search-breadcrumb__separator"></i> 관양동</div>
+		{{> map-toolbar}}
+		{{> map-search-zoom}}
+		{{> map-floating-controls}}
+		{{> map-building-info}}
+		{{> map-options}}
+	</div>
+
+	<div class="map-ui-modal-backdrop is-open" id="indoorModalBackdrop" aria-hidden="true">
+		<div class="map-ui-modal" id="indoorModal">
+			<header class="map-ui-modal__header">
+				<h3 class="map-ui-modal__header-title">
+					<button class="back-btn"></button>
+					<strong>4.19 기념관</strong>
+					<button class="close-btn"></button>
+				</h3>
+				<button class="map-ui-modal__header-toggle"></button>
+			</header>
+			<div class="map-ui-modal__body">
+				<div class="map-ui-modal__content">
+					<div class="indoor-modal-category">건물 <i class="arrow-right"></i> 공공문화시설</div>
+					<div class="indoor-modal-list">
+						<dl>
+							<dt>도로명</dt>
+							<dd>서울특별시 강북구 4.19로8길 17</dd>
+						</dl>
+						<dl>
+							<dt>지번</dt>
+							<dd>서울특별시 강북구 4.19로8길 17</dd>
+						</dl>
+					</div>
+					<div class="indoor-floor">
+						<button type="button" class="floor-btn is-active">B1</button>
+						<button type="button" class="floor-btn">1F</button>
+						<button type="button" class="floor-btn">2F</button>
+						<button type="button" class="floor-btn">3F</button>
+					</div>
+
+					<div class="indoor-info-list">
+						<div class="indoor-info-item">
+							<button type="button" class="indoor-info-btn extend">출입구 정보</button>
+							<div class="indoor-info-content">정보</div>
+						</div>
+						<div class="indoor-info-item">
+							<button type="button" class="indoor-info-btn">층별안내</button>
+						</div>
+					</div>
+					<!-- /indoor-info-list -->
+				</div>
+				<!-- /map-ui-modal__content -->
+			</div>
+		</div>
+	</div>
+
+</div>
+{{/layout}}
