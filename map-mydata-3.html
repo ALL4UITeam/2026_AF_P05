@@ -328,15 +328,17 @@
 
     <!-- 하단 페이지네이션 -->
     <footer class="drone-layer__footer">
-      <div class="map-ui-paging">
-        <button type="button" class="map-paging__btn" disabled>&laquo;</button>
-        <button type="button" class="map-paging__btn" disabled>&lsaquo;</button>
-        <button type="button" class="map-paging__num is-active">1</button>
-        <button type="button" class="map-paging__num">2</button>
-        <button type="button" class="map-paging__num">3</button>
-        <button type="button" class="map-paging__btn">&rsaquo;</button>
-        <button type="button" class="map-paging__btn">&raquo;</button>
-      </div>
+      <nav class="map-paging" aria-label="결과 페이지">
+        <button type="button" class="map-paging__prev" aria-label="이전 페이지"></button>
+        <div class="map-paging__num-wrap">
+          <button type="button" class="map-paging__num is-active" aria-current="page">1</button>
+          <button type="button" class="map-paging__num">2</button>
+          <button type="button" class="map-paging__num">3</button>
+          <button type="button" class="map-paging__num">4</button>
+          <button type="button" class="map-paging__num">5</button>
+        </div>
+        <button type="button" class="map-paging__next" aria-label="다음 페이지"></button>
+      </nav>
     </footer>
   </div>
 

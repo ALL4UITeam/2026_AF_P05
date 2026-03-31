@@ -1,10 +1,24 @@
-﻿.vibe-container.map-spatial-page {
+﻿
+.map-menu-icon-2d{
+	background: url('../images/map/menu-icon-2d.png') no-repeat center center;
+}
+
+.map-menu-icon-3d{
+	background: url('../images/map/menu-icon-3d.png') no-repeat center center;
+}
+
+.map-menu-icon-terrain{
+	background: url('../images/map/menu-icon-terrain.png') no-repeat center center;
+}
+
+.vibe-container.map-spatial-page {
 	.map-spatial-sidebar__header h2{
 		background: url('../images/map/statistics-icon.png') no-repeat left center;
 		padding-left: 28px;
 		min-height: 20px;
 		line-height: 20px;
 	}
+
 
 	.map-spatial-sidebar__body{
 		padding: 16px;
@@ -344,8 +358,7 @@
 
 	// 일조권 결과 KV 블록
 	.map-spatial-result-kv {
-		border: 1px solid #e3e4e6;
-		border-radius: 8px;
+		
 		background: #fff;
 		overflow: hidden;
 		&__row {
@@ -501,10 +514,7 @@
 		right: 24px;
 		top: 76px;
 		transform: none;
-		border-radius: 12px;
 		overflow: hidden;
-		border: 1px solid #d7dbe3;
-		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
 	}
 
 	.map-spatial-result {
