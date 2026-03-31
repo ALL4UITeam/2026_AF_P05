@@ -1,12 +1,124 @@
 {{#> layout}}
 <div class="vibe-container map-spatial-page">
-	{{> map-spatial-panel}}
+	<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>공간분석</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
+  
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <div class="map-sidebar__notice">
+          <div class="map-sidebar__notice-content p0">
+            <strong>영향권 분석에 대한 설명을 확인하고, 기준점과 거리를 설정해 분석을 실행하세요.</strong>
+          </div>
+        </div>
+
+        <div class="sidebar_divider"></div>
+  
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__title">기준점 설정</h3>
+          <button type="button" class="map-spatial-sidebar__anchor-btn">
+            <i aria-hidden="true"></i>
+            <span>지도에서 건물을 선택하세요</span>
+          </button>
+        </section>
+        <div class="sidebar_divider"></div>
+  
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__title">버퍼 거리 설정</h3>
+          <div class="map-spatial-sidebar__radius-box">
+            <div class="map-spatial-sidebar__radius-row">
+              <label for="spatialZone1Range" class="map-spatial-sidebar__zone-label is-active">
+                <span class="dot"></span>Zone 1
+              </label>
+              <div class="map-spatial-sidebar__distance-input">
+                <input id="spatialZone1Input" type="number" class="map-ui-input" value="50" min="0" title="Zone 1 거리" aria-label="Zone 1 거리">
+                <span>m</span>
+              </div>
+            </div>
+            <input id="spatialZone1Range" type="range" class="mydata-layer__range" min="0" max="500" value="50">
+  
+            <div class="map-spatial-sidebar__radius-row is-disabled">
+              <label for="spatialZone2Range" class="map-spatial-sidebar__zone-label">
+                <span class="dot"></span>Zone 2
+              </label>
+              <div class="map-spatial-sidebar__distance-input">
+                <input id="spatialZone2Input" type="number" class="map-ui-input" value="50" min="0" title="Zone 2 거리" aria-label="Zone 2 거리" disabled>
+                <span>m</span>
+              </div>
+            </div>
+            <input id="spatialZone2Range" type="range" class="mydata-layer__range" min="0" max="500" value="50" disabled>
+  
+            <button type="button" class="map-spatial-sidebar__add-zone">+ 반경 추가</button>
+          </div>
+        </section>
+
+        <div class="sidebar_divider"></div>
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__title">분석 대상</h3>
+          <div class="map-spatial-sidebar__target-grid">
+            <div class="map-spatial-sidebar__target">
+              <label class="input-check">
+                <input type="checkbox">
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">건물</span>
+              </label>
+            </div>
+            <div class="map-spatial-sidebar__target">
+              <label class="input-check">
+                <input type="checkbox" checked>
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">도로</span>
+              </label>
+            </div>
+            <div class="map-spatial-sidebar__target">
+              <label class="input-check">
+                <input type="checkbox" checked>
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">가로수</span>
+              </label>
+            </div>
+            <div class="map-spatial-sidebar__target">
+              <label class="input-check">
+                <input type="checkbox" checked>
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">소화전</span>
+              </label>
+            </div>
+            <div class="map-spatial-sidebar__target">
+              <label class="input-check">
+                <input type="checkbox" checked>
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">CCTV</span>
+              </label>
+            </div>
+            <div class="map-spatial-sidebar__target">
+              <label class="input-check">
+                <input type="checkbox" checked>
+                <span class="input-check__ui"></span>
+                <span class="input-check__label">인구</span>
+              </label>
+            </div>
+          </div>
+        </section>
+  
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
+        </div>
+      </div>
+    </div>
+  
+    <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>
+  </aside>
+
+  
 	<div class="map-area">
 		<div id="map-container"></div>
 		{{> map-toolbar}}
 	</div>
 
-  <div class="map-ui-modal-backdrop is-open" id="spatialModal" aria-hidden="true">
+  <div class="map-ui-modal-backdrop" id="spatialModal" aria-hidden="true">
     <div class="map-ui-modal map-spatial-result">
       <header class="map-ui-modal__header">
         <h3>공간검색 결과</h3>

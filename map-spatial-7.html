@@ -8,12 +8,14 @@
       </header>
 
       <div class="map-search-sidebar__body map-spatial-sidebar__body">
-        <p class="map-spatial-sidebar__notice">
-          <i aria-hidden="true">i</i>
-          <span>분석 대상 레이어와 비교 대상 레이어의 인접 영역 경계 또는 필드 값에 의한 디졸브 분석
-            <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
-          </span>
-        </p>
+        <div class="map-sidebar__notice">
+          <div class="map-sidebar__notice-content">
+            <strong>인접 영역 분석</strong>
+            <p>분석 대상 레이어와 비교 대상 레이어의 인접 영역 경계 또는 필드 값에 의한 디졸브 분석</p>
+          </div>
+          <button type="button" class="btn-notice" aria-label="설명 보기">사용법 및 산출방식</button>
+        </div>
+        <div class="sidebar_divider"></div>
 
         <section class="map-spatial-sidebar__section">
           <h3 class="map-spatial-sidebar__section-title">1. 분석 대상 레이어 설정</h3>
@@ -24,6 +26,8 @@
           </select>
         </section>
 
+        <div class="sidebar_divider"></div>
+
         <section class="map-spatial-sidebar__section">
           <h3 class="map-spatial-sidebar__section-title">2. 비교 대상 레이어 설정</h3>
           <select class="map-ui-select" id="adjacentCompareLayer" title="비교 대상 레이어">
@@ -32,6 +36,7 @@
             <option value="eco">생태자연도</option>
           </select>
         </section>
+        <div class="sidebar_divider"></div>
 
         <section class="map-spatial-sidebar__section">
           <h3 class="map-spatial-sidebar__section-title">3. 분석 방식 설정</h3>

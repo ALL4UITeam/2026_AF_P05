@@ -1,15 +1,17 @@
 {{#> layout}}
 <style>
-	.map-search-zoom__track-wrap{display: none;}
+	.map-search-zoom__track-wrap {
+		display: none;
+	}
 </style>
 <div class="vibe-container map-theme-page">
-	
+
 	<!-- 우측: 지도 영역 (전체 채움) -->
 	<div class="map-area">
 		<div id="map-container"></div>
 	</div>
 
-	
+
 	<div class="map-ui-modal-backdrop is-open" id="simulationModal" aria-hidden="true">
 		<div class="map-ui-modal">
 			<header class="map-ui-modal__header">
@@ -29,82 +31,103 @@
 								<div class="map-ui-chart-grid">
 									<article class="map-ui-chart-card">
 										<header class="map-ui-chart-card__head">
-											<h4 class="map-ui-chart-card__title">토지현황 <button class="map-ui-chart-card__title-note"></button></h4>
+											<h4 class="map-ui-chart-card__title">토지현황 <button class="map-ui-chart-card__title-note"></button>
+											</h4>
 											<button class="map-ui-chart-card__note"></button>
 										</header>
 										<div class="map-ui-chart-card__body map-ui-chart-card__body--split">
 											<div class="map-ui-chart-surface map-ui-chart-surface--center" aria-label="지목 구성 도넛 차트 영역">
 												<div class="map-ui-donut-wrap">
-													<div
-														class="map-ui-donut-preview"
-														style="--map-ui-donut-fill: conic-gradient(#3b82f6 0% 31.2%, #14b8a6 31.2% 62.2%, #86efac 62.2% 78.7%, #fb923c 78.7% 88.8%, #ea580c 88.8% 95.2%, #93c5fd 95.2% 100%);"
-													></div>
+													<div class="map-ui-donut-preview"
+														style="--map-ui-donut-fill: conic-gradient(#3b82f6 0% 31.2%, #14b8a6 31.2% 62.2%, #86efac 62.2% 78.7%, #fb923c 78.7% 88.8%, #ea580c 88.8% 95.2%, #93c5fd 95.2% 100%);">
+													</div>
 													<span class="map-ui-donut-preview__label">1km</span>
 												</div>
 											</div>
 											<ul class="map-ui-chart-legend">
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#3b82f6"></span><span class="map-ui-chart-legend__text">대</span><span class="map-ui-chart-legend__val">31.2%</span></li>
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#14b8a6"></span><span class="map-ui-chart-legend__text">답</span><span class="map-ui-chart-legend__val">31.0%</span></li>
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#86efac"></span><span class="map-ui-chart-legend__text">전</span><span class="map-ui-chart-legend__val">16.5%</span></li>
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#fb923c"></span><span class="map-ui-chart-legend__text">임야</span><span class="map-ui-chart-legend__val">10.1%</span></li>
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#ea580c"></span><span class="map-ui-chart-legend__text">도로</span><span class="map-ui-chart-legend__val">6.4%</span></li>
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#93c5fd"></span><span class="map-ui-chart-legend__text">기타</span><span class="map-ui-chart-legend__val">4.8%</span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#3b82f6"></span><span class="map-ui-chart-legend__text">대</span><span
+														class="map-ui-chart-legend__val">31.2%</span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#14b8a6"></span><span class="map-ui-chart-legend__text">답</span><span
+														class="map-ui-chart-legend__val">31.0%</span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#86efac"></span><span class="map-ui-chart-legend__text">전</span><span
+														class="map-ui-chart-legend__val">16.5%</span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#fb923c"></span><span class="map-ui-chart-legend__text">임야</span><span
+														class="map-ui-chart-legend__val">10.1%</span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#ea580c"></span><span class="map-ui-chart-legend__text">도로</span><span
+														class="map-ui-chart-legend__val">6.4%</span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#93c5fd"></span><span class="map-ui-chart-legend__text">기타</span><span
+														class="map-ui-chart-legend__val">4.8%</span></li>
 											</ul>
 										</div>
 									</article>
 
 									<article class="map-ui-chart-card">
 										<header class="map-ui-chart-card__head">
-											<h4 class="map-ui-chart-card__title">용도 비율 <button class="map-ui-chart-card__title-note"></button></h4>
-											  <button class="map-ui-chart-card__note"></button>
+											<h4 class="map-ui-chart-card__title">용도 비율 <button class="map-ui-chart-card__title-note"></button>
+											</h4>
+											<button class="map-ui-chart-card__note"></button>
 										</header>
 										<div class="map-ui-chart-card__body map-ui-chart-card__body--split">
 											<div class="map-ui-chart-surface map-ui-chart-surface--center" aria-label="용도지역 도넛 차트 영역">
 												<div class="map-ui-donut-wrap">
-													<div
-														class="map-ui-donut-preview"
-														style="--map-ui-donut-fill: conic-gradient(#1e3a8a 0% 72.7%, #93c5fd 72.7% 100%);"
-													></div>
+													<div class="map-ui-donut-preview"
+														style="--map-ui-donut-fill: conic-gradient(#1e3a8a 0% 72.7%, #93c5fd 72.7% 100%);"></div>
 													<span class="map-ui-donut-preview__label">72.7%</span>
 												</div>
 											</div>
 											<ul class="map-ui-chart-legend">
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#1e3a8a"></span><span class="map-ui-chart-legend__text">주거지역</span><span class="map-ui-chart-legend__val"></span></li>
-												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch" style="background:#93c5fd"></span><span class="map-ui-chart-legend__text">기타</span><span class="map-ui-chart-legend__val">27.3%</span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#1e3a8a"></span><span class="map-ui-chart-legend__text">주거지역</span><span
+														class="map-ui-chart-legend__val"></span></li>
+												<li class="map-ui-chart-legend__item"><span class="map-ui-chart-legend__swatch"
+														style="background:#93c5fd"></span><span class="map-ui-chart-legend__text">기타</span><span
+														class="map-ui-chart-legend__val">27.3%</span></li>
 											</ul>
 										</div>
 									</article>
 
 									<article class="map-ui-chart-card">
 										<header class="map-ui-chart-card__head">
-											<h4 class="map-ui-chart-card__title">토지이용계획 비율 <button class="map-ui-chart-card__title-note"></button></h4>
+											<h4 class="map-ui-chart-card__title">토지이용계획 비율 <button
+													class="map-ui-chart-card__title-note"></button></h4>
 											<button class="map-ui-chart-card__note"></button>
 										</header>
 										<div class="map-ui-chart-card__body">
 											<div class="map-ui-chart-bars" aria-label="용도지역 가로 막대 차트 영역">
 												<div class="map-ui-chart-bars__row">
 													<span class="map-ui-chart-bars__label">제1종 전용주거지역</span>
-													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill" style="width:17.5%; background:#2563eb"></span></div>
+													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill"
+															style="width:17.5%; background:#2563eb"></span></div>
 													<span class="map-ui-chart-bars__pct">17.5%</span>
 												</div>
 												<div class="map-ui-chart-bars__row">
 													<span class="map-ui-chart-bars__label">계획관리지역</span>
-													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill" style="width:17.2%; background:#166534"></span></div>
+													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill"
+															style="width:17.2%; background:#166534"></span></div>
 													<span class="map-ui-chart-bars__pct">17.2%</span>
 												</div>
 												<div class="map-ui-chart-bars__row">
 													<span class="map-ui-chart-bars__label">생산관리지역</span>
-													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill" style="width:14.8%; background:#4ade80"></span></div>
+													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill"
+															style="width:14.8%; background:#4ade80"></span></div>
 													<span class="map-ui-chart-bars__pct">14.8%</span>
 												</div>
 												<div class="map-ui-chart-bars__row">
 													<span class="map-ui-chart-bars__label">농림지역</span>
-													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill" style="width:13.7%; background:#ea580c"></span></div>
+													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill"
+															style="width:13.7%; background:#ea580c"></span></div>
 													<span class="map-ui-chart-bars__pct">13.7%</span>
 												</div>
 												<div class="map-ui-chart-bars__row">
 													<span class="map-ui-chart-bars__label">기타</span>
-													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill" style="width:36.8%; background:#94a3b8"></span></div>
+													<div class="map-ui-chart-bars__track"><span class="map-ui-chart-bars__fill"
+															style="width:36.8%; background:#94a3b8"></span></div>
 													<span class="map-ui-chart-bars__pct">36.8%</span>
 												</div>
 											</div>
@@ -113,53 +136,22 @@
 
 									<article class="map-ui-chart-card">
 										<header class="map-ui-chart-card__head">
-											<h4 class="map-ui-chart-card__title">공시지가 통계 <button class="map-ui-chart-card__title-note"></button></h4>
+											<h4 class="map-ui-chart-card__title">공시지가 통계 <button
+													class="map-ui-chart-card__title-note"></button></h4>
 											<button class="map-ui-chart-card__note"></button>
 										</header>
 										<div class="map-ui-chart-card__body">
 											<div class="map-ui-chart-boxplot" aria-label="가격 분포 차트 영역">
 												<div class="map-ui-chart-boxplot__plot"></div>
 												<div class="map-ui-chart-boxplot__footer">
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#93c5fd"></span>평균 43,241원</span>
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#3b82f6"></span>중위 46,000원</span>
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#1e40af"></span>최소 20,000원</span>
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#172554"></span>최대 68,000원</span>
-												</div>
-											</div>
-										</div>
-									</article>
-								</div>
-							</div>
-						</div>
-
-						<!-- 스텝별 하단 고정 액션 -->
-						<div class="map-ui-wizard__actions">
-							<button type="button" class="map-ui-wizard__action-btn map-ui-btn">이전</button>
-							<button type="button" class="map-ui-wizard__action-btn map-ui-btn-primary">다음</button>
-						</div>
-					</div>
-
-					<div class="map-ui-side-panel">
-						<div class="ms-tools" role="group" aria-label="지역 지정 도구">
-							<button type="button" class="ms-tools__btn ms-tools__btn--reg">
-								사용자 지역 지정
-							</button>
-							<button type="button" class="ms-tools__btn ms-tools__btn--rad">
-								반경 지정
-							</button>
-						</div>
-										<header class="map-ui-chart-card__head">
-											<h4 class="map-ui-chart-card__title">공시지가 통계 <button class="map-ui-chart-card__title-note"></button></h4>
-											<button class="map-ui-chart-card__note"></button>
-										</header>
-										<div class="map-ui-chart-card__body">
-											<div class="map-ui-chart-boxplot" aria-label="가격 분포 차트 영역">
-												<div class="map-ui-chart-boxplot__plot"></div>
-												<div class="map-ui-chart-boxplot__footer">
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#93c5fd"></span>평균 43,241원</span>
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#3b82f6"></span>중위 46,000원</span>
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#1e40af"></span>최소 20,000원</span>
-													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot" style="background:#172554"></span>최대 68,000원</span>
+													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot"
+															style="background:#93c5fd"></span>평균 43,241원</span>
+													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot"
+															style="background:#3b82f6"></span>중위 46,000원</span>
+													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot"
+															style="background:#1e40af"></span>최소 20,000원</span>
+													<span class="map-ui-chart-boxplot__stat"><span class="map-ui-chart-boxplot__dot"
+															style="background:#172554"></span>최대 68,000원</span>
 												</div>
 											</div>
 										</div>
@@ -189,5 +181,6 @@
 			</div>
 		</div>
 	</div>
+	
 </div>
 {{/layout}}

@@ -1,39 +1,43 @@
 {{#> layout}}
 <div class="vibe-container map-spatial-page">
-	<div class="map-search-sidebar__inner">
-    <header class="map-search-sidebar__header map-spatial-sidebar__header">
-      <h2>2D 분석 &gt; 밀도 분석</h2>
-      <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
-    </header>
+  <aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialDensityPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>2D 분석 &gt; 밀도 분석</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
 
-    <div class="map-search-sidebar__body map-spatial-sidebar__body">
-      <p class="map-spatial-sidebar__notice">
-        <i aria-hidden="true">i</i>
-        <span>위치기반으로 선택한 레이어의 속성에 대한 밀집도를 분석
-          <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
-        </span>
-      </p>
-      <section class="map-spatial-sidebar__section">
-        <h3 class="map-spatial-sidebar__section-title">1. 레이어 설정</h3>
-        <div class="map-spatial-sidebar__radius-box">
-          <select class="map-ui-select" title="레이어 설정">
-            <option value="">레이어를 선택하세요.</option>
-          </select>
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <div class="map-sidebar__notice">
+          <div class="map-sidebar__notice-content">
+            <strong>위치기반 밀도 분석 </strong>
+            <p>위치기반으로 선택한 레이어의 속성에 대한 밀집도를 분석</p>
+          </div>
+          <button type="button" class="btn-notice" aria-label="설명 보기">사용법 및 산출방식</button>
         </div>
+        <div class="sidebar_divider"></div>
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__section-title">1. 레이어 설정</h3>
+          <div class="map-spatial-sidebar__radius-box">
+            <select class="map-ui-select" title="레이어 설정">
+              <option value="">레이어를 선택하세요.</option>
+            </select>
+          </div>
 
-        <h3 class="map-spatial-sidebar__section-title">2. 속성 설정</h3>
-        <div class="map-spatial-sidebar__radius-box">
-          <select class="map-ui-select" title="속성 설정">
-            <option value="">속성을 선택하세요.</option>
-          </select>
+          <h3 class="map-spatial-sidebar__section-title">2. 속성 설정</h3>
+          <div class="map-spatial-sidebar__radius-box">
+            <select class="map-ui-select" title="속성 설정">
+              <option value="">속성을 선택하세요.</option>
+            </select>
+          </div>
+        </section>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
         </div>
-      </section>
-
-      <div class="sidebar__footer">
-        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
       </div>
     </div>
-  </div>
+  </aside>
 
 	<div class="map-area">
 		<div id="map-container"></div>

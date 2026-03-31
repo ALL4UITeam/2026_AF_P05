@@ -1416,3 +1416,14 @@
 .map-paging__next{
 	background-image: url('../images/map/paging_next.png');
 }
+
+.map-sidebar__add{
+	background:#fff url('../images/map/icon_plus.png') no-repeat center center;
+	width: 22px;
+	height: 22px;
+	display: block;
+	cursor: pointer;
+	border: 1px solid #d1d5db;
+	border-radius: 6px;
+	
+}

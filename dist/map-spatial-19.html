@@ -65,22 +65,45 @@
 					<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
 				    <div class="map-search-sidebar__inner">
 				      <header class="map-search-sidebar__header map-spatial-sidebar__header">
-				        <h2>경관 분석 &gt; 스카이라인 분석</h2>
+				        <h2>지형 분석 &gt; 경사도 분석</h2>
 				        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
 				      </header>
 				
 				      <div class="map-search-sidebar__body map-spatial-sidebar__body">
-				        <p class="">
-				          스카이라인
-				        </p>
+				        
+				        <div class="map-spatial-slope-result__meta">
+				          <span class="map-spatial-slope-result__meta-label">분석영역넓이</span>
+				          <span class="map-spatial-slope-result__meta-value">10,000 m²</span>
+				        </div>
+				        
+				        <div class="sidebar_divider"></div>
 				
 				        <section class="map-spatial-sidebar__section">
-				          
-				        </section>
+				          <div class="map-spatial-slope-result__panel">
+				            
 				
-				        <div class="sidebar__footer">
-				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">인쇄</button>
-				        </div>
+				            <div class="map-spatial-slope-result__range-title">경사도 범위</div>
+				
+				            <div class="map-spatial-slope-result__table">
+				              <div class="map-spatial-slope-result__thead">
+				                <span>경사구(도)</span>
+				                <span>경사도(%)</span>
+				                <span>분포도(%)</span>
+				              </div>
+				
+				              <div class="map-spatial-slope-result__row"><i class="is-c1"></i><span>45~</span><span>100~</span><span>0.00</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c2"></i><span>40~45</span><span>83.91~100</span><span>0.00</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c3"></i><span>35~40</span><span>72.72~83.91</span><span>0.00</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c4"></i><span>30~35</span><span>57.74~70.02</span><span>0.05</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c5"></i><span>25~30</span><span>46.63~57.74</span><span>0.30</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c6"></i><span>20~25</span><span>36.40~46.63</span><span>0.40</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c7"></i><span>15~20</span><span>26.73~36.40</span><span>1.29</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c8"></i><span>10~15</span><span>17.63~26.79</span><span>1.79</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c9"></i><span>5~10</span><span>8.75~17.63</span><span>3.67</span></div>
+				              <div class="map-spatial-slope-result__row"><i class="is-c10"></i><span>0~5</span><span>0.00~8.75</span><span>92.51</span></div>
+				            </div>
+				          </div>
+				        </section>
 				      </div>
 				    </div>
 				    <button type="button" class="map-search-sidebar__open" data-target="spatialPanel">열기</button>

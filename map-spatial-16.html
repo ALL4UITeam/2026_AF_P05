@@ -8,11 +8,15 @@
       </header>
 
       <div class="map-search-sidebar__body map-spatial-sidebar__body">
-        <p class="">
-          조망권 분석결과
+        <div class="map-sidebar__notice">
+          <div class="map-sidebar__notice-content">
+          <strong>스카이라인 분석</strong>
+            <p>사용자는 시점설정 후 스카이라인을 확인할 수 있습니다.</p>
+          </div>
+          <button type="button" class="btn-notice" aria-label="설명 보기">사용법 및 산출방식</button>
+        </div>
 
-          ⓘ 시점과 조망점을 지도상에서 선택해 시점에서 조망점의 가시여부를 확인할 수 있습니다.
-        </p>
+        <div class="sidebar_divider"></div>
 
         <section class="map-spatial-sidebar__section">
           <div class="map-spatial-sidebar__radius-box">
@@ -24,7 +28,7 @@
               <span class="map-spatial-color-row__label">지형 및 건물</span>
             </div>
             <div class="map-spatial-stepper">
-              <span class="map-spatial-stepper__label">카메라<br>절대고도</span>
+              <span class="map-spatial-stepper__label">카메라 절대고도</span>
               <div class="map-spatial-stepper__control">
                 <input type="number" class="map-spatial-stepper__input" value="10" min="0" aria-label="카메라 절대고도">
                 <span class="map-spatial-stepper__unit">m</span>

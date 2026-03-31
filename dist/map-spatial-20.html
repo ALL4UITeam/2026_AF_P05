@@ -65,21 +65,57 @@
 					<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
 				    <div class="map-search-sidebar__inner">
 				      <header class="map-search-sidebar__header map-spatial-sidebar__header">
-				        <h2>경관 분석 &gt; 스카이라인 분석</h2>
+				        <h2>지형 분석 &gt; 종횡단면 분석</h2>
 				        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
 				      </header>
 				
 				      <div class="map-search-sidebar__body map-spatial-sidebar__body">
-				        <p class="">
-				          스카이라인
-				        </p>
+				        <div class="map-sidebar__notice">
+				          <div class="map-sidebar__notice-content">
+				            <strong>지형단면</strong>
+				            <p>
+				              지형의 종단 횡단면 및 구조물의 평면을 분석하여 가시화합니다.
+				            </p>
+				          </div>
+				          <button type="button" class="btn-notice" aria-label="설명 보기">사용법 및 산출방식</button>
+				        </div>
+				        <div class="sidebar_divider"></div>
 				
 				        <section class="map-spatial-sidebar__section">
-				          
+				          <div class="map-spatial-section-card">
+				            <h3>종단면 설정</h3>
+				            <button type="button" class="map-spatial-section-card__tab">종단면 그리기</button>
+				          </div>
+				        </section>
+				        <div class="sidebar_divider"></div>
+				        <section class="map-spatial-sidebar__section">
+				          <div class="map-spatial-section-card">
+				            <div class="map-spatial-section-card__group">
+				              <h3>횡단면 설정구분</h3>
+				              <div class="map-spatial-section-card__switches">
+				                <button type="button" class="map-spatial-section-card__switch">지점선택</button>
+				                <button type="button" class="map-spatial-section-card__switch is-active">등간격 설정</button>
+				              </div>
+				            </div>
+				
+				            <div class="map-spatial-section-card__row">
+				              <span class="map-spatial-section-card__row-label">횡단시점</span>
+				              <button type="button" class="map-spatial-section-card__pick-btn">단지점 선택하기</button>
+				            </div>
+				
+				            <div class="map-spatial-section-card__row">
+				              <span class="map-spatial-section-card__row-label">횡단길이</span>
+				              <div class="map-spatial-section-card__length">
+				                <input type="number" class="map-ui-input" value="50" min="0" aria-label="횡단길이">
+				                <span class="map-spatial-section-card__unit">m</span>
+				              </div>
+				            </div>
+				          </div>
 				        </section>
 				
 				        <div class="sidebar__footer">
-				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">인쇄</button>
+				          <button type="button" class="sidebar__footer-btn">초기화</button>
+				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">분석실행</button>
 				        </div>
 				      </div>
 				    </div>

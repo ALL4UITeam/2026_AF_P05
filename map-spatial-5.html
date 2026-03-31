@@ -1,98 +1,91 @@
 {{#> layout}}
 <div class="vibe-container map-spatial-page">
-	<div class="map-search-sidebar__inner">
-    <header class="map-search-sidebar__header map-spatial-sidebar__header">
-      <h2>기하분석 &gt; 중첩 분석</h2>
-      <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
-    </header>
+  <aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialOverlayPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header map-spatial-sidebar__header">
+        <h2>기하분석 &gt; 중첩 분석</h2>
+        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
+      </header>
 
-    <div class="map-search-sidebar__body map-spatial-sidebar__body">
-      <p class="map-spatial-sidebar__notice">
-        <i aria-hidden="true">i</i>
-        <span>다중 반경 multi-Ring)영향권 분석
-          <button type="button" aria-label="설명 보기">사용법 및 산출방식</button>
-        </span>
-      </p>
-      <section class="map-spatial-sidebar__section">
-        <h3 class="map-spatial-sidebar__section-title">1. 기준점 설정</h3>
-
-        <div class="map-spatial-buffer-anchor-card">
-          <div class="map-spatial-buffer-anchor-card__top">
-            <span class="map-spatial-buffer-anchor-card__pin" aria-hidden="true"></span>
-            <div>
-              <div class="map-spatial-buffer-anchor-card__text">경상북도 포항시 남구 시청로 1</div>
-            </div>
+      <div class="map-search-sidebar__body map-spatial-sidebar__body">
+        <div class="map-sidebar__notice">
+          <div class="map-sidebar__notice-content">
+            <strong>다중 반경 multi-Ring)영향권 분석</strong>
+            <p>해당지역의 영향권 분석.</p>
           </div>
+          <button type="button" class="btn-notice" aria-label="설명 보기">사용법 및 산출방식</button>
         </div>
-
-        <div class="map-spatial-buffer-anchor-actions">
-          <button type="button" class="map-ui-btn map-ui-btn-primary">지점(Point)</button>
-          <span class="map-spatial-buffer-anchor-help">*지도 클릭으로 위치 수정 가능</span>
-        </div>
-
-        <div class="map-spatial-buffer-step__title-row">
-          <h4 class="map-spatial-sidebar__section-title map-spatial-buffer-step__title--row">2. 레이어선택</h4>
-          <button type="button" class="map-spatial-buffer-add">+추가</button>
-        </div>
-
-        <div class="map-spatial-overlay-layer-card">
-          <div class="map-spatial-overlay-layer-card__head">2. 레이어 선택</div>
-
-          <div class="map-spatial-overlay-layer-row">
-            <div class="map-spatial-overlay-layer-row__top">
-              <label class="input-check">
-                <input type="checkbox" checked>
-                <span class="input-check__ui"></span>
-                <span class="input-check__label">용도지역 (Zoning)</span>
-              </label>
-              <span class="map-spatial-overlay-layer-row__dot is-blue"></span>
-            </div>
-            <div class="map-spatial-overlay-layer-row__range">
-              <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
-              <input type="range" class="mydata-layer__range" min="0" max="100" value="50" aria-label="용도지역 가중치">
-              <span class="map-spatial-overlay-layer-row__pct">50%</span>
-            </div>
+        <div class="sidebar_divider"></div>
+      
+        <section class="map-spatial-sidebar__section">
+          <h3 class="map-spatial-sidebar__title">기준점 설정</h3>
+          <input type="text" class="map-ui-input input-search" value="경상북도 포항시 남구 시청로 1" placeholder="주소 입력" aria-label="기준점 주소">
+          <p class="map-spatial-sidebar__hint">*지도 클릭으로 위치 수정 가능</p>
+        </section>
+          <div class="sidebar_divider"></div>
+        <section class="map-spatial-sidebar__section">
+          <div class="map-spatial-buffer-step__title-row">
+            <h4 class="map-spatial-sidebar__section-title map-spatial-buffer-step__title--row">2. 레이어선택</h4>
+            <button type="button" class="map-sidebar__add" aria-label="추가"></button>
           </div>
 
-          <div class="map-spatial-overlay-layer-row">
-            <div class="map-spatial-overlay-layer-row__top">
-              <label class="input-check">
-                <input type="checkbox" checked>
-                <span class="input-check__ui"></span>
-                <span class="input-check__label">경사도 (Slope)</span>
-              </label>
-              <span class="map-spatial-overlay-layer-row__dot is-green"></span>
+          <div class="map-spatial-overlay-layer-card">
+            <div class="map-spatial-overlay-layer-row">
+              <div class="map-spatial-overlay-layer-row__top">
+                <label class="input-check">
+                  <input type="checkbox" checked>
+                  <span class="input-check__ui"></span>
+                  <span class="input-check__label">용도지역 (Zoning)</span>
+                </label>
+                <span class="map-spatial-overlay-layer-row__dot is-blue"></span>
+              </div>
+              <div class="map-spatial-overlay-layer-row__range">
+                <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
+                <input type="range" class="mydata-layer__range" min="0" max="100" value="50" aria-label="용도지역 가중치">
+                <span class="map-spatial-overlay-layer-row__pct">50%</span>
+              </div>
             </div>
-            <div class="map-spatial-overlay-layer-row__range">
-              <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
-              <input type="range" class="mydata-layer__range" min="0" max="100" value="40" aria-label="경사도 가중치">
-              <span class="map-spatial-overlay-layer-row__pct">40%</span>
-            </div>
-          </div>
 
-          <div class="map-spatial-overlay-layer-row is-disabled">
-            <div class="map-spatial-overlay-layer-row__top">
-              <label class="input-check">
-                <input type="checkbox">
-                <span class="input-check__ui"></span>
-                <span class="input-check__label">생태자연도</span>
-              </label>
-              <span class="map-spatial-overlay-layer-row__dot is-red"></span>
+            <div class="map-spatial-overlay-layer-row">
+              <div class="map-spatial-overlay-layer-row__top">
+                <label class="input-check">
+                  <input type="checkbox" checked>
+                  <span class="input-check__ui"></span>
+                  <span class="input-check__label">경사도 (Slope)</span>
+                </label>
+                <span class="map-spatial-overlay-layer-row__dot is-green"></span>
+              </div>
+              <div class="map-spatial-overlay-layer-row__range">
+                <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
+                <input type="range" class="mydata-layer__range" min="0" max="100" value="40" aria-label="경사도 가중치">
+                <span class="map-spatial-overlay-layer-row__pct">40%</span>
+              </div>
             </div>
-            <div class="map-spatial-overlay-layer-row__range">
-              <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
-              <input type="range" class="mydata-layer__range" min="0" max="100" value="0" aria-label="생태자연도 가중치" disabled>
-              <span class="map-spatial-overlay-layer-row__pct">0%</span>
+
+            <div class="map-spatial-overlay-layer-row is-disabled">
+              <div class="map-spatial-overlay-layer-row__top">
+                <label class="input-check">
+                  <input type="checkbox">
+                  <span class="input-check__ui"></span>
+                  <span class="input-check__label">생태자연도</span>
+                </label>
+                <span class="map-spatial-overlay-layer-row__dot is-red"></span>
+              </div>
+              <div class="map-spatial-overlay-layer-row__range">
+                <span class="map-spatial-overlay-layer-row__eye" aria-hidden="true"></span>
+                <input type="range" class="mydata-layer__range" min="0" max="100" value="0" aria-label="생태자연도 가중치" disabled>
+                <span class="map-spatial-overlay-layer-row__pct">0%</span>
+              </div>
             </div>
           </div>
+        </section>
+
+        <div class="sidebar__footer">
+          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
         </div>
-      </section>
-
-      <div class="sidebar__footer">
-        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">실행 (Run)</button>
       </div>
     </div>
-  </div>
+  </aside>
 
 	<div class="map-area">
 		<div id="map-container"></div>

@@ -65,21 +65,38 @@
 					<aside class="map-search-sidebar map-spatial-sidebar is-open" id="spatialPanel">
 				    <div class="map-search-sidebar__inner">
 				      <header class="map-search-sidebar__header map-spatial-sidebar__header">
-				        <h2>경관 분석 &gt; 스카이라인 분석</h2>
+				        <h2>지형 분석 &gt; 경사도 분석</h2>
 				        <button type="button" class="map-search-sidebar__close" data-target="spatialPanel" title="닫기">닫기</button>
 				      </header>
 				
 				      <div class="map-search-sidebar__body map-spatial-sidebar__body">
-				        <p class="">
-				          스카이라인
-				        </p>
+				        
+				        <div class="map-sidebar__notice">
+				          <div class="map-sidebar__notice-content">
+				            <strong>경사도</strong>
+				            <p>
+				              희망하는 분석영역의 넓이를 설정하고, 지도상에 지점을 선택하여 해당 지점을 중심으로 분석영역에 따른 경사도를 확인할 수 있습니다. 분석영역 내에서 세부 영역을 나누고 각 영역에 중심의 높이와 최고 높이 지점을 이용해 경사향과 경사도를 구합니다.
+				            </p>
+				          </div>
+				          <button type="button" class="btn-notice" aria-label="설명 보기">사용법 및 산출방식</button>
+				        </div>
+				
+				        <div class="sidebar_divider"></div>
 				
 				        <section class="map-spatial-sidebar__section">
-				          
+				          <div class="map-spatial-sidebar__radius-box">
+				            <h3 class="map-spatial-sidebar__section-title">분석영역 넓이</h3>
+				            <div class="map-spatial-area-input">
+				              <input type="number" class="map-ui-input" value="10000" min="0" title="분석영역 넓이" aria-label="분석영역 넓이">
+				              <span class="map-spatial-area-input__unit">m²</span>
+				            </div>
+				          </div>
 				        </section>
 				
 				        <div class="sidebar__footer">
-				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">인쇄</button>
+				          <button type="button" class="sidebar__footer-btn">지점선택</button>
+				          <button type="button" class="sidebar__footer-btn">영역선택</button>
+				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">초기화</button>
 				        </div>
 				      </div>
 				    </div>
