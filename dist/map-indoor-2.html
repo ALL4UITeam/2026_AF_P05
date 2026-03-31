@@ -61,86 +61,75 @@
 		<!-- content -->
 		<div class="content-wrap">
 			<div class="content">
-				<div class="vibe-container map-search-page">
-					
+				<div class="vibe-container map-indoor-page">
+					<!-- 실내지도: 다중반경 영향권 분석 패널 -->
+					<aside class="map-search-sidebar is-open  map-indoor-sidebar" id="indoorPanel">
+						<div class="map-search-sidebar__inner">
+							<header class="map-search-sidebar__header">
+								<h2>실내지도</h2>
+								<button type="button" title="닫기" class="map-search-sidebar__close" data-target="indoorPanel"><i
+										class="map-search-sidebar__close-icon"></i></button>
+							</header>
+							<div class="map-search-sidebar__body">
+								<div class="map-sidebar__notice">
+									<div class="map-sidebar__notice-content">
+										<strong>다중 반경(multi-Ring)영향권 분석</strong>
+										<p>해당지역의 생활 편의시설 접근근성진단. </p>
+									</div>
+									<button type="button" class="btn-notice">사용법 및 산출방식</button>
+								</div>
 				
-					<!-- 좌측 사이드바: VWorld dtkmap 스타일 (고정 폭, 회색 배경) -->
-					<aside class="map-search-sidebar is-open" id="landSearchPanel">
-					  <div class="map-search-sidebar__inner">
-					    <header class="map-search-sidebar__header">
-					      <h2><i class="map-search-icon map-search-icon-land"></i>토지(임야) 검색</h2>
-					      <button title="닫기" class="map-search-sidebar__close" data-target="landSearchPanel">
-					        닫기
-					      </button>
-					    </header> 
-					    <div class="map-search-sidebar__body">
-					      <div class="sidebar__search">
-					        <div class="sidebar__search-location">
-					          <div class="map-ui-form-group">
-					            <label for="searchSigungu">시군</label>
-					            <select id="searchSigungu" class="map-ui-select">
-					              <option value="">전체</option>
-					              <option value="andong">안동시</option>
-					              <option value="yeongyang">영양군</option>
-					              <option value="yeongju">영주시</option>
-					              <option value="gyeongsan">경산시</option>
-					            </select>
-					          </div>
-					          <div class="map-ui-form-group">
-					            <label for="searchEmd">읍면동</label>
-					            <select id="searchEmd" class="map-ui-select">
-					              <option value="">전체</option>
-					            </select>
-					          </div>
-					          <div class="map-ui-form-group">
-					            <label for="searchRi">리</label>
-					            <select id="searchRi" class="map-ui-select">
-					              <option value="">전체</option>
-					            </select>
-					          </div>
-					        </div>
-					
-					        <div class="sidebar__search-radio">
-					          
-					            <label for="landSearchRadio1" class="map-ui-radio">
-					              <input type="radio" id="landSearchRadio1" name="landSearchRadio">
-					              <span class="map-ui-radio__ui"></span>
-					              <span class="map-ui-radio__label">일반</span>
-					            </label>
-					            
-					            <label for="landSearchRadio2" class="map-ui-radio">
-					              <input type="radio" id="landSearchRadio2" name="landSearchRadio">
-					              <span class="map-ui-radio__ui"></span>
-					              <span class="map-ui-radio__label">산</span>
-					            </label>
-					        </div>
-					
-					        <div class="sidebar__search-number">
-					          <input type="text" title="본번" class="map-ui-input" placeholder="본번">
-					          <span class="sidebar__search-row-separator">-</span>
-					          <input type="text" class="map-ui-input sub-number" placeholder="부번">
-					        </div>
-					        
-					        <div class="sidebar__notice">
-					          <p>* 도로명 주소 검색은 상단 탭을 변경하여 이용해 주세요.</p>
-					          <p>* 정확한 지번을 입력하셔야 상세 정보 조회가 가능합니다.</p>
-					        </div>
-					      </div>
-					
-					      <div class="sidebar__footer">
-					        <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">검색</button>
-					        
-					      </div>
-					    </div>
-					  </div>
-					  <!-- <button type="button" class="map-search-sidebar__open" data-target="locationSearchPanel">
-					    열기
-					  </button> -->
+								<div class="sidebar_divider"></div>
+				
+								<div class="map-sidebar__search">
+									<div class="map-sidebar__location-input">
+										<input type="text" class="map-ui-input input-search" placeholder="주소 입력">
+										<button type="button" class="map-sidebar__search-btn">검색</button>
+									</div>
+									<p class="map-sidebar__hint">* 지도 클릭으로 위치 수정 가능</p>
+								</div>
+				
+								<div class="map-sidebar__list-wrap">
+									<ul class="map-sidebar__list">
+										<li class="map-sidebar__item">
+											<label class="map-ui-radio">
+												<input type="radio" name="" id="" value="" checked>
+												<span class="map-ui-radio__ui"></span>
+												<span class="map-ui-radio__label">4.19기념관</span>
+											</label>
+											<p class="map-sidebar__category">건물 &gt; 공공문화시설</p>
+										</li>
+										<li class="map-sidebar__item">
+											<label class="map-ui-radio">
+												<input type="radio" name="" id="" value="">
+												<span class="map-ui-radio__ui"></span>
+												<span class="map-ui-radio__label">4.19기념관</span>
+											</label>
+											<p class="map-sidebar__category">건물 &gt; 공공문화시설</p>
+										</li>
+									</ul>
+								</div>
+				
+								<nav class="map-paging" aria-label="결과 페이지">
+									<button type="button" class="map-paging__prev" aria-label="이전 페이지"></button>
+									<div class="map-paging__num-wrap">
+										<button class="map-paging__num">1</button>
+										<button class="map-paging__num is-active" aria-current="page">2</button>
+										<button class="map-paging__num">3</button>
+										<button class="map-paging__num">4</button>
+										<button class="map-paging__num">5</button>
+									</div>
+									<button type="button" class="map-paging__next" aria-label="다음 페이지"></button>
+								</nav>
+							</div>
+						</div>
+						<button type="button" class="map-search-sidebar__open" data-target="indoorPanel">열기</button>
 					</aside>
 					<!-- 우측: 지도 영역 (전체 채움) -->
 					<div class="map-area">
 						<div id="map-container"></div>
-						
+						<div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i
+								class="map-search-breadcrumb__separator"></i> 관양동</div>
 						
 						<div class="map-toolbar-wrap">
 							<button type="button" class="map-toolbar__btn" data-tool="theme">
@@ -338,101 +327,54 @@
 						    </div>
 						  </div>
 						  
-						</div>
+						</div>	</div>
 				
+					<div class="map-ui-modal-backdrop is-open" id="indoorModalBackdrop" aria-hidden="true">
+						<div class="map-ui-modal" id="indoorModal">
+							<header class="map-ui-modal__header">
+								<h3 class="map-ui-modal__header-title">
+									<button class="back-btn"></button>
+									<strong>4.19 기념관</strong>
+									<button class="close-btn"></button>
+								</h3>
+								<button class="map-ui-modal__header-toggle"></button>
+							</header>
+							<div class="map-ui-modal__body">
+								<div class="map-ui-modal__content">
+									<div class="indoor-modal-category">건물 <i class="arrow-right"></i> 공공문화시설</div>
+									<div class="indoor-modal-list">
+										<dl>
+											<dt>도로명</dt>
+											<dd>서울특별시 강북구 4.19로8길 17</dd>
+										</dl>
+										<dl>
+											<dt>지번</dt>
+											<dd>서울특별시 강북구 4.19로8길 17</dd>
+										</dl>
+									</div>
+									<div class="indoor-floor">
+										<button type="button" class="floor-btn is-active">B1</button>
+										<button type="button" class="floor-btn">1F</button>
+										<button type="button" class="floor-btn">2F</button>
+										<button type="button" class="floor-btn">3F</button>
+									</div>
 				
-						<!-- 실거래가 플로트 -->
-						<div class="map-ui-modal-backdrop lnd-stack is-open" id="tradeFloatStack" aria-hidden="true">
-							<div class="lnd-rslt" id="tradeResultPanel">
-								<header class="map-ui-modal__header lnd-rslt__hd">
-									<h3><i class="menu_icon" aria-hidden="true"></i>실거래가 목록</h3>
-									<button type="button" class="lnd-rslt__fold" aria-expanded="true"></button>
-								</header>
-								<div class="lnd-rslt__body" id="tradeResultBody">
-									<input type="search" class="map-ui-input lnd-rslt__q" id="tradeResultQuery" readonly value="경상북도 문경시 점촌동 123-4">
-									<ol class="lnd-rslt__list" id="tradeResultList">
-										<li><button type="button" class="lnd-rslt__item is-active"><span class="lnd-rslt__no">1</span> 경상북도 문경시 점촌동 123-4</button></li>
-									</ol>
-								</div>
-							</div>
-							<div class="map-ui-modal lnd-modal lnd-modal--wide" id="tradeDetailModal">
-								<header class="map-ui-modal__header">
-									<h3>실거래가 목록</h3>
-									<button type="button" class="map-ui-modal__close" aria-label="닫기" data-land-search-close></button>
-								</header>
-								<div class="map-ui-modal__body">
-									<div class="map-ui-modal__content lnd-dtl" data-land-search-detail>
-										<p class="lnd-addr" data-land-search-address>경상북도 문경시 점촌동 123-4</p>
-										<div class="map-ui-table-wrap map-ui-table-wrap--sheet">
-											<table class="map-ui-table map-ui-table--sheet">
-												<thead>
-													<tr>
-														<th scope="col">계약년월</th>
-														<th scope="col">층</th>
-														<th scope="col">면적(㎡)</th>
-														<th scope="col">보증금(만원)</th>
-														<th scope="col">임대료(만원)</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>2026년 12월</td>
-														<td>15층</td>
-														<td>84.975</td>
-														<td class="map-ui-td--emph">30,000</td>
-														<td>—</td>
-													</tr>
-													<tr>
-														<td>2026년 11월</td>
-														<td>14층</td>
-														<td>84.975</td>
-														<td class="map-ui-td--emph">29,500</td>
-														<td>—</td>
-													</tr>
-													<tr>
-														<td>2026년 08월</td>
-														<td>12층</td>
-														<td>84.975</td>
-														<td class="map-ui-td--emph">28,000</td>
-														<td>120</td>
-													</tr>
-													<tr>
-														<td>2025년 12월</td>
-														<td>15층</td>
-														<td>84.975</td>
-														<td class="map-ui-td--emph">27,000</td>
-														<td>—</td>
-													</tr>
-													<tr>
-														<td>2025년 06월</td>
-														<td>8층</td>
-														<td>84.975</td>
-														<td class="map-ui-td--emph">26,000</td>
-														<td>110</td>
-													</tr>
-													<tr>
-														<td>2024년 09월</td>
-														<td>22층</td>
-														<td>59.872</td>
-														<td class="map-ui-td--emph">22,000</td>
-														<td>—</td>
-													</tr>
-													<tr>
-														<td>2024년 03월</td>
-														<td>5층</td>
-														<td>59.872</td>
-														<td class="map-ui-td--emph">20,000</td>
-														<td>95</td>
-													</tr>
-												</tbody>
-											</table>
+									<div class="indoor-info-list">
+										<div class="indoor-info-item">
+											<button type="button" class="indoor-info-btn extend">출입구 정보</button>
+											<div class="indoor-info-content">정보</div>
+										</div>
+										<div class="indoor-info-item">
+											<button type="button" class="indoor-info-btn">층별안내</button>
 										</div>
 									</div>
+									<!-- /indoor-info-list -->
 								</div>
+								<!-- /map-ui-modal__content -->
 							</div>
 						</div>
-				
 					</div>
+				
 				</div>
 			</div>
 		</div>
