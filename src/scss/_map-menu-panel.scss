@@ -1,4 +1,4 @@
-// 좌측 고정 메뉴 패널: 토지검색 / 건물 검색 / 공유재산 검색
+﻿// 좌측 고정 메뉴 패널: 토지검색 / 건물 검색 / 공유재산 검색
 $map-menu-panel-width: 300px;
 
 
@@ -19,14 +19,14 @@ $map-menu-panel-width: 300px;
   }
 }
 .map-menu-panel__header {
-  background: url('/images/map/sidebar-header-logo2.png') no-repeat center center, linear-gradient(to right, #5a4aff, #3f3dff);
+  background: url('../images/map/sidebar-header-logo2.png') no-repeat center center, linear-gradient(to right, #5a4aff, #3f3dff);
   height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
   padding-left: 20px;
   h2{
-    background: url('/images/map/sidebar-header-title.png') no-repeat left top;
+    background: url('../images/map/sidebar-header-title.png') no-repeat left top;
     padding-top: 40px;
     color: #fff;
     font-size: 18px;
@@ -66,22 +66,22 @@ $map-menu-panel-width: 300px;
   display: inline-block;
 }
 .map-menu-icon-user {
-  background: url('/images/map/menu-icon-user.png') no-repeat center center;
+  background: url('../images/map/menu-icon-user.png') no-repeat center center;
 }
 .map-menu-icon-drone {
-  background: url('/images/map/menu-icon-drone.png') no-repeat center center;
+  background: url('../images/map/menu-icon-drone.png') no-repeat center center;
 }
 .map-menu-icon-interest {
-  background: url('/images/map/menu-icon-interest.png') no-repeat center center;
+  background: url('../images/map/menu-icon-interest.png') no-repeat center center;
 }
 .map-menu-icon-land {
-  background: url('/images/map/menu-icon-land.png') no-repeat center center;
+  background: url('../images/map/menu-icon-land.png') no-repeat center center;
 }
 .map-menu-icon-building {
-  background: url('/images/map/menu-icon-building.png') no-repeat center center;
+  background: url('../images/map/menu-icon-building.png') no-repeat center center;
 }
 .map-menu-icon-property {
-  background: url('/images/map/menu-icon-property.png') no-repeat center center;
+  background: url('../images/map/menu-icon-property.png') no-repeat center center;
 }
 
 .map-menu-panel__list {

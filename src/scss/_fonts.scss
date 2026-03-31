@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // S-Core Dream (에스코어드림) — 로컬 woff (public/fonts)
 // 상업용 무료 한글 폰트 · 출처: 눈누(noonnu) / projectnoonnu
 // ============================================================
@@ -8,7 +8,7 @@
 	font-style: normal;
 	font-weight: 300;
 	font-display: swap;
-	src: url('/fonts/S-CoreDream-3Light.woff') format('woff');
+	src: url('../fonts/S-CoreDream-3Light.woff') format('woff');
 }
 
 @font-face {
@@ -16,7 +16,7 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/S-CoreDream-4Regular.woff') format('woff');
+	src: url('../fonts/S-CoreDream-4Regular.woff') format('woff');
 }
 
 @font-face {
@@ -24,7 +24,7 @@
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url('/fonts/S-CoreDream-5Medium.woff') format('woff');
+	src: url('../fonts/S-CoreDream-5Medium.woff') format('woff');
 }
 
 @font-face {
@@ -32,5 +32,5 @@
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
-	src: url('/fonts/S-CoreDream-6Bold.woff') format('woff');
+	src: url('../fonts/S-CoreDream-6Bold.woff') format('woff');
 }

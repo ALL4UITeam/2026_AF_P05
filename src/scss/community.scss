@@ -1,4 +1,4 @@
-:root{
+﻿:root{
   --commu-color: #f33d5c;
   --system-color: #18a6b1;
   --page-color: #f33d5c; // 기본값, body:has로 덮어씀
@@ -91,10 +91,10 @@ body:has(.header-system-link.active) {
 
 .all-wrap > header .top-menu > a{
   &.commu.active{
-    background: url('/images/system/menu-icon-commu-active.png') no-repeat 34px center, linear-gradient(to right, var(--commu-color) 0%, var(--commu-color) 100%);
+    background: url('../images/system/menu-icon-commu-active.png') no-repeat 34px center, linear-gradient(to right, var(--commu-color) 0%, var(--commu-color) 100%);
   }
   &.system.active{
-    background: url('/images/system/menu-icon-system-active.png') no-repeat 34px center, linear-gradient(to right, var(--system-color) 0%, var(--system-color) 100%);
+    background: url('../images/system/menu-icon-system-active.png') no-repeat 34px center, linear-gradient(to right, var(--system-color) 0%, var(--system-color) 100%);
   }
 }
 
@@ -135,7 +135,7 @@ body:has(.header-system-link.active) {
   font-size: 14px;
   font-weight: 700;
   padding: 0 18px 0 40px;
-  background: url('/images/system/gnb-ico.png') no-repeat 16px center, linear-gradient(to right, var(--system-color) 0%, #0f8f9a 100%);
+  background: url('../images/system/gnb-ico.png') no-repeat 16px center, linear-gradient(to right, var(--system-color) 0%, #0f8f9a 100%);
   background-size: 18px 18px, 100% 100%;
 }
 
@@ -467,16 +467,16 @@ body:has(.header-system-link.active) {
   height: 20px;
   vertical-align: top;
   &.icon1{
-    background-image: url('/images/system/board-label-icon-1.png');
+    background-image: url('../images/system/board-label-icon-1.png');
   }
   &.icon2{
-    background-image: url('/images/system/board-label-icon-2.png');
+    background-image: url('../images/system/board-label-icon-2.png');
   }
   &.icon3{
-    background-image: url('/images/system/board-label-icon-3.png');
+    background-image: url('../images/system/board-label-icon-3.png');
   }
   &.icon4{
-    background-image: url('/images/system/board-label-icon-4.png');
+    background-image: url('../images/system/board-label-icon-4.png');
   }
 }
 
@@ -820,7 +820,7 @@ body:has(.header-system-link.active) {
   color: #fff;
   font-size: 14px;
   font-weight: 500;
-  background-image: url('/images/system/board-list-icon.png');
+  background-image: url('../images/system/board-list-icon.png');
   background-repeat: no-repeat;
   background-position: 26px 50%;
 }
@@ -868,10 +868,10 @@ body:has(.header-system-link.active) {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   &.prev{
-    background-image: url('/images/system/board-arrow-icon-prev.png');
+    background-image: url('../images/system/board-arrow-icon-prev.png');
   }
   &.next{
-    background-image: url('/images/system/board-arrow-icon-next.png');
+    background-image: url('../images/system/board-arrow-icon-next.png');
   }
 }
 
@@ -2097,11 +2097,11 @@ body:has(.header-system-link.active) {
 }
 
 .terms-policy__icon-btn--edit{
-  background-image: url("/images/svg/ico_modify_01.svg");
+  background-image: url("../images/svg/ico_modify_01.svg");
 }
 
 .terms-policy__icon-btn--delete{
-  background-image: url("/images/svg/ico_del_02.svg");
+  background-image: url("../images/svg/ico_del_02.svg");
 }
 
 .terms-policy__paging{
@@ -2489,7 +2489,7 @@ body:has(.header-system-link.active) {
   flex: 0 0 22px;
   width: 22px;
   height: 22px;
-  background: url("/images/svg/ico-docu_01.svg") center / contain no-repeat;
+  background: url("../images/svg/ico-docu_01.svg") center / contain no-repeat;
 }
 
 .security-pledge-form-mgmt__btn-register{
@@ -2852,7 +2852,7 @@ a.security-pledge-mgmt__btn-view{
   flex: 0 0 22px;
   width: 22px;
   height: 22px;
-  background: url("/images/svg/ico_arrow_left_01.svg") center / 18px 18px no-repeat;
+  background: url("../images/svg/ico_arrow_left_01.svg") center / 18px 18px no-repeat;
   opacity: 0.85;
 }
 
@@ -2902,7 +2902,7 @@ a.security-pledge-mgmt__btn-view{
 .security-pledge-detail__btn-print-icon{
   width: 18px;
   height: 18px;
-  background: url("/images/svg/map_output_01.svg") center / contain no-repeat;
+  background: url("../images/svg/map_output_01.svg") center / contain no-repeat;
   filter: brightness(0) invert(1);
   opacity: 0.95;
 }
@@ -3608,7 +3608,7 @@ a.security-pledge-mgmt__btn-view{
   content: "";
   width: 14px;
   height: 14px;
-  background: url("/images/svg/ico_file_01.svg") no-repeat center / contain;
+  background: url("../images/svg/ico_file_01.svg") no-repeat center / contain;
   opacity: 0.7;
 }
 
@@ -3759,7 +3759,7 @@ a.security-pledge-mgmt__btn-view{
 .terms-policy-write__upload-icon{
   width: 18px;
   height: 18px;
-  background: url("/images/svg/ico_file_01.svg") no-repeat center / contain;
+  background: url("../images/svg/ico_file_01.svg") no-repeat center / contain;
   opacity: 0.6;
 }
 
@@ -5264,7 +5264,7 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 }
 
 .linkage-monitor__kpi--total .linkage-monitor__kpi-icon{
-  background-image: url("/images/system/linkage-dash01.png");
+  background-image: url("../images/system/linkage-dash01.png");
 }
 
 /* 금일 처리 */
@@ -5277,7 +5277,7 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 }
 
 .linkage-monitor__kpi--processed .linkage-monitor__kpi-icon{
-  background-image: url("/images/system/linkage-dash02.png");
+  background-image: url("../images/system/linkage-dash02.png");
 }
 
 /* 금일 오류 */
@@ -5290,7 +5290,7 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 }
 
 .linkage-monitor__kpi--error .linkage-monitor__kpi-icon{
-  background-image: url("/images/system/linkage-dash03.png");
+  background-image: url("../images/system/linkage-dash03.png");
 }
 
 /* 성공률 — 로얄 블루 액센트 */
@@ -5303,7 +5303,7 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 }
 
 .linkage-monitor__kpi--rate .linkage-monitor__kpi-icon{
-  background-image: url("/images/system/linkage-dash04.png");
+  background-image: url("../images/system/linkage-dash04.png");
 }
 
 .linkage-monitor__charts-row{
@@ -5599,7 +5599,7 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
   flex: 0 0 20px;
   width: 20px;
   height: 20px;
-  background: url("/images/svg/ico_arrow_left_01.svg") center / 16px 16px no-repeat;
+  background: url("../images/svg/ico_arrow_left_01.svg") center / 16px 16px no-repeat;
   opacity: 0.85;
 }
 

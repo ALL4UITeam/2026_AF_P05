@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // 위치 검색 페이지 전용 (map-search.html) — VWorld dtkmap 스타일
 // 좌측 메뉴 패널(240px) + 사이드바(300px) + 우측 지도 영역
 // ============================================================
@@ -6,7 +6,7 @@
 // 위치검색
 #locationSearchPanel{
 	.map-search-sidebar__header h2{
-		background: url('/images/map/location-title-icon.png') no-repeat left center;
+		background: url('../images/map/location-title-icon.png') no-repeat left center;
 		padding-left: 26px;
 		min-height: 20px;
 		line-height: 20px;
@@ -62,7 +62,7 @@ $map-menu-panel-width: 240px;
 	cursor: pointer;
 	margin-bottom: 20px;
 	.plus_icon{
-		background: url('/images/map/icon_plus.png') no-repeat center center;
+		background: url('../images/map/icon_plus.png') no-repeat center center;
 		width: 9px;
 		height: 9px;
 		display: block;
@@ -955,7 +955,7 @@ $map-menu-panel-width: 240px;
 		border: none;
 		padding: 0;
 		cursor: pointer;
-		background: url('/images/map/tree__caret.png') no-repeat center center;
+		background: url('../images/map/tree__caret.png') no-repeat center center;
 		transition: transform 0.2s;
 	}
 
@@ -1036,7 +1036,7 @@ $map-menu-panel-width: 240px;
 			width: 18px;
 			height: 18px;
 			flex-shrink: 0;
-			background: url('/images/map/ico_search_16_01.png') no-repeat center center;
+			background: url('../images/map/ico_search_16_01.png') no-repeat center center;
 			background-size: 16px 16px;
 		}
 

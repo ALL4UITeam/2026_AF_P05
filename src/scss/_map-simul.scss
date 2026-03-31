@@ -1,4 +1,4 @@
-
+﻿
 // 입지 시뮬레이션 등: 이 페이지(#simulationModal)만의 레이아웃 오버라이드
 // 공통 UI는 _map-ui.scss 의 .map-ui-wizard / .map-ui-side-panel / .map-ui-kv-* 사용
 
@@ -96,7 +96,7 @@
       display: inline-block;
       width: 16px;
       height: 9px;
-      background: url(/images/map/modal_add_icon.png) no-repeat center center;
+      background: url(../images/map/modal_add_icon.png) no-repeat center center;
       font-size: 0;
       vertical-align: top;
       transform: translateY(1px);
@@ -199,7 +199,7 @@
     flex-shrink: 0;
     width: 20px;
     height: 20px;
-    background: url(/images/map/modal_more_icon.png) no-repeat center center;
+    background: url(../images/map/modal_more_icon.png) no-repeat center center;
     
   }
 
@@ -256,14 +256,14 @@
       color: #964ada;
       border-color: #e3d3f6;
       background: #faf5ff;
-      background-image: url(/images/map/modal_map_icon.png);
+      background-image: url(../images/map/modal_map_icon.png);
       background-repeat: no-repeat;
       background-position: 9px 50%;
     }
     &--del{
       color: #5177e2;
       border-color: #d3e3fa;
-      background: #eff6ff url(/images/map/modal_delete_icon.png) no-repeat 8px center;
+      background: #eff6ff url(../images/map/modal_delete_icon.png) no-repeat 8px center;
     }
   }
 
@@ -304,23 +304,23 @@
       outline-offset: 2px;
     }
     &--reg{
-      background-image: url(/images/map/modal_user_area_icon.png);
+      background-image: url(../images/map/modal_user_area_icon.png);
       
     }
     &--rad{
-      background-image: url(/images/map/modal_radius_icon.png);
+      background-image: url(../images/map/modal_radius_icon.png);
       
     }
     &--elv{
-      background-image: url(/images/map/modal_elevation_icon.png);
+      background-image: url(../images/map/modal_elevation_icon.png);
       
     }
     &--dst{
-      background-image: url(/images/map/modal_distance_icon.png);
+      background-image: url(../images/map/modal_distance_icon.png);
       
     }
     &--ar{
-      background-image: url(/images/map/modal_area_icon.png);
+      background-image: url(../images/map/modal_area_icon.png);
       
     }
 

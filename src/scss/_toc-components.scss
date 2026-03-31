@@ -1,4 +1,4 @@
-// src/scss/_toc-components.scss — TOC 공용 컴포넌트 (시스템관리 톤앤매너)
+﻿// src/scss/_toc-components.scss — TOC 공용 컴포넌트 (시스템관리 톤앤매너)
 @use 'toc-vars' as *;
 
 // ── 레이어 검색 탭: 그룹 ──
@@ -89,7 +89,7 @@
 	height: 14px;
 	flex-shrink: 0;
 	opacity: 0.35;
-	background: url('/images/svg/ico_search_16_01.svg') no-repeat center center;
+	background: url('../images/svg/ico_search_16_01.svg') no-repeat center center;
 	background-size: 12px;
 }
 
@@ -263,7 +263,7 @@
 	height: 14px;
 	flex-shrink: 0;
 	opacity: 0.35;
-	background: url('/images/svg/ico_search_16_01.svg') no-repeat center center;
+	background: url('../images/svg/ico_search_16_01.svg') no-repeat center center;
 	background-size: 12px;
 }
 

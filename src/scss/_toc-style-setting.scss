@@ -1,4 +1,4 @@
-// src/scss/_toc-style-setting.scss — toc-style-setting.html 전용 (페이지 스코프)
+﻿// src/scss/_toc-style-setting.scss — toc-style-setting.html 전용 (페이지 스코프)
 @use 'toc-vars' as *;
 
 // ── 전체 카드 레이아웃 ──
@@ -107,7 +107,7 @@
 		content: '';
 		width: 9px;
 		height: 9px;
-		background: url('/images/system/toc/modal-close.png') no-repeat center / contain;
+		background: url('../images/system/toc/modal-close.png') no-repeat center / contain;
 	}
 
 	&:hover {
@@ -150,10 +150,10 @@
 		flex: 0 0 34px;
 		font-size: 0;
 		color: transparent;
-		background: #fafbfc url('/images/system/toc/op02.png') no-repeat center / 12px 12px;
+		background: #fafbfc url('../images/system/toc/op02.png') no-repeat center / 12px 12px;
 
 		&:hover {
-			background: $toc-primary-bg url('/images/system/toc/op02-on.png') no-repeat center / 12px 12px;
+			background: $toc-primary-bg url('../images/system/toc/op02-on.png') no-repeat center / 12px 12px;
 		}
 	}
 }

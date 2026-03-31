@@ -1,4 +1,4 @@
-
+﻿
 // ===== 관심지역 패널 =====
 .map-floating-search{
   position: absolute;
@@ -28,7 +28,7 @@
       top: 50%;
       transform: translateY(-50%);
       z-index: 10;
-      background: url('/images/map/ico_search_16_01.png') no-repeat center center;
+      background: url('../images/map/ico_search_16_01.png') no-repeat center center;
       width: 20px;
       height: 20px;
     }
@@ -145,13 +145,13 @@
       color: #563dff;
     }
     .ico_fullscreen{
-      background-image: url('/images/map/ico_fullscreen-active.png');
+      background-image: url('../images/map/ico_fullscreen-active.png');
     }
     .ico_box{
-      background-image: url('/images/map/ico_box-active.png');
+      background-image: url('../images/map/ico_box-active.png');
     }
     .ico_polygon{
-      background-image: url('/images/map/ico_polygon-active.png');
+      background-image: url('../images/map/ico_polygon-active.png');
     }
   }
 }
@@ -163,13 +163,13 @@
   background-position: center;
 
   &.ico_fullscreen{
-    background-image: url('/images/map/ico_fullscreen.png');
+    background-image: url('../images/map/ico_fullscreen.png');
   }
   &.ico_box{
-    background-image: url('/images/map/ico_box.png');
+    background-image: url('../images/map/ico_box.png');
   }
   &.ico_polygon{
-    background-image: url('/images/map/ico_polygon.png');
+    background-image: url('../images/map/ico_polygon.png');
   }
 }
 
@@ -303,7 +303,7 @@
   height: 12px;
   display: inline-block;
   flex-shrink: 0;
-  background: url('/images/map/icon_user.png') no-repeat center center;
+  background: url('../images/map/icon_user.png') no-repeat center center;
 }
 .interest-card__actions{
   display: flex;
@@ -326,11 +326,11 @@
   transition: background-color .15s;
   width: 22px;
   height: 22px;
-  background: url('/images/map/ico_more.png') no-repeat center center;
+  background: url('../images/map/ico_more.png') no-repeat center center;
   &.active,
   &:hover,
   &:focus{
-    background-image: url('/images/map/ico_more-active.png');
+    background-image: url('../images/map/ico_more-active.png');
   }
 }
 .icon--del{
@@ -339,23 +339,23 @@
   transition: background-color .15s;
   width: 22px;
   height: 22px;
-  background: url('/images/map/ico_del.png') no-repeat center center;
+  background: url('../images/map/ico_del.png') no-repeat center center;
   
   &:hover,
   &:focus{
     background-color: #f3f1ff;
     border-radius: 3px;
-    background-image: url('/images/map/ico_del-active.png');
+    background-image: url('../images/map/ico_del-active.png');
   }
 }
 
 .icon--setting{
   width: 22px;
   height: 22px;
-  background: url('/images/map/ico_setting.png') no-repeat center center;
+  background: url('../images/map/ico_setting.png') no-repeat center center;
   &:hover,
   &:focus{
-    background-image: url('/images/map/ico_setting-active.png');
+    background-image: url('../images/map/ico_setting-active.png');
   }
 }
 
@@ -986,7 +986,7 @@
   width: 10px;
   height: 10px;
   transform: translate(-50%,-50%);
-  background: url('/images/svg/checkbox.svg') no-repeat 50% 50%;
+  background: url('../images/svg/checkbox.svg') no-repeat 50% 50%;
   background-size: 10px 10px;
   filter: brightness(10);
 }
@@ -1060,13 +1060,13 @@
   border-color: #e3d3f6;
   background: #faf5ff;
   color: #964ada;
-  .badge-icon{ background-image: url('/images/map/ico_layer.png'); }
+  .badge-icon{ background-image: url('../images/map/ico_layer.png'); }
 }
 .layer__badge--user{
   border-color: #d3e3fa;
   background: #eff6ff;
   color: #5177e2;
-  .badge-icon{ background-image: url('/images/map/ico_usearea_01.png'); }
+  .badge-icon{ background-image: url('../images/map/ico_usearea_01.png'); }
 }
 
 .sidebar__footer{
@@ -1220,7 +1220,7 @@
   cursor: pointer;
   padding-left: 25px;
   display: block;
-  background: url('/images/map/users_add.png') no-repeat left center;
+  background: url('../images/map/users_add.png') no-repeat left center;
   width: 65px;
   height: 13px;
 }

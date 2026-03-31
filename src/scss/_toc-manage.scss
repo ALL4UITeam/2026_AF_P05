@@ -1,4 +1,4 @@
-// src/scss/_toc-manage.scss — toc-manage.html 전용 (페이지 스코프)
+﻿// src/scss/_toc-manage.scss — toc-manage.html 전용 (페이지 스코프)
 @use 'toc-vars' as *;
 
 // ── 전체 카드 레이아웃 ──
@@ -41,7 +41,7 @@
 	font-size: 13px;
 	border: 1px solid #cfd8e3;
 	border-radius: 8px;
-	background: #fff url('/images/svg/ico_search_16_01.svg') calc(100% - 12px) center / 14px no-repeat;
+	background: #fff url('../images/svg/ico_search_16_01.svg') calc(100% - 12px) center / 14px no-repeat;
 	outline: none;
 
 	&:focus {
@@ -219,7 +219,7 @@
 	min-height: 20px;
 	i {
 		display: inline-block;
-		background-image: url('/images/system/toc/group-add.png');
+		background-image: url('../images/system/toc/group-add.png');
 		width: 14px;
 		height: 12px;
 		color: #6b7280;
@@ -265,7 +265,7 @@
 	flex-shrink: 0;
 	width: 19px;
 	height: 14px;
-	background: url('/images/system/toc/folder_icon.png') no-repeat center / contain;
+	background: url('../images/system/toc/folder_icon.png') no-repeat center / contain;
 }
 
 .toc-manage-page__edit-name {
@@ -317,29 +317,29 @@
 
 // 툴 아이콘 매핑 (op01~op05)
 .toc-manage-page__edit-tool--edit {
-	background-image: url('/images/system/toc/op01.png');
-	&:hover { background-image: url('/images/system/toc/op01-on.png'); }
+	background-image: url('../images/system/toc/op01.png');
+	&:hover { background-image: url('../images/system/toc/op01-on.png'); }
 }
 .toc-manage-page__edit-tool--add {
-	background-image: url('/images/system/toc/op02.png');
-	&:hover { background-image: url('/images/system/toc/op02-on.png'); }
+	background-image: url('../images/system/toc/op02.png');
+	&:hover { background-image: url('../images/system/toc/op02-on.png'); }
 }
 .toc-manage-page__edit-tool--up {
-	background-image: url('/images/system/toc/op03.png');
-	&:hover { background-image: url('/images/system/toc/op03-on.png'); }
+	background-image: url('../images/system/toc/op03.png');
+	&:hover { background-image: url('../images/system/toc/op03-on.png'); }
 }
 .toc-manage-page__edit-tool--down {
-	background-image: url('/images/system/toc/op04.png');
-	&:hover { background-image: url('/images/system/toc/op04-on.png'); }
+	background-image: url('../images/system/toc/op04.png');
+	&:hover { background-image: url('../images/system/toc/op04-on.png'); }
 }
 .toc-manage-page__edit-tool--delete {
-	background-image: url('/images/system/toc/op05.png');
-	&:hover { background-image: url('/images/system/toc/op05-on.png'); }
+	background-image: url('../images/system/toc/op05.png');
+	&:hover { background-image: url('../images/system/toc/op05-on.png'); }
 }
 
 // 선택된 그룹은 폴더 아이콘 on 상태
 .toc-manage-page__edit-card.is-selected .toc-manage-page__folder-ico {
-	background-image: url('/images/system/toc/folder_icon-on.png');
+	background-image: url('../images/system/toc/folder_icon-on.png');
 }
 
 .toc-manage-page__edit-body {
@@ -392,7 +392,7 @@
 	flex-shrink: 0;
 	width: 16px;
 	height: 12px;
-	background: url('/images/system/toc/folder_icon.png') no-repeat center / contain;
+	background: url('../images/system/toc/folder_icon.png') no-repeat center / contain;
 	opacity: 0.9;
 }
 
@@ -636,7 +636,7 @@
 	height: 32px;
 	border: 0;
 	cursor: pointer;
-	background: url('/images/system/toc/modal-search.png') no-repeat center / 16px 16px;
+	background: url('../images/system/toc/modal-search.png') no-repeat center / 16px 16px;
 
 }
 

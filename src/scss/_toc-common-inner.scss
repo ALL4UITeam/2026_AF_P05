@@ -1,4 +1,4 @@
-// src/scss/_toc-common-inner.scss — TOC 공통 레이아웃 (toc.scss에서 .toc-wrap 안으로 load-css)
+﻿// src/scss/_toc-common-inner.scss — TOC 공통 레이아웃 (toc.scss에서 .toc-wrap 안으로 load-css)
 @use 'toc-vars' as *;
 
 // 체크: gb_Intelligent .chkbox — 행 전체가 아니라 span.chkbox 안에만 input+.chkOn 두는 것을 권장(레이어 행은 label > .chkbox + 텍스트).
@@ -121,7 +121,7 @@
 	font-size: 13px;
 	border: 1px solid #cfd8e3;
 	border-radius: 6px;
-	background: #fff url('/images/svg/ico_search_16_01.svg') 10px center no-repeat;
+	background: #fff url('../images/svg/ico_search_16_01.svg') 10px center no-repeat;
 	outline: none;
 
 	&:focus {

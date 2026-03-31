@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // Map UI - 공통 베이스 (절대 위치 시스템)
 // .vibe-container 내부. Flex로 칸 나누지 않고 모두 position: absolute로 지도 위에 플로팅
 // ============================================================
@@ -88,7 +88,7 @@
 			background: #fff;
 		}
 		input:checked + .input-check__ui{
-			background: #5a4aff url('/images/map/checkbox.png') no-repeat center center;
+			background: #5a4aff url('../images/map/checkbox.png') no-repeat center center;
 			border-color: #5a4aff;
 		}
 		.input-check__label{
@@ -102,7 +102,7 @@
 	.map-ui-date{
 		height: 36px;
 		border: 1px solid #e3e4e6;
-		background: #fff url('/images/map/date-icon.png') no-repeat right 12px center;
+		background: #fff url('../images/map/date-icon.png') no-repeat right 12px center;
 		font-size: 14px;
 		color: #111111;
 		padding: 0 12px;
@@ -279,13 +279,13 @@
 
 	.map-ui-input.input-search{
 		padding: 11px 12px 11px 35px;
-    background: url('/images/svg/ico_search_16_01.svg') 12px 9px no-repeat;
+    background: url('../images/svg/ico_search_16_01.svg') 12px 9px no-repeat;
 	}
 
 	.map-ui-select {
 		cursor: pointer;
 		appearance: none;
-		background-image: url('/images/map/select-arrow.png');
+		background-image: url('../images/map/select-arrow.png');
 		background-repeat: no-repeat;
 		background-position: right 12px center;
 		padding-right: 24px;
@@ -498,27 +498,27 @@
 				background-repeat: no-repeat;
 				background-position: 0% 50%;
 				&.user_icon{
-					background-image: url('/images/map/modal_user_icon.png');
+					background-image: url('../images/map/modal_user_icon.png');
 					width: 15px;
 					height: 16px;
 				}
 				&.share_icon{
-					background-image: url('/images/map/modal_share_icon.png');
+					background-image: url('../images/map/modal_share_icon.png');
 					width: 15px;
 					height: 16px;
 				}
 				&.menu_icon{
-					background-image: url('/images/map/modal_menu_icon.png');
+					background-image: url('../images/map/modal_menu_icon.png');
 					width: 15px;
 					height: 16px;
 				}
 				&.search_icon{
-					background-image: url('/images/map/modal_search_icon.png');
+					background-image: url('../images/map/modal_search_icon.png');
 					width: 15px;
 					height: 16px;
 				}
 				&.deal_icon{
-					background-image: url('/images/map/modal_deal_icon.png');
+					background-image: url('../images/map/modal_deal_icon.png');
 					width: 15px;
 					height: 16px;
 				}
@@ -530,7 +530,7 @@
 		width: 30px;
 		height: 30px;
 		transition: background 0.2s, color 0.2s;
-		background:#545c73 url('/images/map/modal_close.png') no-repeat center center;
+		background:#545c73 url('../images/map/modal_close.png') no-repeat center center;
 		border-radius: 50%;
 	}
 
@@ -671,9 +671,9 @@
 		justify-content: center;
 		transition: transform 0.2s ease;
 		
-		&::before { content: ''; background: url('/images/map/tree__caret.png') no-repeat center center; background-size: 100% 100%;width: 100%;height: 100%;}
+		&::before { content: ''; background: url('../images/map/tree__caret.png') no-repeat center center; background-size: 100% 100%;width: 100%;height: 100%;}
 		&--open {
-			&::before{background-image: url('/images/map/tree__caret-active.png');}
+			&::before{background-image: url('../images/map/tree__caret-active.png');}
 		}
 	}
 	.map-ui-tree__spacer {

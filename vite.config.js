@@ -1,6 +1,7 @@
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { readdirSync } from 'fs';
+import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -10,7 +11,9 @@ const allHtmlInputs = readdirSync(__dirname)
 	.filter((f) => f.endsWith('.html'))
 	.map((f) => resolve(__dirname, f));
 
-export default {
+// GitHub Pages 등 하위 경로 배포: 빌드 산출물은 상대 경로로 묶음 (dev는 '/' 유지)
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? './' : '/',
   root: '.',
   publicDir: 'public',
   build: {
@@ -35,4 +38,4 @@ export default {
       partialDirectory: resolve(__dirname, 'src/partials'),
     }),
   ],
-};
+}));
