@@ -10,6 +10,36 @@ body:has(.top-menu > a.commu.active) {
   .all-wrap{
     background-color: #fdf2f4;
   }
+
+  // 소통공간 list 검색폼: 우측정렬 + input 420px (디자인 톤앤매너)
+  .cont-box-wrap.commu-page {
+    .inquiry-box .serach-box .form-wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .inquiry-box .serach-box .form-wrap .type01.searchIco {
+      width: 420px;
+      max-width: 420px;
+    }
+
+    .inquiry-box .serach-box .form-wrap .com-btn {
+      width: 120px;
+      min-width: 120px;
+      background: #fff;
+      border: 1px solid var(--page-color);
+      color: var(--page-color);
+    }
+
+    .inquiry-box .serach-box .form-wrap .com-btn:hover,
+    .inquiry-box .serach-box .form-wrap .com-btn:focus-visible {
+      background: var(--page-color);
+      border-color: var(--page-color);
+      color: #fff;
+    }
+  }
 }
 
 // 시스템관리 활성 → --page-color = system
@@ -81,6 +111,12 @@ body:has(.header-system-link.active) {
   .all-wrap > header .top-menu > a:not(.active):focus-visible{
     outline: 1px solid rgba(24, 166, 177, 0.22);
     background: rgba(24, 166, 177, 0.1);
+  }
+
+  // 체크박스 톤앤매너(시스템관리): checked 색상/아이콘을 --page-color 기준으로 통일
+  .chkbox input:checked ~ .chkOn {
+    background: url('../images/svg/checkbox_system.svg') no-repeat center center;
+    border-color: var(--page-color);
   }
 }
 
@@ -5023,10 +5059,6 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
   border-top: 1px solid #e2e8f0;
 }
 
-.spatial-coord-xform-modal__btn-area{
-  
-}
-
 /* 연계모니터링 (KPI·차트 partial / 검색·테이블은 .access-history__* · .data-request__* 공통 패턴) */
 .linkage-monitor-wrap .linkage-monitor{
   display: flex;
@@ -5395,10 +5427,6 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 }
 
 /* 연계모니터링 탭 전용 (검색·건수·테이블은 .access-history__* · .data-request__* 공통) */
-.linkage-monitor-wrap .linkage-monitor__search-period-span{
-  
-}
-
 @media (max-width: 900px){
   .linkage-monitor-wrap .access-history__search-grid{
     grid-template-columns: 1fr;
@@ -5776,4 +5804,8 @@ $spatial-mgmt-eye-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
   .linkage-monitor__chart-panel:hover{
     transform: none;
   }
+}
+
+.tab-menu.type02 > ul{
+  border-radius: 4px;
 }

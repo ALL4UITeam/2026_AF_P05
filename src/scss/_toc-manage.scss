@@ -1,4 +1,4 @@
-﻿// src/scss/_toc-manage.scss — toc-manage.html 전용 (페이지 스코프)
+// src/scss/_toc-manage.scss — toc-manage.html 전용 (페이지 스코프)
 @use 'toc-vars' as *;
 
 // ── 전체 카드 레이아웃 ──
@@ -167,8 +167,8 @@
 
 		.chkOn {
 			left: 0;
-			top: 50%;
-			margin-top: -10px;
+			top: 1px; // gb_Intelligent 체크박스 톤앤매너(기본 스킨)와 동일
+			margin-top: 0;
 		}
 	}
 }
@@ -255,7 +255,8 @@
 	padding: 9px 12px;
 	cursor: pointer;
 	transition: background 0.15s;
-
+	border: 1px solid #e3e4e6;
+	border-radius: 6px;
 	&:hover {
 		background: #fafbfc;
 	}
@@ -459,8 +460,8 @@
 
 		.chkOn {
 			left: 0;
-			top: 50%;
-			margin-top: -10px;
+			top: 1px; // gb_Intelligent 체크박스 톤앤매너(기본 스킨)와 동일
+			margin-top: 0;
 		}
 	}
 
