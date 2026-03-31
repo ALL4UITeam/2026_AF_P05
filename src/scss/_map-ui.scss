@@ -26,7 +26,7 @@
 	--map-ui-blue: #2A61BA;
 	--map-ui-blue-hover: #224e95;
 	--map-ui-blue-bg: #eaf0f9;
-	--map-ui-radius: 8px;
+	--map-ui-radius: 5px;
 	--map-ui-border: 1px solid #eee;
 	--map-title-font: 'S-Core Dream';
 }
@@ -260,6 +260,7 @@
 			cursor: pointer;
 			background-color: #334155;
 			color: #fff;
+			font-size: 13px;
 		}
 		.map-ui-file__name{
 			display: block;
@@ -763,13 +764,12 @@
 		align-items: center;
 		justify-content: center;
 		//width: 100%;
-		padding: 4px 10px;
-		border-radius: 999px;
+		padding: 7px;
+		border-radius: var(--map-ui-radius);
 		font-size: 12px;
-		font-weight: 600;
-		letter-spacing: -0.02em;
-		line-height: 1.3;
+		line-height: 1;
 		border: 1px solid;
+		font-weight: 500;
 	}
 
 	.map-ui-chip--green {
@@ -1372,7 +1372,7 @@
 	border-top: 1px solid #dbdbe3;
 	margin-left: -16px;
 	margin-right: -16px;
-	padding: 10px 16px;
+	padding: 10px 16px 0;
 }
 
 .map-paging__num-wrap{

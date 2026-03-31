@@ -80,11 +80,9 @@
 					          <i class="plus_icon"></i>사용자 데이터 등록
 					        </button>
 					
-					        <div class="sidebar__search-row">
+					        <div class="map-sidebar__location-input">
 					          <input type="search" id="locationSearchInput" class="map-ui-input input-search" placeholder="주소 또는 장소 검색" autocomplete="off">
-					          <button type="button" class="sidebar__search-btn" id="locationSearchBtn" aria-label="검색">
-					            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-					          </button>
+					          <button type="button" class="map-sidebar__search-btn" id="locationSearchBtn" aria-label="검색">검색</button>
 					        </div>
 					
 					        <div class="sidebar_divider"></div>
@@ -204,10 +202,8 @@
 				        <!-- 부서 공유 패널 -->
 				        <div class="map-ui-modal_tab-content mydata-share-panel" data-map-ui-content="dept">
 				          <div class="mydata-share-search">
-				            <div class="sidebar__search-row">
-				              <input type="text" class="map-ui-input input-search" placeholder="레이어명 검색">
-				              <button type="button" class="sidebar__search-btn" aria-label="검색">검색</button>
-				            </div>
+				            <input type="text" class="map-ui-input input-search" placeholder="레이어명 검색">
+				            <button type="button" class="map-sidebar__search-btn" aria-label="검색">검색</button>
 				          </div>
 				          <div class="mydata-share-dept">
 				            <div class="interest-panel__section-title">조직도</div>
@@ -252,11 +248,9 @@
 				        </div>
 				        <!-- 사용자 공유 패널 -->
 				        <div class="map-ui-modal_tab-content mydata-share-panel" data-map-ui-content="user" hidden>
-				          <div class="mydata-share-search">
-				            <div class="sidebar__search-row">
+				          <div class="mydata-share-search map-sidebar__location-input">
 				              <input type="text" class="map-ui-input input-search" placeholder="사용자명 또는 ID 검색">
-				              <button type="button" class="sidebar__search-btn input-search" aria-label="검색">검색</button>
-				            </div>
+				              <button type="button" class="map-sidebar__search-btn" aria-label="검색">검색</button>
 				          </div>
 				          <div class="mydata-share-users">
 				            <div class="mydata-share-users__head">
