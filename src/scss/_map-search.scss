@@ -860,7 +860,7 @@ $map-menu-panel-width: 240px;
 	display: block;
 	padding: 14px 16px;
 	border: 1px solid #dbdbe3;
-	border-radius: 8px;
+	border-radius: var(--map-ui-radius);
 	background: #fff;
 	text-decoration: none;
 	color: inherit;
@@ -868,7 +868,7 @@ $map-menu-panel-width: 240px;
 	transition: background-color .2s, border-color .2s, box-shadow .2s;
 	&:focus-visible{
 		outline: 1cm solid #6b5ce7;
-		outline-offset: 2px;
+		outline-offset: 1px;
 	}
 }
 
@@ -926,16 +926,6 @@ $map-menu-panel-width: 240px;
 .srch-row--sub .srch-label:not([class*="srch-label--"]),
 .srch-item .srch-row + .srch-row .srch-label:not([class*="srch-label--"]){
 	background: #5c6370;
-}
-
-.srch-value{
-	flex: 1;
-	min-width: 0;
-	font-size: 14px;
-	font-weight: 600;
-	color: #1f2937;
-	line-height: 1.45;
-	letter-spacing: -0.02em;
 }
 
 .srch-row--sub .srch-value{
@@ -1076,15 +1066,6 @@ $map-menu-panel-width: 240px;
 		cursor: pointer;
 		transition: border-color 0.2s, background 0.2s;
 
-		&:hover {
-			border-color: #c4b5fd;
-			background: #faf8ff;
-		}
-
-		&.is-active {
-			border-color: #563dff;
-			background: #f5f3ff;
-		}
 	}
 
 	.lnd-rslt__no {
@@ -1099,6 +1080,10 @@ $map-menu-panel-width: 240px;
 		color: #fff;
 		font-size: 11px;
 		font-weight: 500;
+	}
+
+	#regDetailModal{
+		width: 320px;
 	}
 
 	.lnd-modal {
