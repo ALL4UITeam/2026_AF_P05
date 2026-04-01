@@ -1004,10 +1004,7 @@
   width: 40px;
   flex-shrink: 0;
 }
-.mydata-layer__range{ width: 100%; accent-color: #5a4aff; }
-.mydata-layer__range:disabled{ opacity: .4; }
-
-.mydata-layer__badges{ display: inline-flex; gap: 6px; flex-shrink: 0; }
+.mydata-layer__badges{ display: inline-flex; gap: 6px; flex-shrink: 0; width: 65px;}
 .layer__badge{
   display: inline-flex;
   align-items: center;

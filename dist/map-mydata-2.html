@@ -87,82 +87,87 @@
 					
 					        <div class="sidebar_divider"></div>
 					
-					        <div class="mydata-panel__section">
-					          <div class="mydata-panel__section-title">
-					            등록된 레이어 <span class="mydata-panel__count">(4)</span>
+					        <div class="map-sidebar__content">
+					          <div class="mydata-panel__section">
+					            <div class="mydata-panel__section-title">
+					              등록된 레이어 <span class="mydata-panel__count">(4)</span>
+					            </div>
+					  
+					            <ul class="mydata-layer-list" data-mydata-layers>
+					              <li class="mydata-layer is-checked" data-layer>
+					                <div class="mydata-layer__row">
+					                  <label class="input-check">
+					                    <input type="checkbox" checked data-layer-check>
+					                    <span class="input-check__ui" aria-hidden="true"></span>
+					                  </label>
+					                  <div class="mydata-layer__name" title="사업지구_경계.shp">사업지구_경계.shp</div>
+					                  <div class="mydata-layer__actions">
+					                    <button type="button" class="icon--setting" aria-label="설정"></button>
+					                    <button type="button" class="icon--more" aria-label="공유"></button>
+					                    <button type="button" class="icon--del" aria-label="삭제"></button>
+					                  </div>
+					                </div>
+					                <div class="mydata-layer__controls">
+					                  <div class="mydata-layer__opacity">
+					                    <span class="mydata-layer__opacity-label">투명도</span>
+					                    <input type="range" min="0" max="100" value="60" class="map-ui-range" data-layer-opacity>
+					                  </div>
+					                  <div class="mydata-layer__badges">
+					                    <span class="layer__badge layer__badge--layer"><i class="badge-icon"></i>1</span>
+					                    <span class="layer__badge layer__badge--user"><i class="badge-icon"></i>1</span>
+					                  </div>
+					                </div>
+					              </li>
+					  
+					              <li class="mydata-layer is-checked" data-layer>
+					                <div class="mydata-layer__row">
+					                  <label class="input-check">
+					                    <input type="checkbox" checked data-layer-check>
+					                    <span class="input-check__ui" aria-hidden="true"></span>
+					                  </label>
+					                  <div class="mydata-layer__name" title="CCTV설치위치.csv">CCTV설치위치.csv</div>
+					                  <div class="mydata-layer__actions">
+					                    <button type="button" class="icon--more" aria-label="공유"></button>
+					                    <button type="button" class="icon--setting" aria-label="설정"></button>
+					                    <button type="button" class="icon--del" aria-label="삭제" data-layer-delete></button>
+					                  </div>
+					                </div>
+					                <div class="mydata-layer__controls">
+					                  <div class="mydata-layer__opacity">
+					                    <span class="mydata-layer__opacity-label">투명도</span>
+					                    <input type="range" min="0" max="100" value="45" class="map-ui-range" data-layer-opacity>
+					                  </div>
+					                  <div class="mydata-layer__badges">
+					                    <span class="layer__badge layer__badge--user"><i class="badge-icon"></i>1</span>
+					                  </div>
+					                </div>
+					              </li>
+					  
+					              <li class="mydata-layer" data-layer>
+					                <div class="mydata-layer__row">
+					                  <label class="input-check">
+					                    <input type="checkbox" data-layer-check>
+					                    <span class="input-check__ui" aria-hidden="true"></span>
+					                  </label>
+					                  <div class="mydata-layer__name" title="드론영상_2025.tif">드론영상_2025.tif</div>
+					                  <div class="mydata-layer__actions">
+					                    <button type="button" class="icon--more" aria-label="공유"></button>
+					                    <button type="button" class="icon--setting" aria-label="설정"></button>
+					                    <button type="button" class="icon--del" aria-label="삭제" data-layer-delete></button>
+					                  </div>
+					                </div>
+					                <div class="mydata-layer__controls">
+					                  <div class="mydata-layer__opacity">
+					                    <span class="mydata-layer__opacity-label">투명도</span>
+					                    <input type="range" min="0" max="100" value="30" class="map-ui-range" data-layer-opacity disabled>
+					                  </div>
+					                  <div class="mydata-layer__badges">
+					                    
+					                  </div>
+					                </div>
+					              </li>
+					            </ul>
 					          </div>
-					
-					          <ul class="mydata-layer-list" data-mydata-layers>
-					            <li class="mydata-layer is-checked" data-layer>
-					              <div class="mydata-layer__row">
-					                <label class="input-check">
-					                  <input type="checkbox" checked data-layer-check>
-					                  <span class="input-check__ui" aria-hidden="true"></span>
-					                </label>
-					                <div class="mydata-layer__name" title="사업지구_경계.shp">사업지구_경계.shp</div>
-					                <div class="mydata-layer__actions">
-					                  <button type="button" class="icon--setting" aria-label="설정"></button>
-					                  <button type="button" class="icon--more" aria-label="공유"></button>
-					                  <button type="button" class="icon--del" aria-label="삭제"></button>
-					                </div>
-					              </div>
-					              <div class="mydata-layer__controls">
-					                <div class="mydata-layer__opacity">
-					                  <span class="mydata-layer__opacity-label">투명도</span>
-					                  <input type="range" min="0" max="100" value="60" class="mydata-layer__range" data-layer-opacity>
-					                </div>
-					                <div class="mydata-layer__badges">
-					                  <span class="layer__badge layer__badge--layer"><i class="badge-icon"></i>1</span>
-					                  <span class="layer__badge layer__badge--user"><i class="badge-icon"></i>1</span>
-					                </div>
-					              </div>
-					            </li>
-					
-					            <li class="mydata-layer is-checked" data-layer>
-					              <div class="mydata-layer__row">
-					                <label class="input-check">
-					                  <input type="checkbox" checked data-layer-check>
-					                  <span class="input-check__ui" aria-hidden="true"></span>
-					                </label>
-					                <div class="mydata-layer__name" title="CCTV설치위치.csv">CCTV설치위치.csv</div>
-					                <div class="mydata-layer__actions">
-					                  <button type="button" class="icon--more" aria-label="공유"></button>
-					                  <button type="button" class="icon--setting" aria-label="설정"></button>
-					                  <button type="button" class="icon--del" aria-label="삭제" data-layer-delete></button>
-					                </div>
-					              </div>
-					              <div class="mydata-layer__controls">
-					                <div class="mydata-layer__opacity">
-					                  <span class="mydata-layer__opacity-label">투명도</span>
-					                  <input type="range" min="0" max="100" value="45" class="mydata-layer__range" data-layer-opacity>
-					                </div>
-					                <div class="mydata-layer__badges">
-					                  <span class="layer__badge layer__badge--user"><i class="badge-icon"></i>1</span>
-					                </div>
-					              </div>
-					            </li>
-					
-					            <li class="mydata-layer" data-layer>
-					              <div class="mydata-layer__row">
-					                <label class="input-check">
-					                  <input type="checkbox" data-layer-check>
-					                  <span class="input-check__ui" aria-hidden="true"></span>
-					                </label>
-					                <div class="mydata-layer__name" title="드론영상_2025.tif">드론영상_2025.tif</div>
-					                <div class="mydata-layer__actions">
-					                  <button type="button" class="icon--more" aria-label="공유"></button>
-					                  <button type="button" class="icon--setting" aria-label="설정"></button>
-					                  <button type="button" class="icon--del" aria-label="삭제" data-layer-delete></button>
-					                </div>
-					              </div>
-					              <div class="mydata-layer__controls">
-					                <div class="mydata-layer__opacity">
-					                  <span class="mydata-layer__opacity-label">투명도</span>
-					                  <input type="range" min="0" max="100" value="30" class="mydata-layer__range" data-layer-opacity disabled>
-					                </div>
-					              </div>
-					            </li>
-					          </ul>
 					        </div>
 					
 					        <div class="sidebar__footer">

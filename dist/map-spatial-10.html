@@ -81,29 +81,33 @@
 				
 				        <div class="sidebar_divider"></div>
 				
-				        <section class="map-spatial-sidebar__section">
-				          <div class="map-spatial-sun-controls">
-				            <div class="map-spatial-sun-controls__row">
-				              <label for="sunInterval" class="map-spatial-sun-controls__label">분석시간간격</label>
-				              <select class="map-ui-select map-spatial-sun-controls__select" id="sunInterval" title="분석시간간격">
-				                <option value="15" selected>15분</option>
-				                <option value="30">30분</option>
-				                <option value="60">60분</option>
-				              </select>
-				            </div>
-				            <div class="map-spatial-sun-controls__row">
-				              <span class="map-spatial-sun-controls__label">시간별 태양위치</span>
-				              <div class="map-spatial-sun-controls__time">
-				                <span>10:00</span>
-				                <input type="range" class="mydata-layer__range" min="0" max="24" value="10" aria-label="시간별 태양위치">
+				        <div class="map-sidebar__content">
+				          <div class="map-spatial-sidebar__content">
+				            <section class="map-spatial-sidebar__section">
+				              <div class="map-spatial-sun-controls">
+				                <div class="map-spatial-sun-controls__row">
+				                  <label for="sunInterval" class="map-spatial-sun-controls__label">분석시간간격</label>
+				                  <select class="map-ui-select map-spatial-sun-controls__select" id="sunInterval" title="분석시간간격">
+				                    <option value="15" selected>15분</option>
+				                    <option value="30">30분</option>
+				                    <option value="60">60분</option>
+				                  </select>
+				                </div>
+				                <div class="map-spatial-sun-controls__row">
+				                  <span class="map-spatial-sun-controls__label">시간별 태양위치</span>
+				                  <div class="map-spatial-sun-controls__time">
+				                    <span>10:00</span>
+				                    <input type="range" class="map-ui-range" min="0" max="24" value="10" aria-label="시간별 태양위치">
+				                  </div>
+				                </div>
 				              </div>
-				            </div>
+				            </section>
 				          </div>
-				        </section>
+				        </div>
 				
 				        <div class="sidebar__footer">
-				          <button type="button" class="sidebar__footer-btn map-spatial-sun-actions__btn map-spatial-sun-actions__btn--pick">지점선택</button>
-				          <button type="button" class="sidebar__footer-btn map-spatial-sun-actions__btn map-spatial-sun-actions__btn--reset">초기화</button>
+				          <button type="button" class="sidebar__footer-btn">지점선택</button>
+				          <button type="button" class="sidebar__footer-btn sidebar__footer-btn--primary">초기화</button>
 				        </div>
 				      </div>
 				    </div>

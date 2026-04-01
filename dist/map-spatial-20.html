@@ -81,37 +81,39 @@
 				        </div>
 				        <div class="sidebar_divider"></div>
 				
-				        <section class="map-spatial-sidebar__section">
-				          <div class="map-spatial-section-card">
-				            <h3>종단면 설정</h3>
-				            <button type="button" class="map-spatial-section-card__tab">종단면 그리기</button>
-				          </div>
-				        </section>
-				        <div class="sidebar_divider"></div>
-				        <section class="map-spatial-sidebar__section">
-				          <div class="map-spatial-section-card">
-				            <div class="map-spatial-section-card__group">
+				        <div class="map-sidebar__content">
+				          <section class="map-sidebar__section">
+				            <div class="map-section-card">
+				              <h3>종단면 설정</h3>
+				              <button type="button" class="map-longdraw-button"><i></i>종단면 그리기</button>
+				            </div>
+				          </section>
+				          <div class="sidebar_divider"></div>
+				          <section class="map-sidebar__section">
+				            <div class="map-section-card">
 				              <h3>횡단면 설정구분</h3>
-				              <div class="map-spatial-section-card__switches">
-				                <button type="button" class="map-spatial-section-card__switch">지점선택</button>
-				                <button type="button" class="map-spatial-section-card__switch is-active">등간격 설정</button>
+				              <div class="map-section-card__group">
+				                <div class="map-card__tabs">
+				                  <button type="button" class="map-card__button">지점선택</button>
+				                  <button type="button" class="map-card__button is-active">동간격 설정</button>
+				                </div>
+				
+				                <div class="map-card__row">
+				                  <span class="map-card__row-label">횡단시점</span>
+				                  <button type="button" class="map-card__pick-btn"><i></i>단지점 선택하기</button>
+				                </div>
+				    
+				                <div class="map-card__row">
+				                  <span class="map-card__row-label">횡단길이</span>
+				                  <div class="map-card__length">
+				                    <input type="number" class="map-ui-input" value="50" min="0" aria-label="횡단길이">
+				                    <span class="map-card__unit">m</span>
+				                  </div>
+				                </div>
 				              </div>
 				            </div>
-				
-				            <div class="map-spatial-section-card__row">
-				              <span class="map-spatial-section-card__row-label">횡단시점</span>
-				              <button type="button" class="map-spatial-section-card__pick-btn">단지점 선택하기</button>
-				            </div>
-				
-				            <div class="map-spatial-section-card__row">
-				              <span class="map-spatial-section-card__row-label">횡단길이</span>
-				              <div class="map-spatial-section-card__length">
-				                <input type="number" class="map-ui-input" value="50" min="0" aria-label="횡단길이">
-				                <span class="map-spatial-section-card__unit">m</span>
-				              </div>
-				            </div>
-				          </div>
-				        </section>
+				          </section>
+				        </div>
 				
 				        <div class="sidebar__footer">
 				          <button type="button" class="sidebar__footer-btn">초기화</button>

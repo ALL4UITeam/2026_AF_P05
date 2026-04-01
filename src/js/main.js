@@ -35,5 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	run(initZoom, 'zoom');
 	run(initMapSearch, 'mapSearch');
 	run(initMydata, 'mydata');
+
+	const range = document.querySelector('.map-ui-range');
+range.style.setProperty('--val', range.value);
+range.addEventListener('input', () => {
+  range.style.setProperty('--val', range.value);
+});
 	
 });

@@ -18,26 +18,36 @@
 
         <div class="sidebar_divider"></div>
 
-        <section class="map-spatial-sidebar__section">
-          <div class="map-spatial-sidebar__radius-box">
-            <div class="map-spatial-color-row">
-              <span class="map-spatial-color-row__label">색상지정</span>
-              <button type="button" class="map-spatial-color-row__swatch" style="background:#a8c5e2;" title="하늘 색상 선택" aria-label="하늘 색상 선택"></button>
-              <span class="map-spatial-color-row__label">하늘</span>
-              <button type="button" class="map-spatial-color-row__swatch" style="background:#b5a98e;" title="지형 및 건물 색상 선택" aria-label="지형 및 건물 색상 선택"></button>
-              <span class="map-spatial-color-row__label">지형 및 건물</span>
-            </div>
-            <div class="map-spatial-stepper">
-              <span class="map-spatial-stepper__label">카메라 절대고도</span>
-              <div class="map-spatial-stepper__control">
-                <input type="number" class="map-spatial-stepper__input" value="10" min="0" aria-label="카메라 절대고도">
-                <span class="map-spatial-stepper__unit">m</span>
-                <button type="button" class="map-spatial-stepper__btn" aria-label="증가">+</button>
-                <button type="button" class="map-spatial-stepper__btn" aria-label="감소">-</button>
+        <div class="map-sidebar__content">
+          <div class="map-section-card__group">
+            <div class="map-card__row">
+              <span class="map-card__row-label width-130">카메라 절대고도</span>
+              <div class="map-card__stepper">
+                <input type="number" class="map-ui-input" value="10" min="0" aria-label="카메라 절대고도">
+                <span class="map-card__unit">m</span>
+                <button type="button" class="map-ui-btn--minus" aria-label="감소"></button>
+                <button type="button" class="map-ui-btn--plus" aria-label="증가"></button>
               </div>
             </div>
+
+            <div class="map-visibility__colors">
+              <div class="map-card__row">
+                <span class="map-card__row-label">색상지정</span>
+                <div class="map-card__color-picker">
+                  <label class="map-card__color-picker-item">
+                    <input type="color" name="color" value="#a8c5e2">
+                    <span class="map-card__color-picker-item-label">하늘</span>
+                  </label>  
+                  <label class="map-card__color-picker-item">
+                    <input type="color" name="color" value="#b5a98e">
+                    <span class="map-card__color-picker-item-label">지형 및 건물</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </section>
+        </div>
 
         <div class="sidebar__footer">
           <button type="button" class="sidebar__footer-btn">초기화</button>
