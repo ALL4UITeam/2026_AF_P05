@@ -1,39 +1,39 @@
 ﻿
 // ===== 관심지역 패널 =====
-.map-floating-search{
-  position: absolute;
-  left: 320px;
-  top: 20px;
-  &__input{
-    position: relative;
-    input{
-      width: 387px;
-      height: 48px;
-      display: block;
-      background-color: #fff;
-      border-radius: 999px;
-      border: 1px solid #5649ff;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #1a1a1a;
-      &::placeholder{
-        color: #999;
-      }
-    }
-    button{
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      background: url('../images/map/ico_search_16_01.png') no-repeat center center;
-      width: 20px;
-      height: 20px;
-    }
-  }
-}
+// .map-floating-search{
+//   position: absolute;
+//   left: 320px;
+//   top: 20px;
+//   &__input{
+//     position: relative;
+//     input{
+//       width: 387px;
+//       height: 48px;
+//       display: block;
+//       background-color: #fff;
+//       border-radius: 999px;
+//       border: 1px solid #5649ff;
+//       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+//       padding: 10px 20px;
+//       font-size: 14px;
+//       font-weight: 500;
+//       color: #1a1a1a;
+//       &::placeholder{
+//         color: #999;
+//       }
+//     }
+//     button{
+//       position: absolute;
+//       right: 20px;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       z-index: 10;
+//       background: url('../images/map/ico_search_16_01.png') no-repeat center center;
+//       width: 20px;
+//       height: 20px;
+//     }
+//   }
+// }
 
 #userPanel,
 #dronePanel,

@@ -293,7 +293,91 @@
 		<button type="button" class="map-search-sidebar__open" data-target="themePanel">열기</button>
 	</aside>
 
+	<div class="map-floating-search">
+		<div class="map-floating-search__inner">
+			<input type="text" class="floating-search__input" placeholder="검색어 입력">
+			<!-- del 버튼 누르면 검색어 지우기 -->
+			<button type="button" class="floating-search__btn del">검색</button>
+		</div>
+	</div>
 
+	<!-- .short-mode 축소 -->
+	<div class="map-result-panel is-open">
+		<div class="map-result-control">
+			<button type="button" class="map-result-control__btn" data-result-control-toggle>열고닫기</button>
+		</div>
+		<header class="mrp-top">
+			<p class="mrp-q">검색어 <strong class="mrp-kw">삼성</strong></p>
+			<div class="mrp-bar">
+				<select name="" id="" class="map-ui-select" title="검색 조건">
+					<option value="">전체</option>
+					<option value="">명칭</option>
+					<option value="">도로명</option>
+					<option value="">지번</option>
+				</select>
+				<p class="mrp-sum">총 <strong>128,488</strong></p>
+			</div>
+		</header>
+		<div class="mrp-main">
+			<section class="mrp-sec">
+				<h3 class="mrp-st">명칭 <strong>48,891</strong><em>건</em></h3>
+				<ul class="mrp-ul">
+					<li class="mrp-li">
+							<button type="button" class="mrp-fav is-active" aria-label="즐겨찾기"></button>
+						<div class="mrp-bd">
+							<p class="mrp-t"><strong class="mrp-t-name">삼성</strong> (정류장)</p>
+							<p class="mrp-c">건물 <i class="mrp-c-ico"></i> 공공문화시설</p>
+							<div class="mrp-row">
+								<span class="mrp-bg mrp-bg--j">지번</span>
+								<p class="mrp-txt">경기도 수원시 영통구 <mark class="mrp-hit"><span>삼성</span></mark>로 129 (원천동)</p>
+							</div>
+						</div>
+					</li>
+					<li class="mrp-li is-active">
+						<button type="button" class="mrp-fav" aria-label="즐겨찾기"></button>
+						<div class="mrp-bd">
+							<p class="mrp-t"><strong class="mrp-t-name">삼성</strong> (하이패스)IC</p>
+							<p class="mrp-c">건물 &gt; 공공문화시설</p>
+							<div class="mrp-row">
+								<span class="mrp-bg mrp-bg--j">지번</span>
+								<p class="mrp-txt">경기도 화성시 팔탄면 <mark class="mrp-hit"><span>삼성</span></mark>리 162-4</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="mrp-sec">
+				<h3 class="mrp-st">도로명 <strong>32,104</strong>건</h3>
+				<ul class="mrp-ul">
+					<li class="mrp-li mrp-li--row">
+						<span class="mrp-bg mrp-bg--r">도로명</span>
+						<p class="mrp-txt">경기도 수원시 영통구 <mark class="mrp-hit"><span>삼성</span></mark>로 129 (원천동)</p>
+						<button type="button" class="mrp-fav" aria-label="즐겨찾기"></button>
+					</li>
+					<li class="mrp-li mrp-li--row">
+						<span class="mrp-bg mrp-bg--r">도로명</span>
+						<p class="mrp-txt">서울특별시 서초구 서초대로74길 11 (서초동)</p>
+						<button type="button" class="mrp-fav" aria-label="즐겨찾기"></button>
+					</li>
+				</ul>
+			</section>
+			<section class="mrp-sec">
+				<h3 class="mrp-st">지번 <strong>47,493</strong>건</h3>
+				<ul class="mrp-ul">
+					<li class="mrp-li mrp-li--row">
+						<span class="mrp-bg mrp-bg--j">지번</span>
+						<p class="mrp-txt">경기도 수원시 영통구 원천동 321-5</p>
+						<button type="button" class="mrp-fav" aria-label="즐겨찾기"></button>
+					</li>
+					<li class="mrp-li mrp-li--row">
+						<span class="mrp-bg mrp-bg--j">지번</span>
+						<p class="mrp-txt">서울특별시 서초구 서초동 1321-6</p>
+						<button type="button" class="mrp-fav" aria-label="즐겨찾기"></button>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
 
 	<!-- 우측: 지도 영역 (전체 채움) -->
 	<div class="map-area">

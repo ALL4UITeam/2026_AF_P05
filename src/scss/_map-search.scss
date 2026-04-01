@@ -983,20 +983,7 @@ $map-menu-panel-width: 240px;
 
 /* 토지검색: 백드롭 없음 — 지도 영역 위 연쇄 플로트 */
 .map-search-page {
-	.map-area .lnd-stack.map-ui-modal-backdrop {
-		position: absolute;
-		inset: 0;
-		z-index: 40;
-		background: transparent !important;
-		-webkit-backdrop-filter: none !important;
-		backdrop-filter: none !important;
-		align-items: flex-start;
-		justify-content: flex-start;
-		flex-direction: column;
-		padding: 20px 0;
-		gap: 12px;
-		left: 380px;
-	}
+	
 
 	.lnd-rslt {
 		width: 320px;

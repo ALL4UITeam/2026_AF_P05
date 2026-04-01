@@ -481,3 +481,319 @@
     strong { color: #4f46e5; font-weight: 700; }
   }
 }
+
+/*** 검색 결과 패널 (.map-result-panel · 자식 .mrp-*) ***/
+.map-result-panel {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 11;
+  width: 320px;
+  height: calc(100% - 120px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #f5f6f8;
+  transition: all 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  &.is-open{
+    left: 380px;
+    visibility: visible;
+    opacity: 1;
+  }
+  &.short-mode{
+    height: 60px;
+    .mrp-bar{display: none;}
+    .mrp-main{display: none;}
+    .mrp-top{
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .map-result-control button{
+      transform: rotate(0deg);
+      transform-origin: center;
+    }
+  }
+  .map-result-control{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateY(-100%) translateX(-50%);
+    width: 98px;
+    height: 27px;
+    background: url('../images/map/result-panel-control.png') no-repeat center center;
+    button{
+      width: 100%;
+      height: 100%;
+      background: url('../images/map/result-panel-control-btn.png') no-repeat center center;
+      font-size: 0;
+      transition: transform 0.2s;
+      transform: rotate(180deg);
+      transform-origin: center;
+      
+    }
+  }
+  
+
+  .mrp-top {
+    padding: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbe3;
+
+    select{
+      width: 90px;
+      height: 30px;
+      font-size: 14px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  
+  .mrp-q{
+    font-weight: 600;
+    font-size: 18px;
+    color: #111;
+    padding-bottom: 25px;
+    strong{
+      position: relative;
+      color: #6b5ce7;
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background-color: #f3d5f9;
+        z-index: -1;
+      }
+    }
+  }
+
+  
+
+  .mrp-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  .mrp-sum {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    strong {
+      font-weight: 600;
+      font-size: 14px;
+      color: #5e5ce6;
+    }
+  }
+
+  .mrp-main {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .mrp-sec + .mrp-sec {
+    margin-top: 20px;
+  }
+
+  .mrp-st {
+    font-weight: 600;
+    color: #000;
+    font-size: 16px;
+    padding-bottom: 10px;
+    strong{
+      color: #5e5ce6;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    em{
+      font-size: 14px;
+    }
+  }
+
+  .mrp-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+  }
+
+  .mrp-li {
+    position: relative;
+    background: #fff;
+    border: 1px solid #dbdbe3;
+    border-radius: 5px;
+    padding: 12px;
+    
+
+    &.is-active {
+      background: #f3f1ff;
+      border-color: #6b5ce7;
+    }
+  }
+
+  .mrp-fav {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 15px;
+    height: 15px;
+    background: url('../images/map/mrp-ico-star-o.png') no-repeat center center;
+    &.is-active {
+      background-image: url('../images/map/mrp-ico-star.png');
+    }
+  }
+
+  .mrp-bd {
+    min-width: 0;
+  }
+
+  .mrp-t {
+    font-weight: 700;
+    color: #6b5ce7;
+    font-size: 14px;
+    padding-bottom: 6px;
+  }
+  .mrp-t-name{
+    position: relative;
+    color: #6b5ce7;
+    font-weight: 700;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: #f3d5f9;
+      z-index: -1;
+    }
+  }
+
+  .mrp-c {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    i{
+      width: 5px;
+      height: 8px;
+      background: url('../images/map/mrp-ico-gt.png') no-repeat center center;
+    }
+  }
+  .mrp-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .mrp-bg {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 42px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .mrp-bg--j {
+    background: #82868e;
+  }
+
+  .mrp-bg--r {
+    background: #92a1ed;
+  }
+
+  .mrp-txt {
+    margin: 0;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+
+  .mrp-hit {
+    padding: 0 2px;
+    border-radius: 2px;
+    font-weight: 700;
+    color: #6b5ce7;
+    position: relative;
+    background: none;
+    span{
+      font-weight: 700;
+      color: #6b5ce7;
+      position: relative;
+      z-index: 2;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: #f3d5f9;
+      z-index: 1;
+    }
+  }
+
+  .mrp-li--row {
+    display: flex;
+    gap: 8px;
+    padding: 10px 40px 10px 10px;
+
+    .mrp-txt {
+      flex: 1;
+      min-width: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .mrp-ico {
+    display: inline-block;
+    flex-shrink: 0;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .mrp-ico--down {
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    background-image: url('../images/map/mrp-ico-down.png');
+  }
+
+  .mrp-ico--star {
+    width: 18px;
+    height: 18px;
+    background-image: url('../images/map/mrp-ico-star.png');
+  }
+
+  .mrp-ico--star-o {
+    width: 18px;
+    height: 18px;
+    background-image: url('../images/map/mrp-ico-star-o.png');
+  }
+}
+

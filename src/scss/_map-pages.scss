@@ -806,4 +806,42 @@
 }
 
 
-
+.map-floating-search{
+  position: absolute;
+  top: 20px;
+  left: 380px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.map-floating-search__inner{
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #5a4bff;
+  border-radius: 999px;
+  background: #fff;
+  width: 280px;
+}
+.floating-search__input{
+  width: 100%;
+  padding: 0 20px;
+  height: 46px;
+  background: transparent;
+  border: 0;
+}
+.floating-search__btn{
+  font-size: 0;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('../images/map/search-btn.png') no-repeat center center;
+  &.del{
+    background-image: url('../images/map/search-del.png');
+  }
+}
