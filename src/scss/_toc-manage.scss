@@ -1,5 +1,12 @@
-// src/scss/_toc-manage.scss — toc-manage.html 전용 (페이지 스코프)
+﻿// src/scss/_toc-manage.scss — toc-manage.html 전용 (페이지 스코프)
 @use 'toc-vars' as *;
+
+// TOC 트리 가이드(세로선 + 행 강조)
+$toc-tree-rail: #d8dde3;
+$toc-tree-rail-left-manage: 14px;
+$toc-tree-body-pad-manage: 36px;
+$toc-tree-rail-left-search: 11px;
+$toc-tree-body-pad-search: 30px;
 
 // ── 전체 카드 레이아웃 ──
 .toc-manage-page {
@@ -93,18 +100,32 @@
 }
 
 .toc-manage-page__group-body {
-	padding: 4px 0px 00px 20px;
+	padding: 4px 0 0 $toc-tree-body-pad-search;
 	border-top: 1px solid #f0f1f3;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 12px;
+		top: 5px;
+		bottom: 0;
+		width: 2px;
+		background: $toc-tree-rail;
+		z-index: 0;
+		pointer-events: none;
+	}
 }
 
-// 서브그룹 카드
+// 서브그룹 카드 (트리 가이드 행 강조가 좌측으로 살짝 나감)
 .toc-manage-page__sub-card {
 	margin-bottom: 6px;
 	background: #fff;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .toc-manage-page__sub-header {
+	position: relative;
 	display: flex;
 	align-items: center;
 	padding: 10px 14px;
@@ -123,15 +144,42 @@
 	span:first-child {
 		flex: 1;
 	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: calc(-1 * (#{$toc-tree-body-pad-search} - #{$toc-tree-rail-left-search}));
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: $toc-primary;
+		border-radius: 2px 0 0 2px;
+		z-index: 1;
+		pointer-events: none;
+	}
 }
 
 .toc-manage-page__sub-body {
-	padding: 4px 0 0px 20px;
+	padding: 4px 0 0 $toc-tree-body-pad-search;
 	border-top: 1px solid #f0f1f3;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 12px;
+		top: 5px;
+		bottom: 0;
+		width: 2px;
+		background: $toc-tree-rail;
+		z-index: 0;
+		pointer-events: none;
+	}
 }
 
 // 레이어 행
 .toc-manage-page__layer-row {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -146,7 +194,20 @@
 	&:hover {
 		background: #f3f4f6;
 	}
-
+	&:first-child{
+		&::before {
+			content: '';
+			position: absolute;
+			left: calc(-1 * (#{$toc-tree-body-pad-search} - #{$toc-tree-rail-left-search}));
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background: rgba($toc-primary, 0.65);
+			border-radius: 2px 0 0 2px;
+			z-index: 1;
+			pointer-events: none;
+		}
+	}
 	&.is-active {
 		background: $toc-primary-bg;
 		color: $toc-primary;
@@ -344,13 +405,27 @@
 }
 
 .toc-manage-page__edit-body {
-	padding: 4px 12px 8px 20px;
+	position: relative;
+	padding: 4px 0 0px $toc-tree-body-pad-manage;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 15px;
+		top: 5px;
+		bottom: 0;
+		width: 2px;
+		background: $toc-tree-rail;
+		z-index: 0;
+		pointer-events: none;
+	}
 }
 
 // 편집 탭: 2~3뎁스 폴더 트리 (헤더 + data-toc-toggle / body)
+// overflow: 트리 가이드(::before)가 패딩 구간으로 나가므로 hidden 금지
 .toc-manage-page__edit-folder {
 	margin-bottom: 6px;
-	overflow: hidden;
+	overflow: visible;
 	border-radius: 6px;
 
 	&:last-child {
@@ -367,10 +442,11 @@
 }
 
 .toc-manage-page__edit-folder-header {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	padding: 7px 10px;
+	padding: 9px 12px;
 	font-size: 12px;
 	font-weight: 600;
 	color: #374151;
@@ -378,7 +454,7 @@
 	transition: background 0.15s;
 	border-radius: 6px;
 	background: #f8f9fb;
-
+	border: 1px solid #e3e4e6;
 	&:hover {
 		background: #f3f4f6;
 	}
@@ -386,6 +462,19 @@
 	.toc-manage-page__arrow {
 		margin-left: auto;
 		flex-shrink: 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: calc(-1 * (#{$toc-tree-body-pad-manage} - #{$toc-tree-rail-left-manage}));
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: $toc-primary;
+		border-radius: 2px 0 0 2px;
+		z-index: 1;
+		pointer-events: none;
 	}
 }
 
@@ -406,8 +495,21 @@
 }
 
 .toc-manage-page__edit-folder-body {
-	padding: 4px 0 2px 14px;
+	position: relative;
+	padding: 4px 0 0px $toc-tree-body-pad-manage;
 	margin-top: 2px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 15px;
+		top: 5px;
+		bottom: 0;
+		width: 2px;
+		background: $toc-tree-rail;
+		z-index: 0;
+		pointer-events: none;
+	}
 
 	.toc-manage-page__edit-folder--nested > .toc-manage-page__edit-folder-header {
 		background: #fff;
@@ -437,6 +539,7 @@
 }
 
 .toc-manage-page__edit-layer {
+	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -449,6 +552,21 @@
 	&:hover {
 		background: #f9fafb;
 	}
+	&:first-child{
+		&::before {
+			content: '';
+			position: absolute;
+			left: calc(-1 * (#{$toc-tree-body-pad-manage} - 15px ));
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background: $toc-primary;
+			border-radius: 2px 0 0 2px;
+			z-index: 1;
+			pointer-events: none;
+		}
+	}
+	
 
 	> .chkbox {
 		flex-shrink: 0;
