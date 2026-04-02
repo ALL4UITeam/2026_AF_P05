@@ -522,8 +522,7 @@
 	// ---- 탭 (검색/결과 등) ----
 	.map-ui-tabs {
 		display: flex;
-		border: 1px solid #dbdbe3;
-		background-color: #ffffff;
+		background-color: #e9ecf3;
 		border-radius: 6px;
 		overflow: hidden;
 	}
@@ -559,6 +558,7 @@
 	.map-ui-tabs__item.is-active {
 		span{
 			color: #563dff;
+			font-weight: bold;
 		}
 		&::after{
 			border-radius: 6px;
@@ -1061,6 +1061,11 @@
 		&:before{
 			line-height: 1;
 			content: '?';
+		}
+		&.Ex-mark{
+			&:before{
+				content: '!';
+			}
 		}
 	}
 	.map-ui-chart-card__note{
