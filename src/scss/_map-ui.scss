@@ -522,9 +522,13 @@
 	// ---- 탭 (검색/결과 등) ----
 	.map-ui-tabs {
 		display: flex;
-		background-color: #e9ecf3;
+		border: 1px solid #dbdbe3;
+		background: #fff;
 		border-radius: 6px;
 		overflow: hidden;
+		&.gray-tabs{
+			background-color: #e9ecf3;
+		}
 	}
 
 	.map-ui-tabs__item {

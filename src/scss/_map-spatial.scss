@@ -1728,11 +1728,10 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 16px;
-		padding: 14px 16px;
-		background: #fff;
-		border: 1px solid #e2e8f0;
-		border-radius: 8px 8px 0 0;
-		border-bottom: 4px solid #573eff;
+		padding: 20px;
+		background: #f5f6ff;
+		border: 1px solid #e0e7ff;
+		border-radius: 5px;
 	}
 
 	.map-spatial-slope-result__meta-label {
@@ -1740,7 +1739,7 @@
 		min-width: 0;
 		font-size: 15px;
 		font-weight: 500;
-		color: #573eff;
+		color: #000;
 		letter-spacing: -0.02em;
 	}
 
@@ -1767,13 +1766,8 @@
 	}
 
 	.map-spatial-slope-result__panel {
-		margin-top: 2px;
-		background: linear-gradient(165deg, #f8fafc 0%, #eef2f7 100%);
-		border: 1px solid #d8e0ea;
-		border-radius: 14px;
 		padding: 0;
 		overflow: hidden;
-		box-shadow: 0 2px 10px rgba(15, 23, 42, 0.07);
 	}
 
 	.map-spatial-slope-result__range-title {
@@ -1781,32 +1775,19 @@
 		align-items: center;
 		gap: 0;
 		margin: 0;
-		padding: 14px 16px 12px;
+		margin-bottom: 15px;
 		font-size: 14px;
 		font-weight: 700;
 		color: #334155;
 		letter-spacing: -0.02em;
-		background: rgba(255, 255, 255, 0.65);
-		border-bottom: 1px solid rgba(148, 163, 184, 0.35);
-
-		&::before {
-			content: "";
-			flex-shrink: 0;
-			width: 3px;
-			height: 15px;
-			margin-right: 10px;
-			border-radius: 2px;
-			background: linear-gradient(180deg, #5a4aff 0%, #3f3dff 100%);
-		}
 	}
 
 	.map-spatial-slope-result__table {
-		margin: 12px;
 		background: #fff;
 		border: 1px solid #e2e8f0;
 		border-radius: 10px;
 		overflow: hidden;
-		box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+		
 	}
 
 	.map-spatial-slope-result__thead,
@@ -1828,6 +1809,9 @@
 
 		> span:not(.map-spatial-slope-result__thead-swatch):last-child {
 			text-align: right;
+		}
+		span{
+			color:#000;
 		}
 	}
 
