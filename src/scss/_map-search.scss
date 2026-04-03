@@ -637,8 +637,10 @@ $map-menu-panel-width: 240px;
 }
 .map-basemap__tabs {
 	display: flex;
-	gap: 4px;
-	margin-bottom: 10px;
+	background-color: #e9ecf3;
+	border-radius: 6px;
+	overflow: hidden;
+	margin-bottom: 12px;
 }
 .map-basemap__tab {
 	display: block;
@@ -657,10 +659,10 @@ $map-menu-panel-width: 240px;
 	color: #333;
 }
 .map-basemap__tab.is-active {
-	color: #fff;
+	color: #563dff;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-	background:linear-gradient(to right, #7b68ff 0%, #573eff 100%);
-	border-color: #ddd;
+	border-color: #563dff;
+	background: #fff;
 }
 .map-basemap__panels { margin-bottom: 10px; }
 .map-basemap__panel {
