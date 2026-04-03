@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 위원회 추가 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1128" id="popup1" style="display:block; height:560px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>위원회 추가 <span>새로운 위원회 심의 정보 등록</span></h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- 일자 선택 -->
+			<h4 class="type03">일자 선택</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col style="width:410px;">
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="">연도</label> <span class="essen">*</span></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>2025</option>
+								<option>2025</option>
+								<option>2025</option>
+							</select>
+						</td>
+						<th><label for="">심의일자</label> <span class="essen">*</span></th>
+						<td>
+							<input type="date" name="" id="" class="type01" value="">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 일자 선택 -->
+
+			<!-- 심의 안건 -->
+			<h4 class="type02">심의 안건</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col>
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="">청구대상토지</label> <span class="essen">*</span></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="예: 포항시 남구 대도동 123-45">
+						</td>
+						<th><label for="">청구인</label> <span class="essen">*</span></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="" placeholder="내용 입력">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">측정자</th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="" placeholder="내용 입력">
+						</td>
+						<th><label for="">지적위원회 심의결과</label> <span class="essen">*</span></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">중앙적부 재심사</label></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</td>
+						<th><label for="">비고</label></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="" placeholder="내용 입력">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 심의 안건 -->
+
+			<!-- 청구 내용 -->
+			<h4 class="type02">청구 내용</h4>
+
+			<textarea name="" id="" class="type01" placeholder="내용을 입력해주세요."></textarea>
+			<!-- 청구 내용 -->
+
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+				<button type="button" name="" id="" class="com-btn xl orange">저장</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 위원회 추가 -->
+
+	<div class="overlay"></div>
+</body>
+</html>

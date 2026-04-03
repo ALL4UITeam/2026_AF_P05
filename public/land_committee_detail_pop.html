@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 위원회 상세 정보 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1128" id="popup1" style="display:block; height:600px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>위원회 상세 정보 <span>새로운 위원회 심의 정보 등록</span></h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- 일자 선택 -->
+			<h4 class="type03">일자 선택</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col style="width:410px;">
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="year">연도</label></th>
+						<td>
+							<input type="text" name="" id="year" class="type02" value="2025년" readonly>
+						</td>
+						<th><label for="">심의일자</label></th>
+						<td>
+							<input type="text" name="" id="year" class="type02" value="2025-09-05" readonly>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 일자 선택 -->
+
+			<!-- 첨부파일 관리 -->
+			<h4 class="type02">첨부파일 관리</h4>
+
+			<div class="file-register">
+				<div class="file">
+					<h3>의결서</h3>
+
+					<div class="s-info type03 file">
+						<div class="file-name">
+							<p class="name">파일명파일명</p>
+							<p class="file-type">pdf파일</p>
+						</div>
+
+						<button type="button" name="" id="" class="com-btn md type02 grayblue">다운</button>
+					</div>
+				</div>
+
+				<div class="file">
+					<h3>회의록</h3>
+					
+					<div class="s-info type03 file">
+						<div class="file-name">
+							<p class="name">파일명파일명</p>
+							<p class="file-type">pdf파일</p>
+						</div>
+
+						<button type="button" name="" id="" class="com-btn md type02 grayblue">다운</button>
+					</div>
+				</div>
+			</div>
+			<!-- 첨부파일 관리 -->
+
+			<!-- 처리 안건 목록 -->
+			<h4 class="type02">처리 안건 목록 (2건)</h4>
+
+			<!-- tbl -->
+			<div class="tbl-wrap">
+				<table class="tbl">
+					<colgroup>
+						<col style="width:5%;">
+						<col>
+						<col style="width:15%;">
+						<col style="width:15%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">청구대상토지</th>
+							<th scope="col">청구인</th>
+							<th scope="col">심의결과</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>경북 문경시 마상면 모곡리 산 12-4</td>
+							<td>김길동</td>
+							<td>
+								<span class="mapinfo red">기각</span>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>경북 문경시 마상면 모곡리 산 12-4</td>
+							<td>김길동</td>
+							<td>
+								<span class="mapinfo red">기각</span>
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>경북 문경시 마상면 모곡리 산 12-4</td>
+							<td>김길동</td>
+							<td>
+								<span class="mapinfo red">기각</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- tbl -->
+			<!-- 처리 안건 목록 -->
+
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area lr">
+				<button type="button" name="" id="" class="com-btn xl red">삭제</button>
+
+				<div>
+					<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+					<button type="button" name="" id="" class="com-btn xl orange">수정</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 위원회 상세 정보 -->
+
+	<div class="overlay"></div>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+<style>
+	#mapSvg .cls-3{fill:#fff; cursor:pointer; transition:.15s; user-select:none;}
+	#mapSvg .cls-3:hover{fill:url(#blueGrad); filter:url(#dropShadow);}
+	#mapSvg .cls-3.is-active{fill:url(#blueGrad); filter:url(#dropShadow);}
+
+	/* 텍스트(길/라벨)가 path로 들어간 경우 대비 */
+	#mapSvg .cls-2 {
+	  pointer-events: none; /* 텍스트 위에 올려도 클릭은 면(cls-3)로 */
+	}
+
+	/* 기본 라벨 색 */
+	#mapSvg .cls-2{ fill:#777; pointer-events:none }
+
+	/* 활성화된 지역에 속한 라벨만 검정 */
+	#mapSvg .cls-2.label-active{fill:#000 !important;}
+</style>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- tab button -->
+		<div class="tab-menu-btn">
+			<button type="button" name="" id="" class="active">지적측량 적부심사</button>
+			<button type="button" name="" id="">의결서 조회</button>
+		</div>
+		<!-- tab button-->
+
+		<!-- content -->
+		<div class="content-wrap row">
+			<div class="cont-box-wrap type04">
+				<div class="cont-box">
+					<div class="tit-wrap">
+						<h2 class="type02">지적측량 적부심사 청구서 관리</h2>
+
+						<button type="button" name="" id="" class="com-btn orange xl">청구서 등록</button>
+					</div>	
+				</div>
+			</div>
+
+			<!-- 지적측량 적부심사 청구서 관리 -->
+			<div class="cont-box-wrap w100per">
+				<div class="cont-box haspageing">
+					<!-- tbl -->
+					<div class="tbl-wrap">
+						<table class="tbl">
+							<colgroup>
+								<col style="width:4%;">					
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col>
+								<col style="width:12%;">
+								<col style="width:10%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">접수일자</th>
+									<th scope="col">처리결과</th>
+									<th scope="col">대상시군</th>
+									<th scope="col">심의일자</th>
+									<th scope="col">청구대상</th>
+									<th scope="col">청구인명</th>
+									<th scope="col">진행상태</th>
+									<th scope="col">D-Day</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo blue">진행</span>
+									</td>
+									<td>
+										<div class="d-day">
+											<span class="mapinfo green">D-21</span>
+											<p class="txt03">회 부</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo green">완료</span>
+									</td>
+									<td>
+										<div class="d-day">
+											<span class="mapinfo green">D-21</span>
+											<p class="txt03">심의/의결</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo gray">취소</span>
+									</td>
+									<td>
+										-
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo blue">진행</span>
+									</td>
+									<td>
+										<div class="d-day">
+											<span class="mapinfo green">D-21</span>
+											<p class="txt03">회 부</p>
+										</div>
+									</td>         
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>2026-08-21</td>
+									<td>인용</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo green">완료</span>
+									</td>
+									<td>
+										<div class="d-day">
+											<span class="mapinfo green">D-50</span>
+											<p class="txt03">심의/의결</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo gray">취소</span>
+									</td>
+									<td>
+										-
+									</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo blue">진행</span>
+									</td>
+									<td>
+										<div class="d-day">
+											<span class="mapinfo green">D-21</span>
+											<p class="txt03">회 부</p>
+										</div>
+									</td>         
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo gray">취소</span>
+									</td>
+									<td>
+										-
+									</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo green">완료</span>
+									</td>
+									<td>
+										<div class="d-day">
+											<span class="mapinfo green">D-21</span>
+											<p class="txt03">심의/의결</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo gray">취소</span>
+									</td>
+									<td>
+										-
+									</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo gray">취소</span>
+									</td>
+									<td>
+										-
+									</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>2026-08-21</td>
+									<td>기각</td>
+									<td>포항시</td>
+									<td>2026-02-02</td>
+									<td>경계복원측량</td>
+									<td>이영희</td>
+									<td>
+										<span class="mapinfo gray">취소</span>
+									</td>
+									<td>
+										-
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- tbl -->
+
+					<!-- paging -->
+					<div class="paging-wrap">
+						<ul class="paging">
+							<li><a class="prev first" href="#"></a></li>
+							<li><a class="prev" href="#"></a></li>
+							<li><a class="pLink active" href="#">1</a></li>
+							<li><a class="pLink" href="#">2</a></li>
+							<li><a class="pLink" href="#">3</a></li>
+							<li><a class="pLink" href="#">4</a></li>
+							<li><a class="pLink" href="#">5</a></li>
+							<li><a class="pLink" href="#">6</a></li>
+							<li><a class="pLink" href="#">7</a></li>
+							<li><a class="pLink" href="#">8</a></li>
+							<li><a class="pLink" href="#">9</a></li>
+							<li><a class="pLink" href="#">10</a></li>
+							<li><a class="next" href="#"></a></li>
+							<li><a class="next last" href="#"></a></li>
+						</ul>
+					</div>
+					<!-- paging -->
+				</div>
+			</div>
+			<!-- 지적측량 적부심사 청구서 관리 -->	
+		</div>
+		<!-- content -->
+
+		<!-- admin -->
+		<button type="button" name="" id="" class="admin-btn"></button>
+
+		<div class="admin-selbox"> 
+			<a href="#">사용자 숭인 관리</a>
+			<a href="#">사용자 그룹 관리</a>
+		</div>
+		<!-- admin -->
+	</div>
+
+</body>
+</html>

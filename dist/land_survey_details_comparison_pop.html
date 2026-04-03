@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<!-- <link href="css/select2.min.css" rel="stylesheet" /> -->
+<script src="js/lib/jquery-3.7.1.js"></script>
+<!-- <script src="js/lib/select2.min.js"></script> -->
+<script src="js/lib/jquery.floatThead.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+<div>
+	<!-- layerpop-wrap 토지내역 비교 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1340" id="popup1" style="display:block; height:800px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>토지내역 비교</h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<div class="tit-wrap type02">
+				<div class="tit-num">
+					<h3>남후면 단호리</h3>
+				</div>
+
+				<div class="legend-wrap">
+					<p class="tit">총 16건</p>
+					
+					<div class="legend type04 mr0">
+						<div>
+							<span class="dot04"></span>
+							<p>일치</p>
+							<p class="num">00건</p>
+						</div>
+
+						<div>
+							<span class="dot05"></span>
+							<p>불일치</p>
+							<p class="num">00건</p>
+						</div>
+
+						<div>
+							<span class="dot06"></span>
+							<p>누락</p>
+							<p class="num">00건</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- tbl -->
+			<div class="tbl-wrap scroll-x scroll mh575">
+				<table class="tbl h-scroll">
+					<colgroup>
+						<col style="width:80px">
+						<col style="width:50px">
+						<col style="width:100px">
+						<col style="width:60px">
+						<col style="width:80px">
+						<col style="width:120px">
+						<col style="width:50px">
+						<col style="width:80px">
+						<col style="width:150px">
+						<col style="width:90px">
+						<col style="width:140px">
+						<col style="width:50px">
+						<col style="width:90px">
+						<col style="width:90px">
+						<col style="width:90px">
+						<col style="width:90px">
+						<col style="width:90px">
+						<col style="width:150px">
+						<col style="width:280px">
+						<col style="width:100px">
+						<col style="width:100px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">지번</th>
+							<th scope="col" colspan="5">종전토지 지번별 조서</th>
+							<th scope="col" colspan="5">소유권 및 농지(인허가)</th>  
+							<th scope="col" colspan="11">소유권 및 농지(지적대장)</th>
+						</tr>
+						<tr> 
+							<th scope="col">연번</th>
+							<th scope="col">소재지</th>
+							<th scope="col">지목</th>
+							<th scope="col">면적(㎡)</th>
+							<th scope="col">비고</th>
+							<th scope="col">지목</th>
+							<th scope="col">대장면적</th>
+							<th scope="col">소유자</th>
+							<th scope="col">인허가유무</th>
+							<th scope="col">고유번호</th>
+							<th scope="col">지목</th>
+							<th scope="col">대장면적</th>
+							<th scope="col">좌표면적</th>
+							<th scope="col">공차내외</th>
+							<th scope="col">공차</th>
+							<th scope="col">오차</th>
+							<th scope="col">소유자</th>
+							<th scope="col">주소</th>
+							<th scope="col">소유권변동일자</th>
+							<th scope="col">공시지가</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>임야</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td class="red">대</td>
+							<td class="ar red">1,076</td>
+							<td class="green">엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot red po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td class="orange">대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot red po02 mr8"></i>71-2</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot orange po02 mr8"></i>1296-3</span>
+							</td>
+							<td>13</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot orange po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot orange po02 mr8"></i>71-10</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+						<tr>
+							<td class="al">
+								<span class="txt"><i class="dot green po02 mr8"></i>71-1</span>
+							</td>
+							<td>3</td>
+							<td>남후면 단호리</td>
+							<td>전</td>
+							<td class="ar">1,076</td>
+							<td class="al">-</td>
+							<td>대</td>
+							<td class="ar">1,076</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>농지</td>
+							<td>4715036027107110000</td>
+							<td>전</td>
+							<td class="ar">456</td>
+							<td class="ar">621.5</td>
+							<td>공차내</td>
+							<td class="ar">20.10</td>
+							<td class="ar">2.50</td>
+							<td>엘아이지넥스원주식회사</td>
+							<td>경기도 용인시 기흥구 마북로 207(마북동)</td>
+							<td>20180316</td>
+							<td class="ar">11,300</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- tbl -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+				<button type="button" name="" id="" class="com-btn green xl"><i class="ico-excel" aria-hidden="true"></i> 다운로드</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 토지내역 비교 -->
+
+
+	<div class="overlay"></div>
+
+	<!-- display:none → show 렌더 타이밍 이슈로 floatThead 공통 초기화가 적용되지 않아 레이어팝업에서 테이블 헤더 고정이 안되는 현상 발생 -->
+	<script>
+		$(function(){
+			const $table = $('#popup1 .tbl-wrap.scroll table.tbl.h-scroll');
+
+			if (typeof $.fn.floatThead !== 'function') {
+				console.error('floatThead not loaded. check js/lib/jquery.floatThead.min.js');
+				return;
+			}
+
+			$table.floatThead({
+				scrollContainer: function($t){
+				return $t.closest('.tbl-wrap.scroll'); 
+				},
+				position: 'absolute' 
+			});
+
+			setTimeout(function(){
+				$table.floatThead('reflow');
+			}, 0);
+
+			$(window).on('resize', function(){
+				$table.floatThead('reflow');
+			});
+		});
+	</script>
+
+</body>
+</html>

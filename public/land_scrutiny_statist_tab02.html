@@ -127,7 +127,7 @@
 								<!-- fileup -->
 
 								<div class="form-wrap right">
-									<button type="button" name="" id="" class="uphistory-btn active"><i class="ico-history" aria-hidden="true"></i> 업로드 이력 관리 <span>(2건)</span></button>
+									<button type="button" name="" id="" class="dropdown-btn uphistory-btn active"><i class="ico-history" aria-hidden="true"></i> 업로드 이력 관리 <span>(2건)</span></button>
 								</div>
 
 								<!-- 업로드 이력 목록 -->
@@ -3593,147 +3593,147 @@
 	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script>
 
 	<script>
-  Chart.register(ChartDataLabels);
+		Chart.register(ChartDataLabels);
 
-  // legend 위 간격을 "강제로" 확보해서, 라벨/하단 텍스트와 겹침 방지
-  const legendSpacer = {
-	id: 'legendSpacer',
-	beforeInit(chart, args, opts) {
-	  const add = (opts && opts.height) ? opts.height : 0;
-	  if (!add) return;
+		// legend 위 간격을 "강제로" 확보해서, 라벨/하단 텍스트와 겹침 방지
+		const legendSpacer = {
+			id: 'legendSpacer',
+			beforeInit(chart, args, opts) {
+			const add = (opts && opts.height) ? opts.height : 0;
+			if (!add) return;
 
-	  const fit = chart.legend.fit;
-	  chart.legend.fit = function () {
-		fit.bind(chart.legend)();
-		this.height += add; // ✅ legend 영역 증가 = legend가 위로 올라감
-	  };
-	}
-  };
-  Chart.register(legendSpacer);
+			const fit = chart.legend.fit;
+			chart.legend.fit = function () {
+				fit.bind(chart.legend)();
+				this.height += add; // legend 영역 증가 = legend가 위로 올라감
+			};
+			}
+		};
+		Chart.register(legendSpacer);
 
-  // ===== 1) 공통 컬러 =====
-  const pieColor = [
-	"#A45A2E",  // 지급
-	"#F36C00",  // 미지급
-	"#D0A542"   // 검토중
-  ];
+		// ===== 1) 공통 컬러 =====
+		const pieColor = [
+			"#A45A2E",  // 지급
+			"#F36C00",  // 미지급
+			"#D0A542"   // 검토중
+		];
 
-  // ===== 옵션 =====
-  function getPieOption() {
-	return {
-	  responsive: true,
-	  maintainAspectRatio: false,
+		// ===== 옵션 =====
+		function getPieOption() {
+			return {
+			responsive: true,
+			maintainAspectRatio: false,
 
-	  // 딜레이(애니메이션) 제거
-	  animation: false,
-	  transitions: {
-		active: { animation: { duration: 0 } },
-		resize: { animation: { duration: 0 } },
-		show:   { animation: { duration: 0 } },
-		hide:   { animation: { duration: 0 } }
-	  },
+			// 딜레이(애니메이션) 제거
+			animation: false,
+			transitions: {
+				active: { animation: { duration: 0 } },
+				resize: { animation: { duration: 0 } },
+				show:   { animation: { duration: 0 } },
+				hide:   { animation: { duration: 0 } }
+			},
 
-	  // 바깥 라벨/legend 겹침 방지용 기본 여백
-	  layout: {
-		padding: { top: 20, right: 20, bottom: 20, left: 20 }
-	  },
+			// 바깥 라벨/legend 겹침 방지용 기본 여백
+			layout: {
+				padding: { top: 20, right: 20, bottom: 20, left: 20 }
+			},
 
-	  plugins: {
-		legend: {
-		  position: "bottom",
-		  labels: {
-			font: { size: 10 },
-			boxWidth: 9,
-			boxHeight: 9,
-			padding: 10,
-			usePointStyle: false
-		  }
-		},
+			plugins: {
+				legend: {
+				position: "bottom",
+				labels: {
+					font: { size: 10 },
+					boxWidth: 9,
+					boxHeight: 9,
+					padding: 10,
+					usePointStyle: false
+				}
+				},
 
-		legendBottomGap: {
-			height:30 
-		},
+				legendBottomGap: {
+					height:30 
+				},
 
-		tooltip: { enabled: false },
+				tooltip: { enabled: false },
 
-		datalabels: {
-		  // 실제 %로 표시
-		  formatter: (value, ctx) => {
-			const data = ctx.dataset.data;
-			const total = data.reduce((a,b)=>a+b,0);
-			if (total === 0) return "";
+				datalabels: {
+				// 실제 %로 표시
+				formatter: (value, ctx) => {
+					const data = ctx.dataset.data;
+					const total = data.reduce((a,b)=>a+b,0);
+					if (total === 0) return "";
 
-			const percent = Math.round((value / total) * 100);
-			if (percent === 0) return "";
+					const percent = Math.round((value / total) * 100);
+					if (percent === 0) return "";
 
-			const label = ctx.chart.data.labels[ctx.dataIndex];
-			return label + " " + percent + "%";
-		  },
+					const label = ctx.chart.data.labels[ctx.dataIndex];
+					return label + " " + percent + "%";
+				},
 
-		  font: { weight: "bold", size: 14 },
+				font: { weight: "bold", size: 14 },
 
-		  // 바깥으로
-		  anchor: "end",
-		  align: "end",
-		  offset: 13,
-		  clamp: false,
-		  clip: false,
+				// 바깥으로
+				anchor: "end",
+				align: "end",
+				offset: 13,
+				clamp: false,
+				clip: false,
 
-		  // 조각 색상과 동일
-		  color: (ctx) => ctx.dataset.backgroundColor[ctx.dataIndex]
+				// 조각 색상과 동일
+				color: (ctx) => ctx.dataset.backgroundColor[ctx.dataIndex]
+				}
+			}
+			};
 		}
-	  }
-	};
-  }
 
-  // ===== 차트 생성 함수 =====
-  function createPie(id, dataArr) {
-	return new Chart(document.getElementById(id), {
-	  type: "pie",
-	  data: {
-		labels: ["지급", "미지급", "검토중"],
-		datasets: [{
-		  data: dataArr,
-		  backgroundColor: pieColor,
-		  borderColor: "#fff",
-		  borderWidth: 2
-		}]
-	  },
-	  options: getPieOption()
+		// ===== 차트 생성 함수 =====
+		function createPie(id, dataArr) {
+			return new Chart(document.getElementById(id), {
+			type: "pie",
+			data: {
+				labels: ["지급", "미지급", "검토중"],
+				datasets: [{
+				data: dataArr,
+				backgroundColor: pieColor,
+				borderColor: "#fff",
+				borderWidth: 2
+				}]
+			},
+			options: getPieOption()
+			});
+		}
+
+
+		const statusPie1 = createPie("statusPie1", [54, 29, 18]);
+		const statusPie2 = createPie("statusPie2", [100, 89, 50]);
+		const statusPie3 = createPie("statusPie3", [54, 90, 118]);
+		const statusPie4 = createPie("statusPie4", [54, 29, 18]);
+		const statusPie5 = createPie("statusPie5", [100, 89, 50]);
+		const statusPie6 = createPie("statusPie6", [54, 90, 118]);
+
+
+	$('.tab-menu a').on('click', function (){
+		const target = $(this).data('target');
+
+		// 탭이 보이는 프레임 다음에 갱신 (한박자 늦음 최소화)
+		requestAnimationFrame(() => {
+			if (target === 'statsTab02') {
+				statusPie1.resize();
+				statusPie2.resize();
+				statusPie3.resize();
+			}
+			if (target === 'statsTab03') {
+				if(typeof barChart1 !== 'undefined') barChart1.resize();
+				if(typeof barChart2 !== 'undefined') barChart2.resize();
+				if(typeof barChart3 !== 'undefined') barChart3.resize();
+			}
+			if (target === 'statsTab04') {
+				statusPie4.resize();
+				statusPie5.resize();
+				statusPie6.resize();
+			}
+		});
 	});
-  }
-
-
-  const statusPie1 = createPie("statusPie1", [54, 29, 18]);
-  const statusPie2 = createPie("statusPie2", [100, 89, 50]);
-  const statusPie3 = createPie("statusPie3", [54, 90, 118]);
-  const statusPie4 = createPie("statusPie4", [54, 29, 18]);
-  const statusPie5 = createPie("statusPie5", [100, 89, 50]);
-  const statusPie6 = createPie("statusPie6", [54, 90, 118]);
-
-
-  $('.tab-menu a').on('click', function (){
-	const target = $(this).data('target');
-
-	// 탭이 보이는 프레임 다음에 갱신 (한박자 늦음 최소화)
-	requestAnimationFrame(() => {
-	  if (target === 'statsTab02') {
-		statusPie1.resize();
-		statusPie2.resize();
-		statusPie3.resize();
-	  }
-	  if (target === 'statsTab03') {
-		if(typeof barChart1 !== 'undefined') barChart1.resize();
-		if(typeof barChart2 !== 'undefined') barChart2.resize();
-		if(typeof barChart3 !== 'undefined') barChart3.resize();
-	  }
-	  if (target === 'statsTab04') {
-		statusPie4.resize();
-		statusPie5.resize();
-		statusPie6.resize();
-	  }
-	});
-  });
 
   	</script>
 
@@ -3913,46 +3913,46 @@
 
     <script>
 		const commonOptions = {
-		responsive:true,
-		maintainAspectRatio:false,
-		animation:false,
-		layout:{ padding:{ bottom:80 } },
-		plugins:{
-			legend:{
-			position:'bottom',
-			align:'center',
-			labels:{
-				font:{ size:10 },
-				boxWidth:9,
-				boxHeight:9,
-				padding:12
-			}
+			responsive:true,
+			maintainAspectRatio:false,
+			animation:false,
+			layout:{ padding:{ bottom:80 } },
+			plugins:{
+				legend:{
+				position:'bottom',
+				align:'center',
+				labels:{
+					font:{ size:10 },
+					boxWidth:9,
+					boxHeight:9,
+					padding:12
+				}
 			},
 			datalabels:{ display:false }
 		},
 		scales:{
 			// 선형 x축(막대 위치 직접 지정)
 			x:{
-			type:'linear',
-			min:0,
-			max:200,               // 폭(스케일) 조절용
-			grid:{ display:false },
-			ticks:{ display:false },
-			border:{ display:false }
+				type:'linear',
+				min:0,
+				max:200,               // 폭(스케일) 조절용
+				grid:{ display:false },
+				ticks:{ display:false },
+				border:{ display:false }
 			},
 			y:{
-			min:0,
-			max:1,
-			ticks:{ stepSize:0.25 },
-			grid:{ borderDash:[5,5] }
+				min:0,
+				max:1,
+				ticks:{ stepSize:0.25 },
+				grid:{ borderDash:[5,5] }
 			}
 		}
 	 };
 
 	// ===== 막대 스타일 공통 =====
 	const barStyle = {
-	borderRadius:4,
-	barThickness:90
+		borderRadius:4,
+		barThickness:90
 	};
 
 	const x1 = 60;

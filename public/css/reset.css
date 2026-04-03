@@ -46,7 +46,7 @@ input[type="search"]::placeholder{color:var(--placeColor); font-weight:normal;}
 input[type="checkbox"]{vertical-align:middle; opacity:0;}
 input[type="checkbox"] + label{cursor:pointer;}
 input[type="file"]{border:0}
-textarea{display:block; overflow-y:auto; width:100%; min-height:96px; padding:8px 12px; text-align:left; font-size:12px; background:#fff; color:#fff; border:1px solid #EDEDED; color:var(--BK-90); resize:none; line-height:18px;}
+textarea{display:block; overflow-y:auto; width:100%; min-height:68px; padding:8px 12px; text-align:left; font-size:12px; background:#fff; color:#fff; border:1px solid #EDEDED; color:var(--BK-90); resize:none; line-height:18px;}
 textarea:focus{outline:none; border:1px solid #EDEDED}
 textarea:disabled{border:1px solid #EDEDED; background:#F1F1F1; color:var(--BK-90);}
 hr{display:none}

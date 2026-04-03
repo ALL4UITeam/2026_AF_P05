@@ -153,18 +153,6 @@ $(document).ready(function(){
 		$(".popover-menu-wrap").toggleClass("active");
 	});
 
-	$(".top-menu > .system, .header-system-link").on("click", function(e){
-		e.preventDefault();
-		e.stopPropagation();
-		$(".mega-menu-wrap.system").toggleClass("active");
-	});
-
-	$(document).on("click", function(e){
-		if(!$(e.target).closest(".top-menu > .system, .header-system-link, .mega-menu-wrap.system").length){
-			$(".mega-menu-wrap.system").removeClass("active");
-		}
-	});
-
 	// 오른쪽 Map maptool active
 	$(".mapset-btn").on("click", function(){
 		$(".mapset-btn").removeClass("active");
@@ -210,8 +198,6 @@ $(document).ready(function(){
 
 	//dropdown
 	$(".dropdown-btn").on("click", function (e){
-		e.preventDefault();
-
 		const $this = $(this);
 		const $historycon = $this.closest('.cont-box').find(".drop-content");
 
@@ -223,6 +209,20 @@ $(document).ready(function(){
 			$historycon.hide();
 		}
 	});
+
+	//tooltip
+	$(document).on('click', '.tooltip', function(e){
+		e.stopPropagation(); // 이벤트 버블링 중단
+		
+		// 다른 활성화된 dropdown-btn 및 tooltip 닫기
+		$('.tooltip').removeClass('active').next('.tooltip-content').hide();
+		$('.tooltip').not(this).removeClass('active').parent().next('.tooltip-content').hide();
+
+		// 현재 클릭한 툴팁 토글
+		$(this).toggleClass('active');
+		$(this).parent().next('.tooltip-content').toggle();
+	});
+
 
 	$(".allcities-btn").on("click", function (e){
 		e.preventDefault();
@@ -277,6 +277,11 @@ $(document).ready(function(){
 		// 닫기
 		$container.find(".dropdown-btn").removeClass("active");
 		$container.find(".drop-content").hide();
+	});
+
+	//업로드 이력관리
+	$(".uphistory-btn").on("click", function (e){
+		$(this).closest('.cont-box').find('.up-history').toggle();
 	});
 
 	// file upload preview

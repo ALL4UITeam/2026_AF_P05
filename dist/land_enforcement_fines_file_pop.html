@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 파일 업로드 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w584" id="popup1" style="display:block; height:400px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>파일 업로드</h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- tbl -->
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="">연도</label></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>2026</option>
+								<option>2025</option>
+								<option>2024</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- tbl -->
+
+			<!-- 분기 -->
+			<h4 class="type02">분기</h4>
+
+			<fieldset class="ra-group">
+				<legend>허가구역 지정 유형</legend>
+
+				<div class="ra-list type02">
+					<div class="ra-item">
+						<input type="radio" name="quarter" id="quarter01" value="" checked="">
+						<label for="quarter01">1/4</label>
+					</div>
+
+					<div class="ra-item">
+						<input type="radio" name="quarter" id="quarter02" value="">
+						<label for="quarter02">2/4</label>
+					</div>
+
+					<div class="ra-item">
+						<input type="radio" name="quarter" id="quarter03" value="">
+						<label for="quarter03">3/4</label>
+					</div>
+
+					<div class="ra-item">
+						<input type="radio" name="quarter" id="quarter04" value="">
+						<label for="quarter04">4/4</label>
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="s-info type03">
+				<p class="fs12">선택된 기간</p>
+				<p class="fb">2026년 1/4 분기</p>
+			</div>
+
+			
+
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+				<button type="button" name="" id="" class="com-btn xl orange">파일 선택</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 파일 업로드 -->
+
+	<div class="overlay"></div>
+	
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<!-- <link href="css/select2.min.css" rel="stylesheet" /> -->
+<script src="js/lib/jquery-3.7.1.js"></script>
+<!-- <script src="js/lib/select2.min.js"></script> -->
+<script src="js/lib/jquery.floatThead.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+<div>
+	<!-- layerpop-wrap 지적측량 적부심사 청구서 상세 정보 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1340" id="popup1" style="display:block; height:800px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>지적측량 적부심사 청구서 상세 정보</h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con type03">
+			<div class="con-wrap gap12">
+				<div class="plans-list-wrap h614">
+
+					<div class="info-box type02 state-info">
+						<div class="s-info left">
+							<p class="tit">청구일자</p>
+							<p>2026-01-08 09:00</p>
+						</div>
+
+						<div class="s-info">
+							<p class="tit">처리상태</p>
+
+							<span class="mapinfo blue">진행</span>
+						</div>
+					</div>
+					
+					<!-- 청구인 정보 -->
+					<h4 class="type02">청구인 정보</h4>
+
+					<table class="tbl view type02">
+						<colgroup>
+							<col style="width:100px;">
+							<col>
+							<col style="width:100px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="name">청구인 성명</label></th>
+								<td>
+									<input type="text" name="" id="name" class="type02" value="홍길동" readonly="">
+								</td>
+								<th><label for="phone">전화번호</label></th>
+								<td>
+									<input type="text" name="" id="phone" class="type02" value="010-1234-5678" readonly="">
+								</td>
+							</tr>
+							<tr>
+								<th><label for="address">청구인 주소</label></th>
+								<td colspan="3">
+									<input type="text" name="" id="address" class="type02" value="경상북도 구미시 원평동 123-444" readonly="">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- 청구인 정보 -->
+
+					<!-- 토지 정보 -->
+					<h4 class="type02">토지 정보</h4>
+
+					<table class="tbl view type02">
+						<colgroup>
+							<col style="width:100px;">
+							<col>
+							<col style="width:100px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="address">토지 소재지</label></th>
+								<td colspan="3">
+									<input type="text" name="" id="address" class="type02" value="경상북도 구미시 원평동" readonly="">
+								</td>
+							</tr>
+							<tr>
+								<th><label for="name">지번</label></th>
+								<td>
+									<input type="text" name="" id="name" class="type02" value="12-34" readonly="">
+								</td>
+								<th><label for="phone">측량종류</label></th>
+								<td>
+									<input type="text" name="" id="phone" class="type02" value="분할측량" readonly="">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- 토지 정보 -->
+
+					<!-- 청구 사유 -->
+					<h4 class="type02">청구 사유</h4>
+
+					<textarea name="" id="" class="type01" value="" placeholder="내용을 입력해주세요.">2023년 경계복원측량 결과와 2024년 경계복원측량 결과 간 약 2m의 차이가 발생하여 측량 성과에 대한 적부심사를 청구합니다.</textarea>
+					<!-- 청구 사유 -->
+
+					<!-- 청구서 첨부파일 -->
+					<h4 class="type02">청구서 첨부파일</h4>
+
+					<div class="s-info type03 file">
+						<div class="file-name">
+							<p class="name">파일명파일명</p>
+							<p class="file-type">pdf파일</p>
+						</div>
+
+						<button type="button" name="" id="" class="com-btn md type02 grayblue">다운</button>
+					</div>
+
+					<!-- 추가자료 관리 -->
+					<div class="related-docu addfile">
+						<h4 class="type02">추가자료 관리</h4>
+			
+						<div class="info-box type02">
+							<!-- 조사측량 자료 (SHP) -->
+							<h4>조사측량 자료 (SHP)</h4>
+
+							<div class="s-info file">
+								<div class="file-name">
+									<p class="name">파일명파일명</p>
+									<p class="file-type">pdf파일</p>
+								</div>
+
+								<div class="btn-group">
+									<button type="button" name="" id="" class="com-btn md type02 grayblue">다운</button>
+									<button type="button" name="" id="" class="com-btn md type02 red">삭제</button>
+								</div>
+							</div>
+							<!-- 조사측량 자료 (SHP) -->
+
+							<!-- 측량결과도 (PDF) -->
+							<h4>측량결과도 (PDF)</h4>
+
+							<div class="s-info file">
+								<div class="file-name">
+									<p class="name">파일명파일명</p>
+									<p class="file-type">pdf파일</p>
+								</div>
+
+								<div class="btn-group">
+									<button type="button" name="" id="" class="com-btn md type02 grayblue">다운</button>
+									<button type="button" name="" id="" class="com-btn md type02 red">삭제</button>
+								</div>
+							</div>
+							<!-- 측량결과도 (PDF) -->
+
+							<!-- 적부심사 심의서 (PDF) -->
+							<h4>적부심사 심의서 (PDF)</h4>
+
+							<div class="s-info file">
+								<div class="file-name">
+									<p class="name">파일명파일명</p>
+									<p class="file-type">pdf파일</p>
+								</div>
+
+								<div class="btn-group">
+									<button type="button" name="" id="" class="com-btn md type02 grayblue">다운</button>
+									<button type="button" name="" id="" class="com-btn md type02 red">삭제</button>
+								</div>
+							</div>
+							<!-- 적부심사 심의서 (PDF) -->
+						</div>
+						
+					</div>
+					<!-- 추가자료 관리 -->
+				</div>
+
+				<!-- map -->
+				<div class="cadastral-area">
+					<div class="map">
+
+						<div class="size-control">
+							<button type="button" name="" id="" class="mapset-btn zoomin"></button>
+							<button type="button" name="" id="" class="mapset-btn zoomout"></button>
+						</div>
+
+						<span class="marker st03" style="top:400px; left:250px">
+							<!-- info -->
+							<span class="map-info">
+								<span class="tit">토지 위치</span>
+								<span>구미시 원평동 890-12</span>
+							</span>
+							<!-- info -->
+						</span>
+
+						<img src="images/temp/map_12.png">
+					</div>
+				</div>
+				<!-- map -->
+			</div>
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl orange">닫기</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 지적측량 적부심사 청구서 상세 정보 -->
+
+
+	<div class="overlay"></div>
+
+</body>
+</html>

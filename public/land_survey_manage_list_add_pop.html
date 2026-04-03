@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+<div>
+	<!-- layerpop-wrap 새 이력 추가 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1128" id="popup1" style="display:block; height:616px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>새 이력 추가</h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<h4 class="type03">기본정보</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col >
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="ynum">연번</label></th>
+						<td>
+							<input type="text" name="" id="ynum" class="type01" value="" placeholder="입력">
+						</td>
+						<th><label for="busi">사업지구</label></th>
+						<td>
+							<input type="text" name="" id="busi" class="type01" value="" placeholder="입력">
+						</td>
+					</tr>				
+					<tr>
+						<th><label for="surveyor">측량수행자</label></th>
+						<td>
+							<input type="text" name="" id="surveyor" class="type01" value="" placeholder="입력">
+						</td>
+						<th><label for="progress">협의일자</label></th>
+						<td>
+							<input type="date" name="" id="date2" class="type01" value="">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="date3">계획서 접수일</label></th>
+						<td>
+							<div class="form-wrap">
+								<select name="" id="" class="type01">
+									<option>선택</option>
+									<option>OOO</option>
+									<option>OOO</option>
+								</select>
+
+								<input type="date" name="" id="date3" class="type01" value="" placeholder="입력" disabled>
+							</div>
+						</td>
+						<th><label for="phoneNum">관련부서 및 전화번호</label></th>
+						<td>
+							<input type="text" name="" id="phoneNum" class="type01" value="" placeholder="입력">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4 class="type02">비고</h4>
+
+			<textarea name="" id="" class="type01" value="" placeholder="내용을 입력해 주세요"></textarea>
+
+			<h4 class="type02">비고</h4>
+
+			<textarea name="" id="" class="type01" value="" placeholder="내용을 입력해 주세요"></textarea>
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+				<button type="button" name="" id="" class="com-btn xl orange">저장</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 새 이력 추가 -->
+
+
+	<div class="overlay"></div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<!-- <link href="css/select2.min.css" rel="stylesheet" /> -->
+<script src="js/lib/jquery-3.7.1.js"></script>
+<!-- <script src="js/lib/select2.min.js"></script> -->
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 지적측량 적부심사 청구서 등록 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1128" id="popup1" style="display:block; height:800px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>지적측량 적부심사 청구서 등록</h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- 청구인 정보 -->
+			<h4 class="type03">청구인 정보</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col style="width:410px;">
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="">청구인 성명</label></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="" placeholder="내용 입력">
+						</td>
+						<th><label for="">전화번호</label></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="" placeholder="내용 입력">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">청구인 주소</label></th>
+						<td colspan="3">
+							<input type="text" name="" id="seach" class="type01" value="" placeholder="내용 입력">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 청구인 정보-->
+
+			<!-- 토지정보 -->
+			<h4 class="type02">토지정보</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col>
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="">시군</label></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</td>
+						<th><label for="">읍면동</label></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">상세주소</th>
+						<td colspan="3">
+							<input type="text" name="" id="" class="type01" value="" placeholder="내용 입력">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">지번</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="" placeholder="내용 입력">
+						</td>
+						<th><label for="">측량종류</label></th>
+						<td>
+							<input type="text" name="" id="" class="type01" value="" placeholder="예: 경계복원측량">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 토지정보 -->
+
+			<!-- 청구 사유 -->
+			<h4 class="type02">청구 사유</h4>
+
+			<textarea name="" id="" class="type01" placeholder="측량 적부에 대한 청구 사유를 상세히 입력하세요."></textarea>
+			<!-- 청구 사유 -->
+
+			<!-- 첨부파일 등록 -->
+			<h4 class="type02">첨부파일 등록</h4>
+
+			<div class="file-register">
+				<div class="file w100per">
+					<div class="fileup-wrap type07">
+						<input type="file" id="file_01" class="input-file-list">
+						<label for="file_01" class="file-label"></label>
+					</div>
+					
+					<!-- list -->
+					<div class="file-list" style="display:none;">
+						<p class="name"></p>
+						<p>등록 준비됨</p>
+
+						<button type="button" name="" id="" class="file-del-btn"></button>
+					</div>
+					<!-- list -->
+				</div>
+
+
+			</div>
+			<!-- 첨부파일 등록 -->
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+				<button type="button" name="" id="" class="com-btn xl orange">저장</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 지적측량 적부심사 청구서 등록 -->
+
+	<div class="overlay"></div>
+
+	<script>
+		$(function(){
+			// 파일 선택 시
+			$(document).on('change', '.input-file-list', function(){
+				var fileName = $(this).val().split('\\').pop();
+				var $fileList = $(this).closest('.file').find('.file-list');
+				
+				if(fileName) {
+					$fileList.find('.name').text(fileName);
+					$fileList.show();
+				}
+			});
+
+			// 삭제 버튼 클릭 시
+			$(document).on('click', '.file-del-btn', function(){
+				var $fileList = $(this).closest('.file-list');
+				var $fileInput = $fileList.siblings('.fileup-wrap').find('.input-file-list');
+				
+				$fileInput.val(''); 
+				$fileList.hide();
+			});
+		});
+	</script>
+</body>
+</html>

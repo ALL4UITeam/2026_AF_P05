@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+<style>
+	#mapSvg .cls-3{fill:#fff; cursor:pointer; transition:.15s; user-select:none;}
+	#mapSvg .cls-3:hover{fill:url(#blueGrad); filter:url(#dropShadow);}
+	#mapSvg .cls-3.is-active{fill:url(#blueGrad); filter:url(#dropShadow);}
+
+	/* 텍스트(길/라벨)가 path로 들어간 경우 대비 */
+	#mapSvg .cls-2 {
+	  pointer-events: none; /* 텍스트 위에 올려도 클릭은 면(cls-3)로 */
+	}
+
+	/* 기본 라벨 색 */
+	#mapSvg .cls-2{ fill:#777; pointer-events:none }
+
+	/* 활성화된 지역에 속한 라벨만 검정 */
+	#mapSvg .cls-2.label-active{fill:#000 !important;}
+</style>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- tab button -->
+		<div class="tab-menu-btn">
+			<button type="button" name="" id="">보유 현황</button>
+			<button type="button" name="" id="" class="active">상세 통계</button>
+		</div>
+		<!-- tab button-->
+
+		<!-- content -->
+		<div class="content-wrap row">
+			<div class="cont-box-wrap type04">
+				<div class="cont-box">
+					<div class="tit-wrap">
+						<h2 class="type03">상세 통계 현황</h2>
+					</div>
+
+					<p class="txt02">RTMS 연계 데이터 기준 · 단위: ㎡</p>
+
+					<div class="btn-group type02">
+						<button type="button" name="" id="" class="com-btn grayblue xl dataup-btn">데이터 업로드</button>
+						<button type="button" name="" id="" class="com-btn orange xl report-btn">국토부 보고서 다운로드</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- 취득 및 처분 상세 통계 -->
+			<div class="cont-box-wrap w100per">
+				<div class="cont-box h-auto">
+					<div class="tit-wrap type02">
+						<div class="tit-desc">
+							<h2 class="type02">취득 및 처분 상세 통계</h2>
+							<p class="desc">RTMS 연계 데이터 기준 · 단위: ㎡</p>
+						</div>
+
+						<div class="filter-wrap">
+							<div class="year-quarter">
+								<select name="" id="" class="type01 w140">
+									<option>년도 선택</option>
+									<option>2026년</option>
+									<option>2025년</option>
+									<option>2024년</option>
+								</select>
+								
+								<select name="" id="" class="type01 w140">
+									<option>분기 선택</option>
+									<option>1분기</option>
+									<option>2분기</option>
+									<option>3분기</option>
+									<option>4분기</option>
+								</select>
+							</div>
+
+							<div class="filter">
+								<button type="button" name="" id="" class="filter-btn">분기별</button>
+								<button type="button" name="" id="" class="filter-btn">반기별</button>
+								<button type="button" name="" id="" class="filter-btn active">연별</button>
+							</div>
+						</div>
+					</div>
+
+					<button type="button" name="" id="" class="dropdown-btn w200"><i class="ico-filter" aria-hidden="true"></i> 필터 </button>
+					
+					<div class="filter-search drop-content">
+						<div class="search-area-detail">
+							<div class="search-area-wrap w100per">
+								<div class="search-box submit-grid col4">
+									<div class="slist">
+										<label for="city01">시군</label>
+
+										<select name="" id="city01" class="type01 w100per">
+											<option>시군 선택</option>
+											<option>구미시</option>
+											<option>경주시</option>
+										</select>
+									</div>
+
+									<div class="slist">
+										<label for="national">국적</label>
+
+										<select name="" id="national" class="type01 w100per">
+											<option>국적 선택</option>
+											<option>중국</option>
+											<option>미국</option>
+										</select>
+									</div>
+
+									<div class="slist">
+										<label for="cause">취득원인</label>
+
+										<select name="" id="cause" class="type01 w100per">
+											<option>취득원인 선택</option>
+											<option>000</option>
+											<option>000</option>
+										</select>
+									</div>
+
+									<div class="slist">
+										<label for="use">취득용도</label>
+
+										<select name="" id="use" class="type01 w100per">
+											<option>취득용도 선택</option>
+											<option>000</option>
+											<option>000</option>
+										</select>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+
+					<!-- 전체 상세 통계 -->
+					<div class="tit-wrap type03">
+						<h2>전체 상세 통계</h2>
+					</div>
+
+					<div class="tbl-wrap">
+						<table class="tbl">
+							<colgroup>			
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col>
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:12%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">시군</th>
+									<th scope="col">국적</th>
+									<th scope="col">취득원인</th>
+									<th scope="col">취득용도</th>
+									<th scope="col">누계면적</th>
+									<th scope="col">취득면적</th>
+									<th scope="col">처분면적</th>
+									<th scope="col">비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="38">경북</td>
+									<td colspan="3">계</td>
+									<td>50</td>
+									<td>6</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td rowspan="37">미국</td>
+									<td colspan="2">합계</td>
+									<td>3</td>
+									<td>7</td>
+									<td>7</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td rowspan="9">매매</td>
+									<td>소계</td>
+									<td>10</td>
+									<td>10</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>주거<br/>(아파트 + 단독 + 그밖의주택)</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>아파트</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>단독주택</td>
+									<td>5</td>
+									<td>4</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>그밖의주택</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>상업</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>공장</td>
+									<td>5</td>
+									<td>10</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>례져용지</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>기타</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td rowspan="9">상속</td>
+									<td>소계</td>
+									<td>10</td>
+									<td>10</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>주거<br/>(아파트 + 단독 + 그밖의주택)</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>아파트</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>단독주택</td>
+									<td>5</td>
+									<td>4</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>그밖의주택</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>상업</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>공장</td>
+									<td>5</td>
+									<td>10</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>레저용지</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>기타</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td rowspan="9">증여</td>
+									<td>소계</td>
+									<td>10</td>
+									<td>10</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>주거<br/>(아파트 + 단독 + 그밖의주택)</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>아파트</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>단독주택</td>
+									<td>5</td>
+									<td>4</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>그밖의주택</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>상업</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>공장</td>
+									<td>5</td>
+									<td>10</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>레저용지</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>기타</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td rowspan="9">국적변경</td>
+									<td>소계</td>
+									<td>10</td>
+									<td>10</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>주거<br/>(아파트 + 단독 + 그밖의주택)</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>아파트</td>
+									<td>4</td>
+									<td>4</td>
+									<td>10</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>단독주택</td>
+									<td>5</td>
+									<td>4</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>그밖의주택</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>상업</td>
+									<td>15</td>
+									<td>1</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>공장</td>
+									<td>5</td>
+									<td>10</td>
+									<td>4</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>레저용지</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+								<tr>
+									<td>기타</td>
+									<td>5</td>
+									<td>1</td>
+									<td>1</td>
+									<td class="al"></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<!-- 전체 상세 통계 -->
+					
+				</div>
+			</div>
+			<!-- 취득 및 처분 상세 통계 -->
+			
+		</div>
+		<!-- content -->
+
+		<button type="button" name="" id="" class="admin-btn"></button>
+
+		<!-- admin -->
+		<div class="admin-selbox"> 
+			<a href="#">사용자 숭인 관리</a>
+			<a href="#">사용자 그룹 관리</a>
+		</div>
+		<!-- admin -->
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+<script>
+	$(function(){
+		// fileup-wrap type08 파일 업로드 시 fcheck 클래스 추가
+		$(document).on('change', '.fileup-wrap.type08 .input-file-list', function(){
+			var $wrap = $(this).closest('.fileup-wrap');
+
+			if (this.files && this.files[0]) {
+				$wrap.addClass('fcheck');
+			} else {
+				$wrap.removeClass('fcheck');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<div class="cont-box-wrap type02">
+			<div class="cont-box">
+				<div class="tit-wrap">
+					<h2 class="type03">부동산실명법 과징금 관리</h2>
+				</div>
+
+				<p class="txt02">경상북도 전체 시군 과징금 및 이행강제금 데이터 업로드 및 통합 관리</p>
+			</div>
+		</div>
+
+		<!-- content -->
+		<div class="content-wrap">
+			<div class="content row">
+				<!-- 시군별 데이터 업로드 (전체 시군) -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<div class="tit-wrap type02">
+							<h2 class="type02">시군별 데이터 업로드 (전체 시군)</h2>
+
+							<button type="button" name="" id="" class="com-btn grayblue md type02">업로드 이력 조회</button>
+						</div>
+
+						<!-- fileup --> <!-- 업로드 완료되면 fcheck 클래스 add -->
+						<div class="fileup-wrap type08">
+							<input type="file" id="file_01" class="input-file-list">
+							<label for="file_01" class="file-label"></label>
+						</div>
+						<!-- fileup -->
+
+						<div class="s-info type02">
+							<p>📑 개별 시군으로 데이터 업로드가 진행됩니다.</p>
+						</div>
+					</div>
+				</div>
+				<!-- 시군별 데이터 업로드 (전체 시군) -->
+
+				<!-- 정밀조사 상세 내역 -->
+				<div class="cont-box-wrap">
+					<div class="cont-box">
+						<!-- tab -->
+						<div class="tab-menu row">
+							<ul>
+								<li><a href="#" class="active" data-target="detailTab01">과징금 및 이행강제금 부과징수 현황보고 <span class="stxt">(경상북도 전체)</span></a></li>
+								<li><a href="#" data-target="detailTab02">미수납 현황 <span class="stxt">(최종)</span></a></li>
+								<li><a href="#" data-target="detailTab03">부과징수 현황 <span class="stxt">(시군별)</span></a></li>
+							</ul>
+						</div>
+						<!-- tab -->
+
+						<!-- tab-content -->
+						<div class="tab-content">
+							<!-- tab -->
+							<div id="detailTab01" class="active">
+								<div class="tit-wrap type02">
+									<h3>과징금 및 이행강제금 부과징수 현황보고 (경상북도 전체)</h3>
+
+									<div class="btn-group">
+										<button type="button" name="" id="" class="com-btn grayblue md type02">보고서 서식</button>
+										<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+									</div>
+								</div>
+
+								<div class="graph-wrap type02">
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<h3 class="center">과징금 현황</h3>
+
+										<div class="graph-box bg04 h410">									
+											<div class="graph-wrap" style="width:90%; height:320px; margin:5px auto 20px;">
+												<canvas id="chart1"></canvas>
+											</div>		
+										</div>
+									</div>
+									<!-- 그래프 -->
+
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<h3 class="center">이행강제금 현황</h3>
+
+										<div class="graph-box bg04 h410">
+											<div class="graph-wrap" style="width:90%; height:320px; margin:5px auto 20px;">
+												<canvas id="chart2"></canvas>
+											</div>	
+										</div>
+									</div>
+									<!-- 그래프 -->
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap">
+									<table class="tbl ">
+										<colgroup>
+											<col>
+											<col style="width:4%;">
+											<col style="width:9%;">
+											<col style="width:4%;">
+											<col style="width:9%;">
+											<col style="width:4%;">
+											<col style="width:9%;">
+											<col style="width:4%;">
+											<col style="width:9%;">
+											<col style="width:4%;">
+											<col style="width:9%;">
+											<col style="width:4%;">
+											<col style="width:9%;">
+											<col style="width:4%;">
+											<col style="width:10%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="3">구분</th>
+												<th scope="col" colspan="4">징수결정액</th>
+												<th scope="col" colspan="4">수납액</th>
+												<th scope="col" colspan="4">불납결손액</th>
+												<th scope="col" colspan="2">미수납액</th>
+											</tr>
+											<tr>
+												<th scope="col" colspan="2">본기</th>
+												<th scope="col" colspan="2">누계</th>
+												<th scope="col" colspan="2">본기</th>
+												<th scope="col" colspan="2">누계</th>
+												<th scope="col" colspan="2">본기</th>
+												<th scope="col" colspan="2">누계</th>
+												<th scope="col" rowspan="2">건수</th>
+												<th scope="col" rowspan="2">금액(원)</th>
+											</tr>
+											<tr>
+												<th scope="col">건수</th>
+												<th scope="col">금액(원)</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액(원)</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액(원)</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액(원)</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액(원)</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액(원)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><sapn class="fb">과징금</sapn></td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td><sapn class="fb">명의신탁</sapn></td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>(신규)</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>(기존)</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>장기미등기</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td><sapn class="fb">이행강제금</sapn></td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td><sapn class="fb">명의신탁</sapn></td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>(신규)</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>(기존)</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>장기미등기</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td><sapn class="fb">합계</sapn></td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td><sapn class="fb">명의신탁</sapn></td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>(신규)</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>(기존)</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+											<tr>
+												<td>장기미등기</td>
+												<td class="ar">95</td>
+												<td class="ar">950,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">790,000,000</td>
+												<td class="ar">95</td>
+												<td class="ar">-</td>
+												<td class="ar">5</td>
+												<td class="ar">-</td>
+												<td class="ar">56</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">34</td>
+												<td class="ar">120,000,000</td>
+											</tr>
+										</tbody>
+									</table>									
+								</div>
+								<!-- tbl -->
+							</div>
+							<!-- tab -->
+
+							<!-- tab -->
+							<div id="detailTab02">
+								 <div class="tit-wrap type02">
+									<h3>과징금 및 이행강제금 미수납 현황 (최종)</h3>
+
+									<div class="btn-group">
+										<button type="button" name="" id="" class="com-btn grayblue md type02">보고서 서식</button>
+										<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+									</div>
+								</div>
+
+								<div class="graph-wrap type02">
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<h3 class="center">시군별 미수납액 (상위 5개)</h3>
+
+										<div class="graph-box bg01 h410">							
+											<div class="graph-wrap" style="width:90%; height:320px; margin:5px auto 20px;">
+												<canvas id="chart3"></canvas>
+											</div>		
+										</div>
+									</div>
+									<!-- 그래프 -->
+
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<h3 class="center">과징금 vs 이행강제금 미수납 비율</h3>
+
+										<div class="graph-box bg01 h410">							
+											<div class="graph-wrap" style="width:660px; height:320px; margin:0 auto 20px;">
+												<canvas id="chart4"></canvas>
+											</div>		
+										</div>
+									</div>
+									<!-- 그래프 -->
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap">
+									<table class="tbl ">
+										<colgroup>
+											<col style="width:4%;">
+											<col style="width:4%;">
+											<col style="width:4%;">
+											<col>
+											<col style="width:5%;">
+											<col style="width:5%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:5%;">
+											<col style="width:5%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+											<col style="width:6%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">시·군</th>
+												<th scope="col" rowspan="2">년도</th>
+												<th scope="col" rowspan="2">성명</th>
+												<th scope="col" rowspan="2">주소</th>
+												<th scope="col" colspan="4">과징금(원)</th>
+												<th scope="col" colspan="4">이행강제금(원)</th>
+												<th scope="col" rowspan="2">독촉일자</th>
+												<th scope="col" rowspan="2">체납처분일자</th>
+												<th scope="col" rowspan="2">체납처분목록</th>
+												<th scope="col" rowspan="2">비고</th>
+											</tr>
+											<tr>
+												<th scope="col">건수</th>
+												<th scope="col">부과일자</th>
+												<th scope="col">부과액</th>
+												<th scope="col">미수납액</th>
+												<th scope="col">건수</th>
+												<th scope="col">부과일자</th>
+												<th scope="col">부과액</th>
+												<th scope="col">미수납액</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="total">
+												<td></td>
+												<td></td>
+												<td class="ar">합계</td>
+												<td class="al"></td>
+												<td class="ar">7</td>
+												<td>2024-07-10</td>
+												<td class="ar">180,000,000</td>
+												<td class="ar">160,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td>2024-07-10</td>
+												<td class="al">-</td>
+												<td class="al">-</td>
+											</tr>
+											<tr>
+												<td>포항시</td>
+												<td>2024</td>
+												<td>홍길동</td>
+												<td class="al">포항시 북구 ○○동 123</td>
+												<td class="ar">7</td>
+												<td>2024-07-10</td>
+												<td class="ar">180,000,000</td>
+												<td class="ar">160,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td>2024-07-10</td>
+												<td class="al">부동산 압류</td>
+												<td class="al">납부 의사 없음</td>
+											</tr>
+											<tr>
+												<td>경주시</td>
+												<td>2024</td>
+												<td>홍길동</td>
+												<td class="al">포항시 북구 ○○동 123</td>
+												<td class="ar">7</td>
+												<td>2024-07-10</td>
+												<td class="ar">180,000,000</td>
+												<td class="ar">160,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td>2024-07-10</td>
+												<td class="al">부동산 압류</td>
+												<td class="al">협의 중</td>
+											</tr>
+											<tr>
+												<td>구미시</td>
+												<td>2024</td>
+												<td>홍길동</td>
+												<td class="al">포항시 북구 ○○동 123</td>
+												<td class="ar">7</td>
+												<td>2024-07-10</td>
+												<td class="ar">180,000,000</td>
+												<td class="ar">160,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td>2024-07-10</td>
+												<td class="al">부동산 압류</td>
+												<td class="al">협의 중</td>
+											</tr>
+											<tr>
+												<td>안동시</td>
+												<td>2024</td>
+												<td>홍길동</td>
+												<td class="al">포항시 북구 ○○동 123</td>
+												<td class="ar">7</td>
+												<td>2024-07-10</td>
+												<td class="ar">180,000,000</td>
+												<td class="ar">160,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td class="ar">40,000,000</td>
+												<td class="ar">-</td>
+												<td>2024-07-10</td>
+												<td>2024-07-10</td>
+												<td class="al">부동산 압류</td>
+												<td class="al">협의 중</td>
+											</tr>
+										</tbody>
+									</table>									
+								</div>
+								<!-- tbl -->
+							</div>
+							<!-- tab -->
+
+							<!-- tab -->
+							<div id="detailTab03">
+								<div class="tit-wrap type02">
+									<h3>과징금 및 이행강제금 부과징수 현황 (시·군별)</h3>
+
+									<div class="btn-group">
+										<button type="button" name="" id="" class="com-btn grayblue md type02">보고서 서식</button>
+										<button type="button" name="" id="" class="com-btn green"><i class="ico-excel" aria-hidden="true"></i>다운로드</button>
+									</div>
+								</div>
+
+								<div class="graph-wrap type02">
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<h3 class="center">시군별 징수율 (상위 10개)</h3>
+
+										<div class="graph-box bg01 h410">							
+											<div class="graph-wrap" style="width:90%; height:330px; margin:0 auto">
+												<canvas id="chart5"></canvas>
+											</div>		
+										</div>
+									</div>
+									<!-- 그래프 -->
+
+									<!-- 그래프 -->
+									<div class="graph w100per">
+										<h3 class="center">시군별 미수납액 (상위 10개) </h3>
+
+										<div class="graph-box bg01 h410">							
+											<div class="graph-wrap" style="width:90; height:330px; margin:0 auto">
+												<canvas id="chart6"></canvas>
+											</div>		
+										</div>
+									</div>
+									<!-- 그래프 -->
+								</div>
+
+								<!-- tbl -->
+								<div class="tbl-wrap">
+									<table class="tbl">
+										<colgroup>
+											<col>
+											<col style="width:8%;">
+											<col style="width:8%;">
+											<col style="width:12%;">
+											<col style="width:8%;">
+											<col style="width:12%;">
+											<col style="width:8%;">
+											<col style="width:12%;">
+											<col style="width:8%;">
+											<col style="width:12%;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" rowspan="2">구분</th>
+												<th scope="col" rowspan="2">유형</th>
+												<th scope="col" colspan="2">징수결정액</th>
+												<th scope="col" colspan="2">수납액</th>
+												<th scope="col" colspan="2">불납결손액</th>
+												<th scope="col" colspan="2">미수납액</th>
+											</tr>
+											<tr>
+												<th scope="col">건수</th>
+												<th scope="col">금액</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액</th>
+												<th scope="col">건수</th>
+												<th scope="col">금액</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="total">
+												<td colspan="2">합계</td>
+												<td class="ar">348</td>
+												<td class="ar">2,100,000,000</td>
+												<td class="ar">180</td>
+												<td class="ar">2,100,000,000</td>
+												<td class="ar">0</td>
+												<td class="ar">0</td>
+												<td class="ar">24</td>
+												<td class="ar">772,000,000</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">포항 남구</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">포항 북구</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">경주시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>			
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">김천시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">안동시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">구미시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">영주시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">영천시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">상주시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">문경시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">경산시</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">의성군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">청송군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">영양군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">영덕군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>	
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">청도군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">고령군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">성주군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">칠곡군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">예천군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">봉화군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>	
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">울진군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td class="al" rowspan="2">울릉군</td>
+												<td>과징금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+											<tr>
+												<td>이행강제금</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+												<td class="ar">-</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- tbl -->
+							</div>
+							<!-- tab -->
+						</div>
+						<!-- tab-content -->
+					</div>
+				</div>
+				<!-- 정밀조사 상세 내역 -->
+
+
+				<button type="button" name="" id="" class="admin-btn"></button>
+
+				<!-- admin -->
+				<div class="admin-selbox"> 
+					<a href="#">사용자 숭인 관리</a>
+					<a href="#">사용자 그룹 관리</a>
+				</div>
+				<!-- admin -->
+
+			</div>
+		</div>
+		<!-- content -->
+	</div>
+
+	<script src="js/lib/chart.js"></script> <!-- v4.5.1 -->
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script> <!-- v2.2.0 -->
+
+	<script>
+		function createDualBarChart(canvasId, countData, amountData) {
+			const ctx = document.getElementById(canvasId);
+
+			new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ['결정', '징수', '징수불능', '미수납'],
+					datasets: [
+						{
+							label: '건수',
+							data: countData,
+							backgroundColor: '#f26c00',
+							borderColor: '#f26c00',
+							borderWidth: 0,
+							yAxisID: 'y',
+							barPercentage: 0.9,
+							categoryPercentage: 0.8
+						},
+						{
+							label: '금액',
+							data: amountData,
+							backgroundColor: '#a85d32',
+							borderColor: '#a85d32',
+							borderWidth: 0,
+							yAxisID: 'y1',
+							barPercentage: 0.9,
+							categoryPercentage: 0.8
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					animation: false,
+					layout: {
+						padding: {
+							top: 10,
+							right: 10,
+							bottom: 0,
+							left: 0
+						}
+					},
+					plugins: {
+						legend: {
+							position: 'bottom',
+							align: 'center',
+							labels: {
+								boxWidth: 16,
+								boxHeight: 14,
+								padding: 12,
+								color: '#f26c00',
+								font: {
+									size: 14,
+									family: 'Arial'
+								}
+							}
+						},
+						tooltip: {
+							enabled: true
+						}
+					},
+					scales: {
+						x: {
+							offset: true,
+							grid: {
+								color: '#ccc',
+								borderDash: [4, 4],
+								lineWidth: 1,
+								drawBorder: false,
+								drawTicks: false
+							},
+							ticks: {
+								color: '#666',
+								font: {
+									size: 14
+								}
+							}
+						},
+						y: {
+							position: 'left',
+							min: 0,
+							max: 100,
+							ticks: {
+								stepSize: 25,
+								color: '#f26c00',
+								font: {
+									size: 14
+								}
+							},
+							grid: {
+								color: '#bfbfbf',
+								borderDash: [4, 4],
+								lineWidth: 1,
+								drawBorder: true,
+								borderColor: '#f26c00'
+							},
+							border: {
+								display: true,
+								color: '#f26c00',
+								width: 1
+							}
+						},
+						y1: {
+							position: 'right',
+							min: 0,
+							max: 1000,
+							ticks: {
+								stepSize: 250,
+								color: '#a85d32',
+								font: {
+									size: 14
+								}
+							},
+							grid: {
+								drawOnChartArea: false,
+								drawBorder: true
+							},
+							border: {
+								display: true,
+								color: '#a85d32',
+								width: 1
+							}
+						}
+					}
+				}
+			});
+		}
+
+		createDualBarChart('chart1', [98, 80, 4, 12], [980, 800, 40, 120]);
+		createDualBarChart('chart2', [98, 80, 4, 12], [980, 800, 40, 120]);
+</script>
+
+<script>
+	const chart3Ctx = document.getElementById('chart3');
+
+	new Chart(chart3Ctx, {
+		type: 'bar',
+		data: {
+			labels: ['포항시', '경주시', '구미시', '안동시'],
+			datasets: [{
+				label: '미수납액',
+				data: [110, 45, 30, 25],
+				backgroundColor: '#f26c00',
+				borderColor: '#f26c00',
+				borderWidth: 0,
+				barPercentage: 0.9,
+				categoryPercentage: 0.85
+			}]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			animation: false,
+			plugins: {
+				legend: {
+					position: 'bottom',
+					align: 'center',
+					labels: {
+						boxWidth: 16,
+						boxHeight: 16,
+						padding: 12,
+						color: '#f26c00',
+						font: {
+							size: 16,
+							family: 'Arial'
+						}
+					}
+				},
+				tooltip: {
+					enabled: true
+				}
+			},
+			scales: {
+				x: {
+					grid: {
+						color: '#ccc',
+						borderDash: [4, 4],
+						lineWidth: 1,
+						drawBorder: false,
+						drawTicks: false
+					},
+					ticks: {
+						color: '#666',
+						font: {
+							size: 14
+						}
+					},
+					border: {
+						display: true,
+						color: '#777',
+						width: 1
+					}
+				},
+				y: {
+					min: 0,
+					max: 120,
+					ticks: {
+						stepSize: 30,
+						color: '#666',
+						font: {
+							size: 14
+						}
+					},
+					grid: {
+						color: '#ccc',
+						borderDash: [4, 4],
+						lineWidth: 1
+					},
+					border: {
+						display: true,
+						color: '#777',
+						width: 1
+					}
+				}
+			}
+		}
+	});
+</script>
+
+<script>
+	const outsideTextPlugin = {
+		id:'outsideTextPlugin',
+		afterDraw(chart){
+
+			const {ctx,width,height} = chart;
+
+			ctx.save();
+			ctx.font="18px Arial";
+
+			ctx.fillStyle="#f26c00";
+			ctx.fillText("과징금: 160백만원",40,40);
+
+			ctx.fillStyle="#a85d32";
+			ctx.fillText("이행강제금: 50백만원",width-200,height-80);
+
+			ctx.restore();
+		}
+	};
+
+	new Chart(document.getElementById('chart4'),{
+
+		type:'pie',
+
+		data:{
+			labels:['과징금','이행강제금'],
+			datasets:[{
+				data:[160,50],
+				backgroundColor:['#f26c00','#a85d32'],
+				borderColor:'#fff',
+				borderWidth:2,
+
+				radius:126   // 지름 약 255px
+			}]
+		},
+
+		options:{
+			responsive:true,
+			maintainAspectRatio:false,
+
+			plugins:{
+				legend:{
+					position:'bottom',
+					labels:{
+						boxWidth:16,
+						boxHeight:16,
+						font:{size:16}
+					}
+				}
+			}
+		},
+
+		plugins:[outsideTextPlugin]
+
+	});
+</script>
+
+<script>
+
+	new Chart(document.getElementById('chart5'),{
+
+		type:'bar',
+
+		data:{
+			labels:[
+				'포항시','경주시','김천시','안동시',
+				'구미시','영주시','영천시','상주시',
+				'문경시','경산시'
+			],
+
+			datasets:[{
+				label:'징수율',
+				data:[66,65,64,63,63,62,61,61,60,60],
+				backgroundColor:'#f26c00',
+				borderWidth:0,
+				barPercentage:0.8,
+				categoryPercentage:0.9
+			}]
+		},
+
+		options:{
+			responsive:true,
+			maintainAspectRatio:false,
+
+			plugins:{
+				legend:{
+					position:'bottom',
+					labels:{
+						boxWidth:16,
+						boxHeight:16,
+						padding:12,
+						font:{size:16}
+					}
+				},
+				tooltip:{
+					enabled:true
+				}
+			},
+
+			scales:{
+
+				x:{
+					ticks:{
+						maxRotation:45,
+						minRotation:45,
+						font:{size:13}
+					},
+					grid:{
+						color:'#ccc',
+						borderDash:[4,4],
+						drawBorder:false
+					}
+				},
+
+				y:{
+					min:0,
+					max:100,
+					ticks:{
+						stepSize:25,
+						font:{size:14}
+					},
+					grid:{
+						color:'#ccc',
+						borderDash:[4,4]
+					}
+				}
+
+			}
+		}
+
+	});
+
+</script>
+
+<script>
+	new Chart(document.getElementById('chart6'), {
+		type: 'bar',
+		data: {
+			labels: [
+				['울릉군'],
+				['울진군'],
+				['봉화군'],
+				['예천군'],
+				['칠곡군'],
+				['성주군'],
+				['고령군'],
+				['청도군'],
+				['영덕군'],
+				['영양군']
+			],
+			datasets: [{
+				label: '미수납액',
+				data: [82, 78, 75, 72, 69, 66, 63, 60, 57, 54],
+				backgroundColor: '#a85d32',
+				borderWidth: 0,
+				barPercentage: 0.86,
+				categoryPercentage: 0.9
+			}]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			animation: false,
+
+			plugins: {
+				legend: {
+					position: 'bottom',
+					labels: {
+						boxWidth: 16,
+						boxHeight: 16,
+						padding: 14,
+						font: {
+							size: 16
+						}
+					}
+				},
+				tooltip: {
+					enabled: true
+				}
+			},
+
+			scales: {
+				x: {
+					ticks: {
+						maxRotation: 55,
+						minRotation: 55,
+						font: {
+							size: 13
+						}
+					},
+					grid: {
+						color: '#ccc',
+						borderDash: [4, 4],
+						drawBorder: false
+					},
+					border: {
+						display: true,
+						color: '#777',
+						width: 1
+					}
+				},
+
+				y: {
+					min: 0,
+					max: 100,
+					ticks: {
+						stepSize: 25,
+						font: {
+							size: 14
+						}
+					},
+					grid: {
+						color: '#ccc',
+						borderDash: [4, 4]
+					},
+					border: {
+						display: true,
+						color: '#777',
+						width: 1
+					}
+				}
+			}
+		}
+	});
+</script>
+	
+</body>
+</html>

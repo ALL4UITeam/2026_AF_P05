@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+
+	<!-- layerpop-wrap 안건 수정 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w1128" id="popup1" style="display:block; height:468px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>안건 수정 <span>안건 정보보를 수정합니다.</span></h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<!-- 심의 안건 -->
+			<h4 class="type03">심의 안건</h4>
+
+			<table class="tbl view type02">
+				<colgroup>
+					<col style="width:130px;">
+					<col>
+					<col style="width:130px;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><label for="">청구대상토지</label> <span class="essen">*</span></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="예: 포항시 남구 대도동 123-45">
+						</td>
+						<th><label for="">청구인</label> <span class="essen">*</span></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="김말자"  placeholder="내용 입력">
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">측정자</th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="홍길동" placeholder="내용 입력">
+						</td>
+						<th><label for="">지적위원회 심의결과</label> <span class="essen">*</span></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>선택</option>
+								<option>기각</option>
+								<option>000</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="">중앙적부 재심사</label></th>
+						<td>
+							<select name="" id="" class="type01">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</td>
+						<th><label for="">비고</label></th>
+						<td>
+							<input type="text" name="" id="seach" class="type01" value="경계복원 다툼" placeholder="내용 입력">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 심의 안건 -->
+
+			<!-- 청구 내용 -->
+			<h4 class="type02">청구 내용</h4>
+
+			<textarea name="" id="" class="type01" value="" placeholder="내용을 입력해주세요.">2024.05.26. 경계복원측량이 잘못되었으며, 인접필지쪽으로 1m 이동 주장</textarea>
+			<!-- 청구 내용 -->
+
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area">
+				<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+				<button type="button" name="" id="" class="com-btn xl orange">저장</button>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap 안건 수정 -->
+
+	<div class="overlay"></div>
+</body>
+</html>

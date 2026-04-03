@@ -1,0 +1,6814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/lib/jquery.floatThead.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+	<div class="all-wrap land">
+		<!-- header -->
+		<header>
+			<div class="top-menu-wrap">
+				<div class="logo-area">
+					<a href="#" class="home"></a>
+					<a href="#" class="logo"></a> <span>지능공간정보 플랫폼</span>
+				</div>
+
+				<div class="top-menu">
+					<a href="#" class="intelli">지능공간정보</a>
+					<a href="#" class="property">도유재산</a>
+					<a href="#" class="land active">토지정보</a>
+
+					<!-- 토지정보 sub 메뉴 -->
+					<div class="popover-menu-wrap land">
+						<div class="tab-menu">
+							<ul>
+								<li><a href="#" class="active" data-target="topTab01">토지 관리</a></li>
+								<li><a href="#" data-target="topTab02">지적 관리</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+							<!-- 토지 관리 -->
+							<div id="topTab01" class="active">
+								<ul>
+									<li><a href="#">토지거래 허가구역</a></li>
+									<li><a href="#">부동산실거래신고</a></li>
+									<li><a href="#">외국인 토지취득</a></li>
+									<li><a href="#">부동산거래동향 분석</a></li>
+									<li><a href="#">개별공시지가</a></li>
+									<li><a href="#">부동산개발업 비등록대상확인서</a></li>
+									<li><a href="#">중개업소 현황 조회</a></li>
+									<li><a href="#">지적통계 관리</a></li>
+									<li><a href="#">부동산 실명법 과징금</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+
+							<!-- 지적 관리 -->
+							<div id="topTab02">
+								<ul>
+									<li><a href="#">지적확정측량 관리</a></li>
+									<li><a href="#">지명위원회 업무 관리</a></li>
+									<li><a href="#">적부심사</a></li>
+								</ul>
+							</div>
+							<!-- 토지 관리 -->
+						</div>
+					</div>
+					<!-- 토지정보 sub 메뉴 -->
+				</div>
+
+				<div class="login-info">
+					<p>경상북도청</p>
+					<p class="name">홍길동 님</p>
+				</div>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- 지적통계 관리 -->
+		<div class="cont-box-wrap type02">
+			<div class="cont-box">
+				<div class="tit-wrap">
+					<h2 class="type03">지적통계 관리</h2>
+				</div>
+
+				<p class="txt02">시도별 지적공부등록지 현황 - 지목별 면적 및 지번수 통계</p>
+
+				<div class="btn-group type02">
+					<button type="button" name="" id="" class="com-btn green xl"><i class="ico-excel" aria-hidden="true"></i> 다운로드</button>
+					<button type="button" name="" id="" class="com-btn blue xl">전국 통계 업로드</button>
+					<button type="button" name="" id="" class="com-btn grayblue xl">업로드 이력 조회</button>
+				</div>
+			</div>
+		</div>
+		<!-- 지적통계 관리 -->
+
+		<!-- tab button -->
+		<div class="tab-menu-btn">
+			<button type="button" name="" id="" class="active">전국 통계</button>
+			<button type="button" name="" id="">경북 시군별 통계</button>
+		</div>
+		<!-- tab button-->
+
+		<!-- content -->
+		<div class="content-wrap row">
+			<div class="cont-box-wrap">
+				<div class="cont-box h-auto">
+					<!-- 전국 대비 경상북도 통계 요약 -->
+					<div class="tit-wrap type02">
+						<h2 class="type02">전국 대비 경상북도 통계 요약 (2025년)</h2>
+
+						<div>
+							<label for="">비교 행정구역 선택</label>
+							<select name="" id="" class="type01 w160">
+								<option>전국</option>
+								<option>000</option>
+								<option>00</option>
+							</select>
+						</div>	
+					</div>
+
+					<div class="graph-wrap type02">
+						<!-- 그래프 -->
+						<div class="graph w100per">
+							<div class="graph-box bg01">
+								<p class="tit">전체 면적 비중</p>
+
+								<div class="graph-wrap" style="width:500px; height:200px; margin:0 auto 20px;">
+									<canvas id="chart1" style="margin:0"></canvas>
+								</div>
+
+								<div class="total-wrap type02">
+									<div class="total">
+										<p>18.34%</p>
+										<p>경북: 18,428 km²</p>
+										<p>전국: 100,460 km²</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 그래프 -->
+
+						<!-- 그래프 -->
+						<div class="graph w100per">
+							<div class="graph-box bg01">
+								<p class="tit">전체 지번수 비중</p>
+
+								<div class="graph-wrap" style="width:500px; height:200px; margin:0 auto 20px;">
+									<canvas id="chart2" style="margin:0"></canvas>
+								</div>
+
+								<div class="total-wrap type02">
+									<div class="total">
+										<p class="p-color09">18.34%</p>
+										<p>경북: 18,428 km²</p>
+										<p>전국: 100,460 km²</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 그래프 -->
+					</div>
+					<!-- 전국 대비 경상북도 통계 요약 -->
+
+					<!-- 주요 지목별 전국 대비 경북 비중 -->
+					<div class="tit-wrap type02">
+						<h2 class="type02">주요 지목별 전국 대비 경북 비중</h2>
+						
+						<!-- 시군 선택 -->
+						<div class="city-btn">
+							<button type="button" name="" id="" class="allcities-btn"><i class="ico-filter" aria-hidden="true"></i> 전체 시군 (3)</button>
+
+							<div class="usearea-sel county">
+								<header>
+									<h3>시군선택</h3>
+
+									<div class="btn-group gap0">
+										<button type="button" name="" id="" class="reset-btn">초기화</button>
+
+										<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기">
+											<i class="ico-close" aria-hidden="true"></i>
+										</button>
+									</div>
+								</header>
+					
+								<ul class="folding">
+									<li>
+										<a href="#" class="dept1 active">
+											<label for="chkA21" class="chkbox" onclick="event.stopPropagation()">
+												<input type="checkbox" name="" id="chkA21">
+												<span class="chkOn"></span>
+												<span class="txt">전체</span>
+											</label>
+										</a>
+
+										<!-- 지도 선택 -->
+										<ul class="map-type-sel">
+											<li>
+												<label for="chk21" class="chkbox">
+													<input type="checkbox" name="" id="chk21">
+													<span class="chkOn"></span>
+													<span class="txt">포항시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk22" class="chkbox">
+													<input type="checkbox" name="" id="chk22">
+													<span class="chkOn"></span>
+													<span class="txt">경주시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk23" class="chkbox">
+													<input type="checkbox" name="" id="chk23">
+													<span class="chkOn"></span>
+													<span class="txt">구미시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk24" class="chkbox">
+													<input type="checkbox" name="" id="chk24">
+													<span class="chkOn"></span>
+													<span class="txt">김천시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk25" class="chkbox">
+													<input type="checkbox" name="" id="chk25">
+													<span class="chkOn"></span>
+													<span class="txt">안동시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk26" class="chkbox">
+													<input type="checkbox" name="" id="chk26">
+													<span class="chkOn"></span>
+													<span class="txt">영주시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk27" class="chkbox">
+													<input type="checkbox" name="" id="chk27">
+													<span class="chkOn"></span>
+													<span class="txt">영천시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk28" class="chkbox">
+													<input type="checkbox" name="" id="chk28">
+													<span class="chkOn"></span>
+													<span class="txt">상주시</span>
+												</label>
+											</li>
+											<li>
+												<label for="chk29" class="chkbox">
+													<input type="checkbox" name="" id="chk29">
+													<span class="chkOn"></span>
+													<span class="txt">문경시</span>
+												</label>
+											</li>
+										</ul>
+										<!-- 지도 선택 -->
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 시군 선택 -->
+					</div>
+
+					<div class="graph-wrap">
+						<!-- 그래프 -->
+						<div class="graph w100per">
+							<div class="graph-box bg01">
+								<p class="tit">전</p>
+
+								<div class="graph-wrap" style="width:500px; height:200px; margin:0 auto 20px;">
+									<canvas id="chart3" style="margin:0"></canvas>
+								</div>
+
+								<div class="total-wrap type02">
+									<div class="total">
+										<p class="p-color10">18.34%</p>
+										<p>경북: 18,428 km²</p>
+										<p>전국: 100,460 km²</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 그래프 -->
+
+						<!-- 그래프 -->
+						<div class="graph w100per">
+							<div class="graph-box bg02">
+								<p class="tit">답</p>
+
+								<div class="graph-wrap" style="width:500px; height:200px; margin:0 auto 20px;">
+									<canvas id="chart4" style="margin:0"></canvas>
+								</div>
+
+								<div class="total-wrap type02">
+									<div class="total">
+										<p class="p-color10">18.34%</p>
+										<p>경북: 18,428 km²</p>
+										<p>전국: 100,460 km²</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 그래프 -->
+
+						<!-- 그래프 -->
+						<div class="graph w100per">
+							<div class="graph-box bg03">
+								<p class="tit">임야</p>
+
+								<div class="graph-wrap" style="width:500px; height:200px; margin:0 auto 20px;">
+									<canvas id="chart5" style="margin:0"></canvas>
+								</div>
+
+								<div class="total-wrap type02">
+									<div class="total">
+										<p class="p-color10">18.34%</p>
+										<p>경북: 18,428 km²</p>
+										<p>전국: 100,460 km²</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 그래프 -->
+					</div>
+					<!-- 주요 지목별 전국 대비 경북 비중 -->
+				</div>
+			</div>
+
+			<!-- 통계 데이터 -->
+			<div class="cont-box-wrap type04">
+				<div class="cont-box">
+					<div class="tit-wrap">
+						<h2 class="type02">통계 데이터</h2>
+
+						<div class="btn-group">
+							<button type="button" name="" id="" class="com-btn green xl"><i class="ico-excel" aria-hidden="true"></i> 다운로드</button>
+							<button type="button" name="" id="" class="com-btn blue xl">전국 통계 업로드</button>
+							<button type="button" name="" id="" class="com-btn grayblue xl">업로드 이력 조회</button>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!-- 통계 데이터 -->
+
+			<!-- 지목별 통계 분석 -->
+			<div class="cont-box-wrap">
+				<div class="cont-box h-auto">
+					<div class="tit-wrap type02">
+						<h2 class="type02">지목별 통계 분석</h2>
+
+						<div class="filter-wrap type03">
+							<!-- 시군 선택 -->
+							<div class="city-btn">
+								<button type="button" name="" id="" class="allcities-btn"><i class="ico-filter" aria-hidden="true"></i> 전체 시군 (3)</button>
+
+								<div class="usearea-sel county">
+									<header>
+										<h3>시군선택</h3>
+
+										<div class="btn-group gap0">
+											<button type="button" name="" id="" class="reset-btn">초기화</button>
+
+											<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기">
+												<i class="ico-close" aria-hidden="true"></i>
+											</button>
+										</div>
+									</header>
+						
+									<ul class="folding">
+										<li>
+											<a href="#" class="dept1 active">
+												<label for="chkA31" class="chkbox" onclick="event.stopPropagation()">
+													<input type="checkbox" name="" id="chkA31">
+													<span class="chkOn"></span>
+													<span class="txt">전체</span>
+												</label>
+											</a>
+
+											<!-- 지도 선택 -->
+											<ul class="map-type-sel">
+												<li>
+													<label for="chk31" class="chkbox">
+														<input type="checkbox" name="" id="chk31">
+														<span class="chkOn"></span>
+														<span class="txt">포항시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk32" class="chkbox">
+														<input type="checkbox" name="" id="chk32">
+														<span class="chkOn"></span>
+														<span class="txt">경주시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk33" class="chkbox">
+														<input type="checkbox" name="" id="chk33">
+														<span class="chkOn"></span>
+														<span class="txt">구미시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk34" class="chkbox">
+														<input type="checkbox" name="" id="chk34">
+														<span class="chkOn"></span>
+														<span class="txt">김천시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk35" class="chkbox">
+														<input type="checkbox" name="" id="chk35">
+														<span class="chkOn"></span>
+														<span class="txt">안동시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk36" class="chkbox">
+														<input type="checkbox" name="" id="chk36">
+														<span class="chkOn"></span>
+														<span class="txt">영주시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk37" class="chkbox">
+														<input type="checkbox" name="" id="chk37">
+														<span class="chkOn"></span>
+														<span class="txt">영천시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk38" class="chkbox">
+														<input type="checkbox" name="" id="chk38">
+														<span class="chkOn"></span>
+														<span class="txt">상주시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk39" class="chkbox">
+														<input type="checkbox" name="" id="chk39">
+														<span class="chkOn"></span>
+														<span class="txt">문경시</span>
+													</label>
+												</li>
+											</ul>
+											<!-- 지도 선택 -->
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- 시군 선택 -->
+
+							<div class="filter">
+								<button type="button" name="" id="" class="filter-btn active">면적</button>
+								<button type="button" name="" id="" class="filter-btn bg04">지번수</button>
+							</div>
+
+							<button type="button" name="" id="" class="com-btn mint"><i class="ico-img" aria-hidden="true"></i>다운로드</button>
+
+							<!-- 연도 비교 -->
+							<div class="city-btn">
+								<button type="button" name="" id="" class="dropdown-btn w160"><i class="ico-chline" aria-hidden="true"></i> <span>연도 비교</span></button>
+
+								<div class="drop-content droplist w160">
+									<ul>
+										<li><a href="#">2026년</a></li>
+										<li><a href="#">2025년</a></li>
+									</ul>
+								</div>
+							</div>
+							<!-- 연도 비교 -->
+										
+							<!-- 시군 선택 -->
+							<div class="city-btn">
+								<button type="button" name="" id="" class="allcities-btn"><i class="ico-filter" aria-hidden="true"></i> 전체 시군 (3)</button>
+
+								<div class="usearea-sel county">
+									<header>
+										<h3>시군선택</h3>
+
+										<div class="btn-group gap0">
+											<button type="button" name="" id="" class="reset-btn">초기화</button>
+
+											<button type="button" name="" id="" class="pop-close-btn" aria-label="닫기">
+												<i class="ico-close" aria-hidden="true"></i>
+											</button>
+										</div>
+									</header>
+						
+									<ul class="folding">
+										<li>
+											<a href="#" class="dept1 active">
+												<label for="chkA41" class="chkbox" onclick="event.stopPropagation()">
+													<input type="checkbox" name="" id="chkA41">
+													<span class="chkOn"></span>
+													<span class="txt">전체</span>
+												</label>
+											</a>
+
+											<!-- 지도 선택 -->
+											<ul class="map-type-sel">
+												<li>
+													<label for="chk41" class="chkbox">
+														<input type="checkbox" name="" id="chk41">
+														<span class="chkOn"></span>
+														<span class="txt">포항시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk42" class="chkbox">
+														<input type="checkbox" name="" id="chk42">
+														<span class="chkOn"></span>
+														<span class="txt">경주시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk43" class="chkbox">
+														<input type="checkbox" name="" id="chk43">
+														<span class="chkOn"></span>
+														<span class="txt">구미시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk44" class="chkbox">
+														<input type="checkbox" name="" id="chk44">
+														<span class="chkOn"></span>
+														<span class="txt">김천시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk45" class="chkbox">
+														<input type="checkbox" name="" id="chk45">
+														<span class="chkOn"></span>
+														<span class="txt">안동시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk46" class="chkbox">
+														<input type="checkbox" name="" id="chk46">
+														<span class="chkOn"></span>
+														<span class="txt">영주시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk47" class="chkbox">
+														<input type="checkbox" name="" id="chk47">
+														<span class="chkOn"></span>
+														<span class="txt">영천시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk48" class="chkbox">
+														<input type="checkbox" name="" id="chk48">
+														<span class="chkOn"></span>
+														<span class="txt">상주시</span>
+													</label>
+												</li>
+												<li>
+													<label for="chk49" class="chkbox">
+														<input type="checkbox" name="" id="chk49">
+														<span class="chkOn"></span>
+														<span class="txt">문경시</span>
+													</label>
+												</li>
+											</ul>
+											<!-- 지도 선택 -->
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- 시군 선택 -->
+						</div>						
+					</div>
+
+					<!-- graph -->
+					<div class="graph w100per">
+						<div class="graph-box bg01 h360">
+							
+							<div class="graph-wrap" style="width:100%; height:310px; margin:5px auto 20px;">
+								<canvas id="barChart1" style="margin:0px;"></canvas>
+							</div>
+						</div>
+					</div>
+					<!-- graph -->
+				</div>
+			</div>
+			<!-- 지목별 통계 분석 -->
+
+			<!-- 전국 지목별 통계 (2025년) -->
+			<div class="cont-box-wrap type03">
+				<div class="cont-box">
+					<div class="tit-wrap type02">
+						<h2 class="type02">전국 지목별 통계 (2025년)</h2>
+						
+						<div>
+							<label for="">조회 연도</label>
+							<select name="" id="" class="type01 w160">
+								<option>2026</option>
+								<option>2025</option>
+								<option>2024</option>
+							</select>
+						</div>	
+					</div>
+
+					<!-- tbl -->
+					<div class="tbl-wrap type03 scroll-x scroll mh735">
+						<table class="tbl h-scroll">
+							<colgroup>
+								<col style="width:100px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+								<col style="width:130px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2">행정구역명</th>
+									<th scope="col" colspan="2">계</th>
+									<th scope="col" colspan="2">전</th>
+									<th scope="col" colspan="2">답</th>
+									<th scope="col" colspan="2">과수원</th>
+									<th scope="col" colspan="2">목장용지</th>
+									<th scope="col" colspan="2">임야</th>
+									<th scope="col" colspan="2">광천지</th>
+									<th scope="col" colspan="2">염전</th>
+									<th scope="col" colspan="2">대</th>
+									<th scope="col" colspan="2">공장용지</th>
+									<th scope="col" colspan="2">학교용지</th>
+									<th scope="col" colspan="2">주차장</th>
+									<th scope="col" colspan="2">주유소용지</th>
+									<th scope="col" colspan="2">창고용지</th>
+									<th scope="col" colspan="2">도로</th>
+									<th scope="col" colspan="2">철도용지</th>
+									<th scope="col" colspan="2">제방</th>
+									<th scope="col" colspan="2">하천</th>
+									<th scope="col" colspan="2">구거</th>
+									<th scope="col" colspan="2">유지</th>
+									<th scope="col" colspan="2">양어장</th>
+									<th scope="col" colspan="2">수도용지</th>
+									<th scope="col" colspan="2">공원</th>
+									<th scope="col" colspan="2">체육용지</th>
+									<th scope="col" colspan="2">사적지</th>
+									<th scope="col" colspan="2">묘지</th>
+									<th scope="col" colspan="2">잡종지</th>
+								</tr>
+								<tr>
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th>
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th>
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th>
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th>
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th> 
+									<th scope="col">면적(㎡)</th>
+									<th scope="col">지번수</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="total">
+									<td class="al">합계</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">서울특별시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">부산광역시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">대구광역시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">인천광역시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">광주광역시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">대전광역시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">울산광역시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">세종특별자치시</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">경기도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">강원특별자치도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">충청북도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">충청남도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">전라북도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">전라남도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">경상북도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">경상남도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="al">제주특별자치도</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+									<td class="ar">
+										<div class="s-num">
+											<p>100,459,873,941.5</p>
+											<p>(+2.04%)</p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>	
+					</div>
+					<!-- tbl -->
+
+				</div>
+			</div>
+			<!-- 전국 지목별 통계 (2025년) -->
+
+		</div>
+		<!-- content -->
+
+		<button type="button" name="" id="" class="admin-btn"></button>
+
+		<!-- admin -->
+		<div class="admin-selbox"> 
+			<a href="#">사용자 숭인 관리</a>
+			<a href="#">사용자 그룹 관리</a>
+		</div>
+		<!-- admin -->
+	</div>
+
+	<script src="js/lib/chart.js"></script>
+	<script src="js/lib/chartjs-plugin-datalabels@2.js"></script>
+
+	<script>
+		const fixedLabelPlugin = {
+			id: 'fixedLabelPlugin',
+			afterDraw(chart) {
+
+				const { ctx, width, height } = chart;
+				const dataset = chart.data.datasets[0];
+				const labels = chart.data.labels;
+
+				ctx.save();
+				ctx.font = "14px Arial";
+				ctx.textBaseline = "middle";
+
+				// 왼쪽 텍스트
+				ctx.fillStyle = "#8d8d8d";
+				ctx.textAlign = "right";
+				ctx.fillText(labels[1] + " " + dataset.data[1] + "%", width * 0.25, height / 2);
+
+				// 오른쪽 텍스트
+				ctx.fillStyle = dataset.backgroundColor[0];
+				ctx.textAlign = "left";
+				ctx.fillText(labels[0] + " " + dataset.data[0] + "%", width * 0.75, height / 2);
+
+				ctx.restore();
+			}
+		};
+
+	function createChart(id, data1, data2, label1, label2, color) {
+
+	new Chart(document.getElementById(id), {
+		type: 'doughnut',
+		data: {
+		labels: [label1, label2],
+		datasets: [{
+			data: [data1, data2],
+			backgroundColor: [color, '#cfcfcf'],
+			borderWidth: 0
+		}]
+		},
+		options: {
+		responsive: true,
+		maintainAspectRatio: false,
+		cutout: '60%',
+		plugins: {
+			legend: { display:false },
+			tooltip: { enabled:false }
+		}
+		},
+		plugins:[fixedLabelPlugin]
+	});
+
+	}
+
+	// 차트 생성
+	createChart("chart1",18.3,81.7,"경상북도","기타 지역","#f57c00");
+	createChart("chart2",25.1,74.9,"서울","기타 지역","#A55831");
+	createChart("chart3",32.2,67.8,"경기","기타 지역","#D0A542");
+	createChart("chart4",15.5,84.5,"부산","기타 지역","#D0A542");
+	createChart("chart5",9.8,90.2,"대구","기타 지역","#D0A542");
+
+</script>
+
+<script>
+    const labels = ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '강원', '충청북도', '충청남도', '전라북도', '전라남도', '경상북도'];
+
+    const data = [8, 15, 72, 75, 22, 18, 25, 30, 860, 1020, 630, 740, 620, 1160, 1200];
+
+    new Chart(document.getElementById('barChart1'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: data,
+          backgroundColor: '#f57c00',
+          borderWidth: 0,
+          barPercentage: 0.8,
+          categoryPercentage: 0.9
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        layout: {
+          padding: {
+            left: 10,
+            right: 10,
+            top: 0,
+            bottom: 0
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            enabled: false
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              display: true,
+              color: '#dddddd',
+              drawBorder: false,
+              borderDash: [2, 2]
+            },
+            ticks: {
+              color: '#777',
+              maxRotation: 45,
+              minRotation: 45,
+              font: {
+                size: 10
+              }
+            }
+          },
+          y: {
+            min: 0,
+            max: 1200,
+            ticks: {
+              stepSize: 300,
+              color: '#777',
+              font: {
+                size: 10
+              }
+            },
+            title: {
+              display: true,
+              text: '면적 (㎢)',
+              color: '#777',
+              font: {
+                size: 11
+              }
+            },
+            grid: {
+              color: '#dddddd',
+              drawBorder: false,
+              borderDash: [2, 2]
+            }
+          }
+        }
+      }
+    });
+  </script>
+	
+</body>
+</html>

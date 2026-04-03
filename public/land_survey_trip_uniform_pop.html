@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/gb_intelligent.css">
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/lib/jquery-3.7.1.js"></script>
+<script src="js/lib/select2.min.js"></script>
+<script src="js/ui.js"></script>
+<title>경북 지능공간정보 플랫폼</title>
+</head>
+<body>
+<div>
+	<!-- layerpop-wrap 출장복명서 --> <!-- 퍼블에서 화면 preview 하기위헤 style로 넣어줌 실제 개발할때는 style 삭제해주세요!! -->
+	<div class="layerpop-wrap land w896" id="popup1" style="display:block; height:800px; position:absolute; inset:0; margin:auto;">
+		<header>
+			<h3>출장복명서 <span>지적확정측량검사 출장복명서를 작성하세요</span></h3>
+		</header>
+		
+		<!-- contents -->
+		<div class="pop-con">
+			<div class="docu-temp">
+				<h2>출 장 복 명 서</h2>
+
+				<div class="tbl-wrap">
+					<table class="tbl view type04">
+						<colgroup>
+							<col style="width:20%;">							
+							<col style="width:20%;">
+							<col style="width:20%;">
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">출장지</th>
+								<th scope="col">출장일</th>
+								<th scope="col">복명</th>
+								<th scope="col">출장자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="ac">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="안동시">
+								</td>
+								<td class="ac">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="2025. 11. 04.(화)">
+								</td>
+								<td class="ac">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="2025년 11월 10일">
+								</td>
+								<td class="ac">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="송정애, 유경인">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- 지구 현황 -->
+				<h4 class="type02">지구 현황</h4>
+
+				<div class="tbl-wrap">
+					<table class="tbl view type03">
+						<colgroup>
+							<col style="width:6%;">
+							<col>
+							<col style="width:23%;">
+							<col style="width:13%;">
+							<col style="width:9%;">
+							<col style="width:9%;">
+							<col style="width:12%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2">구<br/>분</th>
+								<th scope="col" colspan="2">지구현황</th>
+								<th scope="col" colspan="3">검사대상</th>
+								<th scope="col" rowspan="2">측량수행자</th>
+							</tr>
+							<tr>
+								<th scope="col">지구명</th>
+								<th scope="col">토지소재지</th>
+								<th scope="col">구분</th>
+								<th scope="col">필수<br/>(점)</th>
+								<th scope="col">면적(㎡)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="ac">구획</td>
+								<td class="pd0">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="안동 단호센드파크 공원조성사업">
+								</td>
+								<td class="pd0">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="남후면 단호리 76-4 일원">
+								</td>
+								<td class="pd0">
+									<select name="" id="" class="type01 nobor">
+										<option>선택</option>
+										<option>000</option>
+										<option>000</option>
+									</select>
+								</td>
+								<td class="pd0">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="0">
+								</td>
+								<td class="pd0">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="0">
+								</td>
+								<td class="pd0">
+									<input type="text" name="" id="" class="type01 nobor" value="" placeholder="LX안동지사">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<!-- 검사 사항 -->
+				<h4 class="type02">검사 사항</h4>
+
+				<textarea name="" id="" class="type01" value="" placeholder="• 세부측량 성과의 정확성과 측량결과도 작성의 적정 여부"></textarea>
+				<!-- 검사 사항 -->
+
+				<!-- 검사 방법 -->
+				<h4 class="type02">검사 방법</h4>
+
+				<textarea name="" id="" class="type01" value="" placeholder="• 세부측량 : 기지점 신호의 점검여부와 신설 경계점에 대한 측량성과의 정확여부를 관찰하여 측량방법 등을 이용하여 주요 경계점 관측 및 조사"></textarea>
+				<!-- 검사 방법 -->
+
+				<!-- 검사 결과 -->
+				<div class="test-result">
+					<h4 class="type02">검사 결과</h4>
+
+					<ul>
+						<li>
+							<label for="">• 필계점 측량성과 검사 : </label>
+
+							<select name="" id="" class="type01 w250">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</li>
+						<li>
+							<label for="">• 측량결과도 작성 적정 검사 : </label>
+							
+							<select name="" id="" class="type01 w250">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</li>
+						<li>
+							<label for="">• 사업계획(면적)과 일치 검사 : </label>
+							
+							<select name="" id="" class="type01 w250">
+								<option>선택</option>
+								<option>000</option>
+								<option>000</option>
+							</select>
+						</li>
+					</ul>
+
+					
+				</div>
+				<!-- 검사 결과 -->
+
+				<!-- 검사결과 조치 -->
+				<h4 class="type02">검사결과 조치</h4>
+
+				<textarea name="" id="" class="type01 h68" value="" placeholder="안동시 공원녹지과-10018호(2025.11.03.)호에 따라 실시계획고시문과 상이한 부분(면적)은 지적확정측량결과에 따라 고시 변경한다는 의견을 제출하였기에 지적소관청은 확정결과에 따라 관계부서와 협의 후 지적공부정리 등 후속 조치"></textarea>
+				<!-- 검사결과 조치 -->
+
+				<div class="att-txt">
+					<p>붙임 :</p>
+
+					<input type="text" name="" id="city" class="type01 nobor" value="" placeholder="안동 단호샌드파크 공원조성사업 지적확정측량 검사[세부측량-1번]">					
+				</div>
+
+				<div class="conform-area">				
+					<p>위와 같이 지적확정측량 성과검사 총괄결과를 복명합니다.</p>
+
+					<ul>
+						<li>
+							<p>출장자:</p>
+							<input type="text" name="" id="" class="type01 nobor w160" value="" placeholder="지방시설주사보">
+							<input type="text" name="" id="" class="type01 nobor w96" value="" placeholder="송 정 애">
+							<p>(서명)</p>
+						</li>
+						<li>
+							<p>출장자:</p>
+							<input type="text" name="" id="" class="type01 nobor w160" value="" placeholder="지방시설주사보">
+							<input type="text" name="" id="" class="type01 nobor w96" value="" placeholder="송 정 애">
+							<p>(서명)</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="tbl-wrap">
+					<table class="tbl view type03">
+						<colgroup>
+							<col style="width:33.3%;">
+							<col>
+							<col style="width:33.3%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="col" class="h50">지적관리팀장</th>
+								<th scope="col" class="h50">토지정보과장</th>
+								<th scope="col" rowspan="2">결<br/>재</th>
+							</tr>
+							<tr>
+								<td class="ac h50">
+									<input type="text" name="" id="" class="type01 nobor" value="">
+								</td>
+								<td class="ac h50">
+									<input type="text" name="" id="" class="type01 nobor" value="">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- contents -->
+		
+		<div class="pop-footer">
+			<div class="btn-area lr">
+				<button type="button" name="" id="" class="com-btn xl red"><i class="ico-ppt" aria-hidden="true"></i>다운로드</button>
+
+				<div>
+					<button type="button" name="" id="" class="com-btn xl grayblue">취소</button>
+					<button type="button" name="" id="" class="com-btn xl orange">작성완료</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- layerpop-wrap  출장복명서 -->
+
+	<div class="overlay"></div>
+</body>
+</html>
