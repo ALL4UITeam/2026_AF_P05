@@ -402,7 +402,13 @@
     background-image: url('../images/map/toolbar-home.png');
   }
 
-  
+  /* 26.04.08 추가 */
+  .map-toolbar__btn[data-tool="memo"]::before {
+    background-image: url('../images/map/toolbar-memo.png');
+  }
+  .map-toolbar__btn[data-tool="memo"].is-active::before {
+    background-image: url('../images/map/toolbar-memo-active.png');
+  }
 
   .map-toolbar__btn-wrap{
     margin-top: 6px;
