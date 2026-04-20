@@ -1720,10 +1720,41 @@ header:has(.intelligent-menu){
 	width: 100%;
 	height: 180px;
 	overflow: hidden;
-	img{
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	padding: 16px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	transition: background-image .2s ease, transform .2s ease;
+	&.is-total{
+		background-image: url('../images/map/menu-thumbnail-total.png');
+	}
+	&.is-three{
+		background-image: url('../images/map/menu-thumbnail-three.png'); 
+	}
+	&.is-indoor{
+		background-image: url('../images/map/menu-thumbnail-indoor.png');
+	}
+	&.is-theme{
+		background-image: url('../images/map/menu-thumbnail-theme.png');
+	}
+	&.is-search{
+		background-image: url('../images/map/menu-thumbnail-search.png');
+	}
+	&.is-analysis{
+		background-image: url('../images/map/menu-thumbnail-analysis.png');
+	}
+	&.is-stats{
+		background-image: url('../images/map/menu-thumbnail-stats.png');
+	}
+	&.is-mydata{
+		background-image: url('../images/map/menu-thumbnail-mydata.png');
+	}
+	&.is-simulation{
+		background-image: url('../images/map/menu-thumbnail-simulation.png');
 	}
 }
 .intelligent-menu-desc-content{
