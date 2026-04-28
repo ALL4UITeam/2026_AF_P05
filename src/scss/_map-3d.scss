@@ -1,0 +1,120 @@
+/**
+ * map-3d.scss
+ */
+
+.map-2d3d-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .tab-panel__content{
+    display: none;
+    &.is-active{
+      display: block;
+    }
+  }
+}
+.map-2d3d-list{
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+  }
+  
+  &__badge{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: #563dff;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__btn{
+    display: flex;
+    border: 1px solid #e3e4e6;
+    overflow: hidden;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    figure{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background: #fff;
+      position: relative;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+
+    }
+    figcaption{
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      text-align: center;
+      padding: 10px 0;
+      line-height: 1;
+    }
+  }
+}
+
+.map-2d3d-hover-tip {
+  position: fixed;
+  z-index: 10000;
+  max-width: 280px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: keep-all;
+  pointer-events: none;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  
+}
+
+.map-2d3d-hover-tip__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: url('../images/map/ico_i.png') no-repeat center center;
+  font-size: 0;
+  line-height: 1;
+  flex: 0 0 auto;
+  transform: translateY(2px);
+}
+
+.map-2d3d-hover-tip__text {
+  display: inline-block;
+  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.map-2d3d-hover-tip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,0 +1,236 @@
+{{#> layout}}
+<style>
+  .map-search-zoom__track-wrap {
+    display: none;
+  }
+</style>
+<div class="vibe-container map-2d3d-page">
+  <aside class="map-search-sidebar is-open  map-2d3d-sidebar" id="2d3dPanel">
+    <div class="map-search-sidebar__inner">
+      <header class="map-search-sidebar__header">
+        <h2>공간분석</h2>
+        <button type="button" title="닫기" class="map-search-sidebar__close" data-target="2d3dPanel"><i
+            class="map-search-sidebar__close-icon"></i></button>
+      </header>
+      <div class="map-search-sidebar__body">
+
+        <div class="map-2d3d-tabs">
+          <div class="panel__tabs" role="tablist" aria-label="공간분석 탭">
+            <button type="button" class="panel__tab is-active" id="panel2dTab" aria-selected="true" tabindex="0" role="tab" aria-controls="panel2d">2D 분석</button>
+            <button type="button" class="panel__tab" id="panel3dTab" aria-selected="false" tabindex="-1" role="tab" aria-controls="panel3d">3D 분석</button>
+          </div>
+  
+          <div class="tab-panel__content is-active" id="panel2d" role="tabpanel" aria-labelledby="panel2dTab" data-tab="2d">
+            <div class="map-sidebar__search">
+              <div class="map-sidebar__location-input">
+                <input type="text" class="map-ui-input input-search" placeholder="분석 도구 검색">
+                <button type="button" class="map-sidebar__search-btn">검색</button>
+              </div>
+            </div>
+
+            <div class="map-2d3d-list">
+              <ul class="map-2d3d-list__list">
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="지형의 높이 정보를 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">2d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_topography_height.png" alt="고도 분석">
+                      <figcaption>고도 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="지형의 경사도를 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">2d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_topography_gradient.png" alt="경사도 분석">
+                      <figcaption>경사도 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="지형의 종단 횡단면 및 구조물의 평면을 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">2d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_topography_cross.png" alt="지형단면 분석">
+                      <figcaption>지형단면 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="건축물 일조권을 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">2d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_building_sunlight.png" alt="일조권 분석">
+                      <figcaption>일조권 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- // map-2d3d-list -->
+          </div>
+          <!-- //panel2d -->
+  
+          <div class="tab-panel__content" id="panel3d" role="tabpanel" aria-labelledby="panel3dTab" hidden data-tab="3d">
+            <div class="map-sidebar__search">
+              <div class="map-sidebar__location-input">
+                <input type="text" class="map-ui-input input-search" placeholder="분석 도구 검색">
+                <button type="button" class="map-sidebar__search-btn">검색</button>
+              </div>
+            </div>
+
+            <div class="map-2d3d-list">
+              <ul class="map-2d3d-list__list">
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="지형의 높이 정보를 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">3d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_topography_height.png" alt="고도 분석">
+                      <figcaption>고도 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="지형의 경사도를 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">3d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_topography_gradient.png" alt="경사도 분석">
+                      <figcaption>경사도 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="지형의 종단 횡단면 및 구조물의 평면을 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">3d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_topography_cross.png" alt="지형단면 분석">
+                      <figcaption>지형단면 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+                <li class="map-2d3d-list__item">
+                  <button type="button" class="map-2d3d-list__btn" data-tooltip="건축물 일조권을 분석하여 가시화합니다.">
+                    <figure>
+                      <span class="map-2d3d-list__badge">3d</span>
+                      <img src="https://map.vworld.kr/images/dtkmap/megamenu/megamenu_building_sunlight.png" alt="일조권 분석">
+                      <figcaption>일조권 분석</figcaption>
+                    </figure>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- // map-2d3d-list -->
+          </div>
+          <!-- //panel3d -->
+        </div>
+
+      </div>
+    </div>
+    <button type="button" class="map-search-sidebar__open" data-target="indoorPanel">열기</button>
+  </aside>
+  <!-- 우측: 지도 영역 (전체 채움) -->
+  <div class="map-area">
+    <div id="map-container"></div>
+    <div class="map-search-breadcrumb">경기도 <i class="map-search-breadcrumb__separator"></i> 안양시 동안구 <i
+        class="map-search-breadcrumb__separator"></i> 관양동</div>
+    {{> map-toolbar}}
+    {{> map-search-zoom}}
+    {{> map-building-info}}
+    {{> map-options}}
+
+  </div>
+</div>
+<script>
+  (() => {
+    const tabWrap = document.querySelector(".map-2d3d-tabs");
+    const tabs = tabWrap ? Array.from(tabWrap.querySelectorAll('[role="tab"]')) : [];
+    const panels = tabWrap ? Array.from(tabWrap.querySelectorAll('[role="tabpanel"]')) : [];
+
+    const activateTab = (tab) => {
+      if (!tab) return;
+      const targetPanelId = tab.getAttribute("aria-controls");
+
+      tabs.forEach((item) => {
+        const isActive = item === tab;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-selected", String(isActive));
+        item.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.id === targetPanelId;
+        panel.classList.toggle("is-active", isActive);
+        panel.hidden = !isActive;
+      });
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => activateTab(tab));
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+
+        const currentIndex = tabs.indexOf(tab);
+        const nextIndex =
+          event.key === "ArrowRight"
+            ? (currentIndex + 1) % tabs.length
+            : (currentIndex - 1 + tabs.length) % tabs.length;
+
+        const nextTab = tabs[nextIndex];
+        activateTab(nextTab);
+        nextTab.focus();
+      });
+    });
+
+    const tooltip = document.createElement("div");
+    tooltip.className = "map-2d3d-hover-tip";
+    tooltip.setAttribute("role", "tooltip");
+    const tooltipIcon = document.createElement("i");
+    tooltipIcon.className = "map-2d3d-hover-tip__icon";
+    tooltipIcon.setAttribute("aria-hidden", "true");
+    tooltipIcon.textContent = "i";
+    const tooltipText = document.createElement("span");
+    tooltipText.className = "map-2d3d-hover-tip__text";
+    tooltip.append(tooltipIcon, tooltipText);
+    document.body.appendChild(tooltip);
+
+    const targets = document.querySelectorAll(".map-2d3d-list__btn[data-tooltip]");
+    let activeTarget = null;
+
+    const positionTooltip = (target) => {
+      if (!target) return;
+      const rect = target.getBoundingClientRect();
+      const offset = 4;
+
+      tooltip.style.left = `${rect.right + offset}px`;
+      tooltip.style.top = `${rect.top + rect.height / 2}px`;
+    };
+
+    const showTooltip = (target) => {
+      const text = target.dataset.tooltip;
+      if (!text) return;
+
+      activeTarget = target;
+      tooltipText.textContent = text;
+      tooltip.classList.add("is-visible");
+      positionTooltip(target);
+    };
+
+    const hideTooltip = () => {
+      activeTarget = null;
+      tooltip.classList.remove("is-visible");
+    };
+
+    targets.forEach((target) => {
+      target.addEventListener("mouseenter", () => showTooltip(target));
+      target.addEventListener("mouseleave", hideTooltip);
+      target.addEventListener("focus", () => showTooltip(target));
+      target.addEventListener("blur", hideTooltip);
+    });
+
+    window.addEventListener("scroll", () => positionTooltip(activeTarget), true);
+    window.addEventListener("resize", () => positionTooltip(activeTarget));
+  })();
+</script>
+{{/layout}}
