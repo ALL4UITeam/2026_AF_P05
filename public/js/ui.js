@@ -153,6 +153,28 @@ $(document).ready(function(){
 		$(".popover-menu-wrap").toggleClass("active");
 	});
 
+	// 시스템관리 메가메뉴 토글
+	$(".header-system-link").on("click", function(e){
+		e.preventDefault();
+		e.stopPropagation();
+
+		const $menu = $(this).closest("header").find(".mega-menu-wrap.system");
+		const willOpen = !$menu.hasClass("active");
+
+		$(".mega-menu-wrap").removeClass("active");
+		if (willOpen) {
+			$menu.addClass("active");
+		}
+	});
+
+	$(".mega-menu-wrap").on("click", function(e){
+		e.stopPropagation();
+	});
+
+	$(document).on("click", function(){
+		$(".mega-menu-wrap").removeClass("active");
+	});
+
 	// 오른쪽 Map maptool active
 	$(".mapset-btn").on("click", function(){
 		$(".mapset-btn").removeClass("active");

@@ -32,6 +32,13 @@
 	span.work.del{background:#6e1bf3;}
 </style>
 <script>
+	function getPageLink(fileName){
+		var isFileProtocol = window.location.protocol === 'file:';
+		var inDistDirectory = /[\\\/]dist[\\\/][^\\\/]*$/.test(window.location.pathname);
+		var prefix = isFileProtocol && !inDistDirectory ? 'dist/' : '';
+		return prefix + fileName;
+	}
+
 	function updateRowNumbers(){
 		var $pgNum = $('table td.pgNum');
 		var number = 1;
@@ -42,10 +49,11 @@
 	}
 
 	function appendPageRow($tbody, page){
+		var pageLink = getPageLink(page.file);
 		$tbody.append(
 			'<tr><td class="pgNum tCenter"></td>' +
 			'<td class="al">' + (page.title || page.file) + '</td>' +
-			'<td class="al"><a href="' + page.file + '" target="_blank" title="새창열림" class="page-link">' + page.file + '</a></td>' +
+			'<td class="al"><a href="' + pageLink + '" target="_blank" title="새창열림" class="page-link">' + page.file + '</a></td>' +
 			'<td>' + (page.type || '') + '</td>' +
 			'<td class="tCenter"><span class="work on">완료</span></td>' +
 			'<td class="al">' + (page.note || '') + '</td></tr>'
