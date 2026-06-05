@@ -12,6 +12,7 @@ import { init as initThemePanel } from './modules/themePanel.js';
 import { init as initToolbar } from './modules/toolbar.js';
 import { init as initTree } from './modules/tree.js';
 import { init as initZoom } from './modules/zoom.js';
+import { init as initIntelligentMenu } from './modules/intelligentMenu.js';
 
 function run(init, name) {
 	try {
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	run(initZoom, 'zoom');
 	run(initMapSearch, 'mapSearch');
 	run(initMydata, 'mydata');
+	run(initIntelligentMenu, 'intelligentMenu');
 
 	const range = document.querySelector('.map-ui-range');
 range.style.setProperty('--val', range.value);
