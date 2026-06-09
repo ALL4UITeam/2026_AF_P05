@@ -12,28 +12,28 @@ for (const fileName of htmlFiles) {
   const html = readFileSync(filePath, 'utf8');
 
   // file:// 환경에서도 링크/리소스 로딩이 되도록 절대 경로를 상대 경로로 변환
+  // location.href 내부는 제외하고, 원본 따옴표 스타일 유지
   let nextHtml = html.replace(
-    /\b(href|src|action)=["']\/(?!\/)([^"']+)["']/g,
-    '$1="./$2"',
+    /\b(?<!location\.)(href|src|action)=(["'])\/(?!\/)([^"']+)\2/g,
+    (_, attr, quote, path) => `${attr}=${quote}./${path}${quote}`,
   );
   nextHtml = nextHtml.replace(
-    /location\.href='\/(?!\/)([^'"#?]+(?:[?#][^']*)?)'/g,
-    "location.href='./$1'",
-  );
-  nextHtml = nextHtml.replace(
-    /location\.href="\/(?!\/)([^"#?]+(?:[?#][^"]*)?)"/g,
-    'location.href="./$1"',
+    /location\.href=(["'])\/(?!\/)([^'"#?]+(?:[?#][^'"]*)?)\1/g,
+    (_, quote, path) => `location.href=${quote}./${path}${quote}`,
   );
   nextHtml = nextHtml.replace(
     /url\((['"]?)\/(?!\/)([^)'"]+)\1\)/g,
     'url($1./$2$1)',
   );
 
-  // html 페이지 간 이동 경로는 명시적으로 ./ 유지
+  // html 페이지 간 이동 경로는 ./ 가 없을 때만 추가 (이미 ./ 인 경로에 중복 적용 시 ././ 발생)
   nextHtml = nextHtml.replace(
-    /\b(href|src|action)="([^"#?]+\.html(?:[?#][^"]*)?)"/g,
-    '$1="./$2"',
+    /\b(?<!location\.)(href|src|action)=(["'])(?!\.\/|\.\.\/|https?:\/\/|\/\/|#|mailto:|tel:)([^'"#?]+\.html(?:[?#][^'"]*)?)\2/g,
+    (_, attr, quote, path) => `${attr}=${quote}./${path}${quote}`,
   );
+
+  // 이전 빌드에서 생긴 ././ 중복 경로 정리
+  nextHtml = nextHtml.replace(/\.\/(\.\/)+/g, './');
 
   // file:// 에서 막히는 modulepreload polyfill script 제거
   nextHtml = nextHtml.replace(
@@ -51,7 +51,10 @@ for (const fileName of htmlFiles) {
   nextHtml = nextHtml.replace(/\s+crossorigin(?=[\s>])/g, '');
 
   // public 파일명과 일치하도록 대소문자 보정
-  nextHtml = nextHtml.replace(/href="css\/gb_intelligent\.css"/g, 'href="css/gb_Intelligent.css"');
+  nextHtml = nextHtml.replace(
+    /href=(["'])css\/gb_intelligent\.css\1/g,
+    'href=$1css/gb_Intelligent.css$1',
+  );
 
   if (nextHtml !== html) {
     writeFileSync(filePath, nextHtml, 'utf8');
